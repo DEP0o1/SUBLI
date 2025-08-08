@@ -7,5 +7,13 @@
 </head>
 <body>
     
+    <p>
+    git clone https://github.com/DEP0o1/SUBLI 
+     git add arquivo 
+     git add . 
+     git commit -m 'mensagem' 
+     git pull 
+     git push
+     </p>
 </body>
 </html>
