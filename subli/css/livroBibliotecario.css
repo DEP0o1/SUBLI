@@ -1,0 +1,51 @@
+body {
+  overflow: hidden; 
+}
+
+.linha{
+  height: 1.5px;
+  background-color: black;
+}
+
+.capaLivroEmprestado{
+  height: 60vh;
+}
+
+.areaLivroEmprestado{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.livroEmprestado{
+  display: flex;
+  gap: 5vh;
+  width: 50%;
+}
+
+.infoLivro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1vh;
+}
+
+.areaBtn{
+  width: 75vw;
+  display: flex;
+  justify-content: right;
+}
+
+.btnEmprestimo{
+  width: fit-content;
+}
+
+h2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+p{
+  font-size: 0.9rem;
+}
