@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Solicitações de doação </title>
+  <link rel="stylesheet" href="css/style.css">
+
+   <header>
+    <div > <img src="img/CorClara.png" alt="" class="logo"></div>
+
+    <div class="abas">
+    <h2>Empréstimos</h2>
+    <h2>Módulos</h2>
+    <h2>Leitor</h2>
+    <h2>Novos Livros</h2>
+    </div>
+    </header>
+</head>
+
+<body>
+
+  <a href="">
+    <img src="img/seta.png" class="setaVoltar">
+  </a>
+
+  <main class="areaLivroDoado">
+  <section class="doacao">
+    <img src="img/capa livro.jpg" class="livroDoado">
+
+    <div class="infoLivroDoado">
+      <h1> É assim que acaba </h1>
+      <h2> Autor(a): Colleen Hoover </h2>
+      <p> Condições: O livro é usado. Apresenta todas as páginas, sem nenhum rasgo ou manchas no texto mas aparentes marcas de uso e a capa levemente amassada na parte de trás. </p>
+
+      <div class="nomeDoador">
+        <h1> Doado por: Pedro Miguel da Silva José </h1>
+        <div class="linha"></div>
+      </div>
+
+      <div class="botoes">
+        <button class="aceitar"> Cadastrar </button>
+        <button class="recusar"> Recusar </button>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <section class="areaCardsDoacao">
+    <div class="cardDoacao">
+
+      <img src="img/capa livro.jpg" class="livroDoadoCard">
+
+      <div class="infoCard">
+        <h2> É assim que acaba </h2>
+        <h2> Doado por: Pedro Miguel... </h2>
+        <button class="verDoacao"> Ver doação </button>
+      </div>
+
+    </div>
+
+    <div class="cardDoacao">
+
+      <img src="img/capa livro.jpg" class="livroDoadoCard">
+
+      <div class="infoCard">
+        <h2> É assim que acaba </h2>
+        <h2> Doado por: Pedro Miguel... </h2>
+        <button class="verDoacao"> Ver doação </button>
+      </div>
+
+    </div>
+
+    <div class="cardDoacao">
+
+      <img src="img/capa livro.jpg" class="livroDoadoCard">
+
+      <div class="infoCard">
+        <h2> É assim que acaba </h2>
+        <h2> Doado por: Pedro Miguel... </h2>
+        <button class="verDoacao"> Ver doação </button>
+      </div>
+
+    </div>
+
+    <div class="cardDoacao">
+
+      <img src="img/capa livro.jpg" class="livroDoadoCard">
+
+      <div class="infoCard">
+        <h2> É assim que acaba </h2>
+        <h2> Doado por: Pedro Miguel... </h2>
+        <button class="verDoacao"> Ver doação </button>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+</html>

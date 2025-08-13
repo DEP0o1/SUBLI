@@ -1,0 +1,150 @@
+*{
+padding: 0px;
+margin: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: #A6244D;
+    color: white;
+    justify-content: space-between ;
+    align-items: center;
+    padding: 0%;
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 4%;
+}
+
+body{
+    background-color: #F2ECE7;
+    display: flex;
+    justify-content:center ;
+    flex-direction: column;
+    margin-bottom: 2%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+
+.logo{
+    width: 10%;
+}
+
+.abas{
+    font-size: x-small;
+    gap: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.formPesquisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.titulo{
+    padding-bottom: 3%;
+    padding-top: 4%;
+    display: flex;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+
+.btnForm{
+    gap: 50px;
+    display: flex;
+}
+
+.btnRosa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #A6244D;
+    color: white;
+    border: none;
+    font-weight: 100;
+    border-radius: 10px;
+    gap: 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 10%;
+}
+
+.leitoresEncontrados{
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+}
+
+.leitor{
+    height: 111px;
+    width: 111px;
+    border-radius: 100px;
+    border: 2px solid #000;
+}
+
+.leitorEncontrado{
+    background-color: white;
+    font-size: small;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-left: 6%;
+    margin-top: 3%;
+    border: 2px solid #A9A9A9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.infoLeitor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.btnAzul{
+    border-radius: 10px;
+    background-color: #102E4E;
+    color: white;
+    padding: 10px;
+}
+
+.resultadoPesquisa{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.areaLivro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    border: 2px solid #A39B91;
+    width: 170px;
+    height: 392px;
+    text-wrap: auto;
+}
+
+.capaLivro{
+ height: 222px;
+ width: 150px;
+}
+

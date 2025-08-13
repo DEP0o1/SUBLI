@@ -1,0 +1,105 @@
+*{
+padding: 0px;
+margin: 0;
+}
+
+header{
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: cente;  
+    width: auto;
+    
+}
+
+.logo{
+    background-color: rgb(0, 0, 0);
+    width: 100px;
+    height: 42px;
+}
+
+.btnHeader{   
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+}
+
+.areaPesquisa{
+    
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.filtro{
+    background-color: white;
+    width: 10px;
+    height: 10px;
+}
+.barraPesquisa{
+    width: 500px;
+    background-color: aliceblue;
+    border-radius: 100px;
+    padding: 10px;
+}
+
+.iconePesquisa{
+    width: 5%;
+    height: 25%;
+
+}
+
+.perfil{
+    background-color: blue;
+    height:25px;
+    width: 25px;
+    border-radius: 100px;
+}
+
+.areaBanner{
+    width: 100%;
+}
+ .banner{
+    width: 100%;
+ }
+
+ .btnCategorias{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: auto;
+    height: 50%;
+    padding: 70px;
+ }
+
+.filtroCategoria{
+    padding: 5px;
+    font-size: 10px;
+    border: 2px solid #000;
+    height: auto;
+    width: auto;
+ }
+
+.areaBTNcategorias{
+    width: auto;
+    display: flex;
+    justify-content: left;
+    padding-left: 15%;
+ }
+
+ .titulo{
+    padding-left: 15%;
+ }
+
+ .DestaquesSemana{
+    display: flex;
+    flex-direction: row;
+ }
