@@ -1,36 +1,21 @@
+<?php
+include_once('../complementos/header.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/leitor.css">
+    <link rel="stylesheet" href="../css/leitor.css">
 
-    <header>
-        <div class="logo">
-        </div>
-
-        <div class="areaPesquisa">
-
-        <div class="barraPesquisa">
-             <img src="img/pesquisa.webp" alt="pesquisa" class="iconePesquisa">
-            </div>
-
-            <div class="filtro"></div>
-        </div>
-
-        <div class="btnHeader">
-            <p>Destaques</p>
-            <p>Bibliotecas</p>
-            <p>Doação</p>
-            <div class="perfil"></div>
-        </div>
-    </header>
+    
 </head>
 <body>
     <div class="areaBanner">
         <div class="btnSeta"></div>
-        <img src="img/banner.png" alt="" class="banner">
+        <img src="../img/banner.png" alt="" class="banner">
         <div class="btnSeta"></div>
     </div>
 
