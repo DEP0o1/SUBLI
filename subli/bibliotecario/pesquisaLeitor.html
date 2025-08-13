@@ -3,19 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Pesquisa Leitor </title>
-    <link rel="stylesheet" href="../css/bibliotecario.css">
 
-    <header>
+    <title> Pesquisa </title>
+    <link rel="stylesheet" href="../css/bibliotecario.css">
+    <title>Pesquisa</title>
+        <link rel="stylesheet" href="../css/bibliotecario.css">
+    <link rel="stylesheet" href="../css/homeBibliotecario.css">
+    <link rel="stylesheet" href="../css/pesquisaBibliotecario.css">
+    <link rel="shortcut icon" href="../img/pequeno terry.webp" type="image/x-icon">
+
+
+<header>
+    <a href="homeBibliotecario.html">
         <div > <img src="../img/CorClara.png" alt="" class="logo"></div>
+    </a>
     
-        <div class="abas">
-        <h2>Empréstimos</h2>
-        <h2>Módulos</h2>
-        <h2>Leitor</h2>
-        <h2>Novos Livros</h2>
+    <div class="areaPesquisa">
+
+        <div class="divInput">     
+        <input type="text" placeholder="Faça sua Pesquisa" class="input">
+        <img src="../img/pesquisa.webp" alt="" class="lupa">
         </div>
-        </header>
+
+        <img src="../img/filtro.svg" alt="">
+
+        <a href="pesquisaLivroBibliotecario.html">Pesquisa Avançada</a>
+    </div>
+
+    <div class="abas">
+    <a href="emprestimoPesquisa.html">Empréstimos</a>
+    <a>Módulos</a>
+    <a href="cadastrarLeitor.html">Leitor</a>
+
+    <select name="Cadastros" class="Cadastros">
+        <option value="" disabled selected hidden>Cadastros</option>
+        <a href="cadastrarLivro.html">
+         <option value="0">Cadastrar Livro</option>
+        </a>
+        <a href=""cadastrarLeitor>
+        <option value="1">Cadastrar Leitor</option>
+        </a>
+        <option value="2">Cadastrar Evento</option>
+      </select>
+
+    </div>
+
+    </header>
 
 
 </head>
@@ -44,8 +77,9 @@
             <div class="infoLeitor">
             <h2>Terry Crews</h2>
 
+            <a href="emprestimoPesquisa.html">
             <button class="btnAzul">Empréstimos</button>
-
+            </a>    
             </div>
 
             
@@ -56,7 +90,9 @@
             <div class="infoLeitor">
             <h2>Terry Crews</h2>
 
+            <a href="emprestimoPesquisa.html">
             <button class="btnAzul">Empréstimos</button>
+            </a>   
 
             </div>
 

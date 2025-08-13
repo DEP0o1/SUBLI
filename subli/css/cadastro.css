@@ -1,0 +1,9 @@
+.areaCadastro{
+    display: flex;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 2%;
+    margin-bottom: 0;
+    height: 70vh;
+}

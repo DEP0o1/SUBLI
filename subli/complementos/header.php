@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <html>
 <header>
         <div class="logo">

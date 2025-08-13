@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PESQUISA ESPECIFICA</title>
+    <title>HOME</title>
     <link rel="stylesheet" href="../css/bibliotecario.css">
     <link rel="stylesheet" href="../css/homeBibliotecario.css">
     <link rel="stylesheet" href="../css/pesquisaBibliotecario.css">
     <link rel="shortcut icon" href="../img/pequeno terry.webp" type="image/x-icon">
-
 </head>
-
 <header>
     <a href="homeBibliotecario.html">
         <div > <img src="../img/CorClara.png" alt="" class="logo"></div>
@@ -47,74 +45,23 @@
     </div>
 
     </header>
-
 <body>
-    <div class="areaAvancada">
-        
-        <form action="" class="formAvancado">
-            <div >
-                <h1 class="pesquisaAvancada">Pesquisa Avançada </h1>
-            </div>
-        <section class="areaInput">
-            <div class="areaTituloLivro">
-                <h3 class="tituloForm">Titulo:</h3>
-                <input type="text" class="inputForm" placeholder="Ex. O Pequeno Principe"> 
-            </div>
-
-            <div class="areaAutorLivro">
-                <h3 class="tituloForm">Autor:</h3>
-                <input type="text" class="inputForm" placeholder="Ex. Antoine de Saint-Exupéry"> 
-            </div>
-            
-            <div class="formDeLado1">
-                <div>
-                    <h3 class="tituloForm">Código Autor:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex.1234">
-                </div>
-                <div>
-                    <h3 class="tituloForm">Código livro:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex.1234">
-                </div>
-            </div>
-
-            <div class="formDeLado">
-                <div>
-                    <h3 class="tituloForm">Edição:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. 1">
-                </div>
-                <div>
-                    <h3 class="tituloForm">Idioma:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. Português">
-                </div>
-                                <div>
-                    <h3 class="tituloForm">Ex/Volume:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. Volume Único">
-                </div>
-            </div>
-
-            <div class="formDeLado">
-                <div>
-                    <h3 class="tituloForm">Ano:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. 1999">
-                </div>
-                <div>
-                    <h3 class="tituloForm">Assunto:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex.Reflexão">
-                </div>
-                                <div>
-                    <h3 class="tituloForm">Genêro:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex.Fantasia">
-                </div>
-            </div>
-            <div class="areaBtn">
-            <button class="btnRosa">Pesquisar</button>
-            </div>
-            </section>
-        </form>
-
+    <div class="filtrosEmprestimos">
+        <select class="selectQuaseRosa">
+            <option value="" disabled selected hidden>Em Atrazo</option>
+            <option value="2">1 Semana</option>
+            <option value="0">1 Mês</option>
+            <option value="1">Mais de um Mêes</option>
+        </select>
+        <select class="selectQuaseRosa">
+            <option value="" disabled selected hidden>Em Prazo</option>
+            <option value="2">falta 1 Semana</option>
+            <option value="0">falta 1 Mês</option>
+            <option value="1">falta Mais de um Mês</option>
+        </select>
     </div>
+
     <div class="areaResultadoPesquisa">
-         <div  class="titulo"> <h1>Resultados da Pesquisa:</h1> </div>
         <div class="resultadoPesquisa">
                     <div class="areaLivro">
                     
@@ -214,4 +161,3 @@
         
     </div>
 </body>
-</html>

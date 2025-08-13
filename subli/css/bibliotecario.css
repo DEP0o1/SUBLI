@@ -133,6 +133,7 @@ body{
     background-color: #102E4E;
     color: white;
     padding: 10px;
+    cursor: pointer;
 }
 
 .resultadoPesquisa{
@@ -140,7 +141,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 40px;
 }
 
 .areaLivro{
@@ -162,10 +163,36 @@ body{
 }
 
 .inputForm{
-    width: 100%;
+    width: 1000px;
     height: 25%;
     border-radius: 5px;
     padding: 5px;
     border: 1px solid #A39B91;
     
+}
+  
+
+.filtrosEmprestimos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.selectQuaseRosa{
+    padding: 10px;
+    margin-top:5vh ;
+    border-radius:5px;
+    font-size: medium;
+    border-radius: 15px;
+    background-color: #F2ECE7;
+    border-color: #A6244D;
+    color: black;
+    margin-bottom: 5vh ;
+}
+
+.selectQuaseRosa option{
+    border-radius: 15px;
+    border: 0px;
 }

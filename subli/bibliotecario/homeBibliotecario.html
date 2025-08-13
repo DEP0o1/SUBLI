@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="../css/bibliotecario.css">
     <link rel="stylesheet" href="../css/homeBibliotecario.css">
     <link rel="stylesheet" href="../css/pesquisaBibliotecario.css">
+    <link rel="shortcut icon" href="../img/pequeno terry.webp" type="image/x-icon">
 </head>
 <header>
-    <div > <img src="../img/CorClara.png" alt="" class="logo"></div>
+    <a href="homeBibliotecario.html">
+        <div > <img src="../img/CorClara.png" alt="" class="logo"></div>
+    </a>
     
     <div class="areaPesquisa">
 
@@ -20,18 +23,22 @@
 
         <img src="../img/filtro.svg" alt="">
 
-        <a href="">Pesquisa Avançada</a>
+        <a href="pesquisaLivroBibliotecario.html">Pesquisa Avançada</a>
     </div>
 
     <div class="abas">
-    <a>Empréstimos</a>
+    <a href="emprestimoPesquisa.html">Empréstimos</a>
     <a>Módulos</a>
-    <a>Leitor</a>
+    <a href="cadastrarLeitor.html">Leitor</a>
 
     <select name="Cadastros" class="Cadastros">
         <option value="" disabled selected hidden>Cadastros</option>
-        <option value="0">Cadastrar Livro</option>
+        <a href="cadastrarLivro.html">
+         <option value="0">Cadastrar Livro</option>
+        </a>
+        <a href=""cadastrarLeitor>
         <option value="1">Cadastrar Leitor</option>
+        </a>
         <option value="2">Cadastrar Evento</option>
       </select>
 
@@ -42,9 +49,11 @@
 <body>
 
     
-    <div class="areaResultadoPesquisa">
-        <div  class="titulo"> <h1>Resultados da Pesquisa:</h1> </div>
+    <div class="areaDoacoes">
+        <div  class="doacoesTitulo"> <h1>Doações</h1>
+    </div>
        <div class="resultadoPesquisa">
+        <div class="setaEsquerda"> <img src="../img/LEFT.png" alt=""> </div>
                    <div class="areaLivro">
                    
                    <img src="../img/robo.webp" alt="" class="capaLivro">
@@ -88,9 +97,59 @@
    
        </div>
 
-
-
-       
+       <div class="setaDireita"> <img src="../img/RIGHT.png" alt=""> </div>
    </div>
+
+   <div class="areaEventos">
+        <div class="eventosTitulo"> <h1>Eventos</h1></div>
+               <div class="resultadoEventos">
+        <div class="setaEsquerda"> <img src="../img/LEFT.png" alt=""> </div>
+                   <div class="areaEvento">
+                   
+                   <h2>Nome do Evento</h2>
+                   <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia, autem ab consectetur cum placeat vel distinctio aut, dignissimos, sint voluptatum voluptas! Odit, non qui delectus soluta ipsum quasi necessitatibus.</h3> 
+                   <p>data: 11/09/2025</p>
+                   <button class="btnRosa ">Ver Mais</button>
+                   </div>
+
+                    <div class="areaEvento">
+                   
+                   <h2>Nome do Evento</h2>
+                   <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia, autem ab consectetur cum placeat vel distinctio aut, dignissimos, sint voluptatum voluptas! Odit, non qui delectus soluta ipsum quasi necessitatibus.</h3> 
+                   <p>data: 11/09/2025</p>
+                   <button class="btnRosa ">Ver Mais</button>
+                   </div>
+
+                    <div class="areaEvento">
+                   
+                   <h2>Nome do Evento</h2>
+                   <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia, autem ab consectetur cum placeat vel distinctio aut, dignissimos, sint voluptatum voluptas! Odit, non qui delectus soluta ipsum quasi necessitatibus.</h3> 
+                   <p>data: 11/09/2025</p>
+                   <button class="btnRosa ">Ver Mais</button>
+                   </div>
+
+                    <div class="areaEvento">
+                   
+                   <h2>Nome do Evento</h2>
+                   <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia, autem ab consectetur cum placeat vel distinctio aut, dignissimos, sint voluptatum voluptas! Odit, non qui delectus soluta ipsum quasi necessitatibus.</h3> 
+                   <p>data: 11/09/2025</p>
+                   <button class="btnRosa ">Ver Mais</button>
+                   </div>
+
+                    <div class="areaEvento">
+                   
+                   <h2>Nome do Evento</h2>
+                   <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo mollitia, autem ab consectetur cum placeat vel distinctio aut, dignissimos, sint voluptatum voluptas! Odit, non qui delectus soluta ipsum quasi necessitatibus.</h3> 
+                   <p>data: 11/09/2025</p>
+                   <button class="btnRosa ">Ver Mais</button>
+                   </div>
+   
+                   <div class="setaDireita"> <img src="../img/RIGHT.png" alt=""> </div>
+       </div>
+   </div>
+   <div class="btnNovoEvento"> <button class="btnRosa">NOVO EVENTO</button></div>
+   </div>
+
+
 </body>
 </html>
