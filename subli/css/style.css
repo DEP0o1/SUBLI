@@ -3,7 +3,10 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+a{
+  font-size:  medium;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 header{
     display: flex;
     flex-direction: row;
@@ -26,6 +29,8 @@ header{
     gap: 50px;
     display: flex;
     flex-direction: row;
+    display: flex;
+    align-items: center;
 }
 
 body{

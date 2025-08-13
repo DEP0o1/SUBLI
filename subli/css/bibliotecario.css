@@ -3,6 +3,13 @@ padding: 0px;
 margin: 0;
 }
 
+a{
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;    
+    color: white;
+}
+
 header{
     display: flex;
     flex-direction: row;
@@ -39,6 +46,7 @@ body{
     gap: 50px;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .formPesquisa{
@@ -52,6 +60,8 @@ body{
     padding-bottom: 3%;
     padding-top: 4%;
     display: flex;
+    width: auto;
+    padding-left: 1%;
 }
 
 .form{
@@ -157,4 +167,5 @@ body{
     border-radius: 5px;
     padding: 5px;
     border: 1px solid #A39B91;
+    
 }
