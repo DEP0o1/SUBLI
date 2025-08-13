@@ -37,12 +37,6 @@ body{
   background-color: #F2ECE7;
 }
 
-.setaVoltar{
-  height: 30px;
-  margin-left: 100px;
-  margin-top: 50px;
-}
-
 .info{
   display: flex;
   flex-direction: row;
