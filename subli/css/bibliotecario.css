@@ -3,6 +3,15 @@ padding: 0px;
 margin: 0;
 }
 
+
+:root {
+    --vinho: #a32950;
+    --azul: #102e4e;
+    --amarelo: #fdc18d;
+    --branco: #fffbf7;
+    --bege: #b59e8b;
+    --fundo: #f2ece7;
+  }
 a{
     font-size: medium;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,6 +42,26 @@ body{
     background-size: 100%;
 }
 
+details {
+    font:
+      16px "Open Sans",
+      Calibri,
+      sans-serif;
+    width: auto;
+  }
+  
+  details > summary {
+    padding: 2px 6px;
+    width: 15em;
+    border: none;
+    cursor: pointer ;
+  }
+
+  details > a {
+    color: #fff;
+    cursor: pointer ;
+    padding: 5px;
+  }
 
 
 .logo{
@@ -155,6 +184,8 @@ body{
     width: 170px;
     height: 392px;
     text-wrap: auto;
+    background-color:#faf6f0 ;
+    border-radius: 10px;
 }
 
 .capaLivro{
@@ -196,3 +227,36 @@ body{
     border-radius: 15px;
     border: 0px;
 }
+
+.selecionarCadastro{
+    width: auto;
+}
+
+.dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    background-color: var(--vinho);
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    overflow: auto;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: var(--branco);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .show {display: block;}
