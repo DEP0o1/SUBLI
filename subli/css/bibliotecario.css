@@ -96,6 +96,33 @@ body{
     width: 30%;
 }
 
+.setaEsquerda{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #A6244D;
+    cursor: pointer;
+}
+
+.setaEsquerda img{
+    width: 30px;
+    height: 30px;
+}
+
+.setaDireita{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #A6244D;
+    cursor: pointer;
+}
+
+.setaDireita img{
+    width: 30px;
+    height: 30px;
+}
 
 .btnForm{
     gap: 50px;
@@ -195,7 +222,6 @@ body{
     border: 1px solid #A39B91;
     
 }
-  
 
 .filtrosEmprestimos{
     display: flex;

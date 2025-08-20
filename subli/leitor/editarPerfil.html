@@ -4,46 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
+    <link rel="stylesheet" href="../css/leitor.css"/>
     <link rel="stylesheet" href="../css/leitorPerfil.css" />
   </head>
   <body>
-    <section class="perfil">
-      <img src="../img/peter.jpg" alt="" />
-      <h1>Olá, Peter Pan!</h1>
-      <a href="editarPerfil.html"><h2>Editar perfil</h2></a>
-      <a href="meusLivros.html"><h2>Meus livros</h2></a>
-      <a href="livroLeitor.html"><h2>Doar</h2></a>
-      <a href="livroLeitor.html"><h2>Solicitar Evento</h2></a>
-      <button>Logout</button>
-    </section>
+    <header>
+      <a href="">
+        <img src="../img/CorClara.png" alt="" class="logo" />
+      </a>
 
-    <section class="areaPerfil">
-      <form action="">
-        <div class="titulo-areaPerfil">
-            <h1>Editar Perfil</h1>
-            <hr/>
+      <form action="resultado.html" class="areaPesquisa">
+        <div class="divInput">
+          <input type="text" placeholder="Faça sua Pesquisa" class="input" />
+          <img src="../img/pesquisa.webp" alt="" class="lupa" />
         </div>
 
-        <img src="../img/peter.jpg" alt="" />
-        <label for="">Alterar foto de perfil</label>
-
-        <div class="label-input">
-          <label for="">Alterar nome: </label>
-          <input type="text" />
-        </div>
-
-        <div class="label-input">
-          <label for="">Alterar E-Mail: </label>
-          <input type="text" />
-        </div>
-
-        <div class="label-input">
-          <label for="">Alterar senha: </label>
-          <input type="password" />
-        </div>
-
-        <button type="submit">Salvar alterações</button>
+        <img src="../img/filtro.svg" alt="" />
       </form>
-    </section>
+
+      <div class="abas">
+        <a href="">Destaques</a>
+        <a href="">Bibliotecas</a>
+        <a href="">Doação</a>
+      </div>
+    </header>
+
+    <main>
+      <aside class="perfil">
+        <img src="../img/peter.jpg" alt="" />
+        <h1>Olá, Peter Pan!</h1>
+        <a href="editarPerfil.html"><h2>Editar perfil</h2></a>
+        <a href="meusLivros.html"><h2>Meus livros</h2></a>
+        <a href="livroLeitor.html"><h2>Doar</h2></a>
+        <a href="livroLeitor.html"><h2>Solicitar Evento</h2></a>
+        <button>Logout</button>
+      </aside>
+  
+      <section class="areaPerfil">
+        <form action="">
+          <div class="titulo-areaPerfil">
+              <h1>Editar Perfil</h1>
+              <hr/>
+          </div>
+  
+          <img src="../img/peter.jpg" alt="" />
+          <label for="">Alterar foto de perfil</label>
+  
+          <div class="label-input">
+            <label for="">Alterar nome: </label>
+            <input type="text" />
+          </div>
+  
+          <div class="label-input">
+            <label for="">Alterar E-Mail: </label>
+            <input type="text" />
+          </div>
+  
+          <div class="label-input">
+            <label for="">Alterar senha: </label>
+            <input type="password" />
+          </div>
+  
+          <button type="submit">Salvar alterações</button>
+        </form>
+      </section>
+    </main>
   </body>
 </html>

@@ -1,20 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/leitorPerfil.css" />
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Perfil</title>
+        <link rel="stylesheet" href="../css/leitor.css"/>
+        <link rel="stylesheet" href="../css/leitorPerfil.css" />
+        <link rel="stylesheet" href="../css/livro.css">
+      </head>
 <body>
-    <section class="perfil">
-        <img src="../img/peter.jpg" alt="" />
-        <h1>Olá, Peter Pan!</h1>
-        <a href="editarPerfil.html"><h2>Editar perfil</h2></a>
-        <a href="meusLivros.html"><h2>Meus livros</h2></a>
-        <a href="livroLeitor.html"><h2>Doar</h2></a>
-        <a href="livroLeitor.html"><h2>Solicitar Evento</h2></a>
-        <button>Logout</button>
-      </section>
+    <header>
+        <a href="indexLeitor.html">
+          <img src="../img/CorClara.png" alt="" class="logo" />
+        </a>
+  
+        <form action="resultado.html" class="areaPesquisa">
+          <div class="divInput">
+            <input type="text" placeholder="Faça sua Pesquisa" class="input" />
+            <img src="../img/pesquisa.webp" alt="" class="lupa" />
+          </div>
+  
+          <img src="../img/filtro.svg" alt="" />
+        </form>
+  
+        <div class="abas">
+          <a href="">Destaques</a>
+          <a href="">Bibliotecas</a>
+          <a href="">Doação</a>
+        </div>
+      </header>
+
+    <main>
+        <section class="perfil">
+            <img src="../img/peter.jpg" alt="" />
+            <h1>Olá, Peter Pan!</h1>
+            <a href="editarPerfil.html"><h2>Editar perfil</h2></a>
+            <a href="meusLivros.html"><h2>Meus livros</h2></a>
+            <a href="livroLeitor.html"><h2>Doar</h2></a>
+            <a href="livroLeitor.html"><h2>Solicitar Evento</h2></a>
+            <button>Logout</button>
+          </section>
+
+          <div class="exibirLivros">
+            <button class="seta">
+              <img
+                src="../img/arrow_back_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""
+              />
+            </button>
+      
+            <div class="livro">
+              <img src="../img/capa livro.jpg" alt="" />
+              <h2>Pequeno principe</h2>
+              <p>machado de assis</p>
+              <button>Ver Mais</button>
+            </div>
+      
+            <div class="livro">
+              <img src="../img/capa livro.jpg" alt="" />
+              <h2>Pequeno principe</h2>
+              <p>machado de assis</p>
+              <button>Ver Mais</button>
+            </div>
+      
+            <div class="livro">
+              <img src="../img/capa livro.jpg" alt="" />
+              <h2>Pequeno principe</h2>
+              <p>machado de assis</p>
+              <button>Ver Mais</button>
+            </div>
+      
+            <div class="livro">
+              <img src="../img/capa livro.jpg" alt="" />
+              <h2>Pequeno principe</h2>
+              <p>machado de assis</p>
+              <button>Ver Mais</button>
+            </div>
+      
+            <div class="livro">
+              <img src="../img/capa livro.jpg" alt="" />
+              <h2>Pequeno principe</h2>
+              <p>machado de assis</p>
+              <button>Ver Mais</button>
+            </div>
+      
+            <button class="seta">
+              <img
+                src="../img/arrow_forward_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+                alt=""
+              />
+            </button>
+          </div>
+    </main>
 </body>
 </html>
