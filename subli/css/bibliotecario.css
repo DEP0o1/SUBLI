@@ -43,6 +43,10 @@ header{
     height: 4%;
 }
 
+header ::content{
+    width: fit-content;
+}
+
 body{
     background-color: #F2ECE7;
     display: flex;
@@ -104,15 +108,14 @@ body{
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #A6244D;
-    color: white;
+    background-color: var(--vinho);
+    color:var(--branco);
     border: none;
-    font-weight: 100;
     border-radius: 10px;
-    gap: 10px;
     cursor: pointer;
     width: 100%;
     height: 10%;
+    overflow: hidden;
 }
 
 .leitoresEncontrados{

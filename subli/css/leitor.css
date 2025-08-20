@@ -1,6 +1,8 @@
 *{
 padding: 0px;
 margin: 0;
+overflow-x: hidden;
+box-sizing: border-box; 
 }
 
 :root {
@@ -39,7 +41,7 @@ margin: 0;
     align-items: center;
     justify-content: center ;
     gap: 1%;
-    width: 100%;
+    width: 80%;
     padding-left: 30px;
     padding-right: 30px;
     text-wrap: nowrap;
@@ -89,8 +91,13 @@ margin: 0;
     align-items: center;
 }
 
+.abas a{
+    width: fit-content;
+}
+
 /* header */
 body{
+    background-color: var(--fundo);
     display: flex;
     flex-direction: column;
     justify-content: center;  
@@ -106,7 +113,6 @@ body{
 }
 
 .areaPesquisa{
-    
     display: flex;
     flex-direction: row;
     gap: 10px;

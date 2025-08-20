@@ -26,6 +26,7 @@ h4 {
   --bege: #b59e8b;
   --fundo: #f2ece7;
   --cinza: #857D72;
+
 }
 
 body {
@@ -60,24 +61,31 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   margin: 20px;
 }
 
-.pesquisa select {
-  background-color: var(--vinho);
-  border: none;
-  border-radius: 5px;
-  color: var(--branco);
-  padding: 5px;
+.categoria{
+  background-color: var(--branco);
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid var(--bege);
 }
 
-.pesquisa button {
-  background-color: var(--vinho);
-  border: none;
-  padding: 10 5 10 5;
-  border-radius: 5px;
+.categoria p{
+  color: var(--bege);
 }
+
+.pesquisa a{
+  display: flex;
+  background-color: var(--vinho);
+  color: var(--branco);
+  padding: 5px;
+  border-radius: 10px;
+}
+
 
 .exibirLivros {
   display: flex;
