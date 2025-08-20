@@ -7,44 +7,42 @@
     <link rel="stylesheet" href="../css/bibliotecario.css">
     <link rel="stylesheet" href="../css/homeBibliotecario.css">
     <link rel="stylesheet" href="../css/pesquisaBibliotecario.css">
+    <script src="../js/componentesJS/header.js"></script>
+    
     <link rel="shortcut icon" href="../img/pequeno terry.webp" type="image/x-icon">
 </head>
-<header>
+  <header>
     <a href="homeBibliotecario.html">
-        <div > <img src="../img/CorClara.png" alt="" class="logo"></div>
+      <div><img src="../img/CorClara.png" alt="" class="logo" /></div>
     </a>
-    
+
     <div class="areaPesquisa">
+      <div class="divInput">
+        <input type="text" placeholder="Faça sua Pesquisa" class="input" />
+        <img src="../img/pesquisa.webp" alt="" class="lupa" />
+      </div>
 
-        <div class="divInput">     
-        <input type="text" placeholder="Faça sua Pesquisa" class="input">
-        <img src="../img/pesquisa.webp" alt="" class="lupa">
-        </div>
+      <img src="../img/filtro.svg" alt="" />
 
-        <img src="../img/filtro.svg" alt="">
-
-        <a href="pesquisaLivroBibliotecario.html">Pesquisa Avançada</a>
+      <a href="pesquisaLivroBibliotecario.html">Pesquisa Avançada</a>
     </div>
 
     <div class="abas">
-    <a href="emprestimoPesquisa.html">Empréstimos</a>
-    <a>Módulos</a>
-    <a href="cadastrarLeitor.html">Leitor</a>
+      <a href="emprestimoPesquisa.html">Empréstimos</a>
+      <a>Módulos</a>
+      <a href="cadastrarLeitor.html">Leitor</a>
 
-    <select name="Cadastros" class="Cadastros">
-        <option value="" disabled selected hidden>Cadastros</option>
-        <a href="cadastrarLivro.html">
-         <option value="0">Cadastrar Livro</option>
-        </a>
-        <a href=""cadastrarLeitor>
-        <option value="1">Cadastrar Leitor</option>
-        </a>
-        <option value="2">Cadastrar Evento</option>
-      </select>
+      <div class="dropdown">
+        <button onclick="desceCoisa()" class="dropbtn">Cadastros:</button>
+        <div id="Dropdown" class="dropdown-content">
+          <a href="../bibliotecario/cadastrarLivro.html">Cadrastar Livro</a>
+          <a href="../bibliotecario/cadastrarLeitor.html">Cadrastar Leitor</a>
+          <a href="../bibliotecario/cadastrarEvento.html">Cadrastar Evento</a>
+        </div>
+      </div>
 
     </div>
-
-    </header>
+  </header>
 <body>
     <div class="filtrosEmprestimos">
         <select class="selectQuaseRosa">

@@ -7,35 +7,42 @@
     <link rel="stylesheet" href="../css/bibliotecario.css" />
     <link rel="stylesheet" href="../css/homeBibliotecario.css" />
     <link rel="stylesheet" href="../css/livroBibliotecario.css">
+    <script src="../js/componentesJS/header.js"></script>
+    
   </head>
   <body>
-    <header>
+  <header>
+    <a href="homeBibliotecario.html">
       <div><img src="../img/CorClara.png" alt="" class="logo" /></div>
+    </a>
 
-      <div class="areaPesquisa">
-        <div class="divInput">
-          <input type="text" placeholder="Faça sua Pesquisa" class="input" />
-          <img src="../img/pesquisa.webp" alt="" class="lupa" />
+    <div class="areaPesquisa">
+      <div class="divInput">
+        <input type="text" placeholder="Faça sua Pesquisa" class="input" />
+        <img src="../img/pesquisa.webp" alt="" class="lupa" />
+      </div>
+
+      <img src="../img/filtro.svg" alt="" />
+
+      <a href="pesquisaLivroBibliotecario.html">Pesquisa Avançada</a>
+    </div>
+
+    <div class="abas">
+      <a href="emprestimoPesquisa.html">Empréstimos</a>
+      <a>Módulos</a>
+      <a href="cadastrarLeitor.html">Leitor</a>
+
+      <div class="dropdown">
+        <button onclick="desceCoisa()" class="dropbtn">Cadastros:</button>
+        <div id="Dropdown" class="dropdown-content">
+          <a href="../bibliotecario/cadastrarLivro.html">Cadrastar Livro</a>
+          <a href="../bibliotecario/cadastrarLeitor.html">Cadrastar Leitor</a>
+          <a href="../bibliotecario/cadastrarEvento.html">Cadrastar Evento</a>
         </div>
-
-        <img src="../img/filtro.svg" alt="" />
-
-        <a href="">Pesquisa Avançada</a>
       </div>
 
-      <div class="abas">
-        <a>Empréstimos</a>
-        <a>Módulos</a>
-        <a>Leitor</a>
-
-        <select name="Cadastros" class="Cadastros">
-          <option value="" disabled selected hidden>Cadastros</option>
-          <option value="0">Cadastrar Livro</option>
-          <option value="1">Cadastrar Leitor</option>
-          <option value="2">Cadastrar Evento</option>
-        </select>
-      </div>
-    </header>
+    </div>
+  </header>
 
     <main class="areaLivroEmprestado">
   <section class="livroEmprestado">
