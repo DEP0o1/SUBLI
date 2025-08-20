@@ -33,7 +33,7 @@ input{
 header{
     display: flex;
     flex-direction: row;
-    background-color: #A6244D;
+    background-color: var(--vinho);
     color: white;
     justify-content: space-between ;
     align-items: center;
@@ -236,12 +236,13 @@ body{
   
   .dropdown-content {
     background-color: var(--vinho);
-    display: none;
+    /* display: none; */
     position: absolute;
     min-width: auto;
-    overflow: none;
+    overflow: hidden;
     z-index: 1;
-    transition: 1.s;
+    height: 0;
+    transition: 0.5s;
     border-radius: 10px;
   }
   
@@ -253,4 +254,6 @@ body{
     margin-right: 10px;
   }
   
-  .show {display: block;}
+  .show {
+    height: 198px;
+}
