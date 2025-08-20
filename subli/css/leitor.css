@@ -80,7 +80,6 @@ margin: 0;
     height: 80px;
 }
 
-
 .abas{
     font-size: x-small;
     gap: 50px;
@@ -95,7 +94,6 @@ body{
     flex-direction: column;
     justify-content: center;  
     width: auto;
-    
 }
 
 .btnHeader{   
