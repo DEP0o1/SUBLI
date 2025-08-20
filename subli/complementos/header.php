@@ -1,4 +1,4 @@
-<html>
+
 <header>
         <div class="logo">
         </div>
@@ -19,5 +19,3 @@
             <div class="perfil"></div>
         </div>
     </header>
-    
-</html>

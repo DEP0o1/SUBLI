@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  margin: 40px;
+}
+
+a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+p,
+h2,
+h3,
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --vinho: #a32950;
+  --azul: #102e4e;
+  --amarelo: #fdc18d;
+  --branco: #fffbf7;
+  --bege: #b59e8b;
+  --fundo: #f2ece7;
+  --cinza: #857d72;
+}
+
+body {
+  background-color: var(--fundo);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: flex;
+}
+
+.perfil h1 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.perfil button {
+  background-color: var(--vinho);
+  color: var(--branco);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.perfil h2 {
+  border-bottom: solid 2px var(--branco);
+  padding: 0 37px;
+}
+
+.perfil {
+  background-color: var(--azul);
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 20vw;
+  height: 100vh;
+  position: sticky;
+}
+
+.perfil img {
+  height: 150px;
+  width: 150px;
+  border-radius: 200px;
+}
+
+.areaPerfil form {
+  border: 1px solid var(--cinza);
+  color: var(--cinza);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70vh;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.areaPerfil input {
+  width: 50vw;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+}
+
+.areaPerfil hr {
+  background-color: var(--cinza);
+  width: 50vw;
+}
+
+.areaPerfil img {
+  height: 150px;
+  width: 150px;
+  border-radius: 200px;
+}
+
+.areaPerfil h1 {
+  margin: 0;
+}
+
+.areaPerfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.areaPerfil button {
+  text-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--vinho);
+  color: var(--branco);
+  border: none;
+  font-weight: 100;
+  border-radius: 10px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.titulo-areaPerfil {
+  width: 50vw;
+}

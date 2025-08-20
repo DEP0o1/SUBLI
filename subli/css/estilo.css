@@ -25,6 +25,7 @@ h4 {
   --branco: #fffbf7;
   --bege: #b59e8b;
   --fundo: #f2ece7;
+  --cinza: #857D72;
 }
 
 body {
@@ -152,46 +153,6 @@ body {
   border: none;
   box-shadow: none;
   padding: 10px;
-}
-
-.perfil h1 {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-a {
-  border: none;
-  color: none;
-}
-
-.perfil button {
-  background-color: var(--vinho);
-  color: var(--branco);
-  border: none;
-  padding: 8px 14px;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.perfil h2 {
-  border-bottom: solid 2px var(--branco);
-}
-
-.perfil {
-  background-color: var(--azul);
-  color: var(--branco);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 20vw;
-  height: 100vh;
-}
-
-.perfil img {
-  height: 100px;
-  width: 100px;
-  border-radius: 200px;
 }
 
 
