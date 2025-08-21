@@ -1,0 +1,208 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a{
+  font-size:  medium;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: #A6244D;
+    color: white;
+    justify-content: space-between ;
+    align-items: center;
+    padding: 0%;
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 4%;
+}
+
+.logo{
+    width: 10%;
+}
+
+.abas{
+    font-size: x-small;
+    gap: 50px;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+body{
+  background-color: #F2ECE7;
+}
+
+/*--------------------------------------------------------------*/
+
+.info{
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  gap: 20px;
+}
+
+p{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.evento{
+  width: 100vh;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 300px;
+  gap: 30px;
+}
+
+.titulos{
+  gap: 20px;
+}
+
+.aceitar{
+  background-color: #F2ECE7;
+  border-color: #A6244D;
+  color: #A6244D;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+}
+
+.recusar{
+  background-color: #A6244D;
+  color: #F2ECE7;
+  border: none;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+.evento{
+  margin-left: 10vw;
+  width: 80vw;
+  height: 100vh;
+}
+
+}
+
+
+
+
+/*--------------------------------------------------------------*/
+
+.livroDoado{
+  height: 360px;
+  width: 262px;
+}
+
+.areaLivroDoado{
+  display: flex;
+  justify-content: center;
+}
+
+.doacao{
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  border-style: solid;
+  border-color: #B59E8B;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 20px;
+}
+
+.infoLivroDoado{
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px
+}
+
+.linha{
+  height: 1.5px;
+  background-color: black;
+}
+
+.areaCardsDoacao{
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nomeDoador{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardDoacao{
+  width: 342px;
+  display: flex;
+  gap: 15px;
+  border: 1px;
+  border-style: solid;
+  border-color: #B59E8B;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.infoCard{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  font-size: 0.7rem;
+  gap: 10px;
+}
+
+.livroDoadoCard{
+  width: 75px;
+  height: 111px;
+}
+
+.verDoacao{
+  background-color: #102E4E;
+  color: #F2ECE7;
+  border: none;
+  border-radius: 5px;
+  width: 78px;
+  font-size: 0.7rem;
+  padding: 5px;
+}
+
+@media only screen and  (max-width: 600px) {
+  
+  .doacao{
+    width: 80vw;
+    flex-direction: column;
+  }
+
+  .doacao p {
+    width: 70vw;
+  }
+
+  .doacao h1{
+    width: 70vw;
+  }
+
+  .linha {
+    width: 70vw;
+  }
+
+  .areaCardsDoacao{
+    flex-direction: column;
+    margin-left: 4vw;
+  }
+
+}
+
+
+

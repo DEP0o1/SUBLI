@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  margin: 40px;
+}
+
+p,
+h2,
+h3,
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --vinho: #a32950;
+  --azul: #102e4e;
+  --amarelo: #fdc18d;
+  --branco: #fffbf7;
+  --bege: #b59e8b;
+  --fundo: #f2ece7;
+  --cinza: #857D72;
+
+}
+main{
+  margin-bottom: 20px;
+  height: 100%;
+}
+body {
+  background-color: var(--fundo);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+#seta {
+  background-color: var(--vinho);
+  border: none;
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  color: var(--branco);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgbanner {
+  background-image: url(../img/banner.png);
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pesquisa {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.categoria{
+  background-color: var(--branco);
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--bege);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: hidden;
+  gap: 5px;
+}
+
+.categoria p{
+  color: var(--bege);
+}
+
+.categoria span{
+  overflow:  hidden ;
+  cursor: pointer;
+}
+
+.pesquisa a{
+  display: flex;
+  background-color: var(--vinho);
+  color: var(--branco);
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.exibirLivros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+  gap: 20px;
+}
+
+.exibirLivrosMeio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: fit-content;
+  margin-top: 0%;
+}
+
+.livro {
+  border-radius: 5px;
+  padding: 10px;
+  width: 163px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: solid grey 1px;
+  background-color: var(--branco);
+  height: 380px;
+}
+
+.livro img {
+  width: 140px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.livro h2 {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.livro p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.livro button {
+  background-color: var(--vinho);
+  color: var(--branco);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.doacaoLivros {
+  display: flex;
+  padding-left: 12vw;
+  padding-right: 12vw;
+  gap: 50px;
+  display: flex;
+}
+
+.doacaoLivros h1 {
+  margin-left: 0;
+  padding: 0;
+}
+
+
+.doacaoLivros img {
+  height: auto;
+  width: 500px;
+}
+
+.textoDoar{
+  display: flex;
+  align-items: end;
+  width: 1000px;
+}
+
+.textoDoar a{
+  border-radius: 10px;
+  background-color: var(--vinho);
+  padding: 10px;
+}
+.doacaotexto{
+  flex-direction: column;
+  display: flex;
+  gap: 20px;
+}
+
+.doacaotexto h1{
+  padding: 0;
+  margin: 0;
+}

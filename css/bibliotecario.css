@@ -1,0 +1,316 @@
+*{
+padding: 0px;
+margin: 0;
+}
+
+
+:root {
+    --vinho: #a32950;
+    --azul: #102e4e;
+    --amarelo: #fdc18d;
+    --branco: #fffbf7;
+    --bege: #b59e8b;
+    --fundo: #f2ece7;
+  }
+a{
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;    
+    color: white;
+}
+
+input{
+    width: 100%;
+    height: 25%;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--vinho);
+    color: white;
+    justify-content: space-between ;
+    align-items: center;
+    padding: 0%;
+    padding-right: 30px;
+    padding-left: 30px;
+    height: 4%;
+}
+
+header ::content{
+    width: fit-content;
+}
+
+body{
+    background-color: #F2ECE7;
+    display: flex;
+    justify-content:center ;
+    flex-direction: column;
+    margin-bottom: 2%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+nav{
+    display: flex;
+    gap: 50px;
+}
+
+.logo{
+    width: 100px;
+    height: 80px;
+    padding: 0px;
+}
+
+.abas{
+    font-size: x-small;
+    gap: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.formPesquisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.titulo{
+    padding-bottom: 3%;
+    padding-top: 4%;
+    display: flex;
+    width: auto;
+    padding-left: 1%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 30%;
+}
+
+.setaEsquerda{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #A6244D;
+    cursor: pointer;
+}
+
+.setaEsquerda img{
+    width: 30px;
+    height: 30px;
+}
+
+.setaDireita{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #A6244D;
+    cursor: pointer;
+}
+
+.setaDireita img{
+    width: 30px;
+    height: 30px;
+}
+
+.btnForm{
+    gap: 50px;
+    display: flex;
+}
+
+.btnRosa{
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--vinho);
+    color:var(--branco);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    height: 10%;
+    overflow: hidden;
+}
+
+.leitoresEncontrados{
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+}
+
+.leitor{
+    width: 30%;
+    border-radius: 100px;
+    border: 2px solid #A9A9A9;
+}
+
+.leitorEncontrado{
+    width: 15%;
+    background-color: white;
+    font-size: small;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-left: 6%;
+    margin-top: 3%;
+    border: 2px solid #A9A9A9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.infoLeitor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.btnAzul{
+    border-radius: 10px;
+    background-color: #102E4E;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.resultadoPesquisa{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.areaLivro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    border: 2px solid #A39B91;
+    width: 170px;
+    height: 392px;
+    text-wrap: auto;
+    background-color:#faf6f0 ;
+    border-radius: 10px;
+}
+
+.capaLivro{
+ height: 222px;
+ width: 150px;
+}
+
+.inputForm{
+    width: 1000px;
+    height: 25%;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #A39B91;
+    
+}
+
+.filtrosEmprestimos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.selectQuaseRosa{
+    padding: 10px;
+    margin-top:5vh ;
+    border-radius:5px;
+    font-size: medium;
+    border-radius: 15px;
+    background-color: #F2ECE7;
+    border-color: #A6244D;
+    color: black;
+    margin-bottom: 5vh ;
+}
+
+.selectQuaseRosa option{
+    border-radius: 15px;
+    border: 0px;
+}
+
+.selecionarCadastro{
+    width: auto;
+}
+
+.dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--vinho);
+    transition: 1.s;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .dropdown-content {
+    background-color: var(--vinho);
+    /* display: none; */
+    position: absolute;
+    min-width: auto;
+    overflow: hidden;
+    z-index: 1;
+    height: 0;
+    transition: 0.5s;
+    border-radius: 10px;
+  }
+  
+  .dropdown-content a {
+    color: var(--branco);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-right: 10px;
+  }
+  
+  .show {
+    height: 198px;
+}
+
+@media only screen and (max-width: 600px){
+
+header{
+    width: 100vw;
+  }
+
+  input{
+    display: none;
+  }
+
+  /* nav{
+    display: none;     
+  }   */
+     /* quando eu coloco essa porra ele nao scrolla
+        mas é necessario pq se nao as coisa nao cabe na header    
+        cu buceta pinto bosta  */
+
+  .pesquisaAvanc{
+    display: none;
+  }
+
+}
+
+
