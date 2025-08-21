@@ -57,7 +57,10 @@ body{
     background-size: 100%;
 }
 
-
+nav{
+    display: flex;
+    gap: 50px;
+}
 
 .logo{
     width: 100px;
@@ -286,3 +289,28 @@ body{
   .show {
     height: 198px;
 }
+
+@media only screen and (max-width: 600px){
+
+header{
+    width: 100vw;
+  }
+
+  input{
+    display: none;
+  }
+
+  /* nav{
+    display: none;     
+  }   */
+     /* quando eu coloco essa porra ele nao scrolla
+        mas é necessario pq se nao as coisa nao cabe na header    
+        cu buceta pinto bosta  */
+
+  .pesquisaAvanc{
+    display: none;
+  }
+
+}
+
+

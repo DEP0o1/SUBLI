@@ -37,6 +37,8 @@ body{
   background-color: #F2ECE7;
 }
 
+/*--------------------------------------------------------------*/
+
 .info{
   display: flex;
   flex-direction: row;
@@ -78,6 +80,20 @@ p{
   padding: 10px 30px 10px 30px;
   border-radius: 10px;
 }
+
+
+@media only screen and (max-width: 600px) {
+
+.evento{
+  margin-left: 10vw;
+  width: 80vw;
+  height: 100vh;
+}
+
+}
+
+
+
 
 /*--------------------------------------------------------------*/
 
@@ -162,7 +178,31 @@ p{
   padding: 5px;
 }
 
+@media only screen and  (max-width: 600px) {
+  
+  .doacao{
+    width: 80vw;
+    flex-direction: column;
+  }
 
+  .doacao p {
+    width: 70vw;
+  }
+
+  .doacao h1{
+    width: 70vw;
+  }
+
+  .linha {
+    width: 70vw;
+  }
+
+  .areaCardsDoacao{
+    flex-direction: column;
+    margin-left: 4vw;
+  }
+
+}
 
 
 
