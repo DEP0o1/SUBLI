@@ -6,7 +6,7 @@
 	private function Conectar()
  	{
  		try {
- 			$this->conexao = new PDO('mysql:dbname=escola;host=localhost;', 'root', 'root');
+ 			$this->conexao = new PDO('mysql:dbname=subli;host=localhost;', 'root', 'root');
  			$this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->conexao->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf8mb4');
 		} catch (PDOException $Erro) {
