@@ -1,7 +1,6 @@
 *{
 padding: 0px;
 margin: 0;
-overflow-x: hidden;
 box-sizing: border-box; 
 }
 
@@ -38,6 +37,7 @@ box-sizing: border-box;
     justify-content: space-between ;
     width: 100%;
     align-items: center;
+    
     padding-right: 30px;
     padding-left: 30px;
     height: fit-content;

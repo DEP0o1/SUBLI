@@ -3,13 +3,11 @@
 
 * {
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 h1 {
   font-family: "Times New Roman", Times, serif;
   margin: 40px;
-
 }
 
 p,
@@ -97,7 +95,6 @@ body {
   overflow:  hidden ;
   cursor: pointer;
 }
-
 
 .pesquisa a{
   display: flex;
