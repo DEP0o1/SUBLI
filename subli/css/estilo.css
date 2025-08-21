@@ -120,9 +120,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 40px;
   gap: 20px;
-  height: 60vh;
+  height: fit-content;
+  margin-top: 0%;
 }
 
 .livro {
@@ -135,6 +135,7 @@ body {
   gap: 10px;
   border: solid grey 1px;
   background-color: var(--branco);
+  height: 380px;
 }
 
 .livro img {

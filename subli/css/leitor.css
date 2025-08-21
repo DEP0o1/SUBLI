@@ -146,6 +146,12 @@ body{
 .textoMeio{
     display: flex;
     justify-content: center;
+    margin: 0%;
+}
+
+.textoEsquerda{
+    margin-top: 2%;
+    margin-left: 21.5%;
 }
 
 .areaBanner{
@@ -259,4 +265,3 @@ body{
     width: 30px;
     height: 30px;
 }
-
