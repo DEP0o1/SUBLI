@@ -300,9 +300,13 @@ header{
     display: none;
   }
 
-  /* nav{
+.divInput{
+    display: none;
+}
+
+  nav{
     display: none;     
-  }   */
+  }  
      /* quando eu coloco essa porra ele nao scrolla
         mas é necessario pq se nao as coisa nao cabe na header    
         cu buceta pinto bosta  */
