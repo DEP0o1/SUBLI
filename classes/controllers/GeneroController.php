@@ -2,7 +2,7 @@
 
 class GeneroController extends Banco
 {
-    function ListarGeneros($genero)
+    function ListarGeneros($genero = new Genero())
     {
         $parametros = [
 
@@ -11,10 +11,10 @@ class GeneroController extends Banco
 
         ];
 
-        $this->Executar('listar_generos', $parametros);
+        $this->Consultar('listar_generos', $parametros);
     }
 
-    public function AdicionarGenero($genero)
+    public function AdicionarGenero($genero = new Genero())
     {
         $parametros = [
 
@@ -26,7 +26,7 @@ class GeneroController extends Banco
         $this->Executar('adicionar_genero', $parametros);
     }
 
-    public function AlterarGenero($genero)
+    public function AlterarGenero($genero = new Genero())
     {
         $parametros = [
 
@@ -38,7 +38,7 @@ class GeneroController extends Banco
         $this->Executar('alterar_genero', $parametros);
     }
 
-    public function ExcluirGenero($genero)
+    public function ExcluirGenero($genero = new Genero())
     {
         $parametros = [
 

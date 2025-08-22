@@ -2,22 +2,22 @@
 
 class EventoController extends Banco
 {
-    function ListarEventos()
+    function ListarEventos($evento = new Evento())
     {
 
     }
 
-    public function AdcionarEvento()
+    public function AdicionarEvento($evento = new Evento())
     {
 
     }
 
-    public function AlterarEvento()
+    public function AlterarEvento($evento = new Evento())
     {
 
     }
 
-    public function ExcluirEvento()
+    public function ExcluirEvento($evento = new Evento())
     {
         
     }

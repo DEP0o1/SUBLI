@@ -2,22 +2,22 @@
 
 class BibliotecarioController extends Banco
 {
-    function ListarBibliotecarios()
+    function ListarBibliotecarios($bibliotecario = new Bibliotecario())
     {
 
     }
 
-    public function AdcionarBibliotecario()
+    public function AdicionarBibliotecario($bibliotecario = new Bibliotecario())
     {
 
     }
 
-    public function AlterarBibliotecario()
+    public function AlterarBibliotecario($bibliotecario = new Bibliotecario())
     {
 
     }
 
-    public function ExcluirBibliotecario()
+    public function ExcluirBibliotecario($bibliotecario = new Bibliotecario())
     {
         
     }

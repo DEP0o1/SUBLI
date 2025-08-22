@@ -2,22 +2,22 @@
 
 class ExemplarController extends Banco
 {
-    function ListarExemplares()
+    function ListarExemplares($exemplar = new Exemplar())
     {
 
     }
 
-    public function AdcionarExemplar()
+    public function AdicionarExemplar($exemplar = new Exemplar())
     {
 
     }
 
-    public function AlterarExemplar()
+    public function AlterarExemplar($exemplar = new Exemplar())
     {
 
     }
 
-    public function ExcluirExemplar()
+    public function ExcluirExemplar($exemplar = new Exemplar())
     {
         
     }

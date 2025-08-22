@@ -2,22 +2,22 @@
 
 class LeitorController extends Banco
 {
-    function ListarLeitores()
+    function ListarLeitores($leitor = new Leitor())
     {
 
     }
 
-    public function AdcionarLeitor()
+    public function AdicionarLeitor($leitor = new Leitor())
     {
 
     }
 
-    public function AlterarLeitor()
+    public function AlterarLeitor($leitor = new Leitor())
     {
 
     }
 
-    public function ExcluirLeitor()
+    public function ExcluirLeitor($leitor = new Leitor())
     {
         
     }

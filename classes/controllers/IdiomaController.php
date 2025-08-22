@@ -2,7 +2,7 @@
 
 class IdiomaController extends Banco
 {
-    function ListarIdiomas($idioma)
+    function ListarIdiomas($idioma = new Idioma())
     {
         $parametros = [
 
@@ -11,10 +11,10 @@ class IdiomaController extends Banco
 
         ];
 
-        $this->Executar('listar_idiomas', $parametros);
+        $this->Consultar('listar_idiomas', $parametros);
     }
 
-    public function AdicionarIdioma($idioma)
+    public function AdicionarIdioma($idioma = new Idioma())
     {
         $parametros = [
 
@@ -26,7 +26,7 @@ class IdiomaController extends Banco
         $this->Executar('adicionar_idioma', $parametros);
     }
 
-    public function AlterarIdioma($idioma)
+    public function AlterarIdioma($idioma = new Idioma())
     {
         $parametros = [
 
@@ -38,7 +38,7 @@ class IdiomaController extends Banco
         $this->Executar('alterar_idioma', $parametros);
     }
 
-    public function ExcluirIdioma($idioma)
+    public function ExcluirIdioma($idioma = new Idioma())
     {
         $parametros = [
 

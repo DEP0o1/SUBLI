@@ -2,22 +2,22 @@
 
 class ReservaController extends Banco
 {
-    function ListarReservas()
+    function ListarReservas($reserva = new Reserva())
     {
 
     }
 
-    public function AdcionarReserva()
+    public function AdicionarReserva($reserva = new Reserva())
     {
 
     }
 
-    public function AlterarReserva()
+    public function AlterarReserva($reserva = new Reserva())
     {
 
     }
 
-    public function ExcluirReserva()
+    public function ExcluirReserva($reserva = new Reserva())
     {
         
     }

@@ -2,7 +2,7 @@
 
 class ColecaoController extends Banco
 {
-    function ListarColecoes($colecao)
+    function ListarColecoes($colecao = new Colecao())
     {
         $parametros = [
 
@@ -11,11 +11,11 @@ class ColecaoController extends Banco
 
         ];
 
-        $this->Executar('listar_colecoes', $parametros);
+        $this->Consultar('listar_colecoes', $parametros);
 
     }
 
-    public function AdicionarColecao($colecao)
+    public function AdicionarColecao($colecao = new Colecao())
     {
         $parametros = [
 
@@ -29,7 +29,7 @@ class ColecaoController extends Banco
 
     }
 
-    public function AlterarColecao($colecao)
+    public function AlterarColecao($colecao = new Colecao())
     {
 
         $parametros = [
@@ -42,7 +42,7 @@ class ColecaoController extends Banco
         $this->Executar('alterar_colecao', $parametros);
     }
 
-    public function ExcluirColecao($colecao)
+    public function ExcluirColecao($colecao = new Colecao())
     {
         $parametros = [
 

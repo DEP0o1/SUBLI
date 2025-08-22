@@ -3,23 +3,33 @@
 class AssuntoController extends Banco
 {
 
-    public function ListarAssuntos($assunto)
+    public function ListarAssuntos($assunto = new Assunto())
     {
+        try{
+            $parametros = [
+
+                'p_cd_assunto' => $assunto->cd_assunto,
+                'p_nm_assunto' => $assunto->nm_assunto
+    
+            ];
+    
+            $lista = [];
+            $dados = $this->Consultar('listar_assuntos', $parametros);
+            foreach($dados as $item){
+                $assunto = new Assunto;
+                $assunto->Hydrate($item);
+                array_push($lista, $assunto);
+            }
+            return $lista;
+        }catch (\Throwable $th) {
+            throw $th;
+        }
         
-        $parametros = [
-
-            'p_cd_assunto' => $assunto->cd_assunto,
-            'p_nm_assunto' => $assunto->nm_assunto
-
-        ];
-
-        $this->Executar('listar_assuntos', $parametros);
-
     }
 
-    public function AdicionarAssunto($assunto)
+    public function AdicionarAssunto($assunto = new Assunto())
     {
-
+        try{
         $parametros = [
 
             'p_cd_assunto' => $assunto->cd_assunto,
@@ -28,13 +38,14 @@ class AssuntoController extends Banco
         ];
 
         $this->Executar('adicionar_assunto', $parametros);
-
-
+    }catch (\Throwable $th) {
+        throw $th;
+    }
     }
 
-    public function AlterarAssunto($assunto)
+    public function AlterarAssunto($assunto = new Assunto())
     {
-
+        try{
         $parametros = [
 
             'p_cd_assunto' => $assunto->cd_assunto,
@@ -43,19 +54,26 @@ class AssuntoController extends Banco
         ];
 
         $this->Executar('alterar_assunto', $parametros);
-
+    }catch (\Throwable $th) {
+        throw $th;
+    }
     }
 
-    public function ExcluirAssunto($assunto)
+    public function ExcluirAssunto($assunto = new Assunto())
     {
-        $parametros = [
+        try{
+            $parametros = [
 
-            'p_cd_assunto' => $assunto->cd_assunto,
-            'p_nm_assunto' => $assunto->nm_assunto
-
-        ];
-
-        $this->Executar('excluir_assunto', $parametros);
+                'p_cd_assunto' => $assunto->cd_assunto,
+                'p_nm_assunto' => $assunto->nm_assunto
+    
+            ];
+    
+            $this->Executar('excluir_assunto', $parametros);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    
     }
 }
 ?>

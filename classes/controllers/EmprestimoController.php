@@ -2,22 +2,22 @@
 
 class EmprestimoController extends Banco
 {
-    function ListarEmprestimos()
+    function ListarEmprestimos($emprestimo = new Emprestimo())
     {
 
     }
 
-    public function AdcionarEmprestimo()
+    public function AdicionarEmprestimo($emprestimo = new Emprestimo())
     {
 
     }
 
-    public function AlterarEmprestimo()
+    public function AlterarEmprestimo($emprestimo = new Emprestimo())
     {
 
     }
 
-    public function ExcluirEmprestimo()
+    public function ExcluirEmprestimo($emprestimo = new Emprestimo())
     {
         
     }
