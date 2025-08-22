@@ -2,7 +2,7 @@
 
 class EditoraController extends Banco
 {
-    function ListarEditoras($editora)
+    function ListarEditoras($editora = new Editora())
     {
         $parametros = [
 
@@ -11,10 +11,10 @@ class EditoraController extends Banco
 
         ];
 
-        $this->Executar('listar_editoras', $parametros);
+        $this->Consultar('listar_editoras', $parametros);
     }
 
-    public function AdicionarEditora($editora)
+    public function AdicionarEditora($editora = new Editora())
     {
         $parametros = [
 
@@ -26,7 +26,7 @@ class EditoraController extends Banco
         $this->Executar('adicionar_editora', $parametros);
     }
 
-    public function AlterarEditora($editora)
+    public function AlterarEditora($editora = new Editora())
     {
         $parametros = [
 
@@ -38,7 +38,7 @@ class EditoraController extends Banco
         $this->Executar('alterar_editora', $parametros);
     }
 
-    public function ExcluirEditora($editora)
+    public function ExcluirEditora($editora = new Editora())
     {
         $parametros = [
 

@@ -2,22 +2,22 @@
 
 class LivroController extends Banco
 {
-    function ListarLivros()
+    function ListarLivros($livro = new Livro())
     {
 
     }
 
-    public function AdcionarLivro()
+    public function AdicionarLivro($livro = new Livro())
     {
 
     }
 
-    public function AlterarLivro()
+    public function AlterarLivro($livro = new Livro())
     {
 
     }
 
-    public function ExcluirLivro()
+    public function ExcluirLivro($livro = new Livro())
     {
         
     }

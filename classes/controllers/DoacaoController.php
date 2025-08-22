@@ -2,22 +2,22 @@
 
 class DoacaoController extends Banco
 {
-    function ListarDoacoes()
+    function ListarDoacoes($doacao = new Doacao())
     {
 
     }
 
-    public function AdcionarDoacao()
+    public function AdicionarDoacao($doacao = new Doacao())
     {
 
     }
 
-    public function AlterarDoacao()
+    public function AlterarDoacao($doacao = new Doacao())
     {
 
     }
 
-    public function ExcluirDoacao()
+    public function ExcluirDoacao($doacao = new Doacao())
     {
         
     }
