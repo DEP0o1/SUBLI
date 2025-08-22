@@ -111,6 +111,14 @@ main {
   border-radius: 15px;
 }
 
+.areaPerfil input {
+  color: var(--cinza);
+}
+
+.areaPerfil select {
+  color: var(--cinza)
+}
+
 .areaPerfil select {
   width: 50vw;
   border: none;
@@ -169,6 +177,10 @@ main {
 
 .titulo-areaPerfil {
   width: 50vw;
+}
+
+.areaPerfilLivros h1 {
+  padding-left: 7vw;
 }
 
 .areaPerfilLivros {
