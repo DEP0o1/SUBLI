@@ -5,22 +5,81 @@ class BibliotecarioController extends Banco
     function ListarBibliotecarios($bibliotecario = new Bibliotecario())
     {
 
+         try{
+            $parametros = [
+
+                'p_cd_bibliotecario' => $bibliotecario->cd_bibliotecario,
+                'p_nm_bibliotecario' => $bibliotecario->nm_bibliotecario
+    
+            ];
+    
+            $lista = [];
+            $dados = $this->Consultar('listar_bibliotecarios', $parametros);
+            foreach($dados as $item){
+                $bibliotecario = new Bibliotecario;
+                $bibliotecario->Hydrate($item);
+                array_push($lista, $bibliotecario);
+            }
+            return $lista;
+        }catch (\Throwable $th) {
+            throw $th;
+        }
+        
+
+
     }
 
     public function AdicionarBibliotecario($bibliotecario = new Bibliotecario())
     {
+             try{
+        $parametros = [
 
+            'p_cd_bibliotecario' => $bibliotecario->cd_bibliotecario,
+            'p_nm_bibliotecario' => $bibliotecario->nm_bibliotecario
+
+        ];
+
+        $this->Executar('adicionar_bibliotecario', $parametros);
+    }catch (\Throwable $th) {
+        throw $th;
+    }
+    }
     }
 
     public function AlterarBibliotecario($bibliotecario = new Bibliotecario())
     {
 
+        try{
+        $parametros = [
+
+            'p_cd_bibliotecario' => $bibliotecario->cd_bibliotecario,
+            'p_nm_bibliotecario' => $bibliotecario->nm_bibliotecario
+
+        ];
+
+        $this->Executar('alterar_bibliotecario', $parametros);
+    }catch (\Throwable $th) {
+        throw $th;
+    }
+
     }
 
     public function ExcluirBibliotecario($bibliotecario = new Bibliotecario())
     {
-        
+             try{
+        $parametros = [
+
+            'p_cd_bibliotecario' => $bibliotecario->cd_bibliotecario,
+            'p_nm_bibliotecario' => $bibliotecario->nm_bibliotecario
+
+        ];
+
+        $this->Executar('excluir_bibliotecario', $parametros);
+    }catch (\Throwable $th) {
+        throw $th;
     }
+    }
+
 }
 
 

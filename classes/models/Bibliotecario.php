@@ -4,6 +4,7 @@
         public $nm_bibliotecario;
         public $nm_senha;
         public $cd_registro;
+        
 
         public function __construct($cd_bibliotecario2 = null, $nm_bibliotecario2 = null, $nm_senha2 = null, $cd_registro2 = null)
         {
