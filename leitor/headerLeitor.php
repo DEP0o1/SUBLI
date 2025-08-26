@@ -1,6 +1,8 @@
 <?php
+
+echo '
         <header>
-      <a href="">
+      <a href="indexLeitor.php">
         <img src="../img/CorClara.png" alt="" class="logo" />
       </a>
 
@@ -15,8 +17,8 @@
 
       <div class="abas">
         <a href="">Destaques</a>
-        <a href="Bibliotecas.html">Bibliotecas</a>
+        <a href="Bibliotecas.php">Bibliotecas</a>
         <a href="">Doação</a>
       </div>
-    </header>
+    </header>'
 ?>

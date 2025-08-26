@@ -8,37 +8,10 @@
     <link rel="stylesheet" href="../css/leitorPerfil.css" />
   </head>
   <body>
-    <header>
-      <a href="indexLeitor.html">
-        <img src="../img/CorClara.png" alt="" class="logo" />
-      </a>
-
-      <form action="resultado.html" class="areaPesquisa">
-        <div class="divInput">
-          <input type="text" placeholder="Faça sua Pesquisa" class="input" />
-          <img src="../img/pesquisa.webp" alt="" class="lupa" />
-        </div>
-
-        <img src="../img/filtro.svg" alt="" />
-      </form>
-
-      <div class="abas">
-        <a href="">Destaques</a>
-        <a href="Bibliotecas.html">Bibliotecas</a>
-        <a href="doarPerfil.html">Doação</a>
-      </div>
-    </header>
+<?php include 'headerLeitor.php'; ?>  
 
     <main>
-      <aside class="perfil">
-        <img src="../img/peter.jpg" alt="" />
-        <h1>Olá, Peter Pan!</h1>
-        <a href="editarPerfil.html"><h2>Editar perfil</h2></a>
-        <a href="meusLivros.html"><h2>Meus livros</h2></a>
-        <a href="doarPerfil.html"><h2>Doar</h2></a>
-        <a href="eventoPerfil.html"><h2>Solicitar Evento</h2></a>
-        <button>Logout</button>
-      </aside>
+<?php include 'barraLateral.php'; ?>
 
       <section class="areaPerfil">
         <form action="">

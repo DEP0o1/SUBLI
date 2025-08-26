@@ -7,34 +7,9 @@
     <link rel="stylesheet" href="../css/leitor.css" />
     <link rel="stylesheet" href="../css/estilo.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-    <script src="../js/componentesJS/carrosel.js"></script>
+
     <title>Home</title>
-<<<<<<< HEAD:subli/leitor/indexLeitor.html
-=======
-
-    <header>
-      <a href="indexLeitor.html">
-        <img src="../img/CorClara.png" alt="" class="logo" />
-      </a>
-
-      <form action="resultado.html" class="areaPesquisa">
-        <div class="divInput">
-          <input type="text" placeholder="Faça sua Pesquisa" class="input" />
-          <img src="../img/pesquisa.webp" alt="" class="lupa" />
-        </div>
-
-        <img src="../img/filtro.svg" alt="" />
-      </form>
-
-      <div class="abas">
-        <a href="">Destaques</a>
-        <a href="Bibliotecas.html">Bibliotecas</a>
-        <a href="doarPerfil.html">Doação</a>
-      </div>
-
-      
-    </header>
->>>>>>> 2254f374647c3cd80adc5d231468aeb64de8f445:leitor/indexLeitor.html
+    <?php include 'headerLeitor.php'; ?>  
   </head>
 
   <body>
@@ -87,7 +62,7 @@
           arrow_back_ios
           </span>
       
-        <div class="livros">
+        
       <div class="livro">
         <img src="../img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
@@ -130,27 +105,27 @@
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
-      </div>
+      
 
       <span class="material-symbols-outlined" id="depois">
         arrow_forward_ios
         </span>
         
     </section>
-<<<<<<< HEAD:subli/leitor/indexLeitor.html
+
             <div class="indicators">
                 <div class="indicator active"></div>
                 <div class="indicator"></div>
                 <div class="indicator"></div>
                 <div class="indicator"></div>
             </div>
-    <h1>Mais Procurados</h1>
-=======
+
+
 
     <div class="textoEsquerda">
       <h1>Mais procurados</h1>
       </div>
->>>>>>> 2254f374647c3cd80adc5d231468aeb64de8f445:leitor/indexLeitor.html
+
     <section class="exibirLivros">
     
         <span class="material-symbols-outlined" id="antes">

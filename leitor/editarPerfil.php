@@ -8,26 +8,7 @@
     <link rel="stylesheet" href="../css/leitorPerfil.css" />
   </head>
   <body>
-    <header>
-      <a href="indexLeitor.html">
-        <img src="../img/CorClara.png" alt="" class="logo" />
-      </a>
-
-      <form action="resultado.html" class="areaPesquisa">
-        <div class="divInput">
-          <input type="text" placeholder="Faça sua Pesquisa" class="input" />
-          <img src="../img/pesquisa.webp" alt="" class="lupa" />
-        </div>
-
-        <img src="../img/filtro.svg" alt="" />
-      </form>
-
-      <div class="abas">
-        <a href="">Destaques</a>
-        <a href="Bibliotecas.html">Bibliotecas</a>
-        <a href="doarPerfil.html">Doação</a>
-      </div>
-    </header>
+<?php include 'headerLeitor.php'; ?>  
 
     <main>
       <aside class="perfil">
