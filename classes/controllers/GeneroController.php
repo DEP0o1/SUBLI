@@ -4,14 +4,25 @@ class GeneroController extends Banco
 {
     function ListarGeneros($genero = new Genero())
     {
-        $parametros = [
+        try{
+            $parametros = [
 
-            'p_cd_genero' => $genero->cd_genero,
-            'p_nm_genero' => $genero->nm_genero
-
-        ];
-
-        $this->Consultar('listar_generos', $parametros);
+                'p_cd_genero' => $genero->cd_genero,
+                'p_nm_genero' => $genero->nm_genero
+    
+            ];
+    
+            $lista = [];
+            $dados = $this->Consultar('listar_generos', $parametros);
+            foreach($dados as $item){
+                $genero = new Genero;
+                $genero->Hydrate($item);
+                array_push($lista, $genero);
+            }
+            return $lista;
+        }catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     public function AdicionarGenero($genero = new Genero())

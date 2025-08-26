@@ -4,14 +4,25 @@ class ColecaoController extends Banco
 {
     function ListarColecoes($colecao = new Colecao())
     {
-        $parametros = [
+         try{
+            $parametros = [
 
-            'p_cd_colecao' => $colecao->cd_colecao,
-            'p_nm_colecao' => $colecao->nm_colecao
-
-        ];
-
-        $this->Consultar('listar_colecoes', $parametros);
+                'p_cd_colecao' => $colecao->cd_colecao,
+                'p_nm_colecao' => $colecao->nm_colecao
+    
+            ];
+    
+            $lista = [];
+            $dados = $this->Consultar('listar_colecoes', $parametros);
+            foreach($dados as $item){
+                $colecao = new Colecao;
+                $colecao->Hydrate($item);
+                array_push($lista, $colecao);
+            }
+            return $lista;
+        }catch (\Throwable $th) {
+            throw $th;
+        }
 
     }
 

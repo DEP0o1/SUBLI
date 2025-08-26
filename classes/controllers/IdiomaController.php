@@ -4,14 +4,25 @@ class IdiomaController extends Banco
 {
     function ListarIdiomas($idioma = new Idioma())
     {
-        $parametros = [
+        try{
+            $parametros = [
 
-            'p_cd_idioma' => $idioma->cd_idioma,
-            'p_nm_idioma' => $idioma->nm_idioma
-
-        ];
-
-        $this->Consultar('listar_idiomas', $parametros);
+                'p_cd_idioma' => $idioma->cd_idioma,
+                'p_nm_idioma' => $idioma->nm_idioma
+    
+            ];
+    
+            $lista = [];
+            $dados = $this->Consultar('listar_idiomas', $parametros);
+            foreach($dados as $item){
+                $idioma = new Idioma;
+                $idioma->Hydrate($item);
+                array_push($lista, $idioma);
+            }
+            return $lista;
+        }catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     public function AdicionarIdioma($idioma = new Idioma())
