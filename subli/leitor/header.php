@@ -1,20 +1,9 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio</title>
-    <link rel="stylesheet" href="../css/leitor.css" />
-    <link rel="stylesheet" href="../css/estilo.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-
-    <title>Home</title>
-
-    <header>
+<?php
+        <header>
       <a href="">
         <img src="../img/CorClara.png" alt="" class="logo" />
       </a>
-      
-      
+
       <form action="resultado.html" class="areaPesquisa">
         <div class="divInput">
           <input type="text" placeholder="Faça sua Pesquisa" class="input" />
@@ -30,9 +19,4 @@
         <a href="">Doação</a>
       </div>
     </header>
-  </head>
-  <body>
-    <main>
-        
-    </main>
-  </body>
+?>

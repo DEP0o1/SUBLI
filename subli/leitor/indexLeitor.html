@@ -7,29 +7,8 @@
     <link rel="stylesheet" href="../css/leitor.css" />
     <link rel="stylesheet" href="../css/estilo.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-
+    <script src="../js/componentesJS/carrosel.js"></script>
     <title>Home</title>
-
-    <header>
-      <a href="">
-        <img src="../img/CorClara.png" alt="" class="logo" />
-      </a>
-
-      <form action="resultado.html" class="areaPesquisa">
-        <div class="divInput">
-          <input type="text" placeholder="Faça sua Pesquisa" class="input" />
-          <img src="../img/pesquisa.webp" alt="" class="lupa" />
-        </div>
-
-        <img src="../img/filtro.svg" alt="" />
-      </form>
-
-      <div class="abas">
-        <a href="">Destaques</a>
-        <a href="Bibliotecas.html">Bibliotecas</a>
-        <a href="">Doação</a>
-      </div>
-    </header>
   </head>
 
   <body>
@@ -70,16 +49,18 @@
           alt=""
         />
       </a>
+
+      
     </section>
 
     <h1>Destaques da semana</h1>
     <section class="exibirLivros">
     
-        <span class="material-symbols-outlined" id="seta">
+        <span class="material-symbols-outlined" id="antes">
           arrow_back_ios
           </span>
       
-
+        <div class="livros">
       <div class="livro">
         <img src="../img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
@@ -115,15 +96,23 @@
         <button>Ver Mais</button>
       </div>
 
-      <span class="material-symbols-outlined" id="seta">
+      </div>
+
+      <span class="material-symbols-outlined" id="depois">
         arrow_forward_ios
         </span>
+        
     </section>
-
+            <div class="indicators">
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
     <h1>Mais Procurados</h1>
     <section class="exibirLivros">
     
-        <span class="material-symbols-outlined" id="seta">
+        <span class="material-symbols-outlined" id="antes">
           arrow_back_ios
           </span>
       
@@ -163,9 +152,11 @@
         <button>Ver Mais</button>
       </div>
 
-      <span class="material-symbols-outlined" id="seta">
-        arrow_forward_ios
+        <span class="material-symbols-outlined seta seta-direita" id="depois">
+            arrow_forward_ios
         </span>
+
+
     </section>
 
     <section class="doacaoLivros">
