@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil</title>
+    <link rel="stylesheet" href="../css/leitor.css"/>
+    <link rel="stylesheet" href="../css/leitorPerfil.css" />
+  </head>
+  <body>
+    <header>
+      <a href="indexLeitor.html">
+        <img src="../img/CorClara.png" alt="" class="logo" />
+      </a>
+
+      <form action="resultado.html" class="areaPesquisa">
+        <div class="divInput">
+          <input type="text" placeholder="Faça sua Pesquisa" class="input" />
+          <img src="../img/pesquisa.webp" alt="" class="lupa" />
+        </div>
+
+        <img src="../img/filtro.svg" alt="" />
+      </form>
+
+      <div class="abas">
+        <a href="">Destaques</a>
+        <a href="Bibliotecas.html">Bibliotecas</a>
+        <a href="doarPerfil.html">Doação</a>
+      </div>
+    </header>
+
+    <main>
+      <aside class="perfil">
+        <img src="../img/peter.jpg" alt="" />
+        <h1>Olá, Peter Pan!</h1>
+        <a href="editarPerfil.html"><h2>Editar perfil</h2></a>
+        <a href="meusLivros.html"><h2>Meus livros</h2></a>
+        <a href="doarPerfil.html"><h2>Doar</h2></a>
+        <a href="eventoPerfil.html"><h2>Solicitar Evento</h2></a>
+        <button>Logout</button>
+      </aside>
+  
+      <section class="areaPerfil">
+        <form action="">
+          <div class="titulo-areaPerfil">
+              <h1>Doação</h1>
+              <hr/>
+          </div>
+  
+          <div class="label-input">
+            <label for="">Nome do livro: </label>
+            <input type="text" />
+          </div>
+  
+          <div class="label-input">
+            <label for="">Nome do autor: </label>
+            <input type="text" />
+          </div>
+  
+          <div class="label-input">
+            <label for="">Biblioteca para Entrega: </label>
+            <select name="" id="">
+                <option value="">Biblioteca 1</option>
+                <option value="">Biblioteca 2</option>
+                <option value="">Biblioteca 3</option>
+            </select>
+          </div>
+
+          <div class="label-input">
+            <label for="">Foto do livro: </label>
+            <input type="file">
+          </div>
+  
+          <button type="submit">Enviar doação</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
