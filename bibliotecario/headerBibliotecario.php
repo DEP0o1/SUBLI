@@ -1,7 +1,7 @@
 <?php
 
     echo '<header>
-    <a href="homeBibliotecario.html">
+    <a href="homeBibliotecario.php">
       <div><img src="../img/CorClara.png" alt="" class="logo" /></div>
     </a>
 
@@ -13,20 +13,20 @@
 
       <img src="../img/filtro.svg" alt="" />
 
-      <a href="pesquisaLivroBibliotecario.html" class="pesquisaAvanc">Pesquisa Avançada</a>
+      <a href="pesquisaLivroBibliotecario.php" class="pesquisaAvanc">Pesquisa Avançada</a>
     </div>
 
     <div class="abas">
-      <a href="emprestimoPesquisa.html">Empréstimos</a>
+      <a href="emprestimoPesquisa.php">Empréstimos</a>
       <a>Módulos</a>
-      <a href="cadastrarLeitor.html">Leitor</a>
+      <a href="cadastrarLeitor.php">Leitor</a>
 
       <div class="dropdown">
         <button onclick="desceCoisa()" class="dropbtn">Cadastros:</button>
         <div id="Dropdown" class="dropdown-content">
-          <a href="../bibliotecario/cadastrarLivro.html">Cadrastar Livro</a>
-          <a href="../bibliotecario/cadastrarLeitor.html">Cadrastar Leitor</a>
-          <a href="../bibliotecario/cadastrarEvento.html">Cadrastar Evento</a>
+          <a href="cadastrarLivro.php">Cadrastar Livro</a>
+          <a href="cadastrarLeitor.php">Cadrastar Leitor</a>
+          <a href="cadastrarEvento.php">Cadrastar Evento</a>
         </div>
       </div>
 
