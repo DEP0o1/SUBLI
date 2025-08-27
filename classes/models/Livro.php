@@ -9,7 +9,7 @@
         public $colecao;
         public $assuntos;
 
-             public function __construct($cd_livro2 = null, $nm_livro2 = null, $autores2 = null, $editora2 = null, $generos2 = null, $idioma2 = null, $colecao2 = null, $assuntos2 = null)
+             public function __construct($cd_livro2 = null, $nm_livro2 = null, $autores2 = [new Autor], $editora2 = new Editora(), $generos2 = [new Genero], $idioma2 = new Idioma(), $colecao2 = new Colecao(), $assuntos2 = [new Assunto])
             {
                 $this->cd_livro = $cd_livro2;
                 $this->nm_livro = $nm_livro2;
@@ -24,5 +24,4 @@
 
     }
 
-    }
 ?>

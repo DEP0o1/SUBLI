@@ -9,10 +9,19 @@ print_r($assuntoController->ListarAssuntos($assunto));
 
 
 
-
-
-
+        
+      
+        
+      
+    
 ?>
+
+
+<!-- select * from livro;
+
+
+nm_livro
+
 
 
 wghuowhguowa
@@ -20,4 +29,4 @@ askjgAKjhwag
 
 $claudio = new Assunto(v1,v2)
 $controller = new AssuntoController
-$controller->ListarAssuntos($claudio)
+$controller->ListarAssuntos($claudio) -->

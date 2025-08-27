@@ -9,7 +9,8 @@ class AutorController extends Banco
             $parametros = [
 
                 'p_cd_autor' => $autor->cd_autor,
-                'p_nm_autor' => $autor->nm_autor
+                'p_nm_autor' => $autor->nm_autor,
+                'p_cd_livro' => $autor->cd_livro
     
             ];
 

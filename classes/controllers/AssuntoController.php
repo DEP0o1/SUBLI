@@ -6,6 +6,8 @@ class AssuntoController extends Banco
     public function ListarAssuntos($assunto = new Assunto())
     {
         try{
+
+
             $parametros = [
 
                 'p_cd_assunto' => $assunto->cd_assunto,

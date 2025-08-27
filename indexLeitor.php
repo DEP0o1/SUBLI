@@ -1,3 +1,10 @@
+<?php
+
+require_once('config.php');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -132,6 +139,17 @@
           arrow_back_ios
           </span>
       
+     <?php
+        $livro = new LivroView;
+        $livro->ExibirLivros();
+     ?> 
+
+      <!-- <div class="livro">
+        <img src="../img/capa livro.jpg" alt="" />
+        <h2>Pequeno principe</h2>
+        <p>machado de assis</p>
+         <button><a href="livroLeitor.html">Ver Mais</a></button>
+      </div>
 
       <div class="livro">
         <img src="../img/capa livro.jpg" alt="" />
@@ -160,19 +178,12 @@
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
-
       <div class="livro">
         <img src="../img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-      <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
+      </div> -->
 
         <span class="material-symbols-outlined seta seta-direita" id="depois">
             arrow_forward_ios
