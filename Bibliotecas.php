@@ -16,8 +16,14 @@
       </div>
       
       <section class="areaMapa">
-      <div class="mapa" id="map" style=""></div>
-      </section>
+    <div class="mapa" id="map">
+    <div id="carregando">
+      <div class="spinner"></div>
+      <p>Carregando mapa...</p>
+    </div>
+  </div>
+</section>
+
 
       <section class="bibliotecas" id="cardsContainer">
         <div class="biblioteca">
@@ -59,8 +65,6 @@
             <button>Ver mais </button>
           </a>
           </div>
-
-        
 
       </section>
     </main>

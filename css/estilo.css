@@ -249,11 +249,44 @@ body {
   }
 
   .mapa {
-    background-color: var(--azul);
-    width:90%; 
-    height:300px;
-    margin-bottom:20px;
-  }
+  background-color: var(--azul); 
+  width: 90%;
+  height: 300px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* animacao de carregamento do mapa */
+
+#carregando {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--branco);
+  font-family: "Inter";
+}
+
+.spinner {
+  border: 5px solid rgba(255,255,255,0.3);
+  border-top: 5px solid var(--branco);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: girar 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes girar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 
+
+/**/
 
   .biblioteca {
     border: var(--cinza) solid 1px;
