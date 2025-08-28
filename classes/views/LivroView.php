@@ -14,20 +14,20 @@ class LivroView{
     //     <div class='livro'>
     //         <img src='../img/capa livro.jpg' alt='' />
     //         <h2>{$livros[$i]->nm_livro}</h2>
-    //         <p>{$livros[$i]->autores[$j]->nm_autor}</p>
+    //         <p>{$livros[$i]->autores[$i]->nm_autor}</p>
     //         <button><a href='livroLeitor.html'>Ver Mais</a></button>
     //     </div>
     //     ";
     // }
 
-    foreach($livros as $livro){
+    foreach($livros as $Livro){
         echo 
         "
         <div class='livro'>
             <img src='../img/capa livro.jpg' alt='' />
-            <h2>{$livro->nm_livro}</h2>
+            <h2>{$Livro->nm_livro}</h2>
         ";
-        foreach($livro->autores as $autor){
+        foreach($Livro->autores as $autor){
             echo 
             "
             <p>{$autor->nm_autor}</p>
@@ -38,7 +38,7 @@ class LivroView{
             <button><a href='livroLeitor.html'>Ver Mais</a></button>
         </div>
         ";
-    }
+     }
 
 }
 

@@ -515,16 +515,16 @@ CREATE PROCEDURE listar_autores(
     IN p_cd_livro INT
 )
 BEGIN
-    SELECT  DISTINCT  *
+    SELECT  DISTINCT a. *
     FROM autor a 
-    LEFT JOIN autor_livro al ON a.cd_autor = al.cd_livro
+    LEFT JOIN autor_livro al ON a.cd_autor = al.cd_autor
     LEFT JOIN livro l ON al.cd_livro = l.cd_livro
     WHERE (p_cd_autor IS NULL OR a.cd_autor = p_cd_autor)
       AND (p_nm_autor IS NULL OR a.nm_autor = p_nm_autor)
       AND   (p_cd_livro IS NULL OR al.cd_livro = p_cd_livro); 
 END$$
  
-CALL listar_autores(null, null, 3);
+CALL listar_autores(null, null, 1);
 
 DROP PROCEDURE IF EXISTS adicionar_autor$$
 CREATE PROCEDURE adicionar_autor(

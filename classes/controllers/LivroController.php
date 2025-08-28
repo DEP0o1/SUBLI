@@ -84,7 +84,7 @@ class LivroController extends Banco
             foreach($dados as $item){
                 $Livro = new Livro;
                 $Livro->Hydrate($item);
-                $Livro->autores = $autorcontroller->ListarAutores(new Autor(null,null,$livro->cd_livro));
+                $Livro->autores = $autorcontroller->ListarAutores(new Autor(null,null,$Livro->cd_livro));
                 array_push($lista, $Livro);
             }
           
