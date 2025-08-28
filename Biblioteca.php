@@ -11,13 +11,15 @@
 <body>
   <main>
     <section class="bibliotecas">
-      <div class="biblioteca" id="bibliotecaDetalhe">
-        <img id="libraryImage" src="https://via.placeholder.com/600x300?text=Biblioteca" alt="Foto da Biblioteca">
-        <h2 id="libraryName"></h2>
-        <p id="libraryAddress"></p>
-        <p id="libraryDistance"></p>
-        <a href="doarPerfil.html" class="btnRosa">Doe para nossa biblioteca</a>
-      </div>
+      <div class="biblioteca">
+          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
+          <h4>Biblioteca Mario Faria</h4>
+          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
+          <p>2.4 km de você</p>
+          <a href="Biblioteca.php">
+            <button>Ver mais </button>
+          </a>
+          </div>
     </section>
 
     <div class="textoMeio">
@@ -27,22 +29,50 @@
     <section class="exibirLivros">
       
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
-        <h2>Pequeno Príncipe</h2>
-        <p>Machado de Assis</p>
-        <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
+            <h2>Memórias Póstumas de Brascubas</h2>
+            <p>machado de assis</p>
+            <button>Ver Mais</button>
+          </div>
+
+          <div class="livro">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
+            <h2>Memórias Póstumas de Brascubas</h2>
+            <p>machado de assis</p>
+            <button>Ver Mais</button>
+          </div>
+
+          <div class="livro">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
+            <h2>Memórias Póstumas de Brascubas</h2>
+            <p>machado de assis</p>
+            <button>Ver Mais</button>
+          </div>
+
+          <div class="livro">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
+            <h2>Memórias Póstumas de Brascubas</h2>
+            <p>machado de assis</p>
+            <button>Ver Mais</button>
+          </div>
+
+          <div class="livro">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
+            <h2>Memórias Póstumas de Brascubas</h2>
+            <p>machado de assis</p>
+            <button>Ver Mais</button>
+          </div>
       
     </section>
   </main>
 
   <script>
     
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get('name') || "Biblioteca";
-    const address = params.get('address') || "Endereço não disponível";
-    const distance = params.get('distance') || "? km";
-    const image = params.get('image') || "https://via.placeholder.com/600x300?text=Biblioteca";
+    // const params = new URLSearchParams(window.location.search);
+    // const name = params.get('name') || "Biblioteca";
+    // const address = params.get('address') || "Endereço não disponível";
+    // const distance = params.get('distance') || "? km";
+    // const image = params.get('image') || "https://via.placeholder.com/600x300?text=Biblioteca";
 
     document.getElementById('libraryName').textContent = name;
     document.getElementById('libraryAddress').textContent = address;

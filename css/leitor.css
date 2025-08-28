@@ -4,6 +4,21 @@ margin: 0;
 box-sizing: border-box; 
 }
 
+h1 {
+  font-family: "Kurale";
+  margin: 40px;
+  font-size: 1.5rem;
+}
+
+p,
+h2,
+h3,
+h4 {
+  font-family: "Inter";
+  font-size: 1rem;
+}
+
+
 :root {
     --vinho: #a32950;
     --azul: #102e4e;
@@ -350,3 +365,4 @@ body{
     cursor: pointer;
     margin-top: auto;
   }
+  

@@ -14,11 +14,54 @@
       <div class="tituloCentro">
         <h1>Bibliotecas Próximas</h1>
       </div>
-
-      <div id="map" style="width:100%; height:300px; margin-bottom:20px;"></div>
+      
+      <section class="areaMapa">
+      <div class="mapa" id="map" style=""></div>
+      </section>
 
       <section class="bibliotecas" id="cardsContainer">
+        <div class="biblioteca">
+          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
+          <h4>Biblioteca Mario Faria</h4>
+          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
+          <p>2.4 km de você</p>
+          <a href="Biblioteca.php">
+            <button>Ver mais </button>
+          </a>
+          </div>
+
+        <div class="biblioteca">
+          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
+          <h4>Biblioteca Mario Faria</h4>
+          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
+          <p>2.4 km de você</p>
+          <a href="Biblioteca.php">
+            <button>Ver mais </button>
+          </a>
+          </div>
+
+          <div class="biblioteca">
+          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
+          <h4>Biblioteca Mario Faria</h4>
+          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
+          <p>2.4 km de você</p>
+          <a href="Biblioteca.php">
+            <button>Ver mais </button>
+          </a>
+          </div>
+
+          <div class="biblioteca">
+          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
+          <h4>Biblioteca Mario Faria</h4>
+          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
+          <p>2.4 km de você</p>
+          <a href="Biblioteca.php">
+            <button>Ver mais </button>
+          </a>
+          </div>
+
         
+
       </section>
     </main>
 

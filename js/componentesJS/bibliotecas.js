@@ -38,19 +38,19 @@ function fetchLibraries(lat, lon) {
           .bindPopup(`<b>${name}</b><br>${address}<br>${distance} km de você`);
 
 
-        const card = document.createElement("div");
-        card.className = "biblioteca";
-        card.innerHTML = `
-          <img src="${image}" alt="${name}">
-          <h4>${name}</h4>
-        `;
-        card.onclick = () => {
-          const params = new URLSearchParams({ name, address, distance, image });
-          window.location.href = `biblioteca.php?${params.toString()}`;
-        };
-        cardsContainer.appendChild(card);
+        // const card = document.createElement("div");
+        // card.className = "biblioteca";
+        // card.innerHTML = `
+        //   <img src="${image}" alt="${name}">
+        //   <h4>${name}</h4>
+        // `;
+        // card.onclick = () => {
+        //   const params = new URLSearchParams({ name, address, distance, image });
+        //   window.location.href = `biblioteca.php?${params.toString()}`;
+        // };
+        // cardsContainer.appendChild(card);
       });
-    })
+})
     .catch(err => console.error(err));
 }
 
