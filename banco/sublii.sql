@@ -165,6 +165,14 @@ CREATE TABLE genero_livro(
 	CONSTRAINT fk_genero FOREIGN KEY (cd_genero) REFERENCES genero(cd_genero)
 );
 
+CREATE TABLE livro_favorito(
+	cd_livro INT,
+    cd_leitor VARCHAR(200),
+    cd_favoritado TINYINT ,
+    CONSTRAINT pk_livro_favorito PRIMARY KEY (cd_favoritado,cd_leitor),
+    CONSTRAINT fk_cd_leitor FOREIGN KEY, (cd_leitor)  REFERENCES leitor(cd_leitor)
+);
+
 /*Generos*/
 INSERT INTO genero VALUES (1, 'Ficção');
 INSERT INTO genero VALUES (2, 'Fantasia');
