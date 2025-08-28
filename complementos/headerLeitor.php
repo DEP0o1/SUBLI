@@ -3,16 +3,16 @@
 echo '
         <header>
       <a href="indexLeitor.php">
-        <img src="../img/CorClara.png" alt="" class="logo" />
+        <img src="img/CorClara.png" alt="" class="logo" />
       </a>
 
       <form action="resultado.html" class="areaPesquisa">
         <div class="divInput">
           <input type="text" placeholder="Faça sua Pesquisa" class="input" />
-          <img src="../img/pesquisa.webp" alt="" class="lupa" />
+          <img src="img/pesquisa.webp" alt="" class="lupa" />
         </div>
 
-        <img src="../img/filtro.svg" alt="" />
+        <img src="img/filtro.svg" alt="" />
       </form>
 
       <div class="abas">

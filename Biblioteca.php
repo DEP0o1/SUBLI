@@ -3,9 +3,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
-    <link rel="stylesheet" href="../css/leitor.css" />
+    <link rel="stylesheet" href="css/leitor.css" />
     
-    <?php include 'headerLeitor.php'; ?>  
+    <?php
+    require_once './complementos/headerBibliotecario.php';
+      ?>  
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 

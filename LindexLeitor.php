@@ -11,12 +11,13 @@ require_once('config.php');
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
-    <link rel="stylesheet" href="../css/leitor.css" />
-    <link rel="stylesheet" href="../css/estilo.css" />
+    <link rel="stylesheet" href="css/leitor.css" />
+    <link rel="stylesheet" href="css/estilo.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 
     <title>Home</title>
-    <?php include 'headerLeitor.php'; ?>  
+    <?php require_once './complementos/headerLeitor.php'; ?>  
+
   </head>
 
   <body>
@@ -53,7 +54,7 @@ require_once('config.php');
 
       <a class="location">
         <img
-          src="../img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
+          src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
           alt=""
         />
       </a>
@@ -71,42 +72,42 @@ require_once('config.php');
       
         
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
@@ -145,41 +146,41 @@ require_once('config.php');
      ?> 
 
       <!-- <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
 
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
       </div>
       <div class="livro">
-        <img src="../img/capa livro.jpg" alt="" />
+        <img src="img/capa livro.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
          <button><a href="livroLeitor.html">Ver Mais</a></button>
@@ -202,7 +203,7 @@ require_once('config.php');
         </p>
         <div class="textoDoar"> <a>Doe agora!</a></div>
       </div>
-      <img src="../img/doar.png" alt="" />
+      <img src="img/doar.png" alt="" />
     </section>
     </main>
   </body>

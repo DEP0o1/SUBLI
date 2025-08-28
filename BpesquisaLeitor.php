@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title> Pesquisa </title>
-    <link rel="stylesheet" href="../css/bibliotecario.css">
+    <link rel="stylesheet" href="css/bibliotecario.css">
     <title>Pesquisa</title>
-        <link rel="stylesheet" href="../css/bibliotecario.css">
-    <link rel="stylesheet" href="../css/homeBibliotecario.css">
-    <link rel="stylesheet" href="../css/pesquisaBibliotecario.css">
-    <script src="../js/componentesJS/header.js"></script>
+        <link rel="stylesheet" href="css/bibliotecario.css">
+    <link rel="stylesheet" href="css/homeBibliotecario.css">
+    <link rel="stylesheet" href="css/pesquisaBibliotecario.css">
+    <script src="js/componentesJS/header.js"></script>
     
-    <link rel="shortcut icon" href="../img/pequeno terry.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="img/pequeno terry.webp" type="image/x-icon">
 
 
   <?php
-    require_once 'headerBibliotecario.php';
+    require_once './complementos/headerBibliotecario.php';
   ?>
 
 
@@ -41,7 +41,7 @@
 
     <div class="leitoresEncontrados">
         <div class="leitorEncontrado"> 
-            <img src="../img/pequeno terry.webp" alt="" class="leitor">
+            <img src="img/pequeno terry.webp" alt="" class="leitor">
 
             <div class="infoLeitor">
             <h2>Terry Crews</h2>
@@ -54,7 +54,7 @@
             
         </div>
         <div class="leitorEncontrado"> 
-            <img src="../img/pequeno terry.webp" alt="" class="leitor">
+            <img src="img/pequeno terry.webp" alt="" class="leitor">
 
             <div class="infoLeitor">
             <h2>Terry Crews</h2>

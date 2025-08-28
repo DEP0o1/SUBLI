@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Solicitações de doação </title>
 
-  <link rel="stylesheet" href="../css/eventoEdoacao.css">
-  <link rel="stylesheet" href="../css/homeBibliotecario.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/bibliotecario.css">
-  <script src="../js/componentesJS/header.js"></script>
+  <link rel="stylesheet" href="scss/eventoEdoacao.css">
+  <link rel="stylesheet" href="scss/homeBibliotecario.css">
+  <link rel="stylesheet" href="scss/style.css">
+  <link rel="stylesheet" href="scss/bibliotecario.css">
+  <script src="sjs/componentesJS/header.js"></script>
     
 
 
   <?php
-    require_once 'headerBibliotecario.php';
+    require_once './complementos/headerBibliotecario.php';
   ?>
 </head>
 
@@ -23,7 +23,7 @@
 
   <main class="areaLivroDoado">
   <section class="doacao">
-    <img src="../img/capa livro.jpg" class="livroDoado">
+    <img src="simg/capa livro.jpg" class="livroDoado">
 
     <div class="infoLivroDoado">
       <h1> É assim que acaba </h1>
@@ -46,7 +46,7 @@
   <section class="areaCardsDoacao">
     <div class="cardDoacao">
 
-      <img src="../img/capa livro.jpg" class="livroDoadoCard">
+      <img src="simg/capa livro.jpg" class="livroDoadoCard">
 
       <div class="infoCard">
         <h2> É assim que acaba </h2>
@@ -58,7 +58,7 @@
 
     <div class="cardDoacao">
 
-      <img src="../img/capa livro.jpg" class="livroDoadoCard">
+      <img src="simg/capa livro.jpg" class="livroDoadoCard">
 
       <div class="infoCard">
         <h2> É assim que acaba </h2>
@@ -70,7 +70,7 @@
 
     <div class="cardDoacao">
 
-      <img src="../img/capa livro.jpg" class="livroDoadoCard">
+      <img src="simg/capa livro.jpg" class="livroDoadoCard">
 
       <div class="infoCard">
         <h2> É assim que acaba </h2>
@@ -82,7 +82,7 @@
 
     <div class="cardDoacao">
 
-      <img src="../img/capa livro.jpg" class="livroDoadoCard">
+      <img src="simg/capa livro.jpg" class="livroDoadoCard">
 
       <div class="infoCard">
         <h2> É assim que acaba </h2>

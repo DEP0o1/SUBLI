@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
-    <link rel="stylesheet" href="../css/leitor.css"/>
-    <link rel="stylesheet" href="../css/leitorPerfil.css" />
+    <link rel="stylesheet" href="css/leitor.css"/>
+    <link rel="stylesheet" href="css/leitorPerfil.css" />
   </head>
   <body>
-<?php include 'headerLeitor.php'; ?>  
+<?php require_once './complementos/headerLeitor.php'; ?>  
 
     <main>
       <aside class="perfil">
-        <img src="../img/peter.jpg" alt="" />
+        <img src="img/peter.jpg" alt="" />
         <h1>Olá, Peter Pan!</h1>
         <a href="editarPerfil.html"><h2>Editar perfil</h2></a>
         <a href="meusLivros.html"><h2>Meus livros</h2></a>
@@ -28,7 +28,7 @@
               <hr/>
           </div>
           
-          <img src="../img/peter.jpg" alt="" />
+          <img src="img/peter.jpg" alt="" />
           <label for="">Alterar foto de perfil</label>
   
           <div class="label-input">
