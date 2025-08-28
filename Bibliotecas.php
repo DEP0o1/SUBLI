@@ -4,78 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bibliotecas</title>
-    <link rel="stylesheet" href="css/leitor.css"/>
+    <link rel="stylesheet" href="css/leitor.css" />
+    <link rel="stylesheet" href="css/estilo.css">
+    <?php include 'complementos/headerLeitor.php'; ?>
   </head>
 
-<?php 
-    require_once './complementos/headerLeitor.php';
-?>  
   <body>
-    
     <main>
       <div class="tituloCentro">
-        <h1>Bibliotecas</h1>
+        <h1>Bibliotecas Próximas</h1>
       </div>
 
-      <div class="tituloEsquerda">
-        <h1>Rio de Janeiro</h1>
-      </div>
-      <section class="bibliotecas">
-        <div class="setaEsquerda"><img src="../img/LEFT.png" alt="" /></div>
-        <div class="biblioteca">
-          <img
-            src="https://www.praiagrande.sp.gov.br/arquivos/foto/49534.jpg"
-            alt=""
-          />
-          <h4>BIBLIOTECA DA PRAIA</h4>
-        </div>
-        <div class="biblioteca">
-          <img
-            src="https://ogimg.infoglobo.com.br/in/6151285-3b2-45c/FT1086A/760/biblioteca-ccbb-centro-rio.jpg"
-            alt=""
-          />
-          <h4>BIBLIOTECA DA PRAIA</h4>
-        </div>
-        <div class="biblioteca">
-          <a href="Biblioteca.html">
-          <img
-            src="https://diariodorio.com/wp-content/uploads/2021/02/Real-Gabinete-Portugues-Rio_destaque.jpg"
-            alt=""
-          />
-          <h4>BIBLIOTECA DA PRAIA</h4>
-        </a> 
-        </div>
-        <div class="setaDireita"><img src="../img/RIGHT.png" alt="" /></div>
-      </section>
+      <div id="map" style="width:100%; height:300px; margin-bottom:20px;"></div>
 
-      <div class="tituloEsquerda">
-        <h1>Rio de Janeiro</h1>
-      </div>
-      <section class="bibliotecas">
-        <div class="setaEsquerda"><img src="../img/LEFT.png" alt="" /></div>
-        <div class="biblioteca">
-          <img
-            src="https://www.praiagrande.sp.gov.br/arquivos/foto/49534.jpg"
-            alt=""
-          />
-          <h4>BIBLIOTECA DA PRAIA</h4>
-        </div>
-        <div class="biblioteca">
-          <img
-            src="https://ogimg.infoglobo.com.br/in/6151285-3b2-45c/FT1086A/760/biblioteca-ccbb-centro-rio.jpg"
-            alt=""
-          />
-          <h4>BIBLIOTECA DA PRAIA</h4>
-        </div>
-        <div class="biblioteca">
-          <img
-            src="https://diariodorio.com/wp-content/uploads/2021/02/Real-Gabinete-Portugues-Rio_destaque.jpg"
-            alt=""
-          />
-          <h4>BIBLIOTECA DA PRAIA</h4>
-        </div>
-        <div class="setaDireita"><img src="../img/RIGHT.png" alt="" /></div>
+      <section class="bibliotecas" id="cardsContainer">
+        
       </section>
     </main>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/componentesJS/bibliotecas.js"></script>
   </body>
 </html>

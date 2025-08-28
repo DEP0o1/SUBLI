@@ -2,7 +2,7 @@
 
 echo '
         <header>
-      <a href="indexLeitor.php">
+      <a href="LindexLeitor.php">
         <img src="img/CorClara.png" alt="" class="logo" />
       </a>
 

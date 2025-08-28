@@ -2,7 +2,6 @@
 
 require_once('config.php');
 
-
 ?>
 
 <!DOCTYPE html>
@@ -52,12 +51,9 @@ require_once('config.php');
         <span class="material-symbols-outlined"> stat_minus_1 </span>
       </div>
 
-      <a class="location">
-        <img
-          src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-          alt=""
-        />
-      </a>
+      <a class="location" href="Bibliotecas.php">
+  <img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Localização" />
+</a>
 
       
     </section>
