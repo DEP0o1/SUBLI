@@ -165,13 +165,24 @@ CREATE TABLE genero_livro(
 	CONSTRAINT fk_genero FOREIGN KEY (cd_genero) REFERENCES genero(cd_genero)
 );
 
-CREATE TABLE livro_favorito(
-	cd_livro INT,
-    cd_leitor VARCHAR(200),
-    cd_favoritado TINYINT ,
-    CONSTRAINT pk_livro_favorito PRIMARY KEY (cd_favoritado,cd_leitor),
-    CONSTRAINT fk_cd_leitor FOREIGN KEY, (cd_leitor)  REFERENCES leitor(cd_leitor)
+CREATE TABLE favorito(
+    cd_favorito INT,
+    cd_email_leitor INT,
+    CONSTRAINT pk_favorito PRIMARY KEY (cd_favorito),
+    CONSTRAINT fk_email_leitor_favorito FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor)
 );
+
+CREATE TABLE favorito_leitor(
+	cd_livro INT,
+    cd_email_leitor INT,
+    CONSTRAINT pk_favorito_livro PRIMARY KEY (cd_livro, cd_email_leitor),
+	CONSTRAINT fk_email_leitor FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor),
+    CONSTRAINT fk_cd_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
+);
+
+
+/*Favoritos*/
+INSERT into favorito VALUES (1, 1);
 
 /*Generos*/
 INSERT INTO genero VALUES (1, 'Ficção');
@@ -184,6 +195,19 @@ INSERT INTO genero VALUES (7, 'Ciência');
 INSERT INTO genero VALUES (8, 'Autoajuda');
 INSERT INTO genero VALUES (9, 'Biografia');
 INSERT INTO genero VALUES (10, 'Aventura');
+
+
+	cd_email_leitor INT,
+	nm_leitor VARCHAR(200),
+    cd_cpf VARCHAR (11),
+    cd_telefone VARCHAR (11),
+    ic_comprovante_residencia TINYINT,
+    nm_senha VARCHAR(64),
+	CONSTRAINT pk_leitor PRIMARY KEY (cd_email_leitor)
+
+/*Leitor*/
+
+INSERT INTO leitor VALUES (1,'pedro','1234','13999', true, );
 
 /*Autores*/
 INSERT INTO autor VALUES (1, 'Machado de Assis');

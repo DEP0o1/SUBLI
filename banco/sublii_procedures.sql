@@ -1359,6 +1359,19 @@ BEGIN
   END IF;
 END$$
 
+DROP PROCEDURE IF EXISTS listar_favoritos$$
+CREATE PROCEDURE listar_favoritos(
+    IN p_cd_email_leitor INT
+)
+BEGIN
+    SELECT *
+    FROM favorito 
+      JOIN livro ON livro.cd_livro = favorito.cd_livro
+      WHERE favorito.cd_email_leitor = p_cd_email_leitor;
+
+END$$
+
+call listar_favoritos();
     
     
     

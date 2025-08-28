@@ -60,7 +60,6 @@ class LivroController extends Banco
 
 
             $parametros = [
-
                 'p_cd_livro' => $livro->cd_livro,
                 'p_nm_livro' => $livro->nm_livro,
                 'p_cd_assunto' => $livro->assuntos[0]->cd_assunto,

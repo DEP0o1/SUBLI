@@ -56,7 +56,8 @@ h4 {
     padding-right: 30px;
     padding-left: 30px;
     height: fit-content;
-    /* position: fixed; */
+    position: fixed;
+    top :0;
 }
 
 .areaPesquisa{
@@ -94,6 +95,7 @@ h4 {
     width: 100%;
     text-decoration: none;
     cursor: text;
+    background-color: var(--branco);
 }
 
 .lupa{
@@ -127,6 +129,12 @@ body{
     width: auto;
 }
 
+
+main{
+    display: flex;
+    margin-top: 84px;
+    flex-direction: column;
+}
 .btnHeader{   
     display: flex;
     flex-direction: row;
