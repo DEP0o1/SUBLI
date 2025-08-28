@@ -7,3 +7,25 @@
     margin-bottom: 0;
     height: 70vh;
 }
+
+@media only screen and (max-width: 600px){
+    
+    .formAvancado{
+        width: 80vw;
+        align-items: center;
+    }
+
+    .inputForm{
+        width: 70vw;
+    }
+
+    .areaCadastro{
+        margin-top: 5vh;
+    }
+
+    .formDeLado1{
+        flex-direction: column;
+        gap: 1vh;
+    }
+
+}

@@ -294,26 +294,15 @@ nav{
 
 header{
     width: 100vw;
-  }
-
-  input{
-    display: none;
-  }
+}
 
 .divInput{
     display: none;
 }
 
-  nav{
-    display: none;     
-  }  
-     /* quando eu coloco essa porra ele nao scrolla
-        mas é necessario pq se nao as coisa nao cabe na header    
-        cu buceta pinto bosta  */
-
-  .pesquisaAvanc{
+.pesquisaAvanc{
     display: none;
-  }
+}
 
 }
 

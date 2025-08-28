@@ -102,3 +102,70 @@ h3{
     width: 100%;
     text-decoration: none;
 }
+
+@media only screen and (max-width: 600px){
+
+    .formPesquisa{
+        margin-top: 0;
+    }
+
+    body{
+        display: flex;
+        flex-direction: column;
+        gap: 7vh;
+    }
+
+    .form{
+        flex-direction: column;
+    }
+
+    .formAvancado{
+        width: 80vw;
+        align-items: center;
+    }
+
+    .areaTituloLivro input{
+        width: 70vw;
+    }
+
+    .areaAutorLivro input{
+        width: 70vw;
+    }
+
+    .formDeLado{
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .formDeLado input{
+        width: 70vw;
+    }
+
+    .formDeLado1{
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .formDeLado1 input{
+        width: 70vw;
+    }
+
+    .inputForm{
+        width: 80vw;
+        height: 3vh;
+    }
+
+    .leitoresEncontrados{
+        flex-direction: column;
+    }
+
+    .leitorEncontrado{
+        width: 80vw;
+        margin-left: 8vw;
+    }
+
+    .resultadoPesquisa{
+        flex-direction: column;
+    }
+}
+

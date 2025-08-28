@@ -16,7 +16,7 @@
 
     <main class="areaLivroEmprestado">
       <section class="livroEmprestado">
-        <img src="../img/pequeno.webp" class="capaLivroEmprestado" />
+        <img src="img/pequeno.webp" class="capaLivroEmprestado" />
 
         <div class="infoLivro">
           <h1>O Pequeno Príncipe</h1>

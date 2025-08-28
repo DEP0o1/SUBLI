@@ -20,7 +20,7 @@
         
         <form action="" class="formAvancado">
             <div >
-                <h1 class="pesquisaAvancada">Registrar Empréstimo- O Pequeno Príncipe </h1>
+                <h1 class="pesquisaAvancada">Registrar Empréstimo - O Pequeno Príncipe </h1>
             </div>
         <section class="areaInput">
             <div class="areaTituloLivro">
@@ -45,6 +45,5 @@
         </form>
 
     </div>
->
 </body>
 </html>
