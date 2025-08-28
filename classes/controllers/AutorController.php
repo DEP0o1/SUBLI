@@ -21,6 +21,7 @@ class AutorController extends Banco
                 $autor->Hydrate($item);
                 array_push($lista, $autor);
             }
+            var_dump($lista);
             return $lista;
            
         }catch (\Throwable $th) {

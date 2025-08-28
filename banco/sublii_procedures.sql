@@ -511,16 +511,20 @@ END$$
 DROP PROCEDURE IF EXISTS listar_autores$$
 CREATE PROCEDURE listar_autores(
     IN p_cd_autor INT,
-    IN p_nm_autor VARCHAR(200)
+    IN p_nm_autor VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM autor
-    WHERE (p_cd_autor IS NULL OR cd_autor = p_cd_autor)
-      AND (p_nm_autor IS NULL OR nm_autor = p_nm_autor);
+    SELECT  DISTINCT  *
+    FROM autor a 
+    LEFT JOIN autor_livro al ON a.cd_autor = al.cd_livro
+    LEFT JOIN livro l ON al.cd_livro = l.cd_livro
+    WHERE (p_cd_autor IS NULL OR a.cd_autor = p_cd_autor)
+      AND (p_nm_autor IS NULL OR a.nm_autor = p_nm_autor)
+      AND   (p_cd_livro IS NULL OR al.cd_livro = p_cd_livro); 
 END$$
-
-/*CALL listar_autores(null, 'Clarice Lispector');*/
+ 
+CALL listar_autores(null, null, 3);
 
 DROP PROCEDURE IF EXISTS adicionar_autor$$
 CREATE PROCEDURE adicionar_autor(

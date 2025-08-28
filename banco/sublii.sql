@@ -259,6 +259,7 @@ INSERT INTO evento VALUES (1,NOW(), 'SHBJHSDAUOHAFSIL', 1,'Bruno', '50479150850'
 INSERT INTO livro VALUES (1, 'Livro Top', 3, 8, 10);
 INSERT INTO assunto_livro VALUES (1, 1);
 INSERT INTO autor_livro VALUES (1, 5);
+INSERT INTO autor_livro VALUES (1, 6);
 INSERT INTO genero_livro VALUES (1, 7);
 
 /* Livro 2 */
