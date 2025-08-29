@@ -41,10 +41,8 @@ BEGIN
     LEFT JOIN autor a ON al.cd_autor = a.cd_autor
     LEFT JOIN assunto_livro asl ON l.cd_livro = asl.cd_livro
     LEFT JOIN assunto s ON asl.cd_assunto = s.cd_assunto
-	LEFT JOIN assunto_livro asl ON l.cd_livro = asl.cd_livro
-    LEFT JOIN assunto s ON asl.cd_assunto = s.cd_assunto
-     LEFT JOIN exemplar e ON l.cd_livro = l.cd_livro
-    LEFT JOIN biblioteca b ON e.cd_biblioteca = b.cd_biblioteca
+     LEFT JOIN exemplar ex ON l.cd_livro = ex.cd_livro
+    LEFT JOIN biblioteca b ON ex.cd_biblioteca = b.cd_biblioteca
     
     WHERE 
         (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro) AND
@@ -66,15 +64,15 @@ BEGIN
         (p_nm_autor IS NULL OR a.nm_autor = p_nm_autor) AND
 
         (p_cd_assunto IS NULL OR asl.cd_assunto = p_cd_assunto) AND
-        (p_nm_assunto IS NULL OR s.nm_assunto = p_nm_assunto)
+        (p_nm_assunto IS NULL OR s.nm_assunto = p_nm_assunto) AND
         
         
-         AND (p_cd_l IS NULL OR al.cd_livro = p_cd_livro); 
+          (p_cd_biblioteca IS NULL OR ex.cd_biblioteca = p_cd_biblioteca); 
         
         
 END$$
 
-/*CALL listar_livros(NULL, NULL, NULL, 'Editora Top', NULL, 'Português',  NULL, 'Parangolé',  NULL, 'Ficção',NULL, 'Clarice Lispector', NULL, 'Tecnologia');*/
+/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, 2);*/
 
 
 

@@ -337,6 +337,27 @@ INSERT INTO  favorito VALUES (1, 'pedro.favoritos@gmail.com');
 
 /*Exemplares*/
 INSERT INTO exemplar VALUES (1, 2, 1, NOW(), false);
+INSERT INTO exemplar VALUES (9, 1, 2, NOW(), false);
+INSERT INTO exemplar VALUES (4, 6, 3, NOW(), false);
+INSERT INTO exemplar VALUES (2, 10, 4, NOW(), false);
+INSERT INTO exemplar VALUES (7, 3, 5, NOW(), false);
+INSERT INTO exemplar VALUES (6, 4, 6, NOW(), false);
+INSERT INTO exemplar VALUES (1, 9, 7, NOW(), false);
+INSERT INTO exemplar VALUES (5, 2, 8, NOW(), false);
+INSERT INTO exemplar VALUES (8, 5, 9, NOW(), false);
+INSERT INTO exemplar VALUES (10, 1, 10, NOW(), false);
+INSERT INTO exemplar VALUES (2, 8, 11, NOW(), false);
+INSERT INTO exemplar VALUES (4, 7, 12, NOW(), false);
+INSERT INTO exemplar VALUES (6, 3, 13, NOW(), false);
+INSERT INTO exemplar VALUES (9, 6, 14, NOW(), false);
+INSERT INTO exemplar VALUES (3, 10, 15, NOW(), false);
+INSERT INTO exemplar VALUES (7, 1, 16, NOW(), false);
+INSERT INTO exemplar VALUES (1, 5, 17, NOW(), false);
+INSERT INTO exemplar VALUES (8, 2, 18, NOW(), false);
+INSERT INTO exemplar VALUES (10, 4, 19, NOW(), false);
+INSERT INTO exemplar VALUES (5, 9, 20, NOW(), false);
+INSERT INTO exemplar VALUES (3, 7, 21, NOW(), false);
+
 
 /*
 select * from livro;

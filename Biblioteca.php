@@ -4,7 +4,6 @@ require_once('config.php');
 
 $codigo = $_REQUEST['codigo'];
 
-echo $codigo;
 
 ?>
 
