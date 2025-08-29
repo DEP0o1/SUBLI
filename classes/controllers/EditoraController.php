@@ -8,7 +8,8 @@ class EditoraController extends Banco
             $parametros = [
 
                 'p_cd_editora' => $editora->cd_editora,
-                'p_nm_editora' => $editora->nm_editora
+                'p_nm_editora' => $editora->nm_editora,
+                'p_cd_livro' => $editora->cd_livro
     
             ];
     

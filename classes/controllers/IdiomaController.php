@@ -8,7 +8,8 @@ class IdiomaController extends Banco
             $parametros = [
 
                 'p_cd_idioma' => $idioma->cd_idioma,
-                'p_nm_idioma' => $idioma->nm_idioma
+                'p_nm_idioma' => $idioma->nm_idioma,
+                'p_cd_livro' => $idioma->cd_livro
     
             ];
     

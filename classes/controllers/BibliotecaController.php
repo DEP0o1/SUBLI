@@ -8,15 +8,18 @@ class BibliotecaController extends Banco
 
             'p_cd_biblioteca' => $biblioteca->cd_biblioteca,
             'p_nm_biblioteca' => $biblioteca->nm_biblioteca
+            'p_cd_livro' => $biblioteca->livros[0]->cd_livro
 
         ];
 
         $lista = [];
+        $livrocontroller = new LivroController;
         $dados = $this->Consultar('listar_bibliotecas', $parametros);
             foreach($dados as $item){
-            $biblioteca = new Biblioteca;
-            $biblioteca->Hydrate($item);
-            array_push($lista, $biblioteca);
+            $Biblioteca = new Biblioteca;
+            $Biblioteca->Hydrate($item);
+            $Biblioteca->livros = $livrocontroller->ListarLivros(new Livro(null,null,null,null,null,null,null,null,$Biblioteca->cd_biblioteca));
+            array_push($lista, $Biblioteca);
         }
         return $lista;
     }

@@ -25,7 +25,9 @@ CREATE PROCEDURE listar_livros (
     IN p_nm_autor VARCHAR(200),
     
     IN p_cd_assunto INT,
-    IN p_nm_assunto VARCHAR(200)
+    IN p_nm_assunto VARCHAR(200),
+    
+    IN p_cd_biblioteca INT
 )
 BEGIN
     SELECT DISTINCT l.*
@@ -39,6 +41,11 @@ BEGIN
     LEFT JOIN autor a ON al.cd_autor = a.cd_autor
     LEFT JOIN assunto_livro asl ON l.cd_livro = asl.cd_livro
     LEFT JOIN assunto s ON asl.cd_assunto = s.cd_assunto
+	LEFT JOIN assunto_livro asl ON l.cd_livro = asl.cd_livro
+    LEFT JOIN assunto s ON asl.cd_assunto = s.cd_assunto
+     LEFT JOIN exemplar e ON l.cd_livro = l.cd_livro
+    LEFT JOIN biblioteca b ON e.cd_biblioteca = b.cd_biblioteca
+    
     WHERE 
         (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro) AND
         (p_nm_livro IS NULL OR l.nm_livro = p_nm_livro) AND
@@ -59,7 +66,10 @@ BEGIN
         (p_nm_autor IS NULL OR a.nm_autor = p_nm_autor) AND
 
         (p_cd_assunto IS NULL OR asl.cd_assunto = p_cd_assunto) AND
-        (p_nm_assunto IS NULL OR s.nm_assunto = p_nm_assunto);
+        (p_nm_assunto IS NULL OR s.nm_assunto = p_nm_assunto)
+        
+        
+         AND (p_cd_l IS NULL OR al.cd_livro = p_cd_livro); 
         
         
 END$$
@@ -634,6 +644,7 @@ END$$
 /*CALL alterar_assunto(1, 'Filosofia Afro-Brasileira');*/
 
 
+      
 /* =========================================
    BIBLIOTECA
 ========================================= */
@@ -641,16 +652,20 @@ END$$
 DROP PROCEDURE IF EXISTS listar_bibliotecas$$
 CREATE PROCEDURE listar_bibliotecas(
     IN p_cd_biblioteca INT,
-    IN p_nm_biblioteca VARCHAR(200)
+    IN p_nm_biblioteca VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM biblioteca
-    WHERE (p_cd_biblioteca IS NULL OR cd_biblioteca = p_cd_biblioteca)
-      AND (p_nm_biblioteca IS NULL OR nm_biblioteca = p_nm_biblioteca);
+    SELECT DISTINCT b. *
+    FROM biblioteca b
+    LEFT JOIN exemplar e ON b.cd_biblioteca = e.cd_biblioteca
+    LEFT JOIN livro l ON e.cd_livro = l.cd_livro
+    WHERE (p_cd_biblioteca IS NULL OR b.cd_biblioteca = p_cd_biblioteca)
+      AND (p_nm_biblioteca IS NULL OR b.nm_biblioteca = p_nm_biblioteca)
+      AND (p_cd_livro IS NULL OR e.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_bibliotecas(null, 'Parangolé');*/
+/*CALL listar_bibliotecas(null, null ,1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_biblioteca$$
 CREATE PROCEDURE adicionar_biblioteca(

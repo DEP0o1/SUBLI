@@ -8,7 +8,8 @@ class ColecaoController extends Banco
             $parametros = [
 
                 'p_cd_colecao' => $colecao->cd_colecao,
-                'p_nm_colecao' => $colecao->nm_colecao
+                'p_nm_colecao' => $colecao->nm_colecao,
+                'p_cd_livro' => $colecao->cd_livro
     
             ];
     

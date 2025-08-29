@@ -334,6 +334,10 @@ INSERT INTO genero_livro VALUES (10, 1);
 /*Favoritos*/
 INSERT INTO  favorito VALUES (1, 'pedro.favoritos@gmail.com');
 
+
+/*Exemplares*/
+INSERT INTO exemplar VALUES (1, 2, 1, NOW(), false);
+
 /*
 select * from livro;
 select * from idioma;
