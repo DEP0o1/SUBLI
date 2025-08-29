@@ -308,7 +308,7 @@ main{
 
 .biblioteca a {
     color: black;
-    background-color: var(--fundo);
+    width: fit-content;
     justify-content: center;
 }
 

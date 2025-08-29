@@ -1,7 +1,7 @@
 <?php
 
 class FavoritosController extends Banco{
-     function listarFAvoritos($livro = new livro){
+     function listarFavoritos($livro = new livro){
         try {
 
             $parametros = [

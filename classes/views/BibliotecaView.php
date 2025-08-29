@@ -6,7 +6,7 @@ class BibliotecaView{
 
         $controller = new BibliotecaController;
         $bibliotecas = $controller->ListarBibliotecas($biblioteca);
-
+        $i = 0;
         foreach ($bibliotecas as $Biblioteca){
 
             echo" 
@@ -18,12 +18,10 @@ class BibliotecaView{
           <a href='Biblioteca.php'>
             <button>Ver mais </button>
           </a>
-          </div>";
-
-
-
+          </div>";  
+          if (++$i > 3) break;
+            
         }
-
     }
 }
 
