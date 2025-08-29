@@ -78,7 +78,7 @@ CREATE TABLE bibliotecario(
 );
 
 CREATE TABLE leitor(
-	cd_email_leitor INT,
+	cd_email_leitor  VARCHAR(200),
 	nm_leitor VARCHAR(200),
     cd_cpf VARCHAR (11),
     cd_telefone VARCHAR (11),
@@ -102,11 +102,11 @@ CREATE TABLE doacao (
 	cd_doacao INT,
     nm_livro VARCHAR(45),
     cd_biblioteca INT,
-    cd_email_leitor INT,
+    cd_email_leitor VARCHAR(200),
     
     CONSTRAINT pk_doacao PRIMARY KEY (cd_doacao),
     CONSTRAINT fk_biblioteca_doacao FOREIGN KEY (cd_biblioteca) REFERENCES  biblioteca(cd_biblioteca),
-    CONSTRAINT  fk_email_leitor FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor)
+    CONSTRAINT  fk_email_leitor_doacao FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor)
 );
 
 CREATE TABLE emprestimo(
@@ -114,7 +114,7 @@ CREATE TABLE emprestimo(
 	dt_emprestimo DATETIME,
     dt_devolucao_esperada DATETIME,
 	dt_devolucao DATETIME,
-    cd_email_leitor INT,
+    cd_email_leitor VARCHAR(200),
     cd_exemplar INT,
     CONSTRAINT fk_leitor_emprestimo FOREIGN KEY (cd_email_leitor) REFERENCES leitor (cd_email_leitor),
     CONSTRAINT fk_exemplar_emprestimo FOREIGN KEY (cd_exemplar) REFERENCES exemplar (cd_exemplar),
@@ -124,7 +124,7 @@ CREATE TABLE emprestimo(
 CREATE TABLE reserva(
 	cd_reserva INT,
 	dt_reserva DATETIME,
-    cd_email_leitor INT,
+    cd_email_leitor VARCHAR(200),
     cd_exemplar INT,
     CONSTRAINT fk_leitor_reserva FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor),
     CONSTRAINT fk_exemplar_reserva FOREIGN KEY (cd_exemplar) REFERENCES exemplar (cd_exemplar),
@@ -166,33 +166,17 @@ CREATE TABLE genero_livro(
 );
 
 
-/*CREATE TABLE livro_favorito(
-	cd_livro INT,
-    cd_leitor VARCHAR(200),
-    cd_favoritado TINYINT ,
-    CONSTRAINT pk_livro_favorito PRIMARY KEY (cd_favoritado,cd_leitor),
-    CONSTRAINT fk_cd_leitor FOREIGN KEY, (cd_leitor)  REFERENCES leitor(cd_leitor)
-);*/
-
-/*CREATE TABLE favorito(
-    cd_favorito INT,
-    cd_email_leitor INT,
-    CONSTRAINT pk_favorito PRIMARY KEY (cd_favorito),
-    CONSTRAINT fk_email_leitor_favorito FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor)
-);*/
+CREATE TABLE favorito(
+    cd_livro INT,
+    cd_email_leitor VARCHAR(200),
+	CONSTRAINT pk_favorito PRIMARY KEY (cd_livro, cd_email_leitor),
+    CONSTRAINT fk_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro),
+	CONSTRAINT fk_leitor FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor)
+);
 
 
-/*CREATE TABLE favorito_leitor(
-	cd_livro INT,
-    cd_email_leitor INT,
-    CONSTRAINT pk_favorito_livro PRIMARY KEY (cd_livro, cd_email_leitor),
-	CONSTRAINT fk_email_leitor FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor),
-    CONSTRAINT fk_cd_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
-);*/
-
-
-/*Favoritos*/
-/*INSERT into favorito VALUES (1, 1);*/
+/*Leitores*/
+INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123');
 
 /*Generos*/
 INSERT INTO genero VALUES (1, 'Ficção');
@@ -205,8 +189,6 @@ INSERT INTO genero VALUES (7, 'Ciência');
 INSERT INTO genero VALUES (8, 'Autoajuda');
 INSERT INTO genero VALUES (9, 'Biografia');
 INSERT INTO genero VALUES (10, 'Aventura');
-
-
 
 /*Autores*/
 INSERT INTO autor VALUES (1, 'Machado de Assis');
@@ -346,6 +328,10 @@ INSERT INTO livro VALUES (10, 'Vivendo uma Vida Autentica', 10, 9, 8);
 INSERT INTO assunto_livro VALUES (10, 2);
 INSERT INTO autor_livro VALUES (10, 1);
 INSERT INTO genero_livro VALUES (10, 1);
+
+
+/*Favoritos*/
+INSERT INTO  favorito VALUES (1, 'pedro.favoritos@gmail.com');
 
 /*
 select * from livro;

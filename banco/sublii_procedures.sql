@@ -919,20 +919,22 @@ END$$
     
     DROP PROCEDURE IF EXISTS listar_leitores$$
 CREATE PROCEDURE listar_leitores(
-  IN p_cd_email_leitor INT,
+  IN p_cd_email_leitor VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_cpf VARCHAR(11),
-  IN p_cd_telefone VARCHAR(11),
-  IN p_ic_comprovante_residencia TINYINT
+  IN p_cd_telefone VARCHAR(11)
 )
 BEGIN
   SELECT * FROM leitor
      WHERE (p_cd_email_leitor IS NULL OR cd_email_leitor = p_cd_email_leitor)
        AND (p_nm_leitor IS NULL OR nm_leitor = p_nm_leitor)
        AND (p_cd_cpf IS NULL OR cd_cpf = p_cd_cpf)
-       AND (p_cd_telefone IS NULL OR cd_telefone = p_cd_telefone)
-       AND (p_ic_comprovante_residencia IS NULL OR ic_comprovante_residencia = p_ic_comprovante_residencia);
+       AND (p_cd_telefone IS NULL OR cd_telefone = p_cd_telefone);
+       
 END$$
+
+/*CALL listar_leitores('pedro.favoritos@gmail.com',null,null,null);*/
+
 
 DROP PROCEDURE IF EXISTS adicionar_leitor$$
 CREATE PROCEDURE adicionar_leitor(
@@ -1359,21 +1361,31 @@ BEGIN
   END IF;
 END$$
 
-/*DROP PROCEDURE IF EXISTS listar_favoritos$$
+DROP PROCEDURE IF EXISTS listar_favoritos$$
 CREATE PROCEDURE listar_favoritos(
-    IN p_cd_email_leitor INT
+    IN p_cd_email_leitor VARCHAR(200)
 )
 BEGIN
     SELECT *
     FROM favorito 
-      JOIN livro ON livro.cd_livro = favorito.cd_livro
-      WHERE favorito.cd_email_leitor = p_cd_email_leitor;
+      WHERE cd_email_leitor = p_cd_email_leitor;
 
-END$$*/
+END$$
 
-/*call listar_favoritos();*/
+/*CALL listar_favoritos('pedro.favoritos@gmail.com');*/
     
+    DROP PROCEDURE IF EXISTS adicionar_favoritos$$
+    CREATE PROCEDURE adicionar_favoritos(
+    IN p_cd_livro INT,
+    IN  p_cd_email_leitor VARCHAR(200)
+    )
     
+    BEGIN
+    INSERT INTO favorito VALUES (p_cd_livro, p_cd_email_leitor);
+    
+	END$$
+    
+       /*CALL adicionar_favoritos(2,'pedro.favoritos@gmail.com');*/
     
 $$
 DELIMITER ;
