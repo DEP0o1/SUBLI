@@ -254,7 +254,7 @@ INSERT INTO colecao VALUES (10, 'Arte e Cultura');
 
 /*Bibliotecas*/
 INSERT INTO biblioteca VALUES (1, 'Parangolé','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (2, 'Aurora','Rua Lucas Alcoforado');
+INSERT INTO biblioteca VALUES (2, 'Aurora','Cauã Nunes da Silva');
 INSERT INTO biblioteca VALUES (3, 'Luz do Saber','Rua Lucas Alcoforado');
 INSERT INTO biblioteca VALUES (4, 'Infantojuvenil','Rua Lucas Alcoforado');
 INSERT INTO biblioteca VALUES (5, 'Clássicos do Mundo','Rua Lucas Alcoforado');

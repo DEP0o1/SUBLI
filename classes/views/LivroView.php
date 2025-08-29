@@ -38,7 +38,7 @@ class LivroView{
             <button><a href='livroLeitor.html'>Ver Mais</a></button>
         </div>
         ";
-        if (++$i > 4) break;
+        // if (++$i > 4) break; NÃO FAZ ISSO ABOBADO
      }
 
 }

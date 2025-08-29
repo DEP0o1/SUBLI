@@ -19,7 +19,7 @@ class BibliotecaView{
             <button>Ver mais </button>
           </a>
           </div>";  
-          if (++$i > 3) break;
+          // if (++$i > 3) break; NÃO FAZ ISSO ABOBADO
             
         }
     }

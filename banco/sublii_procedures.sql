@@ -298,16 +298,19 @@ END$$
 DROP PROCEDURE IF EXISTS listar_idiomas$$
 CREATE PROCEDURE listar_idiomas(
     IN p_cd_idioma INT,
-    IN p_nm_idioma VARCHAR(200)
+    IN p_nm_idioma VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM idioma
-    WHERE (p_cd_idioma IS NULL OR cd_idioma = p_cd_idioma)
-      AND (p_nm_idioma IS NULL OR nm_idioma = p_nm_idioma);
+    SELECT DISTINCT i. *
+    FROM idioma i 
+    LEFT JOIN livro l ON i.cd_idioma = l.cd_idioma 
+    WHERE (p_cd_idioma IS NULL OR i.cd_idioma = p_cd_idioma)
+      AND (p_nm_idioma IS NULL OR i.nm_idioma = p_nm_idioma)
+      AND (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_idiomas(null,'Português');*/
+/*CALL listar_idiomas(null,null, 2);*/
 
 DROP PROCEDURE IF EXISTS adicionar_idioma$$
 CREATE PROCEDURE adicionar_idioma(
@@ -351,16 +354,19 @@ END$$
 DROP PROCEDURE IF EXISTS listar_colecoes$$
 CREATE PROCEDURE listar_colecoes(
     IN p_cd_colecao INT,
-    IN p_nm_colecao VARCHAR(200)
+    IN p_nm_colecao VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM colecao
-    WHERE (p_cd_colecao IS NULL OR cd_colecao = p_cd_colecao)
-      AND (p_nm_colecao IS NULL OR nm_colecao = p_nm_colecao);
+     SELECT DISTINCT c. *
+    FROM colecao c 
+    LEFT JOIN livro l ON c.cd_colecao = l.cd_colecao
+    WHERE (p_cd_colecao IS NULL OR c.cd_colecao = p_cd_colecao)
+      AND (p_nm_colecao IS NULL OR c.nm_colecao = p_nm_colecao)
+      AND (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_colecoes(1,null);*/
+/*CALL listar_colecoes(null,null, 2);*/
 
 DROP PROCEDURE IF EXISTS adicionar_colecao$$
 CREATE PROCEDURE adicionar_colecao(
@@ -462,16 +468,19 @@ END$$
 DROP PROCEDURE IF EXISTS listar_editoras$$
 CREATE PROCEDURE listar_editoras(
     IN p_cd_editora INT,
-    IN p_nm_editora VARCHAR(200)
+    IN p_nm_editora VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM editora
-    WHERE (p_cd_editora IS NULL OR cd_editora = p_cd_editora)
-      AND (p_nm_editora IS NULL OR nm_editora = p_nm_editora);
+    SELECT DISTINCT e. *
+    FROM editora e 
+    LEFT JOIN livro l ON e.cd_editora = l.cd_editora
+    WHERE (p_cd_editora IS NULL OR e.cd_editora = p_cd_editora)
+      AND (p_nm_editora IS NULL OR e.nm_editora = p_nm_editora)
+      AND (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_editoras(4, null);*/
+/*CALL listar_editoras(null, null, 2);*/
 
 DROP PROCEDURE IF EXISTS adicionar_editora$$
 CREATE PROCEDURE adicionar_editora(
@@ -573,16 +582,20 @@ END$$
 DROP PROCEDURE IF EXISTS listar_assuntos$$
 CREATE PROCEDURE listar_assuntos(
     IN p_cd_assunto INT,
-    IN p_nm_assunto VARCHAR(200)
+    IN p_nm_assunto VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM assunto
-    WHERE (p_cd_assunto IS NULL OR cd_assunto = p_cd_assunto)
-      AND (p_nm_assunto IS NULL OR nm_assunto = p_nm_assunto);
+   SELECT  DISTINCT a. *
+    FROM assunto a
+    LEFT JOIN assunto_livro al ON a.cd_assunto = al.cd_assunto
+    LEFT JOIN livro l ON al.cd_livro = l.cd_livro
+    WHERE (p_cd_assunto IS NULL OR a.cd_assunto = p_cd_assunto)
+      AND (p_nm_assunto IS NULL OR a.nm_assunto = p_nm_assunto)
+       AND  (p_cd_livro IS NULL OR al.cd_livro = p_cd_livro); 
 END$$
 
-/*CALL listar_assuntos(null, 'Filosofia');*/
+/*CALL listar_assuntos(null, null, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_assunto$$
 CREATE PROCEDURE adicionar_assunto(
