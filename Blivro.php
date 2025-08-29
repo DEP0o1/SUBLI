@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Livro Emprestado</title>
     <link rel="stylesheet" href="css/bibliotecario.css" />
-    <link rel="stylesheet" href="css/homeBibliotecario.css" />
-    <link rel="stylesheet" href="css/livroBibliotecario.css" />
     <script src="js/componentesJS/header.js"></script>
   </head>
   <body>

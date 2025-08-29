@@ -6,10 +6,7 @@
 
     <title> Pesquisa </title>
     <link rel="stylesheet" href="css/bibliotecario.css">
-    <title>Pesquisa</title>
-        <link rel="stylesheet" href="css/bibliotecario.css">
-    <link rel="stylesheet" href="css/homeBibliotecario.css">
-    <link rel="stylesheet" href="css/pesquisaBibliotecario.css">
+    <title>Pesquisa</title>   
     <script src="js/componentesJS/header.js"></script>
     
     <link rel="shortcut icon" href="img/pequeno terry.webp" type="image/x-icon">

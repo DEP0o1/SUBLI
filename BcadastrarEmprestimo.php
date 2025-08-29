@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Epréstimos</title>
     <link rel="stylesheet" href="css/bibliotecario.css">
-    <link rel="stylesheet" href="css/pesquisaBibliotecario.css">
-    <link rel="stylesheet" href="css/homeBibliotecario.css">
-    <link rel="stylesheet" href="css/cadastro.css">
     <script src="js/componentesJS/header.js"></script>
     
   <?php

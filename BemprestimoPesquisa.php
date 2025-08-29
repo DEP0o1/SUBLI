@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
     <link rel="stylesheet" href="css/bibliotecario.css">
-    <link rel="stylesheet" href="css/homeBibliotecario.css">
-    <link rel="stylesheet" href="css/pesquisaBibliotecario.css">
     <script src="js/componentesJS/header.js"></script>
     
     <link rel="shortcut icon" href="img/pequeno terry.webp" type="image/x-icon">

@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PESQUISA ESPECIFICA</title>
     <link rel="stylesheet" href="css/bibliotecario.css">
-    <link rel="stylesheet" href="css/homeBibliotecario.css">
-    <link rel="stylesheet" href="css/pesquisaBibliotecario.css">
     <script src="js/componentesJS/header.js"></script>
 
     <link rel="shortcut icon" href="img/pequeno terry.webp" type="image/x-icon">
@@ -96,7 +94,7 @@ require_once './complementos/headerBibliotecario.php';
                 <h3>Eu robo</h3>
 
                 <p>Isac assimov</p>
-                <a href="bibliotecario/livroBibliotecario.html">
+                <a href="Blivro.php">
                     <button class="btnRosa ">Ver Mais</button>
                 </a>
             </div>
@@ -106,7 +104,7 @@ require_once './complementos/headerBibliotecario.php';
                 <h3>Caliba e a Bruxa</h3>
 
                 <p>Clara Amorim</p>
-                <a href="bibliotecario/livroBibliotecario.html">
+                <a href="Blivro.php">
                     <button class="btnRosa ">Ver Mais</button>
                 </a>
             </div>
@@ -116,7 +114,7 @@ require_once './complementos/headerBibliotecario.php';
                 <h3>O Urso que Não era</h3>
 
                 <p>Frank Tehlis</p>
-                <a href="bibliotecario/livroBibliotecario.html">
+                <a href="Blivro.php">
                     <button class="btnRosa ">Ver Mais</button>
                 </a>
             </div>
@@ -126,7 +124,7 @@ require_once './complementos/headerBibliotecario.php';
                 <h3>A Genealogia da Moral</h3>
 
                 <p>Nietzche</p>
-                <a href="bibliotecario/livroBibliotecario.html">
+                <a href="Blivro.php">
                     <button class="btnRosa ">Ver Mais</button>
                 </a>
 
@@ -137,7 +135,7 @@ require_once './complementos/headerBibliotecario.php';
                 <h3>As vantagens de ser Invisivel</h3>
 
                 <p>Aintoine de Saint-Exupéry</p>
-                <a href="bibliotecario/livroBibliotecario.html">
+                <a href="Blivro.php">
                     <button class="btnRosa ">Ver Mais</button>
                 </a>
 
@@ -155,7 +153,7 @@ require_once './complementos/headerBibliotecario.php';
                     <h3>Os Miseraveis</h3>
 
                     <p>Cauã Nunes</p>
-                    <a href="bibliotecario/livroBibliotecario.html">
+                    <a href="Blivro.php">
                         <button class="btnRosa ">Ver Mais</button>
                     </a>
                 </div>
@@ -165,7 +163,7 @@ require_once './complementos/headerBibliotecario.php';
                     <h3>O Livro dos Insultos</h3>
 
                     <p>Léo Lins</p>
-                    <a href="bibliotecario/livroBibliotecario.html">
+                    <a href="Blivro.php">
                         <button class="btnRosa ">Ver Mais</button>
                     </a>
                 </div>
@@ -175,7 +173,7 @@ require_once './complementos/headerBibliotecario.php';
                     <h3>Capitães de Areia</h3>
 
                     <p>Baco Exu do blues</p>
-                    <a href="bibliotecario/livroBibliotecario.html">
+                    <a href="Blivro.php">
                         <button class="btnRosa ">Ver Mais</button>
                     </a>
                 </div>
@@ -187,7 +185,7 @@ require_once './complementos/headerBibliotecario.php';
                         Antes de Você</h3>
 
                     <p>Demi Lovato</p>
-                    <a href="bibliotecario/livroBibliotecario.html">
+                    <a href="Blivro.php">
                         <button class="btnRosa ">Ver Mais</button>
                     </a>
 
@@ -198,7 +196,7 @@ require_once './complementos/headerBibliotecario.php';
                     <h3>Como Mudar o Mundo</h3>
 
                     <p>DEUS</p>
-                    <a href="bibliotecario/livroBibliotecario.html">
+                    <a href="Blivro.php">
                         <button class="btnRosa ">Ver Mais</button>
                     </a>
 

@@ -9,7 +9,6 @@ class BibliotecaView{
 
         foreach ($bibliotecas as $Biblioteca){
 
-
             echo" 
         <div class='biblioteca'>
           <img src='img/biblioteca1_1.jpg' alt='Biblioteca Mario Faria'>
