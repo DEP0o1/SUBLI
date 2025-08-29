@@ -15,7 +15,7 @@ class BibliotecaView{
           <h4>{$Biblioteca->nm_biblioteca}</h4>
           <p>{$Biblioteca->nm_endereco}</p>
           <p>2.4 km de você</p>
-          <a href='Biblioteca.php'>
+          <a href='Biblioteca.php?codigo=$Biblioteca->cd_biblioteca'>
             <button>Ver mais </button>
           </a>
           </div>";  
@@ -23,6 +23,7 @@ class BibliotecaView{
             
         }
     }
+
 }
 
 ?>
