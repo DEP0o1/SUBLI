@@ -246,6 +246,8 @@ body {
   .areaMapa {
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: var(--azul);
   }
 
   .mapa {
@@ -256,7 +258,6 @@ body {
   position: relative;
 }
 
-/* animacao de carregamento do mapa */
 
 #carregando {
   position: absolute;
@@ -269,8 +270,8 @@ body {
   align-items: center;
   color: var(--branco);
   font-family: "Inter";
+  border: 5px solid var(--azul);
 }
-
 .spinner {
   border: 5px solid rgba(255,255,255,0.3);
   border-top: 5px solid var(--branco);
