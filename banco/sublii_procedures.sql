@@ -398,22 +398,27 @@ END$$
 
 /*CALL alterar_colecao(1,'PEDRO FÃ DO LINK DO ZAP');*/
 
+
 /* =========================================
    GENERO
 ========================================= */
 DROP PROCEDURE IF EXISTS listar_generos$$
 CREATE PROCEDURE listar_generos(
     IN p_cd_genero INT,
-    IN p_nm_genero VARCHAR(200)
+    IN p_nm_genero VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM genero
-    WHERE (p_cd_genero IS NULL OR cd_genero = p_cd_genero)
-      AND (p_nm_genero IS NULL OR nm_genero = p_nm_genero);
+    SELECT  DISTINCT g. *
+    FROM genero g
+    LEFT JOIN genero_livro gl ON g.cd_genero = gl.cd_genero
+    LEFT JOIN livro l ON gl.cd_livro = l.cd_livro
+    WHERE (p_cd_genero IS NULL OR g.cd_genero = p_cd_genero)
+      AND (p_nm_genero IS NULL OR g.nm_genero = p_nm_genero)
+       AND  (p_cd_livro IS NULL OR gl.cd_livro = p_cd_livro); 
 END$$
 
-/*CALL listar_generos(null,'Terror');*/
+/*CALL listar_generos(null,null, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_genero$$
 CREATE PROCEDURE adicionar_genero(
@@ -524,7 +529,7 @@ BEGIN
       AND   (p_cd_livro IS NULL OR al.cd_livro = p_cd_livro); 
 END$$
  
-CALL listar_autores(null, null, 1);
+/*CALL listar_autores(null, null, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_autor$$
 CREATE PROCEDURE adicionar_autor(

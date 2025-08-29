@@ -100,12 +100,13 @@ CREATE TABLE exemplar(
 
 CREATE TABLE doacao (
 	cd_doacao INT,
-    nm_livro VARCHAR(45),
+    cd_livro INT,
     cd_biblioteca INT,
     cd_email_leitor VARCHAR(200),
     
     CONSTRAINT pk_doacao PRIMARY KEY (cd_doacao),
     CONSTRAINT fk_biblioteca_doacao FOREIGN KEY (cd_biblioteca) REFERENCES  biblioteca(cd_biblioteca),
+    CONSTRAINT fk_livro_doacao FOREIGN KEY (cd_livro) REFERENCES  livro(cd_livro),
     CONSTRAINT  fk_email_leitor_doacao FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor)
 );
 
