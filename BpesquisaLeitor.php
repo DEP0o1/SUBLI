@@ -6,6 +6,7 @@
 
     <title> Pesquisa </title>
     <link rel="stylesheet" href="css/bibliotecario.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <title>Pesquisa</title>   
     <script src="js/componentesJS/header.js"></script>
     

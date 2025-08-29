@@ -7,6 +7,7 @@
   <title> Solicitações de doação </title>
 
   <link rel="stylesheet" href="css/bibliotecario.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <script src="sjs/componentesJS/header.js"></script>
     
 

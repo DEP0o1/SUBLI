@@ -1,0 +1,169 @@
+
+@media only screen and (max-width: 600px){
+
+    header{
+        width: 100vw;
+    }
+    
+    .divInput{
+        display: none;
+    }
+    
+    .pesquisaAvanc{
+        display: none;
+    }
+    
+}
+
+
+@media only screen and (max-width: 600px) {
+  
+    .areaLivroEmprestado{
+      width: 100vw;
+      height: min-content;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .capaLivroEmprestado{
+      height: 40vh;
+    }
+  
+    .livroEmprestado{
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      margin-top: 10vh;
+    } 
+  
+  }
+
+
+  @media only screen and (max-width: 600px){
+
+    .formPesquisa{
+        margin-top: 0;
+    }
+
+    body{
+        display: flex;
+        flex-direction: column;
+        gap: 7vh;
+    }
+
+    .form{
+        flex-direction: column;
+    }
+
+    .formAvancado{
+        width: 80vw;
+        align-items: center;
+    }
+
+    .areaTituloLivro input{
+        width: 70vw;
+    }
+
+    .areaAutorLivro input{
+        width: 70vw;
+    }
+
+    .formDeLado{
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .formDeLado input{
+        width: 70vw;
+    }
+
+    .formDeLado1{
+        flex-direction: column;
+        gap: 2vh;
+    }
+
+    .formDeLado1 input{
+        width: 70vw;
+    }
+
+    .inputForm{
+        width: 80vw;
+        height: 3vh;
+    }
+
+    .leitoresEncontrados{
+        flex-direction: column;
+    }
+
+    .leitorEncontrado{
+        width: 80vw;
+        margin-left: 8vw;
+    }
+
+    .resultadoPesquisa{
+        flex-direction: column;
+    }
+}
+
+
+@media only screen and (max-width: 600px){
+    
+    .formAvancado{
+        width: 80vw;
+        align-items: center;
+    }
+
+    .inputForm{
+        width: 70vw;
+    }
+
+    .areaCadastro{
+        margin-top: 5vh;
+    }
+
+    .formDeLado1{
+        flex-direction: column;
+        gap: 1vh;
+    }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  
+    .evento{
+      margin-left: 10vw;
+      width: 80vw;
+      height: 100vh;
+    }
+    
+    }
+
+
+    @media only screen and  (max-width: 600px) {
+    
+        .doacao{
+          width: 80vw;
+          flex-direction: column;
+        }
+      
+        .doacao p {
+          width: 70vw;
+        }
+      
+        .doacao h1{
+          width: 70vw;
+        }
+      
+        .linha {
+          width: 70vw;
+        }
+      
+        .areaCardsDoacao{
+          flex-direction: column;
+          margin-left: 4vw;
+        }
+      
+      }
+
+
