@@ -1,3 +1,24 @@
+<?php
+
+require_once('config.php');
+
+$buscar = false;
+$valor = "";
+
+if(isset ($_REQUEST['valor'])){
+  $buscar = true;
+
+  if($_REQUEST['valor'] != ""){
+
+    $valor = $_REQUEST['valor'];
+
+  }
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +61,28 @@
         />
       </button>
 
-      <div class="livro">
+      <?php
+
+
+      if($buscar){
+
+            $livro = new LivroView;
+
+            if($valor == ""){
+                $livro->ExibirLivros();
+            }
+
+            else{
+              $livro->ExibirLivros(new Livro(null,$valor));
+            }
+      }
+    
+      
+      
+      
+      ?>
+
+      <!-- <div class="livro">
         <img src="img/capa1.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
@@ -73,7 +115,7 @@
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
         <button>Ver Mais</button>
-      </div>
+      </div> -->
 
       <button class="seta">
         <img
@@ -90,7 +132,7 @@
         />
       </button>
 
-      <div class="livro">
+      <!-- <div class="livro">
         <img src="img/capa1.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
@@ -123,7 +165,7 @@
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
         <button>Ver Mais</button>
-      </div>
+      </div> -->
 
       <button class="seta">
         <img

@@ -5,6 +5,7 @@ DELIMITER $$
 ========================================= */
 
 DROP PROCEDURE IF EXISTS listar_livros$$
+
 CREATE PROCEDURE listar_livros (
     IN  p_cd_livro INT,
     IN p_nm_livro VARCHAR(200),
@@ -41,36 +42,34 @@ BEGIN
     LEFT JOIN autor a ON al.cd_autor = a.cd_autor
     LEFT JOIN assunto_livro asl ON l.cd_livro = asl.cd_livro
     LEFT JOIN assunto s ON asl.cd_assunto = s.cd_assunto
-     LEFT JOIN exemplar ex ON l.cd_livro = ex.cd_livro
+    LEFT JOIN exemplar ex ON l.cd_livro = ex.cd_livro
     LEFT JOIN biblioteca b ON ex.cd_biblioteca = b.cd_biblioteca
-    
+
     WHERE 
         (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro) AND
-        (p_nm_livro IS NULL OR l.nm_livro = p_nm_livro) AND
+        (p_nm_livro IS NULL OR l.nm_livro LIKE CONCAT('%', p_nm_livro, '%')) AND
 
         (p_cd_editora IS NULL OR l.cd_editora = p_cd_editora) AND
-        (p_nm_editora IS NULL OR e.nm_editora = p_nm_editora) AND
+        (p_nm_editora IS NULL OR e.nm_editora LIKE CONCAT('%', p_nm_editora, '%')) AND
 
         (p_cd_idioma IS NULL OR l.cd_idioma = p_cd_idioma) AND
-        (p_nm_idioma IS NULL OR i.nm_idioma = p_nm_idioma) AND
+        (p_nm_idioma IS NULL OR i.nm_idioma LIKE CONCAT('%', p_nm_idioma, '%')) AND
 
         (p_cd_colecao IS NULL OR l.cd_colecao = p_cd_colecao) AND
-        (p_nm_colecao IS NULL OR c.nm_colecao = p_nm_colecao) AND
+        (p_nm_colecao IS NULL OR c.nm_colecao LIKE CONCAT('%', p_nm_colecao, '%')) AND
 
         (p_cd_genero IS NULL OR gl.cd_genero = p_cd_genero) AND
-        (p_nm_genero IS NULL OR g.nm_genero = p_nm_genero) AND
+        (p_nm_genero IS NULL OR g.nm_genero LIKE CONCAT('%', p_nm_genero, '%')) AND
 
         (p_cd_autor IS NULL OR al.cd_autor = p_cd_autor) AND
-        (p_nm_autor IS NULL OR a.nm_autor = p_nm_autor) AND
+        (p_nm_autor IS NULL OR a.nm_autor LIKE CONCAT('%', p_nm_autor, '%')) AND
 
         (p_cd_assunto IS NULL OR asl.cd_assunto = p_cd_assunto) AND
-        (p_nm_assunto IS NULL OR s.nm_assunto = p_nm_assunto) AND
-        
-        
-          (p_cd_biblioteca IS NULL OR ex.cd_biblioteca = p_cd_biblioteca); 
-        
-        
+        (p_nm_assunto IS NULL OR s.nm_assunto LIKE CONCAT('%', p_nm_assunto, '%')) AND
+
+        (p_cd_biblioteca IS NULL OR ex.cd_biblioteca = p_cd_biblioteca);
 END$$
+
 
 /*CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, 2);*/
 
@@ -651,19 +650,23 @@ DROP PROCEDURE IF EXISTS listar_bibliotecas$$
 CREATE PROCEDURE listar_bibliotecas(
     IN p_cd_biblioteca INT,
     IN p_nm_biblioteca VARCHAR(200),
-    IN p_cd_livro INT
+    IN p_cd_livro INT,
+    IN p_cd_bibliotecario INT
 )
 BEGIN
     SELECT DISTINCT b. *
     FROM biblioteca b
     LEFT JOIN exemplar e ON b.cd_biblioteca = e.cd_biblioteca
     LEFT JOIN livro l ON e.cd_livro = l.cd_livro
+     LEFT JOIN bibliotecario_biblioteca bb ON b.cd_biblioteca = bb.cd_biblioteca
+    LEFT JOIN bibliotecario bc ON bb.cd_bibliotecario = bc.cd_bibliotecario
     WHERE (p_cd_biblioteca IS NULL OR b.cd_biblioteca = p_cd_biblioteca)
       AND (p_nm_biblioteca IS NULL OR b.nm_biblioteca = p_nm_biblioteca)
+      AND (p_cd_bibliotecario IS NULL OR bb.cd_bibliotecario = p_cd_bibliotecario)
       AND (p_cd_livro IS NULL OR e.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_bibliotecas(null, null ,1);*/
+/*CALL listar_bibliotecas(null, null ,NULL, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_biblioteca$$
 CREATE PROCEDURE adicionar_biblioteca(
@@ -1335,6 +1338,7 @@ BEGIN
      AND (p_cd_biblioteca IS NULL OR bb.cd_biblioteca = p_cd_biblioteca);
 END$$
 
+CALL listar_bibliotecarios (NULL,NULL,NULL, 1);
 
 DROP PROCEDURE IF EXISTS adicionar_bibliotecario$$
 CREATE PROCEDURE adicionar_bibliotecario(

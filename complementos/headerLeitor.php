@@ -1,4 +1,6 @@
 <?php
+require_once('./config.php');
+
 
 echo '
 <header>
@@ -6,9 +8,9 @@ echo '
         <img src="img/CorClara.png" alt="" class="logo" />
       </a>
 
-      <form action="resultado.html" class="areaPesquisa">
+      <form action="Lresultado.php" class="areaPesquisa">
         <div class="divInput">
-          <input type="text" placeholder="Faça sua Pesquisa" class="input" />
+          <input type="text" name="valor" placeholder="Faça sua Pesquisa" class="input" />
           <img src="img/pesquisa.webp" alt="" class="lupa" />
         </div>
 

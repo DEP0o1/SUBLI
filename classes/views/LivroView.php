@@ -6,7 +6,6 @@ class LivroView{
 
     $controller = new LivroController;
     $livros = $controller->ListarLivros($livro);
-    $i = 0;
 
     // for($i=0; $i < count($livros); $i++) { 
     //     // var_dump($livros[$i]->autores[0]->nm_autor); 
@@ -35,7 +34,7 @@ class LivroView{
         }
         echo
         "
-            <button><a href='livroLeitor.html'>Ver Mais</a></button>
+            <button><a href='LlivroLeitor.php'>Ver Mais</a></button>
         </div>
         ";
         // if (++$i > 4) break; NÃO FAZ ISSO ABOBADO
