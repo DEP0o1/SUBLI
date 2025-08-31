@@ -46,7 +46,7 @@ class BibliotecarioController extends Banco
         throw $th;
     }
     }
-    }
+    
 
     public function AlterarBibliotecario($bibliotecario = new Bibliotecario())
     {
@@ -81,8 +81,8 @@ class BibliotecarioController extends Banco
         throw $th;
     }
     }
-
 }
+
 
 
 ?>

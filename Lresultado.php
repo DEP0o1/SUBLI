@@ -65,7 +65,6 @@ if(isset ($_REQUEST['valor'])){
 
 
       if($buscar){
-
             $livro = new LivroView;
 
             if($valor == ""){
@@ -76,10 +75,6 @@ if(isset ($_REQUEST['valor'])){
               $livro->ExibirLivros(new Livro(null,$valor));
             }
       }
-    
-      
-      
-      
       ?>
 
       <!-- <div class="livro">

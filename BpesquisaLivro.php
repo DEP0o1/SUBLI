@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+require_once('config.php');
+
+
+$buscar = false;
+$valor = "";
+
+if(isset ($_REQUEST['valor'])){
+  $buscar = true;
+
+  if($_REQUEST['valor'] != ""){
+
+    $valor = $_REQUEST['valor'];
+
+  }
+
+}
+
+
+?>
+
 
 <head>
     <meta charset="UTF-8">
@@ -89,7 +110,22 @@ require_once './complementos/headerBibliotecario.php';
         </div>
         <div class="resultadoPesquisa">
 
-            <div class="areaLivro">
+            <?php
+            
+                 if($buscar){
+            $livro = new LivroView;
+
+            if($valor == ""){
+                $livro->ExibirLivros();
+            }
+
+            else{
+              $livro->ExibirLivros(new Livro(null,$valor));
+            }
+      }
+      ?>
+            
+            <!-- <div class="areaLivro">
 
                 <img src="img/robo.webp" alt="" class="capaLivro">
                 <h3>Eu robo</h3>
@@ -201,7 +237,7 @@ require_once './complementos/headerBibliotecario.php';
                         <button class="btnRosa ">Ver Mais</button>
                     </a>
 
-                </div>
+                </div> -->
 
 
 

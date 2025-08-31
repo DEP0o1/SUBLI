@@ -358,6 +358,12 @@ INSERT INTO exemplar VALUES (10, 4, 19, NOW(), false);
 INSERT INTO exemplar VALUES (5, 9, 20, NOW(), false);
 INSERT INTO exemplar VALUES (3, 7, 21, NOW(), false);
 
+/*Bibliotecarios*/
+
+INSERT INTO bibliotecario VALUES (1,'LABUBU','AAAAA','BBB');
+INSERT INTO bibliotecario_biblioteca VALUES (1,1);
+
+
 
 /*
 select * from livro;
