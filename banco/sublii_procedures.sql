@@ -30,7 +30,9 @@ CREATE PROCEDURE listar_livros (
     
     IN p_cd_biblioteca INT,
     
-    IN p_cd_doacao INT
+    IN p_cd_doacao INT,
+    
+    IN p_cd_emprestimo INT
 )
 BEGIN
     SELECT DISTINCT l.*
@@ -47,6 +49,7 @@ BEGIN
     LEFT JOIN exemplar ex ON l.cd_livro = ex.cd_livro
     LEFT JOIN biblioteca b ON ex.cd_biblioteca = b.cd_biblioteca
     LEFT JOIN doacao d ON l.cd_livro = d.cd_livro
+     LEFT JOIN emprestimo em ON l.cd_livro = em.cd_livro
 
     WHERE 
         (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro) AND
@@ -71,12 +74,12 @@ BEGIN
         (p_nm_assunto IS NULL OR s.nm_assunto LIKE CONCAT('%', p_nm_assunto, '%')) AND
 
        (p_cd_biblioteca IS NULL OR ex.cd_biblioteca = p_cd_biblioteca) AND
-        
-         (p_cd_doacao IS NULL OR dd.cd_doacao = p_cd_doacao);
+       (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo) AND
+         (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao);
 END$$
 
 
-/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, 2);*/
+/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, NULL, 1);*/
 
 
 
@@ -657,11 +660,15 @@ CREATE PROCEDURE listar_bibliotecas(
     IN p_nm_biblioteca VARCHAR(200),
     IN p_cd_livro INT,
     IN p_cd_bibliotecario INT,
-    IN p_cd_evento INT
+    IN p_cd_evento INT,
+    IN p_cd_doacao INT,
+    in p_cd_emprestimo INT
 )
 BEGIN
     SELECT DISTINCT b. *
     FROM biblioteca b
+    LEFT JOIN emprestimo em ON b.cd_biblioteca = em.cd_biblioteca
+    LEFT JOIN doacao d ON b.cd_biblioteca = d.cd_biblioteca
 	LEFT JOIN evento ev ON b.cd_biblioteca = ev.cd_biblioteca
     LEFT JOIN exemplar e ON b.cd_biblioteca = e.cd_biblioteca
     LEFT JOIN livro l ON e.cd_livro = l.cd_livro
@@ -672,10 +679,12 @@ BEGIN
       AND (p_nm_biblioteca IS NULL OR b.nm_biblioteca = p_nm_biblioteca)
       AND (p_cd_bibliotecario IS NULL OR bb.cd_bibliotecario = p_cd_bibliotecario)
        AND (p_cd_evento IS NULL OR ev.cd_evento = p_cd_evento)
+         AND (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao)
+         AND (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo)
       AND (p_cd_livro IS NULL OR e.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_bibliotecas(null, NULL ,NULL, NULL,2);*/
+/*CALL listar_bibliotecas(null, NULL ,NULL, NULL,NULL, NULL, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_biblioteca$$
 CREATE PROCEDURE adicionar_biblioteca(
@@ -967,21 +976,27 @@ CREATE PROCEDURE listar_leitores(
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_cpf VARCHAR(11),
   IN p_cd_telefone VARCHAR(11),
-  IN p_cd_evento INT
+  IN p_cd_evento INT,
+  IN p_cd_doacao INT,
+  IN p_cd_emprestimo INT
 )
 BEGIN
    SELECT DISTINCT l. *
     FROM leitor l
+    LEFT JOIN doacao d ON l.cd_email = d.cd_email
+	LEFT JOIN emprestimo em ON l.cd_email = em.cd_email
     LEFT JOIN evento e ON l.cd_email = e.cd_email
      WHERE (p_cd_email IS NULL OR l.cd_email = p_cd_email)
        AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor)
        AND (p_cd_cpf IS NULL OR l.cd_cpf = p_cd_cpf)
        AND (p_cd_telefone IS NULL OR l.cd_telefone = p_cd_telefone)
+        AND (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao)
+        AND (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo)
        AND (p_cd_evento IS NULL OR e.cd_evento = p_cd_evento);
        
 END$$
 
-/*CALL listar_leitores(null,null,null,null,1);*/
+/*CALL listar_leitores(null,null,null,null,null,null,1);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_leitor$$
@@ -1245,20 +1260,27 @@ CREATE PROCEDURE listar_emprestimos(
   IN p_dt_devolucao DATETIME,
   IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
-  IN p_cd_exemplar INT
+  IN p_cd_livro INT,
+  IN p_cd_biblioteca INT
 )
 BEGIN
   SELECT e.*
     FROM emprestimo e
-    JOIN leitor l ON e.cd_email = l.cd_email
+   LEFT JOIN leitor l ON e.cd_email = l.cd_email
+   LEFT JOIN biblioteca b ON e.cd_biblioteca = b.cd_biblioteca
+   LEFT JOIN livro li ON e.cd_livro = li.cd_livro
    WHERE (p_cd_emprestimo IS NULL OR e.cd_emprestimo = p_cd_emprestimo)
      AND (p_dt_emprestimo IS NULL OR e.dt_emprestimo = p_dt_emprestimo)
      AND (p_dt_devolucao_esperada IS NULL OR e.dt_devolucao_esperada = p_dt_devolucao_esperada)
      AND (p_dt_devolucao IS NULL OR e.dt_devolucao = p_dt_devolucao)
      AND (p_cd_email IS NULL OR e.cd_email = p_cd_email)
-     AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor)
-     AND (p_cd_exemplar IS NULL OR e.cd_exemplar = p_cd_exemplar);
+      AND (p_cd_livro IS NULL OR e.cd_livro = p_cd_livro)
+       AND (p_cd_biblioteca IS NULL OR e.cd_biblioteca = p_cd_biblioteca)
+     AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor);
+
 END$$
+
+/*CALL listar_emprestimos(null,null,null,null,null,null,null,null);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$

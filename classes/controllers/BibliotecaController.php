@@ -11,7 +11,8 @@ class BibliotecaController extends Banco
             'p_cd_livro' => $biblioteca->livros[0]->cd_livro,
             'p_cd_bibliotecario' => $biblioteca->bibliotecarios[0]->cd_bibliotecario,
             'p_cd_evento' => $biblioteca->cd_evento,
-            'p_cd_doacao' => $biblioteca->cd_doacao
+            'p_cd_doacao' => $biblioteca->cd_doacao,
+            'p_cd_emprestimo' => $biblioteca->cd_emprestimo
 
         ];
 

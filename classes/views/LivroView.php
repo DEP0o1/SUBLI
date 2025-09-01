@@ -23,7 +23,7 @@ class LivroView{
         echo 
         "
         <div class='livro'>
-            <img src='../img/capa livro.jpg' alt='' />
+            <img src='img/capa livro.jpg' alt='' />
             <h2>{$Livro->nm_livro}</h2>
         ";
         foreach($Livro->autores as $autor){

@@ -119,9 +119,11 @@ CREATE TABLE emprestimo(
     dt_devolucao_esperada DATETIME,
 	dt_devolucao DATETIME,
     cd_email VARCHAR(200),
-    cd_exemplar INT,
+    cd_livro INT,
+    cd_biblioteca INT,
     CONSTRAINT fk_leitor_emprestimo FOREIGN KEY (cd_email) REFERENCES leitor (cd_email),
-    CONSTRAINT fk_exemplar_emprestimo FOREIGN KEY (cd_exemplar) REFERENCES exemplar (cd_exemplar),
+    CONSTRAINT fk_livro_emprestimo FOREIGN KEY (cd_livro) REFERENCES livro (cd_livro),
+	CONSTRAINT fk_biblioteca_emprestimo FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca (cd_biblioteca),
 	CONSTRAINT pk_emprestimo PRIMARY KEY (cd_emprestimo)
 );
 
@@ -365,6 +367,15 @@ INSERT INTO exemplar VALUES (3, 7, 21, NOW(), false);
 INSERT INTO bibliotecario VALUES (1,'LABUBU','AAAAA','BBB');
 INSERT INTO bibliotecario_biblioteca VALUES (1,1);
 
+
+/*Doações*/
+INSERT INTO doacao VALUES (1,2,2,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (2,5,1,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (3,1,3,'pedro.favoritos@gmail.com');
+
+/*Emprestimo*/
+INSERT INTO emprestimo VALUES(1,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',1,1);
+INSERT INTO emprestimo VALUES(2,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',2,2);
 
 
 
