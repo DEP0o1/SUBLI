@@ -28,7 +28,9 @@ CREATE PROCEDURE listar_livros (
     IN p_cd_assunto INT,
     IN p_nm_assunto VARCHAR(200),
     
-    IN p_cd_biblioteca INT
+    IN p_cd_biblioteca INT,
+    
+    IN p_cd_doacao INT
 )
 BEGIN
     SELECT DISTINCT l.*
@@ -44,6 +46,7 @@ BEGIN
     LEFT JOIN assunto s ON asl.cd_assunto = s.cd_assunto
     LEFT JOIN exemplar ex ON l.cd_livro = ex.cd_livro
     LEFT JOIN biblioteca b ON ex.cd_biblioteca = b.cd_biblioteca
+    LEFT JOIN doacao d ON l.cd_livro = d.cd_livro
 
     WHERE 
         (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro) AND
@@ -67,7 +70,9 @@ BEGIN
         (p_cd_assunto IS NULL OR asl.cd_assunto = p_cd_assunto) AND
         (p_nm_assunto IS NULL OR s.nm_assunto LIKE CONCAT('%', p_nm_assunto, '%')) AND
 
-        (p_cd_biblioteca IS NULL OR ex.cd_biblioteca = p_cd_biblioteca);
+       (p_cd_biblioteca IS NULL OR ex.cd_biblioteca = p_cd_biblioteca) AND
+        
+         (p_cd_doacao IS NULL OR dd.cd_doacao = p_cd_doacao);
 END$$
 
 

@@ -11,7 +11,7 @@
         public $cd_reserva;
         public $cd_doacao;
 
-        public function __construct($cd_email2 = null, $nm_leitor2 = null, $cd_cpf2 = null, $cd_telefone2 = null, $ic_comprovante_residencia2 = null, $nm_senha2 = null, $cd_emprestimo2 = null, $cd_evento2 = null, $cd_reserva2 = null, $cd_doacao2)
+        public function __construct($cd_email2 = null, $nm_leitor2 = null, $cd_cpf2 = null, $cd_telefone2 = null, $ic_comprovante_residencia2 = null, $nm_senha2 = null, $cd_emprestimo2 = null, $cd_evento2 = null, $cd_reserva2 = null, $cd_doacao2 = null)
         {
             $this->cd_email = $cd_email2;
             $this->nm_leitor = $nm_leitor2;

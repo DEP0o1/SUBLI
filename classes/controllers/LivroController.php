@@ -21,7 +21,8 @@ class LivroController extends Banco
                 'p_nm_autor' => $livro->autores[0]->nm_autor,
                 'p_cd_editora' => $livro->editora->cd_editora,
                 'p_nm_editora' => $livro->editora->nm_editora,
-                'p_cd_biblioteca' => $livro->cd_biblioteca
+                'p_cd_biblioteca' => $livro->cd_biblioteca,
+                'p_cd_doacao' => $livro->cd_doacao
     
             ];
             $lista = [];

@@ -9,7 +9,7 @@
         public $cd_emprestimo;
         public $cd_evento;
         public $cd_reserva;
-               public $cd_doacao;
+        public $cd_doacao;
 
 
         public function __construct($cd_biblioteca2 = null, $nm_biblioteca2 = null, $nm_endereco2 = null, $livros2 = [new Livro],$bibliotecarios2 = [new Bibliotecario], $cd_emprestimo2 = null, $cd_evento2 = null, $cd_reserva2 = null, $cd_doacao2 = null)

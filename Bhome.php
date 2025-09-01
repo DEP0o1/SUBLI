@@ -30,49 +30,17 @@ require_once './complementos/headerBibliotecario.php';
 
     <div class="resultadoPesquisa">
       <div class="setaEsquerda"><img src="img/LEFT.png" alt="" /></div>
-      <div class="areaLivro">
-        <img src="img/robo.webp" alt="" class="capaLivro" />
-        <h3>Eu robo</h3>
-
-        <p>Isac assimov</p>
-        <button class="btnRosa">Ver Mais</button>
-      </div>
-
-      <div class="areaLivro">
-        <img
-          src="img/calibaeabruxasilviafederici-0-cke.webp"
-          alt=""
-          class="capaLivro" />
-        <h3>Caliba e a Bruxa</h3>
-
-        <p>Clara Amorim</p>
-        <button class="btnRosa">Ver Mais</button>
-      </div>
-
-      <div class="areaLivro">
-        <img src="img/o-urso-que-nao-era.webp" alt="" class="capaLivro" />
-        <h3>O Urso que Não era</h3>
-
-        <p>Frank Tehlis</p>
-        <button class="btnRosa">Ver Mais</button>
-      </div>
-
-      <div class="areaLivro">
-        <img src="img/nietzche.webp" alt="" class="capaLivro" />
-        <h3>A Genealogia da Moral</h3>
-
-        <p>Nietzche</p>
-        <button class="btnRosa">Ver Mais</button>
-      </div>
       
-      <div class="areaLivro">
-        <img src="img/vantagens.webp" alt="" class="capaLivro" />
-        <h3>As vantagens de ser Invisivel</h3>
+        <?php
+         $controller = new DoacaoController;
+         $doacoes = $controller->ListarDoacoes();
+          foreach ($doacoes as $Doacao){
+          $livro = new LivroView;
+          $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$Doacao->cd_doacao));
+  }
 
-        <p>Aintoine de Saint-Exupéry</p>
-        <button class="btnRosa">Ver Mais</button>
-      </div>
-
+      ?> 
+      
       <div class="setaDireita"><img src="img/RIGHT.png" alt="" /></div>
     </div>
 
