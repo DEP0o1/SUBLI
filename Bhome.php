@@ -1,3 +1,7 @@
+<?php
+require_once 'config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,66 +82,10 @@ require_once './complementos/headerBibliotecario.php';
       </div>
       <div class="resultadoEventos">
         <div class="setaEsquerda"><img src="img/LEFT.png" alt="" /></div>
-        <div class="areaEvento">
-          <h2>Nome do Evento</h2>
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            mollitia, autem ab consectetur cum placeat vel distinctio aut,
-            dignissimos, sint voluptatum voluptas! Odit, non qui delectus
-            soluta ipsum quasi necessitatibus.
-          </h3>
-          <p>data: 11/09/2025</p>
-          <button class="btnRosa">Ver Mais</button>
-        </div>
-
-        <div class="areaEvento">
-          <h2>Nome do Evento</h2>
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            mollitia, autem ab consectetur cum placeat vel distinctio aut,
-            dignissimos, sint voluptatum voluptas! Odit, non qui delectus
-            soluta ipsum quasi necessitatibus.
-          </h3>
-          <p>data: 11/09/2025</p>
-          <button class="btnRosa">Ver Mais</button>
-        </div>
-
-        <div class="areaEvento">
-          <h2>Nome do Evento</h2>
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            mollitia, autem ab consectetur cum placeat vel distinctio aut,
-            dignissimos, sint voluptatum voluptas! Odit, non qui delectus
-            soluta ipsum quasi necessitatibus.
-          </h3>
-          <p>data: 11/09/2025</p>
-          <button class="btnRosa">Ver Mais</button>
-        </div>
-
-        <div class="areaEvento">
-          <h2>Nome do Evento</h2>
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            mollitia, autem ab consectetur cum placeat vel distinctio aut,
-            dignissimos, sint voluptatum voluptas! Odit, non qui delectus
-            soluta ipsum quasi necessitatibus.
-          </h3>
-          <p>data: 11/09/2025</p>
-          <button class="btnRosa">Ver Mais</button>
-        </div>
-
-        <div class="areaEvento">
-          <h2>Nome do Evento</h2>
-          <h3>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            mollitia, autem ab consectetur cum placeat vel distinctio aut,
-            dignissimos, sint voluptatum voluptas! Odit, non qui delectus
-            soluta ipsum quasi necessitatibus.
-          </h3>
-          <p>data: 11/09/2025</p>
-          <button class="btnRosa">Ver Mais</button>
-        </div>
-
+          <?php
+        $evento = new EventoView;
+        $evento->ExibirEventos();
+      ?> 
         <div class="setaDireita"><img src="img/RIGHT.png" alt="" /></div>
       </div>
     </div>

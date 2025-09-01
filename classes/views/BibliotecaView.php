@@ -6,7 +6,7 @@ class BibliotecaView{
 
         $controller = new BibliotecaController;
         $bibliotecas = $controller->ListarBibliotecas($biblioteca);
-        $i = 0;
+
         foreach ($bibliotecas as $Biblioteca){
 
             echo" 
