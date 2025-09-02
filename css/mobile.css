@@ -3,6 +3,7 @@
 
     header{
         width: 100vw;
+        padding-left: 3vw;
     }
     
     .divInput{
@@ -11,6 +12,25 @@
     
     .pesquisaAvanc{
         display: none;
+    }
+
+    .logo{
+        height: 70px;
+        width: 70px;
+    }
+
+    .areaPesquisa{
+        gap: 0;
+        padding: 0;
+    }
+
+    .abas{
+        gap: 15px;
+        padding-right: 30px;
+    }
+
+    .dropbtn{
+        padding: 0;
     }
     
 }
@@ -118,7 +138,7 @@
     }
 
     .areaCadastro{
-        margin-top: 5vh;
+        margin-top: 15vh;
     }
 
     .formDeLado1{
