@@ -1,3 +1,13 @@
+<?php
+
+require_once('config.php');
+
+$codigo = $_REQUEST['codigo'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,15 +21,10 @@
 <body>
   <main>
     <section class="bibliotecas">
-      <div class="biblioteca">
-          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
-          <h4>Biblioteca Mario Faria</h4>
-          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
-          <p>2.4 km de você</p>
-          <a href="Biblioteca.php">
-            <button>Ver mais </button>
-          </a>
-          </div>
+        <?php
+        $biblioteca = new BibliotecaView;
+        $biblioteca->ExibirBibliotecas(new Biblioteca($codigo));
+     ?> 
     </section>
 
     <div class="textoMeio">
@@ -28,7 +33,12 @@
 
     <section class="exibirLivros">
       
-      <div class="livro">
+
+       <?php
+        $livro = new LivroView;
+        $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],$codigo));
+     ?> 
+      <!-- <div class="livro">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
             <h2>Memórias Póstumas de Brascubas</h2>
             <p>machado de assis</p>
@@ -61,7 +71,7 @@
             <h2>Memórias Póstumas de Brascubas</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
-          </div>
+          </div> -->
       
     </section>
   </main>

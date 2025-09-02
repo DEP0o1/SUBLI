@@ -1,3 +1,7 @@
+<?php
+require_once ('config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME</title>
     <link rel="stylesheet" href="css/bibliotecario.css">
-    <link rel="stylesheet" href="css/homeBibliotecario.css">
-    <link rel="stylesheet" href="css/pesquisaBibliotecario.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <script src="js/componentesJS/header.js"></script>
     
     <link rel="shortcut icon" href="img/pequeno terry.webp" type="image/x-icon">
@@ -33,97 +36,16 @@
 
     <div class="areaResultadoPesquisa">
         <div class="resultadoPesquisa">
-                    <div class="areaLivro">
-                    
-                    <img src="img/robo.webp" alt="" class="capaLivro">
-                    <h3>Eu robo</h3>
-                    
-                    <p>Isac assimov</p>
-                    <button class="btnRosa ">Ver Mais</button>
-            </div>
-                        <div class="areaLivro">
-                    
-                    <img src="img/calibaeabruxasilviafederici-0-cke.webp" alt="" class="capaLivro">
-                    <h3>Caliba e a Bruxa</h3>
-                    
-                    <p>Clara Amorim</p>
-                    <button class="btnRosa  ">Ver Mais</button>
-            </div>
-                    <div class="areaLivro">
-                    
-                    <img src="img/o-urso-que-nao-era.webp" alt="" class="capaLivro">
-                    <h3>O Urso que Não era</h3>
-                    
-                    <p>Frank Tehlis</p>
-                    <button class="btnRosa  ">Ver Mais</button>
-            </div>
-                <div class="areaLivro">
-                    
-                    <img src="img/nietzche.webp" alt="" class="capaLivro">
-                    <h3>A Genealogia da Moral</h3>
-                    
-                    <p>Nietzche</p>
-                    <button class="btnRosa  ">Ver Mais</button>
-            
-        </div>
-            <div class="areaLivro">
-                    
-                    <img src="img/vantagens.webp" alt="" class="capaLivro">
-                    <h3>As vantagens de ser Invisivel</h3>
-                    
-                    <p>Aintoine de Saint-Exupéry</p>
-                    <button class="btnRosa  ">Ver Mais</button>
-    
-        </div>
-
-
+<?php
+         $controller = new EmprestimoController;
+         $emprestimos = $controller->ListarEmprestimos();
+          foreach ($emprestimos as $Emprestimo){
+          $livro = new LivroView;
+          $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
+  }
+?>                      
         
     </div>
-
-    <div class="areaResultadoPesquisa">
-        <div class="resultadoPesquisa">
-                    <div class="areaLivro">
-                    
-                    <img src="img/miseravel.jpg" alt="" class="capaLivro">
-                    <h3>Os Miseraveis</h3>
-                    
-                    <p>Cauã Nunes</p>
-                    <button class="btnRosa  ">Ver Mais</button>
-            </div>
-                        <div class="areaLivro">
-                    
-                    <img src="img/O_LIVRO_DOS_INSULTOS_15785095791068183SK1578509579B.webp" alt="" class="capaLivro">
-                    <h3>O Livro dos Insultos</h3>
-                    
-                    <p>Léo Lins</p>
-                    <button class="btnRosa  ">Ver Mais</button>
-            </div>
-                    <div class="areaLivro">
-                    
-                    <img src="img/capitaes-da-areia.webp" alt="" class="capaLivro">
-                    <h3>Capitães de Areia</h3>
-                    
-                    <p>Baco Exu do blues</p>
-                    <button class="btnRosa  ">Ver Mais</button>
-            </div>
-                <div class="areaLivro">
-                    
-                    <img src="img/como-eu-era-antes-de-voce-livro-cke.webp" alt="" class="capaLivro">
-                    <h3>Como Eu Era 
-                        
-                        Antes de Você</h3>
-                    
-                    <p>Demi Lovato</p>
-                    <button class="btnRosa  ">Ver Mais</button>
-            
-        </div>
-            <div class="areaLivro">
-                    
-                    <img src="img/como-mudar-o-mundo.jpg" alt="" class="capaLivro">
-                    <h3>Como Mudar o Mundo</h3>
-                    
-                    <p>DEUS</p>
-                    <button class="btnRosa  ">Ver Mais</button>
     
         </div>
 

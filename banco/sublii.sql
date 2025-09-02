@@ -57,17 +57,6 @@ CREATE TABLE biblioteca(
 	CONSTRAINT pk_biblioteca PRIMARY KEY (cd_biblioteca)
 );
 
-CREATE TABLE evento(
-	cd_evento INT,
-	dt_evento DATETIME,
-    ds_evento TEXT,
-    cd_biblioteca INT,
-    nm_responsavel VARCHAR(200),
-    cd_cpf_responsavel VARCHAR(11),
-    ic_confirmado TINYINT,
-	CONSTRAINT pk_evento PRIMARY KEY (cd_evento),
-    CONSTRAINT fk_biblioteca FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca)
-);
 
 CREATE TABLE bibliotecario(
 	cd_bibliotecario INT,
@@ -78,14 +67,28 @@ CREATE TABLE bibliotecario(
 );
 
 CREATE TABLE leitor(
-	cd_email_leitor INT,
+	cd_email VARCHAR(200),
 	nm_leitor VARCHAR(200),
     cd_cpf VARCHAR (11),
     cd_telefone VARCHAR (11),
     ic_comprovante_residencia TINYINT,
     nm_senha VARCHAR(64),
-	CONSTRAINT pk_leitor PRIMARY KEY (cd_email_leitor)
+	CONSTRAINT pk_leitor PRIMARY KEY (cd_email)
 );
+
+CREATE TABLE evento(
+	nm_evento VARCHAR(200),
+	cd_evento INT,
+	dt_evento DATETIME,
+    ds_evento TEXT,
+    cd_biblioteca INT,
+    cd_email VARCHAR(200),
+    ic_confirmado TINYINT,
+	CONSTRAINT pk_evento PRIMARY KEY (cd_evento),
+    CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email),
+    CONSTRAINT fk_biblioteca FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca)
+);
+
 
 CREATE TABLE exemplar(
 	cd_livro INT,
@@ -100,13 +103,14 @@ CREATE TABLE exemplar(
 
 CREATE TABLE doacao (
 	cd_doacao INT,
-    nm_livro VARCHAR(45),
+    cd_livro INT,
     cd_biblioteca INT,
-    cd_email_leitor INT,
+    cd_email VARCHAR(200),
     
     CONSTRAINT pk_doacao PRIMARY KEY (cd_doacao),
     CONSTRAINT fk_biblioteca_doacao FOREIGN KEY (cd_biblioteca) REFERENCES  biblioteca(cd_biblioteca),
-    CONSTRAINT  fk_email_leitor FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor)
+    CONSTRAINT fk_livro_doacao FOREIGN KEY (cd_livro) REFERENCES  livro(cd_livro),
+    CONSTRAINT  fk_email_leitor_doacao FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
 );
 
 CREATE TABLE emprestimo(
@@ -114,19 +118,21 @@ CREATE TABLE emprestimo(
 	dt_emprestimo DATETIME,
     dt_devolucao_esperada DATETIME,
 	dt_devolucao DATETIME,
-    cd_email_leitor INT,
-    cd_exemplar INT,
-    CONSTRAINT fk_leitor_emprestimo FOREIGN KEY (cd_email_leitor) REFERENCES leitor (cd_email_leitor),
-    CONSTRAINT fk_exemplar_emprestimo FOREIGN KEY (cd_exemplar) REFERENCES exemplar (cd_exemplar),
+    cd_email VARCHAR(200),
+    cd_livro INT,
+    cd_biblioteca INT,
+    CONSTRAINT fk_leitor_emprestimo FOREIGN KEY (cd_email) REFERENCES leitor (cd_email),
+    CONSTRAINT fk_livro_emprestimo FOREIGN KEY (cd_livro) REFERENCES livro (cd_livro),
+	CONSTRAINT fk_biblioteca_emprestimo FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca (cd_biblioteca),
 	CONSTRAINT pk_emprestimo PRIMARY KEY (cd_emprestimo)
 );
 
 CREATE TABLE reserva(
 	cd_reserva INT,
 	dt_reserva DATETIME,
-    cd_email_leitor INT,
+    cd_email VARCHAR(200),
     cd_exemplar INT,
-    CONSTRAINT fk_leitor_reserva FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor),
+    CONSTRAINT fk_leitor_reserva FOREIGN KEY (cd_email) REFERENCES leitor(cd_email),
     CONSTRAINT fk_exemplar_reserva FOREIGN KEY (cd_exemplar) REFERENCES exemplar (cd_exemplar),
 	CONSTRAINT pk_reserva PRIMARY KEY (cd_reserva)
 );
@@ -165,6 +171,7 @@ CREATE TABLE genero_livro(
 	CONSTRAINT fk_genero FOREIGN KEY (cd_genero) REFERENCES genero(cd_genero)
 );
 
+<<<<<<< HEAD
 CREATE TABLE favorito(
     cd_livro INT,
     cd_email_leitor INT,
@@ -179,10 +186,20 @@ CREATE TABLE favorito_leitor(
 	CONSTRAINT fk_email_leitor FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor),
     CONSTRAINT fk_cd_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
 );
+=======
+
+/*CREATE TABLE favorito(
+    cd_livro INT,
+    cd_email VARCHAR(200),
+	CONSTRAINT pk_favorito PRIMARY KEY (cd_livro, cd_email),
+    CONSTRAINT fk_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro),
+	CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
+);*/
+>>>>>>> 53aaeaae26ba331c91a5869bc362df4e10558a80
 
 
-/*Favoritos*/
-INSERT into favorito VALUES (1, 1);
+/*Leitores*/
+INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123');
 
 /*Generos*/
 INSERT INTO genero VALUES (1, 'Ficção');
@@ -195,19 +212,6 @@ INSERT INTO genero VALUES (7, 'Ciência');
 INSERT INTO genero VALUES (8, 'Autoajuda');
 INSERT INTO genero VALUES (9, 'Biografia');
 INSERT INTO genero VALUES (10, 'Aventura');
-
-
-	cd_email_leitor INT,
-	nm_leitor VARCHAR(200),
-    cd_cpf VARCHAR (11),
-    cd_telefone VARCHAR (11),
-    ic_comprovante_residencia TINYINT,
-    nm_senha VARCHAR(64),
-	CONSTRAINT pk_leitor PRIMARY KEY (cd_email_leitor)
-
-/*Leitor*/
-
-INSERT INTO leitor VALUES (1,'pedro','1234','13999', true, );
 
 /*Autores*/
 INSERT INTO autor VALUES (1, 'Machado de Assis');
@@ -272,7 +276,7 @@ INSERT INTO colecao VALUES (10, 'Arte e Cultura');
 
 /*Bibliotecas*/
 INSERT INTO biblioteca VALUES (1, 'Parangolé','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (2, 'Aurora','Rua Lucas Alcoforado');
+INSERT INTO biblioteca VALUES (2, 'Aurora','Cauã Nunes da Silva');
 INSERT INTO biblioteca VALUES (3, 'Luz do Saber','Rua Lucas Alcoforado');
 INSERT INTO biblioteca VALUES (4, 'Infantojuvenil','Rua Lucas Alcoforado');
 INSERT INTO biblioteca VALUES (5, 'Clássicos do Mundo','Rua Lucas Alcoforado');
@@ -284,8 +288,8 @@ INSERT INTO biblioteca VALUES (10, 'Arte e Cultura','Rua Lucas Alcoforado');
 
 
 /*Eventos*/
-INSERT INTO evento VALUES (1,NOW(), 'SHBJHSDAUOHAFSIL', 1,'Bruno', '50479150850', NULL);
-
+INSERT INTO evento VALUES ('Divulgação do meu Livro', 1,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', NULL);
+INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'pedro.favoritos@gmail.com', NULL);
 
 /* Livro 1 */
 INSERT INTO livro VALUES (1, 'Livro Top', 3, 8, 10);
@@ -347,6 +351,53 @@ INSERT INTO livro VALUES (10, 'Vivendo uma Vida Autentica', 10, 9, 8);
 INSERT INTO assunto_livro VALUES (10, 2);
 INSERT INTO autor_livro VALUES (10, 1);
 INSERT INTO genero_livro VALUES (10, 1);
+
+
+/*Favoritos
+INSERT INTO  favorito VALUES (1, 'pedro.favoritos@gmail.com');*/
+
+
+/*Exemplares*/
+INSERT INTO exemplar VALUES (1, 2, 1, NOW(), false);
+INSERT INTO exemplar VALUES (9, 1, 2, NOW(), false);
+INSERT INTO exemplar VALUES (4, 6, 3, NOW(), false);
+INSERT INTO exemplar VALUES (2, 10, 4, NOW(), false);
+INSERT INTO exemplar VALUES (7, 3, 5, NOW(), false);
+INSERT INTO exemplar VALUES (6, 4, 6, NOW(), false);
+INSERT INTO exemplar VALUES (1, 9, 7, NOW(), false);
+INSERT INTO exemplar VALUES (5, 2, 8, NOW(), false);
+INSERT INTO exemplar VALUES (8, 5, 9, NOW(), false);
+INSERT INTO exemplar VALUES (10, 1, 10, NOW(), false);
+INSERT INTO exemplar VALUES (2, 8, 11, NOW(), false);
+INSERT INTO exemplar VALUES (4, 7, 12, NOW(), false);
+INSERT INTO exemplar VALUES (6, 3, 13, NOW(), false);
+INSERT INTO exemplar VALUES (9, 6, 14, NOW(), false);
+INSERT INTO exemplar VALUES (3, 10, 15, NOW(), false);
+INSERT INTO exemplar VALUES (7, 1, 16, NOW(), false);
+INSERT INTO exemplar VALUES (1, 5, 17, NOW(), false);
+INSERT INTO exemplar VALUES (8, 2, 18, NOW(), false);
+INSERT INTO exemplar VALUES (10, 4, 19, NOW(), false);
+INSERT INTO exemplar VALUES (5, 9, 20, NOW(), false);
+INSERT INTO exemplar VALUES (3, 7, 21, NOW(), false);
+
+/*Bibliotecarios*/
+INSERT INTO bibliotecario VALUES (1,'LABUBU','AAAAA','BBB');
+INSERT INTO bibliotecario_biblioteca VALUES (1,1);
+
+
+/*Doações*/
+INSERT INTO doacao VALUES (1,2,2,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (2,5,1,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (3,1,3,'pedro.favoritos@gmail.com');
+
+/*Emprestimo*/
+INSERT INTO emprestimo VALUES(1,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',1,1);
+INSERT INTO emprestimo VALUES(2,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',2,2);
+
+
+
+
+
 
 /*
 select * from livro;

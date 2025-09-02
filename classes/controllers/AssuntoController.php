@@ -11,7 +11,8 @@ class AssuntoController extends Banco
             $parametros = [
 
                 'p_cd_assunto' => $assunto->cd_assunto,
-                'p_nm_assunto' => $assunto->nm_assunto
+                'p_nm_assunto' => $assunto->nm_assunto,
+                'p_cd_livro' => $assunto->cd_livro
     
             ];
     

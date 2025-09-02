@@ -11,16 +11,7 @@
 <?php require_once './complementos/headerLeitor.php'; ?>  
 
     <main>
-      <aside class="perfil">
-        <img src="img/peter.jpg" alt="" />
-        <h1>Olá, Peter Pan!</h1>
-        <a href="editarPerfil.html"><h2>Editar perfil</h2></a>
-        <a href="meusLivros.html"><h2>Meus livros</h2></a>
-        <a href="doarPerfil.html"><h2>Doar</h2></a>
-        <a href="eventoPerfil.html"><h2>Solicitar Evento</h2></a>
-        <button>Logout</button>
-      </aside>
-  
+    <?php require_once 'barraLateral.php'; ?>
       <section class="areaPerfil">
         <form action="">
           <div class="titulo-areaPerfil">
@@ -33,17 +24,17 @@
   
           <div class="label-input">
             <label for="">Alterar nome: </label>
-            <input type="text" />
+            <input type="text" placeholder="Pedro Miguel "/>
           </div>
   
           <div class="label-input">
             <label for="">Alterar E-Mail: </label>
-            <input type="text" />
+            <input type="text" placeholder="seuemail@gmail.com" />
           </div>
   
           <div class="label-input">
             <label for="">Alterar senha: </label>
-            <input type="password" />
+            <input type="password" placeholder="***********"/>
           </div>
   
           <button type="submit">Salvar alterações</button>

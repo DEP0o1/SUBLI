@@ -6,7 +6,6 @@ class LivroView{
 
     $controller = new LivroController;
     $livros = $controller->ListarLivros($livro);
-   
 
     // for($i=0; $i < count($livros); $i++) { 
     //     // var_dump($livros[$i]->autores[0]->nm_autor); 
@@ -24,7 +23,7 @@ class LivroView{
         echo 
         "
         <div class='livro'>
-            <img src='../img/capa livro.jpg' alt='' />
+            <img src='img/capa livro.jpg' alt='' />
             <h2>{$Livro->nm_livro}</h2>
         ";
         foreach($Livro->autores as $autor){
@@ -35,9 +34,10 @@ class LivroView{
         }
         echo
         "
-            <button><a href='livroLeitor.html'>Ver Mais</a></button>
+            <button><a href='LlivroLeitor.php'>Ver Mais</a></button>
         </div>
         ";
+        // if (++$i > 4) break; NÃO FAZ ISSO ABOBADO
      }
 
 }

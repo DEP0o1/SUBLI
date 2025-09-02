@@ -9,7 +9,9 @@ class BibliotecarioController extends Banco
             $parametros = [
 
                 'p_cd_bibliotecario' => $bibliotecario->cd_bibliotecario,
-                'p_nm_bibliotecario' => $bibliotecario->nm_bibliotecario
+                'p_nm_bibliotecario' => $bibliotecario->nm_bibliotecario,
+                'p_cd_registro' => $bibliotecario->cd_registro,
+                'p_cd_biblioteca' => $bibliotecario->cd_biblioteca
     
             ];
     
@@ -44,7 +46,7 @@ class BibliotecarioController extends Banco
         throw $th;
     }
     }
-    }
+    
 
     public function AlterarBibliotecario($bibliotecario = new Bibliotecario())
     {
@@ -79,8 +81,8 @@ class BibliotecarioController extends Banco
         throw $th;
     }
     }
-
 }
+
 
 
 ?>

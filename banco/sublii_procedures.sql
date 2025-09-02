@@ -5,6 +5,7 @@ DELIMITER $$
 ========================================= */
 
 DROP PROCEDURE IF EXISTS listar_livros$$
+
 CREATE PROCEDURE listar_livros (
     IN  p_cd_livro INT,
     IN p_nm_livro VARCHAR(200),
@@ -25,7 +26,13 @@ CREATE PROCEDURE listar_livros (
     IN p_nm_autor VARCHAR(200),
     
     IN p_cd_assunto INT,
-    IN p_nm_assunto VARCHAR(200)
+    IN p_nm_assunto VARCHAR(200),
+    
+    IN p_cd_biblioteca INT,
+    
+    IN p_cd_doacao INT,
+    
+    IN p_cd_emprestimo INT
 )
 BEGIN
     SELECT DISTINCT l.*
@@ -39,32 +46,40 @@ BEGIN
     LEFT JOIN autor a ON al.cd_autor = a.cd_autor
     LEFT JOIN assunto_livro asl ON l.cd_livro = asl.cd_livro
     LEFT JOIN assunto s ON asl.cd_assunto = s.cd_assunto
+    LEFT JOIN exemplar ex ON l.cd_livro = ex.cd_livro
+    LEFT JOIN biblioteca b ON ex.cd_biblioteca = b.cd_biblioteca
+    LEFT JOIN doacao d ON l.cd_livro = d.cd_livro
+     LEFT JOIN emprestimo em ON l.cd_livro = em.cd_livro
+
     WHERE 
         (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro) AND
-        (p_nm_livro IS NULL OR l.nm_livro = p_nm_livro) AND
+        (p_nm_livro IS NULL OR l.nm_livro LIKE CONCAT('%', p_nm_livro, '%')) AND
 
         (p_cd_editora IS NULL OR l.cd_editora = p_cd_editora) AND
-        (p_nm_editora IS NULL OR e.nm_editora = p_nm_editora) AND
+        (p_nm_editora IS NULL OR e.nm_editora LIKE CONCAT('%', p_nm_editora, '%')) AND
 
         (p_cd_idioma IS NULL OR l.cd_idioma = p_cd_idioma) AND
-        (p_nm_idioma IS NULL OR i.nm_idioma = p_nm_idioma) AND
+        (p_nm_idioma IS NULL OR i.nm_idioma LIKE CONCAT('%', p_nm_idioma, '%')) AND
 
         (p_cd_colecao IS NULL OR l.cd_colecao = p_cd_colecao) AND
-        (p_nm_colecao IS NULL OR c.nm_colecao = p_nm_colecao) AND
+        (p_nm_colecao IS NULL OR c.nm_colecao LIKE CONCAT('%', p_nm_colecao, '%')) AND
 
         (p_cd_genero IS NULL OR gl.cd_genero = p_cd_genero) AND
-        (p_nm_genero IS NULL OR g.nm_genero = p_nm_genero) AND
+        (p_nm_genero IS NULL OR g.nm_genero LIKE CONCAT('%', p_nm_genero, '%')) AND
 
         (p_cd_autor IS NULL OR al.cd_autor = p_cd_autor) AND
-        (p_nm_autor IS NULL OR a.nm_autor = p_nm_autor) AND
+        (p_nm_autor IS NULL OR a.nm_autor LIKE CONCAT('%', p_nm_autor, '%')) AND
 
         (p_cd_assunto IS NULL OR asl.cd_assunto = p_cd_assunto) AND
-        (p_nm_assunto IS NULL OR s.nm_assunto = p_nm_assunto);
-        
-        
+        (p_nm_assunto IS NULL OR s.nm_assunto LIKE CONCAT('%', p_nm_assunto, '%')) AND
+
+       (p_cd_biblioteca IS NULL OR ex.cd_biblioteca = p_cd_biblioteca) AND
+       (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo) AND
+         (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao);
 END$$
 
-/*CALL listar_livros(NULL, NULL, NULL, 'Editora Top', NULL, 'Português',  NULL, 'Parangolé',  NULL, 'Ficção',NULL, 'Clarice Lispector', NULL, 'Tecnologia');*/
+
+/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, NULL, 1);*/
 
 
 
@@ -298,16 +313,19 @@ END$$
 DROP PROCEDURE IF EXISTS listar_idiomas$$
 CREATE PROCEDURE listar_idiomas(
     IN p_cd_idioma INT,
-    IN p_nm_idioma VARCHAR(200)
+    IN p_nm_idioma VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM idioma
-    WHERE (p_cd_idioma IS NULL OR cd_idioma = p_cd_idioma)
-      AND (p_nm_idioma IS NULL OR nm_idioma = p_nm_idioma);
+    SELECT DISTINCT i. *
+    FROM idioma i 
+    LEFT JOIN livro l ON i.cd_idioma = l.cd_idioma 
+    WHERE (p_cd_idioma IS NULL OR i.cd_idioma = p_cd_idioma)
+      AND (p_nm_idioma IS NULL OR i.nm_idioma = p_nm_idioma)
+      AND (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_idiomas(null,'Português');*/
+/*CALL listar_idiomas(null,null, 2);*/
 
 DROP PROCEDURE IF EXISTS adicionar_idioma$$
 CREATE PROCEDURE adicionar_idioma(
@@ -351,16 +369,19 @@ END$$
 DROP PROCEDURE IF EXISTS listar_colecoes$$
 CREATE PROCEDURE listar_colecoes(
     IN p_cd_colecao INT,
-    IN p_nm_colecao VARCHAR(200)
+    IN p_nm_colecao VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM colecao
-    WHERE (p_cd_colecao IS NULL OR cd_colecao = p_cd_colecao)
-      AND (p_nm_colecao IS NULL OR nm_colecao = p_nm_colecao);
+     SELECT DISTINCT c. *
+    FROM colecao c 
+    LEFT JOIN livro l ON c.cd_colecao = l.cd_colecao
+    WHERE (p_cd_colecao IS NULL OR c.cd_colecao = p_cd_colecao)
+      AND (p_nm_colecao IS NULL OR c.nm_colecao = p_nm_colecao)
+      AND (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_colecoes(1,null);*/
+/*CALL listar_colecoes(null,null, 2);*/
 
 DROP PROCEDURE IF EXISTS adicionar_colecao$$
 CREATE PROCEDURE adicionar_colecao(
@@ -398,22 +419,27 @@ END$$
 
 /*CALL alterar_colecao(1,'PEDRO FÃ DO LINK DO ZAP');*/
 
+
 /* =========================================
    GENERO
 ========================================= */
 DROP PROCEDURE IF EXISTS listar_generos$$
 CREATE PROCEDURE listar_generos(
     IN p_cd_genero INT,
-    IN p_nm_genero VARCHAR(200)
+    IN p_nm_genero VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM genero
-    WHERE (p_cd_genero IS NULL OR cd_genero = p_cd_genero)
-      AND (p_nm_genero IS NULL OR nm_genero = p_nm_genero);
+    SELECT  DISTINCT g. *
+    FROM genero g
+    LEFT JOIN genero_livro gl ON g.cd_genero = gl.cd_genero
+    LEFT JOIN livro l ON gl.cd_livro = l.cd_livro
+    WHERE (p_cd_genero IS NULL OR g.cd_genero = p_cd_genero)
+      AND (p_nm_genero IS NULL OR g.nm_genero = p_nm_genero)
+       AND  (p_cd_livro IS NULL OR gl.cd_livro = p_cd_livro); 
 END$$
 
-/*CALL listar_generos(null,'Terror');*/
+/*CALL listar_generos(null,null, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_genero$$
 CREATE PROCEDURE adicionar_genero(
@@ -457,16 +483,19 @@ END$$
 DROP PROCEDURE IF EXISTS listar_editoras$$
 CREATE PROCEDURE listar_editoras(
     IN p_cd_editora INT,
-    IN p_nm_editora VARCHAR(200)
+    IN p_nm_editora VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM editora
-    WHERE (p_cd_editora IS NULL OR cd_editora = p_cd_editora)
-      AND (p_nm_editora IS NULL OR nm_editora = p_nm_editora);
+    SELECT DISTINCT e. *
+    FROM editora e 
+    LEFT JOIN livro l ON e.cd_editora = l.cd_editora
+    WHERE (p_cd_editora IS NULL OR e.cd_editora = p_cd_editora)
+      AND (p_nm_editora IS NULL OR e.nm_editora = p_nm_editora)
+      AND (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_editoras(4, null);*/
+/*CALL listar_editoras(null, null, 2);*/
 
 DROP PROCEDURE IF EXISTS adicionar_editora$$
 CREATE PROCEDURE adicionar_editora(
@@ -524,7 +553,7 @@ BEGIN
       AND   (p_cd_livro IS NULL OR al.cd_livro = p_cd_livro); 
 END$$
  
-CALL listar_autores(null, null, 1);
+/*CALL listar_autores(null, null, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_autor$$
 CREATE PROCEDURE adicionar_autor(
@@ -568,16 +597,20 @@ END$$
 DROP PROCEDURE IF EXISTS listar_assuntos$$
 CREATE PROCEDURE listar_assuntos(
     IN p_cd_assunto INT,
-    IN p_nm_assunto VARCHAR(200)
+    IN p_nm_assunto VARCHAR(200),
+    IN p_cd_livro INT
 )
 BEGIN
-    SELECT *
-    FROM assunto
-    WHERE (p_cd_assunto IS NULL OR cd_assunto = p_cd_assunto)
-      AND (p_nm_assunto IS NULL OR nm_assunto = p_nm_assunto);
+   SELECT  DISTINCT a. *
+    FROM assunto a
+    LEFT JOIN assunto_livro al ON a.cd_assunto = al.cd_assunto
+    LEFT JOIN livro l ON al.cd_livro = l.cd_livro
+    WHERE (p_cd_assunto IS NULL OR a.cd_assunto = p_cd_assunto)
+      AND (p_nm_assunto IS NULL OR a.nm_assunto = p_nm_assunto)
+       AND  (p_cd_livro IS NULL OR al.cd_livro = p_cd_livro); 
 END$$
 
-/*CALL listar_assuntos(null, 'Filosofia');*/
+/*CALL listar_assuntos(null, null, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_assunto$$
 CREATE PROCEDURE adicionar_assunto(
@@ -616,6 +649,7 @@ END$$
 /*CALL alterar_assunto(1, 'Filosofia Afro-Brasileira');*/
 
 
+      
 /* =========================================
    BIBLIOTECA
 ========================================= */
@@ -623,16 +657,34 @@ END$$
 DROP PROCEDURE IF EXISTS listar_bibliotecas$$
 CREATE PROCEDURE listar_bibliotecas(
     IN p_cd_biblioteca INT,
-    IN p_nm_biblioteca VARCHAR(200)
+    IN p_nm_biblioteca VARCHAR(200),
+    IN p_cd_livro INT,
+    IN p_cd_bibliotecario INT,
+    IN p_cd_evento INT,
+    IN p_cd_doacao INT,
+    in p_cd_emprestimo INT
 )
 BEGIN
-    SELECT *
-    FROM biblioteca
-    WHERE (p_cd_biblioteca IS NULL OR cd_biblioteca = p_cd_biblioteca)
-      AND (p_nm_biblioteca IS NULL OR nm_biblioteca = p_nm_biblioteca);
+    SELECT DISTINCT b. *
+    FROM biblioteca b
+    LEFT JOIN emprestimo em ON b.cd_biblioteca = em.cd_biblioteca
+    LEFT JOIN doacao d ON b.cd_biblioteca = d.cd_biblioteca
+	LEFT JOIN evento ev ON b.cd_biblioteca = ev.cd_biblioteca
+    LEFT JOIN exemplar e ON b.cd_biblioteca = e.cd_biblioteca
+    LEFT JOIN livro l ON e.cd_livro = l.cd_livro
+	LEFT JOIN bibliotecario_biblioteca bb ON b.cd_biblioteca = bb.cd_biblioteca
+    LEFT JOIN bibliotecario bc ON bb.cd_bibliotecario = bc.cd_bibliotecario
+
+    WHERE (p_cd_biblioteca IS NULL OR b.cd_biblioteca = p_cd_biblioteca)
+      AND (p_nm_biblioteca IS NULL OR b.nm_biblioteca = p_nm_biblioteca)
+      AND (p_cd_bibliotecario IS NULL OR bb.cd_bibliotecario = p_cd_bibliotecario)
+       AND (p_cd_evento IS NULL OR ev.cd_evento = p_cd_evento)
+         AND (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao)
+         AND (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo)
+      AND (p_cd_livro IS NULL OR e.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_bibliotecas(null, 'Parangolé');*/
+/*CALL listar_bibliotecas(null, NULL ,NULL, NULL,NULL, NULL, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_biblioteca$$
 CREATE PROCEDURE adicionar_biblioteca(
@@ -683,6 +735,7 @@ END$$
 
 DROP PROCEDURE IF EXISTS listar_eventos$$
 CREATE PROCEDURE listar_eventos(
+	IN p_nm_evento VARCHAR(200),
     IN p_cd_evento INT,
     IN p_dt_evento DATETIME,
     IN p_ds_evento TEXT,
@@ -690,12 +743,12 @@ CREATE PROCEDURE listar_eventos(
     IN p_cd_biblioteca INT,
     IN p_nm_biblioteca VARCHAR(200),
     
-    IN p_nm_responsavel VARCHAR(200),
-    IN p_cd_cpf_responsavel VARCHAR(11),
+    IN p_cd_email VARCHAR(200),
     IN p_ic_confirmado TINYINT
 )
 BEGIN
 	DECLARE v_cd_biblioteca INT;
+
 
 
 	IF p_cd_biblioteca IS NULL AND p_nm_biblioteca IS NOT NULL THEN
@@ -710,15 +763,15 @@ BEGIN
     SELECT *
     FROM evento
     WHERE (p_cd_evento IS NULL OR cd_evento = p_cd_evento)
+		AND (p_nm_evento IS NULL OR nm_evento = p_nm_evento)
       AND (p_dt_evento IS NULL OR dt_evento = p_dt_evento)
       AND (p_ds_evento IS NULL OR ds_evento = p_ds_evento)
       AND (p_cd_biblioteca IS NULL OR cd_biblioteca = p_cd_biblioteca)
-      AND (p_nm_responsavel IS NULL OR nm_responsavel = p_nm_responsavel)
-      AND (p_cd_cpf_responsavel IS NULL OR p_cd_cpf_responsavel = p_cd_cpf_responsavel)
+      AND (p_cd_email IS NULL OR p_cd_email = p_cd_email)
 		AND (p_ic_confirmado IS NULL OR ic_confirmado = p_ic_confirmado);
 END$$
 
-/*CALL listar_eventos(null,null,null,null,'Parangolé',null,null,null);*/
+/*CALL listar_eventos(null,null,null,null,null,null,'pedro.favoritos@gmail.com',null);*/
 
 DROP PROCEDURE IF EXISTS adicionar_evento$$
 CREATE PROCEDURE adicionar_evento(
@@ -919,24 +972,36 @@ END$$
     
     DROP PROCEDURE IF EXISTS listar_leitores$$
 CREATE PROCEDURE listar_leitores(
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_cpf VARCHAR(11),
   IN p_cd_telefone VARCHAR(11),
-  IN p_ic_comprovante_residencia TINYINT
+  IN p_cd_evento INT,
+  IN p_cd_doacao INT,
+  IN p_cd_emprestimo INT
 )
 BEGIN
-  SELECT * FROM leitor
-     WHERE (p_cd_email_leitor IS NULL OR cd_email_leitor = p_cd_email_leitor)
-       AND (p_nm_leitor IS NULL OR nm_leitor = p_nm_leitor)
-       AND (p_cd_cpf IS NULL OR cd_cpf = p_cd_cpf)
-       AND (p_cd_telefone IS NULL OR cd_telefone = p_cd_telefone)
-       AND (p_ic_comprovante_residencia IS NULL OR ic_comprovante_residencia = p_ic_comprovante_residencia);
+   SELECT DISTINCT l. *
+    FROM leitor l
+    LEFT JOIN doacao d ON l.cd_email = d.cd_email
+	LEFT JOIN emprestimo em ON l.cd_email = em.cd_email
+    LEFT JOIN evento e ON l.cd_email = e.cd_email
+     WHERE (p_cd_email IS NULL OR l.cd_email = p_cd_email)
+       AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor)
+       AND (p_cd_cpf IS NULL OR l.cd_cpf = p_cd_cpf)
+       AND (p_cd_telefone IS NULL OR l.cd_telefone = p_cd_telefone)
+        AND (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao)
+        AND (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo)
+       AND (p_cd_evento IS NULL OR e.cd_evento = p_cd_evento);
+       
 END$$
+
+/*CALL listar_leitores(null,null,null,null,null,null,1);*/
+
 
 DROP PROCEDURE IF EXISTS adicionar_leitor$$
 CREATE PROCEDURE adicionar_leitor(
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_cpf VARCHAR(11),
   IN p_cd_telefone VARCHAR(11),
@@ -944,25 +1009,25 @@ CREATE PROCEDURE adicionar_leitor(
   IN p_nm_senha VARCHAR(64)
 )
 BEGIN
-  DECLARE v_cd_email_leitor INT;
+  DECLARE v_cd_email VARCHAR(200);
 
-  IF p_cd_email_leitor IS NULL THEN
-    SELECT COALESCE(MAX(cd_email_leitor), 0) + 1 INTO v_cd_email_leitor FROM leitor;
+  IF p_cd_email IS NULL THEN
+    SELECT COALESCE(MAX(cd_email), 0) + 1 INTO v_cd_email FROM leitor;
   ELSE
-    SET v_cd_email_leitor = p_cd_email_leitor;
+    SET v_cd_email = p_cd_email;
   END IF;
 
-  IF v_cd_email_leitor IS NOT NULL AND p_nm_leitor IS NOT NULL
+  IF v_cd_email IS NOT NULL AND p_nm_leitor IS NOT NULL
      AND p_cd_cpf IS NOT NULL AND p_cd_telefone IS NOT NULL
      AND p_ic_comprovante_residencia IS NOT NULL AND p_nm_senha IS NOT NULL THEN
     INSERT INTO leitor
-      VALUES (v_cd_email_leitor, p_nm_leitor, p_cd_cpf, p_cd_telefone, p_ic_comprovante_residencia, p_nm_senha);
+      VALUES (v_cd_email, p_nm_leitor, p_cd_cpf, p_cd_telefone, p_ic_comprovante_residencia, p_nm_senha);
   END IF;
 END$$
 
 DROP PROCEDURE IF EXISTS alterar_leitor$$
 CREATE PROCEDURE alterar_leitor(
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_cpf VARCHAR(11),
   IN p_cd_telefone VARCHAR(11),
@@ -970,14 +1035,14 @@ CREATE PROCEDURE alterar_leitor(
   IN p_nm_senha VARCHAR(64)
 )
 BEGIN
-  IF p_cd_email_leitor IS NOT NULL THEN
+  IF p_cd_email IS NOT NULL THEN
     UPDATE leitor
       SET nm_leitor = COALESCE(p_nm_leitor, nm_leitor),
           cd_cpf = COALESCE(p_cd_cpf, cd_cpf),
           cd_telefone = COALESCE(p_cd_telefone, cd_telefone),
           ic_comprovante_residencia = COALESCE(p_ic_comprovante_residencia, ic_comprovante_residencia),
           nm_senha = COALESCE(p_nm_senha, nm_senha)
-    WHERE cd_email_leitor = p_cd_email_leitor;
+    WHERE cd_email = p_cd_email;
   END IF;
 END$$
 
@@ -990,17 +1055,17 @@ END$$
 CREATE PROCEDURE listar_reservas(
   IN p_cd_reserva INT,
   IN p_dt_reserva DATETIME,
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_cd_exemplar INT,
   IN p_nm_leitor VARCHAR(200)
 )
 BEGIN
   SELECT r.*
     FROM reserva r
-    JOIN leitor l ON r.cd_email_leitor = l.cd_email_leitor
+    JOIN leitor l ON r.cd_email = l.cd_email
    WHERE (p_cd_reserva IS NULL OR r.cd_reserva = p_cd_reserva)
      AND (p_dt_reserva IS NULL OR r.dt_reserva = p_dt_reserva)
-     AND (p_cd_email_leitor IS NULL OR r.cd_email_leitor = p_cd_email_leitor)
+     AND (p_cd_email IS NULL OR r.cd_email= p_cd_email)
      AND (p_cd_exemplar IS NULL OR r.cd_exemplar = p_cd_exemplar)
      AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor);
 END$$
@@ -1010,13 +1075,13 @@ DROP PROCEDURE IF EXISTS adicionar_reserva$$
 CREATE PROCEDURE adicionar_reserva(
   IN p_cd_reserva INT,
   IN p_dt_reserva DATETIME,
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_exemplar INT
 )
 BEGIN
   DECLARE v_cd_reserva INT;
-  DECLARE v_cd_email_leitor INT;
+  DECLARE v_cd_email VARCHAR(200);
 
   IF p_cd_reserva IS NULL THEN
     SELECT COALESCE(MAX(cd_reserva), 0) + 1 INTO v_cd_reserva FROM reserva;
@@ -1024,21 +1089,21 @@ BEGIN
     SET v_cd_reserva = p_cd_reserva;
   END IF;
 
-  IF p_cd_email_leitor IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email_leitor INTO v_cd_email_leitor
+  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
+    SELECT cd_email v_cd_email
       FROM leitor
      WHERE nm_leitor = p_nm_leitor
      LIMIT 1;
   ELSE
-    SET v_cd_email_leitor = p_cd_email_leitor;
+    SET v_cd_email = p_cd_email;
   END IF;
 
   IF v_cd_reserva IS NOT NULL
      AND p_dt_reserva IS NOT NULL
-     AND v_cd_email_leitor IS NOT NULL
+     AND v_cd_email IS NOT NULL
      AND p_cd_exemplar IS NOT NULL THEN
     INSERT INTO reserva
-      VALUES (v_cd_reserva, p_dt_reserva, v_cd_email_leitor, p_cd_exemplar);
+      VALUES (v_cd_reserva, p_dt_reserva, v_cd_email, p_cd_exemplar);
   END IF;
 END$$
 
@@ -1048,26 +1113,26 @@ DROP PROCEDURE IF EXISTS alterar_reserva$$
 CREATE PROCEDURE alterar_reserva(
   IN p_cd_reserva INT,
   IN p_dt_reserva DATETIME,
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_exemplar INT
 )
 BEGIN
-  DECLARE v_cd_email_leitor INT;
+  DECLARE v_cd_email VARCHAR(200);
 
-  IF p_cd_email_leitor IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email_leitor INTO v_cd_email_leitor
+  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
+    SELECT cd_email v_cd_email
       FROM leitor
      WHERE nm_leitor = p_nm_leitor
      LIMIT 1;
   ELSE
-    SET v_cd_email_leitor = p_cd_email_leitor;
+    SET v_cd_email = p_cd_email;
   END IF;
 
   IF p_cd_reserva IS NOT NULL THEN
     UPDATE reserva
        SET dt_reserva = COALESCE(p_dt_reserva, dt_reserva),
-           cd_email_leitor = COALESCE(v_cd_email_leitor, cd_email_leitor),
+           cd_email = COALESCE(v_cd_email, cd_email),
            cd_exemplar = COALESCE(p_cd_exemplar, cd_exemplar)
      WHERE cd_reserva = p_cd_reserva;
   END IF;
@@ -1082,24 +1147,28 @@ END$$
     DROP PROCEDURE IF EXISTS listar_doacoes$$
 CREATE PROCEDURE listar_doacoes(
   IN p_cd_doacao INT,
+  IN p_cd_livro INT,
   IN p_nm_livro VARCHAR(45),
   IN p_cd_biblioteca INT,
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_biblioteca VARCHAR(200),
   IN p_nm_leitor VARCHAR(200)
 )
 BEGIN
   SELECT d.*
     FROM doacao d
+    JOIN livro li ON d.cd_livro = li.cd_livro
     JOIN biblioteca b ON d.cd_biblioteca = b.cd_biblioteca
-    JOIN leitor l ON d.cd_email_leitor = l.cd_email_leitor
+    JOIN leitor l ON d.cd_email = l.cd_email
    WHERE (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao)
-     AND (p_nm_livro IS NULL OR d.nm_livro = p_nm_livro)
+    AND (p_cd_livro IS NULL OR d.cd_livro = p_cd_livro)
+     AND (p_nm_livro IS NULL OR li.nm_livro = p_nm_livro)
      AND (p_cd_biblioteca IS NULL OR d.cd_biblioteca = p_cd_biblioteca)
-     AND (p_cd_email_leitor IS NULL OR d.cd_email_leitor = p_cd_email_leitor)
+     AND (p_cd_email IS NULL OR d.cd_email = p_cd_email)
      AND (p_nm_biblioteca IS NULL OR b.nm_biblioteca = p_nm_biblioteca)
      AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor);
 END$$
+/*CALL listar_doacoes(NULL,NULL,NULL,NULL,NULL,NULL,NULL);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_doacao$$
@@ -1108,13 +1177,13 @@ CREATE PROCEDURE adicionar_doacao(
   IN p_nm_livro VARCHAR(45),
   IN p_cd_biblioteca INT,
   IN p_nm_biblioteca VARCHAR(200),
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200)
 )
 BEGIN
   DECLARE v_cd_doacao INT;
   DECLARE v_cd_biblioteca INT;
-  DECLARE v_cd_email_leitor INT;
+  DECLARE v_cd_email VARCHAR(200);
 
   IF p_cd_doacao IS NULL THEN
     SELECT COALESCE(MAX(cd_doacao), 0) + 1 INTO v_cd_doacao FROM doacao;
@@ -1128,18 +1197,18 @@ BEGIN
     SET v_cd_biblioteca = p_cd_biblioteca;
   END IF;
 
-  IF p_cd_email_leitor IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email_leitor INTO v_cd_email_leitor FROM leitor WHERE nm_leitor = p_nm_leitor LIMIT 1;
+  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
+    SELECT cd_email  v_cd_email FROM leitor WHERE nm_leitor = p_nm_leitor LIMIT 1;
   ELSE
-    SET v_cd_email_leitor = p_cd_email_leitor;
+    SET v_cd_email = p_cd_email;
   END IF;
 
   IF v_cd_doacao IS NOT NULL
      AND p_nm_livro IS NOT NULL
      AND v_cd_biblioteca IS NOT NULL
-     AND v_cd_email_leitor IS NOT NULL THEN
+     AND v_cd_email IS NOT NULL THEN
     INSERT INTO doacao
-      VALUES (v_cd_doacao, p_nm_livro, v_cd_biblioteca, v_cd_email_leitor);
+      VALUES (v_cd_doacao, p_nm_livro, v_cd_biblioteca, v_cd_email);
   END IF;
 END$$
 
@@ -1151,12 +1220,12 @@ CREATE PROCEDURE alterar_doacao(
   IN p_nm_livro VARCHAR(45),
   IN p_cd_biblioteca INT,
   IN p_nm_biblioteca VARCHAR(200),
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200)
 )
 BEGIN
   DECLARE v_cd_biblioteca INT;
-  DECLARE v_cd_email_leitor INT;
+  DECLARE v_cd_email VARCHAR(200);
 
   IF p_cd_biblioteca IS NULL AND p_nm_biblioteca IS NOT NULL THEN
     SELECT cd_biblioteca INTO v_cd_biblioteca FROM biblioteca WHERE nm_biblioteca = p_nm_biblioteca LIMIT 1;
@@ -1164,17 +1233,17 @@ BEGIN
     SET v_cd_biblioteca = p_cd_biblioteca;
   END IF;
 
-  IF p_cd_email_leitor IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email_leitor INTO v_cd_email_leitor FROM leitor WHERE nm_leitor = p_nm_leitor LIMIT 1;
+  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
+    SELECT cd_email  v_cd_email FROM leitor WHERE nm_leitor = p_nm_leitor LIMIT 1;
   ELSE
-    SET v_cd_email_leitor = p_cd_email_leitor;
+    SET v_cd_email = p_cd_email;
   END IF;
 
   IF p_cd_doacao IS NOT NULL THEN
     UPDATE doacao
        SET nm_livro = COALESCE(p_nm_livro, nm_livro),
            cd_biblioteca = COALESCE(v_cd_biblioteca, cd_biblioteca),
-           cd_email_leitor = COALESCE(v_cd_email_leitor, cd_email_leitor)
+           cd_email = COALESCE(v_cd_email, cd_email)
      WHERE cd_doacao = p_cd_doacao;
   END IF;
 END$$
@@ -1189,22 +1258,29 @@ CREATE PROCEDURE listar_emprestimos(
   IN p_dt_emprestimo DATETIME,
   IN p_dt_devolucao_esperada DATETIME,
   IN p_dt_devolucao DATETIME,
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
-  IN p_cd_exemplar INT
+  IN p_cd_livro INT,
+  IN p_cd_biblioteca INT
 )
 BEGIN
   SELECT e.*
     FROM emprestimo e
-    JOIN leitor l ON e.cd_email_leitor = l.cd_email_leitor
+   LEFT JOIN leitor l ON e.cd_email = l.cd_email
+   LEFT JOIN biblioteca b ON e.cd_biblioteca = b.cd_biblioteca
+   LEFT JOIN livro li ON e.cd_livro = li.cd_livro
    WHERE (p_cd_emprestimo IS NULL OR e.cd_emprestimo = p_cd_emprestimo)
      AND (p_dt_emprestimo IS NULL OR e.dt_emprestimo = p_dt_emprestimo)
      AND (p_dt_devolucao_esperada IS NULL OR e.dt_devolucao_esperada = p_dt_devolucao_esperada)
      AND (p_dt_devolucao IS NULL OR e.dt_devolucao = p_dt_devolucao)
-     AND (p_cd_email_leitor IS NULL OR e.cd_email_leitor = p_cd_email_leitor)
-     AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor)
-     AND (p_cd_exemplar IS NULL OR e.cd_exemplar = p_cd_exemplar);
+     AND (p_cd_email IS NULL OR e.cd_email = p_cd_email)
+      AND (p_cd_livro IS NULL OR e.cd_livro = p_cd_livro)
+       AND (p_cd_biblioteca IS NULL OR e.cd_biblioteca = p_cd_biblioteca)
+     AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor);
+
 END$$
+
+/*CALL listar_emprestimos(null,null,null,null,null,null,null,null);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$
@@ -1213,13 +1289,13 @@ CREATE PROCEDURE adicionar_emprestimo(
   IN p_dt_emprestimo DATETIME,
   IN p_dt_devolucao_esperada DATETIME,
   IN p_dt_devolucao DATETIME,
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_exemplar INT
 )
 BEGIN
   DECLARE v_cd_emprestimo INT;
-  DECLARE v_cd_email_leitor INT;
+  DECLARE v_cd_email VARCHAR(200);
 
   IF p_cd_emprestimo IS NULL THEN
     SELECT COALESCE(MAX(cd_emprestimo), 0) + 1 INTO v_cd_emprestimo FROM emprestimo;
@@ -1227,22 +1303,22 @@ BEGIN
     SET v_cd_emprestimo = p_cd_emprestimo;
   END IF;
 
-  IF p_cd_email_leitor IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email_leitor INTO v_cd_email_leitor
+  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
+    SELECT cd_email v_cd_email
       FROM leitor
      WHERE nm_leitor = p_nm_leitor
      LIMIT 1;
   ELSE
-    SET v_cd_email_leitor = p_cd_email_leitor;
+    SET v_cd_email = p_cd_email;
   END IF;
 
   IF v_cd_emprestimo IS NOT NULL
      AND p_dt_emprestimo IS NOT NULL
      AND p_dt_devolucao_esperada IS NOT NULL
-     AND v_cd_email_leitor IS NOT NULL
+     AND v_cd_email IS NOT NULL
      AND p_cd_exemplar IS NOT NULL THEN
     INSERT INTO emprestimo
-      VALUES (v_cd_emprestimo, p_dt_emprestimo, p_dt_devolucao_esperada, p_dt_devolucao, v_cd_email_leitor, p_cd_exemplar);
+      VALUES (v_cd_emprestimo, p_dt_emprestimo, p_dt_devolucao_esperada, p_dt_devolucao, v_cd_email, p_cd_exemplar);
   END IF;
 END$$
 
@@ -1253,20 +1329,20 @@ CREATE PROCEDURE alterar_emprestimo(
   IN p_dt_emprestimo DATETIME,
   IN p_dt_devolucao_esperada DATETIME,
   IN p_dt_devolucao DATETIME,
-  IN p_cd_email_leitor INT,
+  IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_exemplar INT
 )
 BEGIN
-  DECLARE v_cd_email_leitor INT;
+  DECLARE v_cd_email VARCHAR(200);
 
-  IF p_cd_email_leitor IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email_leitor INTO v_cd_email_leitor
+  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
+    SELECT cd_email v_cd_email
       FROM leitor
      WHERE nm_leitor = p_nm_leitor
      LIMIT 1;
   ELSE
-    SET v_cd_email_leitor = p_cd_email_leitor;
+    SET v_cd_email = p_cd_email;
   END IF;
 
   IF p_cd_emprestimo IS NOT NULL THEN
@@ -1274,7 +1350,7 @@ BEGIN
        SET dt_emprestimo = COALESCE(p_dt_emprestimo, dt_emprestimo),
            dt_devolucao_esperada = COALESCE(p_dt_devolucao_esperada, dt_devolucao_esperada),
            dt_devolucao = COALESCE(p_dt_devolucao, dt_devolucao),
-           cd_email_leitor = COALESCE(v_cd_email_leitor, cd_email_leitor),
+           cd_email = COALESCE(v_cd_email, cd_email),
            cd_exemplar = COALESCE(p_cd_exemplar, cd_exemplar)
      WHERE cd_emprestimo = p_cd_emprestimo;
   END IF;
@@ -1302,6 +1378,7 @@ BEGIN
      AND (p_cd_biblioteca IS NULL OR bb.cd_biblioteca = p_cd_biblioteca);
 END$$
 
+CALL listar_bibliotecarios (NULL,NULL,NULL, 1);
 
 DROP PROCEDURE IF EXISTS adicionar_bibliotecario$$
 CREATE PROCEDURE adicionar_bibliotecario(
@@ -1361,19 +1438,29 @@ END$$
 
 DROP PROCEDURE IF EXISTS listar_favoritos$$
 CREATE PROCEDURE listar_favoritos(
-    IN p_cd_email_leitor INT
+    IN p_cd_email VARCHAR(200)
 )
 BEGIN
     SELECT *
     FROM favorito 
-      JOIN livro ON livro.cd_livro = favorito.cd_livro
-      WHERE favorito.cd_email_leitor = p_cd_email_leitor;
+      WHERE cd_email = p_cd_email;
 
 END$$
 
-call listar_favoritos();
+/*CALL listar_favoritos('pedro.favoritos@gmail.com');*/
     
+    DROP PROCEDURE IF EXISTS adicionar_favoritos$$
+    CREATE PROCEDURE adicionar_favoritos(
+    IN p_cd_livro INT,
+    IN  p_cd_email VARCHAR(200)
+    )
     
+    BEGIN
+    INSERT INTO favorito VALUES (p_cd_livro, p_cd_email);
+    
+	END$$
+    
+       /*CALL adicionar_favoritos(2,'pedro.favoritos@gmail.com');*/
     
 $$
 DELIMITER ;

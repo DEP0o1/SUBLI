@@ -12,7 +12,7 @@
   <?php require_once './complementos/headerLeitor.php'; ?>  
 
 <main>
-<?php require_once './complementos/barraLateral.php'; ?>
+<?php require_once 'barraLateral.php'; ?>
 
       <section class="areaPerfilLivros">
         <h1>Empréstimos</h1>

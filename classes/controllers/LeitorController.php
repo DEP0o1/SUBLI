@@ -4,7 +4,7 @@ class LeitorController extends Banco
 {
     function ListarLeitores($leitor = new Leitor())
     {
-
+        
     }
 
     public function AdicionarLeitor($leitor = new Leitor())

@@ -8,7 +8,8 @@ class GeneroController extends Banco
             $parametros = [
 
                 'p_cd_genero' => $genero->cd_genero,
-                'p_nm_genero' => $genero->nm_genero
+                'p_nm_genero' => $genero->nm_genero,
+                'p_cd_livro' => $genero->cd_livro
     
             ];
     

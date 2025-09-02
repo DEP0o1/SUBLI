@@ -6,10 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Solicitações de doação </title>
 
-  <link rel="stylesheet" href="css/eventoEdoacao.css">
-  <link rel="stylesheet" href="css/homeBibliotecario.css">
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/bibliotecario.css">
+  <link rel="stylesheet" href="css/mobile.css">
   <script src="sjs/componentesJS/header.js"></script>
     
 

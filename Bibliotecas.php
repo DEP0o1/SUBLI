@@ -1,3 +1,10 @@
+<?php
+
+require_once('config.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,48 +30,12 @@
     </div>
   </div>
 </section>
+  <section class='bibliotecas' id='cardsContainer'>
 
-
-      <section class="bibliotecas" id="cardsContainer">
-        <div class="biblioteca">
-          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
-          <h4>Biblioteca Mario Faria</h4>
-          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
-          <p>2.4 km de você</p>
-          <a href="Biblioteca.php">
-            <button>Ver mais </button>
-          </a>
-          </div>
-
-        <div class="biblioteca">
-          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
-          <h4>Biblioteca Mario Faria</h4>
-          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
-          <p>2.4 km de você</p>
-          <a href="Biblioteca.php">
-            <button>Ver mais </button>
-          </a>
-          </div>
-
-          <div class="biblioteca">
-          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
-          <h4>Biblioteca Mario Faria</h4>
-          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
-          <p>2.4 km de você</p>
-          <a href="Biblioteca.php">
-            <button>Ver mais </button>
-          </a>
-          </div>
-
-          <div class="biblioteca">
-          <img src="img/biblioteca1_1.jpg" alt="Biblioteca Mario Faria">
-          <h4>Biblioteca Mario Faria</h4>
-          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
-          <p>2.4 km de você</p>
-          <a href="Biblioteca.php">
-            <button>Ver mais </button>
-          </a>
-          </div>
+          <?php
+        $biblioteca = new BibliotecaView;
+        $biblioteca->ExibirBibliotecas();
+     ?> 
 
       </section>
     </main>
