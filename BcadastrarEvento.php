@@ -31,19 +31,21 @@
                 <input type="text" class="inputForm" placeholder="Pedro Mingel">  
             </div>
 
+
+
             <div class="areaAutorLivro">
-                <h3 class="tituloForm">Data:</h3>
+                <h3 class="tituloForm">Descrição:</h3>
                 <input type="text" class="inputForm" placeholder="21/02/2025"> 
             </div>
 
             <div class="areaAutorLivro">
                 <h3 class="tituloForm">Horário:</h3>
-                <input type="text" class="inputForm" placeholder="14:30"> 
+                <input type="time" class="inputForm" placeholder="21/02/2025"> 
             </div>
 
             <div class="areaAutorLivro">
-                <h3 class="tituloForm">Descrição:</h3>
-                <input type="text" class="inputForm" placeholder="21/02/2025"> 
+                <h3 class="tituloForm">data:</h3>
+                <input type="date" class="inputForm" placeholder="21/02/2025"> 
             </div>
 
             <div class="areaBtn">

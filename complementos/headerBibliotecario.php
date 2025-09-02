@@ -29,6 +29,7 @@
           <a href="./BcadastrarLivro.php">Cadrastar Livro</a>
           <a href="./BcadastrarLeitor.php">Cadrastar Leitor</a>
           <a href="./BcadastrarEvento.php">Cadrastar Evento</a>
+          <a href="./BcadastrarGenero.php">Cadrastar Genero</a>
         </div>
       </div>
 

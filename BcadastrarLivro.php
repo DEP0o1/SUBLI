@@ -61,7 +61,64 @@
                         <h3 class="tituloForm">notas:</h3>
                         <input type="text" class="inputForm" placeholder="************">
                     </div>
+
+                                        <div>
+                        <h3 class="tituloForm">Codigo Autor:</h3>
+                        <input type="text" class="inputForm" placeholder="Ex:">
+                    </div>
                 </div>
+
+                <div class="formDeLado1">
+
+                    <div>
+                        <h3 class="tituloForm">Codigo Livro:</h3>
+                        <input type="text" class="inputForm" placeholder="">
+                    </div>
+
+                                        <div>
+                        <h3 class="tituloForm">Colação:</h3>
+                        <input type="text" class="inputForm" placeholder="Ex:">
+                    </div>
+
+                                        <div>
+                        <h3 class="tituloForm">idioma:</h3>
+                        <input type="text" class="inputForm" placeholder="Ex:">
+                    </div>
+                </div>
+
+                                <div class="formDeLado1">
+                    <div>
+                        <h3 class="tituloForm">Edição:</h3>
+                        <input type="text" class="inputForm" placeholder="Ex: terceira edição lançada">
+                    </div>
+
+                    <div>
+                        <h3 class="tituloForm">Cotação:</h3>
+                        <input type="text" class="inputForm" placeholder="Ex: quantidade de livros">
+                    </div>
+
+                    <div>
+                        <h3 class="tituloForm">Ano:</h3>
+                        <input type="text" class="inputForm" placeholder="Ex:alí ó">
+                    </div>
+                </div>
+
+                <div class="formDeLado1">
+                    <div>
+                        <h3 class="tituloForm">Assunto:</h3>
+                        <input type="text" class="inputForm" placeholder="Ex:">
+                    </div>
+                    <div>
+                        <h3 class="tituloForm">Gênero:</h3>
+                        <input type="text" class="inputForm" placeholder="************">
+                    </div>
+
+                                        <div>
+                        <h3 class="tituloForm">tombo:</h3>
+                        <input type="text" class="inputForm" placeholder="Ex:">
+                    </div>
+                </div>
+
 
                 <div class="areaBtn">
                     <button class="btnRosa">Cadastrar</button>
