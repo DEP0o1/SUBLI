@@ -166,16 +166,16 @@ CREATE TABLE genero_livro(
 );
 
 CREATE TABLE favorito(
-    cd_favorito INT,
+    cd_livro INT,
     cd_email_leitor INT,
-    CONSTRAINT pk_favorito PRIMARY KEY (cd_favorito),
-    CONSTRAINT fk_email_leitor_favorito FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor)
+    CONSTRAINT pk_livro PRIMARY KEY (cd_livro),
+    CONSTRAINT fk_email_leitor_livro FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor)
 );
 
 CREATE TABLE favorito_leitor(
 	cd_livro INT,
     cd_email_leitor INT,
-    CONSTRAINT pk_favorito_livro PRIMARY KEY (cd_livro, cd_email_leitor),
+    CONSTRAINT pk_livro_livro PRIMARY KEY (cd_livro, cd_email_leitor),
 	CONSTRAINT fk_email_leitor FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor),
     CONSTRAINT fk_cd_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
 );

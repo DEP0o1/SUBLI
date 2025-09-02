@@ -295,7 +295,6 @@ main{
     width: fit-content;
     background-color: var(--vinho);
     border-radius: 10px;
-    padding: 10px;
     text-wrap: nowrap;
 }
 
@@ -308,7 +307,6 @@ main{
 
 .biblioteca a {
     color: black;
-    background-color: var(--fundo);
     justify-content: center;
 }
 
@@ -374,3 +372,73 @@ main{
     margin-top: auto;
   }
   
+
+  /*pop up */
+
+#bloqueio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 10;
+}
+
+#popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    color: var(--branco);
+    background-color: var(--azul);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#form-popup {
+    width: 400px;
+}
+
+#form-popup > p {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#form-popup > p.areaBotao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#form-popup input, #form-popup select {
+    width: 70%;
+    padding: 5px 10px;
+    border: none;
+    border-bottom: 1px solid var(--cor-destaque);
+    outline: none;
+}
+
+#btnCancelar{
+    display: flex;
+    background-color: var(--branco);
+    color: var(--vinho);
+    border: 1px solid var(--vinho);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#btnConfirmar  {
+    display: flex;
+    background-color: var(--vinho);
+    color: var(--branco);
+    border: 1px solid var(--vinho);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 15px;
+}

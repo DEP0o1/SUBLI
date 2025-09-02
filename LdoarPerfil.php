@@ -6,6 +6,7 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="css/leitor.css"/>
     <link rel="stylesheet" href="css/leitorPerfil.css" />
+    <script src="js/componentesJS/popUps.js" defer></script>
   </head>
   <body>
 <?php 
@@ -50,5 +51,8 @@
         </form>
       </section>
     </main>
+
+
+
   </body>
 </html>

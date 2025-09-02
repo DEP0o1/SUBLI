@@ -302,11 +302,11 @@ body {
   }
 
   .biblioteca button{
-    background-color: var(--vinho);
+  background-color: var(--vinho);
   color: var(--branco);
   border: none;
-  padding: 8px 14px;
-  border-radius: 3px;
+  padding: 10px;
+  border-radius: 10px;
   cursor: pointer;
   margin-top: auto;
   }
