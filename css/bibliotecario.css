@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Kurale&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 *{
 padding: 0px;
 margin: 0;
@@ -12,6 +15,21 @@ margin: 0;
     --bege: #b59e8b;
     --fundo: #f2ece7;
   }
+
+  h1 {
+    font-family: "Kurale";
+    margin: 40px;
+    font-size: 1.5rem;
+  }
+  
+  p,
+  h2,
+  h3,
+  h4 {
+    font-family: "Inter";
+    font-size: 1rem;
+  }
+
 a{
     font-size: medium;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -484,9 +502,9 @@ h3{
     display: flex;
     justify-content: left;
     flex-direction: column;
-    padding: 1%;
+    padding: 10px;
     gap: 20px;
-    width: 32%;
+    width:33%;
     border-radius:15px ;
 }
 
@@ -549,28 +567,20 @@ h3{
     flex-direction: column;
     justify-content: left;
     gap: 20px;
+    width: fit-content;
 }
 
 .inputForm{
-    width: 100%;
     height: 25%;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 15px;
+    padding: 10px;
     border: 1px solid #A39B91;
     outline: none;
     width: 100%;
     text-decoration: none;
 }
 
-:root {
-    --vinho: #a32950;
-    --azul: #102e4e;
-    --amarelo: #fdc18d;
-    --branco: #fffbf7;
-    --bege: #b59e8b;
-    --fundo: #f2ece7;
-    --cinza: #857D72;
-  }
+
 
 .exibirLivros {
     display: flex;
@@ -589,13 +599,17 @@ h3{
     flex-direction: column;
     gap: 10px;
     border: solid grey 1px;
+    background-color: #f2ece76e;
+    height: 380px;
   }
   
   .livro img {
-    width: 140px;
+    width: 100%;
     height: 210px;
     object-fit: cover;
     border-radius: 3px;
+    align-items: center;
+    display: flex;
   }
   
   .livro h2 {

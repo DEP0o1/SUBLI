@@ -1,6 +1,7 @@
 <?php
 
 require_once('config.php');
+// require_once('views/livroView.php')
 
 ?>
 
@@ -72,48 +73,6 @@ require_once('config.php');
         $livro->ExibirLivros();
      ?> 
 
-        
-      <!-- <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div> -->
 
       
 
@@ -147,47 +106,6 @@ require_once('config.php');
         $livro->ExibirLivros();
      ?> 
 
-      <!-- <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div>
-      <div class="livro">
-        <img src="img/capa livro.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-         <button><a href="livroLeitor.html">Ver Mais</a></button>
-      </div> -->
-
         <span class="material-symbols-outlined seta seta-direita" id="depois">
             arrow_forward_ios
         </span>
@@ -195,6 +113,13 @@ require_once('config.php');
 
     </section>
     
+    <div class="indicators">
+                <div class="indicator "></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
+
     <section class="doacaoLivros">
       <div class="doacaotexto">
         <h1>Doação de livros</h1>
@@ -208,5 +133,76 @@ require_once('config.php');
       <img src="img/doar.png" alt="" />
     </section>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const exibirLivros = document.querySelector('exibirLivros');
+            const livros = document.querySelectorAll('livro');
+            const setaEsquerda = document.getElementById('antes');
+            const setaDireita = document.getElementById('depois');
+            const indicadores = document.querySelectorAll('indicators');
+            
+
+            const livrosPorVez = 5;
+            let livroAtual = 0;
+            const totalLivros = livros.length;
+            const totalSlides = Math.ceil(totalLivros / livrosPorVez);
+            
+            function ajustarexibirLivros() {
+                const larguraLivro = livros[0].offsetWidth + 20;
+                exibirLivros.style.width = (larguraLivro * livrosPorVez) + 'px';
+            }
+            
+
+            function atualizarexibirLivros() {
+                const larguraLivro = livros[0].offsetWidth + 20;
+                const deslocamento = -livroAtual * larguraLivro * livrosPorVez;
+                exibirLivros.style.transform = `translateX(${deslocamento}px)`;
+                
+
+                indicadores.forEach((indicador, index) => {
+                    if (index === livroAtual) {
+                        indicador.classList.add('ativo');
+                    } else {
+                        indicador.classList.remove('ativo');
+                    }
+                });
+                
+
+                setaEsquerda.style.display = livroAtual === 0 ? 'none' : 'block';
+                setaDireita.style.display = livroAtual === totalSlides - 1 ? 'none' : 'block';
+            }
+            
+
+            setaEsquerda.addEventListener('click', function() {
+                if (livroAtual > 0) {
+                    livroAtual--;
+                    atualizarexibirLivros();
+                }
+            });
+            
+            setaDireita.addEventListener('click', function() {
+                if (livroAtual < totalSlides - 1) {
+                    livroAtual++;
+                    atualizarexibirLivros();
+                }
+            });
+            
+            indicadores.forEach(indicador => {
+                indicador.addEventListener('click', function() {
+                    livroAtual = parseInt(this.getAttribute('data-indice'));
+                    atualizarexibirLivros();
+                });
+            });
+            
+            window.addEventListener('resize', function() {
+                ajustarexibirLivros();
+                atualizarexibirLivros();
+            });
+            
+            ajustarexibirLivros();
+            atualizarexibirLivros();
+        });
+    </script>
   </body>
 </html>

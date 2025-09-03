@@ -56,7 +56,6 @@ h4 {
     justify-content: space-between ;
     width: 100%;
     align-items: center;
-    
     padding-right: 30px;
     padding-left: 30px;
     height: fit-content;
@@ -382,6 +381,7 @@ body{
     bottom: 0;
     background-color: rgba(0,0,0,0.7);
     z-index: 10;
+    overflow: hidden;
 }
 
 #popup {
@@ -705,25 +705,10 @@ body {
   padding: 0;
   margin: 0;
 }
-.indicators{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  width: 100%;
-  justify-content: center;
-}
-.indicator {
-  background-color: var(--vinho);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  }
+
         
   .indicator.active {
   background: white;
-  transform: scale(1.2);
   }
 
   #depois{

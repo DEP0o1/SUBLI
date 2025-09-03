@@ -21,7 +21,7 @@
 
     <div class="abas">
       <a href="./BemprestimoPesquisa.php">Empréstimos</a>
-      <a href="./BcadastrarLeitor.php">Leitor</a>
+      <a href="./BpesquisaLeitor.php">Leitor</a>
 
       <div class="dropdown">
         <button onclick="desceCoisa()" class="dropbtn">Cadastros:</button>
