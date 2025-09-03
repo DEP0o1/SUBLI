@@ -1,8 +1,6 @@
 <?php
-
 require_once('config.php');
 // require_once('views/livroView.php')
-
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +16,7 @@ require_once('config.php');
 
     <title>Home</title>
     <?php require_once './complementos/headerLeitor.php'; ?>  
-
+    
   </head>
 
   <body>
@@ -54,79 +52,87 @@ require_once('config.php');
       </div>
 
       <a class="location" href="Bibliotecas.php">
-  <img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Localização" />
-</a>
-
-      
+        <img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Localização" />
+      </a>
     </section>
-    <div class="textoEsquerda">
-    <h1>Destaques da semana</h1>
-    </div>
-    <section class="exibirLivros">
     
-        <span class="material-symbols-outlined" id="antes">
-          arrow_back_ios
-          </span>
-      
-          <?php
-        $livro = new LivroView;
-        $livro->ExibirLivros();
-     ?> 
-
-
-      
-
-      <span class="material-symbols-outlined" id="depois">
-        arrow_forward_ios
-        </span>
+    <div class="textoEsquerda">
+      <h1>Destaques da semana</h1>
+    </div>
+    
+    <div class="carrossel-wrapper">
+      <div class="carrossel-container">
         
-    </section>
+        <div class="carrossel-track" id="carrossel-destaques">
+          <div class="carrossel" id="slide-destaques">
+            <span class="material-symbols-outlined seta seta-esquerda" id="antes-destaques">
+              arrow_back_ios
+            </span>
+        
+        <?php
+          $livro = new LivroView;
+          $livro->ExibirLivros();
+        ?> 
 
-            <div class="indicators">
-                <div class="indicator active"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-            </div>
+          
+            <span class="material-symbols-outlined seta seta-direita" id="depois-destaques">
+              arrow_forward_ios
+            </span>
+          </div>
+        </div>
 
-
+      </div>
+      
+      
+      <div class="indicators" id="indicadores-destaques">
+        <div class="indicator active" data-index="0"></div>
+        <div class="indicator" data-index="1"></div>
+      </div>
+    </div>
 
     <div class="textoEsquerda">
       <h1>Mais procurados</h1>
+    </div>
+
+    <div class="carrossel-wrapper">
+      <div class="carrossel-container">
+        
+        <div class="carrossel-track" id="carrossel-destaques">
+          <div class="carrossel" id="slide-destaques">
+            <span class="material-symbols-outlined seta seta-esquerda" id="antes-destaques">
+              arrow_back_ios
+            </span>
+        
+        <?php
+          $livro = new LivroView;
+          $livro->ExibirLivros();
+        ?> 
+
+          
+            <span class="material-symbols-outlined seta seta-direita" id="depois-destaques">
+              arrow_forward_ios
+            </span>
+          </div>
+        </div>
+
       </div>
-
-    <section class="exibirLivros">
-    
-        <span class="material-symbols-outlined" id="antes">
-          arrow_back_ios
-          </span>
       
-     <?php
-        $livro = new LivroView;
-        $livro->ExibirLivros();
-     ?> 
+      
+      <div class="indicators" id="indicadores-destaques">
+        <div class="indicator active" data-index="0"></div>
+        <div class="indicator" data-index="1"></div>
+      </div>
+    </div>
 
-        <span class="material-symbols-outlined seta seta-direita" id="depois">
-            arrow_forward_ios
-        </span>
-
-
-    </section>
+    </div>
     
-    <div class="indicators">
-                <div class="indicator "></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-            </div>
-
     <section class="doacaoLivros">
       <div class="doacaotexto">
         <h1>Doação de livros</h1>
         <p>
           A doação de livros é uma prática valiosa com impactos positivos tanto
-          para quem recebe quanto para quem doa, promovendo o acesso à cultura,
-          a sustentabilidade e o desenvolvimento pessoal. 
+          para quem recebe quanto para quem doa, promovendo o acesso à cultura,
+          a sustentabilidade e o desenvolvimento pessoal.
         </p>
         <div class="textoDoar"> <a>Doe agora!</a></div>
       </div>
@@ -135,74 +141,89 @@ require_once('config.php');
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const exibirLivros = document.querySelector('exibirLivros');
-            const livros = document.querySelectorAll('livro');
-            const setaEsquerda = document.getElementById('antes');
-            const setaDireita = document.getElementById('depois');
-            const indicadores = document.querySelectorAll('indicators');
-            
-
-            const livrosPorVez = 5;
-            let livroAtual = 0;
-            const totalLivros = livros.length;
-            const totalSlides = Math.ceil(totalLivros / livrosPorVez);
-            
-            function ajustarexibirLivros() {
-                const larguraLivro = livros[0].offsetWidth + 20;
-                exibirLivros.style.width = (larguraLivro * livrosPorVez) + 'px';
+      document.addEventListener('DOMContentLoaded', function() {
+        configurarCarrossel('destaques');
+        configurarCarrossel('procurados');
+        
+        function configurarCarrossel(tipo) {
+          const track = document.getElementById(`carrossel-${tipo}`);
+          const slide = document.getElementById(`slide-${tipo}`);
+          const livros = slide.querySelectorAll('.livro');
+          const setaEsquerda = document.getElementById(`antes-${tipo}`);
+          const setaDireita = document.getElementById(`depois-${tipo}`);
+          const indicadores = document.querySelectorAll(`#indicadores-${tipo} .indicator`);
+          
+          const livrosVisiveis = 3;
+          let slideAtual = 0;
+          const totalLivros = livros.length;
+          const totalSlides = Math.ceil(totalLivros / livrosVisiveis);
+          
+          if (indicadores.length > totalSlides) {
+            for (let i = totalSlides; i < indicadores.length; i++) {
+              indicadores[i].style.display = 'none';
             }
-            
+          }
+          
 
-            function atualizarexibirLivros() {
-                const larguraLivro = livros[0].offsetWidth + 20;
-                const deslocamento = -livroAtual * larguraLivro * livrosPorVez;
-                exibirLivros.style.transform = `translateX(${deslocamento}px)`;
-                
-
-                indicadores.forEach((indicador, index) => {
-                    if (index === livroAtual) {
-                        indicador.classList.add('ativo');
-                    } else {
-                        indicador.classList.remove('ativo');
-                    }
-                });
-                
-
-                setaEsquerda.style.display = livroAtual === 0 ? 'none' : 'block';
-                setaDireita.style.display = livroAtual === totalSlides - 1 ? 'none' : 'block';
+          function calcularLarguraLivro() {
+            if (livros.length > 0) {
+              const estilo = window.getComputedStyle(livros[0]);
+              const marginLeft = parseFloat(estilo.marginLeft) || 0;
+              const marginRight = parseFloat(estilo.marginRight) || 0;
+              return livros[0].offsetWidth + marginLeft + marginRight;
             }
+            return 200;
+          }
+          
+          function atualizarCarrossel() {
+            const larguraLivro = calcularLarguraLivro();
+            const deslocamento = -slideAtual * larguraLivro * livrosVisiveis;
+            slide.style.transform = `translateX(${deslocamento}px)`;
             
 
-            setaEsquerda.addEventListener('click', function() {
-                if (livroAtual > 0) {
-                    livroAtual--;
-                    atualizarexibirLivros();
+            if (indicadores.length > 0) {
+              indicadores.forEach((indicador, index) => {
+                if (index === slideAtual && index < totalSlides) {
+                  indicador.classList.add('active');
+                } else {
+                  indicador.classList.remove('active');
                 }
-            });
-            
-            setaDireita.addEventListener('click', function() {
-                if (livroAtual < totalSlides - 1) {
-                    livroAtual++;
-                    atualizarexibirLivros();
+              });
+            }
+          }
+          
+          setaEsquerda.addEventListener('click', function() {
+            if (slideAtual > 0) {
+              slideAtual--;
+              atualizarCarrossel();
+            }
+          });
+          
+          setaDireita.addEventListener('click', function() {
+            if (slideAtual < totalSlides - 1) {
+              slideAtual++;
+              atualizarCarrossel();
+            }
+          });
+          
+          if (indicadores.length > 0) {
+            indicadores.forEach((indicador, index) => {
+              indicador.addEventListener('click', function() {
+                if (index < totalSlides) {
+                  slideAtual = index;
+                  atualizarCarrossel();
                 }
+              });
             });
-            
-            indicadores.forEach(indicador => {
-                indicador.addEventListener('click', function() {
-                    livroAtual = parseInt(this.getAttribute('data-indice'));
-                    atualizarexibirLivros();
-                });
-            });
-            
-            window.addEventListener('resize', function() {
-                ajustarexibirLivros();
-                atualizarexibirLivros();
-            });
-            
-            ajustarexibirLivros();
-            atualizarexibirLivros();
-        });
+          }
+          
+          atualizarCarrossel();
+          
+          window.addEventListener('resize', function() {
+            atualizarCarrossel();
+          });
+        }
+      });
     </script>
   </body>
 </html>

@@ -806,3 +806,20 @@ body {
   cursor: pointer;
   margin-top: auto;
   }
+
+
+  .carrossel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .carrossel-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }

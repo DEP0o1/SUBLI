@@ -41,11 +41,9 @@ class LivroView{
         ";
         // if (++$i > 4) break; NÃO FAZ ISSO ABOBADO
         
-    
     }
 
-}
-
+}    
 }
 
 ?>
