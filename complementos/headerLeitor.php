@@ -26,6 +26,10 @@ echo '
         person
         </span>
         </a>
+
+        <button id="btnCadastro">
+        Cadastre-se
+        </button>
       </div>
 
 

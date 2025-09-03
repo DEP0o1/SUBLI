@@ -171,7 +171,7 @@ CREATE TABLE genero_livro(
 	CONSTRAINT fk_genero FOREIGN KEY (cd_genero) REFERENCES genero(cd_genero)
 );
 
-<<<<<<< HEAD
+/*
 CREATE TABLE favorito(
     cd_livro INT,
     cd_email_leitor INT,
@@ -186,7 +186,6 @@ CREATE TABLE favorito_leitor(
 	CONSTRAINT fk_email_leitor FOREIGN KEY (cd_email_leitor) REFERENCES leitor(cd_email_leitor),
     CONSTRAINT fk_cd_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
 );
-=======
 
 /*CREATE TABLE favorito(
     cd_livro INT,
@@ -195,7 +194,7 @@ CREATE TABLE favorito_leitor(
     CONSTRAINT fk_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro),
 	CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
 );*/
->>>>>>> 53aaeaae26ba331c91a5869bc362df4e10558a80
+
 
 
 /*Leitores*/
