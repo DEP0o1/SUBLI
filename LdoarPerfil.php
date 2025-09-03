@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="css/leitor.css"/>
     <link rel="stylesheet" href="css/leitorPerfil.css" />
     <script src="js/componentesJS/popUps.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <script src="js/componentesJS/popupEditarPerfil.js" defer></script>
+    <script src="js/componentesJS/popupLogout.js" defer></script>
+    <script src="js/componentesJS/popupDoacao.js" defer></script>
   </head>
   <body>
 <?php 
@@ -47,7 +51,7 @@
             <input type="file">
           </div>
   
-          <button type="submit">Enviar doação</button>
+          <button type="submit" id="btnDoar">Enviar doação</button>
         </form>
       </section>
     </main>

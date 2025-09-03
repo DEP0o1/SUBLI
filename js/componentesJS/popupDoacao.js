@@ -1,6 +1,6 @@
-const btnLogout = document.getElementById('btnLogout');
-if (btnLogout) {
-    btnLogout.addEventListener('click', function (e) {
+const btnDoar = document.getElementById('btnDoar');
+if (btnDoar) {
+    btnDoar.addEventListener('click', function (e) {
         e.preventDefault();
 
         const bloqueio = document.createElement('div');
@@ -12,7 +12,7 @@ if (btnLogout) {
         const barraTitulo = document.createElement('div');
         barraTitulo.id = "barra-titulo";
         const titulo = document.createElement('h1');
-        titulo.textContent = 'Tem Certeza que deseja sair?';
+        titulo.textContent = 'Doação enviada com sucesso!';
         barraTitulo.append(titulo);
 
         const formulario = document.createElement('div');
@@ -21,26 +21,25 @@ if (btnLogout) {
         item = document.createElement('p');
         item.classList.add('areaBotao');
 
-        const botaoConfirmar = document.createElement('button');
-        botaoConfirmar.id = 'btnConfirmar';
-        botaoConfirmar.textContent = 'Confirmar';
-        botaoConfirmar.addEventListener('click', function(e){
+        const btnContinuarArea = document.createElement('button');
+        btnContinuarArea.id = 'btnConfirmar';
+        btnContinuarArea.textContent = 'Continuar na área';
+        btnContinuarArea.addEventListener('click', function(e){
             e.preventDefault();
             telaLogout.remove();
             bloqueio.remove();
         })
 
 
-        const botaoCancelar = document.createElement('button');
-        botaoCancelar.id = 'btnCancelar';
-        botaoCancelar.textContent = 'Cancelar';
-        botaoCancelar.addEventListener('click', function(e){
-            e.preventDefault();
-            telaLogout.remove();
-            bloqueio.remove();
-        })
-        item.append(botaoCancelar);
-        item.append(botaoConfirmar);
+        const btnHome = document.createElement('a');
+        btnHome.href = "LindexLeitor.php";
+        btnHome.id = 'btnCancelar';
+        btnHome.textContent = 'Voltar para a home ';
+
+
+
+        item.append(btnHome);
+        item.append(btnContinuarArea);
 
         formulario.append(item);
 
@@ -50,4 +49,4 @@ if (btnLogout) {
         document.querySelector('body').prepend(bloqueio);
         document.querySelector('body').prepend(telaLogout);
     });
-}
+};

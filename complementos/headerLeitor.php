@@ -21,18 +21,15 @@ echo '
         <a href="">Destaques</a>
         <a href="Bibliotecas.php">Bibliotecas</a>
         <a href="">Doação</a>
+        <a href="LmeusLivros.php">
+        <span class="material-symbols-outlined">
+        person
+        </span>
+        </a>
       </div>
 
-<<<<<<< HEAD
-    </header>'
-=======
-      <a href="LmeusLivros.php">
-      <span class="material-symbols-rounded">
-        person
-       </span>
-       </a>
 
     </header>
+
     '
->>>>>>> 53aaeaae26ba331c91a5869bc362df4e10558a80
 ?>

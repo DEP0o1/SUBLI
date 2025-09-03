@@ -37,6 +37,7 @@ body {
 main {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }
 
 .perfil h1 {

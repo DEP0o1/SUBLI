@@ -13,6 +13,7 @@ require_once('config.php');
     <title>Bibliotecas</title>
     <link rel="stylesheet" href="css/leitor.css" />
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     <?php include 'complementos/headerLeitor.php'; ?>
   </head>
 

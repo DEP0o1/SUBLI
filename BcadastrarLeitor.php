@@ -25,6 +25,16 @@
                 <input type="text" class="inputForm" placeholder="Ex. Pedro Mingel"> 
             </div>
 
+            <div class="areaTituloLivro">
+                <h3 class="tituloForm">Nome da Mãe:</h3>
+                <input type="text" class="inputForm" placeholder="Ex. Mãe do pedro mingel"> 
+            </div>
+
+            <div class="areaTituloLivro">
+                <h3 class="tituloForm">Nome do Pai:</h3>
+                <input type="text" class="inputForm" placeholder="Ex. Pai do Pedro Mingel"> 
+            </div>
+            
             <div class="areaAutorLivro">
                 <h3 class="tituloForm">Telefone:</h3>
                 <input type="text" class="inputForm" placeholder="Ex. 13-99999999"> 
@@ -54,6 +64,24 @@
                     <h3 class="tituloForm">Senha:</h3>
                     <input type="text" class="inputForm" placeholder="************">
                 </div>
+                <div>
+                    <h3 class="tituloForm">Data de nascimento:</h3>
+                    <input type="date" class="inputForm" placeholder="************">
+                </div>
+            </div>
+
+            <div class="formDeLado1">
+                <div>
+                    <h3 class="tituloForm">RG:</h3>
+                    <input type="text" class="inputForm" placeholder="Ex. 222.222.222-2">
+                </div>
+
+                <div>
+                    <h3 class="tituloForm">Codigo:</h3>
+                    <input type="text" class="inputForm" placeholder="Ex. 123456">
+                </div>
+                
+
             </div>
 
             <div class="areaBtn">

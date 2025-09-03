@@ -6,6 +6,9 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="css/leitor.css"/>
     <link rel="stylesheet" href="css/leitorPerfil.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <script src="js/componentesJS/popupEditarPerfil.js" defer></script>
+    <script src="js/componentesJS/popupLogout.js" defer></script>
   </head>
   <body>
 <?php require_once './complementos/headerLeitor.php'; ?>  
@@ -37,7 +40,7 @@
             <input type="password" placeholder="***********"/>
           </div>
   
-          <button type="submit">Salvar alterações</button>
+          <button type="submit" id="btnEditarPerfil">Salvar alterações</button>
         </form>
       </section>
     </main>

@@ -130,11 +130,6 @@ body{
 }
 
 
-main{
-    display: flex;
-    margin-top: 84px;
-    flex-direction: column;
-}
 .btnHeader{   
     display: flex;
     flex-direction: row;
@@ -496,8 +491,11 @@ h4 {
 
 }
 main{
+  margin-top: 84px;
   margin-bottom: 20px;
   height: 100%;
+  overflow: hidden;
+  
 }
 body {
   background-color: var(--fundo);

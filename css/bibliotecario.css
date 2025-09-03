@@ -290,7 +290,7 @@ nav{
   }
   
   .show {
-    height: 198px;
+    height: 285px;
 }
 
 .areaPesquisa{
@@ -514,6 +514,7 @@ h3{
 
 .tituloForm{
     color:  #102E4E;
+    text-wrap: nowrap;
 }
 
 .formDeLado{
