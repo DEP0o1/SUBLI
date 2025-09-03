@@ -18,14 +18,16 @@ class LivroView{
     //     </div>
     //     ";
     // }
-
+        
     foreach($livros as $Livro){
         echo 
         "
         <div class='livro'>
-            <img src='img/capa livro.jpg' alt='' />
+            <img src='img/{$Livro->cd_livro}'/></img>
             <h2>{$Livro->nm_livro}</h2>
         ";
+
+
         foreach($Livro->autores as $autor){
             echo 
             "
@@ -38,7 +40,9 @@ class LivroView{
         </div>
         ";
         // if (++$i > 4) break; NÃO FAZ ISSO ABOBADO
-     }
+        
+    
+    }
 
 }
 
