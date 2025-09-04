@@ -1319,7 +1319,7 @@ BEGIN
 
 END$$
 
-/*CALL listar_emprestimos(null,null,null,null,null,null,null,null);*/
+CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);
 
 
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$
