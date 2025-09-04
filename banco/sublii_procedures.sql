@@ -684,7 +684,7 @@ BEGIN
       AND (p_cd_livro IS NULL OR e.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_bibliotecas(null, NULL ,NULL, NULL,NULL, NULL, 1);*/
+CALL listar_bibliotecas(null, NULL ,1, NULL,NULL, NULL, NULL);
 
 DROP PROCEDURE IF EXISTS adicionar_biblioteca$$
 CREATE PROCEDURE adicionar_biblioteca(

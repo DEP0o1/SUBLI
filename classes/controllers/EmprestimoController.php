@@ -11,10 +11,10 @@ class EmprestimoController extends Banco
                 'p_dt_emprestimo' => $emprestimo->dt_emprestimo,
                 'p_dt_devolucao_esperada' => $emprestimo->dt_devolucao_esperada,
                 'p_dt_devolucao' => $emprestimo->dt_devolucao,
-                'p_cd_livro' => $emprestimo->livro->cd_livro,
                 'p_cd_email' => $emprestimo->leitor->cd_email,
-                'p_cd_biblioteca' => $emprestimo->biblioteca->cd_biblioteca,
-                'p_nm_leitor' => $emprestimo->leitor->nm_leitor
+                'p_nm_leitor' => $emprestimo->leitor->nm_leitor,
+                'p_cd_livro' => $emprestimo->livro->cd_livro,
+                'p_cd_biblioteca' => $emprestimo->biblioteca->cd_biblioteca
             ];
             $lista = [];
             $dados = $this->Consultar('listar_emprestimos', $parametros);

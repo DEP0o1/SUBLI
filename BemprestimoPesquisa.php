@@ -1,7 +1,15 @@
 <?php
 require_once ('config.php');
+$email = null;
+if (isset($_REQUEST['codigo'])) {
+    $buscar = true;
 
-// $email = $_REQUEST['codigo'];
+    if ($_REQUEST['codigo'] != "" ) {
+
+        $email = $_REQUEST['codigo'];
+    }
+}
+
 ?>
 
 
@@ -51,7 +59,6 @@ require_once ('config.php');
 <?php
          $controller = new EmprestimoController;
          $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email)));
-        print_r($emprestimos);
          $livro = new LivroView;
           foreach ($emprestimos as $Emprestimo){
           $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
