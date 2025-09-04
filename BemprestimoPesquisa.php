@@ -1,6 +1,9 @@
 <?php
 require_once ('config.php');
+
+$email = $_REQUEST['codigo'];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,12 +40,13 @@ require_once ('config.php');
     <div class="areaResultadoPesquisa">
         <div class="resultadoPesquisa">
 <?php
-         $controller = new EmprestimoController;
-         $emprestimos = $controller->ListarEmprestimos();
-          foreach ($emprestimos as $Emprestimo){
-          $livro = new LivroView;
-          $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
-  }
+//          $controller = new EmprestimoController;
+//          $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email)));
+
+//           foreach ($emprestimos as $Emprestimo){
+//           $livro = new LivroView;
+//           $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
+//   } 
 ?>                      
         
     </div>

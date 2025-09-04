@@ -25,7 +25,7 @@
 
 	protected function Consultar($nomeProcedure, $parametros = [])
 	{
-		try {
+	
 			$this->Conectar();
 
 			$listaNomesParametros = [];
@@ -48,9 +48,7 @@
 			$dados = $this->cSQL->fetchAll(PDO::FETCH_ASSOC);
 			$this->Desconectar();
 			return $dados;
-		} catch (PDOException $e) {
-			throw new Exception('Erro inesperado na Consulta. Tente novamente.');
-		}
+		
 	}
 
 	protected function Executar($nomeProcedure, $parametros = [])
