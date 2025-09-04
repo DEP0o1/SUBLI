@@ -969,8 +969,47 @@ END$$
 /* =========================================
    LEITOR
 ========================================= */
+
+DROP PROCEDURE IF EXISTS buscar_senha$$
+CREATE PROCEDURE buscar_senha(
+IN p_cd_email VARCHAR (200)
+)
+BEGIN
+	IF EXISTS (SELECT 1 FROM leitor WHERE cd_email = p_cd_email)
+    THEN
+    SELECT
+    nm_senha FROM leitor WHERE cd_email = p_cd_email;
     
-    DROP PROCEDURE IF EXISTS listar_leitores$$
+    ELSE
+        SELECT 'Email incorreto' AS erro;
+    END IF;
+END$$
+/*CALL buscar_senha('pedro.favoritos@gmail.com');*/
+
+DROP PROCEDURE IF EXISTS logar_leitor$$   
+CREATE PROCEDURE logar_leitor(
+    IN p_cd_email VARCHAR(200),
+    IN p_nm_senha VARCHAR(64)
+)
+BEGIN
+    IF EXISTS (SELECT 1 FROM leitor WHERE cd_email = p_cd_email AND nm_senha = p_nm_senha)
+    THEN
+        SELECT 
+            nm_leitor,
+            cd_cpf,
+            cd_telefone,
+            ic_comprovante_residencia
+        FROM leitor
+        WHERE cd_email = p_cd_email;
+    ELSE
+        SELECT 'Email ou senha incorretos' AS erro;
+    END IF;
+END$$
+
+/*CALL logar_leitor('pedro.favoritos@gmail.com','123');*/
+
+    
+DROP PROCEDURE IF EXISTS listar_leitores$$
 CREATE PROCEDURE listar_leitores(
   IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
