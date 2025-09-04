@@ -18,7 +18,6 @@ margin: 0;
 
   h1 {
     font-family: "Kurale";
-    margin: 40px;
     font-size: 1.5rem;
   }
   
@@ -275,7 +274,16 @@ nav{
 .selecionarCadastro{
     width: auto;
 }
-
+.dropFiltro{
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--vinho);
+  transition: 1.s;
+  border-radius: 10px;
+  color: white;
+}
 .dropbtn {
     padding: 16px;
     font-size: 16px;
@@ -307,6 +315,26 @@ nav{
     margin-right: 10px;
   }
   
+
+  .dropdown-filtros {
+    background-color: var(--vinho);
+    /* display: none; */
+    position: absolute;
+    min-width: auto;
+    overflow: hidden;
+    z-index: 1;
+    height: 0;
+    transition: 0.5s;
+    border-radius: 10px;
+  }
+  
+  .dropdown-filtros a {
+    color: var(--branco);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-right: 10px;
+  }
   .show {
     height: 285px;
 }
@@ -515,19 +543,19 @@ h3{
 }
 
 .areaTituloLivro{
-    width: 100%;
+    width: 97%;
 }
 
 .tituloLivro{
-    width: 100%;
+    width: 97%;
 }
 
 .areaAutorLivro{
-    width: 100%;
+    width: 97%;
 }
 
 .autorLivro{
-    width: 100%;
+    width: 97%;
 }
 
 .tituloForm{
@@ -546,7 +574,7 @@ h3{
     display: flex;
     flex-direction: row;
     gap: 5%;
-    width: 100%;
+    width: 97%;
 }
 
 .areaBtn{
@@ -567,13 +595,12 @@ h3{
     flex-direction: column;
     justify-content: left;
     gap: 20px;
-    width: fit-content;
+    width: 100%;
 }
 
 .inputForm{
     height: 25%;
     border-radius: 15px;
-    padding: 10px;
     border: 1px solid #A39B91;
     outline: none;
     width: 100%;

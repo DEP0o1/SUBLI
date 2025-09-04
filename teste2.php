@@ -134,7 +134,6 @@
             <button class="seta seta-esquerda">&#10094;</button>
             <div class="carrossel">
                 <?php
-                // Array de livros - em um caso real, isso viria de um banco de dados
                 $livros = [
                     ["titulo" => "Dom Casmurro", "imagem" => "https://covers.openlibrary.org/b/id/10309248-L.jpg", "autor" => "Machado de Assis"],
                     ["titulo" => "O Cortiço", "imagem" => "https://covers.openlibrary.org/b/id/8270292-L.jpg", "autor" => "Aluísio Azevedo"],
@@ -165,7 +164,7 @@
                     ["titulo" => "Capitães da Areia", "imagem" => "https://covers.openlibrary.org/b/id/8896669-L.jpg", "autor" => "Jorge Amado"]
                 ];
                 
-                // Gerar os livros
+              
                 foreach ($livros as $livro) {
                     echo '<div class="livro">';
                     echo '<img src="' . $livro['imagem'] . '" alt="' . $livro['titulo'] . '">';
@@ -179,7 +178,7 @@
             
             <div class="indicadores">
                 <?php
-                // Calcular número de indicadores necessários
+         
                 $numIndicadores = ceil(count($livros) / 5);
                 for ($i = 0; $i < $numIndicadores; $i++) {
                     echo '<div class="indicador' . ($i === 0 ? ' ativo' : '') . '" data-indice="' . $i . '"></div>';
@@ -197,25 +196,24 @@
             const setaDireita = document.querySelector('.seta-direita');
             const indicadores = document.querySelectorAll('.indicador');
             
-            // Configurações do carrossel
+ 
             const livrosPorVez = 5;
             let livroAtual = 0;
             const totalLivros = livros.length;
             const totalSlides = Math.ceil(totalLivros / livrosPorVez);
             
-            // Ajustar a largura do carrossel para exibir 5 livros
+
             function ajustarCarrossel() {
-                const larguraLivro = livros[0].offsetWidth + 20; // width + gap
+                const larguraLivro = livros[0].offsetWidth + 20;
                 carrossel.style.width = (larguraLivro * livrosPorVez) + 'px';
             }
             
-            // Atualizar a posição do carrossel
+
             function atualizarCarrossel() {
                 const larguraLivro = livros[0].offsetWidth + 20;
                 const deslocamento = -livroAtual * larguraLivro * livrosPorVez;
                 carrossel.style.transform = `translateX(${deslocamento}px)`;
                 
-                // Atualizar indicadores
                 indicadores.forEach((indicador, index) => {
                     if (index === livroAtual) {
                         indicador.classList.add('ativo');
@@ -224,20 +222,19 @@
                     }
                 });
                 
-                // Mostrar/ocultar setas conforme a posição
+
                 setaEsquerda.style.display = livroAtual === 0 ? 'none' : 'block';
                 setaDireita.style.display = livroAtual === totalSlides - 1 ? 'none' : 'block';
             }
             
-            // Navegar para a esquerda
+
             setaEsquerda.addEventListener('click', function() {
                 if (livroAtual > 0) {
                     livroAtual--;
                     atualizarCarrossel();
                 }
             });
-            
-            // Navegar para a direita
+ 
             setaDireita.addEventListener('click', function() {
                 if (livroAtual < totalSlides - 1) {
                     livroAtual++;
@@ -245,7 +242,7 @@
                 }
             });
             
-            // Navegar pelos indicadores
+
             indicadores.forEach(indicador => {
                 indicador.addEventListener('click', function() {
                     livroAtual = parseInt(this.getAttribute('data-indice'));
@@ -253,13 +250,13 @@
                 });
             });
             
-            // Ajustar ao redimensionar a janela
+
             window.addEventListener('resize', function() {
                 ajustarCarrossel();
                 atualizarCarrossel();
             });
             
-            // Inicializar
+
             ajustarCarrossel();
             atualizarCarrossel();
         });

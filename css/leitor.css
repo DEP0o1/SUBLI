@@ -132,7 +132,18 @@ body{
     width: auto;
 }
 
-
+#btnCadastro{
+  cursor: pointer;
+  background-color: var(--azul);
+  color: var(--branco);
+  border-radius: 10px;
+  border:none ;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: nowrap;
+}
 .btnHeader{   
     display: flex;
     flex-direction: row;
@@ -374,18 +385,17 @@ body{
 
 
 #bloqueio {
-    position: absolute;
+    position:fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.7);
     z-index: 10;
-    overflow: hidden;
 }
 
 #popup {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -393,11 +403,16 @@ body{
     color: var(--branco);
     background-color: var(--azul);
     padding: 20px;
+    gap: 15px;
     border-radius: 4px;
 }
 
 #form-popup {
-    width: 400px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 20px;
+  justify-content: flex-start;
 }
 
 #form-popup > p {
@@ -418,7 +433,7 @@ body{
     width: 70%;
     padding: 5px 10px;
     border: none;
-    border-bottom: 1px solid var(--cor-destaque);
+    border: 2px solid black;
     outline: none;
 }
 
@@ -464,9 +479,15 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 20px;
+  justify-items: flex-start; 
 }
+
+
+.areaInputCadastro input{
+  border-color:10px solid black;
+}
+
 
 .areaBTNCadastro{
   display: flex;
@@ -477,8 +498,7 @@ body{
 }
 
 #inputEmail{
-  border:1px solid black ;
-  padding: 5px;
+  gap: 10px;
   border-radius:5px ;
 }
 

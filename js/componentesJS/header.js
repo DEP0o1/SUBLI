@@ -1,5 +1,6 @@
-function desceCoisa() {
+function desceCadastros() {
     document.getElementById("Dropdown").classList.toggle("show");
+    // console.log("tá sendo clicado caralho")
   }
   
   window.onclick = function(event) {
@@ -14,6 +15,8 @@ function desceCoisa() {
       }
     }
   }
+
+
 
 
   
