@@ -2,7 +2,7 @@
 
     echo '<header>
     <a href="./Bhome.php">
-      <div><img src="img/CorClara.png" alt="" class="logo" /></div>
+      <div><img src="img/subli.logoCorClara.png" alt="" class="logo" /></div>
     </a>
 
      <form action="BpesquisaLivro.php" class="areaPesquisa">
