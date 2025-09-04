@@ -25,30 +25,28 @@
 
 	protected function Consultar($nomeProcedure, $parametros = [])
 	{
-	
-			$this->Conectar();
+		$this->Conectar();
 
-			$listaNomesParametros = [];
-			foreach ($parametros as $chave => $valor) {
-				$listaNomesParametros[] = ':' . $chave;
-			}
+		$listaNomesParametros = [];
+		foreach ($parametros as $chave => $valor) {
+			$listaNomesParametros[] = ':' . $chave;
+		}
 
-			$comando = 'CALL ' . $nomeProcedure;
-			if (count($listaNomesParametros) > 0) {
-				$comando .= '(' . implode(', ', $listaNomesParametros) . ')';
-			}
+		$comando = 'CALL ' . $nomeProcedure;
+		if (count($listaNomesParametros) > 0) {
+			$comando .= '(' . implode(', ', $listaNomesParametros) . ')';
+		}
 
-			$this->cSQL = $this->conexao->prepare($comando);
+		$this->cSQL = $this->conexao->prepare($comando);
 
-			foreach ($parametros as $chave => $valor) {
-				$this->cSQL->bindValue(':' . $chave, $valor);
-			}
-
-			$this->cSQL->execute();
-			$dados = $this->cSQL->fetchAll(PDO::FETCH_ASSOC);
-			$this->Desconectar();
-			return $dados;
+		foreach ($parametros as $chave => $valor) {
+			$this->cSQL->bindValue(':' . $chave, $valor);
+		}
+		$this->cSQL->execute();
 		
+		$dados = $this->cSQL->fetchAll(PDO::FETCH_ASSOC);
+		$this->Desconectar();
+		return $dados;
 	}
 
 	protected function Executar($nomeProcedure, $parametros = [])
