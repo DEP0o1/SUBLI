@@ -2,9 +2,14 @@
 
 require_once('config.php');
 
-$codigo = $_REQUEST['codigo'];
+if (isset($_REQUEST['codigo'])) {
+    $buscar = true;
 
+    if ($_REQUEST['codigo'] != "" && is_numeric($_REQUEST['codigo'])) {
 
+        $codigo = $_REQUEST['codigo'];
+    }
+}
 ?>
 
 
@@ -23,8 +28,10 @@ $codigo = $_REQUEST['codigo'];
   <main>
     <section class="bibliotecas">
         <?php
+        if($buscar){
         $biblioteca = new BibliotecaView;
         $biblioteca->ExibirBibliotecas(new Biblioteca($codigo));
+        }
      ?> 
     </section>
 
