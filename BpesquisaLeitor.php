@@ -1,3 +1,9 @@
+<?php
+
+require_once('config.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,46 +30,41 @@
     <div class="formPesquisa"> 
         <div  class="titulo"> <h1>Encontrar Leitor</h1> </div>
         <form class="form">
-            <input type="text" placeholder="Nome do leitor" class="inputForm">
-            <input type="text" placeholder="CPF" class="inputForm">
+            <input name="nm_leitor" type="text" placeholder="Nome do leitor" class="inputForm">
+            <input name="cd_cpf" type="text" placeholder="CPF" class="inputForm">
+            <div class="btnForm">
+                <button class="btnRosa">
+                    Pesquisa
+                </button>
+                <button class="btnRosa">
+                    Novo Leitor
+                </button>
+            </div>
         </form>
-        <div class="btnForm">
-            <button class="btnRosa">
-                Pesquisa
-            </button>
-            <button class="btnRosa">
-                Novo Leitor
-            </button>
-        </div>
     </div>
+    <div class= "leitoresEncontrados">
+    <?php
+     $pesquisa_avancada = false;
+    if (isset($_REQUEST['cd_cpf']) && $_REQUEST['cd_cpf'] != '' && strlen($_REQUEST['cd_cpf']) == 11) {
+        $cd_cpf = $_REQUEST['cd_cpf'];
+        $pesquisa_avancada = true;
+    } else {
+        $cd_cpf = null;
+    }
 
-    <div class="leitoresEncontrados">
-        <div class="leitorEncontrado"> 
-            <img src="img/pequeno terry.webp" alt="" class="leitor">
+    if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != '') {
+        $nm_leitor = $_REQUEST['nm_leitor'];
+        $pesquisa_avancada = true;
+    } else {
+        $nm_leitor = null;
+    }
 
-            <div class="infoLeitor">
-            <h2>Terry Crews</h2>
-
-            <a href="emprestimoPesquisa.html">
-            <button class="btnAzul">Empréstimos</button>
-            </a>    
-            </div>
-
-            
+    if($pesquisa_avancada){
+        $leitor = new LeitorView;
+        $leitor->ExibirLeitores(new Leitor(null,$nm_leitor,$cd_cpf));
+    }
+?> 
         </div>
-        <div class="leitorEncontrado"> 
-            <img src="img/pequeno terry.webp" alt="" class="leitor">
-
-            <div class="infoLeitor">
-            <h2>Terry Crews</h2>
-
-            <a href="emprestimoPesquisa.html">
-            <button class="btnAzul">Empréstimos</button>
-            </a>   
-
-            </div>
-
-    </div>
 
     
 </body>

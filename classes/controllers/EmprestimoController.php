@@ -20,7 +20,6 @@ class EmprestimoController extends Banco
             $lista = [];
             $dados = $this->Consultar('listar_emprestimos', $parametros);
 
-
             $bibliotecacontroller = new BibliotecaController;
             $livrocontroller = new LivroController;
             $leitorcontroller = new LeitorController;
@@ -32,7 +31,7 @@ class EmprestimoController extends Banco
                 $Emprestimo->livro = $livrocontroller->ListarLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
                 array_push($lista, $Emprestimo);
             }
-
+           
             return $lista;
     }catch (\Throwable $th) {
             throw $th;

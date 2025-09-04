@@ -7,15 +7,13 @@ require_once('config.php');
 $buscar = false;
 $valor = "";
 
-if(isset ($_REQUEST['valor'])){
-  $buscar = true;
+if (isset($_REQUEST['valor'])) {
+    $buscar = true;
 
-  if($_REQUEST['valor'] != ""){
+    if ($_REQUEST['valor'] != "") {
 
-    $valor = $_REQUEST['valor'];
-
-  }
-
+        $valor = $_REQUEST['valor'];
+    }
 }
 
 
@@ -45,7 +43,7 @@ require_once './complementos/headerBibliotecario.php';
             <div>
                 <h1 class="pesquisaAvancada">Pesquisa Avançada </h1>
             </div>
- 
+
             <section class="areaInput">
                 <div class="areaTituloLivro">
                     <h3 class="tituloForm">Titulo:</h3> <!-- FAZER ESSAS COISAS COM LABEL ABOBADOS -->
@@ -130,269 +128,133 @@ require_once './complementos/headerBibliotecario.php';
 
             <?php
 
-            if($buscar){
-            $livro = new LivroView;
+            if ($buscar) {
+                $livro = new LivroView;
 
-            if($valor == ""){
-                $livro->ExibirLivros();
+                if ($valor == "") {
+                    $livro->ExibirLivros();
+                } else {
+                    $livro->ExibirLivros(new Livro(null, $valor));
+                }
             }
 
-            else{
-              $livro->ExibirLivros(new Livro(null,$valor));
-            }
-      }
-
-
+            #region verificação do conteúdo dos inputs
             $pesquisa_avancada = false;
-            if(isset($_REQUEST['cd_livro']) && $_REQUEST['cd_livro'] != '' && is_numeric($_REQUEST['cd_livro'])){
-            $cd_livro = $_REQUEST['cd_livro'];
-            $pesquisa_avancada = true;
+            if (isset($_REQUEST['cd_livro']) && $_REQUEST['cd_livro'] != '' && is_numeric($_REQUEST['cd_livro'])) {
+                $cd_livro = $_REQUEST['cd_livro'];
+                $pesquisa_avancada = true;
+            } else {
+                $cd_livro = null;
             }
 
-            else{
-            $cd_livro = null;
+            if (isset($_REQUEST['cd_autor']) &&  $_REQUEST['cd_autor'] != '' && is_numeric($_REQUEST['cd_autor'])) {
+                $cd_autor = $_REQUEST['cd_autor'];
+                $pesquisa_avancada = true;
+            } else {
+                $cd_autor = null;
             }
 
-            if(isset($_REQUEST['cd_autor']) &&  $_REQUEST['cd_autor'] != '' && is_numeric($_REQUEST['cd_autor'])){
-            $cd_autor = $_REQUEST['cd_autor'];
-              $pesquisa_avancada = true;
+            if (isset($_REQUEST['cd_editora']) && $_REQUEST['cd_editora'] != '' && is_numeric($_REQUEST['cd_editora'])) {
+                $cd_editora = $_REQUEST['cd_editora'];
+                $pesquisa_avancada = true;
+            } else {
+                $cd_editora = null;
             }
 
-            else{
-            $cd_autor = null;
+            if (isset($_REQUEST['cd_genero']) &&  $_REQUEST['cd_genero'] != '' && is_numeric($_REQUEST['cd_genero'])) {
+                $cd_genero = $_REQUEST['cd_genero'];
+                $pesquisa_avancada = true;
+            } else {
+                $cd_genero = null;
             }
 
-            if(isset($_REQUEST['cd_editora']) && $_REQUEST['cd_editora'] != '' && is_numeric($_REQUEST['cd_editora'])){
-            $cd_editora = $_REQUEST['cd_editora'];
-              $pesquisa_avancada = true;
+            if (isset($_REQUEST['cd_idioma']) &&  $_REQUEST['cd_idioma'] != '' && is_numeric($_REQUEST['cd_idioma'])) {
+                $cd_idioma = $_REQUEST['cd_idioma'];
+                $pesquisa_avancada = true;
+            } else {
+                $cd_idioma = null;
             }
 
-            else{
-            $cd_editora = null;
+            if (isset($_REQUEST['cd_colecao']) &&  $_REQUEST['cd_colecao'] != '' && is_numeric($_REQUEST['cd_colecao'])) {
+                $cd_colecao = $_REQUEST['cd_colecao'];
+                $pesquisa_avancada = true;
+            } else {
+                $cd_colecao = null;
             }
 
-              if(isset($_REQUEST['cd_genero']) &&  $_REQUEST['cd_genero'] != '' && is_numeric($_REQUEST['cd_genero'])){
-            $cd_genero = $_REQUEST['cd_genero'];
-              $pesquisa_avancada = true;
+            if (isset($_REQUEST['cd_assunto']) &&  $_REQUEST['cd_assunto'] != '' && is_numeric($_REQUEST['cd_assunto'])) {
+                $cd_assunto = $_REQUEST['cd_assunto'];
+                $pesquisa_avancada = true;
+            } else {
+                $cd_assunto = null;
             }
 
-            else{
-            $cd_genero = null;
-            }
-
-              if(isset($_REQUEST['cd_idioma']) &&  $_REQUEST['cd_idioma'] != '' && is_numeric($_REQUEST['cd_idioma'])){
-            $cd_idioma = $_REQUEST['cd_idioma'];
-              $pesquisa_avancada = true;
-            }
-
-            else{
-            $cd_idioma = null;
-            }
-
-              if(isset($_REQUEST['cd_colecao']) &&  $_REQUEST['cd_colecao'] != '' && is_numeric($_REQUEST['cd_colecao'])){
-            $cd_colecao = $_REQUEST['cd_colecao'];
-              $pesquisa_avancada = true;
-            }
-
-            else{
-            $cd_colecao = null;
-            }
-
-              if(isset($_REQUEST['cd_assunto']) &&  $_REQUEST['cd_assunto'] != '' && is_numeric($_REQUEST['cd_assunto'])){
-            $cd_assunto = $_REQUEST['cd_assunto'];
-              $pesquisa_avancada = true;
-            }
-
-            else{
-            $cd_assunto = null;
-            }
-           
-            if(isset($_REQUEST['nm_livro']) &&  $_REQUEST['nm_livro'] != ''){
+            if (isset($_REQUEST['nm_livro']) &&  $_REQUEST['nm_livro'] != '') {
                 $nm_livro = $_REQUEST['nm_livro'];
                 $pesquisa_avancada = true;
-            }
-            else{
+            } else {
                 $nm_livro = null;
             }
 
-            if(isset($_REQUEST['nm_autor']) &&  $_REQUEST['nm_autor'] != ''){
-                  $nm_autor = $_REQUEST['nm_autor'];
-                    $pesquisa_avancada = true;
-            }
-            else{
+            if (isset($_REQUEST['nm_autor']) &&  $_REQUEST['nm_autor'] != '') {
+                $nm_autor = $_REQUEST['nm_autor'];
+                $pesquisa_avancada = true;
+            } else {
                 $nm_autor = null;
             }
 
 
-             if(isset($_REQUEST['nm_editora']) &&  $_REQUEST['nm_editora'] != ''){
-                  $nm_editora = $_REQUEST['nm_editora'];
-                    $pesquisa_avancada = true;
-            }
-            else{
+            if (isset($_REQUEST['nm_editora']) &&  $_REQUEST['nm_editora'] != '') {
+                $nm_editora = $_REQUEST['nm_editora'];
+                $pesquisa_avancada = true;
+            } else {
                 $nm_editora = null;
             }
 
-             if(isset($_REQUEST['nm_genero']) &&  $_REQUEST['nm_genero'] != ''){
-                  $nm_genero = $_REQUEST['nm_genero'];
-                   $pesquisa_avancada = true;
-            }
-            else{
+            if (isset($_REQUEST['nm_genero']) &&  $_REQUEST['nm_genero'] != '') {
+                $nm_genero = $_REQUEST['nm_genero'];
+                $pesquisa_avancada = true;
+            } else {
                 $nm_genero = null;
             }
 
-             if(isset($_REQUEST['nm_idioma']) &&  $_REQUEST['nm_idioma'] != ''){
-                  $nm_idioma = $_REQUEST['nm_idioma'];
-                  $pesquisa_avancada = true;
-            }
-            else{
+            if (isset($_REQUEST['nm_idioma']) &&  $_REQUEST['nm_idioma'] != '') {
+                $nm_idioma = $_REQUEST['nm_idioma'];
+                $pesquisa_avancada = true;
+            } else {
                 $nm_idioma = null;
             }
 
-             if(isset($_REQUEST['nm_colecao']) &&  $_REQUEST['nm_colecao'] != ''){
-                  $nm_colecao = $_REQUEST['nm_colecao'];
-                    $pesquisa_avancada = true;
-            }
-            else{
+            if (isset($_REQUEST['nm_colecao']) &&  $_REQUEST['nm_colecao'] != '') {
+                $nm_colecao = $_REQUEST['nm_colecao'];
+                $pesquisa_avancada = true;
+            } else {
                 $nm_colecao = null;
             }
 
-             if(isset($_REQUEST['nm_assunto']) &&  $_REQUEST['nm_assunto'] != ''){
-                  $nm_assunto = $_REQUEST['nm_assunto'];
-                    $pesquisa_avancada = true;
-            }
-            else{
+            if (isset($_REQUEST['nm_assunto']) &&  $_REQUEST['nm_assunto'] != '') {
+                $nm_assunto = $_REQUEST['nm_assunto'];
+                $pesquisa_avancada = true;
+            } else {
                 $nm_assunto = null;
             }
-            if($pesquisa_avancada){
-           $livro = new LivroView;
-             $livro->ExibirLivros(new Livro($cd_livro, $nm_livro,
-             [new Autor($cd_autor, $nm_autor)],
-             new Editora($cd_editora, $nm_editora),
-             [new Genero($cd_genero, $nm_genero)],
-             new Idioma($cd_idioma, $nm_idioma),
-             new Colecao($cd_colecao, $nm_colecao),
-             [new Assunto($cd_assunto, $nm_assunto)]
-            ));
-}
-      ?>
-            
-            <!-- <div class="areaLivro">
+            #endregion
 
-                <img src="img/robo.webp" alt="" class="capaLivro">
-                <h3>Eu robo</h3>
-
-                <p>Isac assimov</p>
-                <a href="Blivro.php">
-                    <button class="btnRosa ">Ver Mais</button>
-                </a>
-            </div>
-            <div class="areaLivro">
-
-                <img src="img/calibaeabruxasilviafederici-0-cke.webp" alt="" class="capaLivro">
-                <h3>Caliba e a Bruxa</h3>
-
-                <p>Clara Amorim</p>
-                <a href="Blivro.php">
-                    <button class="btnRosa ">Ver Mais</button>
-                </a>
-            </div>
-            <div class="areaLivro">
-
-                <img src="img/o-urso-que-nao-era.webp" alt="" class="capaLivro">
-                <h3>O Urso que Não era</h3>
-
-                <p>Frank Tehlis</p>
-                <a href="Blivro.php">
-                    <button class="btnRosa ">Ver Mais</button>
-                </a>
-            </div>
-            <div class="areaLivro">
-
-                <img src="img/nietzche.webp" alt="" class="capaLivro">
-                <h3>A Genealogia da Moral</h3>
-
-                <p>Nietzche</p>
-                <a href="Blivro.php">
-                    <button class="btnRosa ">Ver Mais</button>
-                </a>
-
-            </div>
-            <div class="areaLivro">
-
-                <img src="img/vantagens.webp" alt="" class="capaLivro">
-                <h3>As vantagens de ser Invisivel</h3>
-
-                <p>Aintoine de Saint-Exupéry</p>
-                <a href="Blivro.php">
-                    <button class="btnRosa ">Ver Mais</button>
-                </a>
-
-            </div>
-
-
-
+            if ($pesquisa_avancada) {
+                $livro = new LivroView;
+                $livro->ExibirLivros(new Livro(
+                    $cd_livro,
+                    $nm_livro,
+                    [new Autor($cd_autor, $nm_autor)],
+                    new Editora($cd_editora, $nm_editora),
+                    [new Genero($cd_genero, $nm_genero)],
+                    new Idioma($cd_idioma, $nm_idioma),
+                    new Colecao($cd_colecao, $nm_colecao),
+                    [new Assunto($cd_assunto, $nm_assunto)]
+                ));
+            }
+            ?>
         </div>
-
-        <div class="areaResultadoPesquisa">
-            <div class="resultadoPesquisa">
-                <div class="areaLivro">
-
-                    <img src="img/miseravel.jpg" alt="" class="capaLivro">
-                    <h3>Os Miseraveis</h3>
-
-                    <p>Cauã Nunes</p>
-                    <a href="Blivro.php">
-                        <button class="btnRosa ">Ver Mais</button>
-                    </a>
-                </div>
-                <div class="areaLivro">
-
-                    <img src="img/O_LIVRO_DOS_INSULTOS_15785095791068183SK1578509579B.webp" alt="" class="capaLivro">
-                    <h3>O Livro dos Insultos</h3>
-
-                    <p>Léo Lins</p>
-                    <a href="Blivro.php">
-                        <button class="btnRosa ">Ver Mais</button>
-                    </a>
-                </div>
-                <div class="areaLivro">
-
-                    <img src="img/capitaes-da-areia.webp" alt="" class="capaLivro">
-                    <h3>Capitães de Areia</h3>
-
-                    <p>Baco Exu do blues</p>
-                    <a href="Blivro.php">
-                        <button class="btnRosa ">Ver Mais</button>
-                    </a>
-                </div>
-                <div class="areaLivro">
-
-                    <img src="img/como-eu-era-antes-de-voce-livro-cke.webp" alt="" class="capaLivro">
-                    <h3>Como Eu Era
-
-                        Antes de Você</h3>
-
-                    <p>Demi Lovato</p>
-                    <a href="Blivro.php">
-                        <button class="btnRosa ">Ver Mais</button>
-                    </a>
-
-                </div>
-                <div class="areaLivro">
-
-                    <img src="img/como-mudar-o-mundo.jpg" alt="" class="capaLivro">
-                    <h3>Como Mudar o Mundo</h3>
-
-                    <p>DEUS</p>
-                    <a href="Blivro.php">
-                        <button class="btnRosa ">Ver Mais</button>
-                    </a>
-
-                </div> -->
-
-
-
-            </div>
 </body>
 
 </html>

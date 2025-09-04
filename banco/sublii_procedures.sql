@@ -1025,8 +1025,8 @@ BEGIN
     LEFT JOIN doacao d ON l.cd_email = d.cd_email
 	LEFT JOIN emprestimo em ON l.cd_email = em.cd_email
     LEFT JOIN evento e ON l.cd_email = e.cd_email
-     WHERE (p_cd_email IS NULL OR l.cd_email = p_cd_email)
-       AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor)
+     WHERE (p_cd_email IS NULL OR l.cd_email  = p_cd_email)
+       AND (p_nm_leitor IS NULL OR l.nm_leitor LIKE CONCAT('%', p_nm_leitor, '%'))
        AND (p_cd_cpf IS NULL OR l.cd_cpf = p_cd_cpf)
        AND (p_cd_telefone IS NULL OR l.cd_telefone = p_cd_telefone)
         AND (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao)
@@ -1035,7 +1035,7 @@ BEGIN
        
 END$$
 
-/*CALL listar_leitores(null,null,null,null,null,null,1);*/
+CALL listar_leitores(null,null,null,null,null,null,1);
 
 
 DROP PROCEDURE IF EXISTS adicionar_leitor$$
