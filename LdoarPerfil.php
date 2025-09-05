@@ -55,7 +55,7 @@ require_once('config.php');
 
           <div class="label-input">
             <label for="">Foto do livro: </label>
-            <input type="file">
+            <input type="file" class="inputArquivo">
           </div>
   
           <button type="submit" id="btnDoar">Enviar doação</button>

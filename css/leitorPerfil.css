@@ -159,9 +159,14 @@ main {
   width: 80vw;
 }
 
-.label-input {
+.label-input{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+.inputArquivo{
+  color: var(--branco);
+  padding: 5px;
 }
 
 .areaPerfil button {
