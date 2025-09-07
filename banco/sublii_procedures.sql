@@ -969,8 +969,47 @@ END$$
 /* =========================================
    LEITOR
 ========================================= */
+
+DROP PROCEDURE IF EXISTS buscar_senha$$
+CREATE PROCEDURE buscar_senha(
+IN p_cd_email VARCHAR (200)
+)
+BEGIN
+	IF EXISTS (SELECT 1 FROM leitor WHERE cd_email = p_cd_email)
+    THEN
+    SELECT
+    nm_senha FROM leitor WHERE cd_email = p_cd_email;
     
-    DROP PROCEDURE IF EXISTS listar_leitores$$
+    ELSE
+        SELECT 'Email incorreto' AS erro;
+    END IF;
+END$$
+/*CALL buscar_senha('pedro.favoritos@gmail.com');*/
+
+DROP PROCEDURE IF EXISTS logar_leitor$$   
+CREATE PROCEDURE logar_leitor(
+    IN p_cd_email VARCHAR(200),
+    IN p_nm_senha VARCHAR(64)
+)
+BEGIN
+    IF EXISTS (SELECT 1 FROM leitor WHERE cd_email = p_cd_email AND nm_senha = p_nm_senha)
+    THEN
+        SELECT 
+            nm_leitor,
+            cd_cpf,
+            cd_telefone,
+            ic_comprovante_residencia
+        FROM leitor
+        WHERE cd_email = p_cd_email;
+    ELSE
+        SELECT 'Email ou senha incorretos' AS erro;
+    END IF;
+END$$
+
+/*CALL logar_leitor('pedro.favoritos@gmail.com','123');*/
+
+    
+DROP PROCEDURE IF EXISTS listar_leitores$$
 CREATE PROCEDURE listar_leitores(
   IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
@@ -986,8 +1025,8 @@ BEGIN
     LEFT JOIN doacao d ON l.cd_email = d.cd_email
 	LEFT JOIN emprestimo em ON l.cd_email = em.cd_email
     LEFT JOIN evento e ON l.cd_email = e.cd_email
-     WHERE (p_cd_email IS NULL OR l.cd_email = p_cd_email)
-       AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor)
+     WHERE (p_cd_email IS NULL OR l.cd_email  = p_cd_email)
+       AND (p_nm_leitor IS NULL OR l.nm_leitor LIKE CONCAT('%', p_nm_leitor, '%'))
        AND (p_cd_cpf IS NULL OR l.cd_cpf = p_cd_cpf)
        AND (p_cd_telefone IS NULL OR l.cd_telefone = p_cd_telefone)
         AND (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao)
@@ -996,7 +1035,7 @@ BEGIN
        
 END$$
 
-/*CALL listar_leitores(null,null,null,null,null,null,1);*/
+CALL listar_leitores(null,null,null,null,null,null,1);
 
 
 DROP PROCEDURE IF EXISTS adicionar_leitor$$
@@ -1280,7 +1319,7 @@ BEGIN
 
 END$$
 
-/*CALL listar_emprestimos(null,null,null,null,null,null,null,null);*/
+CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);
 
 
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$

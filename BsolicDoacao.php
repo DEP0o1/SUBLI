@@ -1,3 +1,7 @@
+<?php
+require_once('config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,25 +48,11 @@
   <section class="areaCardsDoacao">
     <div class="cardDoacao">
 
-      <img src="img/capa livro.jpg" class="livroDoadoCard">
+    <?php
+      $livro = new LivroView;
+      $livro->ExibirLivros();
+    ?> 
 
-      <div class="infoCard">
-        <h2> É assim que acaba </h2>
-        <h2> Doado por: Pedro Miguel... </h2>
-        <button class="verDoacao"> Ver doação </button>
-      </div>
-
-    </div>
-
-    <div class="cardDoacao">
-
-      <img src="img/capa livro.jpg" class="livroDoadoCard">
-
-      <div class="infoCard">
-        <h2> É assim que acaba </h2>
-        <h2> Doado por: Pedro Miguel... </h2>
-        <button class="verDoacao"> Ver doação </button>
-      </div>
 
     </div>
 

@@ -57,6 +57,7 @@ class LivroController extends Banco
     }
 
     public function AdicionarLivro($livro = new Livro())
+    
     {
 
     }
@@ -74,61 +75,6 @@ class LivroController extends Banco
 
 
 //  $livro = new Livro(1,1,[new Autor()])
-
-
-
-
-            
-            // if($livro->assuntos){
-            //     $assuntocontroller = new AssuntoController;
-            //     $assuntos = $assuntocontroller->ListarAssuntos($livro->assuntos[0]);
-            // }
-            
-            // if($assuntos){
-            //     $assunto = $assuntos[0];
-            // };
-
-            // $colecaocontroller = new ColecaoController;
-            // $colecao = $colecaocontroller->ListarColecoes($livro->colecao);
-
-            //   if($colecao){
-
-            //     $colecao = $colecao[0];
-            // };
-
-            // $idiomacontroller = new IdiomaController;
-            // $idioma = $idiomacontroller->ListarIdiomas($livro->idioma);
-
-            //   if($idioma){
-
-            //     $idioma = $idioma[0];
-            // };
-
-            // $generocontroller = new GeneroController;
-            // $generos = $generocontroller->ListarGeneros($livro->generos);
-
-            //   if($generos){
-
-            //     $genero = $generos[0];
-            // };
-
-            // $autorcontroller = new AutorController;
-            // $autores = $autorcontroller->ListarAutores($livro->autores);
-
-            //   if($autores){
-
-            //     $autor = $autores[0];
-            // }
-            
-            // $editoracontroller = new EditoraController;
-            // $editora = $editoracontroller->ListarEditoras($livro->editora);
-            //   if($editora){
-
-            //     $editora = $editora[0];
-            // }
-
-
-           
 
 
 ?>

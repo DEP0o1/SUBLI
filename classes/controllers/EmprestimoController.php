@@ -1,5 +1,5 @@
 <?php
-
+a
 class EmprestimoController extends Banco
 {
     function ListarEmprestimos($emprestimo = new Emprestimo())
@@ -12,14 +12,12 @@ class EmprestimoController extends Banco
                 'p_dt_devolucao_esperada' => $emprestimo->dt_devolucao_esperada,
                 'p_dt_devolucao' => $emprestimo->dt_devolucao,
                 'p_cd_livro' => $emprestimo->livro->cd_livro,
-                'p_cd_biblioteca' => $emprestimo->biblioteca->cd_biblioteca,
                 'p_cd_email' => $emprestimo->leitor->cd_email,
+                'p_cd_biblioteca' => $emprestimo->biblioteca->cd_biblioteca,
                 'p_nm_leitor' => $emprestimo->leitor->nm_leitor
-    
             ];
             $lista = [];
             $dados = $this->Consultar('listar_emprestimos', $parametros);
-
 
             $bibliotecacontroller = new BibliotecaController;
             $livrocontroller = new LivroController;
@@ -32,7 +30,7 @@ class EmprestimoController extends Banco
                 $Emprestimo->livro = $livrocontroller->ListarLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
                 array_push($lista, $Emprestimo);
             }
-
+           
             return $lista;
     }catch (\Throwable $th) {
             throw $th;

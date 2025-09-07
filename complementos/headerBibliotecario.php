@@ -24,7 +24,7 @@
       <a href="./BpesquisaLeitor.php">Leitor</a>
 
       <div class="dropdown">
-        <button onclick="desceCoisa()" class="dropbtn">Cadastros:</button>
+        <button onclick="desceCadastros()" class="dropbtn">Cadastros:</button>
         <div id="Dropdown" class="dropdown-content">
           <a href="./BcadastrarLivro.php">Cadrastar Livro</a>
           <a href="./BcadastrarLeitor.php">Cadrastar Leitor</a>

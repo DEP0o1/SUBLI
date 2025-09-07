@@ -1,3 +1,7 @@
+<?php
+require_once ('config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,9 +47,12 @@
           <div class="label-input">
             <label for="">Biblioteca para Entrega: </label>
             <select name="" id="">
-                <option value="">Biblioteca 1</option>
-                <option value="">Biblioteca 2</option>
-                <option value="">Biblioteca 3</option>
+                   <option value=""></option>
+               <?php
+                  $biblioteca = new BibliotecaView;
+                  $biblioteca->ExibirBibliotecasSelect();
+                ?> 
+           
             </select>
           </div>
 

@@ -25,32 +25,28 @@
 
 	protected function Consultar($nomeProcedure, $parametros = [])
 	{
-		try {
-			$this->Conectar();
+		$this->Conectar();
 
-			$listaNomesParametros = [];
-			foreach ($parametros as $chave => $valor) {
-				$listaNomesParametros[] = ':' . $chave;
-			}
-
-			$comando = 'CALL ' . $nomeProcedure;
-			if (count($listaNomesParametros) > 0) {
-				$comando .= '(' . implode(', ', $listaNomesParametros) . ')';
-			}
-
-			$this->cSQL = $this->conexao->prepare($comando);
-
-			foreach ($parametros as $chave => $valor) {
-				$this->cSQL->bindValue(':' . $chave, $valor);
-			}
-
-			$this->cSQL->execute();
-			$dados = $this->cSQL->fetchAll(PDO::FETCH_ASSOC);
-			$this->Desconectar();
-			return $dados;
-		} catch (PDOException $e) {
-			throw new Exception('Erro inesperado na Consulta. Tente novamente.');
+		$listaNomesParametros = [];
+		foreach ($parametros as $chave => $valor) {
+			$listaNomesParametros[] = ':' . $chave;
 		}
+
+		$comando = 'CALL ' . $nomeProcedure;
+		if (count($listaNomesParametros) > 0) {
+			$comando .= '(' . implode(', ', $listaNomesParametros) . ')';
+		}
+
+		$this->cSQL = $this->conexao->prepare($comando);
+
+		foreach ($parametros as $chave => $valor) {
+			$this->cSQL->bindValue(':' . $chave, $valor);
+		}
+		$this->cSQL->execute();
+		
+		$dados = $this->cSQL->fetchAll(PDO::FETCH_ASSOC);
+		$this->Desconectar();
+		return $dados;
 	}
 
 	protected function Executar($nomeProcedure, $parametros = [])

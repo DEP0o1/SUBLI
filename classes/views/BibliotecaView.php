@@ -24,6 +24,24 @@ class BibliotecaView{
         }
     }
 
+
+    public function ExibirBibliotecasSelect($biblioteca = new Biblioteca){
+
+        $controller = new BibliotecaController;
+        $bibliotecas = $controller->ListarBibliotecas($biblioteca);
+
+        foreach ($bibliotecas as $Biblioteca){
+
+            echo" 
+                <option value='{$Biblioteca->cd_biblioteca}'>{$Biblioteca->nm_biblioteca}</option>
+            ";  
+   
+            
+        }
+
+
+    }
+
 }
 
 ?>

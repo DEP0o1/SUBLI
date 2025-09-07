@@ -42,8 +42,21 @@ class DoacaoController extends Banco
     }
 
     public function AdicionarDoacao($doacao = new Doacao())
-    {
+            try{
+        $parametros = [
 
+            'p_cd_doacao' => $doacao->cd_doacao,
+            'p_nm_assunto' => $doacao->nm_doacao,
+            'p_cd_biblioteca' => $doacao->biblioteca->cd_biblioteca,
+            'p_nm_biblioteca' => $doacao->biblioteca->nm_biblioteca,
+            'p_cd_email' => $doacao->leitor->cd_email,
+            'p_nm_leitor' => $doacao->leitor->nm_leitor
+
+        ];
+
+        $this->Executar('adicionar_doacao', $parametros);
+    }catch (\Throwable $th) {
+        throw $th;
     }
 
     public function AlterarDoacao($doacao = new Doacao())
@@ -56,6 +69,7 @@ class DoacaoController extends Banco
         
     }
 }
+
 
 
 ?>
