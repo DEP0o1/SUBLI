@@ -1,3 +1,75 @@
+<?php
+require_once ('config.php');
+    $cd_email = null;
+    $nm_leitor = null;
+    $cd_cpf = null;
+    $cd_telefone = null;
+    $ic_comprovante_residencia = true;
+    $nm_senha = null;
+    $dt_nascimento = null;
+    $nm_endereco = null;
+    $cd_cep = null;
+    $campos = 0;
+
+    if(isset($_REQUEST['cd_email']) && $_REQUEST['cd_email'] != ""){
+        $cd_email = $_REQUEST['cd_email'];
+        $campos = $campos + 1;
+    }
+
+    if(isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != ""){
+        $nm_leitor = $_REQUEST['nm_leitor'];
+        $campos = $campos + 1;
+    }
+
+    if(isset($_REQUEST['cd_cpf']) && $_REQUEST['cd_cpf'] != ""){
+        $cd_cpf = $_REQUEST['cd_cpf'];
+        $campos = $campos + 1;
+    }
+
+    if(isset($_REQUEST['cd_telefone']) && $_REQUEST['cd_telefone']!= ""){
+        $cd_telefone = $_REQUEST['cd_telefone'];
+        $campos = $campos + 1;
+    }
+
+    if(isset($_REQUEST['nm_senha']) && $_REQUEST['nm_senha']!= ""){
+        $nm_senha = $_REQUEST['nm_senha'];
+        $campos = $campos + 1;
+    }
+
+    if(isset($_REQUEST['dt_nascimento']) && $_REQUEST['dt_nascimento']!= ""){
+        $dt_nascimento = $_REQUEST['dt_nascimento'];
+        $campos = $campos + 1;
+    }
+
+    if(isset($_REQUEST['nm_endereco']) && $_REQUEST['nm_endereco']!= ""){
+        $nm_endereco = $_REQUEST['nm_endereco'];
+        $campos = $campos + 1;
+    }
+
+    if(isset($_REQUEST['cd_cep']) && $_REQUEST['cd_cep']!= ""){
+        $cd_cep = $_REQUEST['cd_cep'];
+        $campos = $campos + 1;
+    }
+
+
+    if($campos == 8){
+        $controller = new LeitorController();
+        $leitor = $controller->AdicionarLeitor(new Leitor(
+        $cd_email,
+        $nm_leitor,
+        $cd_cpf,
+        $cd_telefone,
+        $ic_comprovante_residencia, 
+        $nm_senha, 
+        $dt_nascimento, 
+        $nm_endereco, 
+        $cd_cep
+));
+    }
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,77 +87,64 @@
 <body>
         <div class="areaCadastro">
         
-        <form action="" class="formAvancado">
+        <form method = "post" action="" class="formAvancado">
             <div >
                 <h1 class="pesquisaAvancada">Cadastrar Leitor</h1>
             </div>
         <section class="areaInput">
             <div class="areaTituloLivro">
                 <h3 class="tituloForm">Nome:</h3>
-                <input type="text" class="inputForm" placeholder="Ex. Pedro Mingel"> 
-            </div>
-
-            <div class="areaTituloLivro">
-                <h3 class="tituloForm">Nome da Mãe:</h3>
-                <input type="text" class="inputForm" placeholder="Ex. Mãe do pedro mingel"> 
-            </div>
-
-            <div class="areaTituloLivro">
-                <h3 class="tituloForm">Nome do Pai:</h3>
-                <input type="text" class="inputForm" placeholder="Ex. Pai do Pedro Mingel"> 
+                <input name= "nm_leitor" type="text" class="inputForm" placeholder="Ex. Pedro Mingel"> 
             </div>
             
             <div class="areaAutorLivro">
                 <h3 class="tituloForm">Telefone:</h3>
-                <input type="text" class="inputForm" placeholder="Ex. 13-99999999"> 
+                <input name= "cd_telefone" type="text" class="inputForm" placeholder="Ex. 13-99999999"> 
             </div>
             
             <div class="formDeLado1">
                 <div>
                     <h3 class="tituloForm">Endereço:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. Rua xxx.xxx">
+                    <input name= "nm_endereco" type="text" class="inputForm" placeholder="Ex. Rua xxx.xxx">
                 </div>
                 <div>
                     <h3 class="tituloForm">CEP:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex.12345678">
+                    <input name= "cd_cep" type="text" class="inputForm" placeholder="Ex.12345678">
                 </div>
-                                <div>
+                <div>
                     <h3 class="tituloForm">CPF:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. 123456789">
+                    <input name= "cd_cpf" type="text" class="inputForm" placeholder="Ex. 123456789">
                 </div>
             </div>
 
             <div class="formDeLado1">
                 <div>
                     <h3 class="tituloForm">Email:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. filhodaputa@gmail.com">
+                    <input name= "cd_email" type="text" class="inputForm" placeholder="Ex. filhodaputa@gmail.com">
                 </div>
                 <div>
                     <h3 class="tituloForm">Senha:</h3>
-                    <input type="text" class="inputForm" placeholder="************">
+                    <input name= "nm_senha" type="text" class="inputForm" placeholder="************">
                 </div>
                 <div>
                     <h3 class="tituloForm">Data de nascimento:</h3>
-                    <input type="date" class="inputForm" placeholder="************">
+                    <input name= "dt_nascimento" type="text" class="inputForm" placeholder="************">
                 </div>
             </div>
 
             <div class="formDeLado1">
-                <div>
-                    <h3 class="tituloForm">RG:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. 222.222.222-2">
-                </div>
-
-                <div>
-                    <h3 class="tituloForm">Codigo:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. 123456">
-                </div>
-                
-
             </div>
-
+           
             <div class="areaBtn">
             <button class="btnRosa">Cadastrar</button>
+             <?php
+               if($campos == 8){
+                    echo $leitor;
+               }
+                
+                
+              
+            ?>
             </div>
             </section>
         </form>

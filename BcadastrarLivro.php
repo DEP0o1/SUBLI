@@ -1,7 +1,6 @@
 <?php
 require_once ('config.php');
 
-
     $erro = true;
     $cadastro = true;
     $nm_livro = null;
@@ -58,6 +57,7 @@ require_once ('config.php');
 
     if(isset($_REQUEST['cd_genero']) && isset($_REQUEST['nm_genero'])){ 
         if(!is_null($_REQUEST['cd_genero']) || !is_null($_REQUEST['nm_genero'])){
+            
             $erro = false;
         }
     }
@@ -152,8 +152,7 @@ require_once ('config.php');
     }
     
     if($cadastro){
-       
-        
+    
         $controller = new LivroController();
         $livro = $controller->AdicionarLivro(new Livro(
                     null,
@@ -278,9 +277,7 @@ require_once ('config.php');
                 <div class="areaBtn">
                     <button class="btnRosa">Cadastrar</button>
                     <?php
-                    
-                    echo $livro;
-                    
+                        echo $livro;
                     ?>
                 </div>
             </section>

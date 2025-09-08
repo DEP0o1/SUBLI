@@ -204,7 +204,7 @@ BEGIN
     END IF;
 END$$
 
-CALL adicionar_livro (NULL, 'Aventuras no Código' , 1 , NULL ,1, NULL, 1 , NULL ,1 , NULL , 1 , NULL , 1 , NULL,'blebleble', 1);
+/*CALL adicionar_livro (NULL, 'Aventuras no Código' , 1 , NULL ,1, NULL, 1 , NULL ,1 , NULL , 1 , NULL , 1 , NULL,'blebleble', 1);*/
     
 
 DROP PROCEDURE IF EXISTS alterar_livros$$
@@ -695,7 +695,7 @@ BEGIN
       AND (p_cd_livro IS NULL OR e.cd_livro = p_cd_livro);
 END$$
 
-CALL listar_bibliotecas(null, NULL ,1, NULL,NULL, NULL, NULL);
+/*CALL listar_bibliotecas(null, NULL ,1, NULL,NULL, NULL, NULL);*/
 
 DROP PROCEDURE IF EXISTS adicionar_biblioteca$$
 CREATE PROCEDURE adicionar_biblioteca(
@@ -1046,7 +1046,7 @@ BEGIN
        
 END$$
 
-CALL listar_leitores(null,null,null,null,null,null,1);
+/*CALL listar_leitores(null,null,null,null,null,null,1);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_leitor$$
@@ -1056,24 +1056,23 @@ CREATE PROCEDURE adicionar_leitor(
   IN p_cd_cpf VARCHAR(11),
   IN p_cd_telefone VARCHAR(11),
   IN p_ic_comprovante_residencia TINYINT,
-  IN p_nm_senha VARCHAR(64)
+  IN p_nm_senha VARCHAR(64),
+  IN p_dt_nascimento VARCHAR(200),
+  IN p_nm_endereco VARCHAR(200),
+  IN p_cd_cep VARCHAR(8)
 )
 BEGIN
-  DECLARE v_cd_email VARCHAR(200);
 
-  IF p_cd_email IS NULL THEN
-    SELECT COALESCE(MAX(cd_email), 0) + 1 INTO v_cd_email FROM leitor;
-  ELSE
-    SET v_cd_email = p_cd_email;
-  END IF;
 
-  IF v_cd_email IS NOT NULL AND p_nm_leitor IS NOT NULL
+  IF p_cd_email IS NOT NULL AND p_nm_leitor IS NOT NULL
      AND p_cd_cpf IS NOT NULL AND p_cd_telefone IS NOT NULL
-     AND p_ic_comprovante_residencia IS NOT NULL AND p_nm_senha IS NOT NULL THEN
+     AND p_ic_comprovante_residencia IS NOT NULL AND p_nm_senha IS NOT NULL AND p_dt_nascimento IS NOT NULL AND p_nm_endereco IS NOT NULL AND p_cd_cep IS NOT NULL THEN
     INSERT INTO leitor
-      VALUES (v_cd_email, p_nm_leitor, p_cd_cpf, p_cd_telefone, p_ic_comprovante_residencia, p_nm_senha);
+      VALUES (p_cd_email, p_nm_leitor, p_cd_cpf, p_cd_telefone, p_ic_comprovante_residencia, p_nm_senha,p_dt_nascimento,p_nm_endereco,p_cd_cep);
   END IF;
 END$$
+
+/*CALL adicionar_leitor('lucas.email','lucas','00000000000','00000000000', false,'123','01/06/2008','rua joão maluco', '00000000');*/
 
 DROP PROCEDURE IF EXISTS alterar_leitor$$
 CREATE PROCEDURE alterar_leitor(
@@ -1330,7 +1329,7 @@ BEGIN
 
 END$$
 
-CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);
+/*CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$
@@ -1428,7 +1427,7 @@ BEGIN
      AND (p_cd_biblioteca IS NULL OR bb.cd_biblioteca = p_cd_biblioteca);
 END$$
 
-CALL listar_bibliotecarios (NULL,NULL,NULL, 1);
+/*CALL listar_bibliotecarios (NULL,NULL,NULL, 1);*/
 
 DROP PROCEDURE IF EXISTS adicionar_bibliotecario$$
 CREATE PROCEDURE adicionar_bibliotecario(
