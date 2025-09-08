@@ -56,11 +56,11 @@ class LivroView{
       <h2> Autor:$autor->nm_autor  </h2>
       ";
     }
-      foreach($Livro->editora as $editora){
+
       echo"
-      <h2> Editora:{$editora->nm_editora} </h2>
+      <h2> Editora:{$Livro->editora[0]->nm_editora} </h2>
       ";
-}   echo"
+   echo"
     <h2> Disponivel em: ";
 
     foreach($bibliotecas as $Biblioteca){

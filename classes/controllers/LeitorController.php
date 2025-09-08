@@ -34,6 +34,21 @@ class LeitorController extends Banco
         }
     }
 
+
+     public function Logar($leitor = new Leitor()) {
+        try {
+            $parametros = [
+                'p_cd_email'=>$leitor->p_cd_email,
+                'p_nm_senha'=>$leitor->p_nm_senha
+            ];
+            $dados = $this->Consultar('logar_leitor', $parametros);
+            return $dados;
+        } catch (\Throwable $th) {
+            throw new Exception('Login e/ou Senha Inválida');
+        }
+    }
+
+
     public function AdicionarLeitor($leitor = new Leitor())
     {
 

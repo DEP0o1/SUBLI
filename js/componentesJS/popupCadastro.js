@@ -16,7 +16,8 @@ if (btnCadastro) {
         titulo.textContent = 'Cadastre-se/Faça seu Login';
         barraTitulo.append(titulo);
 
-        const formulario = document.createElement('div');
+        const formulario = document.createElement('form');
+        formulario.method = "POST";
         formulario.id = "form-popup";
 
 
@@ -32,6 +33,7 @@ if (btnCadastro) {
 
         const inputEmail = document.createElement('input');
         inputEmail.id = 'inputEmail';
+        inputEmail.name = 'email';
         inputEmail.placeholder = 'seuemail@gmail.com';
 
         const tituloInputSenha = document.createElement('label');
@@ -40,6 +42,7 @@ if (btnCadastro) {
 
         const inputSenha = document.createElement('input');
         inputSenha.id = 'inputSenha';
+        inputSenha.name = 'senha';
         inputSenha.placeholder = '**********';
 
         const btnCadastre = document.createElement('button');
@@ -77,5 +80,8 @@ if (btnCadastro) {
         document.querySelector('body').prepend(bloqueio);
         document.querySelector('body').prepend(telaLogout);
         document.querySelector('body').style.overflow= "hidden";
+
+
+
     });
 };

@@ -6,6 +6,7 @@ DELIMITER $$
 
 DROP PROCEDURE IF EXISTS listar_livros$$
 
+
 CREATE PROCEDURE listar_livros (
     IN  p_cd_livro INT,
     IN p_nm_livro VARCHAR(200),
@@ -79,12 +80,12 @@ BEGIN
 END$$
 
 
-/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, NULL, 1);*/
+/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
 
 
 
-DROP PROCEDURE IF EXISTS adicionar_livros$$
-CREATE PROCEDURE adicionar_livros (
+DROP PROCEDURE IF EXISTS adicionar_livro$$
+CREATE PROCEDURE adicionar_livro (
     IN p_cd_livro INT,
     IN p_nm_livro VARCHAR(200),
 
@@ -104,7 +105,11 @@ CREATE PROCEDURE adicionar_livros (
     IN p_nm_autor VARCHAR(200),
     
     IN p_cd_assunto INT,
-    IN p_nm_assunto VARCHAR(200)
+    IN p_nm_assunto VARCHAR(200),
+    
+    IN p_ds_sinopse TEXT,
+    
+    IN p_cd_biblioteca INT
 )
 BEGIN
 	DECLARE v_cd_livro INT;
@@ -114,12 +119,15 @@ BEGIN
     DECLARE v_cd_editora INT;
     DECLARE v_cd_idioma INT;
     DECLARE v_cd_colecao INT;
+    DECLARE v_cd_exemplar INT;
 
     IF p_cd_livro IS NULL THEN
         SELECT COALESCE(MAX(cd_livro), 0) + 1 INTO v_cd_livro FROM livro;
         ELSE
         SET v_cd_livro = p_cd_livro;
     END IF;
+
+		SELECT COALESCE(MAX(cd_exemplar), 0) + 1 INTO v_cd_exemplar FROM exemplar;
 
     IF p_cd_editora IS NULL AND p_nm_editora IS NOT NULL THEN
         SELECT cd_editora INTO v_cd_editora
@@ -182,18 +190,21 @@ BEGIN
        v_cd_colecao IS NOT NULL AND
        v_cd_genero IS NOT NULL AND
        v_cd_autor IS NOT NULL AND
+       p_cd_biblioteca IS NOT NULL AND
+       p_ds_sinopse IS NOT NULL AND
        v_cd_assunto IS NOT NULL THEN
 
         INSERT INTO livro 
-        VALUES (v_cd_livro, p_nm_livro, v_cd_editora, v_cd_idioma, v_cd_colecao);
+        VALUES (v_cd_livro, p_nm_livro, v_cd_editora, v_cd_idioma, v_cd_colecao, p_ds_sinopse);
 
         INSERT INTO genero_livro VALUES (v_cd_livro, v_cd_genero);
         INSERT INTO autor_livro VALUES (v_cd_livro, v_cd_autor);
         INSERT INTO assunto_livro VALUES (v_cd_livro, v_cd_assunto);
+        INSERT INTO exemplar VALUES (v_cd_livro, p_cd_biblioteca, v_cd_exemplar, NOW(), false);
     END IF;
 END$$
 
-/*CALL adicionar_livros(NULL, 'Aventuras no Código' , NULL , 'Editora Top' ,NULL, 'Português', NULL , 'Parangolé' , NULL , 'Ficção' ,NULL , 'Clarice Lispector' , NULL , 'Tecnologia');*/
+CALL adicionar_livro (NULL, 'Aventuras no Código' , 1 , NULL ,1, NULL, 1 , NULL ,1 , NULL , 1 , NULL , 1 , NULL,'blebleble', 1);
     
 
 DROP PROCEDURE IF EXISTS alterar_livros$$

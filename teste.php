@@ -2,14 +2,17 @@
 
 require_once 'config.php';
 
-$assunto = new Assunto();
+// $assunto = new Assunto();
 // $assunto->nm_assunto = '%bra%';
-$assuntoController = new AssuntoController;
-print_r($assuntoController->ListarAssuntos($assunto));
+// $assuntoController = new AssuntoController;
+// print_r($assuntoController->ListarAssuntos($assunto));
 
 
 
-        
+        $top = "Lucas";
+        $bagulho = "top";
+
+        echo $$bagulho;
       
         
       
