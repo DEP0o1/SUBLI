@@ -82,6 +82,20 @@ if (btnCadastro) {
         document.querySelector('body').style.overflow= "hidden";
 
 
-
     });
+
+
+    
+        fetch(`api/leitor.php?e=${email}&s=${senha}`)
+        .then(function(resposta) {
+            return resposta.json()
+        }).then(function(dadosJSON) {
+
+            if ('mensagem' in dadosJSON) {
+                Mensagem(dadosJSON['mensagem'], 'erro', 'form');
+            }
+            else{
+                window.location.href='LindexLeitor.php';
+            }
+        });
 };
