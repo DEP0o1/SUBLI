@@ -21,14 +21,10 @@ if (btnLogout) {
         item = document.createElement('p');
         item.classList.add('areaBotao');
 
-        const botaoConfirmar = document.createElement('button');
+        const botaoConfirmar = document.createElement('a');
         botaoConfirmar.id = 'btnConfirmar';
+        botaoConfirmar.href = "LindexLeitor.php";
         botaoConfirmar.textContent = 'Confirmar';
-        botaoConfirmar.addEventListener('click', function(e){
-            e.preventDefault();
-            telaLogout.remove();
-            bloqueio.remove();
-        })
 
 
         const botaoCancelar = document.createElement('button');

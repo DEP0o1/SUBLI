@@ -25,7 +25,7 @@ require_once('config.php');
 
   <main class="areaLivroDoado">
   <section class="doacao">
-    <img src="img/capa livro.jpg" class="livroDoado">
+    <img src="img/2" class="livroDoado">
 
     <div class="infoLivroDoado">
       <h1> É assim que acaba </h1>
@@ -48,37 +48,18 @@ require_once('config.php');
   <section class="areaCardsDoacao">
     <div class="cardDoacao">
 
-    <?php
-      $livro = new LivroView;
-      $livro->ExibirLivros();
-    ?> 
+        <?php
+         $controller = new DoacaoController;
+         $doacoes = $controller->ListarDoacoes();
+          foreach ($doacoes as $Doacao){
+          $livro = new LivrosDoasdosView;
+          $livro->ExibirLivrosDoados(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$Doacao->cd_doacao));
+  }
+      ?> 
 
 
     </div>
 
-    <div class="cardDoacao">
-
-      <img src="img/capa livro.jpg" class="livroDoadoCard">
-
-      <div class="infoCard">
-        <h2> É assim que acaba </h2>
-        <h2> Doado por: Pedro Miguel... </h2>
-        <button class="verDoacao"> Ver doação </button>
-      </div>
-
-    </div>
-
-    <div class="cardDoacao">
-
-      <img src="img/capa livro.jpg" class="livroDoadoCard">
-
-      <div class="infoCard">
-        <h2> É assim que acaba </h2>
-        <h2> Doado por: Pedro Miguel... </h2>
-        <button class="verDoacao"> Ver doação </button>
-      </div>
-
-    </div>
   </section>
 
 </body>

@@ -21,35 +21,35 @@
         <h1>Empréstimos</h1>
         <div class="exibirLivros">
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/1" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/2" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/3" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/4" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/5" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
@@ -59,35 +59,35 @@
         <h1>Lista de desejos</h1>
         <div class="exibirLivros">
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/6" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/7" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/8" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/9" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/10" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
@@ -99,35 +99,35 @@
         <h1>Histórico</h1>
         <div class="exibirLivros">
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/11" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/12" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/13" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/2" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>
           </div>
 
           <div class="livro">
-            <img src="img/capa livro.jpg" alt="" />
+            <img src="img/1" alt="" />
             <h2>Pequeno principe</h2>
             <p>machado de assis</p>
             <button>Ver Mais</button>

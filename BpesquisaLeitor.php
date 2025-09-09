@@ -36,9 +36,9 @@ require_once('config.php');
                 <button class="btnRosa">
                     Pesquisa
                 </button>
-                <button class="btnRosa">
+                <a href="./BcadastrarLeitor.php" class="btnRosa">
                     Novo Leitor
-                </button>
+                </a>
             </div>
         </form>
     </div>

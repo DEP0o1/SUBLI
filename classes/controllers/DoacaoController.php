@@ -42,7 +42,8 @@ class DoacaoController extends Banco
     }
 
     public function AdicionarDoacao($doacao = new Doacao())
-            try{
+    {
+        try{
         $parametros = [
 
             'p_cd_doacao' => $doacao->cd_doacao,
@@ -55,8 +56,9 @@ class DoacaoController extends Banco
         ];
 
         $this->Executar('adicionar_doacao', $parametros);
-    }catch (\Throwable $th) {
-        throw $th;
+        }
+        catch (\Throwable $th) {
+        throw $th;}
     }
 
     public function AlterarDoacao($doacao = new Doacao())

@@ -44,6 +44,7 @@ CREATE TABLE livro(
 	cd_editora INT,
     cd_idioma INT,
     cd_colecao INT,
+    ds_sinopse TEXT,
 	CONSTRAINT pk_livro PRIMARY KEY (cd_livro), 
 	CONSTRAINT fk_editora FOREIGN KEY (cd_editora) REFERENCES editora(cd_editora),
     CONSTRAINT fk_idioma FOREIGN KEY (cd_idioma) REFERENCES idioma(cd_idioma),
@@ -294,62 +295,62 @@ INSERT INTO evento VALUES ('Divulgação do meu Livro', 1,NOW(), 'SHBJHSDAUOHAFS
 INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'pedro.favoritos@gmail.com', NULL);
 
 /* Livro 1 */
-INSERT INTO livro VALUES (1, 'Livro Top', 3, 8, 10);
+INSERT INTO livro VALUES (1, 'Livro Top', 3, 8, 10,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (1, 1);
 INSERT INTO autor_livro VALUES (1, 5);
 INSERT INTO autor_livro VALUES (1, 6);
 INSERT INTO genero_livro VALUES (1, 7);
 
 /* Livro 2 */
-INSERT INTO livro VALUES (2, 'Vidas Secas', 2, 5, 7);
+INSERT INTO livro VALUES (2, 'Vidas Secas', 2, 5, 7,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (2, 4);
 INSERT INTO autor_livro VALUES (2, 2);
 INSERT INTO genero_livro VALUES (2, 7);
 
 /* Livro 3 */
-INSERT INTO livro VALUES (3, 'Ruído Branco', 5, 4, 9);
+INSERT INTO livro VALUES (3, 'Ruído Branco', 5, 4, 9,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (3, 3);
 INSERT INTO autor_livro VALUES (3, 6);
 INSERT INTO genero_livro VALUES (3, 3);
 
 /* Livro 4 */
-INSERT INTO livro VALUES (4, 'Pelas Entranhas', 1, 2, 3);
+INSERT INTO livro VALUES (4, 'Pelas Entranhas', 1, 2, 3,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (4, 6);
 INSERT INTO autor_livro VALUES (4, 1);
 INSERT INTO genero_livro VALUES (4, 3);
 
 /* Livro 5 */
-INSERT INTO livro VALUES (5, 'Morangos Mofados', 4, 3, 1);
+INSERT INTO livro VALUES (5, 'Morangos Mofados', 4, 3, 1,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (5, 5);
 INSERT INTO autor_livro VALUES (5, 9);
 INSERT INTO genero_livro VALUES (5, 10);
 
 /* Livro 6 */
-INSERT INTO livro VALUES (6, 'A Visão das Plantas', 6, 6, 4);
+INSERT INTO livro VALUES (6, 'A Visão das Plantas', 6, 6, 4,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (6, 6);
 INSERT INTO autor_livro VALUES (6, 8);
 INSERT INTO genero_livro VALUES (6, 9);
 
 /* Livro 7 */
-INSERT INTO livro VALUES (7, 'O Pequeno Princípe', 7, 1, 5);
+INSERT INTO livro VALUES (7, 'O Pequeno Princípe', 7, 1, 5,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (7, 7);
 INSERT INTO autor_livro VALUES (7, 9);
 INSERT INTO genero_livro VALUES (7, 10);
 
 /* Livro 8 */
-INSERT INTO livro VALUES (8, 'Divina Comédia', 8, 7, 2);
+INSERT INTO livro VALUES (8, 'Divina Comédia', 8, 7, 2,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (8, 10);
 INSERT INTO autor_livro VALUES (8, 9);
 INSERT INTO genero_livro VALUES (8, 10);
 
 /* Livro 9 */
-INSERT INTO livro VALUES (9, 'O Chamado de Chutullu', 9, 10, 6);
+INSERT INTO livro VALUES (9, 'O Chamado de Chutullu', 9, 10, 6,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (9, 10);
 INSERT INTO autor_livro VALUES (9, 4);
 INSERT INTO genero_livro VALUES (9, 3);
 
 /* Livro 10 */
-INSERT INTO livro VALUES (10, 'Vivendo uma Vida Autentica', 10, 9, 8);
+INSERT INTO livro VALUES (10, 'Vivendo uma Vida Autentica', 10, 9, 8,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (10, 2);
 INSERT INTO autor_livro VALUES (10, 1);
 INSERT INTO genero_livro VALUES (10, 1);
@@ -391,6 +392,7 @@ INSERT INTO bibliotecario_biblioteca VALUES (1,1);
 INSERT INTO doacao VALUES (1,2,2,'pedro.favoritos@gmail.com');
 INSERT INTO doacao VALUES (2,5,1,'pedro.favoritos@gmail.com');
 INSERT INTO doacao VALUES (3,1,3,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (4,1,3,'pedro.favoritos@gmail.com');
 
 /*Emprestimo*/
 INSERT INTO emprestimo VALUES(1,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',1,1);

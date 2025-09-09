@@ -5,7 +5,7 @@ require_once('./config.php');
 echo '
 <header>
       <a href="LindexLeitor.php">
-        <img src="img/CorClara.png" alt="" class="logo" />
+        <img src="img/subli.logoCorClara.png" alt="" class="logo" />
       </a>
 
       <form action="Lresultado.php" class="areaPesquisa">

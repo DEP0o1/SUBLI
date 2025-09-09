@@ -29,7 +29,6 @@ require_once './complementos/headerBibliotecario.php';
     </div>
 
     <div class="resultadoPesquisa">
-      <div class="setaEsquerda"><img src="img/LEFT.png" alt="" /></div>
       
         <?php
          $controller = new DoacaoController;
@@ -38,11 +37,11 @@ require_once './complementos/headerBibliotecario.php';
           $livro = new LivroView;
           $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$Doacao->cd_doacao));
   }
-
+        
       ?> 
       
-      <div class="setaDireita"><img src="img/RIGHT.png" alt="" /></div>
     </div>
+    <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php">Ver Mais Doações</a></div>
 
     <div class="areaEventos">
       <div class="eventosTitulo">
