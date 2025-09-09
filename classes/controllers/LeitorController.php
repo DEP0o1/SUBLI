@@ -34,9 +34,44 @@ class LeitorController extends Banco
         }
     }
 
+
+     public function Logar($leitor = new Leitor()) {
+        try {
+            $parametros = [
+                'p_cd_email'=>$leitor->p_cd_email,
+                'p_nm_senha'=>$leitor->p_nm_senha
+            ];
+            $dados = $this->Consultar('logar_leitor', $parametros);
+            return $dados;
+        } catch (\Throwable $th) {
+            throw new Exception('Login e/ou Senha Inválida');
+        }
+    }
+
+
     public function AdicionarLeitor($leitor = new Leitor())
     {
 
+         try{
+        $parametros = [
+                        'p_cd_email' => $leitor->cd_email,
+                        'p_nm_leitor' => $leitor->nm_leitor,
+                        'p_cd_cpf' => $leitor->cd_cpf,
+                        'p_cd_telefone' => $leitor->cd_telefone,
+                        'p_ic_comprovante_residencia' => $leitor->ic_comprovante_residencia,
+                        'p_nm_senha' => $leitor->nm_senha,
+                        'p_dt_nascimento' => $leitor->dt_nascimento,
+                        'p_nm_endereco' => $leitor->nm_endereco,
+                        'p_cd_cep' => $leitor->cd_cep
+        ];
+
+
+        $this->Executar('adicionar_leitor', $parametros);
+        return "Leitor cadastrado com sucesso!";
+
+    }   catch(\Throwable $th) {
+            throw $th;
+        }
     }
 
     public function AlterarLeitor($leitor = new Leitor())
@@ -49,6 +84,7 @@ class LeitorController extends Banco
         
     }
 }
+
 
 
 ?>
