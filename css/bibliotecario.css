@@ -823,6 +823,112 @@ h3{
   
   
   
+  .tituloCentro h1{
+    padding: 0;
+    margin: 0;
+
+ }
+
+  .bibliotecasMain{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    }
+
+     h1{
+    padding: 0px;
+    }
+
+    .nmBibLista{
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        height: 30px;
+        height: fit-content;
+    }
+
+    .nmBibLista h1 {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nmBibLista span{
+        margin: 0;
+        height: 15px;
+    }
+
+    .nmEndereco{
+        display: flex;
+        flex-direction: row;
+         align-items:center;
+        
+    }
+
+    .verMais {
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    background-color: var(--vinho);
+    color:var(--branco);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: fit-content;
+    height: 10%;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.itemLista{
+    display: flex;
+    flex-direction: row;
+    align-items: center;;
+    width: fit-content;
+    border-top: 2px #666 solid;
+}
+
+.imgBibLista{
+height: 105px;
+}
+
+.listaBibliotecas {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-top: 0;
+    align-items: center;
+    width:fit-content;
+    max-height: 700px;   /* altura fixa da lista */
+     overflow-y: auto; 
+}
+
+.areaLocal{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 40px;
+    padding: 30px;
+    justify-content: center;
+}
+
+  
+.listaBibliotecasLivro {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-top: 0;
+  align-items: center;
+  width:fit-content;
+  max-height: 200px;   /* altura fixa da lista */
+   overflow-y: auto; 
+}
+  
   
   
   
