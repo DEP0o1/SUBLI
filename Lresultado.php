@@ -54,12 +54,6 @@ if(isset ($_REQUEST['valor'])){
       </button>
     </section>
     <section class="exibirLivros">
-      <button class="seta">
-        <img
-          src="icons/arrow_back_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-          alt=""
-        />
-      </button>
 
       <?php
 
@@ -112,20 +106,6 @@ if(isset ($_REQUEST['valor'])){
         <button>Ver Mais</button>
       </div> -->
 
-      <button class="seta">
-        <img
-          src="icons/arrow_forward_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-          alt=""
-        />
-      </button>
-    </section>
-    <section class="exibirLivros">
-      <button class="seta">
-        <img
-          src="icons/arrow_back_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-          alt=""
-        />
-      </button>
 
       <!-- <div class="livro">
         <img src="img/capa1.jpg" alt="" />
@@ -162,11 +142,6 @@ if(isset ($_REQUEST['valor'])){
         <button>Ver Mais</button>
       </div> -->
 
-      <button class="seta">
-        <img
-          src="icons/arrow_forward_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-          alt=""
-        />
       </button>
     </section>
 </body>

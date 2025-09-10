@@ -34,8 +34,8 @@ require_once './complementos/headerBibliotecario.php';
          $controller = new DoacaoController;
          $doacoes = $controller->ListarDoacoes();
           foreach ($doacoes as $Doacao){
-          $livro = new LivroView;
-          $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$Doacao->cd_doacao));
+          $livro = new LivrosDoadosView;
+          $livro->ExibirLivrosDoados(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$Doacao->cd_doacao));
   }
         
       ?> 

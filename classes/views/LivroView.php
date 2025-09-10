@@ -47,6 +47,7 @@ class LivroView{
     foreach($livros as $Livro){
         echo 
         "
+        <img src='img/{$Livro->cd_livro}' class='capaLivroEmprestado'></img>
     <div class='infoLivro'>
     <h1> $Livro->nm_livro </h1>";
 

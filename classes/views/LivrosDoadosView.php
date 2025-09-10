@@ -1,86 +1,62 @@
 <?php
 
-class LivroView{
+class LivrosDoadosView {
 
-    public function ExibirLivros($livro = new Livro()){
+    public function ExibirLivrosDoados($livro = new Livro()){
 
-    $controller = new LivroController;
-    $livros = $controller->ListarLivros($livro);
-
-        
-    foreach($livros as $Livro){
-        echo 
-        "
-        <div class='livro'>
-            <img src='img/{$Livro->cd_livro}'/></img>
-            <h2>{$Livro->nm_livro}</h2>
-        ";
+        $controller = new LivroController;
+        $livros = $controller->ListarLivros($livro);
 
 
-        foreach($Livro->autores as $autor){
+        foreach($livros as $Livro){
             echo 
             "
-            <p>{$autor->nm_autor}</p>
+            <div class='livro'>
+                <img src='img/{$Livro->cd_livro}'/>
+                <h2>{$Livro->nm_livro}</h2>
+            ";
+            
+            foreach($Livro->autores as $autor){
+                echo 
+                "
+                <p>{$autor->nm_autor}</p>
+                ";
+            }
+            echo
+            "
+                <button><a href='BsolicDoacao.php?codigo={$Livro->cd_livro}'>Visualizar Doação</a></button>
+            </div>
             ";
         }
-        echo
-        "
-            <button><a href='LlivroLeitor.php?codigo=$Livro->cd_livro'>Ver Mais</a></button>
+    }
+    public function ExibirLivroDoacao( $livro = new Livro()){
+         $controller = new LivroController;
+        $livros = $controller->ListarLivros($livro);
+    
+        echo "
+        <img src='img/{$Livro->cd_livro}' class='livroDoado'>
+        <div class='infoLivroDoado'>
+            <h1>AQUELE</h1>
+        ";
+
+       // foreach($livro->autores as $autor){}
+        echo "<h2> Autor: PEDRO </h2>";
+
+        echo "
+            <p>AQUELE</p>
+
+            <div class='nomeDoador'>
+                <h1>PEDRO</h1>
+                <div class='linha'></div>
+            </div>
+
+            <div class='botoes'>
+                <a href='BcadastrarLivro.php' class='aceitar'> Cadastrar </a>
+                <button class='recusar'> Recusar </button>
+            </div>
         </div>
         ";
-        // if (++$i > 4) break; NÃO FAZ ISSO ABOBADO
-        
     }
-
-
 }
-
-    public function ExibirLivrosDoados($doacao = new Doacao()){
-
-       
-        $controller = new LivroController;
-        $livros = $controller->ListarDoacoes($doacao);
-
-        $Bcontroller = new BibliotecaController;
-        $bibliotecas = $Bcontroller->ListarBibliotecas(new Biblioteca (null,null,null,[new Livro($livros[0]->cd_livro)]));
-    
-    foreach($livros as $Livro){
-        echo 
-        "
-    <div class='infoLivro'>
-    <h1> $Livro->nm_livro </h1>";
-
-
-    foreach($Livro->autores as $autor){
-      echo"
-      <h2> Autor:$autor->nm_autor  </h2>
-      ";
-    }
-      foreach($Livro->editora as $editora){
-      echo"
-      <h2> Editora:{$editora->nm_editora} </h2>
-      ";
-}   echo"
-    <h2> Disponivel em: ";
-
-    foreach($bibliotecas as $Biblioteca){
-      echo"
-      $Biblioteca->nm_biblioteca </h2>";
-}
-    echo"
-      <h2> Status: Disponível  </h2>
-
-      <div class='linha'> </div>
-
-      <h1> Sinopse </h1>
-      <p>$Livro->ds_sinopse</p>
-    </div>"
-        ;
-
-
-
-  }
-     }
-    }
 
 ?>

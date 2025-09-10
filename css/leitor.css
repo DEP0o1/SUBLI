@@ -59,8 +59,9 @@ h4 {
     padding-right: 30px;
     padding-left: 30px;
     height: fit-content;
-    position: fixed;
+    position:fixed;
     top :0;
+    z-index: 2;
 }
 
 .areaPesquisa{
@@ -340,49 +341,6 @@ body{
 
   /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 
-  .livro {
-    border-radius: 5px;
-    padding: 10px;
-    width: 163px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: solid grey 1px;
-    background-color: var(--branco);
-    height: 380px;
-  }
-  
-  .livro img {
-    width: 140px;
-    height: 210px;
-    object-fit: cover;
-    border-radius: 3px;
-  }
-  
-  .livro h2 {
-    font-size: 16px;
-    margin: 0;
-    color: #333;
-  }
-  
-  .livro p {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
-  }
-  
-  .livro button {
-    background-color: var(--vinho);
-    color: var(--branco);
-    border: none;
-    padding: 8px 14px;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-top: auto;
-  }
-  
-
 
 #bloqueio {
     position:fixed;
@@ -643,47 +601,7 @@ body {
   margin-top: 0%;
 }
 
-.livro {
-  border-radius: 5px;
-  padding: 10px;
-  width: 163px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border: solid grey 1px;
-  background-color: var(--branco);
-  height: 380px;
-}
 
-.livro img {
-  width: 140px;
-  height: 210px;
-  object-fit: cover;
-  border-radius: 3px;
-}
-
-.livro h2 {
-  font-size: 16px;
-  margin: 0;
-  color: #333;
-}
-
-.livro p {
-  font-size: 14px;
-  color: #666;
-  margin: 0;
-}
-
-.livro button {
-  background-color: var(--vinho);
-  color: var(--branco);
-  border: none;
-  padding: 8px 14px;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-top: auto;
-}
 
 .doacaoLivros {
   display: flex;
@@ -711,6 +629,7 @@ body {
 }
 
 .textoDoar a{
+
   border-radius: 10px;
   background-color: var(--vinho);
   padding: 10px;
@@ -725,11 +644,6 @@ body {
   padding: 0;
   margin: 0;
 }
-
-        
-  .indicator.active {
-  background: white;
-  }
 
   #depois{
   background-color: var(--vinho);
@@ -826,20 +740,93 @@ body {
   cursor: pointer;
   margin-top: auto;
   }
+.carrossel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 55%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
 
+.carrossel {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 20px;
+}
 
-  .carrossel{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-  }
+.livro {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: solid grey 1px;
+  background:white;
+  border-radius:5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  width: fit-content;
+  gap: 10px;
+  transition: transform 0.3s ease;
+  flex-direction: column  ;
+}
 
-  .carrossel-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
+.livro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.livro img {
+  width: 140px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.livro h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.livro p {
+  color: #666;
+  font-size: 14px;
+}
+.livro button {
+background-color: var(--vinho);
+color: var(--branco);
+border: none;
+padding: 8px 14px;
+border-radius: 3px;
+cursor: pointer;
+margin-top: auto;
+}
+.seta {
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.seta:hover {
+  background:var(--vinho);
+}
+
+.seta-esquerda {
+  left: 10px;
+}
+
+.seta-direita {
+  right: 10px;
+}
+

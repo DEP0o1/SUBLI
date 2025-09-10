@@ -31,8 +31,6 @@ if (isset($_REQUEST['codigo'])) {
 
     <main class="areaLivroEmprestado">
   <section class="livroEmprestado">
-    <img src="https://upload.wikimedia.org/wikipedia/pt/4/47/O-pequeno-pr%C3%ADncipe.jpg" class="capaLivroEmprestado">
-
       <?php
       if($buscar)
       $livro = new LivroView;

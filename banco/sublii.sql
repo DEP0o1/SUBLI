@@ -74,9 +74,6 @@ CREATE TABLE leitor(
     cd_telefone VARCHAR (11),
     ic_comprovante_residencia TINYINT,
     nm_senha VARCHAR(64),
-    dt_nascimento VARCHAR(200),
-    nm_endereco VARCHAR(200),
-    cd_cep VARCHAR(8),
 	CONSTRAINT pk_leitor PRIMARY KEY (cd_email)
 );
 
@@ -202,74 +199,83 @@ CREATE TABLE favorito_leitor(
 
 
 /*Leitores*/
-INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','2000-02-08','Rua Claudio Jeferson 211','11111111');
-INSERT INTO leitor VALUES ('pedro@gmail.com', 'Pedro Miguel', '59433067852', '13903890782', true, '123','1993-06-22', 'Rua Gaspar Antônio 23','22222222');
-INSERT INTO leitor VALUES ('lucas@gmail.com', 'Lucas', '59433067855', '13903890782', true, '123', '2008-03-01', 'Rua Lucas Alcoforado 666','33333333');
-INSERT INTO leitor VALUES ('caua@gmail.com', 'Cauã', '59433097850', '13903890782', true, '123', '2008-03-25', 'Rua Mato Grosso 44','44444444');
+INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123');
+INSERT INTO leitor VALUES ('pedro@gmail.com', 'Pedro Miguel', '59433067852', '13903890782', true, '123');
+INSERT INTO leitor VALUES ('lucas@gmail.com', 'Lucas', '59433067855', '13903890782', true, '123');
+INSERT INTO leitor VALUES ('caua@gmail.com', 'Cauã', '59433097850', '13903890782', true, '123');
 
 /*Generos*/
-INSERT INTO genero VALUES (1, 'História');
-INSERT INTO genero VALUES (2, 'Direitos Humanos');
+INSERT INTO genero VALUES (1, 'Ficção');
+INSERT INTO genero VALUES (2, 'Fantasia');
 INSERT INTO genero VALUES (3, 'Romance');
-INSERT INTO genero VALUES (4, 'Romance Contemporâneo');
-INSERT INTO genero VALUES (5, 'Ficção Brasileira');
-INSERT INTO genero VALUES (6, 'Autobiografia Filosófica');
-INSERT INTO genero VALUES (7, 'Filosofia');
-INSERT INTO genero VALUES (8, 'Ensaios');
-INSERT INTO genero VALUES (9, 'Sociologia');
-INSERT INTO genero VALUES (10, 'Humor');
+INSERT INTO genero VALUES (4, 'Mistério');
+INSERT INTO genero VALUES (5, 'Terror');
+INSERT INTO genero VALUES (6, 'História');
+INSERT INTO genero VALUES (7, 'Ciência');
+INSERT INTO genero VALUES (8, 'Autoajuda');
+INSERT INTO genero VALUES (9, 'Biografia');
+INSERT INTO genero VALUES (10, 'Aventura');
 
 /*Autores*/
-INSERT INTO autor VALUES (1, 'Silvia Federici');
-INSERT INTO autor VALUES (2, 'Harper Lee');
-INSERT INTO autor VALUES (3, 'Colleen Hoover');
-INSERT INTO autor VALUES (4, 'Jorge Amado');
-INSERT INTO autor VALUES (5, 'Jojo Moyes');
-INSERT INTO autor VALUES (6, 'Erik Hobsbawm');
-INSERT INTO autor VALUES (7, 'Cristy Lefteri');
-INSERT INTO autor VALUES (8, 'Victor Hugo');
-INSERT INTO autor VALUES (9, 'Friedrich Nietzsche');
-INSERT INTO autor VALUES (10, 'Léo Lins');
+INSERT INTO autor VALUES (1, 'Machado de Assis');
+INSERT INTO autor VALUES (2, 'Clarice Lispector');
+INSERT INTO autor VALUES (3, 'José de Alencar');
+INSERT INTO autor VALUES (4, 'Monteiro Lobato');
+INSERT INTO autor VALUES (5, 'Graciliano Ramos');
+INSERT INTO autor VALUES (6, 'Carlos Drummond de Andrade');
+INSERT INTO autor VALUES (7, 'Cecília Meireles');
+INSERT INTO autor VALUES (8, 'Jorge Amado');
+INSERT INTO autor VALUES (9, 'Lygia Fagundes Telles');
+INSERT INTO autor VALUES (10, 'João Cabral de Melo Neto');
 
 /*Assuntos*/
-INSERT INTO assunto VALUES (1, 'História Feminista');
-INSERT INTO assunto VALUES (2, 'Justiça e Racismo');
-INSERT INTO assunto VALUES (3, 'Relacionamentos');
-INSERT INTO assunto VALUES (4, 'Infância e Exclusão');
-INSERT INTO assunto VALUES (5, 'Deficiência e Amor');
-INSERT INTO assunto VALUES (6, 'Movimentos Sociais');
-INSERT INTO assunto VALUES (7, 'Espiritualidade');
-INSERT INTO assunto VALUES (8, 'Romantismo Clássico');
-INSERT INTO assunto VALUES (9, 'Moralidade');
-INSERT INTO assunto VALUES (10, 'Humor Irônico');
+INSERT INTO assunto VALUES (1, 'Literatura Brasileira');
+INSERT INTO assunto VALUES (2, 'Psicologia');
+INSERT INTO assunto VALUES (3, 'Filosofia');
+INSERT INTO assunto VALUES (4, 'Tecnologia');
+INSERT INTO assunto VALUES (5, 'Educação');
+INSERT INTO assunto VALUES (6, 'Saúde');
+INSERT INTO assunto VALUES (7, 'Religião');
+INSERT INTO assunto VALUES (8, 'Política');
+INSERT INTO assunto VALUES (9, 'Economia');
+INSERT INTO assunto VALUES (10, 'Ecologia');
 
 /*Editoras*/
-INSERT INTO editora VALUES (1, 'Elefante');
-INSERT INTO editora VALUES (2, 'Galera Record');
-INSERT INTO editora VALUES (3, 'José Olympio');
-INSERT INTO editora VALUES (4, 'Intrínseca');
-INSERT INTO editora VALUES (5, 'Companhia das Letras');
-INSERT INTO editora VALUES (6, 'Martin Claret');
-INSERT INTO editora VALUES (7, 'L&PM Pocket');
-INSERT INTO editora VALUES (8, 'Literare Books');
-INSERT INTO editora VALUES (9, 'Geração Editorial');
-INSERT INTO editora VALUES (10, 'Boitempo');
+INSERT INTO editora VALUES (1, 'Editora Top');
+INSERT INTO editora VALUES (2, 'Editora Alfa');
+INSERT INTO editora VALUES (3, 'Editora Beta');
+INSERT INTO editora VALUES (4, 'Editora Gama');
+INSERT INTO editora VALUES (5, 'Editora Delta');
+INSERT INTO editora VALUES (6, 'Editora Omega');
+INSERT INTO editora VALUES (7, 'Editora Nova Era');
+INSERT INTO editora VALUES (8, 'Editora Saber');
+INSERT INTO editora VALUES (9, 'Editora Horizonte');
+INSERT INTO editora VALUES (10, 'Editora Luz');
 
 /*Idiomas*/
-INSERT INTO idioma VALUES (1, 'Português');
-INSERT INTO idioma VALUES (2, 'Inglês');
+INSERT INTO idioma VALUES (1, 'Inglês');
+INSERT INTO idioma VALUES (2, 'Português');
+INSERT INTO idioma VALUES (3, 'Espanhol');
+INSERT INTO idioma VALUES (4, 'Francês');
+INSERT INTO idioma VALUES (5, 'Alemão');
+INSERT INTO idioma VALUES (6, 'Italiano');
+INSERT INTO idioma VALUES (7, 'Japonês');
+INSERT INTO idioma VALUES (8, 'Chinês');
+INSERT INTO idioma VALUES (9, 'Russo');
+INSERT INTO idioma VALUES (10, 'Árabe');
 
 /*Coleções*/
-INSERT INTO colecao VALUES (1, 'Feminismos & História');
-INSERT INTO colecao VALUES (2, 'Clássicos da Justiça');
-INSERT INTO colecao VALUES (3, 'Romance Contemporâneo');
-INSERT INTO colecao VALUES (4, 'Literatura Infantojuvenil');
-INSERT INTO colecao VALUES (5, 'Romance Internacional');
-INSERT INTO colecao VALUES (6, 'História e Política');
-INSERT INTO colecao VALUES (7, 'Espiritualidade Ficção');
-INSERT INTO colecao VALUES (8, 'Clássicos Mundiais');
-INSERT INTO colecao VALUES (9, 'Filosofia Moderna');
-INSERT INTO colecao VALUES (10, 'Humor e Irreverência');
+INSERT INTO colecao VALUES (1, 'Parangolé');
+INSERT INTO colecao VALUES (2, 'Aurora');
+INSERT INTO colecao VALUES (3, 'Luz do Saber');
+INSERT INTO colecao VALUES (4, 'Infantojuvenil');
+INSERT INTO colecao VALUES (5, 'Clássicos do Mundo');
+INSERT INTO colecao VALUES (6, 'Científica Moderna');
+INSERT INTO colecao VALUES (7, 'História Viva');
+INSERT INTO colecao VALUES (8, 'Ficção Sem Limites');
+INSERT INTO colecao VALUES (9, 'Mundo Animal');
+INSERT INTO colecao VALUES (10, 'Arte e Cultura');
+
 
 /*Bibliotecas*/
 INSERT INTO biblioteca VALUES (1, 'Parangolé','Rua Lucas Alcoforado');
@@ -288,67 +294,66 @@ INSERT INTO biblioteca VALUES (10, 'Arte e Cultura','Rua Lucas Alcoforado');
 INSERT INTO evento VALUES ('Divulgação do meu Livro', 1,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', NULL);
 INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'pedro.favoritos@gmail.com', NULL);
 
-
-
 /* Livro 1 */
-INSERT INTO livro VALUES (1, 'Calibã e a Bruxa', 1, 1, 1, 'Análise da caça às bruxas e o surgimento do capitalismo centrado na opressão às mulheres.');
+INSERT INTO livro VALUES (1, 'Livro Top', 3, 8, 10,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (1, 1);
-INSERT INTO autor_livro VALUES (1, 1);
-INSERT INTO genero_livro VALUES (1, 1);
+INSERT INTO autor_livro VALUES (1, 5);
+INSERT INTO autor_livro VALUES (1, 6);
+INSERT INTO genero_livro VALUES (1, 7);
 
 /* Livro 2 */
-INSERT INTO livro VALUES (2, 'O Sol é para Todos', 3, 1, 2, 'Advocacia, justiça social e crescimento no sul dos EUA, com Atticus Finch como símbolo moral.');
-INSERT INTO assunto_livro VALUES (2, 2);
+INSERT INTO livro VALUES (2, 'Vidas Secas', 2, 5, 7,'SINOPSE AAAAAAAAA');
+INSERT INTO assunto_livro VALUES (2, 4);
 INSERT INTO autor_livro VALUES (2, 2);
-INSERT INTO genero_livro VALUES (2, 2);
+INSERT INTO genero_livro VALUES (2, 7);
 
 /* Livro 3 */
-INSERT INTO livro VALUES (3, 'É Assim que Acaba', 2, 1, 3, 'Romance contemporâneo que retrata um relacionamento abusivo e escolhas de sobrevivência emocional.');
+INSERT INTO livro VALUES (3, 'Ruído Branco', 5, 4, 9,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (3, 3);
-INSERT INTO autor_livro VALUES (3, 3);
-INSERT INTO genero_livro VALUES (3, 4);
+INSERT INTO autor_livro VALUES (3, 6);
+INSERT INTO genero_livro VALUES (3, 3);
 
 /* Livro 4 */
-INSERT INTO livro VALUES (4, 'Capitães da Areia', 5, 1, 4, 'A vida de crianças de rua em Salvador e sua luta por liberdade.');
-INSERT INTO assunto_livro VALUES (4, 4);
-INSERT INTO autor_livro VALUES (4, 4);
-INSERT INTO genero_livro VALUES (4, 5);
+INSERT INTO livro VALUES (4, 'Pelas Entranhas', 1, 2, 3,'SINOPSE AAAAAAAAA');
+INSERT INTO assunto_livro VALUES (4, 6);
+INSERT INTO autor_livro VALUES (4, 1);
+INSERT INTO genero_livro VALUES (4, 3);
 
 /* Livro 5 */
-INSERT INTO livro VALUES (5, 'Como Eu Era Antes de Você', 4, 1, 5, 'Amor transformador, deficiência e autonomia emocional entre Louisa e Will.');
+INSERT INTO livro VALUES (5, 'Morangos Mofados', 4, 3, 1,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (5, 5);
-INSERT INTO autor_livro VALUES (5, 5);
-INSERT INTO genero_livro VALUES (5, 3);
+INSERT INTO autor_livro VALUES (5, 9);
+INSERT INTO genero_livro VALUES (5, 10);
 
 /* Livro 6 */
-INSERT INTO livro VALUES (6, 'Como Mudar o Mundo', 10, 1, 6, 'Reflexão histórica sobre os movimentos socialistas e suas tentativas de transformação global.');
+INSERT INTO livro VALUES (6, 'A Visão das Plantas', 6, 6, 4,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (6, 6);
-INSERT INTO autor_livro VALUES (6, 6);
-INSERT INTO genero_livro VALUES (6, 6);
+INSERT INTO autor_livro VALUES (6, 8);
+INSERT INTO genero_livro VALUES (6, 9);
 
 /* Livro 7 */
-INSERT INTO livro VALUES (7, 'O Homem que Escutava as Abelhas', 8, 1, 7, 'Ficção espiritual que explora a relação entre homem e natureza inspirada em experiências reais.');
+INSERT INTO livro VALUES (7, 'O Pequeno Princípe', 7, 1, 5,'SINOPSE AAAAAAAAA');
 INSERT INTO assunto_livro VALUES (7, 7);
-INSERT INTO autor_livro VALUES (7, 7);
-INSERT INTO genero_livro VALUES (7, 7);
+INSERT INTO autor_livro VALUES (7, 9);
+INSERT INTO genero_livro VALUES (7, 10);
 
 /* Livro 8 */
-INSERT INTO livro VALUES (8, 'Os Miseráveis', 6, 1, 8, 'Clássico de Victor Hugo sobre redenção e justiça na França pós‑revolução.');
-INSERT INTO assunto_livro VALUES (8, 8);
-INSERT INTO autor_livro VALUES (8, 8);
-INSERT INTO genero_livro VALUES (8, 8);
+INSERT INTO livro VALUES (8, 'Divina Comédia', 8, 7, 2,'SINOPSE AAAAAAAAA');
+INSERT INTO assunto_livro VALUES (8, 10);
+INSERT INTO autor_livro VALUES (8, 9);
+INSERT INTO genero_livro VALUES (8, 10);
 
 /* Livro 9 */
-INSERT INTO livro VALUES (9, 'Genealogia da Moral', 7, 1, 9, 'Nietzsche analisa a origem dos valores morais ocidentais e as formas de poder.');
-INSERT INTO assunto_livro VALUES (9, 9);
-INSERT INTO autor_livro VALUES (9, 9);
-INSERT INTO genero_livro VALUES (9, 9);
+INSERT INTO livro VALUES (9, 'O Chamado de Chutullu', 9, 10, 6,'SINOPSE AAAAAAAAA');
+INSERT INTO assunto_livro VALUES (9, 10);
+INSERT INTO autor_livro VALUES (9, 4);
+INSERT INTO genero_livro VALUES (9, 3);
 
 /* Livro 10 */
-INSERT INTO livro VALUES (10, 'Livro dos Insultos', 9, 1, 10, 'Coletânea bem-humorada de insultos organizados por temas.');
-INSERT INTO assunto_livro VALUES (10, 10);
-INSERT INTO autor_livro VALUES (10, 10);
-INSERT INTO genero_livro VALUES (10, 10);
+INSERT INTO livro VALUES (10, 'Vivendo uma Vida Autentica', 10, 9, 8,'SINOPSE AAAAAAAAA');
+INSERT INTO assunto_livro VALUES (10, 2);
+INSERT INTO autor_livro VALUES (10, 1);
+INSERT INTO genero_livro VALUES (10, 1);
 
 
 /*Favoritos
@@ -387,7 +392,14 @@ INSERT INTO bibliotecario_biblioteca VALUES (1,1);
 INSERT INTO doacao VALUES (1,2,2,'pedro.favoritos@gmail.com');
 INSERT INTO doacao VALUES (2,5,1,'pedro.favoritos@gmail.com');
 INSERT INTO doacao VALUES (3,1,3,'pedro.favoritos@gmail.com');
-INSERT INTO doacao VALUES (4,1,3,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (4,2,2,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (5,2,2,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (6,2,2,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (7,2,2,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (8,2,2,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (9,2,2,'pedro.favoritos@gmail.com');
+
+
 
 /*Emprestimo*/
 INSERT INTO emprestimo VALUES(1,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',1,1);
@@ -399,8 +411,8 @@ INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',
 
 
 
-
-/*select * from livro;
+/*
+select * from livro;
 select * from idioma;
 select * from colecao;
 select * from genero;
@@ -408,8 +420,7 @@ select * from editora;
 select * from autor;
 select * from assunto;
 select * from biblioteca;
-select * from leitor;
-select * from evento;*/
-
+select * from evento;
+*/
 
 
