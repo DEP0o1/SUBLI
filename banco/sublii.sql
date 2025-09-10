@@ -107,7 +107,7 @@ CREATE TABLE doacao (
     cd_livro INT,
     cd_biblioteca INT,
     cd_email VARCHAR(200),
-    
+    ic_aprovado TINYINT,
     CONSTRAINT pk_doacao PRIMARY KEY (cd_doacao),
     CONSTRAINT fk_biblioteca_doacao FOREIGN KEY (cd_biblioteca) REFERENCES  biblioteca(cd_biblioteca),
     CONSTRAINT fk_livro_doacao FOREIGN KEY (cd_livro) REFERENCES  livro(cd_livro),
@@ -389,15 +389,9 @@ INSERT INTO bibliotecario_biblioteca VALUES (1,1);
 
 
 /*Doações*/
-INSERT INTO doacao VALUES (1,2,2,'pedro.favoritos@gmail.com');
-INSERT INTO doacao VALUES (2,5,1,'pedro.favoritos@gmail.com');
-INSERT INTO doacao VALUES (3,1,3,'pedro.favoritos@gmail.com');
-INSERT INTO doacao VALUES (4,2,2,'pedro.favoritos@gmail.com');
-INSERT INTO doacao VALUES (5,2,2,'pedro.favoritos@gmail.com');
-INSERT INTO doacao VALUES (6,2,2,'pedro.favoritos@gmail.com');
-INSERT INTO doacao VALUES (7,2,2,'pedro.favoritos@gmail.com');
-INSERT INTO doacao VALUES (8,2,2,'pedro.favoritos@gmail.com');
-INSERT INTO doacao VALUES (9,2,2,'pedro.favoritos@gmail.com');
+INSERT INTO doacao VALUES (1,2,2,'pedro.favoritos@gmail.com', true);
+INSERT INTO doacao VALUES (2,5,1,'pedro.favoritos@gmail.com', false);
+INSERT INTO doacao VALUES (3,1,3,'pedro.favoritos@gmail.com',false);
 
 
 

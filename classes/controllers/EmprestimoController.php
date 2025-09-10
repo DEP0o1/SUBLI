@@ -1,5 +1,5 @@
 <?php
-a
+
 class EmprestimoController extends Banco
 {
     function ListarEmprestimos($emprestimo = new Emprestimo())
@@ -19,15 +19,16 @@ class EmprestimoController extends Banco
             $lista = [];
             $dados = $this->Consultar('listar_emprestimos', $parametros);
 
-            $bibliotecacontroller = new BibliotecaController;
-            $livrocontroller = new LivroController;
-            $leitorcontroller = new LeitorController;
+            // $bibliotecacontroller = new BibliotecaController;
+            // $livrocontroller = new LivroController;
+            // $leitorcontroller = new LeitorController;
+            $autorController = new AutorController;
             foreach($dados as $item){
                 $Emprestimo = new Emprestimo;
                 $Emprestimo->Hydrate($item);
-                $Emprestimo->biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca(null,null,null,[new Livro()],[new Bibliotecario()], $Emprestimo->cd_emprestimo));
-                $Emprestimo->leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,$Emprestimo->cd_emprestimo));
-                $Emprestimo->livro = $livrocontroller->ListarLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
+                // // $Emprestimo->livro = new Livro;
+                // // $Emprestimo->livro->autores = $autorController->ListarAutores(new Autor(null, null, $item['cd_livro'])); 
+
                 array_push($lista, $Emprestimo);
             }
            

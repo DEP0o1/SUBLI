@@ -80,7 +80,7 @@ BEGIN
 END$$
 
 
-/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
+CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 
@@ -1197,11 +1197,12 @@ END$$
 CREATE PROCEDURE listar_doacoes(
   IN p_cd_doacao INT,
   IN p_cd_livro INT,
-  IN p_nm_livro VARCHAR(45),
+  IN p_nm_livro VARCHAR(200),
   IN p_cd_biblioteca INT,
   IN p_cd_email VARCHAR(200),
   IN p_nm_biblioteca VARCHAR(200),
-  IN p_nm_leitor VARCHAR(200)
+  IN p_nm_leitor VARCHAR(200),
+  IN p_ic_aprovado TINYINT
 )
 BEGIN
   SELECT d.*
@@ -1215,9 +1216,10 @@ BEGIN
      AND (p_cd_biblioteca IS NULL OR d.cd_biblioteca = p_cd_biblioteca)
      AND (p_cd_email IS NULL OR d.cd_email = p_cd_email)
      AND (p_nm_biblioteca IS NULL OR b.nm_biblioteca = p_nm_biblioteca)
-     AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor);
+     AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor)
+     AND (p_ic_aprovado IS NULL OR d.ic_aprovado = p_ic_aprovado);
 END$$
-/*CALL listar_doacoes(NULL,NULL,NULL,NULL,NULL,NULL,NULL);*/
+CALL listar_doacoes(NULL,NULL,NULL,NULL,NULL,NULL,NULL, false);
 
 
 DROP PROCEDURE IF EXISTS adicionar_doacao$$
@@ -1313,11 +1315,12 @@ CREATE PROCEDURE listar_emprestimos(
   IN p_cd_biblioteca INT
 )
 BEGIN
-  SELECT e.*
+  SELECT *
     FROM emprestimo e
    LEFT JOIN leitor l ON e.cd_email = l.cd_email
    LEFT JOIN biblioteca b ON e.cd_biblioteca = b.cd_biblioteca
    LEFT JOIN livro li ON e.cd_livro = li.cd_livro
+   LEFT JOIN editora ed ON ed.cd_editora = li.cd_livro
    WHERE (p_cd_emprestimo IS NULL OR e.cd_emprestimo = p_cd_emprestimo)
      AND (p_dt_emprestimo IS NULL OR e.dt_emprestimo = p_dt_emprestimo)
      AND (p_dt_devolucao_esperada IS NULL OR e.dt_devolucao_esperada = p_dt_devolucao_esperada)
@@ -1329,7 +1332,7 @@ BEGIN
 
 END$$
 
-/*CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);*/
+CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);
 
 
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$

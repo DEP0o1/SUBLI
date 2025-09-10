@@ -56,13 +56,12 @@ if (isset($_REQUEST['codigo'])) {
     <div class="areaResultadoPesquisa">
         <div class="resultadoPesquisa">
 <?php
-         $controller = new EmprestimoController;
-         $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email)));
+  $controller = new EmprestimoController;
+  $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email)));
 
-          print_r($emprestimos);
-         $livro = new LivroView;
-          foreach ($emprestimos as $Emprestimo){
-          $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
+  $livro = new LivroView;
+  foreach ($emprestimos as $Emprestimo){
+    $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
   } 
 ?>                      
         

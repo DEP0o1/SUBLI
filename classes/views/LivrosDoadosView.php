@@ -8,15 +8,15 @@ class LivrosDoadosView {
         $livros = $controller->ListarLivros($livro);
 
 
-        foreach($livros as $Livro){
+        foreach($livros as $livro){
             echo 
             "
             <div class='livro'>
-                <img src='img/{$Livro->cd_livro}'/>
-                <h2>{$Livro->nm_livro}</h2>
+                <img src='img/{$livro->cd_livro}'/>
+                <h2>{$livro->nm_livro}</h2>
             ";
             
-            foreach($Livro->autores as $autor){
+            foreach($livro->autores as $autor){
                 echo 
                 "
                 <p>{$autor->nm_autor}</p>
@@ -24,7 +24,7 @@ class LivrosDoadosView {
             }
             echo
             "
-                <button><a href='BsolicDoacao.php?codigo={$Livro->cd_livro}'>Visualizar Doação</a></button>
+                <button><a href='BsolicDoacao.php?codigo={$livro->cd_doacao}'>Visualizar Doação</a></button>
             </div>
             ";
         }
@@ -34,7 +34,7 @@ class LivrosDoadosView {
         $livros = $controller->ListarLivros($livro);
     
         echo "
-        <img src='img/{$Livro->cd_livro}' class='livroDoado'>
+        <img src='img/{}' class='livroDoado'>
         <div class='infoLivroDoado'>
             <h1>AQUELE</h1>
         ";
