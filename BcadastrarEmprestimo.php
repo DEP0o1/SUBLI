@@ -22,18 +22,18 @@
             </div>
         <section class="areaInput">
             <div class="areaTituloLivro">
-                <h3 class="tituloForm">Código do Leitor:</h3>
-                <input type="text" class="inputForm" placeholder="123456"> 
+                <label for="cd_leitor"> <h3 class="tituloForm">Código do Leitor:</h3> </label>
+                <input name="cd_leitor" type="text" class="inputForm" placeholder="123456"> 
             </div>
 
             <div class="areaAutorLivro">
-                <h3 class="tituloForm">Nome do Leitor:</h3>
-                <input type="text" class="inputForm" placeholder="Pedro Mingel">  
+                <label for="nm_leitor"> <h3 class="tituloForm">Nome do Leitor:</h3> </label>
+                <input name="nm_leitor" type="text" class="inputForm" placeholder="Pedro Mingel">  
             </div>
 
             <div class="areaAutorLivro">
-                <h3 class="tituloForm">Notas:</h3>
-                <input type="text" class="inputForm" placeholder="Pegou na biblioteca da praia/livro esta com a capa rasgada"> 
+                <label for="ds_notas"> <h3 class="tituloForm">Notas:</h3> </label>
+                <input name="ds_notas" type="text" class="inputForm" placeholder="Pegou na biblioteca da praia/livro esta com a capa rasgada"> 
             </div>
 
             <div class="areaBtn">
