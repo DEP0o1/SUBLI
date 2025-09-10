@@ -30,6 +30,7 @@ h4 {
     --branco: #fffbf7;
     --bege: #b59e8b;
     --fundo: #f2ece7;
+    --gap: 10px;
   }
 
 .material-symbols-outlined {    
@@ -108,8 +109,9 @@ h4 {
 }
 
 .logo{
-    width: fit-content;
+    width: 80px;
     height: 80px;
+    padding: 0px;
 }
 
 .abas{
@@ -173,7 +175,6 @@ body{
 .iconePesquisa{
     width: 5%;
     height: 25%;
-
 }
 
 .textoMeio{
@@ -243,30 +244,53 @@ body{
     display: flex;
     justify-content: center;
     padding: 20px;
-    gap: 50px   ;
+    gap: 50px;
     align-items: center;
     flex-direction: row;
  }
 
  .biblioteca{
-    height: fit-content;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+ }
+
+ .biblioteca img {
+  height: 40vh;
+  width: 40vw;
+ }
+
+ .carrosselBiblioteca {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+ }
+
+ .carrosselBiblioteca img{
+  height: 75px;
+  width: 75px;
+ }
+
+ .informacoesBiblioteca {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
-    border: 2px solid var(--bege);
-    width: fit-content;
-    text-wrap: auto;
-    background-color:#faf6f0 ;
-    border-radius: 10px;
+    gap: var(--gap);
  }
- 
- 
- .biblioteca img{
-    height: 250px;
-    width: 320px;
+
+ .informacoesBiblioteca h1, span {
+  color: var(--vinho);
+  margin: 0;
+ }
+
+ .informacaoBibliotecaTitulo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: var(--gap);
  }
 
  .setaEsquerda{
@@ -300,48 +324,10 @@ body{
 }
 
 
-
-.bibliotecas a {
-    width: fit-content;
-    background-color: var(--vinho);
-    border-radius: 10px;
-    text-wrap: nowrap;
-}
-
-.biblioteca{
-    display: flex;
-    align-items: flex-start;
-    width: 20% ;
-    justify-content: center;
-}
-
-.biblioteca a {
-    color: black;
-    width: fit-content;
-    justify-content: center;
-}
-
-.biblioteca img{
-    width: 100%;
-}
-
-
 .mapa img{
-    height: 400px;
-    
+    height: 400px; 
 }
-
-.exibirLivros {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 40px;
-    gap: 20px;
-  }
-
   /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
-
-
 #bloqueio {
     position:fixed;
     top: 0;
@@ -466,7 +452,7 @@ body{
   border-radius:5px ; 
 }
 .logo{
-    width: 100px;
+    width: 80px;
     height: 80px;
     padding: 0px;
 }
@@ -554,11 +540,11 @@ body {
 }
 
 .categoria{
-  background-color: var(--branco);
-  color: black;
+  background-color: var(--vinho);
+  color: var(--branco);
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid var(--bege);
+  border: none;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -584,14 +570,6 @@ body {
   cursor: pointer;
 }
 
-.exibirLivros {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 40px;
-  gap: 20px;
-}
-
 .exibirLivrosMeio {
   display: flex;
   align-items: center;
@@ -601,14 +579,10 @@ body {
   margin-top: 0%;
 }
 
-
-
 .doacaoLivros {
   display: flex;
-  padding-left: 12vw;
-  padding-right: 12vw;
-  gap: 50px;
-  display: flex;
+  gap: 2.5%;
+  padding-left: 7.5vw;
 }
 
 .doacaoLivros h1 {
@@ -619,17 +593,15 @@ body {
 
 .doacaoLivros img {
   height: auto;
-  width: 500px;
+  width: 21vw;
 }
 
 .textoDoar{
   display: flex;
   align-items: end;
-  width: 1000px;
 }
 
 .textoDoar a{
-
   border-radius: 10px;
   background-color: var(--vinho);
   padding: 10px;
@@ -638,6 +610,8 @@ body {
   flex-direction: column;
   display: flex;
   gap: 20px;
+  width: 50%;
+  padding-left: 15vw;
 }
 
 .doacaotexto h1{
@@ -719,17 +693,7 @@ body {
 
 /**/
 
-  .biblioteca {
-    border: var(--cinza) solid 1px;
-  }
-
-  .biblioteca a{
-    padding: none;
-  }
-
-  .biblioteca img{
-    border-radius: 10px;
-  }
+  
 
   .biblioteca button{
     background-color: var(--vinho);
@@ -750,6 +714,7 @@ body {
 
 .carrossel {
   display: flex;
+  flex-direction: row;
   transition: transform 0.5s ease;
   gap: 20px;
 }

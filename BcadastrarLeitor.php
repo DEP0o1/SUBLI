@@ -93,41 +93,41 @@ require_once ('config.php');
             </div>
         <section class="areaInput">
             <div class="areaTituloLivro">
-                <h3 class="tituloForm">Nome:</h3>
+                <label for="nm_leitor"> <h3 class="tituloForm">Nome:</h3> </label>
                 <input name= "nm_leitor" type="text" class="inputForm" placeholder="Ex. Pedro Mingel"> 
             </div>
             
             <div class="areaAutorLivro">
-                <h3 class="tituloForm">Telefone:</h3>
+                <label for="cd_telefone"> <h3 class="tituloForm">Telefone:</h3> </label>
                 <input name= "cd_telefone" type="text" class="inputForm" placeholder="Ex. 13-99999999"> 
             </div>
             
-            <div class="formDeLado1">
-                <div>
-                    <h3 class="tituloForm">Endereço:</h3>
+            <div class="formDeLado">
+                <div>  
+                    <label for="nm_endereco"> <h3 class="tituloForm">Endereço:</h3> </label>
                     <input name= "nm_endereco" type="text" class="inputForm" placeholder="Ex. Rua xxx.xxx">
                 </div>
                 <div>
-                    <h3 class="tituloForm">CEP:</h3>
+                    <label for="cd_cep"> <h3 class="tituloForm">CEP:</h3> </label>
                     <input name= "cd_cep" type="text" class="inputForm" placeholder="Ex.12345678">
                 </div>
                 <div>
-                    <h3 class="tituloForm">CPF:</h3>
+                    <label for="cd_cpf"> <h3 class="tituloForm">CPF:</h3> </label>
                     <input name= "cd_cpf" type="text" class="inputForm" placeholder="Ex. 123456789">
                 </div>
             </div>
 
-            <div class="formDeLado1">
+            <div class="formDeLado">
                 <div>
-                    <h3 class="tituloForm">Email:</h3>
+                    <label for="cd_email"> <h3 class="tituloForm">Email:</h3> </label>
                     <input name= "cd_email" type="text" class="inputForm" placeholder="Ex. filhodaputa@gmail.com">
                 </div>
                 <div>
-                    <h3 class="tituloForm">Senha:</h3>
+                    <label for="nm_senha"> <h3 class="tituloForm">Senha:</h3> </label>
                     <input name= "nm_senha" type="text" class="inputForm" placeholder="************">
                 </div>
                 <div>
-                    <h3 class="tituloForm">Data de nascimento:</h3>
+                    <label for="dt_nascimento"> <h3 class="tituloForm">Data de nascimento:</h3> </label>
                     <input name= "dt_nascimento" type="text" class="inputForm" placeholder="************">
                 </div>
             </div>
@@ -141,9 +141,6 @@ require_once ('config.php');
                if($campos == 8){
                     echo $leitor;
                }
-                
-                
-              
             ?>
             </div>
             </section>

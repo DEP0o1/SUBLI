@@ -44,6 +44,10 @@ body {
   overflow-x: hidden;
 }
 
+body h1 {
+  text-align: center;
+}
+
 
 .imgbanner {
   background-image: url(../img/banner.png);
@@ -58,7 +62,7 @@ body {
 }
 
 .pesquisa {
-  width: 100%;
+  width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,8 +71,8 @@ body {
 }
 
 .categoria{
-  background-color: var(--branco);
-  color: black;
+  background-color: #a32950;
+  color: var(--branco);
   padding: 10px;
   border-radius: 10px;
   border: 2px solid var(--bege);
@@ -250,25 +254,4 @@ body {
 
 /**/
 
-  .biblioteca {
-    border: var(--cinza) solid 1px;
-  }
-
-  .biblioteca a{
-    padding: none;
-  }
-
-  .biblioteca img{
-    border-radius: 10px;
-  }
-
-  .biblioteca button{
-  background-color: var(--vinho);
-  color: var(--branco);
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: auto;
-  }
 

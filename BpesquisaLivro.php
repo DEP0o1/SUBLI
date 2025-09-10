@@ -46,69 +46,69 @@ require_once './complementos/headerBibliotecario.php';
 
             <section class="areaInput">
                 <div class="areaTituloLivro">
-                    <h3 class="tituloForm">Titulo:</h3> <!-- FAZER ESSAS COISAS COM LABEL ABOBADOS -->
+                    <label for="nm_livro"> <h3 class="tituloForm">Titulo:</h3> </label> 
                     <input name="nm_livro" type="text" class="inputForm" placeholder="Ex. O Pequeno Principe">
                 </div>
 
                 <div class="areaAutorLivro">
-                    <h3 class="tituloForm">Autor:</h3>
+                    <label for="nm_autor"> <h3 class="tituloForm">Autor:</h3> </label>
                     <input name="nm_autor" type="text" class="inputForm" placeholder="Ex. Antoine de Saint-Exupéry">
                 </div>
 
                 <div class="formDeLado">
                     <div>
-                        <h3 class="tituloForm">Código Autor:</h3>
+                        <label for="cd_autor"> <h3 class="tituloForm">Código Autor:</h3> </label>
                         <input name="cd_autor" type="text" class="inputForm" placeholder="Ex.1234">
                     </div>
                     <div>
-                        <h3 class="tituloForm">Código livro:</h3>
+                        <label for="cd_livro"> <h3 class="tituloForm">Código livro:</h3> </label>
                         <input name="cd_livro" type="text" class="inputForm" placeholder="Ex.1234">
                     </div>
                     <div>
-                        <h3 class="tituloForm">Código Assunto</h3>
+                        <label for="cd_assunto"> <h3 class="tituloForm">Código Assunto</h3> </label>
                         <input name="cd_assunto" type="text" class="inputForm" placeholder="Ex. 1">
                     </div>
 
                     <div>
-                        <h3 class="tituloForm">Assunto:</h3>
+                        <label for="nm_assunto"> <h3 class="tituloForm">Assunto:</h3> </label>
                         <input name="nm_assunto" type="text" class="inputForm" placeholder="Ex. 1">
                     </div>
                 </div>
 
                 <div class="formDeLado">
                     <div>
-                        <h3 class="tituloForm">Código Editora:</h3>
+                        <label for="cd_editora"> <h3 class="tituloForm">Código Editora:</h3> </label>
                         <input name="cd_editora" type="text" class="inputForm" placeholder="Ex. 1">
                     </div>
                     <div>
-                        <h3 class="tituloForm">Editora:</h3>
+                        <label for="nm_editora"> <h3 class="tituloForm">Editora:</h3> </label>
                         <input name="nm_editora" type="text" class="inputForm" placeholder="Ex. Português">
                     </div>
                     <div>
-                        <h3 class="tituloForm">Código Coleção:</h3>
+                        <label for="cd_colecao"> <h3 class="tituloForm">Código Coleção:</h3> </label>
                         <input name="cd_colecao" type="text" class="inputForm" placeholder="Ex. Volume Único">
                     </div>
                     <div>
-                        <h3 class="tituloForm">Coleção:</h3>
+                        <label for="nm_colecao"> <h3 class="tituloForm">Coleção:</h3> </label>
                         <input name="nm_colecao" type="text" class="inputForm" placeholder="Ex. 1">
                     </div>
                 </div>
 
                 <div class="formDeLado">
                     <div>
-                        <h3 class="tituloForm">Código Idioma:</h3>
+                        <label for="cd_idioma"> <h3 class="tituloForm">Código Idioma:</h3> </label>
                         <input name="cd_idioma" type="text" class="inputForm" placeholder="Ex. 1999">
                     </div>
                     <div>
-                        <h3 class="tituloForm">Idioma:</h3>
+                        <label for="nm_idioma"> <h3 class="tituloForm">Idioma:</h3> </label>
                         <input name="nm_idioma" type="text" class="inputForm" placeholder="Ex.Reflexão">
                     </div>
                     <div>
-                        <h3 class="tituloForm">Código Gênero:</h3>
+                        <label for="cd_genero"> <h3 class="tituloForm">Código Gênero:</h3> </label>
                         <input name="cd_genero" type="text" class="inputForm" placeholder="Ex.Fantasia">
                     </div>
                     <div>
-                        <h3 class="tituloForm">Gênero:</h3>
+                        <label for="nm_genero"> <h3 class="tituloForm">Gênero:</h3> </label>
                         <input name="nm_genero" type="text" class="inputForm" placeholder="Ex. 1">
                     </div>
                 </div>

@@ -12,7 +12,6 @@ if (isset($_REQUEST['codigo'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,12 +25,67 @@ if (isset($_REQUEST['codigo'])) {
 </head>
 <body>
   <main>
+
+    <h1>Biblioteca Mario Faria</h1>
     <section class="bibliotecas">
+        <div class="biblioteca">
+          <img src="img/biblioteca1_1.jpg" alt="">
+
+          <div class="carrosselBiblioteca">
+          <img src="img/biblioteca1_1.jpg" alt="">
+          <img src="img/biblioteca1_1.jpg" alt="">
+          <img src="img/biblioteca1_1.jpg" alt="">
+          <img src="img/biblioteca1_1.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="informacoesBiblioteca">
+
+          <div class="informacaoBiblioteca">
+            <div class="informacaoBibliotecaTitulo">
+            <span class="material-symbols-outlined">
+              nest_clock_farsight_analog
+            </span>
+            <h1>Horario de funcionamento</h1>
+          </div>
+
+          <p>Segunda a Sexta 11:00-15:00 18:00-00:00 <br>
+            Sábado a Domingo 11:00-15:30 18:00-00:00 
+           </p>
+          </div>
+
+          <div class="informacaoBiblioteca">
+            <div class="informacaoBibliotecaTitulo">
+            <span class="material-symbols-outlined">
+            call
+            </span>
+            <h1>Telefone</h1>
+          </div>
+
+          <p>+55 13 9913-4754</p>
+          </div>
+
+          <div class="informacaoBiblioteca">
+            <div class="informacaoBibliotecaTitulo">
+            <span class="material-symbols-outlined">
+            location_on
+          </span>
+            <h1>Endereço</h1>
+          </div>
+
+          <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
+          <div class="mapa">s</div>
+          </div>
+
+         
+
+        </div>
+        
         <?php
-        if($buscar){
-        $biblioteca = new BibliotecaView;
-        $biblioteca->ExibirBibliotecas(new Biblioteca($codigo));
-        }
+        // if($buscar){
+        // $biblioteca = new BibliotecaView;
+        // $biblioteca->ExibirBibliotecas(new Biblioteca($codigo));
+        // }
      ?> 
     </section>
 
@@ -46,56 +100,17 @@ if (isset($_REQUEST['codigo'])) {
         $livro = new LivroView;
         $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],$codigo));
      ?> 
-      <!-- <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div> -->
+      
       
     </section>
   </main>
 
-  <script>
-    
+  <script>  
     // const params = new URLSearchParams(window.location.search);
     // const name = params.get('name') || "Biblioteca";
     // const address = params.get('address') || "Endereço não disponível";
     // const distance = params.get('distance') || "? km";
     // const image = params.get('image') || "https://via.placeholder.com/600x300?text=Biblioteca";
-
-    document.getElementById('libraryName').textContent = name;
-    document.getElementById('libraryAddress').textContent = address;
-    document.getElementById('libraryDistance').textContent = distance + " km de você";
-    document.getElementById('libraryImage').src = image;
   </script>
 </body>
 </html>

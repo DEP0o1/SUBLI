@@ -26,22 +26,25 @@ require_once('config.php');
     </section>
 
     <section class="pesquisa">
-      <div name="categoria" id="" class="categoria">
         
-        <div>
-          <h4>Categorias</h4>
-          <p>todas</p>
-        </div>
-        <span class="material-symbols-outlined"> stat_minus_1 </span>
-        <img src="" alt="" />
-      </div>
+     
+          <select class="categoria" id="">
+              <option>Categorias</option>
+               <?php
+                  $biblioteca = new BibliotecaView;
+                  $biblioteca->ExibirBibliotecasSelect();
+                ?> 
+            </select>
+      
 
-      <div name="categoria" id="" class="categoria">
-        <div>
-          <h4>Subcategorias</h4>
-          <p>todas</p>
-        </div>
-        <span class="material-symbols-outlined"> stat_minus_1 </span>
+      <div name="categoria">
+          <select  class="categoria"id="">
+              <option>Subcategorias</option>
+               <?php
+                  $biblioteca = new BibliotecaView;
+                  $biblioteca->ExibirBibliotecasSelect();
+                ?> 
+            </select>
       </div>
 
       <div name="categoria">
@@ -58,6 +61,7 @@ require_once('config.php');
         <img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Localização" />
       </a>
     </section>
+
     <div class="textoEsquerda">
         <h1>Destaques da semana</h1>
     </div>
@@ -88,9 +92,9 @@ require_once('config.php');
         <button class="seta seta-direita" data-target="carrossel-procurados">&#10095;</button>
     </div>
 </div>
-<div class="textoEsquerda">
 
-    <h1 >Doação de livros</h1>
+<div class="textoEsquerda">
+    <h1>Doação de livros</h1>
 </div>
     <section class="doacaoLivros">
       <div class="doacaotexto">
