@@ -109,8 +109,9 @@ h4 {
 }
 
 .logo{
-    width: fit-content;
+    width: 80px;
     height: 80px;
+    padding: 0px;
 }
 
 .abas{
@@ -451,7 +452,7 @@ body{
   border-radius:5px ; 
 }
 .logo{
-    width: 100px;
+    width: 80px;
     height: 80px;
     padding: 0px;
 }
@@ -539,11 +540,11 @@ body {
 }
 
 .categoria{
-  background-color: var(--branco);
-  color: black;
+  background-color: var(--vinho);
+  color: var(--branco);
   padding: 10px;
   border-radius: 10px;
-  border: 2px solid var(--bege);
+  border: none;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -580,10 +581,8 @@ body {
 
 .doacaoLivros {
   display: flex;
-  padding-left: 12vw;
-  padding-right: 12vw;
-  gap: 50px;
-  display: flex;
+  gap: 2.5%;
+  padding-left: 7.5vw;
 }
 
 .doacaoLivros h1 {
@@ -594,17 +593,15 @@ body {
 
 .doacaoLivros img {
   height: auto;
-  width: 500px;
+  width: 21vw;
 }
 
 .textoDoar{
   display: flex;
   align-items: end;
-  width: 1000px;
 }
 
 .textoDoar a{
-
   border-radius: 10px;
   background-color: var(--vinho);
   padding: 10px;
@@ -613,6 +610,8 @@ body {
   flex-direction: column;
   display: flex;
   gap: 20px;
+  width: 50%;
+  padding-left: 15vw;
 }
 
 .doacaotexto h1{

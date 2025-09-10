@@ -62,7 +62,7 @@ body h1 {
 }
 
 .pesquisa {
-  width: 100%;
+  width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,8 +71,8 @@ body h1 {
 }
 
 .categoria{
-  background-color: var(--branco);
-  color: black;
+  background-color: #a32950;
+  color: var(--branco);
   padding: 10px;
   border-radius: 10px;
   border: 2px solid var(--bege);

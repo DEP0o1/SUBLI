@@ -36,7 +36,7 @@ a{
     color: white;
 }
 
-input{
+.input{
     width: 100%;
     height: 25%;
     border-radius: 5px;
@@ -235,15 +235,6 @@ nav{
 .capaLivro{
  height: 222px;
  width: 150px;
-}
-
-.inputForm{
-    width: 1000px;
-    height: 25%;
-    border-radius: 5px;
-    padding: 5px;
-    border: 1px solid #A39B91;
-    
 }
 
 .filtrosEmprestimos{
@@ -565,9 +556,8 @@ h3{
     display: flex;
     justify-content: left;
     flex-direction: column;
-    padding: 10px;
+    
     gap: 20px;
-    width:33%;
     border-radius:15px ;
 }
 
@@ -601,15 +591,7 @@ h3{
 .formDeLado{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 10%;
-}
-
-.formDeLado1{
-    display: flex;
-    flex-direction: row;
     gap: 5%;
-    width: 97%;
 }
 
 .areaBtn{
@@ -630,15 +612,14 @@ h3{
     flex-direction: column;
     justify-content: left;
     gap: 20px;
-    width: 100%;
+    width: fit-content;
 }
 
 .inputForm{
-    height: 25%;
-    border-radius: 15px;
+    padding: 5px;
+    border-radius: 10px;
     border: 1px solid #A39B91;
     outline: none;
-    width: 100%;
     text-decoration: none;
 }
 
@@ -664,7 +645,7 @@ h3{
     background-color: #f2ece76e;
     height: 380px;
   }
-  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  
   .livro img {
     width: 100%;
     height: 210px;

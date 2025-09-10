@@ -21,30 +21,30 @@
             </div>
         <section class="areaInput">
             <div class="areaTituloLivro">
-                <label class="tituloForm">Nome do 
-                    Evento:</label>
+                <h3 class="tituloForm">Nome do 
+                    Evento:</h3>
                 <input type="text" class="inputForm" placeholder="Inauguração do meu livro pog"> 
             </div>
 
             <div class="areaAutorLivro">
-                <label class="tituloForm">Nome do criador do evento:</label>
+                <h3 class="tituloForm">Nome do criador do evento:</h3>
                 <input type="text" class="inputForm" placeholder="Pedro Mingel">  
             </div>
 
 
 
             <div class="areaAutorLivro">
-                <label class="tituloForm">Descrição:</label>
+                <h3 class="tituloForm">Descrição:</h3>
                 <input type="text" class="inputForm" placeholder="21/02/2025"> 
             </div>
 
             <div class="areaAutorLivro">
-                <label class="tituloForm">Horário:</label>
+                <h3 class="tituloForm">Horário:</h3>
                 <input type="time" class="inputForm" placeholder="21/02/2025"> 
             </div>
 
             <div class="areaAutorLivro">
-                <label class="tituloForm">data:</label>
+                <h3 class="tituloForm">data:</h3>
                 <input type="date" class="inputForm" placeholder="21/02/2025"> 
             </div>
 
