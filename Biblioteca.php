@@ -46,40 +46,7 @@ if (isset($_REQUEST['codigo'])) {
         $livro = new LivroView;
         $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],$codigo));
      ?> 
-      <!-- <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
-            <h2>Memórias Póstumas de Brascubas</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div> -->
+      
       
     </section>
   </main>
@@ -92,10 +59,7 @@ if (isset($_REQUEST['codigo'])) {
     // const distance = params.get('distance') || "? km";
     // const image = params.get('image') || "https://via.placeholder.com/600x300?text=Biblioteca";
 
-    document.getElementById('libraryName').textContent = name;
-    document.getElementById('libraryAddress').textContent = address;
-    document.getElementById('libraryDistance').textContent = distance + " km de você";
-    document.getElementById('libraryImage').src = image;
+    
   </script>
 </body>
 </html>

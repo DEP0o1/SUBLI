@@ -1,8 +1,7 @@
 <?php
 require_once('./config.php');
 
-
-echo '
+?>
 <header>
       <a href="LindexLeitor.php">
         <img src="img/subli.logoCorClara.png" alt="" class="logo" />
@@ -18,22 +17,24 @@ echo '
       </form>
 
       <div class="abas">
-        <a href="">Destaques</a>
+        <a href="../../SUBLI/Lresultado.php">Livros</a>
         <a href="Bibliotecas.php">Bibliotecas</a>
-        <a href="">Doação</a>
+        <a href="../../SUBLI/LdoarPerfil.php">Doação</a>
+
+        <span class="material-symbols-outlined">
+        notifications
+        </span>
+
         <a href="LmeusLivros.php">
         <span class="material-symbols-outlined">
         person
         </span>
         </a>
 
-        <button id="btnCadastro">
+        <!-- <button id="btnCadastro">
         Cadastre-se
-        </button>
+        </button> -->
       </div>
 
 
     </header>
-
-    '
-?>
