@@ -22,6 +22,14 @@ h4 {
   font-size: 1rem;
 }
 
+h1,
+p,
+h2,
+h3,
+h4 {
+  cursor: default;
+}
+
 
 :root {
     --vinho: #a32950;
@@ -44,6 +52,7 @@ h4 {
 }
 
 /* header */
+
   a{
     font-size: medium;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -59,8 +68,8 @@ h4 {
     justify-content: space-between ;
     width: 100%;
     align-items: center;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-right: 3%;
+    padding-left: 3%;
     height: fit-content;
     position:fixed;
     top :0;
@@ -242,7 +251,7 @@ body{
     padding-top: 1%;
  }
 
- /* bibliotecas */
+ /* ---------------------------------------------------- bibliotecas ------------------------------------------------------------------------------------- */
 
  .bibliotecas{
     display: flex;
@@ -301,39 +310,24 @@ body{
   gap: var(--gap);
  }
 
- .setaEsquerda{
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: var(--vinho);
-    cursor: pointer;
-    height: fit-content;
-}
-
-.setaEsquerda img{
-    width: 30px;
-    height: 30px;
-}
-
-.setaDireita{
-    display: flex;
-    align-items: center;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: var(--vinho);
-    cursor: pointer;
-    height: fit-content;
-}
-
-.setaDireita img{
-    width: 30px;
-    height: 30px;
-}
-
 .mapa img{
     height: 400px; 
 }
+
+.eventos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  height: 50vh;
+}
+
+.calendario {
+  width: 20vw;
+  height: 20%;
+  background-color: var(--azul);
+}
+
   /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 #bloqueio {
     position:fixed;

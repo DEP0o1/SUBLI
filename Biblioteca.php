@@ -89,9 +89,15 @@ if (isset($_REQUEST['codigo'])) {
      ?> 
     </section>
 
-    <div class="textoMeio">
-      <h1>Destaques da biblioteca</h1>
-    </div>
+      <h1>Eventos</h1>
+
+    <section class="eventos">
+      <div class="calendario">
+          h
+      </div>
+
+      <div class="listaEventos"></div>
+    </section>
 
     <section class="exibirLivros">
       

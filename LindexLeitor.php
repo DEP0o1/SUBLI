@@ -62,9 +62,9 @@ require_once('config.php');
       </a>
     </section>
 
-    <div class="textoEsquerda">
+    
         <h1>Destaques da semana</h1>
-    </div>
+   
   <div class="container">
     <div class="carrossel-container">
         <button class="seta seta-esquerda" data-target="carrossel-destaques">&#10094;</button>
@@ -77,9 +77,9 @@ require_once('config.php');
         <button class="seta seta-direita" data-target="carrossel-destaques">&#10095;</button>
     </div>
 </div>
-<div class="textoEsquerda">  
+ 
     <h1>Mais Procurados</h1>
-</div>
+
 <div class="container">
     <div class="carrossel-container">
         <button class="seta seta-esquerda" data-target="carrossel-procurados">&#10094;</button>
