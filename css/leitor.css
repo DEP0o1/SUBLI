@@ -31,6 +31,8 @@ h4 {
     --bege: #b59e8b;
     --fundo: #f2ece7;
     --gap: 10px;
+    --radius: 10px;
+    --border: solid 1px rgba(0, 0, 0, 0.192);
   }
 
 .material-symbols-outlined {    
@@ -240,6 +242,8 @@ body{
     padding-top: 1%;
  }
 
+ /* bibliotecas */
+
  .bibliotecas{
     display: flex;
     justify-content: center;
@@ -262,6 +266,7 @@ body{
  .biblioteca img {
   height: 40vh;
   width: 40vw;
+  border-radius: var(--radius);
  }
 
  .carrosselBiblioteca {
@@ -271,8 +276,11 @@ body{
  }
 
  .carrosselBiblioteca img{
-  height: 75px;
-  width: 75px;
+  height: 100px;
+  width: 100px;
+  border-radius: var(--radius);
+  border: var(--border);
+  cursor: pointer;
  }
 
  .informacoesBiblioteca {
@@ -322,7 +330,6 @@ body{
     width: 30px;
     height: 30px;
 }
-
 
 .mapa img{
     height: 400px; 

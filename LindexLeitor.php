@@ -4,7 +4,7 @@ require_once('config.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -107,6 +107,7 @@ require_once('config.php');
       </div>
       <img src="img/doar.png" alt="" />
     </section>
+    <h1>liam</h1>
     </main>
 
    <script>
