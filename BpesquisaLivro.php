@@ -37,89 +37,91 @@ require_once './complementos/headerBibliotecario.php';
 ?>
 
 <body>
-    <div class="areaAvancada">
-
-        <form action="" class="formAvancado">
+    <div class="areaCadastro">
+        <form method = "POST"  class="formAvancado">
             <div>
-                <h1 class="pesquisaAvancada">Pesquisa Avançada </h1>
+                <h1 class="pesquisaAvancada">Cadastrar Livro </h1>
             </div>
 
             <section class="areaInput">
                 <div class="areaTituloLivro">
-                    <label for="nm_livro"> <h3 class="tituloForm">Titulo:</h3> </label> 
+                    <label for="nm_livro" class="tituloForm">Titulo:</label> 
                     <input name="nm_livro" type="text" class="inputForm" placeholder="Ex. O Pequeno Principe">
                 </div>
 
                 <div class="areaAutorLivro">
-                    <label for="nm_autor"> <h3 class="tituloForm">Autor:</h3> </label>
-                    <input name="nm_autor" type="text" class="inputForm" placeholder="Ex. Antoine de Saint-Exupéry">
+                    <label for="nm_autor" class="tituloForm">Autor:</label> 
+                    <input name="nm_autor" type="text" class="inputForm" placeholder="Ex. Antonie de Saint-Euxpéry">
                 </div>
+
 
                 <div class="formDeLado">
                     <div>
-                        <label for="cd_autor"> <h3 class="tituloForm">Código Autor:</h3> </label>
-                        <input name="cd_autor" type="text" class="inputForm" placeholder="Ex.1234">
+                        <label for="cd_autor" class="tituloForm">Código Autor:</label>
+                        <input name="cd_autor" type="text" class="inputFormDeLado" placeholder="Ex.1234">
                     </div>
+                   
                     <div>
-                        <label for="cd_livro"> <h3 class="tituloForm">Código livro:</h3> </label>
-                        <input name="cd_livro" type="text" class="inputForm" placeholder="Ex.1234">
-                    </div>
-                    <div>
-                        <label for="cd_assunto"> <h3 class="tituloForm">Código Assunto</h3> </label>
-                        <input name="cd_assunto" type="text" class="inputForm" placeholder="Ex. 1">
-                    </div>
-
-                    <div>
-                        <label for="nm_assunto"> <h3 class="tituloForm">Assunto:</h3> </label>
-                        <input name="nm_assunto" type="text" class="inputForm" placeholder="Ex. 1">
-                    </div>
+                    <label for="cd_livro" class="tituloForm">Código Livro:</label>
+                    <input name="cd_livro" type="text" class="inputFormDeLado" placeholder="Ex. 1234">
                 </div>
 
-                <div class="formDeLado">
                     <div>
-                        <label for="cd_editora"> <h3 class="tituloForm">Código Editora:</h3> </label>
-                        <input name="cd_editora" type="text" class="inputForm" placeholder="Ex. 1">
+                        <label for="cd_assunto" class="tituloForm">Código Assunto:</label>
+                        <input name="cd_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
+
                     <div>
-                        <label for="nm_editora"> <h3 class="tituloForm">Editora:</h3> </label>
-                        <input name="nm_editora" type="text" class="inputForm" placeholder="Ex. Português">
-                    </div>
-                    <div>
-                        <label for="cd_colecao"> <h3 class="tituloForm">Código Coleção:</h3> </label>
-                        <input name="cd_colecao" type="text" class="inputForm" placeholder="Ex. Volume Único">
-                    </div>
-                    <div>
-                        <label for="nm_colecao"> <h3 class="tituloForm">Coleção:</h3> </label>
-                        <input name="nm_colecao" type="text" class="inputForm" placeholder="Ex. 1">
+                        <label for="nm_assunto" class="tituloForm">Assunto:</label>
+                        <input name="nm_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
                 </div>
 
                 <div class="formDeLado">
                     <div>
-                        <label for="cd_idioma"> <h3 class="tituloForm">Código Idioma:</h3> </label>
-                        <input name="cd_idioma" type="text" class="inputForm" placeholder="Ex. 1999">
+                        <label for="cd_editora" class="tituloForm">Código Editora:</label>
+                        <input name="cd_editora" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
                     <div>
-                        <label for="nm_idioma"> <h3 class="tituloForm">Idioma:</h3> </label>
-                        <input name="nm_idioma" type="text" class="inputForm" placeholder="Ex.Reflexão">
+                        <label for="nm_editora" class="tituloForm">Editora:</label>
+                        <input name="nm_editora" type="text" class="inputFormDeLado" placeholder="Ex. Português">
                     </div>
                     <div>
-                        <label for="cd_genero"> <h3 class="tituloForm">Código Gênero:</h3> </label>
-                        <input name="cd_genero" type="text" class="inputForm" placeholder="Ex.Fantasia">
+                        <label for="cd_colecao" class="tituloForm">Código Coleção:</label>
+                        <input name="cd_colecao" type="text" class="inputFormDeLado" placeholder="Ex. Volume Único">
                     </div>
                     <div>
-                        <label for="nm_genero"> <h3 class="tituloForm">Gênero:</h3> </label>
-                        <input name="nm_genero" type="text" class="inputForm" placeholder="Ex. 1">
+                        <label for="nm_colecao" class="tituloForm">Coleção:</label>
+                        <input name="nm_colecao" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                    </div>
+                </div>
+
+                <div class="formDeLado">
+                    <div>
+                        <label for="cd_idioma" class="tituloForm">Código Idioma:</label>
+                        <input name="cd_idioma" type="text" class="inputFormDeLado" placeholder="Ex. 1999">
+                    </div>
+                    <div>
+                        <label for="nm_idioma" class="tituloForm">Idioma:</label>
+                        <input name="nm_idioma" type="text" class="inputFormDeLado" placeholder="Ex.Reflexão">
+                    </div>
+                    <div>
+                        <label for="cd_genero" class="tituloForm">Código Gênero:</label>
+                        <input name="cd_genero" type="text" class="inputFormDeLado" placeholder="Ex.Fantasia">
+                    </div>
+                    <div>
+                        <label for="nm_genero" class="tituloForm">Gênero:</label>
+                        <input name="nm_genero" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
                 </div>
 
                 <div class="areaBtn">
-                    <button class="btnRosa">Pesquisar</button>
+                    <button class="btnRosa"> Pesquisar </button>
                 </div>
             </section>
         </form>
-
     </div>
+
     <div class="areaResultadoPesquisa">
         <div class="titulo">
             <h1>Resultados da Pesquisa:</h1>

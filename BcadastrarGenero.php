@@ -13,19 +13,19 @@
     ?> 
 <body>
         <div class="areaCadastro">
-        <form action="" class="formAvancado">
+        <form action="" class="formAvancado1">
             <div>
                 <h1 class="pesquisaAvancada">Cadastrar Genêro</h1>
             </div>
 
             <section class="areaInput">
                 <div class="areaTituloLivro">
-                    <h3 class="tituloForm">Genêro:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex: Terror">
+                    <label for="" class="tituloForm">Genêro:</label>
+                    <input name="" type="text" class="inputForm" placeholder="Ex: Terror">
                 </div>
                 <div class="areaTituloLivro">
-                    <h3 class="tituloForm">Descrição do Genêro:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex: Terro é um gênero literário que tem como principal objetivo causar medo no leitor.">
+                    <label for="" class="tituloForm">Descrição do Genêro:</label>
+                    <input name="" type="text" class="inputForm" placeholder="Ex: Terro é um gênero literário que tem como principal objetivo causar medo no leitor.">
                 </div>
 
                 <div class="areaBtn">

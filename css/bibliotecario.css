@@ -24,7 +24,7 @@ margin: 0;
   p,
   h2,
   h3,
-  h4 {
+  h4{
     font-family: "Inter";
     font-size: 1rem;
   }
@@ -164,7 +164,6 @@ nav{
     border-radius: 10px;
     cursor: pointer;
     width: fit-content;
-    height: 10%;
     overflow: hidden;
 }
 
@@ -509,9 +508,9 @@ body {
   }
   
   .areaBtn{
-    width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: center;
+    width: 100%;
     margin-right: 50%;
   }
   
@@ -526,29 +525,19 @@ body {
   
   p{
     font-size: 0.9rem;
+    color: #A39B91;
   }
   
   ::placeholder{
     color: #A39B91;
     font-weight: 700;
 }
-p{
-    color: #A39B91;
-}
 
-h3{
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 400;
-}
 
 .areaAvancada{
-    display: flex;
-    width: auto;
-    align-items: center;
-    justify-content: center;
-    margin: 2%;
-    margin-bottom: 0;
-    
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 
 .formAvancado{
@@ -556,9 +545,26 @@ h3{
     display: flex;
     justify-content: left;
     flex-direction: column;
-    
     gap: 20px;
     border-radius:15px ;
+    padding: 1%;
+    width: 45%;
+}
+
+.formAvancado1{
+    border: 2px solid #A39B91;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 20px;
+    border-radius:15px ;
+    padding: 1%;
+    width: 33%;
+}
+
+.formSinopse{
+  display: flex;
+  flex-direction: column;
 }
 
 .pesquisaAvancada{
@@ -568,35 +574,32 @@ h3{
 }
 
 .areaTituloLivro{
-    width: 97%;
+    width: 100%;
 }
 
 .tituloLivro{
-    width: 97%;
+    width: 100%;
 }
 
 .areaAutorLivro{
-    width: 97%;
+    width: 100%;
 }
 
 .autorLivro{
-    width: 97%;
+    width: 100%;
 }
 
 .tituloForm{
     color:  #102E4E;
     text-wrap: nowrap;
+    font-family: "Inter";
+    font-size: 1rem;
 }
 
 .formDeLado{
     display: flex;
     flex-direction: row;
-    gap: 5%;
-}
-
-.areaBtn{
-    display: flex;
-    justify-content: center;
+    gap: 1vw;
 }
 
 .areaResultadoPesquisa{
@@ -612,7 +615,6 @@ h3{
     flex-direction: column;
     justify-content: left;
     gap: 20px;
-    width: fit-content;
 }
 
 .inputForm{
@@ -621,7 +623,18 @@ h3{
     border: 1px solid #A39B91;
     outline: none;
     text-decoration: none;
+    width: 98%;
 }
+
+.inputFormDeLado{
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #A39B91;
+    outline: none;
+    text-decoration: none;
+    width: 140px;
+}
+
 
 
 
