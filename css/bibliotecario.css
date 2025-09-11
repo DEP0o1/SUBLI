@@ -4,6 +4,7 @@
 * {
   padding: 0px;
   margin: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -52,7 +53,7 @@ header {
   background-color: var(--vinho);
   color: var(--branco);
   justify-content: space-between;
-  width: 97%;
+  width: 100%;
   align-items: center;
 
   padding-right: 30px;
@@ -592,6 +593,11 @@ p {
   font-size: 1rem;
 }
 
+.areaInput input,
+.formDeLado > div{
+  width: 100%;
+}
+
 .formDeLado {
   display: flex;
   flex-direction: row;
@@ -628,7 +634,6 @@ p {
   border: 1px solid #a39b91;
   outline: none;
   text-decoration: none;
-  width: 140px;
 }
 
 .exibirLivros {
