@@ -76,9 +76,6 @@ if (isset($_REQUEST['codigo'])) {
           <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
           <div class="mapa">s</div>
           </div>
-
-         
-
         </div>
         
         <?php
@@ -93,15 +90,29 @@ if (isset($_REQUEST['codigo'])) {
 
     <section class="eventos">
       <div class="calendario">
-          h
+          
       </div>
 
-      <div class="listaEventos"></div>
+      <div class="lista">
+          <div class="item-lista">
+          <img src="img/doar.png" alt="">
+          <div class="conteudo-item-lista">
+            <h1>SilkSong</h1>
+          <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Fodase</p>
+          <h3>Fodase</h3>
+          </div>
+          <button class="btnRosa">
+            Ver Mais
+          </button>
+          </div>
+          </div>
+      </div>
     </section>
 
     <section class="exibirLivros">
       
-
        <?php
         $livro = new LivroView;
         $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],$codigo));
