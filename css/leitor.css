@@ -362,10 +362,11 @@ span {
 .lista {
   display: flex;
   flex-direction: column;
-  background-color: var(--azul);
   width: 40%;
-  max-height: 20%;
+  height: 200px;
   text-align: left;
+  overflow-y: scroll;
+  background-color: #102e4e;
 }
 
 .lista h1 {
@@ -376,7 +377,11 @@ span {
   width: 100%;
   display: flex;
   align-items: center;
-  
+  gap: var(--gap);
+  border-bottom: var(--border);
+  border-top: var(--border);
+  padding: 10px;
+
 }
 
 .item-lista img {
