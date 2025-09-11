@@ -21,67 +21,65 @@
             </div>
         <section class="areaInput">
             <div class="areaTituloLivro">
-                <h3 class="tituloForm">Nome:</h3>
+                <label class="tituloForm">Nome:</label>
                 <input type="text" class="inputForm" placeholder="Ex. Pedro Mingel"> 
             </div>
 
             <div class="areaTituloLivro">
-                <h3 class="tituloForm">Nome da Mãe:</h3>
+                <label class="tituloForm">Nome da Mãe:</label>
                 <input type="text" class="inputForm" placeholder="Ex. Mãe do pedro mingel"> 
             </div>
 
             <div class="areaTituloLivro">
-                <h3 class="tituloForm">Nome do Pai:</h3>
+                <label class="tituloForm">Nome do Pai:</label>
                 <input type="text" class="inputForm" placeholder="Ex. Pai do Pedro Mingel"> 
             </div>
             
             <div class="areaAutorLivro">
-                <h3 class="tituloForm">Telefone:</h3>
+                <label class="tituloForm">Telefone:</label>
                 <input type="text" class="inputForm" placeholder="Ex. 13-99999999"> 
             </div>
             
-            <div class="formDeLado1">
+            <div class="formDeLado">
                 <div>
-                    <h3 class="tituloForm">Endereço:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. Rua xxx.xxx">
+                    <label class="tituloForm">Endereço:</label>
+                    <input type="text" class="inputFormDeLado" placeholder="Ex. Rua xxx.xxx">
                 </div>
                 <div>
-                    <h3 class="tituloForm">CEP:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex.12345678">
+                    <label class="tituloForm">CEP:</label>
+                    <input type="text" class="inputFormDeLado" placeholder="Ex.12345678">
                 </div>
                                 <div>
-                    <h3 class="tituloForm">CPF:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. 123456789">
+                    <label class="tituloForm">CPF:</label>
+                    <input type="text" class="inputFormDeLado" placeholder="Ex. 123456789">
                 </div>
             </div>
 
-            <div class="formDeLado1">
+            <div class="formDeLado">
                 <div>
-                    <h3 class="tituloForm">Email:</h3>
-                    <input type="text" class="inputForm" placeholder="Ex. filhodaputa@gmail.com">
+                    <label class="tituloForm">Email:</label>
+                    <input type="text" class="inputFormDeLado" placeholder="Ex. filhodaputa@gmail.com">
                 </div>
                 <div>
-                    <h3 class="tituloForm">Senha:</h3>
-                    <input type="text" class="inputForm" placeholder="************">
+                    <label class="tituloForm">Senha:</label>
+                    <input type="text" class="inputFormDeLado" placeholder="************">
                 </div>
                 <div>
-                    <h3 class="tituloForm">Data de nascimento:</h3>
-                    <input type="date" class="inputForm" placeholder="************">
+                    <label class="tituloForm">Data de nascimento:</label>
+                    <input type="date" class="inputFormDeLado" placeholder="************">
                 </div>
             </div>
 
-            <div class="formDeLado1">
+            <div class="formDeLado">
                 <div>
-                    <h3 class="tituloForm">RG:</h3>
+                    <label class="tituloForm">RG:</label>
                     <input type="text" class="inputForm" placeholder="Ex. 222.222.222-2">
                 </div>
 
                 <div>
-                    <h3 class="tituloForm">Codigo:</h3>
+                    <label class="tituloForm">Codigo:</label>
                     <input type="text" class="inputForm" placeholder="Ex. 123456">
                 </div>
-                
-
             </div>
 
             <div class="areaBtn">
