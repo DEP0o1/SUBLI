@@ -62,8 +62,9 @@ require_once('config.php');
       </a>
     </section>
 
-    
+    <div class="textoEsquerda">
         <h1>Destaques da semana</h1>
+    </div>
    
   <div class="container">
     <div class="carrossel-container">
@@ -78,7 +79,9 @@ require_once('config.php');
     </div>
 </div>
  
+<div class="textoEsquerda">
     <h1>Mais Procurados</h1>
+</div>
 
 <div class="container">
     <div class="carrossel-container">
@@ -107,7 +110,6 @@ require_once('config.php');
       </div>
       <img src="img/doar.png" alt="" />
     </section>
-    <h1>liam</h1>
     </main>
 
    <script>

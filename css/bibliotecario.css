@@ -523,7 +523,7 @@ h2 {
 
 p {
   font-size: 0.9rem;
-  color: #a39b91;
+  color: #857D72;
 }
 
 ::placeholder {
@@ -712,10 +712,6 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.7rem;
   gap: 20px;
-}
-
-p {
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .evento {
