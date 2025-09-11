@@ -40,7 +40,7 @@ require_once './complementos/headerBibliotecario.php';
     <div class="areaCadastro">
         <form method = "POST"  class="formAvancado">
             <div>
-                <h1 class="pesquisaAvancada">Pesquia Avançada </h1>
+                <h1 class="pesquisaAvancada">Pesquisa Avançada </h1>
             </div>
 
             <section class="areaInput">

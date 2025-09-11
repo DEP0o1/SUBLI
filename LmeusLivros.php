@@ -6,7 +6,6 @@
     <title>Perfil</title>
     <link rel="stylesheet" href="css/leitor.css" />
     <link rel="stylesheet" href="css/leitorPerfil.css" />
-    <link rel="stylesheet" href="css/livro.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="js/componentesJS/popupEditarPerfil.js" defer></script>
     <script src="js/componentesJS/popupLogout.js" defer></script>
@@ -18,7 +17,11 @@
 <?php require_once 'barraLateral.php'; ?>
 
       <section class="areaPerfilLivros">
-        <h1>Empréstimos</h1>
+
+        <div class="textoEsquerda"> 
+          <h1>Empréstimos</h1> 
+        </div>
+        
         <div class="exibirLivros">
           <div class="livro">
             <img src="img/1" alt="" />
@@ -56,7 +59,10 @@
           </div>
         </div>
 
-        <h1>Lista de desejos</h1>
+        <div class="textoEsquerda"> 
+          <h1>Lista de Desejos</h1> 
+        </div>
+
         <div class="exibirLivros">
           <div class="livro">
             <img src="img/6" alt="" />
@@ -96,7 +102,10 @@
 
         <button>Visualizar</button>
 
-        <h1>Histórico</h1>
+        <div class="textoEsquerda"> 
+          <h1>Histórico </h1> 
+        </div>
+
         <div class="exibirLivros">
           <div class="livro">
             <img src="img/11" alt="" />
