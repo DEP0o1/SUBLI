@@ -19,6 +19,7 @@
 h1 {
   font-family: "Kurale";
   font-size: 1.5rem;
+  font-weight: normal;
 }
 
 p,
@@ -538,7 +539,7 @@ p {
 }
 
 .formAvancado {
-  border: 2px solid #a39b91;
+  background-color: var(--azul);
   display: flex;
   justify-content: left;
   flex-direction: column;
@@ -549,7 +550,7 @@ p {
 }
 
 .formAvancado1 {
-  border: 2px solid #a39b91;
+  background-color: var(--azul);
   display: flex;
   justify-content: left;
   flex-direction: column;
@@ -565,8 +566,8 @@ p {
 }
 
 .pesquisaAvancada {
-  color: #102e4e;
-  border-bottom: 2px solid #102e4e;
+  color: var(--fundo);
+  border-bottom: 2px solid var(--fundo);
   width: 100%;
 }
 
@@ -587,7 +588,7 @@ p {
 }
 
 .tituloForm {
-  color: #102e4e;
+  color: var(--fundo);
   text-wrap: nowrap;
   font-family: "Inter";
   font-size: 1rem;
