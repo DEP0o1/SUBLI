@@ -22,8 +22,10 @@
               <hr/>
           </div>
           
-          <img src="img/peter.jpg" alt="" />
-          <label for="">Alterar foto de perfil</label>
+          <div class="label-input">
+            <label for="">Foto de Perfil: </label>
+            <input type="file" class="inputArquivo">
+          </div>
   
           <div class="label-input">
             <label for="">Alterar nome: </label>

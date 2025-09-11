@@ -188,10 +188,6 @@ main {
   width: 50vw;
 }
 
-.areaPerfilLivros h1 {
-  padding-left: 7vw;
-}
-
 .areaPerfilLivros {
   width: 85vw;
   overflow-y: scroll;

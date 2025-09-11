@@ -29,10 +29,6 @@ h4 {
   cursor: default;
 }
 
-body h1 {
-  text-align: center;
-}
-
 :root {
   --vinho: #a32950;
   --azul: #102e4e;
@@ -625,6 +621,14 @@ main {
   gap: 20px;
   height: fit-content;
   margin-top: 0%;
+}
+
+.exibirLivros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+  gap: 20px;
 }
 
 .doacaoLivros {

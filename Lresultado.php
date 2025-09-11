@@ -34,15 +34,15 @@ if(isset ($_REQUEST['valor'])){
 </head>
 <body>
     <section class="pesquisa">
-      <select name="Categoria" id="">
+      <select name="Categoria" id="" class="categoria">
         <option value="">Categorias</option>
       </select>
 
-      <select name="Categoria" id="">
+      <select name="Categoria" id="" class="categoria">
         <option value="">Subcategorias</option>
       </select>
 
-      <select name="Categoria" id="">
+      <select name="Categoria" id="" class="categoria">
         <option value="">Bibliotecas</option>
       </select>
 
