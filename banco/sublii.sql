@@ -74,8 +74,12 @@ CREATE TABLE leitor(
     cd_telefone VARCHAR (11),
     ic_comprovante_residencia TINYINT,
     nm_senha VARCHAR(64),
+	dt_nascimento VARCHAR(200),
+    nm_endereco VARCHAR(200),
+    cd_cep VARCHAR(8),
 	CONSTRAINT pk_leitor PRIMARY KEY (cd_email)
 );
+
 
 CREATE TABLE evento(
 	nm_evento VARCHAR(200),
@@ -199,10 +203,10 @@ CREATE TABLE favorito_leitor(
 
 
 /*Leitores*/
-INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123');
-INSERT INTO leitor VALUES ('pedro@gmail.com', 'Pedro Miguel', '59433067852', '13903890782', true, '123');
-INSERT INTO leitor VALUES ('lucas@gmail.com', 'Lucas', '59433067855', '13903890782', true, '123');
-INSERT INTO leitor VALUES ('caua@gmail.com', 'Cauã', '59433097850', '13903890782', true, '123');
+INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
+INSERT INTO leitor VALUES ('pedro@gmail.com', 'Pedro Miguel', '59433067852', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
+INSERT INTO leitor VALUES ('lucas@gmail.com', 'Lucas', '59433067855', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
+INSERT INTO leitor VALUES ('caua@gmail.com', 'Cauã', '59433097850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
 
 /*Generos*/
 INSERT INTO genero VALUES (1, 'Ficção');
