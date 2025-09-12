@@ -35,26 +35,28 @@ class LivrosDoadosView {
         
 
         echo "
-        <img src='img/{$livro->cd_livro}' class='livroDoado'>
+        <img src='img/{$livros[0]->cd_livro}' class='livroDoado'>
         <div class='infoLivroDoado'>
-            <h1>{$livro->nm_livro}</h1>
+            <h1>{$livros[0]->nm_livro}</h1>
         ";
         
-        foreach($livro->autores as $autor){
+        foreach($livros[0]->autores as $autor){
             echo 
             "
             <p>AUTOR: {$autor->nm_autor}</p>
             ";
         }
         
+        $leitorcontroller = new LeitorController();
+        $leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,null,null,null,null,null,$livros[0]->cd_doacao));
         echo "
             <div class='nomeDoador'>
-            <h1>pedro</h1>
+            <h1>{$leitor[0]->nm_leitor}</h1>
             <div class='linha'></div>
             </div>
             
             <div class='botoes'>
-            <a href='BcadastrarLivro.php?codigo={$livro->cd_livro}' class='aceitar'> Cadastrar </a>
+            <a href='BcadastrarLivro.php?codigo={$livros[0]->cd_livro}' class='aceitar'> Cadastrar </a>
             <button class='recusar'> Recusar </button>
             </div>
         </div>
