@@ -27,6 +27,19 @@
           </div>
 
           <img src="img/vidas.jpg" alt="" class="capaLivroGrande" />
+
+          <div class="dadosLivroDoado">
+      
+              <h1>O Príncipe bem bem</h1>
+              
+              <p>
+            <span class="material-symbols-outlined">
+              man_4
+            </span> Autor: Neil Gaiman
+             </p>
+
+            
+          </div>
         </section>
       </section>
     </main>
