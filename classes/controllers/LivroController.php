@@ -45,7 +45,7 @@ class LivroController extends Banco
                 // $Livro->idioma = $idiomacontroller->ListarIdiomas(new Idioma(null,null,$Livro->cd_livro));
                 // $Livro->generos = $generocontroller->ListarGeneros(new Genero(null,null,$Livro->cd_livro));
                 $Livro->autores = $autorcontroller->ListarAutores(new Autor(null,null,$Livro->cd_livro));
-                $Livro->editora = $editoracontroller->ListarEditoras(new Editora(null,null,$Livro->cd_livro));
+                // $Livro->editora = $editoracontroller->ListarEditoras(new Editora(null,null,$Livro->cd_livro));
                 array_push($lista, $Livro);
             }
           
