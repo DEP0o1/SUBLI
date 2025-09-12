@@ -27,7 +27,7 @@ require_once './complementos/headerBibliotecario.php';
 <body>
 
 <?php
-require_once './complementos/menuLateral.php';
+//require_once './complementos/menuLateral.php';
 ?>
 
   <div class="areaDoacoes">

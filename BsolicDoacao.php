@@ -27,7 +27,7 @@ require_once('config.php');
   <section class="doacao">
 <?php
   $doacao = new LivrosDoadosView;
-  $doacao->ExibirLivroDoacao();
+  $doacao->ExibirLivroDoacao(new Livro($_REQUEST['codigo']));
 ?> 
   </section>
   </main>
