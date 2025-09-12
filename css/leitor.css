@@ -405,6 +405,7 @@ span {
   gap: var(--gap);
 }
 
+
 .conteudo-item-lista-doador {
   display: flex;
   flex-direction: row;

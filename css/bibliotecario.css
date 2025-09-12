@@ -1002,6 +1002,7 @@ h1 {
   justify-content: center;
   align-items: center;
   gap: var(--gap);
+  width: 55%;
 
 }
 
@@ -1043,4 +1044,58 @@ height: 65vh;
   margin-left: 15%;
   padding-bottom: 1%;
   padding-top: 1%;
+}
+
+.lista h1 {
+  margin: 0;
+}
+
+.item-lista {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  border-bottom: var(--border);
+  border-top: var(--border);
+  padding: 10px;
+
+}
+
+.item-lista img {
+  width: 10%;
+  height: 10%;
+  border-radius: 3;
+}
+
+.conteudo-item-lista {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap);
+}
+
+.conteudo-item-lista-doador {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.conteudo-item-lista-doador img{
+  object-fit: cover;
+  border-radius: 999999px;
+  width: 60px;
+  height: 60px;
+  padding: 0 ;
+}
+
+.conteudo-item-lista h2{
+  font-family: "Kurale";
+  font-style: none;
+  font-weight: lighter;
+}
+
+.miniPerfilRedondo img {
+
+  
 }
