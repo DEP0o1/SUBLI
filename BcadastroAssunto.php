@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/bibliotecario.css">
     <link rel="stylesheet" href="css/mobile.css">
     <script src="js/componentesJS/header.js"></script>
-    <title> Novo Gênero </title>
+    <title> Novo Assunto </title>
 </head>
      <?php
     require_once './complementos/headerBibliotecario.php';
@@ -15,17 +15,17 @@
         <div class="areaCadastro">
         <form action="" class="formAvancado1">
             <div>
-                <h1 class="pesquisaAvancada">Cadastrar Genêro</h1>
+                <h1 class="pesquisaAvancada">Cadastrar Assunto</h1>
             </div>
 
             <section class="areaInput">
                 <div class="areaTituloLivro">
-                    <label for="" class="tituloForm">Genêro:</label>
-                    <input name="" type="text" class="inputForm" placeholder="Ex: Terror">
+                    <label for="cd_assunto" class="tituloForm">Código Assunto:</label>
+                    <input name="cd_assunto" type="text" class="inputForm" placeholder="Ex: 1">
                 </div>
                 <div class="areaTituloLivro">
-                    <label for="" class="tituloForm">Descrição do Genêro:</label>
-                    <input name="" type="text" class="inputForm" placeholder="Ex: Terro é um gênero literário que tem como principal objetivo causar medo no leitor.">
+                    <label for="nm_assunto" class="tituloForm">Assunto:</label>
+                    <input name="nm_assunto" type="text" class="inputForm" placeholder="Ex: Reflexão">
                 </div>
 
                 <div class="areaBtn">

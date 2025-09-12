@@ -78,7 +78,7 @@ BEGIN
 END$$
 
 
-CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
 
 
 
@@ -1217,7 +1217,7 @@ BEGIN
      AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor)
      AND (p_ic_aprovado IS NULL OR d.ic_aprovado = p_ic_aprovado);
 END$$
-CALL listar_doacoes(NULL,NULL,NULL,NULL,NULL,NULL,NULL, false);
+/*CALL listar_doacoes(NULL,NULL,NULL,NULL,NULL,NULL,NULL, false);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_doacao$$
@@ -1330,7 +1330,7 @@ BEGIN
 
 END$$
 
-CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);
+/*CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$
