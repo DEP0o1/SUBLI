@@ -74,8 +74,12 @@ CREATE TABLE leitor(
     cd_telefone VARCHAR (11),
     ic_comprovante_residencia TINYINT,
     nm_senha VARCHAR(64),
+	dt_nascimento VARCHAR(200),
+    nm_endereco VARCHAR(200),
+    cd_cep VARCHAR(8),
 	CONSTRAINT pk_leitor PRIMARY KEY (cd_email)
 );
+
 
 CREATE TABLE evento(
 	nm_evento VARCHAR(200),
@@ -199,10 +203,10 @@ CREATE TABLE favorito_leitor(
 
 
 /*Leitores*/
-INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123');
-INSERT INTO leitor VALUES ('pedro@gmail.com', 'Pedro Miguel', '59433067852', '13903890782', true, '123');
-INSERT INTO leitor VALUES ('lucas@gmail.com', 'Lucas', '59433067855', '13903890782', true, '123');
-INSERT INTO leitor VALUES ('caua@gmail.com', 'Cauã', '59433097850', '13903890782', true, '123');
+INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
+INSERT INTO leitor VALUES ('pedro@gmail.com', 'Pedro Miguel', '59433067852', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
+INSERT INTO leitor VALUES ('lucas@gmail.com', 'Lucas', '59433067855', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
+INSERT INTO leitor VALUES ('caua@gmail.com', 'Cauã', '59433097850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
 
 /*Generos*/
 INSERT INTO genero VALUES (1, 'Ficção');
@@ -416,5 +420,56 @@ select * from assunto;
 select * from biblioteca;
 select * from evento;
 */
+
+
+------------------------------------------------------------------------------------------------------------
+
+-- ===== EDITORAS =====
+INSERT INTO editora (cd_editora, nm_editora) VALUES
+(1, 'Martin Claret'),
+(2, 'Record'),
+(3, 'Agir');
+
+-- ===== IDIOMA =====
+INSERT INTO idioma (cd_idioma, nm_idioma) VALUES
+(1, 'Português');
+
+-- ===== COLEÇÕES =====
+INSERT INTO colecao (cd_colecao, nm_colecao) VALUES
+(1, 'Clássicos'),
+(2, 'Romance histórico'),
+(3, 'Infantojuvenil'),
+(4, 'Literatura Brasileira'),
+(5, 'Romance Adolescente'),
+(6, 'Ficção Científica');
+
+-- ===== AUTORES =====
+INSERT INTO autor (cd_autor, nm_autor) VALUES
+(1, 'Nicolau Maquiavel'),
+(2, 'Mary Renault'),
+(3, 'Antoine de Saint-Exupéry'),
+(4, 'Graciliano Ramos'),
+(5, 'Stephen Chbosky'),
+(6, 'Isaac Asimov');
+
+-- ===== LIVROS =====
+INSERT INTO livro (cd_livro, nm_livro, cd_editora, cd_idioma, cd_colecao, ds_sinopse) VALUES
+(1, 'O Príncipe', 1, 1, 1, 'Obra clássica de Maquiavel sobre política e poder.'),
+(2, 'A Bruxa e o Calibã', 2, 1, 2, 'Romance histórico de Mary Renault, explorando temas clássicos e mitológicos.'),
+(3, 'O Pequeno Príncipe', 3, 1, 3, 'Fábula poética sobre amizade, amor e a essência da vida.'),
+(4, 'Vidas Secas', 2, 1, 4, 'Romance realista que retrata a vida de uma família sertaneja nordestina em meio à seca.'),
+(5, 'As Vantagens de Ser Invisível', 2, 1, 5, 'Romance epistolar que acompanha a adolescência de Charlie, explorando amizade, amor e amadurecimento.'),
+(6, 'Eu, Robô', 2, 1, 6, 'Clássico da ficção científica de Asimov que reúne contos sobre a relação entre humanos e robôs, incluindo as Três Leis da Robótica.');
+
+-- ===== RELACIONAMENTO LIVRO ↔ AUTOR =====
+INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
+(1, 1), -- O Príncipe - Maquiavel
+(2, 2), -- A Bruxa e o Calibã - Mary Renault
+(3, 3), -- O Pequeno Príncipe - Saint-Exupéry
+(4, 4), -- Vidas Secas - Graciliano Ramos
+(5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
+(6, 6); -- Eu, Robô - Isaac Asimov
+
+
 
 
