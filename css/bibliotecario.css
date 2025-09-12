@@ -78,6 +78,8 @@ body {
   background-size: 100%;
 }
 
+/* --------------------header---------------------------------------------------------------------------------- */
+
 nav {
   display: flex;
   gap: 50px;
@@ -208,6 +210,46 @@ nav {
   padding: 10px;
   cursor: pointer;
 }
+
+/*------------------menu lateral-----------------------------------------------------------------------------*/
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside {
+  right: 0;
+  background-color: var(--azul);
+  color: var(--branco);
+  width: 30vw;
+  padding: 40px;
+  position: absolute;
+  height: 100%;
+}
+
+aside br {
+  width: 100px;
+  background-color: var(--branco);
+}
+
+.conteudo-aside {
+  display: flex;
+  flex-direction: column;
+}
+
+.informacao-aside {
+  display: flex;
+  align-items: center;
+}
+
+.informacao-aside:hover {
+  background-color: #143558;
+  transition: 0.2s;
+}
+
+/*------------------------------------------------------------*/
 
 .resultadoPesquisa {
   display: flex;
