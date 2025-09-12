@@ -32,12 +32,12 @@ class LivrosDoadosView {
     public function ExibirLivroDoacao( $livro = new Livro()){
         $controller = new LivroController;
         $livros = $controller->ListarLivros($livro);
-        
+        //var_dump($livro->nm_livro);
 
         echo "
         <img src='img/{$livro->cd_livro}' class='livroDoado'>
         <div class='infoLivroDoado'>
-            <h1>{$livro->nm_livro}</h1>
+            <h1>$livro->nm_livro</h1>
         ";
         
         foreach($livro->autores as $autor){
@@ -49,12 +49,12 @@ class LivrosDoadosView {
         
         echo "
             <div class='nomeDoador'>
-            <h1>pedro</h1>
+            <h1></h1>
             <div class='linha'></div>
             </div>
             
             <div class='botoes'>
-            <a href='BcadastrarLivro.php?codigo={$livro->cd_livro}' class='aceitar'> Cadastrar </a>
+            <a href='BcadastrarLivro.php' class='aceitar'> Cadastrar </a>
             <button class='recusar'> Recusar </button>
             </div>
         </div>

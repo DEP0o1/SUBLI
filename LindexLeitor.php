@@ -29,20 +29,20 @@ require_once('config.php');
         
      
           <select class="categoria" id="">
-              <option>Categorias</option>
+              <option>Gêneros</option>
                <?php
-                  $biblioteca = new BibliotecaView;
-                  $biblioteca->ExibirBibliotecasSelect();
+                  $genero = new GeneroView;
+                  $genero->SelectGeneros();
                 ?> 
             </select>
       
 
       <div name="categoria">
           <select  class="categoria"id="">
-              <option>Subcategorias</option>
+              <option>Assunto</option>
                <?php
-                  $biblioteca = new BibliotecaView;
-                  $biblioteca->ExibirBibliotecasSelect();
+                  $Assunto = new AssuntoView;
+                  $Assunto->SelectAssuntos();
                 ?> 
             </select>
       </div>
