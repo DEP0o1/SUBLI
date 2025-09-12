@@ -9,7 +9,7 @@
             foreach ($generos as $genero){
 
                 echo" 
-                    <option value='{$genero->cd_genero}'>{$genero->nm_genero}</option>
+                    <option value='{$genero->cd_generos}'>{$genero->nm_generos}</option>
                 ";  
        
                 
