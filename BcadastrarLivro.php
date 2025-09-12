@@ -202,7 +202,7 @@ if ($cadastro) {
 
                     <div>
                         <label for="nm_assunto" class="tituloForm">Assunto:</label>
-                        <input name="nm_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <input name="nm_assunto" type="text" class="inputFormDeLado" placeholder="Ex. Reflexão">
                     </div>
                 </div>
 
@@ -213,34 +213,34 @@ if ($cadastro) {
                     </div>
                     <div>
                         <label for="nm_editora" class="tituloForm">Editora:</label>
-                        <input name="nm_editora" type="text" class="inputFormDeLado" placeholder="Ex. Português">
+                        <input name="nm_editora" type="text" class="inputFormDeLado" placeholder="Ex. Camelot Editora">
                     </div>
                     <div>
                         <label for="cd_colecao" class="tituloForm">Código Coleção:</label>
-                        <input name="cd_colecao" type="text" class="inputFormDeLado" placeholder="Ex. Volume Único">
+                        <input name="cd_colecao" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_colecao" class="tituloForm">Coleção:</label>
-                        <input name="nm_colecao" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <input name="nm_colecao" type="text" class="inputFormDeLado" placeholder="Ex. Volume Único">
                     </div>
                 </div>
 
                 <div class="formDeLado">
                     <div>
                         <label for="cd_idioma" class="tituloForm">Código Idioma:</label>
-                        <input name="cd_idioma" type="text" class="inputFormDeLado" placeholder="Ex. 1999">
+                        <input name="cd_idioma" type="text" class="inputFormDeLado" placeholder="Ex. 1234">
                     </div>
                     <div>
                         <label for="nm_idioma" class="tituloForm">Idioma:</label>
-                        <input name="nm_idioma" type="text" class="inputFormDeLado" placeholder="Ex.Reflexão">
+                        <input name="nm_idioma" type="text" class="inputFormDeLado" placeholder="Ex. Português">
                     </div>
                     <div>
                         <label for="cd_genero" class="tituloForm">Código Gênero:</label>
-                        <input name="cd_genero" type="text" class="inputFormDeLado" placeholder="Ex.Fantasia">
+                        <input name="cd_genero" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_genero" class="tituloForm">Gênero:</label>
-                        <input name="nm_genero" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <input name="nm_genero" type="text" class="inputFormDeLado" placeholder="Ex. Fantasia">
                     </div>
                 </div>
 
