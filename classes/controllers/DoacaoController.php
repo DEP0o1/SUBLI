@@ -24,15 +24,15 @@ class DoacaoController extends Banco
             $dados = $this->Consultar('listar_doacoes', $parametros);
             
 
-            $bibliotecacontroller = new BibliotecaController;
-            $livrocontroller = new LivroController;
-            $leitorcontroller = new LeitorController;
+            // $bibliotecacontroller = new BibliotecaController;
+            // $livrocontroller = new LivroController;
+            // $leitorcontroller = new LeitorController;
             foreach($dados as $item){
                 $Doacao = new Doacao;
                 $Doacao->Hydrate($item);
-                $Doacao->biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca(null,null,null,[new Livro()],[new Bibliotecario()],null,null,null,$Doacao->cd_doacao));
-                $Doacao->leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,null,null,$Doacao->cd_doacao));
-                $Doacao->livro = $livrocontroller->ListarLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$Doacao->cd_doacao));
+                // $Doacao->biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca(null,null,null,[new Livro()],[new Bibliotecario()],null,null,null,$Doacao->cd_doacao));
+                // $Doacao->leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,null,null,$Doacao->cd_doacao));
+                // $Doacao->livro = $livrocontroller->ListarLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$Doacao->cd_doacao));
                 array_push($lista, $Doacao);
             }
           

@@ -17,14 +17,14 @@ class BibliotecaController extends Banco
         ];
 
         $lista = [];
-        $livrocontroller = new LivroController;
-        $bibliotecariocontroller = new BibliotecarioController;
+        // $livrocontroller = new LivroController;
+        // $bibliotecariocontroller = new BibliotecarioController;
         $dados = $this->Consultar('listar_bibliotecas', $parametros);
             foreach($dados as $item){
             $Biblioteca = new Biblioteca;
             $Biblioteca->Hydrate($item);
-            $Biblioteca->bibliotecarios = $bibliotecariocontroller->ListarBibliotecarios(new Bibliotecario(null,null,null,null,$Biblioteca->cd_biblioteca));
-            $Biblioteca->livros = $livrocontroller->ListarLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],$Biblioteca->cd_biblioteca));
+            // $Biblioteca->bibliotecarios = $bibliotecariocontroller->ListarBibliotecarios(new Bibliotecario(null,null,null,null,$Biblioteca->cd_biblioteca));
+            // $Biblioteca->livros = $livrocontroller->ListarLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],$Biblioteca->cd_biblioteca));
             array_push($lista, $Biblioteca);
         }
         return $lista;

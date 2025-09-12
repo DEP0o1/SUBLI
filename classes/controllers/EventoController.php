@@ -22,13 +22,13 @@ class EventoController extends Banco
             $dados = $this->Consultar('listar_eventos', $parametros);
             
 
-            $bibliotecacontroller = new BibliotecaController;
-            $leitorcontroller = new LeitorController;
+            // $bibliotecacontroller = new BibliotecaController;
+            // $leitorcontroller = new LeitorController;
             foreach($dados as $item){
                 $Evento = new Evento;
                 $Evento->Hydrate($item);
-                $Evento->biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca(null,null,null,[new Livro()],[new Bibliotecario()],null,$Evento->cd_evento));
-                $Evento->leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,$Evento->cd_evento));
+                // $Evento->biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca(null,null,null,[new Livro()],[new Bibliotecario()],null,$Evento->cd_evento));
+                // $Evento->leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,$Evento->cd_evento));
                 array_push($lista, $Evento);
             }
           

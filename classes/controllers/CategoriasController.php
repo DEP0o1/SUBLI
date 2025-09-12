@@ -57,5 +57,4 @@ class CategoriasController extends Banco
     }catch (\Throwable $th) {
         throw $th;
     }
-
 ?>

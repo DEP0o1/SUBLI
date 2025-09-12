@@ -5,8 +5,6 @@ DELIMITER $$
 ========================================= */
 
 DROP PROCEDURE IF EXISTS listar_livros$$
-
-
 CREATE PROCEDURE listar_livros (
     IN  p_cd_livro INT,
     IN p_nm_livro VARCHAR(200),

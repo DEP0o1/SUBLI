@@ -2,5 +2,5 @@
 
 require_once 'config.php';
 
-$controller = new EmprestimoController;
-print_r($controller->ListarEmprestimos());
+$controller = new LivroController;
+print_r($controller->ListarLivros());

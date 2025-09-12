@@ -425,7 +425,7 @@ select * from evento;
 ------------------------------------------------------------------------------------------------------------
 
 -- ===== EDITORAS =====
-INSERT INTO editora (cd_editora, nm_editora) VALUES
+/*INSERT INTO editora (cd_editora, nm_editora) VALUES
 (1, 'Martin Claret'),
 (2, 'Record'),
 (3, 'Agir');
@@ -468,7 +468,7 @@ INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
 (4, 4), -- Vidas Secas - Graciliano Ramos
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
-(6, 6); -- Eu, Robô - Isaac Asimov
+(6, 6); -- Eu, Robô - Isaac Asimov*/
 
 
 
