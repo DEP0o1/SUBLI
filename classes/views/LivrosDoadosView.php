@@ -49,7 +49,7 @@ class LivrosDoadosView {
         
         echo "
             <div class='nomeDoador'>
-            <h1>{$livro->nm_leitor}</h1>
+            <h1>pedro</h1>
             <div class='linha'></div>
             </div>
             
