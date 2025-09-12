@@ -56,12 +56,18 @@ header {
   justify-content: space-between;
   width: 100%;
   align-items: center;
-
   padding-right: 30px;
   padding-left: 30px;
   height: fit-content;
   position: fixed;
   top: 0;
+}
+
+header button {
+  border: none;
+  background-color: transparent;
+  color: var(--branco);
+  cursor: pointer;
 }
 
 header ::content {
@@ -972,4 +978,50 @@ h1 {
   width: fit-content;
   max-height: 200px; /* altura fixa da lista */
   overflow-y: auto;
+}
+/*-----------------------------------doação---------------------------------------------------------------------*/
+
+
+.areaSolicDoacao {
+  display: flex;
+  flex-direction: row;
+  background-color: orange;
+}
+
+.pagDoacao {
+  display: flex;
+  flex-direction: row;
+  background-color: green;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.fotoMenordoacao {
+  display: flex;
+  flex-direction: column;
+  background-color: lightblue;
+  padding: 2vh;
+  gap: 1vh;
+}
+
+
+.imgLivroLista {
+height: 105px;
+}
+
+.capaLivroGrande {
+height: 65vh;
+}
+
+.tituloCentro{
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+}
+
+.tituloCentro h1{
+  padding: 0;
+  margin: 0;
+
 }
