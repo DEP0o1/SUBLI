@@ -36,10 +36,12 @@ require_once('config.php');
     <div class="cardDoacao">
         <?php
          $controller = new DoacaoController;
-         $doacoes = $controller->ListarDoacoes();
-          foreach ($doacoes as $Doacao){
+         $doacoes = $controller->ListarDoacoes(new Doacao(null,new Livro(),new Biblioteca(),new Leitor(), 0));
+        //  o 0 é bolleano falso na linha de cima 
+        //taaaaaaaaaaarrrrrrrrrrrrrrrrr
+          foreach ($doacoes as $doacao){
           $livro = new LivrosDoadosView;
-          $livro->ExibirLivrosDoados(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$Doacao->cd_doacao));
+          $livro->ExibirLivrosDoados(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$doacao->cd_doacao));
   }
         
       ?> 
