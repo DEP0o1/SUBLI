@@ -108,13 +108,13 @@ CREATE TABLE exemplar(
 
 CREATE TABLE doacao (
 	cd_doacao INT,
-    cd_livro INT,
+    nm_livro VARCHAR(200),
+    nm_autor VARCHAR(200),
     cd_biblioteca INT,
     cd_email VARCHAR(200),
     ic_aprovado TINYINT,
     CONSTRAINT pk_doacao PRIMARY KEY (cd_doacao),
     CONSTRAINT fk_biblioteca_doacao FOREIGN KEY (cd_biblioteca) REFERENCES  biblioteca(cd_biblioteca),
-    CONSTRAINT fk_livro_doacao FOREIGN KEY (cd_livro) REFERENCES  livro(cd_livro),
     CONSTRAINT  fk_email_leitor_doacao FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
 );
 
@@ -340,10 +340,9 @@ INSERT INTO bibliotecario_biblioteca VALUES (1,1);
 
 
 /*Doações*/
-INSERT INTO doacao VALUES (1,2,2,'pedro.favoritos@gmail.com', true);
-INSERT INTO doacao VALUES (2,5,1,'pedro.favoritos@gmail.com', false);
-INSERT INTO doacao VALUES (3,1,3,'pedro.favoritos@gmail.com',false);
-
+INSERT INTO doacao VALUES (1,'Cronicas Malucas','Jeferson',2,'pedro.favoritos@gmail.com', true);
+INSERT INTO doacao VALUES (2,'Como Dominar a Arte da Sabedoria','Maomé',1,'pedro.favoritos@gmail.com', false);
+INSERT INTO doacao VALUES (3,'Genocidas','Caua Nunes da Silva',3,'pedro.favoritos@gmail.com',false);
 
 
 /*Emprestimo*/

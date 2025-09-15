@@ -27,7 +27,7 @@ require_once('config.php');
   <section class="doacao">
 <?php
   $doacao = new LivrosDoadosView;
-  $doacao->ExibirLivroDoacao(new Livro($_REQUEST['codigo']));
+  $doacao->ExibirLivroDoacao(new Doacao($_REQUEST['codigo']));
 ?> 
   </section>
   </main>
@@ -35,14 +35,12 @@ require_once('config.php');
   <section class="areaCardsDoacao">
     <div class="cardDoacao">
         <?php
-         $controller = new DoacaoController;
-         $doacoes = $controller->ListarDoacoes(new Doacao(null,new Livro(),new Biblioteca(),new Leitor(), 0));
         //  o 0 é bolleano falso na linha de cima 
         //taaaaaaaaaaarrrrrrrrrrrrrrrrr
-          foreach ($doacoes as $doacao){
-          $livro = new LivrosDoadosView;
-          $livro->ExibirLivrosDoados(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$doacao->cd_doacao));
-  }
+        
+          $doacao = new LivrosDoadosView;
+          $doacao->ExibirLivrosDoados(new Doacao(null,new Livro, new Biblioteca,new Leitor, 0));
+  
         
       ?> 
 

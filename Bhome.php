@@ -37,14 +37,10 @@ require_once './complementos/headerBibliotecario.php';
 
     <div class="resultadoPesquisa">
         <?php
-         $controller = new DoacaoController;
-         $doacoes = $controller->ListarDoacoes(new Doacao(null,new Livro(),new Biblioteca(),new Leitor(), 0));
         //  o 0 é bolleano falso na linha de cima 
         //taaaaaaaaaaarrrrrrrrrrrrrrrrr
-          foreach ($doacoes as $doacao){
-          $livro = new LivrosDoadosView;
-          $livro->ExibirLivrosDoados(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$doacao->cd_doacao));
-  }
+          $Doacao = new LivrosDoadosView;
+          $Doacao->ExibirLivrosDoados(new Doacao(null,new Livro, new Biblioteca,new Leitor, 0));
       ?> 
     </div>
     <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php">Ver Mais Doações</a></div>

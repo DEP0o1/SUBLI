@@ -2,20 +2,20 @@
 
 class LivrosDoadosView {
     
-    public function ExibirLivrosDoados($livro = new Livro()){
-        $controller = new LivroController;
-        $livros = $controller->ListarLivros($livro);
+    public function ExibirLivrosDoados($doacao = new Doacao()){
+        $controller = new DoacaoController;
+        $doacoes = $controller->ListarDoacoes($doacao);
 
         
-        foreach($livros as $Livro){
+        foreach($doacoes as $Doacao){
             echo 
             "
             <div class='livro'>
-                <img src='img/$Livro->cd_livro'/>
-                <h2>{$Livro->nm_livro}</h2>
+                <img src='img/$Doacao->cd_doacao'/>
+                <h2>{$Doacao->livro->nm_livro}</h2>
             ";
             
-            foreach($Livro->autores as $autor){
+            foreach($Doacao->livro->autores as $autor){
                 echo 
                 "
                 <p>{$autor->nm_autor}</p>
@@ -23,25 +23,24 @@ class LivrosDoadosView {
             }
             echo
             "
-                <button><a href='BsolicDoacao.php?codigo=$Livro->cd_livro'>Visualizar Doação</a></button>
+                <button><a href='BsolicDoacao.php?codigo=$Doacao->cd_doacao'>Visualizar Doação</a></button>
             </div>
             ";
         }
         //var_dump($Livro->cd_livro);
     }
-    public function ExibirLivroDoacao( $livro = new Livro()){
-        $controller = new LivroController;
-        $livros = $controller->ListarLivros($livro);
+    public function ExibirLivroDoacao( $doacao = new Doacao()){
+        $controller = new DoacaoController;
+        $doacoes = $controller->ListarDoacoes($doacao);
         //var_dump($livro->nm_livro);
 
         echo "
-        <img src='img/{$livros[0]->cd_livro}' class='livroDoado'>
+        <img src='img/{$doacoes[0]->cd_doacao}' class='livroDoado'>
         <div class='infoLivroDoado'>
-            <h1>{$livros[0]->nm_livro}</h1>
-            <h1>$livro->nm_livro</h1>
+            <h1>{$doacoes[0]->livro->nm_livro}</h1>
         ";
         
-        foreach($livros[0]->autores as $autor){
+        foreach($doacoes[0]->livro->autores as $autor){
             echo 
             "
             <p>AUTOR: {$autor->nm_autor}</p>
@@ -49,7 +48,7 @@ class LivrosDoadosView {
         }
         
         $leitorcontroller = new LeitorController();
-        $leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,null,null,null,null,null,$livros[0]->cd_doacao));
+        $leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,null,null,null,null,null,$doacoes[0]->cd_doacao));
         echo "
             <div class='nomeDoador'>
 
@@ -60,7 +59,7 @@ class LivrosDoadosView {
             </div>
             
             <div class='botoes'>
-            <a href='BcadastrarLivro.php?codigo={$livros[0]->cd_livro}' class='aceitar'> Cadastrar </a>
+            <a href='BcadastrarLivro.php?codigo={$doacoes[0]->cd_doacao}' class='aceitar'> Cadastrar </a>
 
             <a href='BcadastrarLivro.php' class='aceitar'> Cadastrar </a>
 

@@ -4,7 +4,7 @@
         public $livro;
         public $biblioteca;
         public $leitor;
-        public $ic_aprovado;
+        public $ic_confirmado;
 
 
         public function __construct($cd_doacao2 = null, $livro2 = new Livro(), $biblioteca2 = new Biblioteca(), $leitor2 = new Leitor(), $ic_aprovado2 = null ){
