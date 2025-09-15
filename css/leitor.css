@@ -219,7 +219,7 @@ body {
   margin-left: 21%;
 }
 
-.textoEsquerda h1{
+.textoEsquerda h1 {
   width: fit-content;
 }
 
@@ -276,29 +276,28 @@ body {
   padding-top: 1%;
 }
 
-/* ---------------------------------------------------- bibliotecas ------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------- biblioteca ------------------------------------------------------------------------------------- */
 
-.bibliotecaPerfil{
-width: 100%;
-height: fit-content;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-gap: 20%;
+.bibliotecaPerfil {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
 }
 
-.bibliotecaFotos{
+.bibliotecaFotos {
   display: flex;
-flex-direction: row;
-align-items: center;
-flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
 }
 
 .bibliotecaPerfil img {
-width: 40vw;
-height: 25vw;
-
+  width: 40vw;
+  height: 25vw;
 }
 .biblioteca {
   display: flex;
@@ -348,10 +347,6 @@ span {
   gap: var(--gap);
 }
 
-.mapa img {
-  height: 400px;
-}
-
 .eventos {
   display: flex;
   justify-content: center;
@@ -374,7 +369,7 @@ span {
   height: 200px;
   text-align: left;
   overflow-y: scroll;
-  background-color: #102e4e;
+  background-color: var(--azul);
 }
 
 .lista h1 {
@@ -389,7 +384,6 @@ span {
   border-bottom: var(--border);
   border-top: var(--border);
   padding: 10px;
-
 }
 
 .item-lista img {
@@ -405,7 +399,6 @@ span {
   gap: var(--gap);
 }
 
-
 .conteudo-item-lista-doador {
   display: flex;
   flex-direction: row;
@@ -413,12 +406,111 @@ span {
   gap: var(--gap);
 }
 
-.conteudo-item-lista-doador img{
+.conteudo-item-lista-doador img {
   object-fit: cover;
   border-radius: 999999px;
   width: 60px;
   height: 60px;
-  padding: 0 ;
+  padding: 0;
+}
+
+.conteudo-pagina-bibliotecas {
+  display: flex;
+  flex-direction: row;
+}
+
+.indicator {
+  background-color: var(--vinho);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+#depois {
+  background-color: var(--vinho);
+  border: none;
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  color: var(--branco);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#antes {
+  background-color: var(--vinho);
+  border: none;
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  color: var(--branco);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.areaMapa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: sticky;
+  background-color: var(--azul);
+  width: 90%;
+}
+
+.mapa img {
+  height: 400px;
+}
+
+.mapa {
+  width: 70%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+#carregando {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--branco);
+  font-family: "Inter";
+  border: 5px solid var(--azul);
+}
+.spinner {
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid var(--branco);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: girar 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ---------------------------------------------------*/
@@ -564,7 +656,7 @@ span {
   gap: 50px;
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
   color: var(--branco);
 }
 
@@ -710,8 +802,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-
-
 
 .spinner {
   border: 5px solid rgba(255, 255, 255, 0.3);

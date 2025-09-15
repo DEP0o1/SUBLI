@@ -4,7 +4,6 @@ require_once('config.php');
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +11,6 @@ require_once('config.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bibliotecas</title>
     <link rel="stylesheet" href="css/leitor.css" />
-    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     <?php include 'complementos/headerLeitor.php'; ?>
   </head>
@@ -22,28 +20,35 @@ require_once('config.php');
       <div class="tituloCentro">
         <h1>Bibliotecas Próximas</h1>
       </div>
-      
-      <section class="areaMapa">
-    <div class="mapa" id="map">
-    <div id="carregando">
-      <div class="spinner"></div>
-      <p>Carregando mapa...</p>
-    </div>
-  </div>
-</section>
 
-<div class="container">
-    <div class="carrossel-container">
-        <button class="seta seta-esquerda" data-target="carrossel-procurados">&#10094;</button>
-        <div class="carrossel" id="carrossel-procurados">
-          <?php
-          $biblioteca = new BibliotecaView;
-          $biblioteca->ExibirBibliotecas();
-          ?> 
-        </div>
-        <button class="seta seta-direita" data-target="carrossel-procurados">&#10095;</button>
+      
+      <section class="conteudo-pagina-bibliotecas">
+  
+  <div class="lista-bibliotecas">     
+            <?php
+            // $biblioteca = new BibliotecaView;
+            // $biblioteca->ExibirBibliotecas();
+            ?>    
+            <div class='biblioteca'>
+          <img src='img/biblioteca1_1.jpg' alt='Biblioteca Mario Faria'>
+          <h4>biblioteca</h4>
+          <p>endereco</p>
+          <a href='Biblioteca.php'>
+            <button>Ver mais</button>
+          </a>
+          </div>";   
+  </div>
+
+        <section class="areaMapa">
+      <div class="mapa" id="map">
+      <div id="carregando">
+        <div class="spinner"></div>
+        <p>Carregando mapa...</p>
+      </div>
     </div>
-</div>
+  </section>
+      </section>
+      
     </main>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
