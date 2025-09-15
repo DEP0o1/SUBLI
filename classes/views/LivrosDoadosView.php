@@ -59,9 +59,8 @@ class LivrosDoadosView {
             </div>
             
             <div class='botoes'>
-            <a href='BcadastrarLivro.php?codigo={$doacoes[0]->cd_doacao}' class='aceitar'> Cadastrar </a>
+            <a href='BcadastrarLivro.php?doacao={$doacoes[0]->cd_doacao}' class='aceitar'> Cadastrar </a>
 
-            <a href='BcadastrarLivro.php' class='aceitar'> Cadastrar </a>
 
             <button class='recusar'> Recusar </button>
             </div>

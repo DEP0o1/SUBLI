@@ -151,6 +151,16 @@ if ($cadastro) {
         null,
         $ds_sinopse
     ));
+
+    if (isset($_REQUEST['doacao'])) {
+    
+        if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
+            $cd_doacao = $_REQUEST['doacao'];
+            $doacaocontroller = new DoacaoController;
+            $doacao = $doacaocontroller->AlterarDoacao(new Doacao($cd_doacao,new Livro(),new Biblioteca(),new Leitor(),true));
+        }
+    }
+
 }
 ?>
 

@@ -1243,36 +1243,27 @@ END$$
 DROP PROCEDURE IF EXISTS alterar_doacao$$
 CREATE PROCEDURE alterar_doacao(
   IN p_cd_doacao INT,
-  IN p_nm_livro VARCHAR(45),
+  IN p_nm_livro VARCHAR(200),
+  IN p_nm_autor VARCHAR(200),
   IN p_cd_biblioteca INT,
-  IN p_nm_biblioteca VARCHAR(200),
   IN p_cd_email VARCHAR(200),
-  IN p_nm_leitor VARCHAR(200)
+  IN p_ic_aprovado TINYINT
 )
 BEGIN
-  DECLARE v_cd_biblioteca INT;
-  DECLARE v_cd_email VARCHAR(200);
 
-  IF p_cd_biblioteca IS NULL AND p_nm_biblioteca IS NOT NULL THEN
-    SELECT cd_biblioteca INTO v_cd_biblioteca FROM biblioteca WHERE nm_biblioteca = p_nm_biblioteca LIMIT 1;
-  ELSE
-    SET v_cd_biblioteca = p_cd_biblioteca;
-  END IF;
-
-  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email  v_cd_email FROM leitor WHERE nm_leitor = p_nm_leitor LIMIT 1;
-  ELSE
-    SET v_cd_email = p_cd_email;
-  END IF;
 
   IF p_cd_doacao IS NOT NULL THEN
     UPDATE doacao
        SET nm_livro = COALESCE(p_nm_livro, nm_livro),
-           cd_biblioteca = COALESCE(v_cd_biblioteca, cd_biblioteca),
-           cd_email = COALESCE(v_cd_email, cd_email)
+			 nm_autor = COALESCE(p_nm_autor, nm_autor),
+           cd_biblioteca = COALESCE(p_cd_biblioteca, cd_biblioteca),
+           cd_email = COALESCE(p_cd_email, cd_email),
+           ic_aprovado = COALESCE(p_ic_aprovado,ic_aprovado)
      WHERE cd_doacao = p_cd_doacao;
   END IF;
 END$$
+
+/*CALL alterar_doacao(2,null,null,null,null,true);*/
 
 /* =========================================
    EMPRESTIMOS

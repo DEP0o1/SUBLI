@@ -50,7 +50,7 @@ class DoacaoController extends Banco
 
             'p_cd_doacao' => $doacao->cd_doacao,
             'p_nm_livro' => $doacao->livro->nm_livro,
-            'p_nm_autor' => $doacao->livro->autores->nm_autor,
+            'p_nm_autor' => $doacao->livro->autores[0]->nm_autor,
             'p_cd_biblioteca' => $doacao->biblioteca->cd_biblioteca,
             'p_cd_email' => $doacao->leitor->cd_email
         ];
@@ -64,7 +64,22 @@ class DoacaoController extends Banco
 
     public function AlterarDoacao($doacao = new Doacao())
     {
-
+        try{
+            $parametros = [
+    
+                'p_cd_doacao' => $doacao->cd_doacao,
+                'p_nm_livro' => $doacao->livro->nm_livro,
+                'p_nm_autor' => $doacao->livro->autores[0]->nm_autor,
+                'p_cd_biblioteca' => $doacao->biblioteca->cd_biblioteca,
+                'p_cd_email' => $doacao->leitor->cd_email,
+                'p_ic_aprovado' => $doacao->ic_aprovado
+            ];
+    
+            $this->Executar('alterar_doacao', $parametros);
+        }catch (\Throwable $th) {
+            throw $th;
+    
+        }
     }
 
     public function ExcluirDoacao($doacao = new Doacao())
