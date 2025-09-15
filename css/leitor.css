@@ -91,6 +91,10 @@ header {
   z-index: 2;
 }
 
+header span {
+  color: var(--branco);
+}
+
 .areaPesquisa {
   display: flex;
   flex-direction: row;
@@ -299,9 +303,10 @@ body {
   width: 40vw;
   height: 25vw;
 }
+
 .biblioteca {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border: none;
   justify-items: flex-start;
   gap: var(--gap);
@@ -369,7 +374,6 @@ span {
   height: 200px;
   text-align: left;
   overflow-y: scroll;
-  background-color: var(--azul);
 }
 
 .lista h1 {
@@ -386,10 +390,20 @@ span {
   padding: 10px;
 }
 
+.item-lista h1 {
+  margin: 0;
+}
+
 .item-lista img {
-  width: 10%;
-  height: 10%;
-  border-radius: 3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.imagem-item-lista {
+  width: 120px;
+  height: 120px;
 }
 
 .conteudo-item-lista {
@@ -417,6 +431,9 @@ span {
 .conteudo-pagina-bibliotecas {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  height: 60vh;
+  gap: var(--gap-grande);
 }
 
 .indicator {
@@ -461,24 +478,32 @@ span {
   align-items: center;
 }
 
+.lista-bibliotecas {
+  overflow-y: scroll;
+  width: 50%;
+}
+
+.lista-bibliotecas span{
+  color: var(--vinho);
+}
+
 .areaMapa {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   position: sticky;
   background-color: var(--azul);
-  width: 90%;
+  width: 30%;
 }
 
 .mapa img {
-  height: 400px;
+  height: 100%;
+  width: 100%;
 }
 
 .mapa {
-  width: 70%;
-  height: 300px;
-  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 #carregando {
