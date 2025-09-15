@@ -69,30 +69,39 @@
     </aside>
 
     <section class="notificacoes">
-      <div class="topo">
-        <h1>Notificações</h1>
+      <div class="topo-not">
+        <h3>Notificações</h3>
         <span class="material-symbols-outlined btn-fechar">close</span>
       </div>
 
+
       <div class="item-lista-not">
+      <div class="titulo-item-not">
+        <span class="material-symbols-outlined">menu_book</span>
+        <h3>Emprestimo</h3>
+      </div>
+      
+      <div class="conteudo-item-lista-not">
+
           <div class="imagem-item-lista-not">
             <img src="img/biblioteca1_1.jpg" alt="">
           </div>
-          <div class="conteudo-item-lista-not">
-            <h1>SilkSong <span>
-            • Fechado
-            </span></h1>
+
+          <div class="informacao-item-lista-not">
+            <h3>Liam solicitou a doação de sapiens!</h3>
             <div class="conteudo-item-lista-doador-not">
               <span class="material-symbols-outlined">
                 location_on
               </span>
-              <p>Avenida Bartolomeu de Gusmão - Aparecida, Santos - SP, 11030-500</p>
+              <p>23/09/2025</p>
             </div>
+
             <button class="btnRosa">
               Ver Mais
             </button>
           </div>
         </div> 
+        </div>
 
       <div class="conteudo-notificacao">
         <div class="conteudo-notificacao-item">

@@ -303,30 +303,77 @@ aside br {
 
 /*------------------notificações-----------------------------------------------------------------------------------------------*/
 
+.topo-not {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--gap) 0 var(--gap) 0;
+}
+
 .notificacoes {
   background-color: var(--azul);
   position: fixed;
   z-index: 1000;
   margin-left: 0;
-  width: 40%;
+  width: 60%;
+  color: var(--branco);
+  padding: 0px 40px 0px 40px;
+}
+
+.notificacoes h1 {
+  margin: 0;
+}
+
+.titulo-item-not {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
 }
 
 .conteudo-notificacao {
   display: flex;
   flex-direction: column;
+  gap: var(--gap);
 }
 
 .item-lista-not {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--gap);
+  margin: var(--gap) 0 var(--gap) 0;
+  border-bottom: var(--branco) 1px solid;
+  padding: 0 0 var(--gap) 0;
+}
 
+.informacao-item-lista-not {
+  gap: var(--gap);
 }
 
 .imagem-item-lista-not {
   width: 100px;
   height: 100px;
+  background-color: #a32950;
+  border-radius: var(--radius);
 }
 
 .imagem-item-lista-not img{
-  object-fit: fill;
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+}
+
+.conteudo-item-lista-not {
+  display: flex;
+  gap: var(--gap);
+  display: flex;
+  align-items: center;
+}
+
+.conteudo-item-lista-doador-not {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  gap: var(--gap);
 }
 
 
