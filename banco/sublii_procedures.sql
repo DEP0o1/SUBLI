@@ -689,7 +689,7 @@ BEGIN
       AND (p_cd_livro IS NULL OR e.cd_livro = p_cd_livro);
 END$$
 
-/*CALL listar_bibliotecas(null, NULL ,1, NULL,NULL, NULL, NULL);*/
+/*CALL listar_bibliotecas(null, NULL ,null, 1,NULL, NULL, NULL);*/
 
 DROP PROCEDURE IF EXISTS adicionar_biblioteca$$
 CREATE PROCEDURE adicionar_biblioteca(
@@ -1196,7 +1196,7 @@ CREATE PROCEDURE listar_doacoes(
   IN p_ic_aprovado TINYINT
 )
 BEGIN
-  SELECT d.*
+  SELECT  *
     FROM doacao d
     JOIN biblioteca b ON d.cd_biblioteca = b.cd_biblioteca
     JOIN leitor l ON d.cd_email = l.cd_email
@@ -1263,7 +1263,7 @@ BEGIN
   END IF;
 END$$
 
-/*CALL alterar_doacao(2,null,null,null,null,true);*/
+/*CALL alterar_doacao(2,null,null,null,null,true);
 
 /* =========================================
    EMPRESTIMOS
@@ -1387,7 +1387,7 @@ CREATE PROCEDURE listar_bibliotecarios(
   IN p_cd_biblioteca INT
 )
 BEGIN
-  SELECT b.*
+  SELECT  *
     FROM bibliotecario b
     LEFT JOIN bibliotecario_biblioteca bb ON b.cd_bibliotecario = bb.cd_bibliotecario
    WHERE (p_cd_bibliotecario IS NULL OR b.cd_bibliotecario = p_cd_bibliotecario)

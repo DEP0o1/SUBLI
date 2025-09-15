@@ -29,6 +29,7 @@ class DoacaoController extends Banco
                 $Doacao->Hydrate($item);
                 // $Doacao->biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca(null,null,null,[new Livro()],[new Bibliotecario()],null,null,null,$Doacao->cd_doacao));
                 // $Doacao->leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,null,null,$Doacao->cd_doacao));
+                $Doacao->biblioteca = new Biblioteca($item['cd_biblioteca']);
                 $Doacao->livro = new Livro(null,$item['nm_livro'],[new Autor(null,$item['nm_autor'])],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,null,null,$Doacao->cd_doacao);
                 array_push($lista, $Doacao);
             }

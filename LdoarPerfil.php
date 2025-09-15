@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 $cd_email = 'lucas@gmail.com';
+// O CD_EMAIL VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
 $nm_livro = null;
 $cd_biblioteca = null;
 $nm_autor = null;
@@ -27,7 +28,7 @@ $campos = 0;
   if($campos == 3){
     $mensagem = "Solicitação de Doação feita com Sucesso";
       $controller = new DoacaoController();
-      $doacao = $controller->AdicionarDoacao(new Doacao(null ,new Livro(null, $nm_livro, new Autor(null,$nm_autor)), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
+      $doacao = $controller->AdicionarDoacao(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
   }    
       
       ?>

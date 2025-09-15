@@ -1,6 +1,24 @@
 <?php
 require_once('config.php');
 
+if (isset($_REQUEST['doacao'])) {
+    if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
+  
+    $cd_doacao = $_REQUEST['doacao'];
+    $doacaocontroller = new DoacaoController;
+    $doacao = $doacaocontroller->ListarDoacoes(new Doacao($cd_doacao));
+    $cd_biblioteca = $doacao[0]->biblioteca->cd_biblioteca;
+    }
+}
+
+else{
+    $cd_bibliotecario = 1;
+    // O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
+    $controller = new BibliotecarioController();
+    $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
+    $cd_biblioteca = $bibliotecario[0]->cd_biblioteca;
+}
+
 $erro = true;
 $cadastro = true;
 $nm_livro = null;
@@ -145,19 +163,21 @@ if ($cadastro) {
         new Idioma($cd_idioma, $nm_idioma),
         new Colecao($cd_colecao, $nm_colecao),
         [new Assunto($cd_assunto, $nm_assunto)],
-        1,
+        $cd_biblioteca,
         null,
         null,
         null,
         $ds_sinopse
     ));
 
-    if (isset($_REQUEST['doacao'])) {
+    if($livro == "Livro cadastrado com sucesso!"){
+
     
-        if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
-            $cd_doacao = $_REQUEST['doacao'];
+        if (isset($_REQUEST['doacao'])) {
+            if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
             $doacaocontroller = new DoacaoController;
             $doacao = $doacaocontroller->AlterarDoacao(new Doacao($cd_doacao,new Livro(),new Biblioteca(),new Leitor(),true));
+            }
         }
     }
 
