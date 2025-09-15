@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <title> Nova Coleção </title>
 </head>
      <?php
-    require_once './complementos/headerBibliotecario.php';
+    include_once './complementos/headerBibliotecario.php';
     ?> 
 <body>
         <div class="areaCadastro">
@@ -33,7 +33,125 @@
                 </div>
             </section>
         </form>
-
     </div>
+
+    <aside>
+    <div class="topo">
+      <h1>Menu</h1>
+      <span class="material-symbols-outlined btn-fechar">close</span>
+    </div>
+    <br>
+    <div class="conteudo-aside">
+      <div class="conteudo-aside-biblioteca">
+        <h1>Biblioteca</h1>
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">menu_book</span>
+          <p>Coleções</p>
+        </div>
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">library_books</span>
+          <p>Livros</p>
+        </div>
+      </div>
+
+      <div class="conteudo-aside-leitores">
+        <h1>Leitores</h1>
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">group</span>
+          <p>Todos os leitores</p>
+        </div>
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">person_add</span>
+          <p>Novo leitor</p>
+        </div>
+      </div>
+    </div>
+    </aside>
+
+    <section class="notificacoes">
+      <div class="topo">
+        <h1>Notificações</h1>
+        <span class="material-symbols-outlined btn-fechar">close</span>
+      </div>
+
+      <div class="item-lista-not">
+          <div class="imagem-item-lista-not">
+            <img src="img/biblioteca1_1.jpg" alt="">
+          </div>
+          <div class="conteudo-item-lista-not">
+            <h1>SilkSong <span>
+            • Fechado
+            </span></h1>
+            <div class="conteudo-item-lista-doador-not">
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+              <p>Avenida Bartolomeu de Gusmão - Aparecida, Santos - SP, 11030-500</p>
+            </div>
+            <button class="btnRosa">
+              Ver Mais
+            </button>
+          </div>
+        </div> 
+
+      <div class="conteudo-notificacao">
+        <div class="conteudo-notificacao-item">
+
+        </div>
+      </div>
+    </section>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", () => {
+  const abrirNotificacao = document.getElementById("abrirNotificacao");
+
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay);
+
+  const aside = document.createElement("aside");
+  aside.innerHTML = `
+    <div class="topo">
+      <h1>Menu</h1>
+      <span class="material-symbols-outlined btn-fechar">close</span>
+    </div>
+    <br>
+    <div class="conteudo-aside">
+      <div class="conteudo-aside-biblioteca">
+        <h1>Biblioteca</h1>
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">menu_book</span>
+          <p>Coleções</p>
+        </div>
+      </div>
+      <div class="conteudo-aside-leitores">
+        <h1>Leitores</h1>
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">group</span>
+          <p>Todos os leitores</p>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(aside);
+
+  function abrir() {
+    aside.classList.add("open");
+    overlay.classList.add("open");
+  }
+
+  function fechar() {
+    aside.classList.remove("open");
+    overlay.classList.remove("open");
+  }
+
+  abrirNotificacao.addEventListener("click", abrir);
+
+  const btnFechar = aside.querySelector(".btn-fechar");
+  btnFechar.addEventListener("click", fechar);
+
+  overlay.addEventListener("click", fechar); 
+});
+    </script>
 </body>
 </html>

@@ -24,6 +24,7 @@ h1 {
   font-family: "Kurale";
   font-size: 1.5rem;
   font-weight: normal;
+  cursor: default;
 }
 
 p,
@@ -32,6 +33,7 @@ h3,
 h4 {
   font-family: "Inter";
   font-size: 1rem;
+  cursor: default;
 }
 
 a {
@@ -221,22 +223,55 @@ nav {
   cursor: pointer;
 }
 
-/*------------------menu lateral-----------------------------------------------------------------------------*/
+/*------------------menu lateral--------------------------------------------------------------------------------------------------------*/
 
 .topo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: solid 1px var(--branco);
+  height: 84px;
+}
+
+.topo span {
+  cursor: pointer;
 }
 
 aside {
   right: 0;
+  top: 0;
   background-color: var(--azul);
   color: var(--branco);
   width: 30vw;
-  padding: 40px;
-  position: absolute;
+  padding: 0px 30px 30px 30px;
+  position: fixed;
   height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0; 
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 900; 
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+aside p {
+  color: var(--branco);
+}
+
+aside.open {
+  transform: translateX(0);
 }
 
 aside br {
@@ -247,20 +282,55 @@ aside br {
 .conteudo-aside {
   display: flex;
   flex-direction: column;
+  gap: var(--gap);
+}
+
+.conteudo-aside-biblioteca {
+  border-bottom: var(--branco) solid 1px;
+  padding-bottom: var(--gap);
 }
 
 .informacao-aside {
   display: flex;
   align-items: center;
+  gap: var(--gap);
 }
 
 .informacao-aside:hover {
-  background-color: #143558;
+  background-color: #193f68;
   transition: 0.2s;
 }
 
-/*------------------------------------------------------------*/
+/*------------------notificações-----------------------------------------------------------------------------------------------*/
 
+.notificacoes {
+  background-color: var(--azul);
+  position: fixed;
+  z-index: 1000;
+  margin-left: 0;
+  width: 40%;
+}
+
+.conteudo-notificacao {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-lista-not {
+
+}
+
+.imagem-item-lista-not {
+  width: 100px;
+  height: 100px;
+}
+
+.imagem-item-lista-not img{
+  object-fit: fill;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------*/
 .resultadoPesquisa {
   display: flex;
   flex-direction: row;

@@ -20,26 +20,19 @@
   <div class="abas">
     <a href="./BemprestimoPesquisa.php">Empréstimos</a>
 
-    <a href="">
+    <button id="abrirNotificacao">
+
       <span class="material-symbols-outlined">
         notifications
       </span>
-    </a>
-
+    </button>
+    
     <button id="abrirMenu">
-  <span class="material-symbols-outlined">menu</span>
-</button>
+      <span class="material-symbols-outlined">menu</span>
+    </button>
 
-
-    <!-- <div class="dropdown">
-      <button onclick="desceCadastros()" class="dropbtn">Cadastros:</button>
-      <div id="Dropdown" class="dropdown-content">
-        <a href="./BcadastrarLivro.php">Cadrastar Livro</a>
-        <a href="./BcadastrarLeitor.php">Cadrastar Leitor</a>
-        <a href="./BcadastrarEvento.php">Cadrastar Evento</a>
-        <a href="./BcadastrarGenero.php">Cadrastar Genero</a>
-      </div> -->
   </div>
-
   </div>
 </header>
+
+<script src="js/componentesJS/menuBibliotecario.js"></script>
