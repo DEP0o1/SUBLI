@@ -1,0 +1,50 @@
+ document.addEventListener("DOMContentLoaded", () => {
+  const abrirMenu = document.getElementById("abrirMenu");
+
+  const overlay = document.createElement("div");
+  overlay.classList.add("overlay");
+  document.body.appendChild(overlay);
+
+  const aside = document.createElement("aside");
+  aside.innerHTML = `
+    <div class="topo">
+      <h1>Menu</h1>
+      <span class="material-symbols-outlined btn-fechar">close</span>
+    </div>
+    <br>
+    <div class="conteudo-aside">
+      <div class="conteudo-aside-biblioteca">
+        <h1>Biblioteca</h1>
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">menu_book</span>
+          <p>Coleções</p>
+        </div>
+      </div>
+      <div class="conteudo-aside-leitores">
+        <h1>Leitores</h1>
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">group</span>
+          <p>Todos os leitores</p>
+        </div>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(aside);
+
+  function abrir() {
+    aside.classList.add("open");
+    overlay.classList.add("open");
+  }
+
+  function fechar() {
+    aside.classList.remove("open");
+    overlay.classList.remove("open");
+  }
+
+  abrirMenu.addEventListener("click", abrir);
+
+  const btnFechar = aside.querySelector(".btn-fechar");
+  btnFechar.addEventListener("click", fechar);
+
+  overlay.addEventListener("click", fechar); 
+});

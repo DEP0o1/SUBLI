@@ -57,9 +57,10 @@ class LivroView{
       <h2> Autor:$autor->nm_autor  </h2>
       ";
     }
-
+    $editoracontroller = new EditoraController();
+    $editora = $editoracontroller->ListarEditoras(new Editora(null,null,$Livro->cd_livro));
       echo"
-      <h2> Editora:{$Livro->editora[0]->nm_editora} </h2>
+      <h2> Editora:{$editora[0]->nm_editora} </h2>
       ";
    echo"
     <h2> Disponivel em: ";

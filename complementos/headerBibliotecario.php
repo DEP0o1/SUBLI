@@ -20,13 +20,15 @@
   <div class="abas">
     <a href="./BemprestimoPesquisa.php">Empréstimos</a>
 
-    <a href="">
+    <button id="abrirNotificacao">
+
       <span class="material-symbols-outlined">
         notifications
       </span>
-    </a>
-
+    </button>
+    
     <button id="abrirMenu">
+<<<<<<< HEAD
   <span class="material-symbols-outlined">menu</span>
 </button>
 
@@ -40,6 +42,13 @@
         <a href="./BcadastrarGenero.php">Cadrastar Genero</a>
       </div> 
   </div>
+=======
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+>>>>>>> 9bdf38c237f5590bab3880e0404c63b7d7521b09
 
   </div>
+  </div>
 </header>
+
+<script src="js/componentesJS/menuBibliotecario.js"></script>

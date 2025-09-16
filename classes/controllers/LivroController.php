@@ -22,7 +22,6 @@ class LivroController extends Banco
                 'p_cd_editora' => $livro->editora->cd_editora,
                 'p_nm_editora' => $livro->editora->nm_editora,
                 'p_cd_biblioteca' => $livro->cd_biblioteca,
-                'p_cd_doacao' => $livro->cd_doacao,
                 'p_cd_emprestimo' => $livro->cd_emprestimo
     
             ];
@@ -30,22 +29,22 @@ class LivroController extends Banco
             $dados = $this->Consultar('listar_livros', $parametros);
             
 
-            $assuntocontroller = new AssuntoController;
-            $colecaocontroller = new ColecaoController;
-            $idiomacontroller = new IdiomaController;
-            $generocontroller = new GeneroController;
+            // $assuntocontroller = new AssuntoController;
+            // $colecaocontroller = new ColecaoController;
+            // $idiomacontroller = new IdiomaController;
+            // $generocontroller = new GeneroController;
             $autorcontroller = new AutorController;
             $editoracontroller = new EditoraController;
      
             foreach($dados as $item){
                 $Livro = new Livro;
                 $Livro->Hydrate($item);
-                $Livro->assuntos = $assuntocontroller->ListarAssuntos(new Assunto(null,null,$Livro->cd_livro));
-                $Livro->colecao = $colecaocontroller->ListarColecoes(new Colecao(null,null,$Livro->cd_livro));
-                $Livro->idioma = $idiomacontroller->ListarIdiomas(new Idioma(null,null,$Livro->cd_livro));
-                $Livro->generos = $generocontroller->ListarGeneros(new Genero(null,null,$Livro->cd_livro));
+                // $Livro->assuntos = $assuntocontroller->ListarAssuntos(new Assunto(null,null,$Livro->cd_livro));
+                // $Livro->colecao = $colecaocontroller->ListarColecoes(new Colecao(null,null,$Livro->cd_livro));
+                // $Livro->idioma = $idiomacontroller->ListarIdiomas(new Idioma(null,null,$Livro->cd_livro));
+                // $Livro->generos = $generocontroller->ListarGeneros(new Genero(null,null,$Livro->cd_livro));
                 $Livro->autores = $autorcontroller->ListarAutores(new Autor(null,null,$Livro->cd_livro));
-                $Livro->editora = $editoracontroller->ListarEditoras(new Editora(null,null,$Livro->cd_livro));
+                // $Livro->editora = $editoracontroller->ListarEditoras(new Editora(null,null,$Livro->cd_livro));
                 array_push($lista, $Livro);
             }
           

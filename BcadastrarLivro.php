@@ -1,6 +1,24 @@
 <?php
 require_once('config.php');
 
+if (isset($_REQUEST['doacao'])) {
+    if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
+  
+    $cd_doacao = $_REQUEST['doacao'];
+    $doacaocontroller = new DoacaoController;
+    $doacao = $doacaocontroller->ListarDoacoes(new Doacao($cd_doacao));
+    $cd_biblioteca = $doacao[0]->biblioteca->cd_biblioteca;
+    }
+}
+
+else{
+    $cd_bibliotecario = 1;
+    // O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
+    $controller = new BibliotecarioController();
+    $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
+    $cd_biblioteca = $bibliotecario[0]->cd_biblioteca;
+}
+
 $erro = true;
 $cadastro = true;
 $nm_livro = null;
@@ -145,12 +163,24 @@ if ($cadastro) {
         new Idioma($cd_idioma, $nm_idioma),
         new Colecao($cd_colecao, $nm_colecao),
         [new Assunto($cd_assunto, $nm_assunto)],
-        1,
+        $cd_biblioteca,
         null,
         null,
         null,
         $ds_sinopse
     ));
+
+    if($livro == "Livro cadastrado com sucesso!"){
+
+    
+        if (isset($_REQUEST['doacao'])) {
+            if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
+            $doacaocontroller = new DoacaoController;
+            $doacao = $doacaocontroller->AlterarDoacao(new Doacao($cd_doacao,new Livro(),new Biblioteca(),new Leitor(),true));
+            }
+        }
+    }
+
 }
 ?>
 
@@ -202,7 +232,7 @@ if ($cadastro) {
 
                     <div>
                         <label for="nm_assunto" class="tituloForm">Assunto:</label>
-                        <input name="nm_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <input name="nm_assunto" type="text" class="inputFormDeLado" placeholder="Ex. Reflexão">
                     </div>
                 </div>
 
@@ -213,34 +243,34 @@ if ($cadastro) {
                     </div>
                     <div>
                         <label for="nm_editora" class="tituloForm">Editora:</label>
-                        <input name="nm_editora" type="text" class="inputFormDeLado" placeholder="Ex. Português">
+                        <input name="nm_editora" type="text" class="inputFormDeLado" placeholder="Ex. Camelot Editora">
                     </div>
                     <div>
                         <label for="cd_colecao" class="tituloForm">Código Coleção:</label>
-                        <input name="cd_colecao" type="text" class="inputFormDeLado" placeholder="Ex. Volume Único">
+                        <input name="cd_colecao" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_colecao" class="tituloForm">Coleção:</label>
-                        <input name="nm_colecao" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <input name="nm_colecao" type="text" class="inputFormDeLado" placeholder="Ex. Volume Único">
                     </div>
                 </div>
 
                 <div class="formDeLado">
                     <div>
                         <label for="cd_idioma" class="tituloForm">Código Idioma:</label>
-                        <input name="cd_idioma" type="text" class="inputFormDeLado" placeholder="Ex. 1999">
+                        <input name="cd_idioma" type="text" class="inputFormDeLado" placeholder="Ex. 1234">
                     </div>
                     <div>
                         <label for="nm_idioma" class="tituloForm">Idioma:</label>
-                        <input name="nm_idioma" type="text" class="inputFormDeLado" placeholder="Ex.Reflexão">
+                        <input name="nm_idioma" type="text" class="inputFormDeLado" placeholder="Ex. Português">
                     </div>
                     <div>
                         <label for="cd_genero" class="tituloForm">Código Gênero:</label>
-                        <input name="cd_genero" type="text" class="inputFormDeLado" placeholder="Ex.Fantasia">
+                        <input name="cd_genero" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_genero" class="tituloForm">Gênero:</label>
-                        <input name="nm_genero" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <input name="nm_genero" type="text" class="inputFormDeLado" placeholder="Ex. Fantasia">
                     </div>
                 </div>
 
