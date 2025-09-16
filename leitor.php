@@ -35,3 +35,6 @@ $controller = new LeitorController;
             break;
     }
 ?>
+
+
+<!-- PASTA API -->

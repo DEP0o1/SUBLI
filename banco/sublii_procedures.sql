@@ -74,7 +74,7 @@ BEGIN
 END$$
 
 
-/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
+CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, 1,NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 
@@ -1100,19 +1100,24 @@ CREATE PROCEDURE listar_reservas(
   IN p_cd_reserva INT,
   IN p_dt_reserva DATETIME,
   IN p_cd_email VARCHAR(200),
-  IN p_cd_exemplar INT,
-  IN p_nm_leitor VARCHAR(200)
+  IN p_cd_livro INT,
+  IN p_cd_biblioteca INT,
+  IN p_nm_leitor VARCHAR(200),
+  IN p_ic_ativa TINYINT
 )
 BEGIN
-  SELECT r.*
+  SELECT *
     FROM reserva r
     JOIN leitor l ON r.cd_email = l.cd_email
    WHERE (p_cd_reserva IS NULL OR r.cd_reserva = p_cd_reserva)
      AND (p_dt_reserva IS NULL OR r.dt_reserva = p_dt_reserva)
      AND (p_cd_email IS NULL OR r.cd_email= p_cd_email)
-     AND (p_cd_exemplar IS NULL OR r.cd_exemplar = p_cd_exemplar)
+     AND (p_cd_livro IS NULL OR r.cd_livro = p_cd_livro)
+	 AND (p_cd_biblioteca IS NULL OR r.cd_biblioteca = p_cd_biblioteca)
+      AND (p_ic_ativa IS NULL OR r.ic_ativa = p_ic_ativa)
      AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor);
 END$$
+
 
 
 DROP PROCEDURE IF EXISTS adicionar_reserva$$
@@ -1120,12 +1125,12 @@ CREATE PROCEDURE adicionar_reserva(
   IN p_cd_reserva INT,
   IN p_dt_reserva DATETIME,
   IN p_cd_email VARCHAR(200),
-  IN p_nm_leitor VARCHAR(200),
-  IN p_cd_exemplar INT
+  IN p_cd_livro INT,
+  IN p_cd_biblioteca INT
 )
 BEGIN
   DECLARE v_cd_reserva INT;
-  DECLARE v_cd_email VARCHAR(200);
+
 
   IF p_cd_reserva IS NULL THEN
     SELECT COALESCE(MAX(cd_reserva), 0) + 1 INTO v_cd_reserva FROM reserva;
@@ -1133,21 +1138,14 @@ BEGIN
     SET v_cd_reserva = p_cd_reserva;
   END IF;
 
-  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email v_cd_email
-      FROM leitor
-     WHERE nm_leitor = p_nm_leitor
-     LIMIT 1;
-  ELSE
-    SET v_cd_email = p_cd_email;
-  END IF;
 
   IF v_cd_reserva IS NOT NULL
      AND p_dt_reserva IS NOT NULL
-     AND v_cd_email IS NOT NULL
-     AND p_cd_exemplar IS NOT NULL THEN
+     AND p_cd_email IS NOT NULL
+      AND p_cd_biblioteca IS NOT NULL
+     AND p_cd_livro IS NOT NULL THEN
     INSERT INTO reserva
-      VALUES (v_cd_reserva, p_dt_reserva, v_cd_email, p_cd_exemplar);
+      VALUES (v_cd_reserva, p_dt_reserva, v_cd_email, p_cd_livro,p_cd_biblioteca, true);
   END IF;
 END$$
 
@@ -1158,26 +1156,20 @@ CREATE PROCEDURE alterar_reserva(
   IN p_cd_reserva INT,
   IN p_dt_reserva DATETIME,
   IN p_cd_email VARCHAR(200),
-  IN p_nm_leitor VARCHAR(200),
-  IN p_cd_exemplar INT
+  IN p_cd_livro INT,
+  IN p_cd_biblioteca INT,
+  IN p_ic_ativa TINYINT
 )
 BEGIN
-  DECLARE v_cd_email VARCHAR(200);
 
-  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email v_cd_email
-      FROM leitor
-     WHERE nm_leitor = p_nm_leitor
-     LIMIT 1;
-  ELSE
-    SET v_cd_email = p_cd_email;
-  END IF;
-
+ 
   IF p_cd_reserva IS NOT NULL THEN
     UPDATE reserva
        SET dt_reserva = COALESCE(p_dt_reserva, dt_reserva),
-           cd_email = COALESCE(v_cd_email, cd_email),
-           cd_exemplar = COALESCE(p_cd_exemplar, cd_exemplar)
+           cd_email = COALESCE(p_cd_email, cd_email),
+           cd_biblioteca = COALESCE(p_cd_biblioteca, cd_biblioteca),
+           ic_ativa = COALESCE(p_ic_ativa, ic_ativa),
+           cd_livro = COALESCE(p_cd_livro, cd_livro)
      WHERE cd_reserva = p_cd_reserva;
   END IF;
 END$$

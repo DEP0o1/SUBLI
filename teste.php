@@ -2,5 +2,5 @@
 
 require_once 'config.php';
 
-$controller = new LivroController;
-print_r($controller->ListarLivros());
+$Reserva = new ReservaView;
+$Reserva->ExibirReservas(new Reserva( null,null,new Leitor,new Livro,new Biblioteca, 1));

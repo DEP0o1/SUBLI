@@ -101,6 +101,7 @@ CREATE TABLE exemplar(
     cd_exemplar INT,
     dt_insercao DATETIME,
     ic_reservado TINYTEXT,
+    /*qtd_exemplar INT,*/
     CONSTRAINT pk_exemplar PRIMARY KEY (cd_exemplar),
 	CONSTRAINT fk_biblioteca_livro FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca),
     CONSTRAINT fk_livro_biblioteca FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
@@ -136,9 +137,12 @@ CREATE TABLE reserva(
 	cd_reserva INT,
 	dt_reserva DATETIME,
     cd_email VARCHAR(200),
-    cd_exemplar INT,
+    cd_livro INT,
+    cd_biblioteca INT,
+    ic_ativa TINYINT,
     CONSTRAINT fk_leitor_reserva FOREIGN KEY (cd_email) REFERENCES leitor(cd_email),
-    CONSTRAINT fk_exemplar_reserva FOREIGN KEY (cd_exemplar) REFERENCES exemplar (cd_exemplar),
+    CONSTRAINT fk_livro_reserva FOREIGN KEY (cd_livro) REFERENCES livro (cd_livro),
+    CONSTRAINT fk_biblioteca_reserva FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca (cd_biblioteca),
 	CONSTRAINT pk_reserva PRIMARY KEY (cd_reserva)
 );
 
@@ -353,7 +357,10 @@ INSERT INTO emprestimo VALUES(4,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com'
 INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',6,9);
 
 
-
+/*Reservas*/
+INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true);
+INSERT INTO reserva VALUES (2,NOW(),'lucas@gmail.com',2,1,true);
+INSERT INTO reserva VALUES (3,NOW(),'lucas@gmail.com',3,1,true);
 
 /*
 select * from livro;
