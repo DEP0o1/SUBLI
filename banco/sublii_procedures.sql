@@ -1001,6 +1001,7 @@ BEGIN
     THEN
         SELECT 
             nm_leitor,
+            cd_email,
             cd_cpf,
             cd_telefone,
             ic_comprovante_residencia

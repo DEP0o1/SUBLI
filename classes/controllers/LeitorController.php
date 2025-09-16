@@ -20,7 +20,6 @@ class LeitorController extends Banco
             $dados = $this->Consultar('listar_leitores', $parametros);
             
 
-
             foreach($dados as $item){
                 $Leitor = new Leitor;
                 $Leitor->Hydrate($item);

@@ -18,7 +18,7 @@ $controller = new LeitorController;
                 $dados = $controller->Logar(new Leitor($email, null,null,null,null,$senha));
                     if(!isset ($dados[0]["erro"])){
                         
-                        $_SESSION['leitor'] = $dados[0]["nm_leitor"];
+                        $_SESSION['leitor'] = $dados[0]["cd_email"];
                         http_response_code(200);
                         echo json_encode(['mensagem'=>'login realizado com sucesso']);
                         // DO NOT redirect here if you're using AJAX for the login.

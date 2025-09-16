@@ -30,16 +30,12 @@ class LivrosDoadosView {
         //var_dump($Livro->cd_livro);
         //var_dump($livro);
     }
-<<<<<<< HEAD
-    public function ExibirLivroDoacao( $livro = new Livro()){
-        $controller = new LivroController;
-        $livros = $controller->ListarLivros($livro);
-=======
-    public function ExibirLivroDoacao( $doacao = new Doacao()){
+
+    public function ExibirLivroDoacao($doacao = new Doacao()){
         $controller = new DoacaoController;
         $doacoes = $controller->ListarDoacoes($doacao);
         //var_dump($livro->nm_livro);
->>>>>>> 9bdf38c237f5590bab3880e0404c63b7d7521b09
+
 
         echo "
         <img src='img/{$doacoes[0]->cd_doacao}' class='livroDoado'>
@@ -58,14 +54,12 @@ class LivrosDoadosView {
         $leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,null,null,null,null,null,$doacoes[0]->cd_doacao));
         echo "
             <div class='nomeDoador'>
-<<<<<<< HEAD
-            <h1>pedro</h1>
-=======
+
 
             <h1>{$leitor[0]->nm_leitor}</h1>
 
             <h1></h1>
->>>>>>> 9bdf38c237f5590bab3880e0404c63b7d7521b09
+
             <div class='linha'></div>
             </div>
             

@@ -1,10 +1,9 @@
 <?php
 require_once('config.php');
-<<<<<<< HEAD
+
 require_once('verificado.php');
-?>
-=======
-$cd_email = 'lucas@gmail.com';
+
+$cd_email = $_SESSION['leitor'];
 // O CD_EMAIL VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
 $nm_livro = null;
 $cd_biblioteca = null;
@@ -36,7 +35,7 @@ $campos = 0;
   }    
       
       ?>
->>>>>>> 9bdf38c237f5590bab3880e0404c63b7d7521b09
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

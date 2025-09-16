@@ -1,5 +1,8 @@
 <?php
-$nomeCompleto = $_SESSION['leitor'];
+require_once 'config.php';
+$controller = new LeitorController();
+$leitor = $controller->ListarLeitores(new Leitor($_SESSION['leitor']));
+$nomeCompleto = $leitor[0]->nm_leitor;
 
 ?>
 <aside class="perfil">

@@ -1,5 +1,9 @@
 <?php
 require_once('config.php');
+$cd_bibliotecario = 1;
+// O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
+$controller = new BibliotecarioController();
+$bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +43,7 @@ require_once('config.php');
         //taaaaaaaaaaarrrrrrrrrrrrrrrrr
         
           $doacao = new LivrosDoadosView;
-          $doacao->ExibirLivrosDoados(new Doacao(null,new Livro, new Biblioteca,new Leitor, 0));
+          $doacao->ExibirLivrosDoados(new Doacao(null,new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca),new Leitor, 0));
   
         
       ?> 
