@@ -31,14 +31,14 @@
 </button>
 
 
-    <!-- <div class="dropdown">
+    <div class="dropdown">
       <button onclick="desceCadastros()" class="dropbtn">Cadastros:</button>
       <div id="Dropdown" class="dropdown-content">
         <a href="./BcadastrarLivro.php">Cadrastar Livro</a>
         <a href="./BcadastrarLeitor.php">Cadrastar Leitor</a>
         <a href="./BcadastrarEvento.php">Cadrastar Evento</a>
         <a href="./BcadastrarGenero.php">Cadrastar Genero</a>
-      </div> -->
+      </div> 
   </div>
 
   </div>

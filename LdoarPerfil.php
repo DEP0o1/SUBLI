@@ -1,7 +1,6 @@
 <?php
 require_once('config.php');
-
-
+require_once('verificado.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

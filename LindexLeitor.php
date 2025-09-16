@@ -1,6 +1,5 @@
 <?php
 require_once('config.php');
-// require_once('views/livroView.php')
 ?>
 
 <!DOCTYPE html>
@@ -68,14 +67,15 @@ require_once('config.php');
    
   <div class="container">
     <div class="carrossel-container">
-        <button class="seta seta-esquerda" data-target="carrossel-destaques">&#10094;</button>
+        <button class="seta seta-esquerda" data-target="carrossel-destaques">&#10085;</button>
         <div class="carrossel" id="carrossel-destaques">
             <?php
             $livro = new LivroView;
             $livro->ExibirLivros();
             ?>
+            
         </div>
-        <button class="seta seta-direita" data-target="carrossel-destaques">&#10095;</button>
+        <button class="seta seta-direita" data-target="carrossel-destaques">&#x2765;</button>
     </div>
 </div>
  

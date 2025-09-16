@@ -28,11 +28,11 @@ class LivrosDoadosView {
             ";
         }
         //var_dump($Livro->cd_livro);
+        //var_dump($livro);
     }
     public function ExibirLivroDoacao( $livro = new Livro()){
         $controller = new LivroController;
         $livros = $controller->ListarLivros($livro);
-        
 
         echo "
         <img src='img/{$livro->cd_livro}' class='livroDoado'>
@@ -49,7 +49,7 @@ class LivrosDoadosView {
         
         echo "
             <div class='nomeDoador'>
-            <h1>{$livro->nm_leitor}</h1>
+            <h1>pedro</h1>
             <div class='linha'></div>
             </div>
             
@@ -60,6 +60,6 @@ class LivrosDoadosView {
         </div>
         ";
     }
-}
+} 
 
 ?>
