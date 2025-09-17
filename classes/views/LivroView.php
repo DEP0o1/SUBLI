@@ -28,9 +28,8 @@ class LivroView{
             <button><a href='LlivroLeitor.php?codigo=$Livro->cd_livro'>Ver Mais</a></button>
         </div>
         ";
-        // if (++$i > 4) break; NÃO FAZ ISSO ABOBADO
-        
     }
+    exit();
 
 
 }

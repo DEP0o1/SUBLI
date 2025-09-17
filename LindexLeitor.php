@@ -1,5 +1,18 @@
 <?php
 require_once('config.php');
+
+if(isset($_GET["genero"]) && isset($_GET["assunto"]) && isset($_GET["biblioteca"])){
+    $genero = $_GET["genero"];
+    $assunto = $_GET["assunto"];
+    $biblioteca = $_GET["biblioteca"];
+
+    $livro = new LivroView;
+    ob_start();
+    $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero($genero)],new Idioma(),new Colecao,[new Assunto($assunto)],$biblioteca));
+    $html = ob_get_clean();
+    return $html;
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,14 +24,15 @@ require_once('config.php');
     <link rel="stylesheet" href="css/leitor.css" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-    <script src="js/componentesJS/popupCadastro.js" defer></script>
-
+    
+    
     <title>Home</title>
     <?php require_once './complementos/headerLeitor.php'; ?>  
     
-  </head>
+</head>
 
-  <body>
+<body>
+      
     <main>
     <section class="banner">
       <div class="imgbanner"></div>
@@ -27,7 +41,7 @@ require_once('config.php');
     <section class="pesquisa">
         
      
-          <select class="categoria" id="">
+          <select class="categoria" id="genero">
               <option>Gêneros</option>
                <?php
                   $genero = new GeneroView;
@@ -36,8 +50,8 @@ require_once('config.php');
             </select>
       
 
-      <div name="categoria">
-          <select  class="categoria"id="">
+      <div >
+          <select  class="categoria"id="assunto">
               <option>Assunto</option>
                <?php
                   $Assunto = new AssuntoView;
@@ -46,8 +60,8 @@ require_once('config.php');
             </select>
       </div>
 
-      <div name="categoria">
-          <select  class="categoria"id="">
+      <div >
+          <select  class="categoria"id="bibliotecas">
               <option>Bibliotecas</option>
                <?php
                   $biblioteca = new BibliotecaView;
@@ -166,5 +180,8 @@ inicializarCarrossel('carrossel-destaques');
 inicializarCarrossel('carrossel-procurados');
 });
     </script>
+
+    <script src="js/componentesJS/filtros.js"></script>
+    <script src="js/componentesJS/popupCadastro.js"></script>
   </body>
 </html>

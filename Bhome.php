@@ -22,6 +22,7 @@ $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliot
     type="image/x-icon" />
   <script src="js/componentesJS/header.js"></script>
 
+
 </head>
 
 <?php

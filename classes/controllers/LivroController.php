@@ -23,7 +23,7 @@ class LivroController extends Banco
                 'p_nm_editora' => $livro->editora->nm_editora,
                 'p_cd_biblioteca' => $livro->cd_biblioteca,
                 'p_cd_emprestimo' => $livro->cd_emprestimo
-    
+                
             ];
             $lista = [];
             $dados = $this->Consultar('listar_livros', $parametros);
