@@ -9,11 +9,9 @@ require_once('config.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Pesquisa </title>
+    <title> Pesquisar Leitor </title>
     <link rel="stylesheet" href="css/bibliotecario.css">
-    <link rel="stylesheet" href="css/leitorPerfil.css">
     <link rel="stylesheet" href="css/mobile.css">
-    <title>Pesquisa</title>
     <script src="js/componentesJS/header.js"></script>
 
     <link rel="shortcut icon" href="img/pequeno terry.webp" type="image/x-icon">
@@ -23,7 +21,7 @@ require_once('config.php');
     <?php
     require_once './complementos/headerBibliotecario.php';
     ?>
-    <main>
+    <main class="pgPesquisaLeitor">
         <section class="pesquisarLeitor">
             <form action="">
                 <div class="titulo-areaPerfil">
@@ -42,15 +40,15 @@ require_once('config.php');
                 </div>
 
                 <div class="btnForm">
-                    <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Pesuisar</button>
+                    <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Pesquisar</button>
                     <a href="./BcadastrarLeitor.php" class="btnRosa">Novo Leitor</a>
                 </div>
             </form>
         </section>
 
         <section class="resultadoPesquisaLeitor">
-            <div class="leitor">
-                <img src="img/principe.webp" alt="">
+            <div class="cardLeitor">
+                <img src="img/pequeno terry.webp" alt="">
                 <div class="infoPerfil">
                     <h1> Nome do Leitor </h1>
                     <div class="infoDeLado">
@@ -80,14 +78,29 @@ require_once('config.php');
                             man_4
                         </span> E-mail: filhodaputa@gmail.com
                     </p>
-                    <div>
-                    <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Alterar Dados</button>
-                    <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Enviar Notificaçãp</button>
-                    <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Pesuisar</button>
+                    <div class="btnsPerfil">
+                        <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Alterar Dados</button>
+                        <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Enviar Notificação</button>
+                        <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Pesquisar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <h1>Empréstimos atuais deste leitor</h1>
+                <div class="carrossel-container">
+                    <div class="carrossel" id="carrossel-destaques">
+                        <?php
+                        $livro = new LivroView;
+                        $livro->ExibirLivros();
+                        ?>
                     </div>
                 </div>
             </div>
         </section>
+
+        
+
     </main>
 
 
