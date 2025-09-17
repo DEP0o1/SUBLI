@@ -345,7 +345,7 @@ INSERT INTO bibliotecario_biblioteca VALUES (1,1);
 
 /*Doações*/
 INSERT INTO doacao VALUES (1,'Cronicas Malucas','Jeferson',2,'pedro.favoritos@gmail.com', true);
-INSERT INTO doacao VALUES (2,'Como Dominar a Arte da Sabedoria','Maomé',1,'pedro.favoritos@gmail.com', false);
+INSERT INTO doacao VALUES (2,'Como Dominar a Arte da Sabedoria','Mary Renault',1,'pedro.favoritos@gmail.com', false);
 INSERT INTO doacao VALUES (3,'Genocidas','Caua Nunes da Silva',3,'pedro.favoritos@gmail.com',false);
 
 
