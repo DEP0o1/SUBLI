@@ -32,7 +32,7 @@ class ReservaController extends Banco
                 $Reserva->livro = new Livro($item['cd_livro']);
                 array_push($lista, $Reserva);
             }
-          
+        
         
             return $lista;
         }catch (\Throwable $th) {

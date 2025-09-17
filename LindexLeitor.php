@@ -1,18 +1,18 @@
 <?php
 require_once('config.php');
 
-if(isset($_GET["genero"]) && isset($_GET["assunto"]) && isset($_GET["biblioteca"])){
-    $genero = $_GET["genero"];
-    $assunto = $_GET["assunto"];
-    $biblioteca = $_GET["biblioteca"];
+// if(isset($_GET["genero"]) && isset($_GET["assunto"]) && isset($_GET["biblioteca"])){
+//     $genero = $_GET["genero"];
+//     $assunto = $_GET["assunto"];
+//     $biblioteca = $_GET["biblioteca"];
 
-    $livro = new LivroView;
-    ob_start();
-    $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero($genero)],new Idioma(),new Colecao,[new Assunto($assunto)],$biblioteca));
-    $html = ob_get_clean();
-    return $html;
-    exit();
-}
+//     $livro = new LivroView;
+//     ob_start();
+//     $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero($genero)],new Idioma(),new Colecao,[new Assunto($assunto)],$biblioteca));
+//     $html = ob_get_clean();
+//     return $html;
+//     exit();
+// }
 ?>
 
 <!DOCTYPE html>
@@ -181,7 +181,7 @@ inicializarCarrossel('carrossel-procurados');
 });
     </script>
 
-    <script src="js/componentesJS/filtros.js"></script>
+    <!-- <script src="js/componentesJS/filtros.js" ></script> -->
     <script src="js/componentesJS/popupCadastro.js"></script>
   </body>
 </html>

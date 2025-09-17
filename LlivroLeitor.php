@@ -41,7 +41,7 @@ if (isset($_REQUEST['codigo'])) {
 
   <section class="areaBtn">
     <div class="btnEmprestimo">
-      <button class="btnRosa"><a href="">Reservar</a></button>
+      <button class="btnRosa" id="s"><a href="">Reservar</a></button>
     </div>
   </section>
 
