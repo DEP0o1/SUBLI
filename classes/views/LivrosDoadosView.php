@@ -83,7 +83,7 @@ class LivrosDoadosView {
 
             echo "<div class='areaTituloLivro'>
             <label for='nm_livro' class='tituloForm'>Titulo:</label>
-            <input name='nm_livro' type='text' class='inputForm' placeholder='Ex. O Pequeno Principe' value ='{$doacoes[0]->livro->nm_livro}'>
+            <input name='nm_livro' type='text' class='inputForm' placeholder='Ex. O Pequeno Principe' value ='{$doacoes[0]->livro->nm_livro}' readonly>
         </div>";
         }
 
@@ -105,14 +105,14 @@ class LivrosDoadosView {
 
             echo " <div>
             <label for='nm_autor' class='tituloForm'>Autor:</label>
-            <input name='nm_autor' type='text' class='inputFormDeLado' placeholder='Ex. Antoine de Saint-Exupéry' value ='{$doacoes[0]->livro->autores[0]->nm_autor}'>
+            <input name='nm_autor' type='text' class='inputFormDeLado' placeholder='Ex. Antoine de Saint-Exupéry' value ='{$doacoes[0]->livro->autores[0]->nm_autor}' readonly>
         </div>";
         }
 
         else{
             echo " <div>
             <label for='nm_autor' class='tituloForm'>Autor:</label>
-            <input name='nm_autor' type='text' class='inputFormDeLado' placeholder='Ex. Antoine de Saint-Exupéry'>
+            <input name='nm_autor' type='text' class='inputFormDeLado' placeholder='Ex. Antoine de Saint-Exupéry' >
         </div>";
         }
 

@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('config.php');
 header('Content-Type: application/json');
 $metodo = $_SERVER['REQUEST_METHOD'];

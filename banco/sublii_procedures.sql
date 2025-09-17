@@ -74,7 +74,7 @@ BEGIN
 END$$
 
 
-CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, 1,NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, 1,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
 
 
 
@@ -1123,7 +1123,6 @@ END$$
 DROP PROCEDURE IF EXISTS adicionar_reserva$$
 CREATE PROCEDURE adicionar_reserva(
   IN p_cd_reserva INT,
-  IN p_dt_reserva DATETIME,
   IN p_cd_email VARCHAR(200),
   IN p_cd_livro INT,
   IN p_cd_biblioteca INT
@@ -1140,12 +1139,11 @@ BEGIN
 
 
   IF v_cd_reserva IS NOT NULL
-     AND p_dt_reserva IS NOT NULL
      AND p_cd_email IS NOT NULL
       AND p_cd_biblioteca IS NOT NULL
      AND p_cd_livro IS NOT NULL THEN
     INSERT INTO reserva
-      VALUES (v_cd_reserva, p_dt_reserva, v_cd_email, p_cd_livro,p_cd_biblioteca, true);
+      VALUES (v_cd_reserva, NOW(), p_cd_email, p_cd_livro,p_cd_biblioteca, true);
   END IF;
 END$$
 

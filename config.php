@@ -20,4 +20,5 @@
 		}
 	});
 
+	session_start();
 ?>
