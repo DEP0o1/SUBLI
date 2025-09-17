@@ -16,7 +16,6 @@ class LivroView{
             <h2>{$Livro->nm_livro}</h2>
         ";
 
-
         foreach($Livro->autores as $autor){
             echo 
             "

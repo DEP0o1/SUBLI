@@ -13,7 +13,10 @@ require_once('./config.php');
           <img src="img/pesquisa.webp" alt="" class="lupa" />
         </div>
 
-        <img src="img/filtro.svg" alt="" />
+        <span class="material-symbols-outlined">
+        filter_alt
+        </span>
+        
       </form>
 
       <div class="abas">
