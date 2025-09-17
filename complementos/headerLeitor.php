@@ -21,17 +21,27 @@ require_once('./config.php');
         <a href="Bibliotecas.php">Bibliotecas</a>
         <a href="../../SUBLI/LdoarPerfil.php">Doação</a>
 
+        <div class="span-header">
+
         <a href="">
         <span class="material-symbols-outlined">
         notifications
         </span>
         </a>
 
+        </div>
+
+        <div class="span-header">
+
         <a href="LmeusLivros.php">
         <span class="material-symbols-outlined">
         person
         </span>
         </a>
+
+        </div>
+
+       
 
         <!-- <button id="btnCadastro">
         Cadastre-se

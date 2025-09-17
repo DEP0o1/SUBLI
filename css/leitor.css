@@ -35,7 +35,7 @@ h4 {
   --amarelo: #fdc18d;
   --branco: #fffbf7;
   --bege: #b59e8b;
-  --fundo: #f2ece7;
+  --fundo: #FAF4EE;
   --gap: 10px;
   --gap-grande: 50px;
   --radius: 10px;
@@ -43,7 +43,7 @@ h4 {
 }
 
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;;
 }
 
 .btnRosa {
@@ -289,7 +289,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20%;
+  gap: var(--gap-grande);
 }
 
 .bibliotecaFotos {
@@ -297,11 +297,13 @@ body {
   flex-direction: row;
   align-items: center;
   flex-direction: column;
+  gap: var(--gap);
 }
 
 .bibliotecaPerfil img {
   width: 40vw;
   height: 25vw;
+  border-radius: var(--radius);
 }
 
 .biblioteca {
@@ -356,14 +358,14 @@ span {
   display: flex;
   justify-content: center;
   padding: 20px;
-  gap: 50px;
-  align-items: center;
+  gap: var(--gap-grande);
   flex-direction: row;
+  height: 50vh;
 }
 
 .calendario {
   width: 20vw;
-  height: 20%;
+  height: 200px;
   background-color: var(--azul);
 }
 
@@ -371,7 +373,7 @@ span {
   display: flex;
   flex-direction: column;
   width: 40%;
-  height: 200px;
+  height: 100%;
   text-align: left;
   overflow-y: scroll;
 }
@@ -387,11 +389,14 @@ span {
   gap: var(--gap);
   border-bottom: var(--border);
   border-top: var(--border);
-  padding: 10px;
 }
 
 .item-lista h1 {
   margin: 0;
+}
+
+.item-lista h3{
+  color: var(--vinho);
 }
 
 .item-lista img {
@@ -399,11 +404,13 @@ span {
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius);
-}
+  padding: var(--gap);
+} 
 
 .imagem-item-lista {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius);
 }
 
 .conteudo-item-lista {
@@ -681,10 +688,6 @@ span {
   gap: 50px;
 }
 
-.material-symbols-outlined {
-  color: var(--branco);
-}
-
 main {
   margin-top: 84px;
   margin-bottom: 20px;
@@ -878,7 +881,7 @@ main {
   align-items: center;
   cursor: pointer;
   border: solid grey 1px;
-  background: white;
+  background-color: var(--branco);
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
