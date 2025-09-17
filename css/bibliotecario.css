@@ -36,6 +36,10 @@ h4 {
   cursor: default;
 }
 
+label{
+  font-family: "Inter";
+}
+
 a {
   font-size: medium;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -89,7 +93,6 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
   margin-top: 84px;
-  overflow-x: hidden;
 }
 
 /* --------------------header---------------------------------------------------------------------------------- */
@@ -184,7 +187,9 @@ nav {
   overflow: hidden;
 }
 
-.leitoresEncontrados {
+/*-----------------Leitor bibliotecario -------------------------------------------------------------------------------------*/
+
+/* .leitoresEncontrados {
   display: flex;
   flex-direction: row;
   gap: 0px;
@@ -223,7 +228,169 @@ nav {
   color: white;
   padding: 10px;
   cursor: pointer;
+} */
+
+.pgPesquisaLeitor{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-grande);
 }
+
+.pesquisarLeitor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw; 
+  margin-top: 10vh;
+}
+
+.pesquisarLeitor form {
+  border: var(--border);
+  color: var(--cinza);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: fit-content;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.pesquisarLeitor input {
+  width: 50vw;
+  border: none;
+  border-radius: 10px;
+  height: 30px;
+  color: var(--cinza);
+}
+
+.pesquisarLeitor h1{
+  margin: 0;
+}
+
+.label-input{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titulo-areaPerfil {
+  width: 50vw;
+}
+
+.resultadoPesquisaLeitor{
+  margin-left: 10vw;
+}
+
+.cardLeitor img{
+  height: 20vh  ;
+  border-radius: 100%;
+}
+
+.cardLeitor h1{
+  margin: 0;
+}
+
+.cardLeitor{
+  display: flex;
+  align-items: center;
+  padding: 1%;
+  gap: var(--gap);
+  border-top: 1px var(--bege) solid;
+  border-bottom: 1px var(--bege) solid;
+  margin-bottom: 2vh;
+}
+
+.infoPerfil{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.infoDeLado{
+  display: flex;
+  gap: var(--gap);
+}
+
+.btnsPerfil{
+  display: flex;
+  gap: var(--gap);
+}
+
+.carrossel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 55%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.carrossel {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s ease;
+  gap: 20px;
+}
+
+/* ------------------livros-------------------------------------------------------------------- */
+
+.livro {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: solid grey 1px;
+  background-color: var(--branco);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  width: fit-content;
+  gap: 10px;
+  transition: transform 0.3s ease;
+  flex-direction: column;
+}
+
+p {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.livro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.livro img {
+  width: 140px;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.livro h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.livro p {
+  color: #666;
+  font-size: 14px;
+}
+.livro button {
+  background-color: var(--vinho);
+  color: var(--branco);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+
 
 /*------------------menu lateral--------------------------------------------------------------------------------------------------------*/
 
@@ -807,50 +974,6 @@ p {
   justify-content: center;
   margin: 40px;
   gap: 20px;
-}
-
-.livro {
-  border-radius: 5px;
-  padding: 10px;
-  width: 163px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border: solid grey 1px;
-  background-color: #f2ece76e;
-  height: 380px;
-}
-
-.livro img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  border-radius: 3px;
-  align-items: center;
-  display: flex;
-}
-
-.livro h2 {
-  font-size: 16px;
-  margin: 0;
-  color: #333;
-}
-
-.livro p {
-  font-size: 14px;
-  color: #666;
-  margin: 0;
-}
-
-.livro button {
-  background-color: var(--vinho);
-  color: var(--branco);
-  border: none;
-  padding: 8px 14px;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-top: auto;
 }
 
 .seta {

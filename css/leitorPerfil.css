@@ -115,10 +115,6 @@ main {
   border-radius: 15px;
 }
 
-.areaPerfil input {
-  color: var(--cinza);
-}
-
 .areaPerfil select {
   color: var(--cinza)
 }
@@ -131,6 +127,7 @@ main {
 }
 
 .areaPerfil input {
+  color: var(--cinza);
   width: 50vw;
   border: none;
   border-radius: 10px;
@@ -157,38 +154,6 @@ main {
   justify-content: center;
   align-items: center;
   width: 80vw; 
-}
-
-.pesquisarLeitor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw; 
-  margin-top: 25vh;
-}
-
-.pesquisarLeitor form {
-  border: 1px solid var(--cinza);
-  color: var(--cinza);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: fit-content;
-  gap: 30px;
-  padding: 30px;
-  border-radius: 15px;
-}
-
-.pesquisarLeitor input {
-  width: 50vw;
-  border: none;
-  border-radius: 10px;
-  height: 30px;
-}
-
-.pesquisarLeitor h1{
-  margin: 0;
 }
 
 .label-input{
