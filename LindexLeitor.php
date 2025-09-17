@@ -28,14 +28,15 @@ require_once('config.php');
     
     <title>Home</title>
     <?php require_once './complementos/headerLeitor.php'; ?>  
-    
 </head>
 
 <body>
       
     <main>
     <section class="banner">
-      <div class="imgbanner"></div>
+      <div class="imgbanner">
+        
+      </div>
     </section>
 
     <section class="pesquisa">

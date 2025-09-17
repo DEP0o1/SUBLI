@@ -15,10 +15,42 @@
     <div class="conteudo-aside">
       <div class="conteudo-aside-biblioteca">
         <h1>Biblioteca</h1>
+
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">menu_book</span>
+          <p>Cadastrar Livro</p>
+        </div>
+
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">menu_book</span>
+          <p>Cadastrar Autor</p>
+        </div>
+
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">menu_book</span>
+          <p>Cadastrar Gênero</p>
+        </div>
+        
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">menu_book</span>
+          <p>Cadastrar Idioma</p>
+        </div>
+
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">menu_book</span>
+          <p>Cadastrar Editora</p>
+        </div>
+
         <div class="informacao-aside">
           <span class="material-symbols-outlined">menu_book</span>
           <p>Coleções</p>
         </div>
+
+        <div class="informacao-aside">
+          <span class="material-symbols-outlined">menu_book</span>
+          <p>Assunto</p>
+        </div>
+
       </div>
       <div class="conteudo-aside-leitores">
         <h1>Leitores</h1>
