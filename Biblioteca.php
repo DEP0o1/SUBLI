@@ -75,8 +75,15 @@ if (isset($_REQUEST['codigo'])) {
                     </div>
           
                     <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
-                    <div class="mapa"></div>
-                    </div>
+                    <section class="areaMapa">
+        <div class="mapa" id="map">
+          <div id="carregando">
+            <div class="spinner"></div>
+            <p>Carregando mapa...</p>
+          </div>
+        </div>
+      </section>
+    </section>
                   </div>
         </div>
         
@@ -128,7 +135,7 @@ if (isset($_REQUEST['codigo'])) {
           <button class="btnRosa">
             Ver Mais
           </button>
-          </div>
+        </div>
           </div>
 
           <div class="item-lista">
@@ -199,12 +206,8 @@ if (isset($_REQUEST['codigo'])) {
     </section>
   </main>
 
-  <script>  
-    // const params = new URLSearchParams(window.location.search);
-    // const name = params.get('name') || "Biblioteca";
-    // const address = params.get('address') || "Endereço não disponível";
-    // const distance = params.get('distance') || "? km";
-    // const image = params.get('image') || "https://via.placeholder.com/600x300?text=Biblioteca";
-  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/componentesJS/bibliotecas.js"></script>
 </body>
 </html>

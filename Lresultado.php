@@ -5,144 +5,77 @@ require_once('config.php');
 $buscar = false;
 $valor = "";
 
-if(isset ($_REQUEST['valor'])){
+if (isset($_REQUEST['valor'])) {
   $buscar = true;
 
-  if($_REQUEST['valor'] != ""){
+  if ($_REQUEST['valor'] != "") {
 
     $valor = $_REQUEST['valor'];
-
   }
-
 }
-
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado</title>
-    <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="css/leitor.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-    <?php require_once './complementos/headerLeitor.php'; ?>  
-
-      
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resultado</title>
+  <link rel="stylesheet" href="css/leitor.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+  <?php include 'complementos/headerLeitor.php'; ?>
 </head>
+
 <body>
-    <section class="pesquisa">
-      <select name="Categoria" id="" class="categoria">
-        <option value="">Categorias</option>
-      </select>
+  <section class="pesquisa">
+    <select name="Categoria" id="" class="categoria">
+      <option value="">Categorias</option>
+    </select>
 
-      <select name="Categoria" id="" class="categoria">
-        <option value="">Subcategorias</option>
-      </select>
+    <select name="Categoria" id="" class="categoria">
+      <option value="">Subcategorias</option>
+    </select>
 
-      <select name="Categoria" id="" class="categoria">
-        <option value="">Bibliotecas</option>
-      </select>
+    <select name="Categoria" id="" class="categoria">
+      <option value="">Bibliotecas</option>
+    </select>
 
-      <button>
-        <img
-          src="icons/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"
-          alt=""
-        />
-      </button>
-    </section>
-    <section class="exibirLivros">
+  </section>
 
-      <?php
+  <section class="exibirLivros">
 
+    <?php
 
-      if($buscar){
-            $livro = new LivroView;
+    if ($buscar) {
+      $livro = new LivroView;
 
-            if($valor == ""){
-                $livro->ExibirLivros();
-            }
-
-            else{
-              $livro->ExibirLivros(new Livro(null,$valor));
-            }
+      if ($valor == "") {
+        $livro->ExibirLivros();
+      } else {
+        $livro->ExibirLivros(new Livro(null, $valor));
       }
-      ?>
+    }
+    ?>
 
-      <!-- <div class="livro">
+
+    <!-- <div class="livro">
         <img src="img/capa1.jpg" alt="" />
         <h2>Pequeno principe</h2>
         <p>machado de assis</p>
         <button>Ver Mais</button>
-      </div>
+      </div>-->
 
-      <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div>
+      <div class="nao-encontrado">
+      <h1>Nenhum livro foi encontrado</h1>
+      <span class='material-symbols-outlined'>
+                location_on
+              </span>
+    </div>
 
-      <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div> -->
-
-
-      <!-- <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div>
-
-      <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div> -->
-
-      </button>
-    </section>
+    </button>
+  </section>
 </body>
+
 </html>
