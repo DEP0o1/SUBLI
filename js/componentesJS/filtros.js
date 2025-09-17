@@ -14,6 +14,5 @@ document.querySelectorAll('.categoria').forEach(categoria => {
         .catch(error => console.error('Error fetching data:', error));
     })
 
-    
 });
 

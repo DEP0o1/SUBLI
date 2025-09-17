@@ -958,6 +958,10 @@ p {
   margin-top: auto;
 }
 .seta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
