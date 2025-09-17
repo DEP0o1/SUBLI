@@ -51,7 +51,6 @@ class ReservaController extends Banco
                 'p_cd_biblioteca' => $reserva->biblioteca->cd_biblioteca
             ];
 
-            $lista = [];
 
             $dados = $this->Consultar('adicionar_reserva', $parametros);
             
@@ -68,6 +67,27 @@ class ReservaController extends Banco
     public function AlterarReserva($reserva = new Reserva())
     {
 
+         try{
+            $parametros = [
+                'p_cd_reserva' => $reserva->cd_reserva,
+                'p_dt_reserva' => $reserva->dt_reserva,
+                'p_cd_email' => $reserva->leitor->cd_email,
+                'p_cd_livro' => $reserva->livro->cd_livro,
+                'p_cd_biblioteca' => $reserva->biblioteca->cd_biblioteca,
+                'p_ic_ativa' => $reserva->ic_ativa
+            ];
+
+
+            $dados = $this->Consultar('alterar_reserva', $parametros);
+            
+
+            // $bibliotecacontroller = new BibliotecaController;
+            // $livrocontroller = new LivroController;
+            // $leitorcontroller = new LeitorController;
+        
+        }catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     public function ExcluirReserva($reserva = new Reserva())
