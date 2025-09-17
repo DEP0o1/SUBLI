@@ -7,7 +7,13 @@ if (isset($_REQUEST['codigo'])) {
     if ($_REQUEST['codigo'] != "" ) {
 
         $codigo = $_REQUEST['codigo'];
+        $cd_biblioteca = 1;
     }
+}
+
+if(isset($_REQUEST['enviado'])){
+  $controller = new ReservaController;
+  $controller->AdicionarReserva(new Reserva(null,null,new Leitor($_SESSION['leitor']),new Livro($codigo),new Biblioteca($cd_biblioteca)));
 }
 
 ?>
@@ -40,9 +46,11 @@ if (isset($_REQUEST['codigo'])) {
   </main>
 
   <section class="areaBtn">
-    <div class="btnEmprestimo">
-      <button class="btnRosa" id="s"><a href="">Reservar</a></button>
-    </div>
+    <form class="btnEmprestimo" method="GET" action="">
+      <input type="hidden" name="codigo" value="<?=$codigo?>">
+      <input type="hidden" name="enviado" value="true">
+      <button class="btnRosa" id="s" type="submit"><a href="">Reservar</a></button>
+    </form>
   </section>
 
   </body>
