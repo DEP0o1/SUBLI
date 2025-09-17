@@ -10,6 +10,7 @@ require('config.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acesso</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css/leitor.css">
     <script type="module" src="js/componentesJS/acesso.js"></script>
 </head>
 <body>
@@ -23,7 +24,7 @@ require('config.php');
             <input type="password" name="txtSenha" id="txtSenha" placeholder="Informe sua Senha">
         </p>
         <p class="areaBotao">
-            <button id="btnEntrar">Entrar</button>
+            <button class="btnRosa" id="btnEntrar" >Entrar</button>
         </p>
 
     </form>

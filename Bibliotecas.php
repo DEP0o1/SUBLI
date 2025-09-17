@@ -30,6 +30,13 @@ require_once('config.php');
         $biblioteca->ExibirBibliotecas();
         ?>
 
+<div class="nao-encontrado">
+      <h1>Nenhuma Biblioteca foi encontrada</h1>
+      <span class='material-symbols-outlined'>
+                location_on
+              </span>
+    </div>
+
         <!-- <div class="item-lista">
           <div class="imagem-item-lista">
             <img src="img/biblioteca1_1.jpg" alt="">

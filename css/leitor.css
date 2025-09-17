@@ -71,6 +71,31 @@ h4 {
   color: var(--branco);
 }
 
+option {
+  background-color: var(--azul);
+  color: var(--branco);
+  border: solid black 20px;
+  border-radius: var(--radius);
+}
+
+select {
+  border: solid black 20px;
+}
+
+/*--------------------Nao encontrado-------------------------------------------------------------------------------------------*/
+
+.nao-encontrado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--bege);
+}
+
+.nao-encontrado span{
+  color: var(--bege);
+}
+
 /*--------------------Barra de rolagem--------------------------------------------------------------------------------------------*/
 
 ::-webkit-scrollbar-track {
@@ -83,7 +108,7 @@ h4 {
   background: var(--bege);
 }
 
-/* header */
+/*----------------------header-------------------------------------------------------------------------------------------- */
 
 a {
   font-size: medium;
@@ -628,15 +653,6 @@ span {
 }
 
 #btnCancelar {
-  display: flex;
-  background-color: var(--branco);
-  color: var(--vinho);
-  border: 1px solid var(--vinho);
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 15px;
-}
-#btnEntrar {
   display: flex;
   background-color: var(--branco);
   color: var(--vinho);

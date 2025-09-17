@@ -22,7 +22,7 @@
         </div>
 
         <div class="informacao-aside">
-          <span class="material-symbols-outlined">menu_book</span>
+          <span class="material-symbols-outlined">person_add</span>
           <p>Cadastrar Autor</p>
         </div>
 
@@ -43,12 +43,17 @@
 
         <div class="informacao-aside">
           <span class="material-symbols-outlined">menu_book</span>
-          <p>Coleções</p>
+          <p>Cadastrar Coleções</p>
+        </div>
+
+        <div class="informacao-aside">
+        <span class="material-symbols-outlined">calendar_add_on</span>
+          <p>Cadastrar Evento</p>
         </div>
 
         <div class="informacao-aside">
           <span class="material-symbols-outlined">menu_book</span>
-          <p>Assunto</p>
+          <p>Cadastrar Assunto</p>
         </div>
 
       </div>
@@ -60,6 +65,8 @@
         </div>
       </div>
     </div>
+
+    
   `;
   document.body.appendChild(aside);
 
