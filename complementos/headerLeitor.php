@@ -13,7 +13,10 @@ require_once('./config.php');
           <img src="img/pesquisa.webp" alt="" class="lupa" />
         </div>
 
-        <img src="img/filtro.svg" alt="" />
+        <span class="material-symbols-outlined">
+        filter_alt
+        </span>
+        
       </form>
 
       <div class="abas">
@@ -21,17 +24,27 @@ require_once('./config.php');
         <a href="Bibliotecas.php">Bibliotecas</a>
         <a href="../../SUBLI/LdoarPerfil.php">Doação</a>
 
+        <div class="span-header">
+
         <a href="">
         <span class="material-symbols-outlined">
         notifications
         </span>
         </a>
 
+        </div>
+
+        <div class="span-header">
+
         <a href="LmeusLivros.php">
         <span class="material-symbols-outlined">
         person
         </span>
         </a>
+
+        </div>
+
+       
 
         <!-- <button id="btnCadastro">
         Cadastre-se

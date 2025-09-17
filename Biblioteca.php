@@ -13,7 +13,7 @@ if (isset($_REQUEST['codigo'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -88,22 +88,25 @@ if (isset($_REQUEST['codigo'])) {
      ?> 
     </section>
 
-      <h1>Eventos</h1>
+      <h1 class="textoMeio">Eventos</h1>
 
     <section class="eventos">
       <div class="calendario">
-          
+          <h1>calendario</h1>
       </div>
 
       <div class="lista">
+         
           <div class="item-lista">
-          <img src="img/doar.png" alt="">
+          <div class="imagem-item-lista">
+            <img src="img/doar.png" alt="">
+          </div>
           <div class="conteudo-item-lista">
-            <h1>SilkSong</h1>
+            <h2>Divulgação do livro </h2>
           <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Fodase</p>
-          <h3>Fodase</h3>
+              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
           </div>
           <button class="btnRosa">
             Ver Mais
@@ -112,13 +115,15 @@ if (isset($_REQUEST['codigo'])) {
           </div>
 
           <div class="item-lista">
-          <img src="img/doar.png" alt="">
+          <div class="imagem-item-lista">
+            <img src="img/doar.png" alt="">
+          </div>
           <div class="conteudo-item-lista">
-            <h1>SilkSong</h1>
+            <h2>Divulgação do livro </h2>
           <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Fodase</p>
-          <h3>Fodase</h3>
+              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
           </div>
           <button class="btnRosa">
             Ver Mais
@@ -127,13 +132,15 @@ if (isset($_REQUEST['codigo'])) {
           </div>
 
           <div class="item-lista">
-          <img src="img/doar.png" alt="">
+          <div class="imagem-item-lista">
+            <img src="img/doar.png" alt="">
+          </div>
           <div class="conteudo-item-lista">
-            <h1>SilkSong</h1>
+            <h2>Divulgação do livro </h2>
           <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Fodase</p>
-          <h3>Fodase</h3>
+              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
           </div>
           <button class="btnRosa">
             Ver Mais
@@ -142,19 +149,40 @@ if (isset($_REQUEST['codigo'])) {
           </div>
 
           <div class="item-lista">
-          <img src="img/doar.png" alt="">
+          <div class="imagem-item-lista">
+            <img src="img/doar.png" alt="">
+          </div>
           <div class="conteudo-item-lista">
-            <h1>SilkSong</h1>
+            <h2>Divulgação do livro </h2>
           <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Fodase</p>
-          <h3>Fodase</h3>
+              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
           </div>
           <button class="btnRosa">
             Ver Mais
           </button>
           </div>
           </div>
+
+          <div class="item-lista">
+          <div class="imagem-item-lista">
+            <img src="img/doar.png" alt="">
+          </div>
+          <div class="conteudo-item-lista">
+            <h2>Divulgação do livro </h2>
+          <div class="conteudo-item-lista-doador">
+              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+          </div>
+          <button class="btnRosa">
+            Ver Mais
+          </button>
+          </div>
+          </div>
+
+        
 
           
       </div>
