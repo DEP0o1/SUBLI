@@ -45,7 +45,6 @@ class ReservaController extends Banco
         try{
             $parametros = [
                 'p_cd_reserva' => $reserva->cd_reserva,
-                'p_dt_reserva' => $reserva->dt_reserva,
                 'p_cd_email' => $reserva->leitor->cd_email,
                 'p_cd_livro' => $reserva->livro->cd_livro,
                 'p_cd_biblioteca' => $reserva->biblioteca->cd_biblioteca
