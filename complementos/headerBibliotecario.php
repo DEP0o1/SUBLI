@@ -32,7 +32,6 @@
   <span class="material-symbols-outlined">menu</span>
 </button>
 
-
     <div class="dropdown">
       <button onclick="desceCadastros()" class="dropbtn">Cadastros:</button>
       <div id="Dropdown" class="dropdown-content">
@@ -42,10 +41,6 @@
         <a href="./BcadastrarGenero.php">Cadrastar Genero</a>
       </div> 
   </div>
-
-      <span class="material-symbols-outlined">menu</span>
-    </button>
-
 
   </div>
   </div>

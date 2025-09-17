@@ -20,7 +20,9 @@
 
         <div class="dadosLivro">
 
-          <h1> Coraline </h1>
+        
+
+          <!-- <h1> Coraline </h1>
 
           <p>
             <span class="material-symbols-outlined">
@@ -45,9 +47,6 @@
               calendar_month
             </span> Ano de publicação: 1995
           </p>
-          <!-- <p> <img src="./img/editoraIcon.png" alt=""> Editora: HarperKids</p>
-          <p> <img src="./img/idiomaIcon.png" alt=""> Idioma: Português</p>
-          <p> <img src="./img/calendarIcon.png" alt="">Ano de publicação: 1995</p> -->
 
           <div class="botaoStatus">
             <button class="btnRosa"> <span class="material-symbols-outlined">
@@ -68,7 +67,7 @@
           <p>Um piloto cai com seu avião no deserto e ali encontra uma criança loura e frágil. Ela diz ter vindo de um pequeno
             planeta distante. E 
             Trata-se da maior obra existencialista do século XX, segundo Martin Heidegger. Livro mais traduzido da história, depois do Alcorão e da Bíblia, ele agora chega ao Brasil em nova edição, completa, com a tradução de Luiz Fernando Emediato e enriquecida com um caderno ilustrado sobre a obra e a curta e trágica vida do autor.</p>
-        </div>
+        </div> -->
 
         <section class="listaBibliotecasLivro">
 
