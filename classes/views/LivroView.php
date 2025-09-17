@@ -75,6 +75,8 @@ class LivroView{
       <h1> Sinopse </h1>
       <p>$Livro->ds_sinopse</p>
     </div>"
+
+
         ;
 
 

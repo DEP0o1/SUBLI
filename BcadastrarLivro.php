@@ -8,6 +8,7 @@ if (isset($_REQUEST['doacao'])) {
     $doacaocontroller = new DoacaoController;
     $doacao = $doacaocontroller->ListarDoacoes(new Doacao($cd_doacao));
     $cd_biblioteca = $doacao[0]->biblioteca->cd_biblioteca;
+
     }
 }
 
@@ -17,6 +18,7 @@ else{
     $controller = new BibliotecarioController();
     $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
     $cd_biblioteca = $bibliotecario[0]->cd_biblioteca;
+    $cd_doacao = null;
 }
 
 $erro = true;
@@ -35,6 +37,8 @@ $nm_genero = null;
 $cd_idioma = null;
 $nm_idioma = null;
 $ds_sinopse = null;
+
+
 
 if (isset($_REQUEST['nm_livro'])) {
     if (!is_null($_REQUEST['nm_livro'])) {
@@ -151,6 +155,7 @@ if (!$erro) {
     }
 }
 
+
 if ($cadastro) {
 
     $controller = new LivroController();
@@ -209,10 +214,11 @@ if ($cadastro) {
             </div>
 
             <section class="areaInput">
-                <div class="areaTituloLivro">
-                    <label for="nm_livro" class="tituloForm">Titulo:</label>
-                    <input name="nm_livro" type="text" class="inputForm" placeholder="Ex. O Pequeno Principe">
-                </div>
+            <?php
+            $input_titulo = new LivrosDoadosView;
+            $input_titulo->Input_Livro_Doacao(new Doacao($cd_doacao));
+
+            ?>
 
                 <div class="formDeLado">
                     <div>
@@ -220,10 +226,11 @@ if ($cadastro) {
                         <input name="cd_autor" type="text" class="inputFormDeLado" placeholder="Ex.1234">
                     </div>
 
-                    <div>
-                        <label for="nm_autor" class="tituloForm">Autor:</label>
-                        <input name="nm_autor" type="text" class="inputFormDeLado" placeholder="Ex. Antoine de Saint-Exupéry">
-                    </div>
+                    <?php
+                $input_autor = new LivrosDoadosView;
+                $input_autor->Input_Autor_Doacao(new Doacao($cd_doacao));
+
+            ?>
 
                     <div>
                         <label for="cd_assunto" class="tituloForm">Código Assunto</label>
