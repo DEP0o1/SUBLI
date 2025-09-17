@@ -88,6 +88,8 @@ body {
   margin-bottom: 2%;
   background-repeat: no-repeat;
   background-size: 100%;
+  margin-top: 84px;
+  overflow-x: hidden;
 }
 
 /* --------------------header---------------------------------------------------------------------------------- */
@@ -636,13 +638,6 @@ aside br {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-body {
-  overflow-x: hidden;
-  display: flex;
-  margin-top: 84px;
-  flex-direction: column;
 }
 
 .linha {
