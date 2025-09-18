@@ -829,7 +829,7 @@ BEGIN
     /* =========================================
    EXEMPLARES
 ========================================= */
-    
+    /*PROCEDURES DE COUNT*/
 DROP PROCEDURE IF EXISTS listar_exemplares$$
 CREATE PROCEDURE listar_exemplares(
   IN p_cd_exemplar INT,
