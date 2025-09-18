@@ -84,7 +84,7 @@ if(empty($assunto2)) $assunto2 = null;
     
     <div class="container">
         <div class="carrossel-container">
-            <button class="seta seta-esquerda" data-target="carrossel-destaques">&#10085;</button>
+            <button class="seta seta-esquerda" data-target="carrossel-destaques">&#10094;</button>
             <div class="carrossel" id="carrossel-destaques">
                 <?php
             //  $livro = new LivroView;
@@ -96,7 +96,7 @@ if(empty($assunto2)) $assunto2 = null;
             ?>
             
         </div>
-        <button class="seta seta-direita" data-target="carrossel-destaques">&#x2765;</button>
+        <button class="seta seta-direita" data-target="carrossel-destaques">&#10095;</button>
     </div>
 </div>
  

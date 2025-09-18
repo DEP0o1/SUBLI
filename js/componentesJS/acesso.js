@@ -62,4 +62,7 @@ export function Mensagem(texto, tipo, nomeElementoPai) {
     localMsg.classList.add(tipo);
     localMsg.textContent = texto;
     elementoPai.appendChild(localMsg);
+    setTimeout(() => {
+        localMsg.remove();
+    }, 1500);
 }

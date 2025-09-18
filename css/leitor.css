@@ -1168,3 +1168,50 @@ h1 {
   height: 2000px;
   overflow-y: scroll;
 }
+
+
+.FormLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  border: solid black 1px;
+  border-radius: 10px;
+  width: 300px;
+  height: fit-content;
+  height: fit-content;
+  color: var(--branco);
+  background-color: var(--azul);
+}
+
+.FormLogin input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.containerLogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoLogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5%;
+}
+
+.logoLogin img{
+  width: 150px;
+  height: auto;
+}
+
+.bodyLogin{
+  background: #A32950;
+  background: linear-gradient(45deg,rgba(16, 46, 78, 1 ) 0%, rgba(   163, 41, 80, 1) 100%);
+}

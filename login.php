@@ -13,8 +13,14 @@ require('config.php');
     <link rel="stylesheet" href="css/leitor.css">
     <script type="module" src="js/componentesJS/acesso.js"></script>
 </head>
-<body>
-    <form>
+<body class="bodyLogin">
+
+<div class="logoLogin">
+ <img src="img/subli.logoCorClara.png" alt="" />   
+</div>
+
+<div class="containerLogin">
+    <form class="FormLogin">
         <p>
             <label for="txtEmail">Email:</label>
             <input type="text" name="txtEmail" id="txtEmail" placeholder="Informe seu Email" autofocus>
@@ -28,7 +34,7 @@ require('config.php');
         </p>
 
     </form>
-
+</div>
 </body>
 
 </html>
