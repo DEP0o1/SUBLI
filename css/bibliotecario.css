@@ -9,11 +9,13 @@
 
 :root {
   --vinho: #a32950;
+  --vinho-hover: #8f2748;
   --azul: #102e4e;
+  --azul-hover: #193f68;
   --amarelo: #fdc18d;
   --branco: #fffbf7;
   --bege: #b59e8b;
-  --fundo: #f2ece7;
+  --fundo: #FAF4EE;
   --gap: 10px;
   --gap-grande: 50px;
   --radius: 10px;
@@ -466,7 +468,7 @@ aside br {
 }
 
 .informacao-aside:hover {
-  background-color: #193f68;
+  background-color: var(--azul-hover);
   transition: 0.2s;
 }
 

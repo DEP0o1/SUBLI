@@ -31,7 +31,9 @@ h4 {
 
 :root {
   --vinho: #a32950;
+  --vinho-hover: #8f2748;
   --azul: #102e4e;
+  --azul-hover: #193f68;
   --amarelo: #fdc18d;
   --branco: #fffbf7;
   --bege: #b59e8b;
@@ -63,7 +65,7 @@ h4 {
 }
 
 .btnRosa:hover {
-  background-color: #8f2748;
+  background-color: var(--vinho-hover);
   transition: 0.2s;
 }
 
@@ -969,10 +971,63 @@ main {
   gap: 20px;
 }
 
+.mensagem span {
+  color: var(--branco);
+}
+
+.mensagem {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  text-align: left;
+  background-color: var(--azul);
+  color: var(--branco);
+  border-radius: var(--radius) 0px 0px var(--radius);
+  width: fit-content;
+  position: absolute;
+  padding: var(--gap);
+  right: 0;
+  transform: translateX(100%);
+  animation: aparecer 0.5s forwards;
+}
+
+.mensagem.sumir {
+  animation: sumir 0.5s forwards;
+}
+
+@keyframes aparecer {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sumir {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.mensagem h1 {
+  margin: 0;
+}
+
+.titulo-mensagem {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: var(--gap);
+}
+
 .favorito {
   background-color: var(--azul);
   color: var(--branco);
-  position: fixed;
+  position: absolute;
   border-radius: var(--radius) 0 0 var(--radius) ;
   padding: 5px 10px 5px 5px;
   right: 0;
@@ -982,29 +1037,13 @@ main {
   align-items: center;
 }
 
+.favorito:hover {
+  background-color: var(--azul-hover);
+  transition: 0.2s;
+}
+
 .favorito span {
   color: var(--branco);
-}
-
-.mensagem {
-  background-color: var(--azul);
-  color: var(--branco);
-  border-radius: var(--radius) 0px 0px var(--radius);
-}
-
-.mensagem span {
-  color: var(--branco);
-}
-
-.mensagem h1 {
-  margin: 0;
-}
-
-.titulo-mensagem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--gap);
 }
 
 .livro {
@@ -1015,6 +1054,7 @@ main {
   border-radius: var(--radius);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  position: relative;
   width:fit-content;
   gap: var(--gap);
   transition: transform 0.3s ease;

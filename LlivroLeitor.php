@@ -19,15 +19,30 @@ if (isset($_REQUEST['enviado'])) {
 
   if ($exemplar > $reserva) {
     $controller->AdicionarReserva(new Reserva(null, null, new Leitor($_SESSION['leitor']), new Livro($codigo), new Biblioteca($cd_biblioteca)));
-    $mensagem = "<h1>Livro Reservado com Sucesso</h1>";
+    $mensagem = "
+    <div class='mensagem'>
+        <div class='titulo-mensagem'>
+          <span class='material-symbols-outlined'>book</span>
+          <h1>Reserva Efetuada</h1>
+        </div>
+        <p>Sua reserva foi feita com sucesso! Retire este livro na biblioteca em até 3 dias!</p>
+      </div>
+    ";
   } else {
-    $mensagem = "<h1>O Livro já foi Reservado por outra Pessoa Tente novamente mais tarde</h1>";
+    $mensagem = "
+    <div class='mensagem'>
+        <div class='titulo-mensagem'>
+          <span class='material-symbols-outlined'>book</span>
+          <h1>Não Foi Possível Reservar Este Livro</h1>
+        </div>
+        <p>Este livro já foi reservado por outro usuário!</p>
+      </div>
+    ";
     // FAZER COUNT DE EXEMPLARES
   }
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,18 +50,14 @@ if (isset($_REQUEST['enviado'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> O Pequeno Príncipe </title>
+  <title>SUBLI</title>
   <link rel="stylesheet" href="css/leitor.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
   <script src="js/componentesJS/reserva.js" declare></script>
-
-
-  <?php require_once './complementos/headerLeitor.php'; ?>
-
+  <link rel="icon" href="../SUBLI/img/subli.logoCorClara.png" type="image/png">
 </head>
-
 <body>
-
+  <?php require_once './complementos/headerLeitor.php'; ?>
   <main>
     <section class="AreaLivro">
 
@@ -64,16 +75,20 @@ if (isset($_REQUEST['enviado'])) {
       }
       ?>
 
-      <div class="mensagem">
-        <div class="titulo-mensagem">
-          <span class='material-symbols-outlined'>favorite</span>
-          <h1>aaa</h1>
-        </div>
-        <p>aaa</p>
-      </div>
-
-
     </section>
   </main>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const msg = document.querySelector(".mensagem");
+    if (msg) {
+      setTimeout(() => {
+        msg.classList.add("sumir");
+        msg.addEventListener("animationend", () => msg.remove());
+      }, 3000); 
+    }
+  });
+</script>
+
 </body>
 </html>
