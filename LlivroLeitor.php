@@ -12,14 +12,12 @@ if (isset($_REQUEST['codigo'])) {
 }
 
 if (isset($_REQUEST['enviado'])) {
-  $controller = new ReservaController;
   $exemplarcontroller = new ExemplarController;
-  $reserva = $controller->ContarReservas(new Reserva(null, null, new Leitor(), new Livro($codigo), new Biblioteca($cd_biblioteca), true));
   $exemplar = $exemplarcontroller->ContarExemplares(new Exemplar($codigo, $cd_biblioteca));
 
   if ($exemplar > $reserva) {
     $controller->AdicionarReserva(new Reserva(null, null, new Leitor($_SESSION['leitor']), new Livro($codigo), new Biblioteca($cd_biblioteca)));
-    $mensagem = "
+     $mensagem = "
     <div class='mensagem'>
         <div class='titulo-mensagem'>
           <span class='material-symbols-outlined'>book</span>

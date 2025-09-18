@@ -22,17 +22,20 @@ require('config.php');
 <div class="containerLogin">
 
     <form class="FormLogin">
-        <p>
+        <h1>Faça seu Login!</h1>
+        <div>
             <label for="txtEmail">Email:</label>
             <input type="text" name="txtEmail" id="txtEmail" placeholder="Informe seu Email" autofocus>
-        </p>
-        <p>
+        </div>
+
+        <div>
             <label for="txtSenha">Senha:</label>
             <input type="password" name="txtSenha" id="txtSenha" placeholder="Informe sua Senha">
-        </p>
-        <p class="areaBotao">
+        </div>
+
+        <div class="areaBotao">
             <button class="btnRosa" id="btnEntrar" >Entrar</button>
-        </p>
+        </div>
 
     </form>
 </div>
