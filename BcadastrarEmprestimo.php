@@ -31,7 +31,7 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
     if($campos == 3){
         $exemplarcontroller = new ExemplarController;
         $exemplar = $exemplarcontroller->ContarExemplares(new Exemplar($cd_livro,$cd_biblioteca));
-
+        // fazer outro IF contando quantos exemplares voltam FAZER ISSO EM RESERVA TBM
         $emprestimocontroller = new EmprestimoController;
         $qtdemprestimo = $emprestimocontroller->ContarEmprestimos(new Emprestimo(null,null,null,null,new Leitor(),new Livro($cd_livro),new Biblioteca($cd_biblioteca),true));
 
