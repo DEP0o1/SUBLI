@@ -74,11 +74,9 @@ BEGIN
 END$$
 
 
-<<<<<<< HEAD
-CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, 1, NULL);
-=======
+
 /*CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, 1,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
->>>>>>> 3a362cdea6d854ce4e66f657ca360262f6b12766
+
 
 
 
@@ -831,6 +829,16 @@ BEGIN
     /* =========================================
    EXEMPLARES
 ========================================= */
+    /*PROCEDURE DE COUNT*/
+    DROP PROCEDURE IF EXISTS contar_exemplares$$
+    CREATE PROCEDURE  contar_exemplares(
+    IN p_cd_livro INT,
+    IN p_cd_biblioteca INT
+    )
+    BEGIN
+    SELECT COUNT(*) FROM exemplar WHERE cd_livro = p_cd_livro AND cd_biblioteca = p_cd_biblioteca;
+    END$$
+    /*CALL contar_exemplares(1,2);*/
     
 DROP PROCEDURE IF EXISTS listar_exemplares$$
 CREATE PROCEDURE listar_exemplares(
@@ -1098,6 +1106,17 @@ END$$
 /* =========================================
    RESERVAS
 ========================================= */
+      /*PROCEDURE DE COUNT*/
+    DROP PROCEDURE IF EXISTS contar_reservas$$
+    CREATE PROCEDURE  contar_reservas(
+    IN p_cd_livro INT,
+    IN p_cd_biblioteca INT,
+    IN p_ic_ativa TINYINT
+    )
+    BEGIN
+    SELECT COUNT(*) FROM reserva WHERE cd_livro = p_cd_livro AND cd_biblioteca = p_cd_biblioteca AND ic_ativa = p_ic_ativa;
+    END$$
+   /* CALL contar_reservas(1,1,true);*/
     
     DROP PROCEDURE IF EXISTS listar_reservas$$
 CREATE PROCEDURE listar_reservas(
@@ -1122,6 +1141,7 @@ BEGIN
      AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor);
 END$$
 
+/*CALL listar_reservas(null,null,null,1,1,null,null);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_reserva$$
@@ -1201,7 +1221,7 @@ BEGIN
      AND (p_cd_email IS NULL OR d.cd_email = p_cd_email)
      AND (p_ic_aprovado IS NULL OR d.ic_aprovado = p_ic_aprovado);
 END$$
-/*CALL listar_doacoes(NULL,NULL,NULL,NULL,false);*/
+/*CALL listar_doacoes(NULL,NULL,NULL,NULL,NULL);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_doacao$$
@@ -1258,13 +1278,42 @@ BEGIN
   END IF;
 END$$
 
-/*CALL alterar_doacao(2,null,null,null,null,true);
+/*CALL alterar_doacao(2,null,null,null,null,null);*/
+
+DROP PROCEDURE IF EXISTS excluir_doacao$$
+CREATE PROCEDURE excluir_doacao(
+  IN p_cd_doacao INT
+)
+BEGIN
+
+
+  IF p_cd_doacao IS NOT NULL THEN
+    UPDATE doacao
+       SET
+           ic_aprovado = null
+     WHERE cd_doacao = p_cd_doacao;
+  END IF;
+END$$
+
+/*CALL excluir_doacao(2);*/
 
 /* =========================================
    EMPRESTIMOS
 ========================================= */
     
-    DROP PROCEDURE IF EXISTS listar_emprestimos$$
+      /*PROCEDURE DE COUNT*/
+    DROP PROCEDURE IF EXISTS contar_emprestimos$$
+    CREATE PROCEDURE  contar_emprestimos(
+    IN p_cd_livro INT,
+    IN p_cd_biblioteca INT,
+    IN p_ic_ativa TINYINT
+    )
+    BEGIN
+    SELECT COUNT(*) FROM emprestimo WHERE cd_livro = p_cd_livro AND cd_biblioteca = p_cd_biblioteca AND ic_ativa = p_ic_ativa;
+    END$$
+   /* CALL contar_emprestimos(1,1,true);*/
+    
+DROP PROCEDURE IF EXISTS listar_emprestimos$$
 CREATE PROCEDURE listar_emprestimos(
   IN p_cd_emprestimo INT,
   IN p_dt_emprestimo DATETIME,
@@ -1273,7 +1322,8 @@ CREATE PROCEDURE listar_emprestimos(
   IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_livro INT,
-  IN p_cd_biblioteca INT
+  IN p_cd_biblioteca INT,
+  IN p_ic_ativa TINYINT
 )
 BEGIN
   SELECT *
@@ -1284,6 +1334,7 @@ BEGIN
    LEFT JOIN editora ed ON ed.cd_editora = li.cd_livro
    WHERE (p_cd_emprestimo IS NULL OR e.cd_emprestimo = p_cd_emprestimo)
      AND (p_dt_emprestimo IS NULL OR e.dt_emprestimo = p_dt_emprestimo)
+	 AND (p_ic_ativa IS NULL OR e.ic_ativa = p_ic_ativa)
      AND (p_dt_devolucao_esperada IS NULL OR e.dt_devolucao_esperada = p_dt_devolucao_esperada)
      AND (p_dt_devolucao IS NULL OR e.dt_devolucao = p_dt_devolucao)
      AND (p_cd_email IS NULL OR e.cd_email = p_cd_email)
@@ -1293,22 +1344,19 @@ BEGIN
 
 END$$
 
-/*CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);*/
+/*CALL listar_emprestimos(null,null,null,null,null,null,null,null,true);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$
 CREATE PROCEDURE adicionar_emprestimo(
   IN p_cd_emprestimo INT,
-  IN p_dt_emprestimo DATETIME,
-  IN p_dt_devolucao_esperada DATETIME,
-  IN p_dt_devolucao DATETIME,
+  IN p_dt_devolucao_esperada VARCHAR(200),
   IN p_cd_email VARCHAR(200),
-  IN p_nm_leitor VARCHAR(200),
-  IN p_cd_exemplar INT
+  IN p_cd_livro INT,
+  IN p_cd_biblioteca INT
 )
 BEGIN
   DECLARE v_cd_emprestimo INT;
-  DECLARE v_cd_email VARCHAR(200);
 
   IF p_cd_emprestimo IS NULL THEN
     SELECT COALESCE(MAX(cd_emprestimo), 0) + 1 INTO v_cd_emprestimo FROM emprestimo;
@@ -1316,22 +1364,15 @@ BEGIN
     SET v_cd_emprestimo = p_cd_emprestimo;
   END IF;
 
-  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email v_cd_email
-      FROM leitor
-     WHERE nm_leitor = p_nm_leitor
-     LIMIT 1;
-  ELSE
-    SET v_cd_email = p_cd_email;
-  END IF;
+  
 
   IF v_cd_emprestimo IS NOT NULL
-     AND p_dt_emprestimo IS NOT NULL
      AND p_dt_devolucao_esperada IS NOT NULL
-     AND v_cd_email IS NOT NULL
-     AND p_cd_exemplar IS NOT NULL THEN
+     AND p_cd_email IS NOT NULL
+      AND p_cd_biblioteca IS NOT NULL
+     AND p_cd_livro IS NOT NULL THEN
     INSERT INTO emprestimo
-      VALUES (v_cd_emprestimo, p_dt_emprestimo, p_dt_devolucao_esperada, p_dt_devolucao, v_cd_email, p_cd_exemplar);
+      VALUES (v_cd_emprestimo,NOW(), p_dt_devolucao_esperada,NULL, p_cd_email, p_cd_livro,p_cd_biblioteca,true);
   END IF;
 END$$
 
@@ -1345,6 +1386,7 @@ CREATE PROCEDURE alterar_emprestimo(
   IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_exemplar INT
+  /*Depois mudar o exemplar para livro e biblioteca e tambem colocar o ic_ativa*/
 )
 BEGIN
   DECLARE v_cd_email VARCHAR(200);

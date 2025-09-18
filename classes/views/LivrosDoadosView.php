@@ -65,9 +65,11 @@ class LivrosDoadosView {
             
             <div class='botoes'>
             <a href='BcadastrarLivro.php?doacao={$doacoes[0]->cd_doacao}' class='aceitar'> Cadastrar </a>
-
-
-            <button class='recusar'> Recusar </button>
+            <form method='GET'>
+            <input type='hidden' name='codigo' value='{$doacoes[0]->cd_doacao}'>
+            <input type='hidden' name='recusado' value='true'>
+            <button class='recusar' type='submit'> Recusar </button>
+            </form>
             </div>
         </div>
         ";

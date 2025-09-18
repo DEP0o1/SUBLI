@@ -51,7 +51,7 @@ class ReservaController extends Banco
             ];
 
 
-            $dados = $this->Consultar('adicionar_reserva', $parametros);
+            $this->Executar('adicionar_reserva', $parametros);
             
 
             // $bibliotecacontroller = new BibliotecaController;
@@ -77,7 +77,7 @@ class ReservaController extends Banco
             ];
 
 
-            $dados = $this->Consultar('alterar_reserva', $parametros);
+            $this->Executar('alterar_reserva', $parametros);
             
 
             // $bibliotecacontroller = new BibliotecaController;
@@ -93,6 +93,30 @@ class ReservaController extends Banco
     {
         
     }
+
+
+    public function ContarReservas($reserva = new Reserva())
+    {
+        try{
+
+
+            $parametros = [
+                'p_cd_livro' => $reserva->livro->cd_livro,
+                'p_cd_biblioteca' => $reserva->biblioteca->cd_biblioteca,
+                'p_ic_ativa' => $reserva->ic_ativa
+               
+    
+            ];
+    
+            $dados = $this->Consultar('contar_reservas', $parametros);
+            return $dados;
+        }catch (\Throwable $th) {
+            throw $th;
+        }
+        
+    }
+
+
 }
 
 

@@ -122,11 +122,12 @@ CREATE TABLE doacao (
 CREATE TABLE emprestimo(
 	cd_emprestimo INT,
 	dt_emprestimo DATETIME,
-    dt_devolucao_esperada DATETIME,
+    dt_devolucao_esperada VARCHAR(200),
 	dt_devolucao DATETIME,
     cd_email VARCHAR(200),
     cd_livro INT,
     cd_biblioteca INT,
+    ic_ativa TINYINT,
     CONSTRAINT fk_leitor_emprestimo FOREIGN KEY (cd_email) REFERENCES leitor (cd_email),
     CONSTRAINT fk_livro_emprestimo FOREIGN KEY (cd_livro) REFERENCES livro (cd_livro),
 	CONSTRAINT fk_biblioteca_emprestimo FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca (cd_biblioteca),
@@ -324,7 +325,7 @@ INSERT INTO  favorito VALUES (1, 'pedro.favoritos@gmail.com');*/
 
 
 /*Exemplares*/
-INSERT INTO exemplar VALUES (1, 2, 1, NOW(), false);
+INSERT INTO exemplar VALUES (1, 1, 1, NOW(), false);
 INSERT INTO exemplar VALUES (4, 6, 2, NOW(), false);
 INSERT INTO exemplar VALUES (2, 10, 3, NOW(), false);
 INSERT INTO exemplar VALUES (6, 4, 4, NOW(), false);
@@ -337,7 +338,7 @@ INSERT INTO exemplar VALUES (3, 10, 10, NOW(), false);
 INSERT INTO exemplar VALUES (1, 5, 11, NOW(), false);
 INSERT INTO exemplar VALUES (5, 9, 12, NOW(), false);
 INSERT INTO exemplar VALUES (3, 7, 13, NOW(), false);
-
+INSERT INTO exemplar VALUES (1, 1, 14, NOW(), false);
 /*Bibliotecarios*/
 INSERT INTO bibliotecario VALUES (1,'LABUBU','AAAAA','BBB');
 INSERT INTO bibliotecario_biblioteca VALUES (1,1);
@@ -347,14 +348,15 @@ INSERT INTO bibliotecario_biblioteca VALUES (1,1);
 INSERT INTO doacao VALUES (1,'Cronicas Malucas','Jeferson',2,'pedro.favoritos@gmail.com', true);
 INSERT INTO doacao VALUES (2,'Como Dominar a Arte da Sabedoria','Mary Renault',1,'pedro.favoritos@gmail.com', false);
 INSERT INTO doacao VALUES (3,'Genocidas','Caua Nunes da Silva',3,'pedro.favoritos@gmail.com',false);
+INSERT INTO doacao VALUES (4,'Como Dominar a Arte da Sabedoria 2' ,'Mary Renault',1,'pedro.favoritos@gmail.com', null);
 
 
 /*Emprestimo*/
-INSERT INTO emprestimo VALUES(1,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',1,1);
-INSERT INTO emprestimo VALUES(2,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',2,2);
-INSERT INTO emprestimo VALUES(3,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',4,2);
-INSERT INTO emprestimo VALUES(4,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',5,4);
-INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',6,9);
+INSERT INTO emprestimo VALUES(1,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',1,1, true);
+INSERT INTO emprestimo VALUES(2,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',2,2, true);
+INSERT INTO emprestimo VALUES(3,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',4,2, true);
+INSERT INTO emprestimo VALUES(4,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',5,4, true);
+INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',6,9, true);
 
 
 /*Reservas*/
