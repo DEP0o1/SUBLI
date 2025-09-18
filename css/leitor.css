@@ -1323,6 +1323,5 @@ h1 {
 }
 
 .bodyLogin{
-  background: #A32950;
-  background: linear-gradient(45deg,rgba(16, 46, 78, 1 ) 0%, rgba(   163, 41, 80, 1) 100%);
+ background-color: var(--fundo);
 }

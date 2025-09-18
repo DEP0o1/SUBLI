@@ -16,10 +16,11 @@ require('config.php');
 <body class="bodyLogin">
 
 <div class="logoLogin">
- <img src="img/subli.logoCorClara.png" alt="" />   
+ <img src="img/subli.png" alt="" />   
 </div>
 
 <div class="containerLogin">
+
     <form class="FormLogin">
         <p>
             <label for="txtEmail">Email:</label>

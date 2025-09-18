@@ -38,7 +38,7 @@ if (txtemail && txtSenha && btnEntrar) {
                 Mensagem(dadosJSON['erro'], 'erro', 'form');
             }
             else{
-                alert('cu roxo');
+                alert('Login efetuado com sucesso!');
                 window.location.href='LindexLeitor.php';
                 
             }
