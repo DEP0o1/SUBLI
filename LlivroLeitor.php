@@ -64,6 +64,14 @@ if (isset($_REQUEST['enviado'])) {
       }
       ?>
 
+      <div class="mensagem">
+        <div class="titulo-mensagem">
+          <span class='material-symbols-outlined'>favorite</span>
+          <h1>aaa</h1>
+        </div>
+        <p>aaa</p>
+      </div>
+
 
     </section>
   </main>
