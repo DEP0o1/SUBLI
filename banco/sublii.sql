@@ -324,7 +324,7 @@ INSERT INTO  favorito VALUES (1, 'pedro.favoritos@gmail.com');*/
 
 
 /*Exemplares*/
-INSERT INTO exemplar VALUES (1, 2, 1, NOW(), false);
+INSERT INTO exemplar VALUES (1, 1, 1, NOW(), false);
 INSERT INTO exemplar VALUES (4, 6, 2, NOW(), false);
 INSERT INTO exemplar VALUES (2, 10, 3, NOW(), false);
 INSERT INTO exemplar VALUES (6, 4, 4, NOW(), false);
@@ -337,7 +337,7 @@ INSERT INTO exemplar VALUES (3, 10, 10, NOW(), false);
 INSERT INTO exemplar VALUES (1, 5, 11, NOW(), false);
 INSERT INTO exemplar VALUES (5, 9, 12, NOW(), false);
 INSERT INTO exemplar VALUES (3, 7, 13, NOW(), false);
-
+INSERT INTO exemplar VALUES (1, 1, 14, NOW(), false);
 /*Bibliotecarios*/
 INSERT INTO bibliotecario VALUES (1,'LABUBU','AAAAA','BBB');
 INSERT INTO bibliotecario_biblioteca VALUES (1,1);

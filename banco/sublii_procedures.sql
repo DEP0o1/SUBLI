@@ -829,7 +829,17 @@ BEGIN
     /* =========================================
    EXEMPLARES
 ========================================= */
-    /*PROCEDURES DE COUNT*/
+    /*PROCEDURE DE COUNT*/
+    DROP PROCEDURE IF EXISTS contar_exemplares$$
+    CREATE PROCEDURE  contar_exemplares(
+    IN p_cd_livro INT,
+    IN p_cd_biblioteca INT
+    )
+    BEGIN
+    SELECT COUNT(*) FROM exemplar WHERE cd_livro = p_cd_livro AND cd_biblioteca = p_cd_biblioteca;
+    END$$
+    /*CALL contar_exemplares(1,2);*/
+    
 DROP PROCEDURE IF EXISTS listar_exemplares$$
 CREATE PROCEDURE listar_exemplares(
   IN p_cd_exemplar INT,
@@ -1096,6 +1106,17 @@ END$$
 /* =========================================
    RESERVAS
 ========================================= */
+      /*PROCEDURE DE COUNT*/
+    DROP PROCEDURE IF EXISTS contar_reservas$$
+    CREATE PROCEDURE  contar_reservas(
+    IN p_cd_livro INT,
+    IN p_cd_biblioteca INT,
+    IN p_ic_ativa TINYINT
+    )
+    BEGIN
+    SELECT COUNT(*) FROM reserva WHERE cd_livro = p_cd_livro AND cd_biblioteca = p_cd_biblioteca AND ic_ativa = p_ic_ativa;
+    END$$
+   /* CALL contar_reservas(1,1,true);*/
     
     DROP PROCEDURE IF EXISTS listar_reservas$$
 CREATE PROCEDURE listar_reservas(
