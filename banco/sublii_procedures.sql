@@ -838,7 +838,7 @@ BEGIN
     BEGIN
     SELECT COUNT(*) FROM exemplar WHERE cd_livro = p_cd_livro AND cd_biblioteca = p_cd_biblioteca;
     END$$
-    /*CALL contar_exemplares(1,2);*/
+    /*CALL contar_exemplares(3,1);*/
     
 DROP PROCEDURE IF EXISTS listar_exemplares$$
 CREATE PROCEDURE listar_exemplares(

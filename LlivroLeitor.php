@@ -12,18 +12,27 @@ if (isset($_REQUEST['codigo'])) {
 }
 
 if (isset($_REQUEST['enviado'])) {
-  $controller = new ReservaController;
   $exemplarcontroller = new ExemplarController;
-  $reserva = $controller->ContarReservas(new Reserva(null, null, new Leitor(), new Livro($codigo), new Biblioteca($cd_biblioteca), true));
   $exemplar = $exemplarcontroller->ContarExemplares(new Exemplar($codigo, $cd_biblioteca));
 
-  if ($exemplar > $reserva) {
-    $controller->AdicionarReserva(new Reserva(null, null, new Leitor($_SESSION['leitor']), new Livro($codigo), new Biblioteca($cd_biblioteca)));
-    $mensagem = "<h1>Livro Reservado com Sucesso</h1>";
-  } else {
-    $mensagem = "<h1>O Livro já foi Reservado por outra Pessoa Tente novamente mais tarde</h1>";
-    // FAZER COUNT DE EXEMPLARES
-  }
+          if($exemplar[0]['COUNT(*)'] == 0){
+            $mensagem = "Esse Exemplar não Existe";
+          }
+
+            else{
+              $controller = new ReservaController;
+              $reserva = $controller->ContarReservas(new Reserva(null, null, new Leitor(), new Livro($codigo), new Biblioteca($cd_biblioteca), true));
+            }
+
+      if(isset($reserva)){
+        if ($exemplar > $reserva) {
+          $controller->AdicionarReserva(new Reserva(null, null, new Leitor($_SESSION['leitor']), new Livro($codigo), new Biblioteca($cd_biblioteca)));
+          $mensagem = "<h1>Livro Reservado com Sucesso</h1>";
+        } else {
+          $mensagem = "<h1>O Livro já foi Reservado por outra Pessoa Tente novamente mais tarde</h1>";
+          // FAZER COUNT DE EXEMPLARES
+        }
+      }
 }
 
 ?>
