@@ -94,8 +94,14 @@ select {
   color: var(--bege);
 }
 
+.nao-encontrado h1 {
+  margin: 0;
+}
+
 .nao-encontrado span{
   color: var(--bege);
+  font-size: 20rem;
+  cursor: default;
 }
 
 /*--------------------Barra de rolagem--------------------------------------------------------------------------------------------*/
