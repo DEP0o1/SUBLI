@@ -74,11 +74,9 @@ BEGIN
 END$$
 
 
-<<<<<<< HEAD
-CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, NULL,NULL, NULL, NULL, NULL, NULL, 1, NULL);
-=======
+
 /*CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, 1,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
->>>>>>> 3a362cdea6d854ce4e66f657ca360262f6b12766
+
 
 
 
@@ -1122,6 +1120,7 @@ BEGIN
      AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor);
 END$$
 
+/*CALL listar_reservas(null,null,null,1,1,null,null);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_reserva$$

@@ -13,7 +13,16 @@ if (isset($_REQUEST['codigo'])) {
 
 if(isset($_REQUEST['enviado'])){
   $controller = new ReservaController;
-  $controller->AdicionarReserva(new Reserva(null,null,new Leitor($_SESSION['leitor']),new Livro($codigo),new Biblioteca($cd_biblioteca)));
+  $reserva = $controller->ListarReservas(new Reserva(null,null,new Leitor(),new Livro($codigo),new Biblioteca($cd_biblioteca),true));
+    if($reserva == []){
+       $controller->AdicionarReserva(new Reserva(null,null,new Leitor($_SESSION['leitor']),new Livro($codigo),new Biblioteca($cd_biblioteca)));
+       $mensagem = "Livro Reservado com Sucesso";
+    }
+
+    else{
+      $mensagem = "O Livro já foi Reservado por outra Pessoa Tente novamente mais tarde";
+    }
+   
 }
 
 ?>
@@ -51,7 +60,12 @@ if(isset($_REQUEST['enviado'])){
     <form class="btnEmprestimo" method="GET" action="">
       <input type="hidden" name="codigo" value="<?=$codigo?>">
       <input type="hidden" name="enviado" value="true">
-      <button class="btnRosa" id="s" type="submit"><a href="">Reservar</a></button>
+      <button class="btnRosa" id="s" type="submit">Reservar</button>
+      <?php
+    if(isset($_REQUEST['enviado'])){
+        echo $mensagem;
+      }
+      ?>
     </form>
   </section>
 
