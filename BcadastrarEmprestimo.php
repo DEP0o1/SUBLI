@@ -29,9 +29,20 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
     }
 }
     if($campos == 3){
-        // FAZER COUNT DE EXEMPLARES
+        $exemplarcontroller = new ExemplarController;
+        $exemplar = $exemplarcontroller->ContarExemplares(new Exemplar($cd_livro,$cd_biblioteca));
+
         $emprestimocontroller = new EmprestimoController;
-        $emprestimo = $emprestimocontroller->AdicionarEmprestimo(new Emprestimo(null,null,$dt_devolucao_esperada,null,new Leitor($cd_email),new Livro($cd_livro),new Biblioteca($cd_biblioteca)));
+        $qtdemprestimo = $emprestimocontroller->ContarEmprestimos(new Emprestimo(null,null,null,null,new Leitor(),new Livro($cd_livro),new Biblioteca($cd_biblioteca),true));
+
+        if($exemplar > $qtdemprestimo){
+            $emprestimo = $emprestimocontroller->AdicionarEmprestimo(new Emprestimo(null,null,$dt_devolucao_esperada,null,new Leitor($cd_email),new Livro($cd_livro),new Biblioteca($cd_biblioteca)));
+        }
+
+        else{
+            $emprestimo = "O Livro está emprestado com outra pessoa ";
+        }
+        
     }
 ?>
 
