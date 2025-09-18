@@ -168,8 +168,6 @@ if(isset($_REQUEST['enviado'])){
               <button class="verMais">Ver mais</button>
             </div>
           </div>
-
-
         </section>
 
     </section>

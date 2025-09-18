@@ -85,3 +85,78 @@ class LivroView{
 
 ?>
 
+<!-- public function ExibirLivro($livro = new Livro()){
+
+    $controller = new LivroController;
+    $livros = $controller->ListarLivros($livro);
+
+    $Bcontroller = new BibliotecaController;
+    $bibliotecas = $Bcontroller->ListarBibliotecas(new Biblioteca (null,null,null,[new Livro($livros[0]->cd_livro)]));
+
+    foreach($livros as $Livro){
+
+        $editoracontroller = new EditoraController();
+        $editora = $editoracontroller->ListarEditoras(new Editora(null,null,$Livro->cd_livro));
+
+        echo "
+        <img src='img/{$Livro->cd_livro}.jpg' alt='' class='capaLivroGrande'>
+
+        <div class='pagLivro'>
+
+          <div class='dadosLivro'>
+            <h1> {$Livro->nm_livro} </h1>";
+
+        foreach($Livro->autores as $autor){
+            echo "
+            <p>
+              <span class='material-symbols-outlined'>man_4</span>
+              Autor: {$autor->nm_autor}
+            </p>";
+        }
+
+        echo "
+            <p>
+              <span class='material-symbols-outlined'>corporate_fare</span>
+              Editora: {$editora[0]->nm_editora}
+            </p>
+
+            <p>
+              <span class='material-symbols-outlined'>language</span>
+              Idioma: {$Livro->ds_idioma}
+            </p>
+
+            <p>
+              <span class='material-symbols-outlined'>calendar_month</span>
+              Ano de publicação: {$Livro->ano_publicacao}
+            </p>
+
+            <div class='botaoStatus'>
+              <button class='btnRosa'>
+                <span class='material-symbols-outlined'>favorite</span>
+                Favoritar
+              </button>
+
+              <button class='btnRosa'>
+                <span class='material-symbols-outlined'>check</span>
+                Reservar
+              </button>
+              <span><p>• Disponível em: ";
+
+        foreach($bibliotecas as $Biblioteca){
+            echo " {$Biblioteca->nm_biblioteca} ";
+        }
+
+        echo "</p></span>
+            </div>
+          </div>
+
+          <div class='sinopse'>
+            <p>{$Livro->ds_sinopse}</p>
+          </div>
+
+        </div>
+        ";
+    }
+} -->
+
+

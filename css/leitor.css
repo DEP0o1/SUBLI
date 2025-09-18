@@ -415,11 +415,61 @@ span {
   height: 50vh;
 }
 
+/*--------------------calendario--------------------------------------------------------------------------*/
+
 .calendario {
   width: 30vw;
-  height: 100%;
   background-color: var(--azul);
+  color: var(--branco);
+  padding: var(--gap);
+  border-radius: var(--radius);
+  font-family: "Inter";
 }
+
+.calendario span{
+  color: var(--branco);
+}
+
+.calendario-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--gap);
+  font-weight: bold;
+}
+
+.calendario-botao {
+  background: none;
+  border: none;
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.calendario-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  cursor: default;
+}
+
+.calendario-dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.calendario-dia {
+  padding: var(--gap);
+  cursor: default;
+}
+
+.calendario-dia.hoje {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius);
+}
+
+/*---------------------------------------------------------*/
 
 .lista {
   display: flex;
