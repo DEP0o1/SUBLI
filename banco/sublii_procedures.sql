@@ -1301,7 +1301,19 @@ END$$
    EMPRESTIMOS
 ========================================= */
     
-    DROP PROCEDURE IF EXISTS listar_emprestimos$$
+      /*PROCEDURE DE COUNT*/
+    DROP PROCEDURE IF EXISTS contar_emprestimos$$
+    CREATE PROCEDURE  contar_emprestimos(
+    IN p_cd_livro INT,
+    IN p_cd_biblioteca INT,
+    IN p_ic_ativa TINYINT
+    )
+    BEGIN
+    SELECT COUNT(*) FROM emprestimo WHERE cd_livro = p_cd_livro AND cd_biblioteca = p_cd_biblioteca AND ic_ativa = p_ic_ativa;
+    END$$
+   /* CALL contar_emprestimos(1,1,true);*/
+    
+DROP PROCEDURE IF EXISTS listar_emprestimos$$
 CREATE PROCEDURE listar_emprestimos(
   IN p_cd_emprestimo INT,
   IN p_dt_emprestimo DATETIME,
@@ -1310,7 +1322,8 @@ CREATE PROCEDURE listar_emprestimos(
   IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_livro INT,
-  IN p_cd_biblioteca INT
+  IN p_cd_biblioteca INT,
+  IN p_ic_ativa TINYINT
 )
 BEGIN
   SELECT *
@@ -1321,6 +1334,7 @@ BEGIN
    LEFT JOIN editora ed ON ed.cd_editora = li.cd_livro
    WHERE (p_cd_emprestimo IS NULL OR e.cd_emprestimo = p_cd_emprestimo)
      AND (p_dt_emprestimo IS NULL OR e.dt_emprestimo = p_dt_emprestimo)
+	 AND (p_ic_ativa IS NULL OR e.ic_ativa = p_ic_ativa)
      AND (p_dt_devolucao_esperada IS NULL OR e.dt_devolucao_esperada = p_dt_devolucao_esperada)
      AND (p_dt_devolucao IS NULL OR e.dt_devolucao = p_dt_devolucao)
      AND (p_cd_email IS NULL OR e.cd_email = p_cd_email)
@@ -1330,7 +1344,7 @@ BEGIN
 
 END$$
 
-/*CALL listar_emprestimos(null,null,null,null,'pedro@gmail.com',null,null,null);*/
+/*CALL listar_emprestimos(null,null,null,null,null,null,null,null,true);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$
@@ -1358,7 +1372,7 @@ BEGIN
       AND p_cd_biblioteca IS NOT NULL
      AND p_cd_livro IS NOT NULL THEN
     INSERT INTO emprestimo
-      VALUES (v_cd_emprestimo,NOW(), p_dt_devolucao_esperada,NULL, p_cd_email, p_cd_livro,p_cd_biblioteca);
+      VALUES (v_cd_emprestimo,NOW(), p_dt_devolucao_esperada,NULL, p_cd_email, p_cd_livro,p_cd_biblioteca,true);
   END IF;
 END$$
 
@@ -1372,6 +1386,7 @@ CREATE PROCEDURE alterar_emprestimo(
   IN p_cd_email VARCHAR(200),
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_exemplar INT
+  /*Depois mudar o exemplar para livro e biblioteca e tambem colocar o ic_ativa*/
 )
 BEGIN
   DECLARE v_cd_email VARCHAR(200);
