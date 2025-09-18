@@ -1,3 +1,40 @@
+<?php
+
+require_once "config.php";
+$cd_bibliotecario = 1;
+// O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
+$controller = new BibliotecarioController();
+$bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
+$cd_biblioteca = $bibliotecario[0]->cd_biblioteca;
+$campos = 0;
+
+if (isset($_REQUEST['cd_email'])) {
+    if (!is_null($_REQUEST['cd_email'])) {
+        $campos = $campos + 1;
+        $cd_email = $_REQUEST['cd_email'];
+    }
+}
+
+if (isset($_REQUEST['cd_livro'])) {
+    if (!is_null($_REQUEST['cd_livro']) && is_numeric($_REQUEST['cd_livro'])) {
+        $campos = $campos + 1;
+        $cd_livro = $_REQUEST['cd_livro'];
+    }
+}
+
+if (isset($_REQUEST['dt_devolucao_esperada'])) {
+    if (!is_null($_REQUEST['dt_devolucao_esperada'])) {
+        $campos = $campos + 1;
+        $dt_devolucao_esperada = $_REQUEST['dt_devolucao_esperada'];
+    }
+}
+    if($campos == 3){
+        // FAZER COUNT DE EXEMPLARES
+        $emprestimocontroller = new EmprestimoController;
+        $emprestimo = $emprestimocontroller->AdicionarEmprestimo(new Emprestimo(null,null,$dt_devolucao_esperada,null,new Leitor($cd_email),new Livro($cd_livro),new Biblioteca($cd_biblioteca)));
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,23 +62,29 @@
 
             <section class="areaInput">
                 <div class="areaTituloLivro">
-                    <label for="cd_leitor" class="tituloForm">Código do Leitor:</label>
-                    <input name="cd_leitor" type="text" class="inputForm" placeholder="123456">
+                    <label for="cd_email" class="tituloForm">Email do Leitor:</label>
+                    <input name="cd_email" type="text" class="inputForm" placeholder="pedro@gmail.com">
                 </div>
 
                 <div class="areaAutorLivro">
-                    <label for="nm_leitor"class="tituloForm">Nome do Leitor:</label>
-                    <input name="nm_leitor" type="text" class="inputForm" placeholder="Pedro Mingel">
+                    <label for="cd_livro"class="tituloForm">Código do Livro:</label>
+                    <input name="cd_livro" type="text" class="inputForm" placeholder="1">
                 </div>
 
                 <div class="areaAutorLivro">
-                    <label for="ds_notas" class="tituloForm">Notas:</label>
-                    <input name="ds_notas" type="text" class="inputForm" placeholder="Pegou na biblioteca da praia/livro esta com a capa rasgada">
+                    <label for="dt_devolucao_esperada" class="tituloForm">Data de Devolução:</label>
+                    <input name="dt_devolucao_esperada" type="text" class="inputForm" placeholder="25/12/2025">
                 </div>
 
                 <div class="areaBtn">
                     <button class="btnRosa">Registrar</button>
                 </div>
+                <?php
+                if($campos == 3){
+                     echo $emprestimo;
+                }
+               
+                ?>
             </section>
         </form>
 

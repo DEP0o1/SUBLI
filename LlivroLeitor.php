@@ -21,6 +21,7 @@ if(isset($_REQUEST['enviado'])){
 
     else{
       $mensagem = "O Livro já foi Reservado por outra Pessoa Tente novamente mais tarde";
+       // FAZER COUNT DE EXEMPLARES
     }
    
 }

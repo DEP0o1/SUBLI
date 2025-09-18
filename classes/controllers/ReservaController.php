@@ -51,7 +51,7 @@ class ReservaController extends Banco
             ];
 
 
-            $dados = $this->Consultar('adicionar_reserva', $parametros);
+            $this->Executar('adicionar_reserva', $parametros);
             
 
             // $bibliotecacontroller = new BibliotecaController;
@@ -77,7 +77,7 @@ class ReservaController extends Banco
             ];
 
 
-            $dados = $this->Consultar('alterar_reserva', $parametros);
+            $this->Executar('alterar_reserva', $parametros);
             
 
             // $bibliotecacontroller = new BibliotecaController;

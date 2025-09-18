@@ -1200,7 +1200,7 @@ BEGIN
      AND (p_cd_email IS NULL OR d.cd_email = p_cd_email)
      AND (p_ic_aprovado IS NULL OR d.ic_aprovado = p_ic_aprovado);
 END$$
-/*CALL listar_doacoes(NULL,NULL,NULL,NULL,false);*/
+/*CALL listar_doacoes(NULL,NULL,NULL,NULL,NULL);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_doacao$$
@@ -1257,7 +1257,24 @@ BEGIN
   END IF;
 END$$
 
-/*CALL alterar_doacao(2,null,null,null,null,true);
+/*CALL alterar_doacao(2,null,null,null,null,null);*/
+
+DROP PROCEDURE IF EXISTS excluir_doacao$$
+CREATE PROCEDURE excluir_doacao(
+  IN p_cd_doacao INT
+)
+BEGIN
+
+
+  IF p_cd_doacao IS NOT NULL THEN
+    UPDATE doacao
+       SET
+           ic_aprovado = null
+     WHERE cd_doacao = p_cd_doacao;
+  END IF;
+END$$
+
+/*CALL excluir_doacao(2);*/
 
 /* =========================================
    EMPRESTIMOS
@@ -1298,16 +1315,13 @@ END$$
 DROP PROCEDURE IF EXISTS adicionar_emprestimo$$
 CREATE PROCEDURE adicionar_emprestimo(
   IN p_cd_emprestimo INT,
-  IN p_dt_emprestimo DATETIME,
-  IN p_dt_devolucao_esperada DATETIME,
-  IN p_dt_devolucao DATETIME,
+  IN p_dt_devolucao_esperada VARCHAR(200),
   IN p_cd_email VARCHAR(200),
-  IN p_nm_leitor VARCHAR(200),
-  IN p_cd_exemplar INT
+  IN p_cd_livro INT,
+  IN p_cd_biblioteca INT
 )
 BEGIN
   DECLARE v_cd_emprestimo INT;
-  DECLARE v_cd_email VARCHAR(200);
 
   IF p_cd_emprestimo IS NULL THEN
     SELECT COALESCE(MAX(cd_emprestimo), 0) + 1 INTO v_cd_emprestimo FROM emprestimo;
@@ -1315,22 +1329,15 @@ BEGIN
     SET v_cd_emprestimo = p_cd_emprestimo;
   END IF;
 
-  IF p_cd_email IS NULL AND p_nm_leitor IS NOT NULL THEN
-    SELECT cd_email v_cd_email
-      FROM leitor
-     WHERE nm_leitor = p_nm_leitor
-     LIMIT 1;
-  ELSE
-    SET v_cd_email = p_cd_email;
-  END IF;
+  
 
   IF v_cd_emprestimo IS NOT NULL
-     AND p_dt_emprestimo IS NOT NULL
      AND p_dt_devolucao_esperada IS NOT NULL
-     AND v_cd_email IS NOT NULL
-     AND p_cd_exemplar IS NOT NULL THEN
+     AND p_cd_email IS NOT NULL
+      AND p_cd_biblioteca IS NOT NULL
+     AND p_cd_livro IS NOT NULL THEN
     INSERT INTO emprestimo
-      VALUES (v_cd_emprestimo, p_dt_emprestimo, p_dt_devolucao_esperada, p_dt_devolucao, v_cd_email, p_cd_exemplar);
+      VALUES (v_cd_emprestimo,NOW(), p_dt_devolucao_esperada,NULL, p_cd_email, p_cd_livro,p_cd_biblioteca);
   END IF;
 END$$
 

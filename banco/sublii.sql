@@ -122,7 +122,7 @@ CREATE TABLE doacao (
 CREATE TABLE emprestimo(
 	cd_emprestimo INT,
 	dt_emprestimo DATETIME,
-    dt_devolucao_esperada DATETIME,
+    dt_devolucao_esperada VARCHAR(200),
 	dt_devolucao DATETIME,
     cd_email VARCHAR(200),
     cd_livro INT,
@@ -347,6 +347,7 @@ INSERT INTO bibliotecario_biblioteca VALUES (1,1);
 INSERT INTO doacao VALUES (1,'Cronicas Malucas','Jeferson',2,'pedro.favoritos@gmail.com', true);
 INSERT INTO doacao VALUES (2,'Como Dominar a Arte da Sabedoria','Mary Renault',1,'pedro.favoritos@gmail.com', false);
 INSERT INTO doacao VALUES (3,'Genocidas','Caua Nunes da Silva',3,'pedro.favoritos@gmail.com',false);
+INSERT INTO doacao VALUES (4,'Como Dominar a Arte da Sabedoria 2' ,'Mary Renault',1,'pedro.favoritos@gmail.com', null);
 
 
 /*Emprestimo*/

@@ -40,7 +40,45 @@ class EmprestimoController extends Banco
 
     public function AdicionarEmprestimo($emprestimo = new Emprestimo())
     {
+        try{
+            $parametros = [
+    
+                'p_cd_emprestimo' => $emprestimo->cd_emprestimo,
+                'p_dt_devolucao_esperada' => $emprestimo->dt_devolucao_esperada,
+                'p_cd_email' => $emprestimo->leitor->cd_email,
+                'p_cd_livro' => $emprestimo->livro->cd_livro,
+                'p_cd_biblioteca' => $emprestimo->biblioteca->cd_biblioteca,
+                
+            ];
+            $leitorcontroller = new LeitorController;
+            $livrocontroller = new LivroController;
 
+            if(!is_null($emprestimo->livro->cd_livro)){
+                $livro = $livrocontroller->ListarLivros(new Livro($emprestimo->livro->cd_livro));
+                if($livro == []){
+                    return "Emprestimo não cadastrado: livro não existe";
+                }
+            }
+            else{
+                return;
+            }
+
+            if(!is_null($emprestimo->leitor->cd_email)){
+                $leitor = $leitorcontroller->ListarLeitores(new Leitor($emprestimo->leitor->cd_email));
+                if($leitor == []){
+                    return "Emprestimo não cadastrado: leitor não existe";
+                }
+            }
+            else{
+                return;
+            }
+
+            $this->Executar('adicionar_emprestimo', $parametros);
+            return "Emprestimo cadastrado com sucesso!";
+        }catch (\Throwable $th) {
+            throw $th;
+    
+        }
     }
 
     public function AlterarEmprestimo($emprestimo = new Emprestimo())

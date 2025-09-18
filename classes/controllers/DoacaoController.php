@@ -85,7 +85,16 @@ class DoacaoController extends Banco
 
     public function ExcluirDoacao($doacao = new Doacao())
     {
-        
+        try{
+            $parametros = [
+                'p_cd_doacao' => $doacao->cd_doacao
+            ];
+    
+            $this->Executar('excluir_doacao', $parametros);
+        }catch (\Throwable $th) {
+            throw $th;
+    
+        }
     }
 }
 
