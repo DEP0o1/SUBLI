@@ -467,11 +467,13 @@ aside br {
   display: flex;
   align-items: center;
   gap: var(--gap);
+  cursor: pointer;
 }
 
 .informacao-aside:hover {
   background-color: var(--azul-hover);
   transition: 0.2s;
+  cursor: pointer;
 }
 
 /*------------------notificações-----------------------------------------------------------------------------------------------*/

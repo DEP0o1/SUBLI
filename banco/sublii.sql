@@ -320,8 +320,7 @@ INSERT INTO assunto_livro (cd_livro, cd_assunto) VALUES
 (6, 6); -- Eu, Robô - Isaac Asimov*/
 
 
-/*Favoritos
-INSERT INTO  favorito VALUES (1, 'pedro.favoritos@gmail.com');*/
+/*Favoritos*/
 
 
 /*Exemplares*/
@@ -360,9 +359,7 @@ INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',
 
 
 /*Reservas*/
-INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true);
-INSERT INTO reserva VALUES (2,NOW(),'lucas@gmail.com',2,1,true);
-INSERT INTO reserva VALUES (3,NOW(),'lucas@gmail.com',3,1,true);
+
 
 /*
 select * from livro;
