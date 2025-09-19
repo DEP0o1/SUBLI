@@ -19,6 +19,7 @@
 
       <section class="areaSolicDoacao">
         <section class="pagDoacao">
+          
           <div class="fotoMenordoacao">
             <img src="img/vidas.jpg" alt="" class="imgLivroLista" />
             <img src="img/vidas.jpg" alt="" class="imgLivroLista" />
@@ -32,30 +33,31 @@
       
               <h1>O Príncipe bem bem</h1>
 
-              <p>
-            <span class="material-symbols-outlined">
-              man_4
-            </span> Autor: Neil Gaiman
-             </p>
 
-            
+
+
+              <div class="divRowItem"> <p>  <span class="material-symbols-outlined">
+              man_4
+            </span>Autor: Neil Gaiman </p>
+            </div>
+              
+
+            <div class="divRowItem">
+             <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="" class="miniPerfil">
+             <h2> leitor fulano</h2>
+             </div>
+
+             <div class="divRowItem">
+              <button class="btnBranco"> Recusar </button>
+            <button class="btnRosa"></button>
+
+
+             </div>
 
              <div class="item-lista">
           <img src="img/vidas.jpg" alt="">
           <div class="conteudo-item-lista">
-            <h2> leitor fulano</h2>
             <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="" class="miniPerfilRedondo">
-
-            
-          <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Fodase</p>
-          <h3>Fodase</h3>
-          </div>
-          <button class="btnRosa">
-            Ver Mais
-          </button>
-          </div>
           </div>
 
 
