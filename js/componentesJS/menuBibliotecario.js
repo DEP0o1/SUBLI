@@ -17,8 +17,10 @@
         <h1>Biblioteca</h1>
 
         <div class="informacao-aside">
-          <span class="material-symbols-outlined">menu_book</span>
-          <p>Cadastrar Livro</p>
+        <span class="material-symbols-outlined">menu_book</span>
+        <a href="BcadastrarLivro.php">
+        <p>Cadastrar Livro</p>
+        </a>
         </div>
 
         <div class="informacao-aside">

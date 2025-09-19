@@ -278,6 +278,7 @@ nav {
   width: 50vw;
   border: none;
   border-radius: 10px;
+  padding: var(--gap);
   height: 30px;
   color: var(--cinza);
   padding: 10px;
@@ -507,11 +508,13 @@ aside br {
   display: flex;
   align-items: center;
   gap: var(--gap);
+  cursor: pointer;
 }
 
 .informacao-aside:hover {
   background-color: var(--azul-hover);
   transition: 0.2s;
+  cursor: pointer;
 }
 
 /*------------------notificações-----------------------------------------------------------------------------------------------*/
