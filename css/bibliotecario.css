@@ -73,6 +73,7 @@ header {
   height: fit-content;
   position: fixed;
   top: 0;
+  z-index: 10;
 }
 
 header button {

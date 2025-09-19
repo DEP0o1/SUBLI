@@ -64,6 +64,7 @@ h4 {
   gap: var(--gap);
 }
 
+
 .btnRosa:hover {
   background-color: var(--vinho-hover);
   transition: 0.2s;
@@ -138,7 +139,7 @@ header {
   height: fit-content;
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 999;
 }
 
 header span {
