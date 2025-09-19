@@ -13,18 +13,18 @@ require('config.php');
     <link rel="stylesheet" href="css/leitor.css">
     <script type="module" src="js/componentesJS/acesso.js"></script>
 </head>
-<<<<<<< HEAD
-<body>
 
+<body>
+<!-- 
 <div class="logoLogin">
  <img src="img/subli.png" alt="" />   
-</div>
-=======
+</div> -->
+
 <body class="bodyLogin">
     <?php
     //  include 'complementos/headerLeitor.php'; 
     ?>
->>>>>>> c7580ee1f4569dbf93345222ec67bf93f0fb6c55
+
 
 <div class="containerLogin">
 
