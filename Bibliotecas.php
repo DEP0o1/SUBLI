@@ -31,10 +31,6 @@ require_once('config.php');
         ?>
 
 <div class="nao-encontrado">
-      <h1>Nenhuma Biblioteca foi encontrada</h1>
-      <span class='material-symbols-outlined'>
-                location_on
-              </span>
     </div>
 
         <!-- <div class="item-lista">

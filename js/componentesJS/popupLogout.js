@@ -23,7 +23,7 @@ if (btnLogout) {
 
         const botaoConfirmar = document.createElement('a');
         botaoConfirmar.id = 'btnConfirmar';
-        botaoConfirmar.href = "LindexLeitor.php";
+        botaoConfirmar.href = "sair.php";
         botaoConfirmar.textContent = 'Confirmar';
 
 
