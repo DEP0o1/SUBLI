@@ -433,7 +433,7 @@ span {
   color: var(--branco);
   padding: var(--gap);
   border-radius: var(--radius);
-  font-family: "Inter";
+  font-family: "Inter"; 
 }
 
 .calendario span{
