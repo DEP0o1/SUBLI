@@ -278,6 +278,7 @@ nav {
   width: 50vw;
   border: none;
   border-radius: 10px;
+  padding: var(--gap);
   height: 30px;
   color: var(--cinza);
 }

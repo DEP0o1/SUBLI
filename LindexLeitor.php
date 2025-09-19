@@ -130,11 +130,109 @@ if(empty($assunto2)) $assunto2 = null;
     </div>
 </div>
 
+<h1 class="textoMeio">Eventos</h1>
 
+<section class="eventos">
+  <div class="calendario">
+    <!-- calendario -->
+  </div>
+
+  <div class="lista">
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <div class="textoEsquerda">
     <h1>Doação de livros</h1>
 </div>
+
+
+
     <section class="doacaoLivros">
       <div class="doacaotexto">
         <p>
@@ -148,6 +246,7 @@ if(empty($assunto2)) $assunto2 = null;
     </section>
     </main>
 
+    <script src="js/componentesJS/calendario.js"></script>
    <script>
 document.addEventListener('DOMContentLoaded', function() {
 
