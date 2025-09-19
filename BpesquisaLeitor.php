@@ -31,12 +31,12 @@ require_once('config.php');
 
                 <div class="label-input">
                     <label for="">Nome: </label>
-                    <input type="text" placeholder="Ex. Pedro Miguel" />
+                    <input name="nm_leitor" type="text" placeholder="Ex. Pedro Miguel" />
                 </div>
 
                 <div class="label-input">
                     <label for="">CPF: </label>
-                    <input type="text" placeholder="Ex. 123.456.789-10" />
+                    <input name="cd_cpf" type="text" placeholder="Ex. 123.456.789-10" />
                 </div>
 
                 <div class="btnForm">
@@ -243,29 +243,29 @@ require_once('config.php');
 
 
 
-    <!-- <div class="leitoresEncontrados">
+     <!-- <div class="leitoresEncontrados"> -->
         <?php
-        $pesquisa_avancada = false;
+        $campos = 0;
         if (isset($_REQUEST['cd_cpf']) && $_REQUEST['cd_cpf'] != '' && strlen($_REQUEST['cd_cpf']) == 11) {
             $cd_cpf = $_REQUEST['cd_cpf'];
-            $pesquisa_avancada = true;
+            $campos = $campos + 1;
         } else {
             $cd_cpf = null;
         }
 
         if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != '') {
             $nm_leitor = $_REQUEST['nm_leitor'];
-            $pesquisa_avancada = true;
+            $campos = $campos + 1;
         } else {
             $nm_leitor = null;
         }
 
-        if ($pesquisa_avancada) {
+        if ($campos > 0) {
             $leitor = new LeitorView;
             $leitor->ExibirLeitores(new Leitor(null, $nm_leitor, $cd_cpf));
         }
         ?>
-    </div> -->
+    <!-- </div> -->
 
 
 </body>
