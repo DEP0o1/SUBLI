@@ -14,14 +14,16 @@ require('config.php');
     <script type="module" src="js/componentesJS/acesso.js"></script>
 </head>
 <body class="bodyLogin">
-
-<div class="logoLogin">
- <img src="img/subli.png" alt="" />   
-</div>
+    <?php
+    //  include 'complementos/headerLeitor.php'; 
+    ?>
 
 <div class="containerLogin">
 
     <form class="FormLogin">
+        <div class="logoLogin">
+            <img src="img/subli.png" alt="" />   
+        </div>
         <h1>Faça seu Login!</h1>
         <div>
             <label for="txtEmail">Email:</label>

@@ -38,6 +38,7 @@ h4 {
   --branco: #fffbf7;
   --bege: #b59e8b;
   --fundo: #FAF4EE;
+  --cinza: #857d72;
   --gap: 10px;
   --gap-grande: 50px;
   --radius: 10px;
@@ -100,7 +101,7 @@ select {
 
 .nao-encontrado span{
   color: var(--bege);
-  font-size: 20rem;
+  font-size: 10rem;
   cursor: default;
 }
 
@@ -1327,29 +1328,42 @@ h1 {
 }
 
 /*------------------ login ---------------------------------------------*/
+
 .FormLogin {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: var(--gap);
   justify-content: center;
   padding: 20px;
-  border: solid black 1px;
-  border-radius: 10px;
+  border: var(--border);
+  border-radius: var(--radius);
   width: 300px;
   height: fit-content;
-  height: fit-content;
-  color: var(--branco);
-  background-color: var(--azul);
+  color: var(--cinza);
+}
+
+.FormLogin h1 {
+  margin: 0;
+  border-bottom: var(--border);
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .FormLogin input {
   width: 100%;
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius);
   outline: none;
+  font-family: "Inter";
 }
+
+label {
+  font-family: "Inter";
+}
+
 .containerLogin{
   display: flex;
   justify-content: center;
@@ -1357,15 +1371,16 @@ h1 {
 }
 
 .logoLogin{
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -5%;
 }
 
 .logoLogin img{
-  width: 150px;
-  height: auto;
+  width: 100%;
+  height: 100%;
+
 }
 
 .bodyLogin{

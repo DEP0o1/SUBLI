@@ -27,7 +27,8 @@ if (txtemail && txtSenha && btnEntrar) {
         txtSenha.disabled = true;
         btnEntrar.disabled = true;
         let textoBotao = btnEntrar.innerHTML;
-        btnEntrar.innerHTML = `<span class="material-symbols-outlined">hourglass</span> Aguarde...`;
+        btnEntrar.innerHTML = `
+        <span class="material-symbols-outlined">hourglass</span> Aguarde...`;
 
         fetch(`leitor.php?e=${email}&s=${senha}`)
         .then(function(resposta) {
@@ -39,8 +40,7 @@ if (txtemail && txtSenha && btnEntrar) {
             }
             else{
                 alert('Login efetuado com sucesso!');
-                window.location.href='LindexLeitor.php';
-                
+                window.location.href='LindexLeitor.php';  
             }
 
         }).catch(function(erro){
@@ -57,12 +57,23 @@ if (txtemail && txtSenha && btnEntrar) {
 
 export function Mensagem(texto, tipo, nomeElementoPai) {
     const elementoPai = document.querySelector(nomeElementoPai);
+
     const localMsg = document.createElement('div');
-    localMsg.id='local-msg';
-    localMsg.classList.add(tipo);
-    localMsg.textContent = texto;
+    localMsg.classList.add('mensagem', tipo);
+
+    localMsg.innerHTML = `
+        <div class='titulo-mensagem'>
+          <span class='material-symbols-outlined'>
+            ${tipo == 'erro' ? 'error' : 'book'}
+          </span>
+          <h1>${tipo == 'erro' ? 'Erro' : 'Sucesso'}</h1>
+        </div>
+        <p>${texto}</p>
+    `;
+
     elementoPai.appendChild(localMsg);
+
     setTimeout(() => {
         localMsg.remove();
-    }, 1500);
+    }, 3000);
 }

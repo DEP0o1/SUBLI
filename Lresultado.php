@@ -17,7 +17,7 @@ if (isset($_REQUEST['valor'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
@@ -59,7 +59,6 @@ if (isset($_REQUEST['valor'])) {
     }
     ?>
 
-
     <!-- <div class="livro">
         <img src="img/capa1.jpg" alt="" />
         <h2>Pequeno principe</h2>
@@ -67,15 +66,14 @@ if (isset($_REQUEST['valor'])) {
         <button>Ver Mais</button>
       </div>-->
 
-    <div class="nao-encontrado">
+    <!-- <div class="nao-encontrado">
       <h1>Nenhum livro foi encontrado</h1>
       <span class='material-symbols-outlined'>
         menu_book
       </span>
-    </div>
+    </div> -->
 
     </button>
   </section>
 </body>
-
 </html>

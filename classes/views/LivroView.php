@@ -6,6 +6,18 @@ class LivroView{
 
     $controller = new LivroController;
     $livros = $controller->ListarLivros($livro);
+
+    if (empty($livros)) {
+        echo "
+        <div class='nao-encontrado'>
+      <h1>Nenhum livro foi encontrado</h1>
+      <span class='material-symbols-outlined'>
+        menu_book
+      </span>
+    </div> 
+        ";
+        return;
+    }
         
     foreach($livros as $Livro){
         echo 
