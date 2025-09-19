@@ -84,7 +84,7 @@ CREATE TABLE leitor(
 CREATE TABLE evento(
 	nm_evento VARCHAR(200),
 	cd_evento INT,
-	dt_evento DATETIME,
+	dt_evento VARCHAR(200),
     ds_evento TEXT,
     cd_biblioteca INT,
     cd_email VARCHAR(200),
