@@ -1288,7 +1288,7 @@ h1 {
   background-color: green;
   justify-content: center;
   align-items: center;
-  gap: var(--gap);
+  gap: var(--gap-grande);
   width: 55%;
 
 }
@@ -1324,6 +1324,7 @@ height: 65vh;
 .dadosLivroDoado{
   display: flex;
   flex-direction: column;
+  gap: var(--gap);
 }
 
 .tituloEsquerda {
@@ -1411,7 +1412,44 @@ height: 65vh;
   font-weight: lighter;
 }
 
-.miniPerfilRedondo img {
+.dadosLivroDoado h2 {
 
-  
+  font-family: "Kurale";
+  font-style: none;
+  font-weight: lighter;
 }
+
+.miniPerfil{
+
+  height: 4vh;
+  width: 4vh;
+  border-radius: 100%;
+
+}
+
+.divRowItem{
+display: flex;
+flex-direction: row;
+gap: var(--gap);
+align-items: center;
+}
+
+
+.btnBranco {
+
+  text-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--fundo);
+  color: var(--vinho);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: fit-content;
+  overflow: hidden;
+  border: solid var(--vinho) 1px;
+
+}
+
