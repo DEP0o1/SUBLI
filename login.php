@@ -24,7 +24,11 @@ require('config.php');
         <div class="logoLogin">
             <img src="img/subli.png" alt="" />   
         </div>
+
         <h1>Faça seu Login!</h1>
+
+        <hr>
+
         <div>
             <label for="txtEmail">Email:</label>
             <input type="text" name="txtEmail" id="txtEmail" placeholder="Informe seu Email" autofocus>
@@ -37,6 +41,13 @@ require('config.php');
 
         <div class="areaBotao">
             <button class="btnRosa" id="btnEntrar" >Entrar</button>
+        </div>
+
+        <hr>
+
+        <div class="cadastre-se">
+           <p> Ainda não possui uma conta?</p> 
+           <a href="Lresultado.php"><h2>Cadastre-se</h2></a>
         </div>
 
     </form>

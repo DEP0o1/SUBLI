@@ -1343,9 +1343,13 @@ h1 {
   color: var(--cinza);
 }
 
+.FormLogin hr {
+  border: var(--border);
+  width: 100%;
+}
+
 .FormLogin h1 {
   margin: 0;
-  border-bottom: var(--border);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1380,9 +1384,25 @@ label {
 .logoLogin img{
   width: 100%;
   height: 100%;
-
 }
 
 .bodyLogin{
  background-color: var(--fundo);
+}
+
+.cadastre-se {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastre-se a{
+  color: var(--vinho);
+  cursor: pointer;
+}
+
+.cadastre-se a:hover {
+  color: var(--vinho-hover);
+  cursor: pointer;
 }
