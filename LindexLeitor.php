@@ -72,14 +72,18 @@ if(empty($assunto2)) $assunto2 = null;
             </select>
         </div>
         
-        <button class="btnRosa">Aplicar 
-        <span class="material-symbols-outlined">
-        filter_alt
-        </span>
+        <button class="btnRosa">
+            <span class="material-symbols-outlined">
+            filter_alt
+            </span>
+            Aplicar 
         </button>
+
         <a class="location" href="Bibliotecas.php">
             <img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Localização" />
         </a>
+
+        
     </form>
     
     <div class="textoEsquerda">

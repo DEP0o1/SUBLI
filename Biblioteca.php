@@ -31,7 +31,7 @@ if (isset($_REQUEST['codigo'])) {
 <body>
   <main>
 
-    <h1 class="textoMeio">Biblioteca Mario Faria</h1>
+    <h1 class="textoMeio"> Mário fária</h1>
     <section class="bibliotecas">
       <div class="bibliotecaPerfil">
         <div class="bibliotecaFotos">
@@ -207,6 +207,8 @@ if (isset($_REQUEST['codigo'])) {
     </section>
   </main>
 
-  
+  <script>
+    
+  </script>
 </body>
 </html>

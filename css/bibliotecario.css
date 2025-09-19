@@ -191,6 +191,18 @@ nav {
   overflow: hidden;
 }
 
+/*------------------------------scroll------------------------------------------------------------------------*/
+
+::-webkit-scrollbar-track {
+  background-color: var(--branco);
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bege);
+}
+
 /*-----------------Leitor bibliotecario -------------------------------------------------------------------------------------*/
 
 /* .leitoresEncontrados {
@@ -238,6 +250,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: var(--gap-grande);
+  overflow-x: hidden;
 }
 
 .pesquisarLeitor {
@@ -285,6 +298,7 @@ nav {
 
 .resultadoPesquisaLeitor{
   margin-left: 10vw;
+  display: flex;
 }
 
 .cardLeitor img{
@@ -304,6 +318,7 @@ nav {
   border-top: 1px var(--bege) solid;
   border-bottom: 1px var(--bege) solid;
   margin-bottom: 2vh;
+ 
 }
 
 .infoPerfil{
@@ -317,6 +332,10 @@ nav {
   gap: var(--gap);
 }
 
+.infoPerfil span{
+  color: var(--vinho);
+}
+
 .btnsPerfil{
   display: flex;
   gap: var(--gap);
@@ -326,7 +345,7 @@ nav {
   position: relative;
   overflow: hidden;
   max-width: 55%;
-  margin: 0 auto;
+  margin: 0;
   padding: 20px 0;
 }
 
@@ -394,7 +413,27 @@ p {
   margin-top: auto;
 }
 
+.favorito {
+  background-color: var(--azul);
+  color: var(--branco);
+  position: absolute;
+  border-radius: var(--radius) 0 0 var(--radius) ;
+  padding: 5px 10px 5px 5px;
+  right: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.favorito:hover {
+  background-color: var(--azul-hover);
+  transition: 0.2s;
+}
+
+.favorito span {
+  color: var(--branco);
+}
 
 /*------------------menu lateral--------------------------------------------------------------------------------------------------------*/
 
@@ -467,11 +506,13 @@ aside br {
   display: flex;
   align-items: center;
   gap: var(--gap);
+  cursor: pointer;
 }
 
 .informacao-aside:hover {
   background-color: var(--azul-hover);
   transition: 0.2s;
+  cursor: pointer;
 }
 
 /*------------------notificações-----------------------------------------------------------------------------------------------*/
@@ -803,6 +844,11 @@ aside br {
   align-items: center;
   justify-content: center;
   gap: 40px;
+}
+
+.resultadoEmPe {
+  width: 50vw;
+  margin-right: 20px;
 }
 
 .btnNovoEvento {
@@ -1285,6 +1331,20 @@ height: 65vh;
   padding-top: 1%;
 }
 
+.lista {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  overflow-y: scroll;
+}
+
+.lista-leitores {
+  height: 70vh;
+  width: 30vw;
+}
+
 .lista h1 {
   margin: 0;
 }
@@ -1297,13 +1357,17 @@ height: 65vh;
   border-bottom: var(--border);
   border-top: var(--border);
   padding: 10px;
+}
 
+
+.item-lista span {
+  color: var(--vinho);
 }
 
 .item-lista img {
-  width: 10%;
-  height: 10%;
-  border-radius: 3;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
 }
 
 .conteudo-item-lista {
@@ -1311,6 +1375,17 @@ height: 65vh;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap);
+}
+
+.imagem-item-lista {
+  width: 100px;
+  height: 100px;
+  border-radius: 10000px;
+} 
+
+.imagem-item-lista img{
+  object-fit: cover;
+  border-radius: 10000px;
 }
 
 .conteudo-item-lista-doador {
