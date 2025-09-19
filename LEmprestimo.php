@@ -19,12 +19,10 @@
             <div class="textoMeio"> <h1>Empréstimos</h1></div>
        
         <section class="exibirLivrosMeio">
-            
             <span class="material-symbols-outlined" id="seta">
               arrow_back_ios
               </span>
           
-    
           <div class="livro">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToGenEel4HUELXPrHlGM0wgPqF99JSwFhBYw&s" alt="" />
             <h2>Memórias Póstumas de Brascubas</h2>

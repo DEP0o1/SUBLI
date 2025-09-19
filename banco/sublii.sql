@@ -338,6 +338,7 @@ INSERT INTO exemplar VALUES (1, 5, 11, NOW(), false);
 INSERT INTO exemplar VALUES (5, 9, 12, NOW(), false);
 INSERT INTO exemplar VALUES (3, 7, 13, NOW(), false);
 INSERT INTO exemplar VALUES (1, 1, 14, NOW(), false);
+INSERT INTO exemplar VALUES (2, 1, 15, NOW(), false);
 /*Bibliotecarios*/
 INSERT INTO bibliotecario VALUES (1,'LABUBU','AAAAA','BBB');
 INSERT INTO bibliotecario_biblioteca VALUES (1,1);
@@ -359,6 +360,10 @@ INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',
 
 
 /*Reservas*/
+<<<<<<< HEAD
+=======
+INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true);
+>>>>>>> 85fd3f43fe5b1255283d3aca5d5486a31c68f427
 
 
 /*
