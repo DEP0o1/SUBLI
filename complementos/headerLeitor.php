@@ -2,7 +2,7 @@
 require_once('./config.php');
 
 ?>
-<link rel="icon" type="image/x-icon" href="img/favicon_SUBLI (1).ico">
+<link rel="icon" type="image/png" href="img/favicon_SUBLI.png">
 <header>
       <a href="LindexLeitor.php">
         <div class="logo">

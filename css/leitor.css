@@ -1094,11 +1094,13 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
-  width:fit-content;
+  width: 160px;
+  height: 360px;
   gap: var(--gap);
   transition: transform 0.3s ease;
   flex-direction: column;
   padding: var(--gap);
+  text-overflow: ellipsis;
 }
 
 .livro a {
