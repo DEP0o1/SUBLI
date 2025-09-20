@@ -4,7 +4,9 @@ require_once('./config.php');
 ?>
 <header>
       <a href="LindexLeitor.php">
-        <img src="img/subli.logoCorClara.png" alt="" class="logo" />
+        <div class="logo">
+          <img src="img/logoCorClara.png" alt="" />
+        </div>
       </a>
 
       <form action="Lresultado.php" class="areaPesquisa">

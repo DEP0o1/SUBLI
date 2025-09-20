@@ -21,13 +21,9 @@ if(empty($assunto2)) $assunto2 = null;
     <head>
         <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio</title>
+    <title>SUBLI - Início</title>
     <link rel="stylesheet" href="css/leitor.css" />
-    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-    
-    
-    <title>Home</title>
     <?php require_once './complementos/headerLeitor.php'; ?>  
 </head>
 
@@ -36,7 +32,7 @@ if(empty($assunto2)) $assunto2 = null;
     <main>
         <section class="banner">
             <div class="imgbanner">
-                
+                <!-- <img src="../SUBLI/img/banner.png" alt=""> -->
                 </div>
             </section>
 

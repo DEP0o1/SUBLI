@@ -22,13 +22,19 @@ if (isset($_REQUEST['valor'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resultado</title>
+  <title>SUBLI - Pesquisa</title>
   <link rel="stylesheet" href="css/leitor.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
   <?php include 'complementos/headerLeitor.php'; ?>
 </head>
 
 <body>
+  <main>
+
+  
+  <div class="conteudo-pesquisa">
+
+  
   <section class="pesquisa">
     <select name="Categoria" id="" class="categoria">
       <option value="">Categorias</option>
@@ -67,22 +73,16 @@ if (isset($_REQUEST['valor'])) {
       </div>-->
 
 
-    <div class="nao-encontrado">
-      <span class='material-symbols-outlined'>
-        menu_book
-      </span>
-      <h1>Nenhum livro foi encontrado</h1>
-    </div>
-
     <!-- <div class="nao-encontrado">
-      <h1>Nenhum livro foi encontrado</h1>
       <span class='material-symbols-outlined'>
         menu_book
       </span>
+      <h1>Nenhum livro foi encontrado</h1>
     </div> -->
-
 
     </button>
   </section>
+  </div>
+  </main>
 </body>
 </html>

@@ -2,45 +2,37 @@
 
 class LivroView{
 
-    public function ExibirLivros($livro = new Livro()){
-
+   public function ExibirLivros($livro = new Livro()){
     $controller = new LivroController;
     $livros = $controller->ListarLivros($livro);
 
-    if (empty($livros)) {
+    if (!empty($livros)) {
+        foreach($livros as $Livro){
+            echo "
+            <div class='livro'>
+                <img src='img/{$Livro->cd_livro}' alt='{$Livro->nm_livro}'/>
+                <h2>{$Livro->nm_livro}</h2>
+                <div class='favorito'>
+                  <span class='material-symbols-outlined'>favorite</span>
+                </div>
+            ";
+
+            foreach($Livro->autores as $autor){
+                echo "<p>{$autor->nm_autor}</p>";
+            }
+
+            echo "
+                <button class='btnRosa'>
+                    <a href='LlivroLeitor.php?codigo=$Livro->cd_livro'>Ver Mais</a>
+                </button>
+            </div>";
+        }
+    } else {
         echo "
         <div class='nao-encontrado'>
-      <h1>Nenhum livro foi encontrado</h1>
-      <span class='material-symbols-outlined'>
-        menu_book
-      </span>
-    </div> 
-        ";
-        return;
-    }
-        
-    foreach($livros as $Livro){
-        echo 
-        "
-        <div class='livro'>
-            <img src='img/{$Livro->cd_livro}'/></img>
-            <h2>{$Livro->nm_livro}</h2>
-            <div class='favorito'>
-              <span class='material-symbols-outlined'>favorite</span>
-            </div>
-        ";
-
-        foreach($Livro->autores as $autor){
-            echo 
-            "
-            <p>{$autor->nm_autor}</p>
-            ";
-        }
-        echo
-        "
-            <button class='btnRosa'><a href='LlivroLeitor.php?codigo=$Livro->cd_livro'>Ver Mais</a></button>
-        </div>
-        ";
+            <h1>Nenhum livro foi encontrado</h1>
+            <span class='material-symbols-outlined'>menu_book</span>
+        </div>";
     }
 }
 

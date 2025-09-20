@@ -23,8 +23,6 @@ public function ExibirLeitores($leitor = new Leitor){
             </div>
             ";
 
-
-
   }
  }
 }

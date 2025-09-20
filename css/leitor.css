@@ -75,17 +75,9 @@ h4 {
   color: var(--branco);
 }
 
-option {
-  background-color: var(--azul);
-  color: var(--branco);
-  border: solid black 20px;
-  border-radius: var(--radius);
+.location:hover{
+  background-color: var(--vinho-hover);
 }
-
-select {
-  border: solid black 20px;
-}
-
 /*--------------------Nao encontrado-------------------------------------------------------------------------------------------*/
 
 .nao-encontrado {
@@ -105,6 +97,11 @@ select {
   color: var(--bege);
   font-size: 10rem;
   cursor: default;
+}
+
+.conteudo-pesquisa {
+  margin-top: 0;
+  min-height: 82vh;
 }
 
 /*--------------------Barra de rolagem--------------------------------------------------------------------------------------------*/
@@ -142,6 +139,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 999;
+  margin: 0;
 }
 
 header span {
@@ -203,8 +201,16 @@ header span:hover, a:hover {
 
 .logo {
   width: 80px;
-  height: 80px;
+  height: 40px;
   padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img{
+  height: 40px;
+  width: auto;
 }
 
 .abas {
@@ -292,9 +298,24 @@ body {
 
 .areaBanner {
   width: 100%;
+  margin: 0;
 }
+
 .banner {
   width: 100%;
+  margin: 0px;
+}
+
+.imgbanner {
+  background-image: url(../img/banner.png);
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .btnCategorias {
@@ -799,38 +820,47 @@ main {
   overflow: hidden;
 }
 
-.imgbanner {
-  background-image: url(../img/banner.png);
-  width: 100vw;
-  height: 70vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .pesquisa {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin: 20px;
+  gap: var(--gap);
+  margin-top: var(--gap)
 }
 
 .categoria {
   background-color: var(--vinho);
   color: var(--branco);
-  padding: 10px;
-  border-radius: 10px;
+  padding: var(--gap);
+  border-radius: var(--radius);
   border: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   overflow-x: hidden;
-  gap: 5px;
+  gap: var(--gap);
+}
+
+.categoria:hover {
+  background-color: var(--vinho-hover);
+  transition: 0.6 ease-in;
+  cursor: pointer;
+}
+
+.categoria option {
+  background-color: var(--azul);
+  color: var(--branco);
+  border: solid black 20px;
+  border-radius: var(--radius);
+}
+
+.categoria select{
+  border: solid black 20px;
+}
+
+.categoria option:hover {
+  background-color: var(--azul-hover);
 }
 
 .categoria p {
@@ -855,7 +885,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: var(--gap);
   height: fit-content;
   margin-top: 0%;
 }
