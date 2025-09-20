@@ -1378,6 +1378,10 @@ h1 {
   color: var(--cinza);
 }
 
+.FormLogin a {
+  cursor: pointer;
+}
+
 .FormLogin hr {
   border: var(--border);
   width: 100%;
