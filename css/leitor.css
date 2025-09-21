@@ -1502,6 +1502,10 @@ label {
   align-items: center;
 }
 
+.cadastre-se h2{
+  cursor: pointer;
+}
+
 .cadastre-se a {
   color: var(--vinho);
   cursor: pointer;

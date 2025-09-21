@@ -363,23 +363,23 @@ nav {
 .livro {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  border: solid grey 1px;
+  border: var(--border);
   background-color: var(--branco);
-  border-radius: 5px;
+  border-radius: var(--radius);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
   text-align: center;
-  width: fit-content;
-  gap: 10px;
+  position: relative;
+  width: 160px;
+  height: 360px;
+  gap: var(--gap);
   transition: transform 0.3s ease;
   flex-direction: column;
+  padding: var(--gap);
+  text-overflow: ellipsis;
 }
 
-p {
-  display: flex;
-  align-items: center;
-  gap: var(--gap);
+.livro a {
+  color: var(--branco);
 }
 
 .livro:hover {
@@ -391,8 +391,7 @@ p {
   width: 140px;
   height: 210px;
   object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 15px;
+  border-radius: var(--radius);
 }
 
 .livro h3 {
@@ -405,15 +404,27 @@ p {
   color: #666;
   font-size: 14px;
 }
+
 .livro button {
   background-color: var(--vinho);
   color: var(--branco);
   border: none;
   padding: 8px 14px;
-  border-radius: 3px;
+  border-radius: var(--radius);
   cursor: pointer;
   margin-top: auto;
 }
+
+.favorito {
+  display: none;
+}
+
+p {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
 
 .favorito {
   background-color: var(--azul);
@@ -508,6 +519,12 @@ aside br {
   display: flex;
   align-items: center;
   gap: var(--gap);
+  cursor: pointer;
+  padding: 5px 0px 5px 0;
+  border-radius: var(--radius);
+}
+
+.informacao-aside p {
   cursor: pointer;
 }
 
@@ -688,22 +705,25 @@ aside br {
   font-size: 15px;
   border: none;
   cursor: pointer;
-  border: 2px solid var(--vinho);
+  color: var(--branco);
+  background-color: var(--vinho);
   transition: 1s;
-  border-radius: 15px;
+  border-radius: var(--radius);
 }
+
 .dropPraso {
   width: fit-content;
   padding: 10px;
   font-size: 15px;
   border: none;
   cursor: pointer;
-  border: 2px solid var(--vinho);
+  color: var(--branco);
+  background-color: var(--vinho);
   transition: 1s;
-  border-radius: 15px;
+  border-radius: var(--radius);
 }
 .dropdown-filtros {
-  color: black;
+  color: var(--branco);
   position: absolute;
   min-width: auto;
   overflow: hidden;
@@ -711,11 +731,11 @@ aside br {
   height: 0;
   transition: 0.5s;
   border-radius: 10px;
-  background-color: var(--fundo);
+  background-color: var(--azul);
 }
 
 .dropdown-filtros a {
-  color: black;
+  color: var(--branco);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -723,8 +743,7 @@ aside br {
 }
 
 .dropdown-praso {
-  color: black;
-
+  color: var(--branco);
   position: absolute;
   min-width: auto;
   overflow: hidden;
@@ -732,11 +751,11 @@ aside br {
   height: 0;
   transition: 0.5s;
   border-radius: 10px;
-  background-color: var(--fundo);
+  background-color: var(--azul);
 }
 
 .dropdown-praso a {
-  color: black;
+  color: var(--branco);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -746,7 +765,6 @@ aside br {
   height: fit-content;
   /* height: 280PX; */
   transition: 0.5s;
-  border: 2px solid var(--vinho);
 }
 
 .areaPesquisa {
@@ -766,9 +784,8 @@ aside br {
   justify-content: space-between;
   width: 50%;
   height: 25%;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 5px;
-  border: 1px solid #a39b91;
   border-radius: 25px;
   padding: 10px;
   background-color: white;
@@ -956,6 +973,7 @@ p {
 
 .areaTituloLivro {
   width: 100%;
+  color: var(--branco);
 }
 
 .tituloLivro {
@@ -1003,10 +1021,14 @@ p {
   gap: 20px;
 }
 
+.formAvancado {
+  padding: 20px;
+}
+
 .inputForm {
   padding: 5px;
   border-radius: 10px;
-  border: 1px solid #a39b91;
+  border: none;
   outline: none;
   text-decoration: none;
   width: 98%;
@@ -1015,7 +1037,7 @@ p {
 .inputFormDeLado {
   padding: 5px;
   border-radius: 10px;
-  border: 1px solid #a39b91;
+  border: none;
   outline: none;
   text-decoration: none;
 }
@@ -1036,7 +1058,27 @@ p {
   height: 38px;
 }
 
-.areaCadastro {
+/*-----------------cadastros--------------------------------------------------------------------------*/
+
+.titulo-area-cadastro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--branco);
+  border-bottom: var(--branco) 1px solid;
+}
+
+#fechar-popup {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .areaCadastro {
   display: flex;
   width: auto;
   align-items: center;
@@ -1044,12 +1086,49 @@ p {
   margin: 2%;
   margin-bottom: 0;
   height: 70vh;
+} */
+
+/* position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  padding: 2rem;
+  border-radius: 8px;
+  z-index: 1000; 
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  max-width: 400px;
+  width: 90%; */
+
+.areaCadastro {
+ display: flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%); 
+  margin: 2%;
+  top: 50%;
+  left: 50%;
+  height: 70vh;
+  width: 100vw;
+  z-index: 1000;
+  position: fixed;
 }
+
+.overlay-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7); 
+  z-index: 999; 
+}
+
 
 .info {
   display: flex;
   flex-direction: row;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter";
   font-size: 0.7rem;
   gap: 20px;
 }
