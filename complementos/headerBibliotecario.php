@@ -36,3 +36,4 @@
 </header>
 
 <script src="js/componentesJS/menuBibliotecario.js"></script>
+<script src="js/componentesJS/notificacaoBibliotecario.js"></script>

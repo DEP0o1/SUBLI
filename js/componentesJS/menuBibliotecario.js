@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>Cadastrar Editora</p>
     </div>
 
-    <div class="informacao-aside" >
+    <div class="informacao-aside" id="abrir-colecoes">
       <span class="material-symbols-outlined">collections_bookmark</span>
       <p>Cadastrar Coleções</p>
     </div>
@@ -175,6 +175,51 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /*-----------------------------coleçoes------------------------------------------------------------------------*/
+
+
+  const botaoAbrirColecoes = aside.querySelector("#abrir-colecoes");
+  botaoAbrirColecoes.addEventListener("click", () => {
+    const overlayPopup = document.createElement("div");
+    overlayPopup.classList.add("overlayPopup");
+    document.body.appendChild(overlayPopup);
+
+    const popup = document.createElement("div");
+    popup.className = "areaCadastro";
+    popup.innerHTML = `
+      <form class="formAvancado1">
+        <div class="titulo-area-cadastro">
+          <h1>Cadastrar Coleções</h1>
+          <button type="button" id="fechar-popup">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <section class="areaInput">
+          <div class="areaTituloLivro">
+            <label>Código da coleção:</label>
+            <input type="text" placeholder="Ex: 1">
+          </div>
+          <div class="areaTituloLivro">
+            <label>Nome da coleção</label>
+            <input type="text" placeholder="Ex: Volume Único">
+          </div>
+          <div class="areaBtn">
+            <button class="btnRosa">Cadastrar</button>
+          </div>
+        </section>
+      </form>
+    `;
+    document.body.appendChild(popup);
+
+    popup.querySelector("#fechar-popup").addEventListener("click", () => {
+      document.body.removeChild(popup);
+      document.body.removeChild(overlayPopup);
+      overlayPopup.addEventListener("click", fechar);
+    });
+    overlayPopup.addEventListener("click", () => {
+      document.body.removeChild(popup);
+      document.body.removeChild(overlayPopup);
+    });
+  });
 
   /*-----------------------------evento------------------------------------------------------------------------*/
 

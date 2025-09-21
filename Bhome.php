@@ -37,6 +37,134 @@ require_once './complementos/headerBibliotecario.php';
     <div class="doacoesTitulo">
       <h1>Doações</h1>
     </div>
+
+
+    <!-- <section class="notificacoes">
+      <div class="topo-not">
+        <h3>Notificações</h3>
+        <button type="button" id="fechar-notificacao">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+      </div>
+
+        <div class="item-lista-not">
+      <div class="titulo-item-not">
+        <span class="material-symbols-outlined">book</span>
+        <h3>Doação</h3>
+      </div>
+      
+      <div class="conteudo-item-lista-not">
+
+          <div class="imagem-item-lista-not">
+            <img src="img/biblioteca1_1.jpg" alt="">
+          </div>
+
+          <div class="informacao-item-lista-not">
+            <h3>Liam solicitou o empréstimo de sapiens e noites brancas!</h3>
+            <div class="conteudo-item-lista-doador-not">
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+              <p>23/09/2025</p>
+            </div>
+
+            <button class="btnRosa">
+              Ver Mais
+            </button>
+          </div>
+        </div> 
+        </div>
+
+         <div class="item-lista-not">
+      <div class="titulo-item-not">
+        <span class="material-symbols-outlined">menu_book</span>
+        <h3>Emprestimo</h3>
+      </div>
+      
+      <div class="conteudo-item-lista-not">
+
+          <div class="imagem-item-lista-not">
+            <img src="img/biblioteca1_1.jpg" alt="">
+          </div>
+
+          <div class="informacao-item-lista-not">
+            <h3>Liam solicitou a doação de sapiens!</h3>
+            <div class="conteudo-item-lista-doador-not">
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+              <p>23/09/2025</p>
+            </div>
+
+            <button class="btnRosa">
+              Ver Mais
+            </button>
+          </div>
+        </div> 
+        </div>
+
+         <div class="item-lista-not">
+      <div class="titulo-item-not">
+        <span class="material-symbols-outlined">menu_book</span>
+        <h3>Emprestimo</h3>
+      </div>
+      
+      <div class="conteudo-item-lista-not">
+
+          <div class="imagem-item-lista-not">
+            <img src="img/biblioteca1_1.jpg" alt="">
+          </div>
+
+          <div class="informacao-item-lista-not">
+            <h3>Liam solicitou a doação de sapiens!</h3>
+            <div class="conteudo-item-lista-doador-not">
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+              <p>23/09/2025</p>
+            </div>
+
+            <button class="btnRosa">
+              Ver Mais
+            </button>
+          </div>
+        </div> 
+        </div>
+
+         <div class="item-lista-not">
+      <div class="titulo-item-not">
+        <span class="material-symbols-outlined">menu_book</span>
+        <h3>Emprestimo</h3>
+      </div>
+      
+      <div class="conteudo-item-lista-not">
+
+          <div class="imagem-item-lista-not">
+            <img src="img/biblioteca1_1.jpg" alt="">
+          </div>
+
+          <div class="informacao-item-lista-not">
+            <h3>Liam solicitou a doação de sapiens!</h3>
+            <div class="conteudo-item-lista-doador-not">
+              <span class="material-symbols-outlined">
+                location_on
+              </span>
+              <p>23/09/2025</p>
+            </div>
+
+            <button class="btnRosa">
+              Ver Mais
+            </button>
+          </div>
+        </div> 
+        </div>
+
+      <div class="conteudo-notificacao">
+        <div class="conteudo-notificacao-item">
+
+        </div>
+      </div>
+    </section> -->
     
     <div class="resultadoPesquisa">
         <?php

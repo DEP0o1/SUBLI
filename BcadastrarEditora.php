@@ -18,9 +18,6 @@
                 <h1 class="pesquisaAvancada">Cadastrar Editora</h1>
             </div>
             
-
-            
-
             <section class="areaInput">
                 <div class="areaTituloLivro">
                     <label for="cd_editora" class="tituloForm">Código Editora:</label>

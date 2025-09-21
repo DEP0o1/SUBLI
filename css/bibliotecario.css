@@ -181,7 +181,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 10px 15px 10px 15px;
   background-color: var(--vinho);
   color: var(--branco);
   border: none;
@@ -540,18 +540,26 @@ aside br {
 .topo-not {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: var(--gap) 0 var(--gap) 0;
+  border-bottom: var(--branco) 1px solid;
 }
 
 .notificacoes {
   background-color: var(--azul);
   position: fixed;
   z-index: 1000;
-  margin-left: 0;
+  top: 70px;
+  right: 0;
   width: 60%;
   color: var(--branco);
   padding: 0px 40px 0px 40px;
+  max-height: 60vh;
+  overflow-y: scroll;
+  
 }
+
+
 
 .notificacoes h1 {
   margin: 0;
@@ -576,11 +584,14 @@ aside br {
   gap: var(--gap);
   margin: var(--gap) 0 var(--gap) 0;
   border-bottom: var(--branco) 1px solid;
-  padding: 0 0 var(--gap) 0;
+  padding: 0 0 15px 0;
 }
 
 .informacao-item-lista-not {
+  display: flex;
   gap: var(--gap);
+  flex-direction: column;
+
 }
 
 .imagem-item-lista-not {
@@ -591,9 +602,10 @@ aside br {
 }
 
 .imagem-item-lista-not img{
-  object-fit: contain;
-  width: 100px;
-  height: 100px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
 }
 
 .conteudo-item-lista-not {
@@ -607,9 +619,7 @@ aside br {
   display: flex;
   gap: var(--gap);
   align-items: center;
-  gap: var(--gap);
 }
-
 
 /*----------------------------------------------------------------------------------------------------------------*/
 .resultadoPesquisa {
@@ -1063,9 +1073,8 @@ p {
   justify-content: left;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
   border-radius: var(--radius);
-  padding: 1%;
+  padding: 20px;
   width: 100%;
   height: 100%;
 }
@@ -1088,6 +1097,16 @@ p {
   align-items: center;
 }
 
+#fechar-notificacao {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .areaCadastro {
  display: flex;
   width: auto;
@@ -1096,7 +1115,6 @@ p {
   transform: translate(-50%, -50%); 
   margin: 2%;
   top: 50%;
-  padding: 20px;
   left: 50%;
   height: fit-content;
   width: fit-content;
@@ -1114,7 +1132,6 @@ p {
   background: rgba(0, 0, 0, 0.699); 
   z-index: 5000; 
 }
-
 
 .info {
   display: flex;
