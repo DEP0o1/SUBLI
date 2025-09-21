@@ -3,6 +3,8 @@ require_once('./config.php');
 
 ?>
 <link rel="icon" type="image/png" href="img/favicon_SUBLI.png">
+<script src="js/componentesJS/dropDown.js"></script>
+
 <header>
       <a href="LindexLeitor.php">
         <div class="logo">
@@ -38,21 +40,50 @@ require_once('./config.php');
         </div>
 
         <div class="span-header">
+           <div class="dropdown">
+  <button class="dropdown-btn">
+    <span class="material-symbols-outlined">
+            person
+          </span>
+  </button>
 
-        <a href="LmeusLivros.php">
-        <span class="material-symbols-outlined">
-        person
-        </span>
-        </a>
+  <div class="dropdown-content">
+    <h1>Leitor</h1>
 
+    <div class="titulo-dropdown">
+      <span class="material-symbols-outlined">
+            person
+          </span>
+          <a href=""><h3>Cadastre-se</h3></a>
+    </div>
+
+    <div class="titulo-dropdown">
+      <span class="material-symbols-outlined">
+            person
+          </span>
+          <a href="login.php"><h3>Entrar como leitor</h3></a>
+    </div>
+
+    <hr>
+
+    <h1>Bibliotecário</h1>
+
+    <div class="titulo-dropdown">
+      <span class="material-symbols-outlined">
+            person
+          </span>
+          <a href=""><h3>Cadastre-se</h3></a>
+    </div>
+
+    <div class="titulo-dropdown">
+      <span class="material-symbols-outlined">
+            person
+          </span>
+          <a href=""><h3>Entrar como bibliotecário</h3></a>
+    </div>
+  </div>
+</div>
+        
         </div>
-
-       
-
-        <!-- <button id="btnCadastro">
-        Cadastre-se
-        </button> -->
       </div>
-
-
     </header>

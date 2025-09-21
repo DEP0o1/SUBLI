@@ -105,11 +105,6 @@ if(empty($assunto2)) $assunto2 = null;
     </div>
 </div>
  
-
-
-
-
-
 <div class="textoEsquerda">
     <h1>Mais Procurados</h1>
 </div>
@@ -297,8 +292,8 @@ function inicializarCarrossel(carrosselId) {
 inicializarCarrossel('carrossel-destaques');
 inicializarCarrossel('carrossel-procurados');
 });
-    </script>
 
+    </script>
     <script src="js/componentesJS/filtros.js" ></script>
     <script src="js/componentesJS/popupCadastro.js"></script>
   </body>
