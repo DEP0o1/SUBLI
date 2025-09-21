@@ -474,6 +474,7 @@ aside {
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
+  overflow-y: scroll;
 }
 
 .overlay {
@@ -949,17 +950,6 @@ p {
   width: 45%;
 }
 
-.formAvancado1 {
-  background-color: var(--azul);
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
-  gap: 20px;
-  border-radius: 15px;
-  padding: 1%;
-  width: 33%;
-}
-
 .formSinopse {
   display: flex;
   flex-direction: column;
@@ -974,6 +964,13 @@ p {
 .areaTituloLivro {
   width: 100%;
   color: var(--branco);
+  gap: var(--gap);
+}
+
+.areaTituloLivro input {
+  padding: 5px;
+  border: none;
+  border-radius: var(--radius);
 }
 
 .tituloLivro {
@@ -1060,6 +1057,19 @@ p {
 
 /*-----------------cadastros--------------------------------------------------------------------------*/
 
+.formAvancado1 {
+  background-color: var(--azul);
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: var(--radius);
+  padding: 1%;
+  width: 100%;
+  height: 100%;
+}
+
 .titulo-area-cadastro {
   display: flex;
   justify-content: space-between;
@@ -1078,27 +1088,6 @@ p {
   align-items: center;
 }
 
-/* .areaCadastro {
-  display: flex;
-  width: auto;
-  align-items: center;
-  justify-content: center;
-  margin: 2%;
-  margin-bottom: 0;
-  height: 70vh;
-} */
-
-/* position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  padding: 2rem;
-  border-radius: 8px;
-  z-index: 1000; 
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
-  max-width: 400px;
-  width: 90%; */
-
 .areaCadastro {
  display: flex;
   width: auto;
@@ -1107,21 +1096,23 @@ p {
   transform: translate(-50%, -50%); 
   margin: 2%;
   top: 50%;
+  padding: 20px;
   left: 50%;
-  height: 70vh;
-  width: 100vw;
-  z-index: 1000;
+  height: fit-content;
+  width: fit-content;
+  border-radius: var(--radius);
+  z-index: 6000;
   position: fixed;
 }
 
-.overlay-popup {
+.overlayPopup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7); 
-  z-index: 999; 
+  background: rgba(0, 0, 0, 0.699); 
+  z-index: 5000; 
 }
 
 
