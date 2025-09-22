@@ -295,6 +295,7 @@ INSERT INTO livro (cd_livro, nm_livro, cd_editora, cd_idioma, cd_colecao, ds_sin
 -- ===== RELACIONAMENTO LIVRO ↔ AUTOR =====
 INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
 (1, 1), -- O Príncipe - Maquiavel
+/*(1,2),*/
 (2, 2), -- A Bruxa e o Calibã - Mary Renault
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
 (4, 4), -- Vidas Secas - Graciliano Ramos
