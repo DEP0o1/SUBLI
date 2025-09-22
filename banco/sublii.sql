@@ -360,10 +360,8 @@ INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',
 
 
 /*Reservas*/
-<<<<<<< HEAD
-=======
+
 INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true);
->>>>>>> 85fd3f43fe5b1255283d3aca5d5486a31c68f427
 
 
 /*
