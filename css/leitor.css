@@ -868,8 +868,8 @@ span {
   border-radius: 5px;
 }
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 84px;
+  height: 84px;
   padding: 0px;
 }
 
@@ -908,7 +908,7 @@ main {
 .categoria {
   background-color: var(--vinho);
   color: var(--branco);
-  height: 100%;
+  padding: 13px;
   border-radius: var(--radius);
   border: none;
   display: flex;
@@ -1372,7 +1372,7 @@ h1 {
   align-items: flex-start;
   justify-content: center;
   height: 70vh;
-  gap: var(--gap);
+  gap: var(--gap-grande);
 }
 
 .botaoStatus {
