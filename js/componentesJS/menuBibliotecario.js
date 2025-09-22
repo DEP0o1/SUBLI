@@ -60,24 +60,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <h1>Cadastros</h1>
 
-    <div class="informacao-aside" >
+    <div class="informacao-aside" id="abrir-livro">
       <span class="material-symbols-outlined">library_add</span>
       <a href="BcadastrarLivro.php">
         <p>Cadastrar Livro</p>
       </a>
     </div>
 
-    <div class="informacao-aside" >
+    <div class="informacao-aside" id="abrir-autor">
       <span class="material-symbols-outlined">person_add</span>
       <p>Cadastrar Autor</p>
     </div>
 
-    <div class="informacao-aside" >
+    <div class="informacao-aside" id="abrir-genero">
       <span class="material-symbols-outlined">category</span>
       <p>Cadastrar Gênero</p>
     </div>
     
-    <div class="informacao-aside" >
+    <div class="informacao-aside" id="abrir-idioma">
       <span class="material-symbols-outlined">translate</span>
       <p>Cadastrar Idioma</p>
     </div>
@@ -126,7 +126,95 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /*-----------------------------genero------------------------------------------------------------------------*/
 
+  const botaoAbrirGenero = aside.querySelector("#abrir-genero");
+  botaoAbrirGenero.addEventListener("click", () => {
+    const overlayPopup = document.createElement("div");
+    overlayPopup.classList.add("overlayPopup");
+    document.body.appendChild(overlayPopup);
+
+    const popup = document.createElement("div");
+    popup.className = "areaCadastro";
+    popup.innerHTML = `
+      <form class="formAvancado1">
+        <div class="titulo-area-cadastro">
+          <h1>Cadastrar Gênero</h1>
+          <button type="button" id="fechar-popup">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <section class="areaInput">
+          <div class="areaTituloLivro">
+            <label>Código do gênero:</label>
+            <input type="text" placeholder="Ex: 1">
+          </div>
+          <div class="areaTituloLivro">
+            <label>Gênero:</label>
+            <input type="text" placeholder="Ex: Ficção científica">
+          </div>
+          <div class="areaBtn">
+            <button class="btnRosa">Cadastrar</button>
+          </div>
+        </section>
+      </form>
+    `;
+    document.body.appendChild(popup);
+
+    popup.querySelector("#fechar-popup").addEventListener("click", () => {
+      document.body.removeChild(popup);
+      document.body.removeChild(overlayPopup);
+      overlayPopup.addEventListener("click", fechar);
+    });
+    overlayPopup.addEventListener("click", () => {
+      document.body.removeChild(popup);
+      document.body.removeChild(overlayPopup);
+    });
+  });
+
   /*-----------------------------idioma------------------------------------------------------------------------*/
+
+  const botaoAbrirIdioma = aside.querySelector("#abrir-idioma");
+  botaoAbrirIdioma.addEventListener("click", () => {
+    const overlayPopup = document.createElement("div");
+    overlayPopup.classList.add("overlayPopup");
+    document.body.appendChild(overlayPopup);
+
+    const popup = document.createElement("div");
+    popup.className = "areaCadastro";
+    popup.innerHTML = `
+      <form class="formAvancado1">
+        <div class="titulo-area-cadastro">
+          <h1>Cadastrar Idioma</h1>
+          <button type="button" id="fechar-popup">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        <section class="areaInput">
+          <div class="areaTituloLivro">
+            <label>Código do idioma:</label>
+            <input type="text" placeholder="Ex: 1">
+          </div>
+          <div class="areaTituloLivro">
+            <label>Idioma:</label>
+            <input type="text" placeholder="Ex: Português">
+          </div>
+          <div class="areaBtn">
+            <button class="btnRosa">Cadastrar</button>
+          </div>
+        </section>
+      </form>
+    `;
+    document.body.appendChild(popup);
+
+    popup.querySelector("#fechar-popup").addEventListener("click", () => {
+      document.body.removeChild(popup);
+      document.body.removeChild(overlayPopup);
+      overlayPopup.addEventListener("click", fechar);
+    });
+    overlayPopup.addEventListener("click", () => {
+      document.body.removeChild(popup);
+      document.body.removeChild(overlayPopup);
+    });
+  });
 
   /*-----------------------------editora------------------------------------------------------------------------*/
 
