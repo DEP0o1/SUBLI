@@ -32,7 +32,7 @@ CREATE PROCEDURE listar_livros (
     IN p_cd_emprestimo INT
 )
 BEGIN
-    SELECT DISTINCT l.*
+    SELECT  DISTINCT l.cd_livro, l.nm_livro, e.cd_editora, e.nm_editora, i.cd_idioma, i.nm_idioma,  c.cd_colecao, c.nm_colecao, g.cd_genero, g.nm_genero, a.cd_autor, a.nm_autor, s.cd_assunto, s.nm_assunto
     FROM livro l
     LEFT JOIN editora e ON l.cd_editora = e.cd_editora
     LEFT JOIN idioma i ON l.cd_idioma = i.cd_idioma
@@ -72,7 +72,6 @@ BEGIN
        (p_cd_biblioteca IS NULL OR ex.cd_biblioteca = p_cd_biblioteca) AND
        (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo);
 END$$
-
 
 
 /*CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, 1,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
