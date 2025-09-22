@@ -14,7 +14,7 @@ if (isset($_REQUEST['codigo'])) {
 if (isset($_REQUEST['enviado'])) {
   $exemplarcontroller = new ExemplarController();
   $exemplar = $exemplarcontroller->ContarExemplares(new Exemplar($codigo, $cd_biblioteca));
-  var_dump($exemplar);
+
     if($exemplar[0]["COUNT(*)"] == 0){
       $mensagem = "<div class='mensagem'>
             <div class='titulo-mensagem'>
@@ -31,7 +31,7 @@ if (isset($_REQUEST['enviado'])) {
         new Reserva(null, null, new Leitor(), new Livro($codigo), new Biblioteca($cd_biblioteca), true)
       );
 
-
+    if(isset($_SESSION['leitor'])){
       if ($exemplar > $reserva) {
         $controller->AdicionarReserva(
           new Reserva(null, null, new Leitor($_SESSION['leitor']), new Livro($codigo), new Biblioteca($cd_biblioteca))
@@ -45,7 +45,7 @@ if (isset($_REQUEST['enviado'])) {
             <p>Sua reserva foi feita com sucesso! Retire este livro na biblioteca em até 3 dias!</p>
           </div>";
       } 
-      
+    
       else {
         $mensagem = " <div class='mensagem'>
             <div class='titulo-mensagem'>
@@ -55,11 +55,18 @@ if (isset($_REQUEST['enviado'])) {
             <p>Este livro já foi reservado por outro usuário!</p>
           </div>";
       } 
-
     }
 
-
-  // FAZER COUNT DE EXEMPLARES
+    else {
+      $mensagem = " <div class='mensagem'>
+      <div class='titulo-mensagem'>
+        <span class='material-symbols-outlined'>book</span>
+        <h1>Não Foi Possível Reservar Este Livro</h1>
+      </div>
+      <p>Você precisa estar logado para reservar um livro!</p>
+    </div>";
+    }
+    }
 }
 ?>
 

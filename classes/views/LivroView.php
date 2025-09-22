@@ -46,8 +46,6 @@ class LivroView{
 
     foreach($livros as $Livro){
 
-        $editoracontroller = new EditoraController();
-        $editora = $editoracontroller->ListarEditoras(new Editora(null,null,$Livro->cd_livro));
 
         echo "
         <div class='capaLivroGrande'>
@@ -70,12 +68,12 @@ class LivroView{
         echo "
             <p>
               <span class='material-symbols-outlined'>corporate_fare</span>
-              Editora: {$editora[0]->nm_editora}
+              Editora: {$Livro->editora->nm_editora}
             </p>
 
             <p>
               <span class='material-symbols-outlined'>language</span>
-              Idioma: aaa
+              Idioma: {$Livro->idioma->nm_idioma}
             </p>
 
             <p>

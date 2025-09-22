@@ -34,7 +34,7 @@ class LivroController extends Banco
             // $idiomacontroller = new IdiomaController;
             // $generocontroller = new GeneroController;
             $autorcontroller = new AutorController;
-            $editoracontroller = new EditoraController;
+
      
             foreach($dados as $item){
                 $Livro = new Livro;
@@ -44,7 +44,8 @@ class LivroController extends Banco
                 // $Livro->idioma = $idiomacontroller->ListarIdiomas(new Idioma(null,null,$Livro->cd_livro));
                 // $Livro->generos = $generocontroller->ListarGeneros(new Genero(null,null,$Livro->cd_livro));
                 $Livro->autores = $autorcontroller->ListarAutores(new Autor(null,null,$Livro->cd_livro));
-                // $Livro->editora = $editoracontroller->ListarEditoras(new Editora(null,null,$Livro->cd_livro));
+                 $Livro->editora = new Editora($item["cd_editora"],$item["nm_editora"]);
+                 $Livro->idioma = new Idioma($item["cd_idioma"],$item["nm_idioma"]);
                 array_push($lista, $Livro);
             }
           
