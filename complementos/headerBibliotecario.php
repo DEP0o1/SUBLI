@@ -18,7 +18,6 @@
   </div>
 
   <div class="abas">
-    <a href="./BemprestimoPesquisa.php">Empréstimos</a>
 
     <button id="abrirNotificacao">
 

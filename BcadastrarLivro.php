@@ -208,7 +208,7 @@ if ($cadastro) {
 
 <body>
     <div class="areaCadastro">
-        <form method="POST" class="formAvancado">
+        <form method="POST" class="formAvancado1">
             <div>
                 <h1 class="pesquisaAvancada">Cadastrar Livro </h1>
             </div>

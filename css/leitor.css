@@ -491,6 +491,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
+  height: 100%;
 }
 
 .informacoesBiblioteca h1,
@@ -715,11 +716,16 @@ span {
   height: 100%;
 }
 
+.areaMapaBiblioteca {
+  height: 100%;
+  width: 100%;
+}
+
 #carregando {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -728,6 +734,7 @@ span {
   font-family: "Inter";
   border: 5px solid var(--azul);
 }
+
 .spinner {
   border: 5px solid rgba(255, 255, 255, 0.3);
   border-top: 5px solid var(--branco);
@@ -895,12 +902,13 @@ main {
   align-items: center;
   gap: var(--gap);
   margin-top: var(--gap);
+  height: fit-content;
 }
 
 .categoria {
   background-color: var(--vinho);
   color: var(--branco);
-  padding: var(--gap);
+  height: 100%;
   border-radius: var(--radius);
   border: none;
   display: flex;
