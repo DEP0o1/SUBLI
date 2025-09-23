@@ -22,7 +22,8 @@ if(empty($assunto2)) $assunto2 = null;
         <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SUBLI - Início</title>
-    <link rel="stylesheet" href="css/leitor.css" />
+    <link rel="stylesheet" href="css/leitor.css"/>
+    <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     
     <?php require_once './complementos/headerLeitor.php'; ?>  
@@ -223,8 +224,6 @@ if(empty($assunto2)) $assunto2 = null;
 <div class="textoEsquerda">
     <h1>Doação de livros</h1>
 </div>
-
-
 
     <section class="doacaoLivros">
       <div class="doacaotexto">

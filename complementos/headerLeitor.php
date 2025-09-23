@@ -8,7 +8,7 @@ require_once('./config.php');
 <header>
       <a href="LindexLeitor.php">
         <div class="logo">
-          <img src="img/logoCorClara.png" alt="" />
+          <img src="img/subli.logoCorClara.png" alt="" />
         </div>
       </a>
 
