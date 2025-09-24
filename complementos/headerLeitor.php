@@ -72,13 +72,6 @@ require_once('./config.php');
       <span class="material-symbols-outlined">
             person
           </span>
-          <a href=""><h3>Cadastre-se</h3></a>
-    </div>
-
-    <div class="titulo-dropdown">
-      <span class="material-symbols-outlined">
-            person
-          </span>
           <a href=""><h3>Entrar como bibliotecário</h3></a>
     </div>
   </div>
