@@ -156,7 +156,29 @@
     flex-wrap: nowrap;
     width: 50vw;
 }
+}
 
+/* ------------------------biblioteca-------------------------- */
+@media only screen and (max-width:600px) {
+    .bibliotecaPerfil{
+        flex-direction: column;
+        justify-content: flex-start;
+        height: fit-content;
+    }
+
+    .bibliotecaFotos img{
+        height: 40vh;
+        width: 65vw;
+    }
+
+    .carrosselBiblioteca img{
+        height: 15vh;
+        width: 30vw;
+    }
+
+    .areaMapaBiblioteca{
+        height: 40vh;
+    }
 }
 
 @media only screen and (max-width: 600px) {
