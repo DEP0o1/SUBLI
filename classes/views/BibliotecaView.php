@@ -29,7 +29,7 @@ class BibliotecaView{
             <h1>{$Biblioteca->nm_biblioteca}<span>
             • Fechado
             </span></h1>
-            <div class='conteudo-item-lista-doador'>
+            <div class='conteudo-item-lista-biblioteca'>
               <span class='material-symbols-outlined'>
                 location_on
               </span>

@@ -1415,7 +1415,7 @@ h1 {
 .dadosLivro {
   display: flex;
   flex-direction: column;
-  margin: none;
+  margin: 0;
   padding: 0;
   gap: var(--gap);
   align-items: flex-start;
