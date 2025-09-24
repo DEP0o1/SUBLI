@@ -1,4 +1,5 @@
 <?php
+require_once './complementos/menuBibliotecario.php'
 ?>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 <header>
@@ -26,10 +27,6 @@
       </span>
     </button>
     
-    <button id="abrirMenu">
-
-  <span class="material-symbols-outlined">menu</span>
-</button>
   </div>
   </div>
 </header>

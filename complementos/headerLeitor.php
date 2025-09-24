@@ -2,7 +2,7 @@
 require_once('./config.php');
 
 ?>
-<link rel="icon" type="image/png" href="img/favicon_SUBLI.png">
+<link rel="icon" type="image/svg+xml" href="img/favIcon-contornado-mini.svg">
 <script src="js/componentesJS/dropDown.js"></script>
 
 <header>
@@ -54,7 +54,7 @@ require_once('./config.php');
       <span class="material-symbols-outlined">
             person
           </span>
-          <a href=""><h3>Cadastre-se</h3></a>
+          <a href="Lcadastro.php"><h3>Cadastre-se</h3></a>
     </div>
 
     <div class="titulo-dropdown">
@@ -72,7 +72,7 @@ require_once('./config.php');
       <span class="material-symbols-outlined">
             person
           </span>
-          <a href=""><h3>Entrar como bibliotecário</h3></a>
+          <a href="Bhome.php"><h3>Entrar como bibliotecário</h3></a>
     </div>
   </div>
 </div>

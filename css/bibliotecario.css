@@ -77,6 +77,11 @@ header {
   z-index: 10;
 }
 
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 header button {
   border: none;
   background-color: transparent;
@@ -92,11 +97,12 @@ body {
   background-color: #f2ece7;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row-reverse;
   margin-bottom: 2%;
   background-repeat: no-repeat;
   background-size: 100%;
   margin-top: 84px;
+  overflow-x: hidden;
 }
 
 /* --------------------header---------------------------------------------------------------------------------- */
@@ -463,17 +469,13 @@ p {
 }
 
 aside {
-  right: 0;
   top: 0;
   background-color: var(--azul);
   color: var(--branco);
   width: 30vw;
   padding: 0px 30px 30px 30px;
-  position: fixed;
   height: 100%;
-  transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
-  z-index: 1000;
   overflow-y: scroll;
 }
 
@@ -627,7 +629,7 @@ aside br {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: var(--gap);
 }
 
 .areaLivro {

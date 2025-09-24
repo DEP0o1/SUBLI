@@ -9,7 +9,7 @@ require_once('config.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> Pesquisar Leitor </title>
+    <title>SUBLI - Leitores</title>
     <link rel="stylesheet" href="css/bibliotecario.css">
     <link rel="stylesheet" href="css/mobile.css">
     <script src="js/componentesJS/header.js"></script>
@@ -22,7 +22,7 @@ require_once('config.php');
     require_once './complementos/headerBibliotecario.php';
     ?>
     <main class="pgPesquisaLeitor">
-        <section class="pesquisarLeitor">
+        <!-- <section class="pesquisarLeitor">
             <form action="">
                 <div class="titulo-areaPerfil">
                     <h1>Pesquisar Leitor</h1>
@@ -44,7 +44,7 @@ require_once('config.php');
                     <a href="./BcadastrarLeitor.php" class="btnRosa">Novo Leitor</a>
                 </div>
             </form>
-        </section>
+        </section> -->
 
         <section class="resultadoPesquisaLeitor">
             <div class="resultadoEmPe">
