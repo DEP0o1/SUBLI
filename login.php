@@ -11,13 +11,9 @@ require('config.php');
     <title>SUBLI - Login</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/leitor.css">
+    <link rel="stylesheet" href="css/mobile.css">
     <script type="module" src="js/componentesJS/acesso.js"></script>
 </head>
-<body>
-
-
-<body>
-
 <body class="bodyLogin">
     <?php
     //  include 'complementos/headerLeitor.php'; 
@@ -52,7 +48,7 @@ require('config.php');
 
         <div class="cadastre-se">
            <p> Ainda não possui uma conta?</p> 
-           <a href="Lresultado.php"><h2>Cadastre-se</h2></a>
+           <a href="Lcadastro.php"><h2>Cadastre-se</h2></a>
         </div>
 
     </form>
