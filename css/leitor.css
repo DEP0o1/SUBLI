@@ -37,7 +37,7 @@ h4 {
   --amarelo: #fdc18d;
   --branco: #fffbf7;
   --bege: #b59e8b;
-  --fundo: #FAF4EE;
+  --fundo: #faf4ee;
   --cinza: #857d72;
   --gap: 10px;
   --gap-grande: 50px;
@@ -65,7 +65,6 @@ h4 {
   gap: var(--gap);
 }
 
-
 .btnRosa:hover {
   background-color: var(--vinho-hover);
   transition: 0.2s;
@@ -75,17 +74,9 @@ h4 {
   color: var(--branco);
 }
 
-option {
-  background-color: var(--azul);
-  color: var(--branco);
-  border: solid black 20px;
-  border-radius: var(--radius);
+.location:hover {
+  background-color: var(--vinho-hover);
 }
-
-select {
-  border: solid black 20px;
-}
-
 /*--------------------Nao encontrado-------------------------------------------------------------------------------------------*/
 
 .nao-encontrado {
@@ -94,16 +85,22 @@ select {
   justify-content: center;
   align-items: center;
   color: var(--bege);
+  width: 100%;
 }
 
 .nao-encontrado h1 {
   margin: 0;
 }
 
-.nao-encontrado span{
+.nao-encontrado span {
   color: var(--bege);
   font-size: 10rem;
   cursor: default;
+}
+
+.conteudo-pesquisa {
+  margin-top: 0;
+  min-height: 82vh;
 }
 
 /*--------------------Barra de rolagem--------------------------------------------------------------------------------------------*/
@@ -116,6 +113,72 @@ select {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--bege);
+}
+
+/*----------------dropDown------------------------------------------------------------------*/
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--azul);
+  min-width: 160px;
+  border-radius: var(--radius);
+  right: 0;
+  gap: var(--gap);
+  padding: 15px;
+}
+
+.dropdown-content h1 {
+  margin: 0;
+}
+
+.dropdown-content hr {
+  border: none;
+  background-color: var(--branco);
+  height: 1px;
+  margin: var(--gap) 0px var(--gap) 0px;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.dropdown-content h3 {
+  cursor: pointer;
+}
+
+.dropdown-btn {
+  border: none;
+  background-color: transparent;
+  gap: var(--gap);
+}
+
+.titulo-dropdown:hover {
+  background-color: var(--azul-hover);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.mostrar {
+  display: block;
+  gap: var(--gap);
+}
+
+.titulo-dropdown {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  padding:5px 0px 5px 0px;
+}
+
+.titulo-dropdown h1 {
+  margin: 0;
 }
 
 /*----------------------header-------------------------------------------------------------------------------------------- */
@@ -141,6 +204,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 999;
+  margin: 0;
 }
 
 header span {
@@ -148,7 +212,8 @@ header span {
   cursor: pointer;
 }
 
-header span:hover, a:hover {
+header span:hover,
+a:hover {
   color: var(--amarelo);
   transition: 0.2s ease;
 }
@@ -165,7 +230,7 @@ header span:hover, a:hover {
   text-wrap: nowrap;
 }
 
-.areaPesquisa span{
+.areaPesquisa span {
   cursor: pointer;
 }
 
@@ -176,7 +241,6 @@ header span:hover, a:hover {
   height: 25%;
   border-radius: 5px;
   padding: 5px;
-  border: 1px solid var(--bege);
   border-radius: 25px;
   padding: 10px;
   background-color: var(--branco);
@@ -202,8 +266,16 @@ header span:hover, a:hover {
 
 .logo {
   width: 80px;
-  height: 80px;
+  height: 40px;
   padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
 }
 
 .abas {
@@ -291,9 +363,27 @@ body {
 
 .areaBanner {
   width: 100%;
+  margin: 0;
+  top: 0;
 }
+
 .banner {
   width: 100%;
+  top: 0;
+  margin: 0px;
+}
+
+.imgbanner {
+  background-image: url(../img/banner.png);
+  top: 0;
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .btnCategorias {
@@ -401,6 +491,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--gap);
+  height: 100%;
 }
 
 .informacoesBiblioteca h1,
@@ -436,7 +527,7 @@ span {
   font-family: "Inter";
 }
 
-.calendario span{
+.calendario span {
   color: var(--branco);
 }
 
@@ -507,7 +598,7 @@ span {
   margin: 0;
 }
 
-.item-lista h3{
+.item-lista h3 {
   color: var(--vinho);
 }
 
@@ -517,7 +608,7 @@ span {
   object-fit: cover;
   border-radius: var(--radius);
   padding: var(--gap);
-} 
+}
 
 .imagem-item-lista {
   width: 150px;
@@ -602,7 +693,7 @@ span {
   width: 50%;
 }
 
-.lista-bibliotecas span{
+.lista-bibliotecas span {
   color: var(--vinho);
 }
 
@@ -625,11 +716,16 @@ span {
   height: 100%;
 }
 
+.areaMapaBiblioteca {
+  height: 100%;
+  width: 100%;
+}
+
 #carregando {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -638,6 +734,7 @@ span {
   font-family: "Inter";
   border: 5px solid var(--azul);
 }
+
 .spinner {
   border: 5px solid rgba(255, 255, 255, 0.3);
   border-top: 5px solid var(--branco);
@@ -771,8 +868,8 @@ span {
   border-radius: 5px;
 }
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 84px;
+  height: 84px;
   padding: 0px;
 }
 
@@ -798,38 +895,48 @@ main {
   overflow: hidden;
 }
 
-.imgbanner {
-  background-image: url(../img/banner.png);
-  width: 100vw;
-  height: 70vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .pesquisa {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin: 20px;
+  gap: var(--gap);
+  margin-top: var(--gap);
+  height: fit-content;
 }
 
 .categoria {
   background-color: var(--vinho);
   color: var(--branco);
-  padding: 10px;
-  border-radius: 10px;
+  padding: 13px;
+  border-radius: var(--radius);
   border: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   overflow-x: hidden;
-  gap: 5px;
+  gap: var(--gap);
+}
+
+.categoria:hover {
+  background-color: var(--vinho-hover);
+  transition: 0.6 ease-in;
+  cursor: pointer;
+}
+
+.categoria option {
+  background-color: var(--azul);
+  color: var(--branco);
+  border: solid black 20px;
+  border-radius: var(--radius);
+}
+
+.categoria select {
+  border: solid black 20px;
+}
+
+.categoria option:hover {
+  background-color: var(--azul-hover);
 }
 
 .categoria p {
@@ -854,7 +961,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: var(--gap);
   height: fit-content;
   margin-top: 0%;
 }
@@ -1036,7 +1143,7 @@ main {
   background-color: var(--azul);
   color: var(--branco);
   position: absolute;
-  border-radius: var(--radius) 0 0 var(--radius) ;
+  border-radius: var(--radius) 0 0 var(--radius);
   padding: 5px 10px 5px 5px;
   right: 0;
   cursor: pointer;
@@ -1063,11 +1170,13 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
-  width:fit-content;
+  width: 160px;
+  height: 360px;
   gap: var(--gap);
   transition: transform 0.3s ease;
   flex-direction: column;
   padding: var(--gap);
+  text-overflow: ellipsis;
 }
 
 .livro a {
@@ -1121,20 +1230,23 @@ p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--branco);
   border: none;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: var(--radius);
   font-size: 20px;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
   transition: background 0.3s ease;
+  color: black;
+  opacity: 0.8;
 }
 
 .seta:hover {
   background: var(--vinho);
+  opacity: 1;
 }
 
 .seta-esquerda {
@@ -1247,7 +1359,7 @@ h1 {
   border-radius: var(--radius);
 }
 
-.capaLivroGrande img{
+.capaLivroGrande img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -1260,7 +1372,7 @@ h1 {
   align-items: flex-start;
   justify-content: center;
   height: 70vh;
-  gap: var(--gap);
+  gap: var(--gap-grande);
 }
 
 .botaoStatus {
@@ -1283,7 +1395,7 @@ h1 {
 .sinopse {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 30vw;
   margin: 0;
   align-items: flex-start;
   height: 30vh;
@@ -1306,7 +1418,6 @@ h1 {
   gap: var(--gap);
 }
 
-
 .dadosLivro {
   display: flex;
   flex-direction: column;
@@ -1314,7 +1425,7 @@ h1 {
   padding: 0;
   gap: var(--gap);
   align-items: flex-start;
-  width: 100%;
+  width: 30vw;
 }
 
 .listaBibliotecasLivro {
@@ -1344,9 +1455,17 @@ h1 {
   color: var(--cinza);
 }
 
+.FormLogin a {
+  cursor: pointer;
+}
+
+.FormLogin hr {
+  border: var(--border);
+  width: 100%;
+}
+
 .FormLogin h1 {
   margin: 0;
-  border-bottom: var(--border);
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1365,25 +1484,45 @@ label {
   font-family: "Inter";
 }
 
-.containerLogin{
+.containerLogin {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logoLogin{
+.logoLogin {
   width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logoLogin img{
+.logoLogin img {
   width: 100%;
   height: 100%;
-
 }
 
-.bodyLogin{
- background-color: var(--fundo);
+.bodyLogin {
+  background-color: var(--fundo);
+}
+
+.cadastre-se {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastre-se h2{
+  cursor: pointer;
+}
+
+.cadastre-se a {
+  color: var(--vinho);
+  cursor: pointer;
+}
+
+.cadastre-se a:hover {
+  color: var(--vinho-hover);
+  cursor: pointer;
 }

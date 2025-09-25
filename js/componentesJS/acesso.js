@@ -39,7 +39,8 @@ if (txtemail && txtSenha && btnEntrar) {
                 Mensagem(dadosJSON['erro'], 'erro', 'form');
             }
             else{
-                alert('Login efetuado com sucesso!');
+                Mensagem('foi', 'book', 'form');
+                alert('Login feito com sucesso')
                 window.location.href='LindexLeitor.php';  
             }
 

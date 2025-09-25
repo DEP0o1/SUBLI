@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 require_once('verificado.php');
+$email = $_SESSION['leitor'];
 ?>
 
 <!DOCTYPE html>
@@ -26,87 +27,19 @@ require_once('verificado.php');
         <div class="textoEsquerda"> 
           <h1>Empréstimos</h1> 
         </div>
+        <?php
+        if(isset($email)){
+          $controller = new EmprestimoController;
+          $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email),new Livro(),new Biblioteca(),true));
         
-        <div class="exibirLivros">
-          <div class="livro">
-            <img src="img/1" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/2" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/3" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/4" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/5" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-        </div>
-
-        <div class="textoEsquerda"> 
-          <h1>Lista de Desejos</h1> 
-        </div>
-
-        <div class="exibirLivros">
-          <div class="livro">
-            <img src="img/6" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/7" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/8" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/9" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/10" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-        </div>
-
-        <button>Visualizar</button>
-
+          $livro = new LivroView;
+          foreach ($emprestimos as $Emprestimo){
+            $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
+          } 
+        }
+        
+        
+        ?>
         <div class="textoEsquerda"> 
           <h1>Histórico </h1> 
         </div>

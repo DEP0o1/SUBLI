@@ -32,7 +32,7 @@ CREATE PROCEDURE listar_livros (
     IN p_cd_emprestimo INT
 )
 BEGIN
-    SELECT DISTINCT l.*
+    SELECT  DISTINCT l.cd_livro, l.nm_livro, e.cd_editora, e.nm_editora, i.cd_idioma, i.nm_idioma,  c.cd_colecao, c.nm_colecao, g.cd_genero, g.nm_genero, a.cd_autor, a.nm_autor, s.cd_assunto, s.nm_assunto
     FROM livro l
     LEFT JOIN editora e ON l.cd_editora = e.cd_editora
     LEFT JOIN idioma i ON l.cd_idioma = i.cd_idioma
@@ -73,8 +73,7 @@ BEGIN
        (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo);
 END$$
 
-
-
+/*TIRAR O NOME DO AUTOR DO BALAIO E AS COISAS QUE PODEM TER VARIOS NESSES CASOS CHAMAR AS RESPECTIVAS PROCEDURES DE CHAMAR SÓ QUE COM O CÓDIGO DO LIVRO*/
 /*CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, 1,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
 
 
@@ -744,7 +743,7 @@ DROP PROCEDURE IF EXISTS listar_eventos$$
 CREATE PROCEDURE listar_eventos(
 	IN p_nm_evento VARCHAR(200),
     IN p_cd_evento INT,
-    IN p_dt_evento DATETIME,
+    IN p_dt_evento VARCHAR(200),
     IN p_ds_evento TEXT,
     
     IN p_cd_biblioteca INT,
@@ -782,16 +781,15 @@ END$$
 
 DROP PROCEDURE IF EXISTS adicionar_evento$$
 CREATE PROCEDURE adicionar_evento(
+	IN p_nm_evento VARCHAR(200),
     IN p_cd_evento INT,
-    IN p_dt_evento DATETIME,
+    IN p_dt_evento VARCHAR(200),
     IN p_ds_evento TEXT,
     
     IN p_cd_biblioteca INT,
     IN p_nm_biblioteca VARCHAR(200),
     
-    IN p_nm_responsavel VARCHAR(200),
-    IN p_cd_cpf_responsavel VARCHAR(11),
-    IN p_ic_confirmado TINYINT
+    IN p_cd_email VARCHAR(200)
 )
 BEGIN
 	DECLARE v_cd_biblioteca INT;
@@ -811,20 +809,20 @@ BEGIN
     END IF;
     
      IF v_cd_evento IS NOT NULL AND 
+		p_nm_evento IS NOT NULL AND
        p_dt_evento IS NOT NULL AND 
        p_ds_evento IS NOT NULL AND 
        v_cd_biblioteca IS NOT NULL AND 
-       p_nm_responsavel IS NOT NULL AND
-       p_cd_cpf_responsavel IS NOT NULL THEN
+       p_cd_email IS NOT NULL THEN
 
         INSERT INTO evento 
-        VALUES (v_cd_evento, p_dt_evento, p_ds_evento, v_cd_biblioteca, p_nm_responsavel, p_cd_cpf_responsavel, p_ic_confirmado);
+        VALUES (p_nm_evento,v_cd_evento, p_dt_evento, p_ds_evento, v_cd_biblioteca, p_cd_email, false);
     END IF;
     END$$
     
-    /*CALL adicionar_evento(NULL, NOW() , 'DESCRIÇÃO TOP' , NULL ,'Parangolé', 'Jeferson', '50479150850' , NULL);*/
+    /*CALL adicionar_evento('EVENTO TOP',NULL, NOW() , 'DESCRIÇÃO TOP' , NULL ,'Parangolé', 'Jeferson', '50479150850' );*/
     
-    
+    /*FAZER O PUT PELO AMOR DE DEUS*/
     
     /* =========================================
    EXEMPLARES

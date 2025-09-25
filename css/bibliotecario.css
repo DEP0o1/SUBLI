@@ -181,7 +181,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 10px 15px 10px 15px;
   background-color: var(--vinho);
   color: var(--branco);
   border: none;
@@ -189,6 +189,18 @@ nav {
   cursor: pointer;
   width: fit-content;
   overflow: hidden;
+}
+
+/*------------------------------scroll------------------------------------------------------------------------*/
+
+::-webkit-scrollbar-track {
+  background-color: var(--branco);
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bege);
 }
 
 /*-----------------Leitor bibliotecario -------------------------------------------------------------------------------------*/
@@ -238,6 +250,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: var(--gap-grande);
+  overflow-x: hidden;
 }
 
 .pesquisarLeitor {
@@ -265,8 +278,10 @@ nav {
   width: 50vw;
   border: none;
   border-radius: 10px;
+  padding: var(--gap);
   height: 30px;
   color: var(--cinza);
+  padding: 10px;
 }
 
 .pesquisarLeitor h1{
@@ -285,6 +300,7 @@ nav {
 
 .resultadoPesquisaLeitor{
   margin-left: 10vw;
+  display: flex;
 }
 
 .cardLeitor img{
@@ -304,6 +320,7 @@ nav {
   border-top: 1px var(--bege) solid;
   border-bottom: 1px var(--bege) solid;
   margin-bottom: 2vh;
+ 
 }
 
 .infoPerfil{
@@ -317,6 +334,10 @@ nav {
   gap: var(--gap);
 }
 
+.infoPerfil span{
+  color: var(--vinho);
+}
+
 .btnsPerfil{
   display: flex;
   gap: var(--gap);
@@ -326,7 +347,7 @@ nav {
   position: relative;
   overflow: hidden;
   max-width: 55%;
-  margin: 0 auto;
+  margin: 0;
   padding: 20px 0;
 }
 
@@ -342,23 +363,23 @@ nav {
 .livro {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  border: solid grey 1px;
+  border: var(--border);
   background-color: var(--branco);
-  border-radius: 5px;
+  border-radius: var(--radius);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
   text-align: center;
-  width: fit-content;
-  gap: 10px;
+  position: relative;
+  width: 160px;
+  height: 360px;
+  gap: var(--gap);
   transition: transform 0.3s ease;
   flex-direction: column;
+  padding: var(--gap);
+  text-overflow: ellipsis;
 }
 
-p {
-  display: flex;
-  align-items: center;
-  gap: var(--gap);
+.livro a {
+  color: var(--branco);
 }
 
 .livro:hover {
@@ -370,8 +391,7 @@ p {
   width: 140px;
   height: 210px;
   object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 15px;
+  border-radius: var(--radius);
 }
 
 .livro h3 {
@@ -384,17 +404,49 @@ p {
   color: #666;
   font-size: 14px;
 }
+
 .livro button {
   background-color: var(--vinho);
   color: var(--branco);
   border: none;
   padding: 8px 14px;
-  border-radius: 3px;
+  border-radius: var(--radius);
   cursor: pointer;
   margin-top: auto;
 }
 
+.favorito {
+  display: none;
+}
 
+p {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+
+.favorito {
+  background-color: var(--azul);
+  color: var(--branco);
+  position: absolute;
+  border-radius: var(--radius) 0 0 var(--radius) ;
+  padding: 5px 10px 5px 5px;
+  right: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorito:hover {
+  background-color: var(--azul-hover);
+  transition: 0.2s;
+}
+
+.favorito span {
+  color: var(--branco);
+}
 
 /*------------------menu lateral--------------------------------------------------------------------------------------------------------*/
 
@@ -422,6 +474,7 @@ aside {
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
+  overflow-y: scroll;
 }
 
 .overlay {
@@ -467,11 +520,19 @@ aside br {
   display: flex;
   align-items: center;
   gap: var(--gap);
+  cursor: pointer;
+  padding: 5px 0px 5px 0;
+  border-radius: var(--radius);
+}
+
+.informacao-aside p {
+  cursor: pointer;
 }
 
 .informacao-aside:hover {
   background-color: var(--azul-hover);
   transition: 0.2s;
+  cursor: pointer;
 }
 
 /*------------------notificações-----------------------------------------------------------------------------------------------*/
@@ -479,18 +540,26 @@ aside br {
 .topo-not {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: var(--gap) 0 var(--gap) 0;
+  border-bottom: var(--branco) 1px solid;
 }
 
 .notificacoes {
   background-color: var(--azul);
   position: fixed;
   z-index: 1000;
-  margin-left: 0;
+  top: 70px;
+  right: 0;
   width: 60%;
   color: var(--branco);
   padding: 0px 40px 0px 40px;
+  max-height: 60vh;
+  overflow-y: scroll;
+  
 }
+
+
 
 .notificacoes h1 {
   margin: 0;
@@ -515,11 +584,14 @@ aside br {
   gap: var(--gap);
   margin: var(--gap) 0 var(--gap) 0;
   border-bottom: var(--branco) 1px solid;
-  padding: 0 0 var(--gap) 0;
+  padding: 0 0 15px 0;
 }
 
 .informacao-item-lista-not {
+  display: flex;
   gap: var(--gap);
+  flex-direction: column;
+
 }
 
 .imagem-item-lista-not {
@@ -530,9 +602,10 @@ aside br {
 }
 
 .imagem-item-lista-not img{
-  object-fit: contain;
-  width: 100px;
-  height: 100px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
 }
 
 .conteudo-item-lista-not {
@@ -546,9 +619,7 @@ aside br {
   display: flex;
   gap: var(--gap);
   align-items: center;
-  gap: var(--gap);
 }
-
 
 /*----------------------------------------------------------------------------------------------------------------*/
 .resultadoPesquisa {
@@ -645,22 +716,25 @@ aside br {
   font-size: 15px;
   border: none;
   cursor: pointer;
-  border: 2px solid var(--vinho);
+  color: var(--branco);
+  background-color: var(--vinho);
   transition: 1s;
-  border-radius: 15px;
+  border-radius: var(--radius);
 }
+
 .dropPraso {
   width: fit-content;
   padding: 10px;
   font-size: 15px;
   border: none;
   cursor: pointer;
-  border: 2px solid var(--vinho);
+  color: var(--branco);
+  background-color: var(--vinho);
   transition: 1s;
-  border-radius: 15px;
+  border-radius: var(--radius);
 }
 .dropdown-filtros {
-  color: black;
+  color: var(--branco);
   position: absolute;
   min-width: auto;
   overflow: hidden;
@@ -668,11 +742,11 @@ aside br {
   height: 0;
   transition: 0.5s;
   border-radius: 10px;
-  background-color: var(--fundo);
+  background-color: var(--azul);
 }
 
 .dropdown-filtros a {
-  color: black;
+  color: var(--branco);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -680,8 +754,7 @@ aside br {
 }
 
 .dropdown-praso {
-  color: black;
-
+  color: var(--branco);
   position: absolute;
   min-width: auto;
   overflow: hidden;
@@ -689,11 +762,11 @@ aside br {
   height: 0;
   transition: 0.5s;
   border-radius: 10px;
-  background-color: var(--fundo);
+  background-color: var(--azul);
 }
 
 .dropdown-praso a {
-  color: black;
+  color: var(--branco);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -703,7 +776,6 @@ aside br {
   height: fit-content;
   /* height: 280PX; */
   transition: 0.5s;
-  border: 2px solid var(--vinho);
 }
 
 .areaPesquisa {
@@ -723,9 +795,8 @@ aside br {
   justify-content: space-between;
   width: 50%;
   height: 25%;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 5px;
-  border: 1px solid #a39b91;
   border-radius: 25px;
   padding: 10px;
   background-color: white;
@@ -803,6 +874,11 @@ aside br {
   align-items: center;
   justify-content: center;
   gap: 40px;
+}
+
+.resultadoEmPe {
+  width: 50vw;
+  margin-right: 20px;
 }
 
 .btnNovoEvento {
@@ -884,17 +960,6 @@ p {
   width: 45%;
 }
 
-.formAvancado1 {
-  background-color: var(--azul);
-  display: flex;
-  justify-content: left;
-  flex-direction: column;
-  gap: 20px;
-  border-radius: 15px;
-  padding: 1%;
-  width: 33%;
-}
-
 .formSinopse {
   display: flex;
   flex-direction: column;
@@ -908,6 +973,14 @@ p {
 
 .areaTituloLivro {
   width: 100%;
+  color: var(--branco);
+  gap: var(--gap);
+}
+
+.areaTituloLivro input {
+  padding: 5px;
+  border: none;
+  border-radius: var(--radius);
 }
 
 .tituloLivro {
@@ -955,10 +1028,14 @@ p {
   gap: 20px;
 }
 
+.formAvancado {
+  padding: 20px;
+}
+
 .inputForm {
   padding: 5px;
   border-radius: 10px;
-  border: 1px solid #a39b91;
+  border: none;
   outline: none;
   text-decoration: none;
   width: 98%;
@@ -967,7 +1044,7 @@ p {
 .inputFormDeLado {
   padding: 5px;
   border-radius: 10px;
-  border: 1px solid #a39b91;
+  border: none;
   outline: none;
   text-decoration: none;
 }
@@ -988,20 +1065,78 @@ p {
   height: 38px;
 }
 
-.areaCadastro {
+/*-----------------cadastros--------------------------------------------------------------------------*/
+
+.formAvancado1 {
+  background-color: var(--azul);
   display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: var(--radius);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.titulo-area-cadastro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--branco);
+  border-bottom: var(--branco) 1px solid;
+}
+
+#fechar-popup {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#fechar-notificacao {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--branco);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.areaCadastro {
+ display: flex;
   width: auto;
   align-items: center;
   justify-content: center;
+  transform: translate(-50%, -50%); 
   margin: 2%;
-  margin-bottom: 0;
-  height: 70vh;
+  top: 50%;
+  left: 50%;
+  height: fit-content;
+  width: fit-content;
+  border-radius: var(--radius);
+  z-index: 6000;
+  position: fixed;
+}
+
+.overlayPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.699); 
+  z-index: 5000; 
 }
 
 .info {
   display: flex;
   flex-direction: row;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter";
   font-size: 0.7rem;
   gap: 20px;
 }
@@ -1240,7 +1375,7 @@ h1 {
   background-color: green;
   justify-content: center;
   align-items: center;
-  gap: var(--gap);
+  gap: var(--gap-grande);
   width: 55%;
 
 }
@@ -1276,6 +1411,7 @@ height: 65vh;
 .dadosLivroDoado{
   display: flex;
   flex-direction: column;
+  gap: var(--gap);
 }
 
 .tituloEsquerda {
@@ -1283,6 +1419,20 @@ height: 65vh;
   margin-left: 15%;
   padding-bottom: 1%;
   padding-top: 1%;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  overflow-y: scroll;
+}
+
+.lista-leitores {
+  height: 70vh;
+  width: 30vw;
 }
 
 .lista h1 {
@@ -1297,13 +1447,17 @@ height: 65vh;
   border-bottom: var(--border);
   border-top: var(--border);
   padding: 10px;
+}
 
+
+.item-lista span {
+  color: var(--vinho);
 }
 
 .item-lista img {
-  width: 10%;
-  height: 10%;
-  border-radius: 3;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
 }
 
 .conteudo-item-lista {
@@ -1311,6 +1465,17 @@ height: 65vh;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap);
+}
+
+.imagem-item-lista {
+  width: 100px;
+  height: 100px;
+  border-radius: 10000px;
+} 
+
+.imagem-item-lista img{
+  object-fit: cover;
+  border-radius: 10000px;
 }
 
 .conteudo-item-lista-doador {
@@ -1334,7 +1499,44 @@ height: 65vh;
   font-weight: lighter;
 }
 
-.miniPerfilRedondo img {
+.dadosLivroDoado h2 {
 
-  
+  font-family: "Kurale";
+  font-style: none;
+  font-weight: lighter;
 }
+
+.miniPerfil{
+
+  height: 4vh;
+  width: 4vh;
+  border-radius: 100%;
+
+}
+
+.divRowItem{
+display: flex;
+flex-direction: row;
+gap: var(--gap);
+align-items: center;
+}
+
+
+.btnBranco {
+
+  text-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--fundo);
+  color: var(--vinho);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: fit-content;
+  overflow: hidden;
+  border: solid var(--vinho) 1px;
+
+}
+

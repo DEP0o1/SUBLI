@@ -31,12 +31,12 @@ require_once('config.php');
 
                 <div class="label-input">
                     <label for="">Nome: </label>
-                    <input type="text" placeholder="Ex. Pedro Miguel" />
+                    <input name="nm_leitor" type="text" placeholder="Ex. Pedro Miguel" />
                 </div>
 
                 <div class="label-input">
                     <label for="">CPF: </label>
-                    <input type="text" placeholder="Ex. 123.456.789-10" />
+                    <input name="cd_cpf" type="text" placeholder="Ex. 123.456.789-10" />
                 </div>
 
                 <div class="btnForm">
@@ -47,88 +47,225 @@ require_once('config.php');
         </section>
 
         <section class="resultadoPesquisaLeitor">
-            <div class="cardLeitor">
-                <img src="img/pequeno terry.webp" alt="">
-                <div class="infoPerfil">
-                    <h1> Nome do Leitor </h1>
-                    <div class="infoDeLado">
+            <div class="resultadoEmPe">
+                <div class="cardLeitor">
+                    <img src="img/pequeno terry.webp" alt="">
+                    <div class="infoPerfil">
+                        <h1> Nome do Leitor </h1>
+                        <div class="infoDeLado">
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    call_log
+                                </span> Telefone: (13)982259320
+                            </p>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    assignment_ind
+                                </span> Código: 122345
+                            </p>
+                        </div>
                         <p>
                             <span class="material-symbols-outlined">
-                                man_4
-                            </span> CPF: 123.456.789.20
+                                home
+                            </span> Endereço: Av Epitácio Pessoa, 466, Aparecida - Santos, SP
                         </p>
                         <p>
                             <span class="material-symbols-outlined">
-                                man_4
-                            </span> Telefone: (13)982259320
+                                alternate_email
+                            </span> E-mail: filhodaputa@gmail.com
                         </p>
-                        <p>
-                            <span class="material-symbols-outlined">
-                                man_4
-                            </span> Código: 122345
-                        </p>
+                        <div class="btnsPerfil">
+                            <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Alterar Dados</button>
+                            <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Pesquisar</button>
+                        </div>
                     </div>
-                    <p>
-                        <span class="material-symbols-outlined">
-                            man_4
-                        </span> Endereço: Av Epitácio Pessoa, 466, Aparecida - Santos, SP
-                    </p>
-                    <p>
-                        <span class="material-symbols-outlined">
-                            man_4
-                        </span> E-mail: filhodaputa@gmail.com
-                    </p>
-                    <div class="btnsPerfil">
-                        <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Alterar Dados</button>
-                        <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Enviar Notificação</button>
-                        <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Pesquisar</button>
+                </div>
+
+                <div class="textoEsquerda">
+                    <h1>Empréstimos deste leitor</h1>
+                </div>
+
+                <div class="exibirLivros">
+                    <div class="livro">
+                        <img src="img/6" alt="" />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
+                    </div>
+
+                    <div class="livro">
+                        <img src="img/7" alt="" />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
+                    </div>
+
+                    <div class="livro">
+                        <img src="img/8" alt="" />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
+                    </div>
+
+                    <div class="livro">
+                        <img src="img/9" alt="" />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
+                    </div>
+
+                    <div class="livro">
+                        <img src="img/10" alt="" />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
                     </div>
                 </div>
             </div>
 
-            <div class="container">
-                <h1>Empréstimos atuais deste leitor</h1>
-                <div class="carrossel-container">
-                    <div class="carrossel" id="carrossel-destaques">
-                        <?php
-                        $livro = new LivroView;
-                        $livro->ExibirLivros();
-                        ?>
+            <div class="lista-leitores">
+
+                <div class="lista">
+
+                    <div class="item-lista">
+                        <div class="imagem-item-lista">
+                            <img src="img/doar.png" alt="">
+                        </div>
+                        <div class="conteudo-item-lista">
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class="btnRosa">
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="item-lista">
+                        <div class="imagem-item-lista">
+                            <img src="img/doar.png" alt="">
+                        </div>
+                        <div class="conteudo-item-lista">
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class="btnRosa">
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="item-lista">
+                        <div class="imagem-item-lista">
+                            <img src="img/doar.png" alt="">
+                        </div>
+                        <div class="conteudo-item-lista">
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class="btnRosa">
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="item-lista">
+                        <div class="imagem-item-lista">
+                            <img src="img/doar.png" alt="">
+                        </div>
+                        <div class="conteudo-item-lista">
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class="btnRosa">
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="item-lista">
+                        <div class="imagem-item-lista">
+                            <img src="img/doar.png" alt="">
+                        </div>
+                        <div class="conteudo-item-lista">
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class="btnRosa">
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="item-lista">
+                        <div class="imagem-item-lista">
+                            <img src="img/doar.png" alt="">
+                        </div>
+                        <div class="conteudo-item-lista">
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class="material-symbols-outlined">
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class="btnRosa">
+                                Ver Mais
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
         </section>
-
-        
-
     </main>
 
 
 
 
-    <!-- <div class="leitoresEncontrados">
+     <!-- <div class="leitoresEncontrados"> -->
         <?php
-        $pesquisa_avancada = false;
+        $campos = 0;
         if (isset($_REQUEST['cd_cpf']) && $_REQUEST['cd_cpf'] != '' && strlen($_REQUEST['cd_cpf']) == 11) {
             $cd_cpf = $_REQUEST['cd_cpf'];
-            $pesquisa_avancada = true;
+            $campos = $campos + 1;
         } else {
             $cd_cpf = null;
         }
 
         if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != '') {
             $nm_leitor = $_REQUEST['nm_leitor'];
-            $pesquisa_avancada = true;
+            $campos = $campos + 1;
         } else {
             $nm_leitor = null;
         }
 
-        if ($pesquisa_avancada) {
+        if ($campos > 0) {
             $leitor = new LeitorView;
             $leitor->ExibirLeitores(new Leitor(null, $nm_leitor, $cd_cpf));
         }
         ?>
-    </div> -->
+    <!-- </div> -->
 
 
 </body>

@@ -8,18 +8,29 @@ require('config.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso</title>
+    <title>SUBLI - Login</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/leitor.css">
     <script type="module" src="js/componentesJS/acesso.js"></script>
 </head>
+<<<<<<< HEAD
 
 
+=======
+<body>
+
+
+<body>
+
+>>>>>>> 3af6352f7a4a669418ffe223e6727fc200a4dd66
 <body class="bodyLogin">
     <?php
     //  include 'complementos/headerLeitor.php'; 
     ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3af6352f7a4a669418ffe223e6727fc200a4dd66
 
 <div class="containerLogin">
 
@@ -27,7 +38,11 @@ require('config.php');
         <div class="logoLogin">
             <img src="img/subli.png" alt="" />   
         </div>
+
         <h1>Faça seu Login!</h1>
+
+        <hr>
+
         <div>
             <label for="txtEmail">Email:</label>
             <input type="text" name="txtEmail" id="txtEmail" placeholder="Informe seu Email" autofocus>
@@ -40,6 +55,13 @@ require('config.php');
 
         <div class="areaBotao">
             <button class="btnRosa" id="btnEntrar" >Entrar</button>
+        </div>
+
+        <hr>
+
+        <div class="cadastre-se">
+           <p> Ainda não possui uma conta?</p> 
+           <a href="Lresultado.php"><h2>Cadastre-se</h2></a>
         </div>
 
     </form>

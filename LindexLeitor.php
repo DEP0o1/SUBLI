@@ -21,13 +21,10 @@ if(empty($assunto2)) $assunto2 = null;
     <head>
         <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio</title>
+    <title>SUBLI - Início</title>
     <link rel="stylesheet" href="css/leitor.css" />
-    
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     
-    
-    <title>Home</title>
     <?php require_once './complementos/headerLeitor.php'; ?>  
 </head>
 
@@ -36,7 +33,7 @@ if(empty($assunto2)) $assunto2 = null;
     <main>
         <section class="banner">
             <div class="imgbanner">
-                
+                <!-- <img src="../SUBLI/img/banner.png" alt=""> -->
                 </div>
             </section>
 
@@ -54,7 +51,8 @@ if(empty($assunto2)) $assunto2 = null;
             
             <div >
                 <select  class="categoria"id="assunto" name="assunto">
-                    <option value="">Assunto</option>
+                    <option value="">
+                      Assunto</option>
                     <?php
                   $Assunto = new AssuntoView;
                   $Assunto->SelectAssuntos();
@@ -72,14 +70,18 @@ if(empty($assunto2)) $assunto2 = null;
             </select>
         </div>
         
-        <button class="btnRosa">Aplicar 
-        <span class="material-symbols-outlined">
-        filter_alt
-        </span>
+        <button class="btnRosa">
+            <span class="material-symbols-outlined">
+            filter_alt
+            </span>
+            Aplicar 
         </button>
+
         <a class="location" href="Bibliotecas.php">
             <img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Localização" />
         </a>
+
+        
     </form>
     
     <div class="textoEsquerda">
@@ -104,11 +106,6 @@ if(empty($assunto2)) $assunto2 = null;
     </div>
 </div>
  
-
-
-
-
-
 <div class="textoEsquerda">
     <h1>Mais Procurados</h1>
 </div>
@@ -126,11 +123,109 @@ if(empty($assunto2)) $assunto2 = null;
     </div>
 </div>
 
+<h1 class="textoMeio">Eventos</h1>
 
+<section class="eventos">
+  <div class="calendario">
+    <!-- calendario -->
+  </div>
+
+  <div class="lista">
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <div class="textoEsquerda">
     <h1>Doação de livros</h1>
 </div>
+
+
+
     <section class="doacaoLivros">
       <div class="doacaotexto">
         <p>
@@ -144,6 +239,7 @@ if(empty($assunto2)) $assunto2 = null;
     </section>
     </main>
 
+    <script src="js/componentesJS/calendario.js"></script>
    <script>
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -197,8 +293,8 @@ function inicializarCarrossel(carrosselId) {
 inicializarCarrossel('carrossel-destaques');
 inicializarCarrossel('carrossel-procurados');
 });
-    </script>
 
+    </script>
     <script src="js/componentesJS/filtros.js" ></script>
     <script src="js/componentesJS/popupCadastro.js"></script>
   </body>

@@ -23,7 +23,7 @@ class LivrosDoadosView {
             }
             echo
             "
-                <button><a href='BsolicDoacao.php?codigo=$Doacao->cd_doacao'>Visualizar Doação</a></button>
+                <button><a href='BsolicDoacao.php?codigo=$Doacao->cd_doacao'>Ver Doação</a></button>
             </div>
             ";
         }

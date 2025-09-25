@@ -18,7 +18,7 @@ if (isset($_REQUEST['codigo'])) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Biblioteca</title>
+  <title>SUBLI -Biblioteca</title>
   <link rel="stylesheet" href="css/leitor.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -31,7 +31,7 @@ if (isset($_REQUEST['codigo'])) {
 <body>
   <main>
 
-    <h1 class="textoMeio">Biblioteca Mario Faria</h1>
+    <h1 class="textoMeio"> Mário fária</h1>
     <section class="bibliotecas">
       <div class="bibliotecaPerfil">
         <div class="bibliotecaFotos">
@@ -80,7 +80,7 @@ if (isset($_REQUEST['codigo'])) {
             </div>
 
             <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
-            <section class="areaMapa">
+            <section class="areaMapaBiblioteca">
               <div class="mapa" id="map">
                 <div id="carregando">
                   <div class="spinner"></div>
@@ -197,6 +197,8 @@ if (isset($_REQUEST['codigo'])) {
       </div>
     </section>
 
+    <h1 class="textoMeio">Desta biblioteca</h1>
+
     <section class="exibirLivros">
 
       <?php
@@ -207,6 +209,8 @@ if (isset($_REQUEST['codigo'])) {
     </section>
   </main>
 
-  
+  <script>
+    
+  </script>
 </body>
 </html>

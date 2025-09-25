@@ -18,7 +18,6 @@
   </div>
 
   <div class="abas">
-    <a href="./BemprestimoPesquisa.php">Empréstimos</a>
 
     <button id="abrirNotificacao">
 
@@ -36,3 +35,4 @@
 </header>
 
 <script src="js/componentesJS/menuBibliotecario.js"></script>
+<script src="js/componentesJS/notificacaoBibliotecario.js"></script>

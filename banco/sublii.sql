@@ -84,7 +84,7 @@ CREATE TABLE leitor(
 CREATE TABLE evento(
 	nm_evento VARCHAR(200),
 	cd_evento INT,
-	dt_evento DATETIME,
+	dt_evento VARCHAR(200),
     ds_evento TEXT,
     cd_biblioteca INT,
     cd_email VARCHAR(200),
@@ -295,6 +295,7 @@ INSERT INTO livro (cd_livro, nm_livro, cd_editora, cd_idioma, cd_colecao, ds_sin
 -- ===== RELACIONAMENTO LIVRO ↔ AUTOR =====
 INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
 (1, 1), -- O Príncipe - Maquiavel
+/*(1,2),*/
 (2, 2), -- A Bruxa e o Calibã - Mary Renault
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
 (4, 4), -- Vidas Secas - Graciliano Ramos
@@ -320,8 +321,7 @@ INSERT INTO assunto_livro (cd_livro, cd_assunto) VALUES
 (6, 6); -- Eu, Robô - Isaac Asimov*/
 
 
-/*Favoritos
-INSERT INTO  favorito VALUES (1, 'pedro.favoritos@gmail.com');*/
+/*Favoritos*/
 
 
 /*Exemplares*/
@@ -339,6 +339,7 @@ INSERT INTO exemplar VALUES (1, 5, 11, NOW(), false);
 INSERT INTO exemplar VALUES (5, 9, 12, NOW(), false);
 INSERT INTO exemplar VALUES (3, 7, 13, NOW(), false);
 INSERT INTO exemplar VALUES (1, 1, 14, NOW(), false);
+INSERT INTO exemplar VALUES (2, 1, 15, NOW(), false);
 /*Bibliotecarios*/
 INSERT INTO bibliotecario VALUES (1,'LABUBU','AAAAA','BBB');
 INSERT INTO bibliotecario_biblioteca VALUES (1,1);
@@ -360,9 +361,9 @@ INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',
 
 
 /*Reservas*/
+
 INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true);
-INSERT INTO reserva VALUES (2,NOW(),'lucas@gmail.com',2,1,true);
-INSERT INTO reserva VALUES (3,NOW(),'lucas@gmail.com',3,1,true);
+
 
 /*
 select * from livro;
@@ -377,4 +378,4 @@ select * from evento;
 */
 
 
-------------------------------------------------------------------------------------------------------------
+

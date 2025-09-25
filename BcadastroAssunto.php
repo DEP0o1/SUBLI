@@ -14,8 +14,13 @@
 <body>
         <div class="areaCadastro">
         <form action="" class="formAvancado1">
-            <div>
-                <h1 class="pesquisaAvancada">Cadastrar Assunto</h1>
+            <div class="titulo-area-cadastro">
+                <h1 >Cadastrar Assunto</h1>
+                <button id="fechar-popup">
+                    <span class="material-symbols-outlined">
+                      close
+                    </span>
+                </button>
             </div>
 
             <section class="areaInput">
@@ -33,7 +38,6 @@
                 </div>
             </section>
         </form>
-
     </div>
 </body>
 </html>
