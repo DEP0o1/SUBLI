@@ -113,11 +113,29 @@ class ReservaController extends Banco
         }catch (\Throwable $th) {
             throw $th;
         }
-        
     }
 
 
-}
+     public function ContarReservasLeitor ($reserva = new Reserva())
+    {
+        try{
 
+
+            $parametros = [
+                'p_cd_email' => $reserva->leitor->cd_email,
+                'p_ic_ativa' => $reserva->ic_ativa
+               
+    
+            ];
+    
+            $dados = $this->Consultar('contar_reservas_leitor', $parametros);
+            return $dados;
+        }catch (\Throwable $th) {
+            throw $th;
+        }
+
+
+}
+}
 
 ?>

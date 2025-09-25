@@ -9,7 +9,7 @@ class LivroView{
     if (!empty($livros)) {
         foreach($livros as $Livro){
             echo "
-            <div class='livro'>
+            <div class='livro' title='{$Livro->nm_livro}'>
                 <img src='img/{$Livro->cd_livro}' alt='{$Livro->nm_livro}'/>
                 <h2>{$Livro->nm_livro}</h2>
                 <div class='favorito'>

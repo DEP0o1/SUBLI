@@ -9,7 +9,7 @@
 
 h1 {
   font-family: "Kurale";
-  margin: 40px;
+  margin: 40px 40px 40px 40px;
   font-size: 1.5rem;
 }
 
@@ -98,11 +98,11 @@ h4 {
   cursor: default;
 }
 
+
 .conteudo-pesquisa {
   margin-top: 0;
   min-height: 82vh;
 }
-
 /*--------------------Barra de rolagem--------------------------------------------------------------------------------------------*/
 
 ::-webkit-scrollbar-track {
@@ -159,6 +159,17 @@ h4 {
   gap: var(--gap);
 }
 
+.dropdown-btn img{
+ width: 30px;
+ height: 30px;
+ border-radius: 444444px;
+}
+
+.dropdown-btn img:hover{
+  filter: grayscale(4);
+  cursor: pointer;
+}
+
 .titulo-dropdown:hover {
   background-color: var(--azul-hover);
   border-radius: var(--radius);
@@ -175,6 +186,7 @@ h4 {
   align-items: center;
   gap: var(--gap);
   padding:5px 0px 5px 0px;
+  width: 20vw;
 }
 
 .titulo-dropdown h1 {
@@ -274,7 +286,7 @@ a:hover {
 }
 
 .logo img {
-  height: 40px;
+  height: 80px;
   width: auto;
 }
 
@@ -324,12 +336,6 @@ body {
   align-items: center;
 }
 
-.areaPesquisa {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-}
 .filtro {
   background-color: white;
   width: 10px;
@@ -374,7 +380,7 @@ body {
 }
 
 .imgbanner {
-  background-image: url(../img/banner.png);
+  background-image: url(../img/bannerCorrigido.jfif);
   top: 0;
   width: 100vw;
   height: 70vh;
@@ -440,7 +446,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   gap: var(--gap-grande);
 }
 
@@ -623,6 +628,10 @@ span {
   gap: var(--gap);
 }
 
+.conteudo-item-lista-biblioteca{
+  display: flex;
+}
+
 .conteudo-item-lista-doador {
   display: flex;
   flex-direction: row;
@@ -717,7 +726,6 @@ span {
 }
 
 .areaMapaBiblioteca {
-  height: 100%;
   width: 100%;
 }
 
@@ -725,7 +733,7 @@ span {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 42vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1083,7 +1091,7 @@ main {
   display: flex;
   flex-direction: row;
   transition: transform 0.5s ease;
-  gap: 20px;
+  gap: var(--gap);
 }
 
 .mensagem span {
@@ -1421,7 +1429,7 @@ h1 {
 .dadosLivro {
   display: flex;
   flex-direction: column;
-  margin: none;
+  margin: 0;
   padding: 0;
   gap: var(--gap);
   align-items: flex-start;
@@ -1524,5 +1532,105 @@ label {
 
 .cadastre-se a:hover {
   color: var(--vinho-hover);
+  cursor: pointer;
+}
+
+/* ------------------cadastro---------------------- */
+
+.tituloForm {
+  color: var(--cinza);
+  text-wrap: nowrap;
+  font-family: "Inter";
+  font-size: 1rem;
+}
+
+.pesquisaAvancada {
+  color: var(--cinza);
+  border-bottom: 1px solid var(--cinza);
+  width: 100%;
+}
+
+.areaInput input,
+.formDeLado > div{
+  width: 100%;
+}
+
+.formDeLado {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
+.areaInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 20px;
+}
+
+.inputForm {
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  width: 98%;
+}
+
+.inputFormDeLado {
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.formAvancado1 {
+  background-color: var(--fundo);
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--cinza);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.formAvancado1 h1{
+  margin: 0;
+}
+
+.titulo-area-cadastro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--branco);
+  border-bottom: var(--branco) 1px solid;
+}
+
+.areaCadastro {
+ display: flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%); 
+  margin: 2%;
+  top: 50%;
+  left: 50%;
+  height: fit-content;
+  width: fit-content;
+  border-radius: var(--radius);
+  z-index: 6000;
+  position: fixed;
+}
+
+::file-selector-button {
+  border-radius: 10px;
+  border: none;
+  background-color: #102e4e;
+  color: white;
+  padding: 10px;
   cursor: pointer;
 }

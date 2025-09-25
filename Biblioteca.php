@@ -20,6 +20,7 @@ if (isset($_REQUEST['codigo'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SUBLI -Biblioteca</title>
   <link rel="stylesheet" href="css/leitor.css" />
+  <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="js/componentesJS/bibliotecas.js"></script>
@@ -210,7 +211,8 @@ if (isset($_REQUEST['codigo'])) {
   </main>
 
   <script>
-    
+
   </script>
 </body>
+
 </html>

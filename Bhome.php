@@ -16,29 +16,25 @@ $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliot
   <link rel="stylesheet" href="css/bibliotecario.css" />
   <link rel="stylesheet" href="css/mobile.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-  <link
-    rel="shortcut icon"
-    href="img/pequeno terry.webp"
-    type="image/x-icon" />
   <script src="js/componentesJS/header.js"></script>
 </head>
+
+
+<body>
+<?php
+require_once './complementos/menuBibliotecario.php'
+?>
 
 <?php
 require_once './complementos/headerBibliotecario.php';
 ?>
-
-<body>
-
-<?php
-//require_once './complementos/menuLateral.php';
-?>
+<main>
 
   <div class="areaDoacoes">
     <div class="doacoesTitulo">
       <h1>Doações</h1>
     </div>
-
-
+  
     <!-- <section class="notificacoes">
       <div class="topo-not">
         <h3>Notificações</h3>
@@ -46,7 +42,7 @@ require_once './complementos/headerBibliotecario.php';
             <span class="material-symbols-outlined">close</span>
           </button>
       </div>
-
+  
         <div class="item-lista-not">
       <div class="titulo-item-not">
         <span class="material-symbols-outlined">book</span>
@@ -54,11 +50,11 @@ require_once './complementos/headerBibliotecario.php';
       </div>
       
       <div class="conteudo-item-lista-not">
-
+  
           <div class="imagem-item-lista-not">
             <img src="img/biblioteca1_1.jpg" alt="">
           </div>
-
+  
           <div class="informacao-item-lista-not">
             <h3>Liam solicitou o empréstimo de sapiens e noites brancas!</h3>
             <div class="conteudo-item-lista-doador-not">
@@ -67,14 +63,14 @@ require_once './complementos/headerBibliotecario.php';
               </span>
               <p>23/09/2025</p>
             </div>
-
+  
             <button class="btnRosa">
               Ver Mais
             </button>
           </div>
         </div> 
         </div>
-
+  
          <div class="item-lista-not">
       <div class="titulo-item-not">
         <span class="material-symbols-outlined">menu_book</span>
@@ -82,11 +78,11 @@ require_once './complementos/headerBibliotecario.php';
       </div>
       
       <div class="conteudo-item-lista-not">
-
+  
           <div class="imagem-item-lista-not">
             <img src="img/biblioteca1_1.jpg" alt="">
           </div>
-
+  
           <div class="informacao-item-lista-not">
             <h3>Liam solicitou a doação de sapiens!</h3>
             <div class="conteudo-item-lista-doador-not">
@@ -95,14 +91,14 @@ require_once './complementos/headerBibliotecario.php';
               </span>
               <p>23/09/2025</p>
             </div>
-
+  
             <button class="btnRosa">
               Ver Mais
             </button>
           </div>
         </div> 
         </div>
-
+  
          <div class="item-lista-not">
       <div class="titulo-item-not">
         <span class="material-symbols-outlined">menu_book</span>
@@ -110,11 +106,11 @@ require_once './complementos/headerBibliotecario.php';
       </div>
       
       <div class="conteudo-item-lista-not">
-
+  
           <div class="imagem-item-lista-not">
             <img src="img/biblioteca1_1.jpg" alt="">
           </div>
-
+  
           <div class="informacao-item-lista-not">
             <h3>Liam solicitou a doação de sapiens!</h3>
             <div class="conteudo-item-lista-doador-not">
@@ -123,14 +119,14 @@ require_once './complementos/headerBibliotecario.php';
               </span>
               <p>23/09/2025</p>
             </div>
-
+  
             <button class="btnRosa">
               Ver Mais
             </button>
           </div>
         </div> 
         </div>
-
+  
          <div class="item-lista-not">
       <div class="titulo-item-not">
         <span class="material-symbols-outlined">menu_book</span>
@@ -138,11 +134,11 @@ require_once './complementos/headerBibliotecario.php';
       </div>
       
       <div class="conteudo-item-lista-not">
-
+  
           <div class="imagem-item-lista-not">
             <img src="img/biblioteca1_1.jpg" alt="">
           </div>
-
+  
           <div class="informacao-item-lista-not">
             <h3>Liam solicitou a doação de sapiens!</h3>
             <div class="conteudo-item-lista-doador-not">
@@ -151,17 +147,17 @@ require_once './complementos/headerBibliotecario.php';
               </span>
               <p>23/09/2025</p>
             </div>
-
+  
             <button class="btnRosa">
               Ver Mais
             </button>
           </div>
         </div> 
         </div>
-
+  
       <div class="conteudo-notificacao">
         <div class="conteudo-notificacao-item">
-
+  
         </div>
       </div>
     </section> -->
@@ -175,23 +171,61 @@ require_once './complementos/headerBibliotecario.php';
       ?> 
     </div>
     <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php">Ver Mais Doações</a></div>
+  
+   <section class="eventos">
+  <div class="calendario">
+    <!-- calendario -->
+  </div>
 
-    <div class="areaEventos">
-      <div class="eventosTitulo">
-        <h1>Eventos</h1>
-      </div>
-      <div class="resultadoEventos">
-        <div class="setaEsquerda"><img src="img/LEFT.png" alt="" /></div>
-          <?php
+  <div class="lista-eventos">
+    <?php
         $evento = new EventoView;
         $evento->ExibirEventos();
       ?> 
-        <div class="setaDireita"><img src="img/RIGHT.png" alt="" /></div>
+
+      <!-- <div class="item-lista">
+      <div class="imagem-item-lista-evento">
+        <img src="img/doar.png" alt="">
       </div>
-    </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro</h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+          <div class="data-evento">
+            <span class="material-symbols-outlined">
+                location_on
+              </span>
+            <h3>23/03/2008</h3>
+          </div>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div> -->
+
+
+  </div>
+</section>
+
     <div class="btnNovoEvento">
-      <button class="btnRosa">NOVO EVENTO</button>
+      <button class="btnRosa">Gerenciar eventos</button>
     </div>
   </div>
+</main>
+      <script src="js/componentesJS/calendario.js"></script>
+      <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggle-pesquisa");
+        const formArea = document.getElementById("form-pesquisa");
+
+        toggleBtn.addEventListener("click", function () {
+            formArea.classList.toggle("hidden");
+        });
+    });
+</script>
+
 </body>
 </html>
