@@ -22,7 +22,7 @@ $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliot
 
 <body>
 <?php
-
+require_once './complementos/menuBibliotecario.php'
 ?>
 
 <?php
@@ -177,105 +177,57 @@ require_once './complementos/headerBibliotecario.php';
     <!-- calendario -->
   </div>
 
-  <div class="lista">
+  <div class="lista-eventos">
+    <?php
+        $evento = new EventoView;
+        $evento->ExibirEventos();
+      ?> 
 
-    <div class="item-lista">
-      <div class="imagem-item-lista">
+    
+
+      <!-- <div class="item-lista">
+      <div class="imagem-item-lista-evento">
         <img src="img/doar.png" alt="">
       </div>
       <div class="conteudo-item-lista">
-        <h2>Divulgação do livro </h2>
+        <h2>Divulgação do livro</h2>
         <div class="conteudo-item-lista-doador">
           <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
           <p>Adamastor</p>
           <h3>(Responsável)</h3>
+          <div class="data-evento">
+            <span class="material-symbols-outlined">
+                location_on
+              </span>
+            <h3>23/03/2008</h3>
+          </div>
         </div>
         <button class="btnRosa">
           Ver Mais
         </button>
       </div>
-    </div>
+    </div> -->
 
-    <div class="item-lista">
-      <div class="imagem-item-lista">
-        <img src="img/doar.png" alt="">
-      </div>
-      <div class="conteudo-item-lista">
-        <h2>Divulgação do livro </h2>
-        <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Adamastor</p>
-          <h3>(Responsável)</h3>
-        </div>
-        <button class="btnRosa">
-          Ver Mais
-        </button>
-      </div>
-    </div>
-
-    <div class="item-lista">
-      <div class="imagem-item-lista">
-        <img src="img/doar.png" alt="">
-      </div>
-      <div class="conteudo-item-lista">
-        <h2>Divulgação do livro </h2>
-        <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Adamastor</p>
-          <h3>(Responsável)</h3>
-        </div>
-        <button class="btnRosa">
-          Ver Mais
-        </button>
-      </div>
-    </div>
-
-    <div class="item-lista">
-      <div class="imagem-item-lista">
-        <img src="img/doar.png" alt="">
-      </div>
-      <div class="conteudo-item-lista">
-        <h2>Divulgação do livro </h2>
-        <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Adamastor</p>
-          <h3>(Responsável)</h3>
-        </div>
-        <button class="btnRosa">
-          Ver Mais
-        </button>
-      </div>
-    </div>
-
-    <div class="item-lista">
-      <div class="imagem-item-lista">
-        <img src="img/doar.png" alt="">
-      </div>
-      <div class="conteudo-item-lista">
-        <h2>Divulgação do livro </h2>
-        <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Adamastor</p>
-          <h3>(Responsável)</h3>
-        </div>
-        <button class="btnRosa">
-          Ver Mais
-        </button>
-      </div>
-    </div>
 
   </div>
 </section>
+
     <div class="btnNovoEvento">
-      <button class="btnRosa">NOVO EVENTO</button>
+      <button class="btnRosa">Gerenciar eventos</button>
     </div>
   </div>
 </main>
-
-          <!-- <?php
-        $evento = new EventoView;
-        $evento->ExibirEventos();
-      ?>  -->
       <script src="js/componentesJS/calendario.js"></script>
+      <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggle-pesquisa");
+        const formArea = document.getElementById("form-pesquisa");
+
+        toggleBtn.addEventListener("click", function () {
+            formArea.classList.toggle("hidden");
+        });
+    });
+</script>
+
 </body>
 </html>

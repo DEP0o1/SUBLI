@@ -45,9 +45,9 @@ label{
 
 a {
   font-size: medium;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter";
   text-decoration: none;
-  color: white;
+  color: var(--branco);
 }
 
 .input {
@@ -80,6 +80,7 @@ header {
 main {
   width: 100%;
   overflow-x: hidden;
+  gap: var(--gap-grande);
 }
 
 header button {
@@ -103,6 +104,7 @@ body {
   background-size: 100%;
   margin-top: 84px;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* --------------------header---------------------------------------------------------------------------------- */
@@ -477,8 +479,8 @@ aside {
   background-color: var(--azul);
   color: var(--branco);
   width: 25vw;
-  padding: 0px 30px 30px 30px;
-  height: 100%;
+  padding: 30px 30px 30px 30px;
+  height: calc(100vh - 84px);
   transition: transform 0.3s ease-in-out;
   overflow-y: scroll;
 }
@@ -540,6 +542,28 @@ aside br {
   transition: 0.2s;
   cursor: pointer;
 }
+
+/*-----------------------nao encontrado----------------------------------------------------*/
+
+.nao-encontrado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--bege);
+  width: 100%;
+}
+
+.nao-encontrado h1 {
+  margin: 0;
+}
+
+.nao-encontrado span {
+  color: var(--bege);
+  font-size: 10rem;
+  cursor: default;
+}
+
 
 /*------------------notificações-----------------------------------------------------------------------------------------------*/
 
@@ -635,7 +659,7 @@ aside br {
   color: var(--branco);
   padding: var(--gap);
   border-radius: var(--radius);
-  font-family: "Inter";
+  font-family: "Inter;
 }
 
 .calendario span {
@@ -688,11 +712,35 @@ aside br {
   justify-content: space-around;
   width: 100%;
   flex-direction: row;
-  height: 50vh;
+  height: 45vh;
 }
 
-.lista h1 {
+.data-evento {
+  position: absolute;
+  background-color: var(--azul);
+  right: 0;
+  top: 10px;
+  color: var(--branco);
+  padding: 5px;
+  border-radius: 2000px 0 0 2000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-evento span {
+  color: var(--branco)  ;
+}
+
+.lista-eventos h1 {
   margin: 0;
+  color: var(--vinho);
+}
+
+.lista-eventos {
+  height: 100%;
+  width: 40vw;
+  overflow-y: scroll;
 }
 
 .item-lista {
@@ -702,6 +750,7 @@ aside br {
   gap: var(--gap);
   border-bottom: var(--border);
   border-top: var(--border);
+  position: relative;
 }
 
 .item-lista h1 {
@@ -720,9 +769,13 @@ aside br {
   padding: var(--gap);
 }
 
-.imagem-item-lista {
-  width: 150px;
-  height: 150px;
+.imagem-item-lista-evento {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius);
+}
+
+.imagem-item-lista-evento img{
   border-radius: var(--radius);
 }
 
@@ -733,7 +786,6 @@ aside br {
   gap: var(--gap);
 }
 
-
 /*------------------------------------------------------------------------------------*/
 .resultadoPesquisa {
   display: flex;
@@ -741,6 +793,8 @@ aside br {
   align-items: center;
   justify-content: center;
   gap: var(--gap);
+  width: 80%;
+  flex-wrap: wrap;
 }
 
 .areaLivro {
@@ -856,6 +910,10 @@ aside br {
   transition: 0.5s;
   border-radius: 10px;
   background-color: var(--azul);
+}
+
+.hidden {
+    display: none;
 }
 
 .dropdown-filtros a {
@@ -1041,16 +1099,6 @@ aside br {
   width: fit-content;
 }
 
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
-}
-
-p {
-  font-size: 0.9rem;
-  color: #857D72;
-}
-
 ::placeholder {
   color: #a39b91;
   font-weight: 700;
@@ -1070,7 +1118,6 @@ p {
   gap: 20px;
   border-radius: 15px;
   padding: 1%;
-  width: 45%;
 }
 
 .formSinopse {
@@ -1130,9 +1177,11 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 25px;
-  margin: 0%;
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 100vh;
+  gap: var(--gap);
 }
 .areaInput {
   display: flex;
@@ -1608,21 +1657,12 @@ height: 65vh;
   padding: 0 ;
 }
 
-.conteudo-item-lista h2{
-  font-family: "Kurale";
-  font-style: none;
-  font-weight: lighter;
-}
-
 .dadosLivroDoado h2 {
-
-  font-family: "Kurale";
   font-style: none;
   font-weight: lighter;
 }
 
 .miniPerfil{
-
   height: 4vh;
   width: 4vh;
   border-radius: 100%;
