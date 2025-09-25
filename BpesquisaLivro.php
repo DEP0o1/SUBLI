@@ -7,15 +7,10 @@ require_once('config.php');
 $buscar = false;
 $valor = "";
 
-if (isset($_REQUEST['valor'])) {
+if (isset($_POST['valor'])) {
     $buscar = true;
-
-    if ($_REQUEST['valor'] != "") {
-
-        $valor = $_REQUEST['valor'];
-    }
+    $valor = $_POST['valor'];
 }
-
 
 ?>
 
@@ -55,7 +50,6 @@ require_once './complementos/headerBibliotecario.php';
                 </div>
 
 
-                <div class="formDeLado">
                     <div>
                         <label for="cd_autor" class="tituloForm">Código Autor:</label>
                         <input name="cd_autor" type="text" class="inputFormDeLado" placeholder="Ex.1234">
@@ -75,9 +69,7 @@ require_once './complementos/headerBibliotecario.php';
                         <label for="nm_assunto" class="tituloForm">Assunto:</label>
                         <input name="nm_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
-                </div>
 
-                <div class="formDeLado">
                     <div>
                         <label for="cd_editora" class="tituloForm">Código Editora:</label>
                         <input name="cd_editora" type="text" class="inputFormDeLado" placeholder="Ex. 1">
@@ -94,7 +86,7 @@ require_once './complementos/headerBibliotecario.php';
                         <label for="nm_colecao" class="tituloForm">Coleção:</label>
                         <input name="nm_colecao" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                     </div>
-                </div>
+                
 
                 <div class="formDeLado">
                     <div>
@@ -257,6 +249,17 @@ require_once './complementos/headerBibliotecario.php';
             }
             ?>
         </div>
+        </main>
+         <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggle-pesquisa");
+        const formArea = document.getElementById("form-pesquisa");
+
+        toggleBtn.addEventListener("click", function () {
+            formArea.classList.toggle("hidden");
+        });
+    });
+</script>
 </body>
 
 </html>

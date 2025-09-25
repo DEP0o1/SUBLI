@@ -9,7 +9,7 @@ function initMap(lat, lon) {
   userLon = lon;
 
   map = L.map("map").setView([lat, lon], 14);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "© OpenStreetMap" }).addTo(map);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "" }).addTo(map);
   L.marker([lat, lon]).addTo(map).bindPopup("📍 Você está aqui").openPopup();
 
   fetchLibraries(lat, lon);
@@ -32,23 +32,10 @@ function fetchLibraries(lat, lon) {
         const address = feature.properties.address_line1 || "Endereço não disponível";
         const distance = getDistanceFromLatLonInKm(lat, lon, coords[1], coords[0]).toFixed(2);
         const image = feature.properties.photos?.[0]?.href || "https://via.placeholder.com/300x150?text=Biblioteca";
-
         
         L.marker([coords[1], coords[0]]).addTo(map)
           .bindPopup(`<b>${name}</b><br>${address}<br>${distance} km de você`);
 
-
-        // const card = document.createElement("div");
-        // card.className = "biblioteca";
-        // card.innerHTML = `
-        //   <img src="${image}" alt="${name}">
-        //   <h4>${name}</h4>
-        // `;
-        // card.onclick = () => {
-        //   const params = new URLSearchParams({ name, address, distance, image });
-        //   window.location.href = `biblioteca.php?${params.toString()}`;
-        // };
-        // cardsContainer.appendChild(card);
       });
 })
     .catch(err => console.error(err));

@@ -31,6 +31,8 @@ if (isset($_REQUEST['codigo'])) {
   
 <body>
 
+<main>
+
 
   <div class="filtrosEmprestimos">
     <div class="dropFiltros">
@@ -65,12 +67,9 @@ if (isset($_REQUEST['codigo'])) {
 ?>                      
         
     </div>
-    
         </div>
-
-
-        
     </div>
+    </main>
 </body>
 
 <script>
