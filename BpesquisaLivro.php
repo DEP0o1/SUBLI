@@ -32,15 +32,8 @@ require_once './complementos/headerBibliotecario.php';
 ?>
 
 <body>
-
-<?php
-require_once './complementos/menuBibliotecario.php'
-?>
-    <main>
-
-    
-    <!-- <div class="areaCadastro">
-        <form method = "POST"  class="formAvancado1">
+    <div class="areaCadastro">
+        <form method = "GET"  class="formAvancado1">
             <div>
                 <h1 class="pesquisaAvancada">Pesquisa Avançada </h1>
             </div>
@@ -118,7 +111,7 @@ require_once './complementos/menuBibliotecario.php'
                     <button class="btnRosa"> Pesquisar </button>
                 </div>
             </section>
-        </form> -->
+        </form>
     </div>
 
     <div class="areaResultadoPesquisa">

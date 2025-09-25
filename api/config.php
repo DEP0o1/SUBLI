@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function ($nomeClasse) {
-	$pastaClasses = 'classes/';
+	$pastaClasses = '../classes/';
 	
 	$possiveisPastas = [
 		$pastaClasses,

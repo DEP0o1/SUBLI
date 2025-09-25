@@ -20,7 +20,7 @@ class ExemplarController extends Banco
         }catch (\Throwable $th) {
             throw $th;
         }
-        
+
     }
 }
 

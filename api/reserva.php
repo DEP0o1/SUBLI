@@ -11,7 +11,7 @@
 
         case 'POST':
 			try {
-				$controller->AdicionarReserva(new Reserva(null,date("Y-m-d H:i:s"),new Leitor($cd_email),new Livro($cd_livro),new Biblioteca($cd_biblioteca)));
+				$controller->AdicionarReserva(new Reserva(null,null,new Leitor($cd_email),new Livro($cd_livro),new Biblioteca($cd_biblioteca)));
 
 				http_response_code(200);
 				echo json_encode(['mensagem'=>'Reserva feita']);

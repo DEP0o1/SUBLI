@@ -30,7 +30,7 @@ if (txtemail && txtSenha && btnEntrar) {
         btnEntrar.innerHTML = `
         <span class="material-symbols-outlined">hourglass</span> Aguarde...`;
 
-        fetch(`leitor.php?e=${email}&s=${senha}`)
+        fetch(`api/leitor.php?e=${email}&s=${senha}`)
         .then(function(resposta) {
             return resposta.json()
         }).then(function(dadosJSON) {

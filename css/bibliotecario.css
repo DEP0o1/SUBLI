@@ -1746,6 +1746,7 @@ font-size: 0.75rem;
 .livroDoadoLista {
   display: flex;
   flex-direction: row;
+<<<<<<< HEAD
   width: 38vw;
   /* background-color: burlywood; */
   padding-right: 0%;
@@ -1790,3 +1791,127 @@ font-size: 0.75rem;
   /* background-color: aqua; */
   padding-left: 0%;
 }
+=======
+  width: 40vw;
+  background-color: brown;
+}
+
+
+
+/* ------------livro bibliotecario---------- */
+
+/*------------------ coisas demoniacas da clara---------------------------------------------*/
+
+.dadosLivro span{
+  color: var(--vinho);
+  margin: 0;
+}
+
+.btnRosa span{
+  color: var(--branco);
+  margin-right: 5px;
+}
+
+header span{
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.dadosLivro h1{
+  font-weight: bold;
+}
+
+.capaLivroGrande {
+  height: 70vh;
+  width: calc(70vh * 2 / 3);
+  border-radius: var(--radius);
+}
+
+.capaLivroGrande img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.AreaLivro {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  height: 70vh;
+  gap: var(--gap-grande);
+}
+
+.botaoStatus {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pagLivro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  height: 100%;
+  margin: 0;
+}
+
+.sinopse {
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  margin: 0;
+  align-items: flex-start;
+  height: 30vh;
+}
+
+.divinfoLivvro {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.dadosLivro h1 {
+  margin: 0;
+}
+
+.areaBtnLivro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+  width: fit-content;
+  margin-right: 0;
+}
+
+.dadosLivro {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: var(--gap);
+  align-items: flex-start;
+  width: 30vw;
+}
+
+.listaBibliotecasLivro {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  padding-top: 0;
+  align-items: center;
+  width: fit-content;
+  height: 2000px;
+  overflow-y: scroll;
+}
+
+
+
+
+
+>>>>>>> db54997808dda715d8fe20a4a8d2e59be2df3fab
