@@ -11,7 +11,7 @@ public function ExibirLeitores($leitor = new Leitor){
 
             echo "
         <div class='leitorEncontrado'> 
-            <img src='img/pequeno terry.webp' alt='' class='leitor'>
+        <img src='img/pequeno terry.webp' alt='' class='leitor'>
 
             <div class='infoLeitor'>
             <h2>{$Leitor->nm_leitor}</h2>
