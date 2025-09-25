@@ -145,11 +145,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <section class="areaInput">
           <div class="areaTituloLivro">
             <label>Código do gênero:</label>
-            <input type="text" placeholder="Ex: 1">
+            <input id="cd_genero" type="text" placeholder="Ex: 1">
           </div>
           <div class="areaTituloLivro">
             <label>Gênero:</label>
-            <input type="text" placeholder="Ex: Ficção científica">
+            <input id="nm_genero" type="text" placeholder="Ex: Ficção científica">
           </div>
           <div class="areaBtn">
             <button class="btnRosa">Cadastrar</button>
@@ -191,11 +191,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <section class="areaInput">
           <div class="areaTituloLivro">
             <label>Código do idioma:</label>
-            <input type="text" placeholder="Ex: 1">
+            <input id="cd_idioma" type="text" placeholder="Ex: 1">
           </div>
           <div class="areaTituloLivro">
             <label>Idioma:</label>
-            <input type="text" placeholder="Ex: Português">
+            <input id="nm_idioma" type="text" placeholder="Ex: Português">
           </div>
           <div class="areaBtn">
             <button class="btnRosa">Cadastrar</button>
@@ -237,11 +237,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <section class="areaInput">
           <div class="areaTituloLivro">
             <label>Código da editora:</label>
-            <input type="text" placeholder="Ex: 1">
+            <input id="cd_editora" type="text" placeholder="Ex: 1">
           </div>
           <div class="areaTituloLivro">
             <label>Nome da editora</label>
-            <input type="text" placeholder="Ex: Jambo Editora">
+            <input id="nm_editora" type="text" placeholder="Ex: Jambo Editora">
           </div>
           <div class="areaBtn">
             <button class="btnRosa">Cadastrar</button>
@@ -284,11 +284,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <section class="areaInput">
           <div class="areaTituloLivro">
             <label>Código da coleção:</label>
-            <input type="text" placeholder="Ex: 1">
+            <input id="cd_colecao" type="text" placeholder="Ex: 1">
           </div>
           <div class="areaTituloLivro">
             <label>Nome da coleção</label>
-            <input type="text" placeholder="Ex: Volume Único">
+            <input id="nm_colecao" type="text" placeholder="Ex: Volume Único">
           </div>
           <div class="areaBtn">
             <button class="btnRosa">Cadastrar</button>
@@ -332,11 +332,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <section class="areaInput">
           <div class="areaTituloLivro">
             <label>Código Assunto:</label>
-            <input type="text" placeholder="Ex: 1">
+            <input id="cd_assunto" type="text" placeholder="Ex: 1">
           </div>
           <div class="areaTituloLivro">
             <label>Assunto:</label>
-            <input type="text" placeholder="Ex: Reflexão">
+            <input id="nm_assunto" type="text" placeholder="Ex: Reflexão">
           </div>
           <div class="areaBtn">
             <button class="btnRosa">Cadastrar</button>

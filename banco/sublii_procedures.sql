@@ -32,7 +32,7 @@ CREATE PROCEDURE listar_livros (
     IN p_cd_emprestimo INT
 )
 BEGIN
-    SELECT  DISTINCT l.cd_livro, l.nm_livro, e.cd_editora, e.nm_editora, i.cd_idioma, i.nm_idioma,  c.cd_colecao, c.nm_colecao, g.cd_genero, g.nm_genero, a.cd_autor, a.nm_autor, s.cd_assunto, s.nm_assunto
+    SELECT  DISTINCT l.cd_livro, l.nm_livro, e.cd_editora, e.nm_editora, i.cd_idioma, i.nm_idioma,  c.cd_colecao, c.nm_colecao /*g.cd_genero, g.nm_genero, a.cd_autor, a.nm_autor, s.cd_assunto, s.nm_assunto*/
     FROM livro l
     LEFT JOIN editora e ON l.cd_editora = e.cd_editora
     LEFT JOIN idioma i ON l.cd_idioma = i.cd_idioma
@@ -73,7 +73,7 @@ BEGIN
        (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo);
 END$$
 
-/*TIRAR O NOME DO AUTOR DO BALAIO E AS COISAS QUE PODEM TER VARIOS NESSES CASOS CHAMAR AS RESPECTIVAS PROCEDURES DE CHAMAR SÓ QUE COM O CÓDIGO DO LIVRO*/
+
 /*CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, 1,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
 
 
@@ -1116,7 +1116,18 @@ END$$
     END$$
    /* CALL contar_reservas(1,1,true);*/
     
-    DROP PROCEDURE IF EXISTS listar_reservas$$
+     DROP PROCEDURE IF EXISTS contar_reservas_leitor$$
+    CREATE PROCEDURE  contar_reservas_leitor (
+    IN p_cd_email VARCHAR(200),
+    IN p_ic_ativa TINYINT
+    )
+    BEGIN
+    SELECT COUNT(*) FROM reserva WHERE cd_email = p_cd_email AND ic_ativa = p_ic_ativa;
+    END$$
+   /*CALL contar_reservas_cliente("lucas@gmail.com",true);*/
+    
+    
+DROP PROCEDURE IF EXISTS listar_reservas$$
 CREATE PROCEDURE listar_reservas(
   IN p_cd_reserva INT,
   IN p_dt_reserva DATETIME,
@@ -1139,7 +1150,7 @@ BEGIN
      AND (p_nm_leitor IS NULL OR l.nm_leitor = p_nm_leitor);
 END$$
 
-/*CALL listar_reservas(null,null,null,1,1,null,null);*/
+/*CALL listar_reservas(null,null,'pedro@gmail.com',1,null,null,true);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_reserva$$

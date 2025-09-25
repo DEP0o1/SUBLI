@@ -295,7 +295,7 @@ INSERT INTO livro (cd_livro, nm_livro, cd_editora, cd_idioma, cd_colecao, ds_sin
 -- ===== RELACIONAMENTO LIVRO ↔ AUTOR =====
 INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
 (1, 1), -- O Príncipe - Maquiavel
-/*(1,2),*/
+(1,2),
 (2, 2), -- A Bruxa e o Calibã - Mary Renault
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
 (4, 4), -- Vidas Secas - Graciliano Ramos
@@ -338,8 +338,12 @@ INSERT INTO exemplar VALUES (3, 10, 10, NOW(), false);
 INSERT INTO exemplar VALUES (1, 5, 11, NOW(), false);
 INSERT INTO exemplar VALUES (5, 9, 12, NOW(), false);
 INSERT INTO exemplar VALUES (3, 7, 13, NOW(), false);
-INSERT INTO exemplar VALUES (1, 1, 14, NOW(), false);
-INSERT INTO exemplar VALUES (2, 1, 15, NOW(), false);
+INSERT INTO exemplar VALUES (6, 1, 14, NOW(), false);
+INSERT INTO exemplar VALUES (5, 1, 15, NOW(), false);
+INSERT INTO exemplar VALUES (4, 1, 16, NOW(), false);
+INSERT INTO exemplar VALUES (3, 1, 17, NOW(), false);
+INSERT INTO exemplar VALUES (2, 1, 18, NOW(), false);
+INSERT INTO exemplar VALUES (1, 1, 19, NOW(), false);
 /*Bibliotecarios*/
 INSERT INTO bibliotecario VALUES (1,'LABUBU','AAAAA','BBB');
 INSERT INTO bibliotecario_biblioteca VALUES (1,1);
