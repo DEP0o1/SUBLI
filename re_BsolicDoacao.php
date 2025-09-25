@@ -18,8 +18,11 @@
       </div>
 
       <section class="areaSolicDoacao">
+
         <section class="pagDoacao">
-          
+        
+        <div class="divRowItem" >
+
           <div class="fotoMenordoacao">
             <img src="img/vidas.jpg" alt="" class="imgLivroLista" />
             <img src="img/vidas.jpg" alt="" class="imgLivroLista" />
@@ -28,13 +31,13 @@
           </div>
 
           <img src="img/vidas.jpg" alt="" class="capaLivroGrande" />
+        </div>
 
-          <div class="dadosLivroDoado">
+
+        <div class="divColuna">
+            <div class="dadosLivroDoado">
       
               <h1>O Príncipe bem bem</h1>
-
-
-
 
               <div class="divRowItem"> <p>  <span class="material-symbols-outlined">
               man_4
@@ -49,16 +52,24 @@
 
              <div class="divRowItem">
               <button class="btnBranco"> Recusar </button>
-            <button class="btnRosa"></button>
-
-
+            <button class="btnRosa"> Cadastrar</button>
              </div>
+        </div>
 
-             <div class="item-lista">
-          <img src="img/vidas.jpg" alt="">
-          <div class="conteudo-item-lista">
-            <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="" class="miniPerfilRedondo">
-          </div>
+        
+            <div class="tituloCentroh1"> <h1>Outras doações</h1></div>
+
+            <section class="lista">
+          
+            <div class="livroDoadoLista">
+            <img src="img/vidas.jpg" alt="" class="imgLivroLista">
+            <h1> Laços de família</h1>
+            
+            </div>
+          
+          
+          </section>
+            
 
 
 

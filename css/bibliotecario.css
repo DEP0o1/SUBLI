@@ -1417,10 +1417,6 @@ aside br {
   width: 100%;
 }
 
-.tituloCentro h1 {
-  padding: 0;
-  margin: 0;
-}
 
 .bibliotecasMain {
   display: flex;
@@ -1529,23 +1525,24 @@ h1 {
   gap: var(--gap);
    align-items: center;
   justify-content: center; 
+  width: 100%;
 }
 
 .pagDoacao {
   display: flex;
   flex-direction: row;
-  background-color: green;
-  justify-content: center;
-  align-items: center;
-  gap: var(--gap-grande);
-  width: 55%;
+  background-color: palevioletred;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap);
+  width: 70vw;
 
 }
 
 .fotoMenordoacao {
   display: flex;
   flex-direction: column;
-  background-color: lightblue;
+  background-color: rgb(50, 109, 129);
   gap: var(--gap);
 }
 
@@ -1574,6 +1571,7 @@ height: 65vh;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
+  background-color: aqua;
 }
 
 .tituloEsquerda {
@@ -1674,24 +1672,51 @@ display: flex;
 flex-direction: row;
 gap: var(--gap);
 align-items: center;
+background-color: gray;
+padding: 10px;
+}
+
+.divRowItem h2 {
+  font-family: kurale;
 }
 
 
 .btnBranco {
-
   text-wrap: nowrap;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  background-color: var(--fundo);
+  padding: 10px 15px 10px 15px;
+  background-color: var(--branco);
   color: var(--vinho);
   border: none;
   border-radius: 10px;
   cursor: pointer;
   width: fit-content;
   overflow: hidden;
-  border: solid var(--vinho) 1px;
 
 }
 
+.divColuna{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: yellow;
+  width: 30vw;
+  padding: 0%;
+}
+
+.tituloCentroh1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+}
+
+.livroDoadoLista {
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+  background-color: brown;
+}
