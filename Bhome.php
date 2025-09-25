@@ -172,24 +172,110 @@ require_once './complementos/headerBibliotecario.php';
     </div>
     <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php">Ver Mais Doações</a></div>
   
-    <div class="areaEventos">
-      <div class="eventosTitulo">
-        <h1>Eventos</h1>
+   <section class="eventos">
+  <div class="calendario">
+    <!-- calendario -->
+  </div>
+
+  <div class="lista">
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
       </div>
-      <div class="resultadoEventos">
-        <div class="setaEsquerda"><img src="img/LEFT.png" alt="" /></div>
-          <?php
-        $evento = new EventoView;
-        $evento->ExibirEventos();
-      ?> 
-        <div class="setaDireita"><img src="img/RIGHT.png" alt="" /></div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
       </div>
     </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+    <div class="item-lista">
+      <div class="imagem-item-lista">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro </h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
     <div class="btnNovoEvento">
       <button class="btnRosa">NOVO EVENTO</button>
     </div>
   </div>
 </main>
 
+          <!-- <?php
+        $evento = new EventoView;
+        $evento->ExibirEventos();
+      ?>  -->
+      <script src="js/componentesJS/calendario.js"></script>
 </body>
 </html>
