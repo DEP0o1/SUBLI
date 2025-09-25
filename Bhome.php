@@ -183,8 +183,6 @@ require_once './complementos/headerBibliotecario.php';
         $evento->ExibirEventos();
       ?> 
 
-    
-
       <!-- <div class="item-lista">
       <div class="imagem-item-lista-evento">
         <img src="img/doar.png" alt="">
