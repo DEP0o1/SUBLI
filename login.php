@@ -31,13 +31,13 @@ require('config.php');
         <hr>
 
         <div>
-            <label for="txtEmail">Email:</label>
-            <input type="text" name="txtEmail" id="txtEmail" placeholder="Informe seu Email" autofocus>
+            <label for="cd_email">Email:</label>
+            <input type="text" name="cd_email" id="txtEmail" placeholder="Informe seu Email" autofocus>
         </div>
 
         <div>
-            <label for="txtSenha">Senha:</label>
-            <input type="password" name="txtSenha" id="txtSenha" placeholder="Informe sua Senha">
+            <label for="nm_senha">Senha:</label>
+            <input type="password" name="nm_senha" id="txtSenha" placeholder="Informe sua Senha">
         </div>
 
         <div class="areaBotao">
