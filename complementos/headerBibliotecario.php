@@ -29,6 +29,7 @@
     
   </div>
   </div>
+  <link rel="icon" type="image/svg+xml" href="img/favIcon-contornado-mini.svg">
 </header>
 
 <script src="js/componentesJS/menuBibliotecario.js"></script>

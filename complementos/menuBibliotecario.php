@@ -128,6 +128,13 @@
 
             <div class="informacao-aside" id="abrir-livro">
                 <span class="material-symbols-outlined">library_add</span>
+                <a href="BcadastrarLeitor.php">
+                    <p>Cadastrar Leitor</p>
+                </a>
+            </div>
+
+            <div class="informacao-aside" id="abrir-livro">
+                <span class="material-symbols-outlined">library_add</span>
                 <a href="BcadastrarLivro.php">
                     <p>Cadastrar Livro</p>
                 </a>
