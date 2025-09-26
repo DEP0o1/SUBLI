@@ -257,10 +257,14 @@ nav {
 } */
 
 .pgPesquisaLeitor{
+  margin-top: 5%;
+  margin-right: 5%; 
+  margin-left:-2% ;
   display: flex;
   flex-direction: column;
   gap: var(--gap-grande);
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .pesquisarLeitor {
@@ -1599,7 +1603,7 @@ height: 65vh;
 .lista {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 100%;
   height: 100%;
   text-align: left;
   overflow-y: scroll;

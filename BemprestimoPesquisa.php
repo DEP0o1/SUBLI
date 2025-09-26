@@ -29,6 +29,10 @@ if (isset($_REQUEST['codigo'])) {
     require_once './complementos/headerBibliotecario.php';
   ?>
   
+  <?php
+require_once './complementos/menuBibliotecario.php'
+?>
+
 <body>
 
 <main>
