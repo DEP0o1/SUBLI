@@ -31,11 +31,94 @@ require_once './complementos/headerBibliotecario.php';
 <main>
 
   <div class="areaDoacoes">
+
+   <div class="doacoesTitulo">
+      <h1>Solicitações de empréstimo</h1>
+    </div>
+  
+    <div class="resultadoPesquisa">
+        <?php
+        //  o 0 é bolleano falso na linha de cima 
+        //taaaaaaaaaaarrrrrrrrrrrrrrrrr
+          $Doacao = new LivrosDoadosView;
+          $Doacao->ExibirLivrosDoados(new Doacao(null,new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca),new Leitor, 0));
+      ?> 
+    </div>
+
     <div class="doacoesTitulo">
       <h1>Doações</h1>
     </div>
   
-    <!-- <section class="notificacoes">
+    <div class="resultadoPesquisa">
+        <?php
+        //  o 0 é bolleano falso na linha de cima 
+        //taaaaaaaaaaarrrrrrrrrrrrrrrrr
+          $Doacao = new LivrosDoadosView;
+          $Doacao->ExibirLivrosDoados(new Doacao(null,new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca),new Leitor, 0));
+      ?> 
+    </div>
+    <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php">Ver Mais Doações</a></div>
+
+    
+
+   <section class="eventos">
+  <div class="calendario">
+    <!-- calendario -->
+  </div>
+
+  <div class="lista-eventos">
+    <?php
+        $evento = new EventoView;
+        $evento->ExibirEventos();
+      ?> 
+
+  </div>
+</section>
+
+    <div class="btnNovoEvento">
+      <button class="btnRosa">Gerenciar eventos</button>
+    </div>
+  </div>
+</main>
+      <script src="js/componentesJS/calendario.js"></script>
+      <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("toggle-pesquisa");
+        const formArea = document.getElementById("form-pesquisa");
+
+        toggleBtn.addEventListener("click", function () {
+            formArea.classList.toggle("hidden");
+        });
+    });
+</script>
+
+</body>
+</html>
+
+  <!-- <div class="item-lista">
+      <div class="imagem-item-lista-evento">
+        <img src="img/doar.png" alt="">
+      </div>
+      <div class="conteudo-item-lista">
+        <h2>Divulgação do livro</h2>
+        <div class="conteudo-item-lista-doador">
+          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+          <p>Adamastor</p>
+          <h3>(Responsável)</h3>
+          <div class="data-evento">
+            <span class="material-symbols-outlined">
+                location_on
+              </span>
+            <h3>23/03/2008</h3>
+          </div>
+        </div>
+        <button class="btnRosa">
+          Ver Mais
+        </button>
+      </div>
+    </div> -->
+
+  <!-- <section class="notificacoes">
       <div class="topo-not">
         <h3>Notificações</h3>
         <button type="button" id="fechar-notificacao">
@@ -161,71 +244,3 @@ require_once './complementos/headerBibliotecario.php';
         </div>
       </div>
     </section> -->
-    
-    <div class="resultadoPesquisa">
-        <?php
-        //  o 0 é bolleano falso na linha de cima 
-        //taaaaaaaaaaarrrrrrrrrrrrrrrrr
-          $Doacao = new LivrosDoadosView;
-          $Doacao->ExibirLivrosDoados(new Doacao(null,new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca),new Leitor, 0));
-      ?> 
-    </div>
-    <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php">Ver Mais Doações</a></div>
-  
-   <section class="eventos">
-  <div class="calendario">
-    <!-- calendario -->
-  </div>
-
-  <div class="lista-eventos">
-    <?php
-        $evento = new EventoView;
-        $evento->ExibirEventos();
-      ?> 
-
-      <!-- <div class="item-lista">
-      <div class="imagem-item-lista-evento">
-        <img src="img/doar.png" alt="">
-      </div>
-      <div class="conteudo-item-lista">
-        <h2>Divulgação do livro</h2>
-        <div class="conteudo-item-lista-doador">
-          <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-          <p>Adamastor</p>
-          <h3>(Responsável)</h3>
-          <div class="data-evento">
-            <span class="material-symbols-outlined">
-                location_on
-              </span>
-            <h3>23/03/2008</h3>
-          </div>
-        </div>
-        <button class="btnRosa">
-          Ver Mais
-        </button>
-      </div>
-    </div> -->
-
-
-  </div>
-</section>
-
-    <div class="btnNovoEvento">
-      <button class="btnRosa">Gerenciar eventos</button>
-    </div>
-  </div>
-</main>
-      <script src="js/componentesJS/calendario.js"></script>
-      <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const toggleBtn = document.getElementById("toggle-pesquisa");
-        const formArea = document.getElementById("form-pesquisa");
-
-        toggleBtn.addEventListener("click", function () {
-            formArea.classList.toggle("hidden");
-        });
-    });
-</script>
-
-</body>
-</html>
