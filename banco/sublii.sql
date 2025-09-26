@@ -321,37 +321,13 @@ INSERT INTO livro (cd_livro, nm_livro, cd_editora, cd_idioma, cd_colecao, ds_sin
 
 -- ===== RELACIONAMENTO LIVRO ↔ AUTOR =====
 INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
-(1, 1), -- O Príncipe - Maquiavel
-(1,2),
-(2, 2), -- A Bruxa e o Calibã - Mary Renault
+(1, 2), -- O Príncipe - Maquiavel
+(2, 3), -- A Bruxa e o Calibã - Mary Renault
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
-(4, 4), -- Vidas Secas - Graciliano Ramos
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
-(6, 6), -- Eu, Robô - Isaac Asimov*/
-(7, 5),  -- Dom Casmurro - Machado de Assis
-(8, 5),  -- 1984 - George Orwell
-(9, 6),  -- A Arte da Guerra - Sun Tzu
-(10, 5), -- O Pequeno Príncipe - Antoine de Saint-Exupéry
-(11, 6), -- O Código Da Vinci - Dan Brown
-(12, 6), -- O Nome do Vento - Patrick Rothfuss
-(13, 7), -- O Alquimista - Paulo Coelho
-(14, 2), -- Extraordinário - R.J. Palacio
-(15, 1), -- Vidas Secas - Graciliano Ramos
-(16, 2), -- Harry Potter e a Pedra Filosofal - J.K. Rowling
-(17, 2), -- A Culpa é das Estrelas - John Green
-(18, 1), -- O Senhor dos Anéis: A Sociedade do Anel - J.R.R. Tolkien
-(19, 1), -- Box Sherlock Holmes - Arthur Conan Doyle
-(20, 1), -- Drácula - Bram Stoker
-(21, 2), -- Cem Anos de Solidão - Gabriel García Márquez
-(22, 2), -- O Milagre da Manhã - Hal Elrod
-(23, 3), -- Mindset: A Nova Psicologia do Sucesso - Carol S. Dweck
-(24, 3),  -- A Revolução dos Bichos - George Orwell (Autor reutilizado)
-(25, 5), -- O Guia do Mochileiro das Galáxias - Douglas Adams
-(26, 6), -- Extraordinário (2) - R.J. Palacio (Autor reutilizado)
-(27, 1), -- O Estrangeiro - Albert Camus
-(28, 4), -- A Hospedeira - Stephenie Meyer
-(29, 4),  -- O Alienista - Machado de Assis (Autor reutilizado, assumindo que Machado é o 7)
-(30, 3); -- IT - A Coisa - Stephen King
+(6, 6),-- Eu, Robô - Isaac Asimov*/
+(7, 5), -- Dom Casmurro - Machado de Assis
+(8, 5);  -- 1984 - George Orwell
 
 -- ===== RELACIONAMENTO LIVRO ↔ GENERO =====
 INSERT INTO genero_livro (cd_livro, cd_genero) VALUES
