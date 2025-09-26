@@ -1746,7 +1746,6 @@ font-size: 0.75rem;
 .livroDoadoLista {
   display: flex;
   flex-direction: row;
-<<<<<<< HEAD
   width: 38vw;
   /* background-color: burlywood; */
   padding-right: 0%;
@@ -1791,10 +1790,7 @@ font-size: 0.75rem;
   /* background-color: aqua; */
   padding-left: 0%;
 }
-=======
-  width: 40vw;
-  background-color: brown;
-}
+
 
 
 
@@ -1910,8 +1906,3 @@ header span{
   overflow-y: scroll;
 }
 
-
-
-
-
->>>>>>> db54997808dda715d8fe20a4a8d2e59be2df3fab
