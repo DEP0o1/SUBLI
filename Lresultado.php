@@ -74,7 +74,7 @@ if (isset($_REQUEST['valor'])) {
       </div>-->
 
 
-<<<<<<< HEAD
+
     <div class="nao-encontrado">
       <span class='material-symbols-outlined'>
         menu_book
@@ -82,18 +82,12 @@ if (isset($_REQUEST['valor'])) {
       <h1>Nenhum livro foi encontrado</h1>
     </div>
 
-=======
->>>>>>> 3af6352f7a4a669418ffe223e6727fc200a4dd66
     <!-- <div class="nao-encontrado">
       <span class='material-symbols-outlined'>
         menu_book
       </span>
       <h1>Nenhum livro foi encontrado</h1>
     </div> -->
-<<<<<<< HEAD
-
-=======
->>>>>>> 3af6352f7a4a669418ffe223e6727fc200a4dd66
 
     </button>
   </section>

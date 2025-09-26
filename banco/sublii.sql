@@ -205,7 +205,9 @@ CREATE TABLE favorito_leitor(
 	CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
 );*/
 
-
+/*Eventos*/
+INSERT INTO evento VALUES ('Divulgação do meu Livro', 1,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', NULL);
+INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'pedro.favoritos@gmail.com', NULL);
 
 /*Leitores*/
 INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
@@ -251,9 +253,7 @@ INSERT INTO biblioteca VALUES (9, 'Mundo Animal','Rua Lucas Alcoforado');
 INSERT INTO biblioteca VALUES (10, 'Arte e Cultura','Rua Lucas Alcoforado');
 
 
-/*Eventos*/
-INSERT INTO evento VALUES ('Divulgação do meu Livro', 1,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', NULL);
-INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'pedro.favoritos@gmail.com', NULL);
+
 
 -- ===== EDITORAS =====
 INSERT INTO editora (cd_editora, nm_editora) VALUES
@@ -263,7 +263,9 @@ INSERT INTO editora (cd_editora, nm_editora) VALUES
 
 -- ===== IDIOMA =====
 INSERT INTO idioma (cd_idioma, nm_idioma) VALUES
-(1, 'Português');
+(1, 'Português'),
+(2, 'Espanhol'),
+(3, 'inglês');
 
 -- ===== COLEÇÕES =====
 INSERT INTO colecao (cd_colecao, nm_colecao) VALUES
@@ -290,7 +292,31 @@ INSERT INTO livro (cd_livro, nm_livro, cd_editora, cd_idioma, cd_colecao, ds_sin
 (3, 'É assim que acaba', 3, 1, 3, 'Fábula poética sobre amizade, amor e a essência da vida.'),
 (4, 'Capitães da Areia', 2, 1, 4, 'Romance realista que retrata a vida de uma família sertaneja nordestina em meio à seca.'),
 (5, 'Como eu era Antes de Você', 2, 1, 5, 'Romance epistolar que acompanha a adolescência de Charlie, explorando amizade, amor e amadurecimento.'),
-(6, 'Como Mudar o Mundo', 2, 1, 6, 'Clássico da ficção científica de Asimov que reúne contos sobre a relação entre humanos e robôs, incluindo as Três Leis da Robótica.');
+(6, 'Como Mudar o Mundo', 2, 1, 6, 'Clássico da ficção científica de Asimov que reúne contos sobre a relação entre humanos e robôs, incluindo as Três Leis da Robótica.'),
+(7, 'Dom Casmurro', 1, 1, 4, 'Clássico da literatura brasileira de Machado de Assis que narra a história do ciumento Bento Santiago e o enigma de Capitu.'),
+(8, '1984', 3, 3, 6, 'Distopia de George Orwell sobre um regime totalitário sob a vigilância do Grande Irmão.'),
+(9, 'A Arte da Guerra', 1, 1, 1, 'Tratado militar de Sun Tzu que oferece estratégias e táticas atemporais de liderança e conflito.'),
+(10, 'O Pequeno Príncipe', 2, 1, 3, 'Fábula filosófica de Antoine de Saint-Exupéry sobre a importância da amizade e dos valores humanos.'),
+(11, 'O Código Da Vinci', 2, 1, 1, 'Thriller de Dan Brown que segue o simbologista Robert Langdon em uma investigação que desvenda segredos históricos e religiosos.'),
+(12, 'O Nome do Vento', 2, 3, 2, 'Primeiro volume da épica saga de Patrick Rothfuss, sobre a vida lendária de Kvothe, um músico e mago.'),
+(13, 'O Alquimista', 3, 1, 1, 'Livro de Paulo Coelho sobre um pastor que viaja em busca de um tesouro, aprendendo sobre a importância de seguir a Lenda Pessoal.'),
+(14, 'Extraordinário', 2, 1, 3, 'História de R.J. Palacio sobre Auggie Pullman, um garoto com deformidade facial, ao iniciar o quinto ano escolar.'),
+(15, 'Vidas Secas', 1, 1, 4, 'Obra de Graciliano Ramos que retrata a luta pela sobrevivência da família de retirantes Fabiano no sertão nordestino.'),
+(16, 'Harry Potter e a Pedra Filosofal', 2, 1, 3, 'Primeiro livro da série de J.K. Rowling, apresentando o órfão Harry Potter e o mundo bruxo.'),
+(17, 'A Culpa é das Estrelas', 2, 1, 5, 'Romance de John Green sobre a história de amor entre dois adolescentes com câncer, Hazel e Augustus.'),
+(18, 'O Senhor dos Anéis: A Sociedade do Anel', 3, 3, 1, 'Aventura de J.R.R. Tolkien, onde Frodo precisa destruir um anel maligno na Terra-média.'),
+(19, ' Sherlock Holmes', 1, 1, 1, 'Coletânea das aventuras do detetive mais famoso do mundo, Sherlock Holmes, e seu parceiro Dr. Watson.'),
+(20, 'Drácula', 1, 3, 1, 'Clássico gótico de Bram Stoker que popularizou a figura do vampiro Conde Drácula.'),
+(21, 'Cem Anos de Solidão', 2, 2, 1, 'Obra de Gabriel García Márquez que narra a história da família Buendía em Macondo, explorando o realismo mágico.'),
+(22, 'O Milagre da Manhã', 3, 1, 1, 'Guia de autoajuda de Hal Elrod que propõe hábitos matinais para transformar a vida.'),
+(23, 'Mindset: A Nova Psicologia do Sucesso', 3, 1, 1, 'Livro de Carol S. Dweck que explora como a mentalidade fixa ou de crescimento afeta o sucesso.'),
+(24, 'A Revolução dos Bichos', 1, 1, 6, 'Sátira política de George Orwell sobre a corrupção do poder em uma fazenda controlada por animais.'),
+(25, 'O Guia do Mochileiro das Galáxias', 2, 3, 6, 'Ficção científica cômica de Douglas Adams que começa com a destruição da Terra.'),
+(26, 'Extraordinário', 2, 1, 5, 'Outro livro de R.J. Palacio, focado em questões de bullying, aceitação e amizade.'),
+(27, 'O Estrangeiro', 1, 1, 1, 'Romance existencialista de Albert Camus que reflete sobre a condição humana e o absurdo da vida.'),
+(28, 'A Hospedeira', 2, 3, 6, 'Ficção científica de Stephenie Meyer onde alienígenas invadem a Terra e habitam corpos humanos.'),
+(29, 'O Alienista', 1, 1, 4, 'Conto de Machado de Assis que satiriza a ciência e a loucura através da figura do Dr. Simão Bacamarte.'),
+(30, 'IT - A Coisa', 3, 3, 1, 'Clássico do terror de Stephen King sobre um grupo de crianças que enfrenta uma criatura maligna que se manifesta como o palhaço Pennywise.');
 
 -- ===== RELACIONAMENTO LIVRO ↔ AUTOR =====
 INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
@@ -300,7 +326,31 @@ INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
 (4, 4), -- Vidas Secas - Graciliano Ramos
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
-(6, 6); -- Eu, Robô - Isaac Asimov*/
+(6, 6), -- Eu, Robô - Isaac Asimov*/
+(7, 7),  -- Dom Casmurro - Machado de Assis
+(8, 8),  -- 1984 - George Orwell
+(9, 9),  -- A Arte da Guerra - Sun Tzu
+(10, 10), -- O Pequeno Príncipe - Antoine de Saint-Exupéry
+(11, 11), -- O Código Da Vinci - Dan Brown
+(12, 12), -- O Nome do Vento - Patrick Rothfuss
+(13, 13), -- O Alquimista - Paulo Coelho
+(14, 14), -- Extraordinário - R.J. Palacio
+(15, 15), -- Vidas Secas - Graciliano Ramos
+(16, 16), -- Harry Potter e a Pedra Filosofal - J.K. Rowling
+(17, 17), -- A Culpa é das Estrelas - John Green
+(18, 18), -- O Senhor dos Anéis: A Sociedade do Anel - J.R.R. Tolkien
+(19, 19), -- Box Sherlock Holmes - Arthur Conan Doyle
+(20, 20), -- Drácula - Bram Stoker
+(21, 21), -- Cem Anos de Solidão - Gabriel García Márquez
+(22, 22), -- O Milagre da Manhã - Hal Elrod
+(23, 23), -- Mindset: A Nova Psicologia do Sucesso - Carol S. Dweck
+(24, 8),  -- A Revolução dos Bichos - George Orwell (Autor reutilizado)
+(25, 24), -- O Guia do Mochileiro das Galáxias - Douglas Adams
+(26, 14), -- Extraordinário (2) - R.J. Palacio (Autor reutilizado)
+(27, 25), -- O Estrangeiro - Albert Camus
+(28, 26), -- A Hospedeira - Stephenie Meyer
+(29, 7),  -- O Alienista - Machado de Assis (Autor reutilizado, assumindo que Machado é o 7)
+(30, 27); -- IT - A Coisa - Stephen King
 
 -- ===== RELACIONAMENTO LIVRO ↔ GENERO =====
 INSERT INTO genero_livro (cd_livro, cd_genero) VALUES
@@ -309,7 +359,31 @@ INSERT INTO genero_livro (cd_livro, cd_genero) VALUES
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
 (4, 4), -- Vidas Secas - Graciliano Ramos
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
-(6, 6); -- Eu, Robô - Isaac Asimov*/
+(6, 6), -- Eu, Robô - Isaac Asimov*/
+(7, 1),  -- Dom Casmurro - Ficção
+(8, 1),  -- 1984 - Ficção (Distopia)
+(9, 6),  -- A Arte da Guerra - História
+(10, 2), -- O Pequeno Príncipe - Fantasia
+(11, 4), -- O Código Da Vinci - Mistério
+(12, 2), -- O Nome do Vento - Fantasia
+(13, 3), -- O Alquimista - Romance
+(14, 3), -- Extraordinário - Romance (Young Adult)
+(15, 1), -- Vidas Secas - Ficção (Regionalista)
+(16, 2), -- Harry Potter e a Pedra Filosofal - Fantasia
+(17, 3), -- A Culpa é das Estrelas - Romance
+(18, 2), -- O Senhor dos Anéis: A Sociedade do Anel - Fantasia
+(19, 4), -- Box Sherlock Holmes - Mistério
+(20, 5), -- Drácula - Terror
+(21, 1), -- Cem Anos de Solidão - Ficção (Realismo Mágico)
+(22, 8), -- O Milagre da Manhã - Autoajuda
+(23, 8), -- Mindset: A Nova Psicologia do Sucesso - Autoajuda
+(24, 1), -- A Revolução dos Bichos - Ficção (Sátira)
+(25, 10), -- O Guia do Mochileiro das Galáxias - Aventura
+(26, 3), -- Extraordinário (2) - Romance
+(27, 3), -- O Estrangeiro - Romance (Existencialista)
+(28, 1), -- A Hospedeira - Ficção (Ficção Científica)
+(29, 1), -- O Alienista - Ficção
+(30, 5); -- IT - A Coisa - Terror
 
 -- ===== RELACIONAMENTO LIVRO ↔ ASSUNTO =====
 INSERT INTO assunto_livro (cd_livro, cd_assunto) VALUES
@@ -318,8 +392,31 @@ INSERT INTO assunto_livro (cd_livro, cd_assunto) VALUES
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
 (4, 4), -- Vidas Secas - Graciliano Ramos
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
-(6, 6); -- Eu, Robô - Isaac Asimov*/
-
+(6, 6), -- Eu, Robô - Isaac Asimov*/
+(7, 1),  -- Dom Casmurro - Literatura Brasileira
+(8, 8),  -- 1984 - Política
+(9, 3),  -- A Arte da Guerra - Filosofia
+(10, 5), -- O Pequeno Príncipe - Educação
+(11, 7), -- O Código Da Vinci - Religião
+(12, 1), -- O Nome do Vento - Literatura Brasileira (Fantasia)
+(13, 3), -- O Alquimista - Filosofia
+(14, 5), -- Extraordinário - Educação
+(15, 1), -- Vidas Secas - Literatura Brasileira
+(16, 11), -- Harry Potter e a Pedra Filosofal - Fantasia (Novo Assunto)
+(17, 2), -- A Culpa é das Estrelas - Psicologia
+(18, 11), -- O Senhor dos Anéis: A Sociedade do Anel - Fantasia (Assunto reutilizado)
+(19, 4), -- Box Sherlock Holmes - Tecnologia (Investigação)
+(20, 5), -- Drácula - Terror (Educação - tema amplo)
+(21, 1), -- Cem Anos de Solidão - Literatura Brasileira
+(22, 6), -- O Milagre da Manhã - Saúde
+(23, 2), -- Mindset: A Nova Psicologia do Sucesso - Psicologia
+(24, 8), -- A Revolução dos Bichos - Política
+(25, 4), -- O Guia do Mochileiro das Galáxias - Tecnologia
+(26, 5), -- Extraordinário (2) - Educação
+(27, 3), -- O Estrangeiro - Filosofia
+(28, 4), -- A Hospedeira - Tecnologia
+(29, 1), -- O Alienista - Literatura Brasileira
+(30, 2); -- IT - A Coisa - Psicologia (Medo/Infância)
 
 /*Favoritos*/
 

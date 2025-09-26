@@ -14,27 +14,18 @@ require('config.php');
     <link rel="stylesheet" href="css/mobile.css">
     <script type="module" src="js/componentesJS/acesso.js"></script>
 </head>
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-
-=======
 <body>
 
 
 <body>
 
->>>>>>> 3af6352f7a4a669418ffe223e6727fc200a4dd66
-=======
->>>>>>> e677863c7ba1915856519c3b84d0c9d42d9f60c3
+
 <body class="bodyLogin">
     <?php
     //  include 'complementos/headerLeitor.php'; 
     ?>
-<<<<<<< HEAD
 
-=======
->>>>>>> 3af6352f7a4a669418ffe223e6727fc200a4dd66
 
 <div class="containerLogin">
 
