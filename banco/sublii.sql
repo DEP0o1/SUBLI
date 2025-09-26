@@ -205,11 +205,7 @@ CREATE TABLE favorito_leitor(
 	CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
 );*/
 
-/*Eventos*/
-INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', NULL);
-INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 1,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
-INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
-INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 4,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
+
 /*Leitores*/
 INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
 INSERT INTO leitor VALUES ('pedro@gmail.com', 'Pedro Miguel', '59433067852', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
@@ -254,7 +250,11 @@ INSERT INTO biblioteca VALUES (9, 'Mundo Animal','Rua Lucas Alcoforado');
 INSERT INTO biblioteca VALUES (10, 'Arte e Cultura','Rua Lucas Alcoforado');
 
 
-
+/*Eventos*/
+INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', NULL);
+INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 1,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
+INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
+INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 4,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
 
 -- ===== EDITORAS =====
 INSERT INTO editora (cd_editora, nm_editora) VALUES
@@ -328,30 +328,30 @@ INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
 (4, 4), -- Vidas Secas - Graciliano Ramos
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
 (6, 6), -- Eu, Robô - Isaac Asimov*/
-(7, 7),  -- Dom Casmurro - Machado de Assis
-(8, 8),  -- 1984 - George Orwell
-(9, 9),  -- A Arte da Guerra - Sun Tzu
-(10, 10), -- O Pequeno Príncipe - Antoine de Saint-Exupéry
-(11, 11), -- O Código Da Vinci - Dan Brown
-(12, 12), -- O Nome do Vento - Patrick Rothfuss
-(13, 13), -- O Alquimista - Paulo Coelho
-(14, 14), -- Extraordinário - R.J. Palacio
-(15, 15), -- Vidas Secas - Graciliano Ramos
-(16, 16), -- Harry Potter e a Pedra Filosofal - J.K. Rowling
-(17, 17), -- A Culpa é das Estrelas - John Green
-(18, 18), -- O Senhor dos Anéis: A Sociedade do Anel - J.R.R. Tolkien
-(19, 19), -- Box Sherlock Holmes - Arthur Conan Doyle
-(20, 20), -- Drácula - Bram Stoker
-(21, 21), -- Cem Anos de Solidão - Gabriel García Márquez
-(22, 22), -- O Milagre da Manhã - Hal Elrod
-(23, 23), -- Mindset: A Nova Psicologia do Sucesso - Carol S. Dweck
-(24, 8),  -- A Revolução dos Bichos - George Orwell (Autor reutilizado)
-(25, 24), -- O Guia do Mochileiro das Galáxias - Douglas Adams
-(26, 14), -- Extraordinário (2) - R.J. Palacio (Autor reutilizado)
-(27, 25), -- O Estrangeiro - Albert Camus
-(28, 26), -- A Hospedeira - Stephenie Meyer
-(29, 7),  -- O Alienista - Machado de Assis (Autor reutilizado, assumindo que Machado é o 7)
-(30, 27); -- IT - A Coisa - Stephen King
+(7, 5),  -- Dom Casmurro - Machado de Assis
+(8, 5),  -- 1984 - George Orwell
+(9, 6),  -- A Arte da Guerra - Sun Tzu
+(10, 5), -- O Pequeno Príncipe - Antoine de Saint-Exupéry
+(11, 6), -- O Código Da Vinci - Dan Brown
+(12, 6), -- O Nome do Vento - Patrick Rothfuss
+(13, 7), -- O Alquimista - Paulo Coelho
+(14, 2), -- Extraordinário - R.J. Palacio
+(15, 1), -- Vidas Secas - Graciliano Ramos
+(16, 2), -- Harry Potter e a Pedra Filosofal - J.K. Rowling
+(17, 2), -- A Culpa é das Estrelas - John Green
+(18, 1), -- O Senhor dos Anéis: A Sociedade do Anel - J.R.R. Tolkien
+(19, 1), -- Box Sherlock Holmes - Arthur Conan Doyle
+(20, 1), -- Drácula - Bram Stoker
+(21, 2), -- Cem Anos de Solidão - Gabriel García Márquez
+(22, 2), -- O Milagre da Manhã - Hal Elrod
+(23, 3), -- Mindset: A Nova Psicologia do Sucesso - Carol S. Dweck
+(24, 3),  -- A Revolução dos Bichos - George Orwell (Autor reutilizado)
+(25, 5), -- O Guia do Mochileiro das Galáxias - Douglas Adams
+(26, 6), -- Extraordinário (2) - R.J. Palacio (Autor reutilizado)
+(27, 1), -- O Estrangeiro - Albert Camus
+(28, 4), -- A Hospedeira - Stephenie Meyer
+(29, 4),  -- O Alienista - Machado de Assis (Autor reutilizado, assumindo que Machado é o 7)
+(30, 3); -- IT - A Coisa - Stephen King
 
 -- ===== RELACIONAMENTO LIVRO ↔ GENERO =====
 INSERT INTO genero_livro (cd_livro, cd_genero) VALUES
@@ -403,9 +403,9 @@ INSERT INTO assunto_livro (cd_livro, cd_assunto) VALUES
 (13, 3), -- O Alquimista - Filosofia
 (14, 5), -- Extraordinário - Educação
 (15, 1), -- Vidas Secas - Literatura Brasileira
-(16, 11), -- Harry Potter e a Pedra Filosofal - Fantasia (Novo Assunto)
+(16, 10), -- Harry Potter e a Pedra Filosofal - Fantasia (Novo Assunto)
 (17, 2), -- A Culpa é das Estrelas - Psicologia
-(18, 11), -- O Senhor dos Anéis: A Sociedade do Anel - Fantasia (Assunto reutilizado)
+(18, 10), -- O Senhor dos Anéis: A Sociedade do Anel - Fantasia (Assunto reutilizado)
 (19, 4), -- Box Sherlock Holmes - Tecnologia (Investigação)
 (20, 5), -- Drácula - Terror (Educação - tema amplo)
 (21, 1), -- Cem Anos de Solidão - Literatura Brasileira
