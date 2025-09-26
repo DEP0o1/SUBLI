@@ -18,11 +18,14 @@ require_once('config.php');
 </head>
 
 <body>
+<?php
+require_once './complementos/menuBibliotecario.php'
+?>
     <?php
     require_once './complementos/headerBibliotecario.php';
     ?>
     <main class="pgPesquisaLeitor">
-        <!-- <section class="pesquisarLeitor">
+        <section class="pesquisarLeitor">
             <form action="">
                 <div class="titulo-areaPerfil">
                     <h1>Pesquisar Leitor</h1>
@@ -44,9 +47,9 @@ require_once('config.php');
                     <a href="./BcadastrarLeitor.php" class="btnRosa">Novo Leitor</a>
                 </div>
             </form>
-        </section> -->
+        </section>
 
-        <section class="resultadoPesquisaLeitor">
+        <!-- <section class="resultadoPesquisaLeitor">
             <div class="resultadoEmPe">
                 <div class="cardLeitor">
                     <img src="img/pequeno terry.webp" alt="">
@@ -237,35 +240,35 @@ require_once('config.php');
             </div>
 
 
-        </section>
+        </section> -->
+        <div class="leitoresEncontrados">
+           <?php
+           $campos = 0;
+           if (isset($_REQUEST['cd_cpf']) && $_REQUEST['cd_cpf'] != '' && strlen($_REQUEST['cd_cpf']) == 11) {
+               $cd_cpf = $_REQUEST['cd_cpf'];
+               $campos = $campos + 1;
+           } else {
+               $cd_cpf = null;
+           }
+    
+           if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != '') {
+               $nm_leitor = $_REQUEST['nm_leitor'];
+               $campos = $campos + 1;
+           } else {
+               $nm_leitor = null;
+           }
+    
+           if ($campos > 0) {
+               $leitor = new LeitorView;
+               $leitor->ExibirLeitores(new Leitor(null, $nm_leitor, $cd_cpf));
+           }
+           ?>
+       </div>
     </main>
 
 
 
 
-     <!-- <div class="leitoresEncontrados"> -->
-        <?php
-        $campos = 0;
-        if (isset($_REQUEST['cd_cpf']) && $_REQUEST['cd_cpf'] != '' && strlen($_REQUEST['cd_cpf']) == 11) {
-            $cd_cpf = $_REQUEST['cd_cpf'];
-            $campos = $campos + 1;
-        } else {
-            $cd_cpf = null;
-        }
-
-        if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != '') {
-            $nm_leitor = $_REQUEST['nm_leitor'];
-            $campos = $campos + 1;
-        } else {
-            $nm_leitor = null;
-        }
-
-        if ($campos > 0) {
-            $leitor = new LeitorView;
-            $leitor->ExibirLeitores(new Leitor(null, $nm_leitor, $cd_cpf));
-        }
-        ?>
-    <!-- </div> -->
 
 
 </body>
