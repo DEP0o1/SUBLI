@@ -78,7 +78,7 @@ class LivroView{
 
             <p>
               <span class='material-symbols-outlined'>calendar_month</span>
-              Ano de publicação: aaa
+              Ano de publicação: 2018
             </p>
 
             <section class='areaBtn'>
@@ -114,7 +114,8 @@ class LivroView{
           </div>
 
           <div class='sinopse'>
-            <p>{$Livro->ds_sinopse}</p>
+          <h2>Sinopse:</h2>
+          <p>{$Livro->ds_sinopse}</p>
           </div>
         </div>
         ";

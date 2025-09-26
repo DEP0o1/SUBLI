@@ -81,15 +81,12 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
             </div>
 
             <section class="areaInput">
-                <div class="areaTituloLivro">
-                    <label for="cd_email" class="tituloForm">Email do Leitor:</label>
-                    <input name="cd_email" type="text" class="inputForm" placeholder="pedro@gmail.com">
-                </div>
+                
+                        <?php
+            $input_reserva = new ReservaView;
+            $input_reserva->Input_Livro_Reserva(new Reserva($cd_reserva = $_REQUEST['codigo']));
 
-                <div class="areaAutorLivro">
-                    <label for="cd_livro"class="tituloForm">Código do Livro:</label>
-                    <input name="cd_livro" type="text" class="inputForm" placeholder="1">
-                </div>
+            ?>
 
                 <div class="areaAutorLivro">
                     <label for="dt_devolucao_esperada" class="tituloForm">Data de Devolução:</label>

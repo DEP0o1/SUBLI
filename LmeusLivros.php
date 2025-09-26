@@ -28,6 +28,8 @@ $email = $_SESSION['leitor'];
         <div class="textoEsquerda"> 
           <h1>Empréstimos</h1> 
         </div>
+        <div class="exibirLivros">
+        
         <?php
         if(isset($email)){
           $controller = new EmprestimoController;
@@ -41,6 +43,7 @@ $email = $_SESSION['leitor'];
         
         
         ?>
+        </div>
         <div class="textoEsquerda"> 
           <h1>Histórico </h1> 
         </div>

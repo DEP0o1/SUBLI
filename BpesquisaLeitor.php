@@ -77,7 +77,7 @@ require_once('config.php');
                         <p>
                             <span class="material-symbols-outlined">
                                 alternate_email
-                            </span> E-mail: filhodaputa@gmail.com
+                            </span> E-mail: Pedro@gmail.com
                         </p>
                         <div class="btnsPerfil">
                             <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Alterar Dados</button>

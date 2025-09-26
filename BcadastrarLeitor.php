@@ -122,7 +122,7 @@ if ($campos == 8) {
                 <div class="formDeLado">
                     <div>
                         <label for="cd_email" class="tituloForm">Email:</label>
-                        <input name="cd_email" type="text" class="inputFormDeLado" placeholder="Ex. filhodaputa@gmail.com">
+                        <input name="cd_email" type="text" class="inputFormDeLado" placeholder="Ex. pedro@gmail.com">
                     </div>
                     <div>
                         <label for="nm_senha" class="tituloForm">Senha:</label>
