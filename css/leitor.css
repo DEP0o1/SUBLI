@@ -624,6 +624,17 @@ span {
   border-radius: var(--radius);
 }
 
+.imagem-item-lista-evento {
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius);
+}
+
+.imagem-item-lista-evento img{
+  border-radius: var(--radius);
+}
+
+
 .conteudo-item-lista {
   display: flex;
   flex-direction: column;
