@@ -13,7 +13,7 @@ public function ExibirReservas($reserva= new Reserva){
             echo " 
 
         <div class='livro'>
-                        <img src='img/6' alt='' />
+                         <img src='img/{$livro[0]->cd_livro}' alt='{$livro[0]->nm_livro}'/>
                         <h2>{$livro[0]->nm_livro}</h2>
                         <p>
             Reservado por: {$Reserva->leitor->nm_leitor}

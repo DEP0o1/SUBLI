@@ -1204,7 +1204,7 @@ BEGIN
      WHERE cd_reserva = p_cd_reserva;
   END IF;
 END$$
-
+/*CALL alterar_reserva(1,null,null,null,null,false);*/
 
 
 /* =========================================

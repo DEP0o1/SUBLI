@@ -61,7 +61,7 @@ class EmprestimoController extends Banco
                 }
             }
             else{
-                return;
+                return "Você precisa preencher o campo código do livro";
             }
 
             if(!is_null($emprestimo->leitor->cd_email)){
@@ -71,7 +71,11 @@ class EmprestimoController extends Banco
                 }
             }
             else{
-                return;
+               return "Você precisa preencher o campo de email";
+            }
+
+            if(is_null($emprestimo->dt_devolucao_esperada)){
+                  return "Você precisa preencher o campo de devolução";
             }
 
             $this->Executar('adicionar_emprestimo', $parametros);

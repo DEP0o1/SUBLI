@@ -444,6 +444,7 @@ INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true);
 
 
 /*
+select * from reserva;
 select * from livro;
 select * from idioma;
 select * from colecao;
