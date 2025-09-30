@@ -420,13 +420,13 @@ nav {
 }
 
 .livro button {
+  height: fit-content;
   background-color: var(--vinho);
   color: var(--branco);
   border: none;
-  padding: 8px 14px;
+  padding: 10px 10px;
   border-radius: var(--radius);
   cursor: pointer;
-  margin-top: auto;
 }
 
 .favorito {
@@ -481,15 +481,15 @@ html {
 }
 
 aside {
-  top: 0;
   background-color: var(--azul);
   color: var(--branco);
-  width: 25vw;
+  width: fit-content;
   padding: 30px 30px 30px 30px;
   height: calc(100vh - 84px);
   transition: transform 0.3s ease-in-out;
   overflow-y: scroll;
 }
+
 
 .overlay {
   position: fixed;
@@ -660,7 +660,8 @@ aside br {
 /*-------------------------calendario---------------------------------------------------------------------------------------*/
 
 .calendario {
-  width: 30vw;
+    width: 25vw;
+  height: 16vw;
   background-color: var(--azul);
   color: var(--branco);
   padding: var(--gap);
@@ -720,7 +721,14 @@ aside br {
   flex-direction: row;
   height: 45vh;
 }
-
+.larguraEventosBiblio{
+    width: 141vh;
+    margin-left: 2%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+}
 .data-evento {
   position: absolute;
   background-color: var(--azul);
@@ -998,6 +1006,7 @@ aside br {
 }
 
 .areaDoacoes {
+  padding-bottom: var(--gap);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1560,7 +1569,7 @@ h1 {
 
 
 .imgLivroLista {
-height: 105px;
+height: 160px;
 border-radius: var(--radius);
 }
 
@@ -1760,7 +1769,7 @@ font-size: 0.75rem;
   display: flex;
   flex-direction: row;
   width: 38vw;
-  /* background-color: burlywood; */
+  height: 161px;
   padding-right: 0%;
   gap:2%;
   align-items: flex-start;

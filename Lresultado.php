@@ -73,15 +73,6 @@ if (isset($_REQUEST['valor'])) {
         <button>Ver Mais</button>
       </div>-->
 
-
-
-    <div class="nao-encontrado">
-      <span class='material-symbols-outlined'>
-        menu_book
-      </span>
-      <h1>Nenhum livro foi encontrado</h1>
-    </div>
-
     <!-- <div class="nao-encontrado">
       <span class='material-symbols-outlined'>
         menu_book

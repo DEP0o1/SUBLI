@@ -17,9 +17,9 @@
   <div class="containerLogin">
     <form class="FormLogin">
       
-       <div class="logoLogin">
+       <a class="logoLogin" href="LindexLeitor.php">
             <img src="img/subli.png" alt="" />   
-        </div>
+        </a>
 
         <h1>Faça seu Cadastro!</h1>
 
