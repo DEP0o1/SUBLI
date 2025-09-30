@@ -284,7 +284,15 @@ INSERT INTO autor (cd_autor, nm_autor) VALUES
 (3, 'Collen Hoover'),
 (4, 'Jorge Amado'),
 (5, 'Jojo Moyes'),
-(6, 'Fernando Vilela');
+(6, 'Fernando Vilela'),
+(7,'sun tzu'),
+(8,'Antoine de Saint-Exupéry'),
+(9,'Dan Brown'),
+(10,'Patrick Rothfuss'),
+(11,'paulo coelho'),
+(12,'Steve Wonder'),
+(13, 'Graciliano ramos'),
+
 
 -- ===== LIVROS =====
 INSERT INTO livro (cd_livro, nm_livro, cd_editora, cd_idioma, cd_colecao, ds_sinopse) VALUES
