@@ -305,7 +305,24 @@ a:hover {
   width: fit-content;
 }
 
-/* -------------------------------------------------------------------------------------------------------*/
+/* -------------------------------footer---------------------------------------------------------------------*/
+
+footer{
+  width: 100%;
+  background-color: var(--azul);  
+  color: var(--branco);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer hr {
+  background-color: var(--branco);
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
 
 body {
   background-color: var(--fundo);
@@ -923,7 +940,7 @@ main {
   height: 8px;
   background: #2561a1;
   border-radius: var(--radius);
-  margin: 20px 0;
+  margin: var(--gap) 0;
   overflow: hidden;
 }
 
@@ -936,16 +953,18 @@ main {
 
 .step {
   opacity: 0;
-  transform: translateY(500px);
   max-height: 0;
   overflow: hidden;
   transition: all 0.5s ease;
+  gap: var(--gap);
+  display: none;
 }
 
 .step.ativo {
   opacity: 1;
-  transform: translateX(0);
   max-height: 1000px; 
+  gap: var(--gap);
+  display: block;
 }
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -1287,7 +1306,7 @@ p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--branco);
+  background: var(--vinho);
   border: none;
   width: 40px;
   height: 40px;
@@ -1297,13 +1316,11 @@ p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
   transition: background 0.3s ease;
-  color: black;
-  opacity: 0.8;
+  color: var(--branco);
 }
 
 .seta:hover {
-  background: var(--vinho);
-  opacity: 1;
+  background: var(--vinho-hover);
 }
 
 .seta-esquerda {
@@ -1510,6 +1527,10 @@ h1 {
   width: 300px;
   height: fit-content;
   color: var(--cinza);
+}
+
+.FormLogin section {
+  gap: var(--gap);
 }
 
 .FormLogin a {

@@ -13,12 +13,17 @@
 </head>
 
 <body>
-  <div class="areaCadastro">
-    <form action="" class="formAvancado1">
 
-      <div>
-        <h1 class="pesquisaAvancada">Faça seu cadastro</h1>
-      </div>
+  <div class="containerLogin">
+    <form class="FormLogin">
+      
+       <div class="logoLogin">
+            <img src="img/subli.png" alt="" />   
+        </div>
+
+        <h1>Faça seu Cadastro!</h1>
+
+        <hr>
 
       <div class="barra-progresso">
         <div class="progresso"></div>
@@ -27,17 +32,15 @@
       <!-- Step 1 -->
       <section class="step ativo">
 
-        <div class="areaTituloLivro">
-          <label for="nm_nome" class="tituloForm">Nome:</label>
-          <input name="nm_nome" type="text" class="inputForm" placeholder="Ex. Pedro Mingel">
+        <div>
+            <label for="cd_email">Nome:</label>
+            <input type="text" name="cd_email" id="txtEmail" placeholder="Informe seu Email" autofocus required>
         </div>
 
-        
-
         <div>
-            <label for="dt_nascimento" class="tituloForm">Data de nascimento:</label>
-            <input name="dt_nascimento" type="date" class="inputFormDeLado">
-          </div>
+            <label for="nm_senha">Data de nascimento:</label>
+            <input type="date" name="nm_senha" id="txtSenha" placeholder="Informe sua Senha">
+        </div>
 
         <div class="areaBtn">
           <button type="button" class="btnRosa proximo">Próximo</button>
@@ -48,22 +51,19 @@
       <!-- Step 2 -->
       <section class="step">
 
-        <div class="formDeLado">
-          <div>
-            <label for="cd_telefone" class="tituloForm">Telefone:</label>
-            <input name="cd_telefone" type="text" class="inputFormDeLado" placeholder="Ex. 13-99999999">
-          </div>
+      <div>
+            <label for="cd_email">Telefone:</label>
+            <input type="text" name="cd_email" id="txtEmail" placeholder="Informe seu Email" autofocus>
+        </div>
 
-          <div>
-            <label for="cd_email" class="tituloForm">E-mail:</label>
-            <input name="cd_email" type="text" class="inputForm" placeholder="Ex. pedro@gmail.com">
-          </div>
+        <div>
+            <label for="cd_email">Email:</label>
+            <input type="email" name="cd_email" id="txtEmail" placeholder="Informe seu Email" autofocus>
+        </div>
 
-          <div>
-            <label for="nm_senha" class="tituloForm">Senha:</label>
-            <input name="nm_senha" type="password" class="inputFormDeLado" placeholder="************">
-          </div>
-          
+        <div>
+            <label for="nm_senha">Senha:</label>
+            <input type="password" name="nm_senha" id="txtSenha" placeholder="Informe sua Senha">
         </div>
 
         <div class="areaBtn">
@@ -76,23 +76,19 @@
       <!-- Step 3 -->
       <section class="step">
 
-        <div class="formDeLado">
-          
-
-          <div>
-            <label class="tituloForm">CPF:</label>
-            <input type="text" class="inputForm" placeholder="Ex. 123.456.789-0">
-          </div>
-
-          <div>
-          <label for="nm_endereco" class="tituloForm">Endereço:</label>
-          <input name="nm_endereco" type="text" class="inputFormDeLado" placeholder="Ex. Rua xxx, nº 2">
+        <div>
+            <label for="cd_email">CPF:</label>
+            <input type="text" name="cd_email" id="txtEmail" placeholder="Informe seu Email" autofocus>
         </div>
 
-          <div>
-            <label class="tituloForm">CEP:</label>
-            <input type="text" class="inputFormDeLado" placeholder="Ex.00000-000">
-          </div>
+        <div>
+            <label for="nm_senha">Endereço:</label>
+            <input type="password" name="nm_senha" id="txtSenha" placeholder="Informe sua Senha">
+        </div>
+
+        <div>
+            <label for="nm_senha">CEP:</label>
+            <input type="password" name="nm_senha" id="txtSenha" placeholder="Informe sua Senha">
         </div>
 
         <div class="areaBtn">
@@ -105,16 +101,14 @@
       <!-- Step 4 -->
       <section class="step">
 
-        <div class="formDeLado">
-          <div class="label-input">
-            <label class="tituloForm">Comprovante de residência: </label>
-            <input type="file" class="inputArquivo">
-          </div>
+      <div>
+            <label for="nm_senha">Comprovante de residência:</label>
+            <input type="file" name="nm_senha" id="txtSenha" placeholder="Informe sua Senha">
+        </div>
 
-          <div class="label-input">
-            <label class="tituloForm">Foto de Perfil: </label>
-            <input type="file" class="inputArquivo">
-          </div>
+        <div>
+            <label for="ft_perfil">Foto de Perfil:</label>
+            <input type="file" name="nm_senha" id="txtSenha" placeholder="Informe sua Senha">
         </div>
 
         <div class="areaBtn">
@@ -124,8 +118,20 @@
 
       </section>
 
+        <!-- <div class="areaBotao">
+            <button class="btnRosa" id="btnEntrar" >Entrar</button>
+        </div> -->
+
+        <hr>
+
+        <div class="cadastre-se">
+           <p>Já possui uma conta?</p> 
+           <a href="login.php"><h2>Entrar</h2></a>
+        </div>
+
     </form>
-  </div>
+</div>
+
   <script>
     const steps = document.querySelectorAll(".step")
     const btnProximo = document.querySelectorAll(".proximo")
