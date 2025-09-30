@@ -257,10 +257,14 @@ nav {
 } */
 
 .pgPesquisaLeitor{
+  margin-top: 5%;
+  margin-right: 5%; 
+  margin-left:-2% ;
   display: flex;
   flex-direction: column;
   gap: var(--gap-grande);
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .pesquisarLeitor {
@@ -1599,7 +1603,7 @@ height: 65vh;
 .lista {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 100%;
   height: 100%;
   text-align: left;
   overflow-y: scroll;
@@ -1741,7 +1745,6 @@ font-size: 0.75rem;
   height: fix;
 }
 
-
 .tituloCentroh1{
   display: flex;
   justify-content: center;
@@ -1798,15 +1801,7 @@ font-size: 0.75rem;
   overflow-y: scroll;
   /* background-color: aqua; */
   padding-left: 0%;
-<<<<<<< HEAD
 }
-
-=======
-  width: 40vw;
-}
->>>>>>> 357b4cc19ce5ac6c90fa4d85c7bc74f321bce338
-
-
 
 /* ------------livro bibliotecario---------- */
 
@@ -1919,8 +1914,3 @@ header span{
   height: 2000px;
   overflow-y: scroll;
 }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 357b4cc19ce5ac6c90fa4d85c7bc74f321bce338

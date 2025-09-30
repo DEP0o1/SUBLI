@@ -305,7 +305,24 @@ a:hover {
   width: fit-content;
 }
 
-/* -------------------------------------------------------------------------------------------------------*/
+/* -------------------------------footer---------------------------------------------------------------------*/
+
+footer{
+  width: 100%;
+  background-color: var(--azul);  
+  color: var(--branco);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer hr {
+  background-color: var(--branco);
+}
+
+/*-----------------------------------------------------------------------------------------------------*/
 
 body {
   background-color: var(--fundo);
@@ -362,8 +379,12 @@ body {
 }
 
 .textoEsquerda {
+  margin-left: 23%;
   margin-top: 2%;
-  margin-left: 21%;
+}
+
+.textoEsquerda h1 {
+  margin: 0;
 }
 
 .textoEsquerda h1 {
@@ -623,6 +644,17 @@ span {
   height: 150px;
   border-radius: var(--radius);
 }
+
+.imagem-item-lista-evento {
+  width: 150px;
+  height: 150px;
+  border-radius: var(--radius);
+}
+
+.imagem-item-lista-evento img{
+  border-radius: var(--radius);
+}
+
 
 .conteudo-item-lista {
   display: flex;
@@ -906,13 +938,50 @@ main {
   overflow: hidden;
 }
 
-.pesquisa {
+/* --------------------------------barra de progresso------------------------------------------------ */
+.barra-progresso {
   width: 100%;
+  height: 8px;
+  background: #2561a1;
+  border-radius: var(--radius);
+  margin: var(--gap) 0;
+  overflow: hidden;
+}
+
+.barra-progresso .progresso {
+  height: 100%;
+  width: 0%;
+  background: var(--azul);
+  transition: width 0.5s ease;
+}
+
+.step {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  gap: var(--gap);
+  display: none;
+}
+
+.step.ativo {
+  opacity: 1;
+  max-height: 1000px; 
+  gap: var(--gap);
+  display: block;
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+
+.pesquisa {
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--gap);
   margin-top: var(--gap);
+  gap: var(--gap);
   height: fit-content;
 }
 
@@ -1115,6 +1184,7 @@ main {
   right: 0;
   transform: translateX(100%);
   animation: aparecer 0.5s forwards;
+  border: var(--branco) 5px solid;
 }
 
 .mensagem.sumir {
@@ -1241,7 +1311,7 @@ p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--branco);
+  background: var(--vinho);
   border: none;
   width: 40px;
   height: 40px;
@@ -1251,13 +1321,11 @@ p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
   transition: background 0.3s ease;
-  color: black;
-  opacity: 0.8;
+  color: var(--branco);
 }
 
 .seta:hover {
-  background: var(--vinho);
-  opacity: 1;
+  background: var(--vinho-hover);
 }
 
 .seta-esquerda {
@@ -1464,6 +1532,10 @@ h1 {
   width: 300px;
   height: fit-content;
   color: var(--cinza);
+}
+
+.FormLogin section > div {
+  margin-bottom: 10px;
 }
 
 .FormLogin a {

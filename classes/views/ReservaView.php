@@ -10,13 +10,16 @@ public function ExibirReservas($reserva= new Reserva){
          foreach ($reservas as $Reserva){
             $livrocontroller = new LivroController;
             $livro = $livrocontroller->ListarLivros($Reserva->livro);
-            echo " <div class='areaEvento'>
-          <h2>{$livro[0]->nm_livro}</h2>
-          <h3>
+            echo " 
+
+        <div class='livro'>
+                         <img src='img/{$livro[0]->cd_livro}' alt='{$livro[0]->nm_livro}'/>
+                        <h2>{$livro[0]->nm_livro}</h2>
+                        <p>
             Reservado por: {$Reserva->leitor->nm_leitor}
-          </h3>
-          <button><a href='BcadastrarEmprestimo.php?codigo=$Reserva->cd_reserva'>Visualizar reserva</a></button>
-        </div> 
+          </p>
+                        <button><a href='BcadastrarEmprestimo.php?codigo=$Reserva->cd_reserva'>Visualizar reserva</a></button>
+                    </div>
             ";
 
 

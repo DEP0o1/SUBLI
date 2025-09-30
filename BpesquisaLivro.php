@@ -18,13 +18,11 @@ if (isset($_POST['valor'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PESQUISA ESPECIFICA</title>
+    <title>SUBLI - Acervo</title>
     <link rel="stylesheet" href="css/bibliotecario.css">
     <link rel="stylesheet" href="css/mobile.css">
     <script src="js/componentesJS/header.js"></script>
-
-    <link rel="shortcut icon" href="img/pequeno terry.webp" type="image/x-icon">
-
+    <link rel="icon" type="image/svg+xml" href="img/favIcon-contornado-mini.svg">
 </head>
 
 <?php
@@ -32,7 +30,12 @@ require_once './complementos/headerBibliotecario.php';
 ?>
 
 <body>
-    <div class="areaCadastro">
+
+<?php
+  require_once './complementos/menuBibliotecario.php'
+?>
+
+    <!-- <div class="areaCadastro">
         <form method = "GET"  class="formAvancado1">
             <div>
                 <h1 class="pesquisaAvancada">Pesquisa Avançada </h1>
@@ -112,7 +115,7 @@ require_once './complementos/headerBibliotecario.php';
                 </div>
             </section>
         </form>
-    </div>
+    </div> -->
 
     <div class="areaResultadoPesquisa">
         <div class="titulo">

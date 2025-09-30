@@ -187,6 +187,7 @@ if ($cadastro) {
     }
 
 }
+
 ?>
 
 <!DOCTYPE html>

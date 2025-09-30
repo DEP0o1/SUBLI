@@ -1,5 +1,13 @@
 <?php
+if (isset($_REQUEST['codigo'])) {
+    if ($_REQUEST['codigo'] != "" && is_numeric($_REQUEST['codigo'])) {
+    $cd_reserva = $_REQUEST['codigo'];
+    }
+}
 
+else{
+       $cd_reserva = null;
+}
 require_once "config.php";
 $cd_bibliotecario = 1;
 // O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
@@ -23,7 +31,7 @@ if (isset($_REQUEST['cd_livro'])) {
 }
 
 if (isset($_REQUEST['dt_devolucao_esperada'])) {
-    if (!is_null($_REQUEST['dt_devolucao_esperada'])) {
+    if (!is_null($_REQUEST['dt_devolucao_esperada']) && $_REQUEST['dt_devolucao_esperada'] != "") {
         $campos = $campos + 1;
         $dt_devolucao_esperada = $_REQUEST['dt_devolucao_esperada'];
     }
@@ -44,6 +52,11 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
             if(isset($qtdemprestimo)){
                 if($exemplar > $qtdemprestimo){
                     $emprestimo = $emprestimocontroller->AdicionarEmprestimo(new Emprestimo(null,null,$dt_devolucao_esperada,null,new Leitor($cd_email),new Livro($cd_livro),new Biblioteca($cd_biblioteca)));
+                    
+                    
+                    $reservacontroller = new ReservaController;
+                    $reserva = $reservacontroller->AlterarReserva(new Reserva($cd_reserva,null,new Leitor(),new Livro(),new Biblioteca, 0));
+
             }
 
             else{
@@ -52,6 +65,9 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
             
             }
        
+    }
+
+    else{
     }
 ?>
 
@@ -74,17 +90,17 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
 
 <body>
     <div class="areaCadastro">
-        <form action="" class="formAvancado">
+        <form method="POST" action="" class="formAvancado">
 
             <div class="pesquisaAvancada">
-                <h1>Registrar Empréstimo - O Pequeno Príncipe </h1>
+                <h1>Registrar Empréstimo -  </h1>
             </div>
 
             <section class="areaInput">
                 
-                        <?php
+            <?php
             $input_reserva = new ReservaView;
-            $input_reserva->Input_Livro_Reserva(new Reserva($cd_reserva = $_REQUEST['codigo']));
+            $input_reserva->Input_Livro_Reserva(new Reserva($cd_reserva));
 
             ?>
 
@@ -100,7 +116,6 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
                 if($campos == 3){
                      echo $emprestimo;
                 }
-               
                 ?>
             </section>
         </form>

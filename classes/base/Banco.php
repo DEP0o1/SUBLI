@@ -51,7 +51,7 @@
 
 	protected function Executar($nomeProcedure, $parametros = [])
 	{
-		try {
+		
 			$this->Conectar();
 
 			$listaNomesParametros = [];
@@ -72,9 +72,7 @@
 
 			$this->cSQL->execute();
 			$this->Desconectar();
-		} catch (PDOException $e) {
-			throw new Exception('Erro inesperado na Execução. Tente novamente.');
-		}
+	
 	}
 }
 ?>

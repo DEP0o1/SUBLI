@@ -21,81 +21,86 @@ $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliot
 
 
 <body>
-<?php
-require_once './complementos/menuBibliotecario.php'
-?>
+  <?php
+  require_once './complementos/menuBibliotecario.php'
+  ?>
 
-<?php
-require_once './complementos/headerBibliotecario.php';
-?>
-<main>
+  <?php
+  require_once './complementos/headerBibliotecario.php';
+  ?>
+  <main>
 
-  <div class="areaDoacoes">
+    <div class="areaDoacoes">
 
-   <div class="doacoesTitulo">
-      <h1>Solicitações de empréstimo</h1>
-    </div>
-  
-    <div class="resultadoPesquisa">
+      <div class="doacoesTitulo">
+        <h1>Reservas</h1>
+      </div>
+
+      <div class="resultadoPesquisa">
         <?php
         //  o 0 é bolleano falso na linha de cima 
         //taaaaaaaaaaarrrrrrrrrrrrrrrrr
-          $Doacao = new LivrosDoadosView;
-          $Doacao->ExibirLivrosDoados(new Doacao(null,new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca),new Leitor, 0));
-      ?> 
-    </div>
+        $Reserva = new ReservaView;
+        $Reserva->ExibirReservas(new Reserva(null, null, new Leitor, new Livro, new Biblioteca, 1));
+        ?>
 
-    <div class="doacoesTitulo">
-      <h1>Doações</h1>
-    </div>
-  
-    <div class="resultadoPesquisa">
+        <div class="exibirLivros">
+
+        </div>
+      </div>
+
+      <div class="doacoesTitulo">
+        <h1>Doações</h1>
+      </div>
+
+      <div class="resultadoPesquisa">
         <?php
         //  o 0 é bolleano falso na linha de cima 
         //taaaaaaaaaaarrrrrrrrrrrrrrrrr
-          $Doacao = new LivrosDoadosView;
-          $Doacao->ExibirLivrosDoados(new Doacao(null,new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca),new Leitor, 0));
-      ?> 
+        $Doacao = new LivrosDoadosView;
+        $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
+        ?>
+      </div>
+      <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php">Ver Mais Doações</a></div>
+
+
+
+      <section class="eventos">
+        <div class="calendario">
+          <!-- calendario -->
+        </div>
+
+        <div class="lista-eventos">
+          <?php
+          $evento = new EventoView;
+          $evento->ExibirEventos();
+          ?>
+
+        </div>
+      </section>
+
+      <div class="btnNovoEvento">
+        <button class="btnRosa">Gerenciar eventos</button>
+      </div>
     </div>
-    <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php">Ver Mais Doações</a></div>
+  </main>
+  <script src="js/componentesJS/calendario.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggleBtn = document.getElementById("toggle-pesquisa");
+      const formArea = document.getElementById("form-pesquisa");
 
-    
-
-   <section class="eventos">
-  <div class="calendario">
-    <!-- calendario -->
-  </div>
-
-  <div class="lista-eventos">
-    <?php
-        $evento = new EventoView;
-        $evento->ExibirEventos();
-      ?> 
-
-  </div>
-</section>
-
-    <div class="btnNovoEvento">
-      <button class="btnRosa">Gerenciar eventos</button>
-    </div>
-  </div>
-</main>
-      <script src="js/componentesJS/calendario.js"></script>
-      <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const toggleBtn = document.getElementById("toggle-pesquisa");
-        const formArea = document.getElementById("form-pesquisa");
-
-        toggleBtn.addEventListener("click", function () {
-            formArea.classList.toggle("hidden");
-        });
+      toggleBtn.addEventListener("click", function() {
+        formArea.classList.toggle("hidden");
+      });
     });
-</script>
+  </script>
 
 </body>
+
 </html>
 
-  <!-- <div class="item-lista">
+<!-- <div class="item-lista">
       <div class="imagem-item-lista-evento">
         <img src="img/doar.png" alt="">
       </div>
@@ -118,7 +123,7 @@ require_once './complementos/headerBibliotecario.php';
       </div>
     </div> -->
 
-  <!-- <section class="notificacoes">
+<!-- <section class="notificacoes">
       <div class="topo-not">
         <h3>Notificações</h3>
         <button type="button" id="fechar-notificacao">

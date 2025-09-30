@@ -26,7 +26,10 @@ if(empty($assunto2)) $assunto2 = null;
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     
-    <?php require_once './complementos/headerLeitor.php'; ?>  
+    <?php require_once './complementos/headerLeitor.php'; 
+    
+    
+    ?>  
 </head>
 
 <body>
@@ -124,7 +127,7 @@ if(empty($assunto2)) $assunto2 = null;
     </div>
 </div>
 
-<h1 class="textoMeio">Eventos</h1>
+<h1 class="textoEsquerda">Eventos</h1>
 
 <section class="eventos">
   <div class="calendario">
@@ -156,6 +159,10 @@ if(empty($assunto2)) $assunto2 = null;
       <img src="img/doar.png" alt="" />
     </section>
     </main>
+
+    <?php
+    include_once('./complementos/footer.php');
+    ?>
 
     <script src="js/componentesJS/calendario.js"></script>
    <script>

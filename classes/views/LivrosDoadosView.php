@@ -8,10 +8,6 @@ class LivrosDoadosView {
 
         foreach($doacoes as $Doacao){
 
-            $leitorcontroller = new LeitorController();
-            $leitor = $leitorcontroller->ListarLeitores(
-                new Leitor(null,null,null,null,null,null,null,null,null,null,null,null,$Doacao->cd_doacao)
-            );
 
             echo "
                 <div class='livroDoadoLista'>
@@ -43,7 +39,7 @@ class LivrosDoadosView {
 
                   <div class='miniLeitor'>
                     <div class='divRowItem'>
-                      <h2>{$leitor[0]->nm_leitor}</h2>
+                      <h2>{$Doacao->leitor->nm_leitor}</h2>
                       <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt='' class='miniPerfil'>
                     </div>
                   </div>
@@ -80,15 +76,11 @@ class LivrosDoadosView {
             ";
         }
         
-        $leitorcontroller = new LeitorController();
-        $leitor = $leitorcontroller->ListarLeitores(
-            new Leitor(null,null,null,null,null,null,null,null,null,null,null,null,$doacoes[0]->cd_doacao)
-        );
-
+      
         echo "
             <div class='divRowItem'>
               <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt='' class='miniPerfil'>
-              <h2>{$leitor[0]->nm_leitor}</h2>
+              <h2>{$doacoes[0]->leitor->nm_leitor}</h2>
             </div>
 
             <div class='divRowItemBtn'>

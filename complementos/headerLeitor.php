@@ -11,6 +11,7 @@ if (isset($_SESSION['leitor'])) {
         $nomeCompleto = $leitores[0]->nm_leitor;
     }
 }
+
 ?>
 
 <link rel="icon" type="image/svg+xml" href="img/favIcon-contornado-mini.svg">
@@ -47,7 +48,9 @@ if (isset($_SESSION['leitor'])) {
       <div class="dropdown">
         <button class="dropdown-btn">
           <?php if (isset($_SESSION['leitor'])): ?>
-            <img src="img/doar.png" alt="Perfil">
+            <a href="LmeusLivros.php">
+              <img src="img/doar.png" alt="Perfil">
+            </a>
           <?php else: ?>
             <span class="material-symbols-outlined">person</span>
           <?php endif; ?>
@@ -57,7 +60,7 @@ if (isset($_SESSION['leitor'])) {
           <?php if (isset($_SESSION['leitor'])): ?>
             <h1>Olá, <?=$nomeCompleto?>!</h1>
 
-            <a href="LmeusLivros.php">
+          <a href="LmeusLivros.php">
               <div class="titulo-dropdown">
                 <span class="material-symbols-outlined">account_circle</span>
                 <h3>Meu Perfil</h3>
@@ -105,3 +108,6 @@ if (isset($_SESSION['leitor'])) {
     </div>
   </div>
 </header>
+
+
+
