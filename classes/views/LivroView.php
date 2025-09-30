@@ -114,7 +114,6 @@ class LivroView{
           </div>
 
           <div class='sinopse'>
-          <h2>Sinopse:</h2>
           <p>{$Livro->ds_sinopse}</p>
           </div>
         </div>

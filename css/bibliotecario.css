@@ -81,6 +81,8 @@ main {
   width: 100%;
   overflow-x: hidden;
   gap: var(--gap-grande);
+  overflow-y: scroll;
+  height: calc(100vh - 84px);
 }
 
 header button {
@@ -1544,11 +1546,18 @@ h1 {
   flex-direction: column;
   /* background-color: rgb(50, 109, 129); */
   gap: var(--gap);
+  border-radius: var(--radius);
+}
+
+.fotoMenordoacao img{
+  border-radius: var(--radius);
+  cursor: pointer;
 }
 
 
 .imgLivroLista {
 height: 105px;
+border-radius: var(--radius);
 }
 
 .capaLivroGrande {
@@ -1789,8 +1798,13 @@ font-size: 0.75rem;
   overflow-y: scroll;
   /* background-color: aqua; */
   padding-left: 0%;
+<<<<<<< HEAD
 }
 
+=======
+  width: 40vw;
+}
+>>>>>>> 357b4cc19ce5ac6c90fa4d85c7bc74f321bce338
 
 
 
@@ -1906,3 +1920,7 @@ header span{
   overflow-y: scroll;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 357b4cc19ce5ac6c90fa4d85c7bc74f321bce338
