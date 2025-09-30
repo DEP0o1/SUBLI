@@ -118,10 +118,6 @@
 
       </section>
 
-        <!-- <div class="areaBotao">
-            <button class="btnRosa" id="btnEntrar" >Entrar</button>
-        </div> -->
-
         <hr>
 
         <div class="cadastre-se">

@@ -127,7 +127,7 @@ if(empty($assunto2)) $assunto2 = null;
     </div>
 </div>
 
-<h1 class="textoMeio">Eventos</h1>
+<h1 class="textoEsquerda">Eventos</h1>
 
 <section class="eventos">
   <div class="calendario">

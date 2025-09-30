@@ -379,8 +379,12 @@ body {
 }
 
 .textoEsquerda {
+  margin-left: 23%;
   margin-top: 2%;
-  margin-left: 21%;
+}
+
+.textoEsquerda h1 {
+  margin: 0;
 }
 
 .textoEsquerda h1 {
@@ -1180,6 +1184,7 @@ main {
   right: 0;
   transform: translateX(100%);
   animation: aparecer 0.5s forwards;
+  border: var(--branco) 5px solid;
 }
 
 .mensagem.sumir {
@@ -1529,8 +1534,8 @@ h1 {
   color: var(--cinza);
 }
 
-.FormLogin section {
-  gap: var(--gap);
+.FormLogin section > div {
+  margin-bottom: 10px;
 }
 
 .FormLogin a {
