@@ -667,7 +667,7 @@ aside br {
   color: var(--branco);
   padding: var(--gap);
   border-radius: var(--radius);
-  font-family: "Inter;
+  font-family: "Inter";
 }
 
 .calendario span {
@@ -1311,42 +1311,54 @@ aside br {
   z-index: 5000; 
 }
 
-.info {
+/* --------------evento------------------------- */
+.evento{
+  display: flex;
+  gap: var(--gap);
+  justify-content: center;
+  margin-top: 20vh;
+  height: 100vh;
+  width: 80vw;
+}
+
+.usuarioEvento {
   display: flex;
   flex-direction: row;
-  font-family: "Inter";
-  font-size: 0.7rem;
-  gap: 20px;
+  align-items: center;
+  gap: var(--gap);
 }
 
-.evento {
-  width: 100vh;
-  height: 70vh;
+.imgEvento{
+  height: 50vh;
+  border-radius: var(--radius);
+}
+
+.usuarioEvento img{
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
+.info{
+  display: flex;
+  gap: var(--gap-grande);
+}
+
+.info span{
+  color: var(--vinho);
+}
+
+.eventoTxt{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-left: 300px;
-  gap: 30px;
+  height: 50vh;
+  gap: 5vh;
 }
 
-.titulos {
-  gap: 20px;
-}
-
-.aceitar {
-  background-color: #f2ece7;
-  border-color: #a6244d;
-  color: #a6244d;
-  padding: 10px 30px 10px 30px;
-  border-radius: 10px;
-}
-
-.recusar {
-  background-color: #a6244d;
-  color: #f2ece7;
-  border: none;
-  padding: 10px 30px 10px 30px;
-  border-radius: 10px;
+.areaBtnEvento{
+  display: flex;
+  gap: var(--gap);
 }
 
 .livroDoado {
@@ -1755,7 +1767,6 @@ font-size: 0.75rem;
   height: fix;
 }
 
-
 .tituloCentroh1{
   display: flex;
   justify-content: center;
@@ -1812,10 +1823,7 @@ font-size: 0.75rem;
   overflow-y: scroll;
   /* background-color: aqua; */
   padding-left: 0%;
-  width: 40vw;
 }
-
-
 
 /* ------------livro bibliotecario---------- */
 
@@ -1927,5 +1935,9 @@ header span{
   width: fit-content;
   height: 2000px;
   overflow-y: scroll;
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 05393b3c18ba068a56db62db14b2572631dd8e34
