@@ -67,17 +67,17 @@ $campos = 0;
           </div>
   
           <div class="label-input">
-            <label for="">Nome do livro: </label>
+            <label >Nome do livro: </label>
             <input type="text" name = "nm_livro"/>
           </div>
   
           <div class="label-input">
-            <label for="">Nome do autor: </label>
+            <label >Nome do autor: </label>
             <input type="text" name = "nm_autor"/>
           </div>
   
           <div class="label-input">
-            <label for="">Biblioteca para Entrega: </label>
+            <label >Biblioteca para Entrega: </label>
             <select name="biblioteca" id="">
               <option value=""></option>
                <?php
@@ -88,7 +88,7 @@ $campos = 0;
           </div>
 
           <div class="label-input">
-            <label for="">Foto do livro: </label>
+            <label >Foto do livro: </label>
             <input type="file" class="inputArquivo">
           </div>
   

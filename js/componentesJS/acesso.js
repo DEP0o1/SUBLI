@@ -40,7 +40,6 @@ if (txtemail && txtSenha && btnEntrar) {
             }
             else{
                 Mensagem('foi', 'book', 'form');
-                alert('Login feito com sucesso')
                 window.location.href='LindexLeitor.php';  
             }
 

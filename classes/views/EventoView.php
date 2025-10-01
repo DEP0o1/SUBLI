@@ -25,6 +25,7 @@ public function ExibirEventos($evento = new Evento){
       </div>
       <div class='conteudo-item-lista'>
         <h2>{$Evento->nm_evento}</h2>
+        <h3>{$Evento->dt_evento}</h3>
         <div class='conteudo-item-lista-doador'>
           <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
           <p>Adamastor</p>
@@ -33,7 +34,6 @@ public function ExibirEventos($evento = new Evento){
             <span class='material-symbols-outlined'>
                 location_on
               </span>
-            <h3>{$Evento->dt_evento}</h3>
           </div>
         </div>
         <button class='btnRosa'>

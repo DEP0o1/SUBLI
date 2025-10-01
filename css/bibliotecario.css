@@ -427,6 +427,7 @@ nav {
   padding: 10px 10px;
   border-radius: var(--radius);
   cursor: pointer;
+  text-wrap: nowrap;
 }
 
 .favorito {
@@ -1699,10 +1700,10 @@ height: 65vh;
 display: flex;
 flex-direction: row;
 gap: var(--gap);
-align-items: center;
+align-items: flex-start;
 /* background-color: gray; */
 padding: 1%;
-width: fit-content;
+width: 94%;
 }
 
 
@@ -1768,7 +1769,7 @@ font-size: 0.75rem;
 .livroDoadoLista {
   display: flex;
   flex-direction: row;
-  width: 38vw;
+  width: 94%;
   height: 161px;
   padding-right: 0%;
   gap:2%;
@@ -1927,5 +1928,4 @@ header span{
   height: 2000px;
   overflow-y: scroll;
 }
-
 

@@ -542,14 +542,14 @@ span {
   padding: 20px;
   gap: var(--gap-grande);
   flex-direction: row;
-  height: 73vh;
+  height: 45vh;
 }
 
 /*--------------------calendario--------------------------------------------------------------------------*/
 
 .calendario {
   width: 25vw;
-  height: 16vw;
+  height: 100%;
   background-color: var(--azul);
   color: var(--branco);
   padding: var(--gap);

@@ -4,6 +4,7 @@ class ReservaView{
 
 public function ExibirReservas($reserva= new Reserva){
 
+    
      $controller = new ReservaController;
      $reservas = $controller->ListarReservas($reserva);
 
@@ -16,14 +17,11 @@ public function ExibirReservas($reserva= new Reserva){
                          <img src='img/{$livro[0]->cd_livro}' alt='{$livro[0]->nm_livro}'/>
                         <h2>{$livro[0]->nm_livro}</h2>
                         <p>
-            Reservado por: {$Reserva->leitor->nm_leitor}
+            Reservante: {$Reserva->leitor->nm_leitor}
           </p>
-                        <button><a href='BcadastrarEmprestimo.php?codigo=$Reserva->cd_reserva'>Visualizar reserva</a></button>
+                        <button><a href='BcadastrarEmprestimo.php?codigo=$Reserva->cd_reserva'>Visualizar</a></button>
                     </div>
             ";
-
-
-
   }
  }
 

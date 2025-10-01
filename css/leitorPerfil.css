@@ -132,7 +132,6 @@ main {
   width: 50vw;
   border: none;
   border-radius: 10px;
-  height: 30px;
 }
 
 .areaPerfil hr {
@@ -161,8 +160,10 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: fit-content;
 }
 .inputArquivo{
+  height: fit-content;
   color: var(--branco);
   padding: 5px;
 }
