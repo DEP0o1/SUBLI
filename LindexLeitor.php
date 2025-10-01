@@ -130,18 +130,25 @@ if(empty($assunto2)) $assunto2 = null;
 <h1 class="textoEsquerda">Eventos</h1>
 
 <section class="eventos">
-  <div class="calendario">
-    <!-- calendario -->
-  </div>
 
-  <div class="lista">
+    <div class="containerEventos">
+    
+        <div class="calendario">
+          <!-- calendario -->
+        </div>
+      
+        <div class="lista">
+      
+         <?php
+                  $evento = new EventoView;
+                  $evento->ExibirEventos();
+                   ?>
+        </div>
 
-   <?php
-            $evento = new EventoView;
-            $evento->ExibirEventos();
-             ?>
-  </div>
+    </div>
+
 </section>
+
 
 <div class="textoEsquerda">
     <h1>Doação de livros</h1>

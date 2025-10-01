@@ -66,16 +66,18 @@ $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliot
 
 
       <section class="eventos">
-        <div class="calendario">
-          <!-- calendario -->
-        </div>
-
-        <div class="lista-eventos">
-          <?php
-          $evento = new EventoView;
-          $evento->ExibirEventos();
-          ?>
-
+        <div class="larguraEventosBiblio">
+          <div class="calendario">
+            <!-- calendario -->
+          </div>
+  
+          <div class="lista-eventos">
+            <?php
+            $evento = new EventoView;
+            $evento->ExibirEventos();
+            ?>
+  
+          </div>
         </div>
       </section>
 

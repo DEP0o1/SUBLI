@@ -542,20 +542,27 @@ span {
   padding: 20px;
   gap: var(--gap-grande);
   flex-direction: row;
-  height: 50vh;
+  height: 73vh;
 }
 
 /*--------------------calendario--------------------------------------------------------------------------*/
 
 .calendario {
-  width: 30vw;
+  width: 25vw;
+  height: 16vw;
   background-color: var(--azul);
   color: var(--branco);
   padding: var(--gap);
   border-radius: var(--radius);
   font-family: "Inter";
 }
-
+.containerEventos{
+  gap: 6.7%;
+  width: 70%;
+  padding-left: 7.5vw;
+  display: flex;
+  flex-direction: row;
+}
 .calendario span {
   color: var(--branco);
 }
@@ -568,11 +575,22 @@ span {
   font-weight: bold;
 }
 
+.calendario-titulo {
+  font-size: 1.2em;
+}
+
 .calendario-botao {
   background: none;
   border: none;
   color: var(--branco);
   cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.calendario-botao:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .calendario-semana {
@@ -581,22 +599,84 @@ span {
   text-align: center;
   font-weight: bold;
   cursor: default;
+  margin-bottom: 8px;
+}
+
+.calendario-dia-semana {
+  padding: 8px 0;
+  font-size: 0.9em;
+  opacity: 0.8;
 }
 
 .calendario-dias {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
+  gap: 4px;
 }
 
 .calendario-dia {
-  padding: var(--gap);
+  padding: 12px 0;
   cursor: default;
+  border-radius: var(--radius);
+  transition: background-color 0.2s;
+  position: relative;
+  min-height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.calendario-dia-mes-atual {
+  color: var(--branco);
+}
+
+.calendario-dia-outro-mes {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .calendario-dia.hoje {
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius);
+  font-weight: bold;
+}
+
+.calendario-dia-mes-atual:not(.hoje):hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para eventos */
+.calendario-dia-com-evento {
+  position: relative;
+}
+
+.calendario-marcador-evento {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 2px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.calendario-dia-com-evento:hover .calendario-marcador-evento {
+  transform: scale(1.3);
+}
+
+.calendario-contador-eventos {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: var(--vinho);
+  color: var(--branco);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
 
 /*---------------------------------------------------------*/
@@ -615,6 +695,7 @@ span {
 }
 
 .item-lista {
+  padding: var(--gap);
   width: 100%;
   display: flex;
   align-items: center;
@@ -938,20 +1019,21 @@ main {
   overflow: hidden;
 }
 
-/* --------------------------------barra de progresso------------------------------------------------ */
+/* --------------------------------barra de progresso------------------------------------------------  #2561a1*/
 .barra-progresso {
   width: 100%;
   height: 8px;
-  background: #2561a1;
+  background: var(--branco);
   border-radius: var(--radius);
   margin: var(--gap) 0;
   overflow: hidden;
+  
 }
 
 .barra-progresso .progresso {
   height: 100%;
   width: 0%;
-  background: var(--azul);
+  background: var(--bege);
   transition: width 0.5s ease;
 }
 
@@ -1005,7 +1087,7 @@ main {
 }
 
 .categoria option {
-  background-color: var(--azul);
+  background-color: var(--vinho);
   color: var(--branco);
   border: solid black 20px;
   border-radius: var(--radius);
@@ -1013,10 +1095,11 @@ main {
 
 .categoria select {
   border: solid black 20px;
+    border-radius: var(--radius);
 }
 
 .categoria option:hover {
-  background-color: var(--azul-hover);
+  background-color: var(--amarelo);
 }
 
 .categoria p {
