@@ -40,8 +40,6 @@
       <p> Eu gostaria de fazer a divulgação do meu livro nesta biblioteca, esse livro é minha autobiografia que conta a história de como eu me tornei um ator famoso e renomado de um jeito leve e descontraído, quando eu pesquisei um pouco eu descobri que sou muito famoso no Brasil, e então comecei uma viagem afim de divulgar meu livro e estou indo em bibliotecas do Brasil inteiro para fazer essa divulgação, bom nesse período de tempo que eu estou solicitando eu farei alguns sorteios dos meus livros, farei uma explicação do porque o escrevi, também responderei perguntas e tirarei fotos, espero que vocês aceitem essa solicitação e que possamos fazer um evento incrível. </p>
 
       <div class="areaBtnEvento">
-        <button class="btnRosa"> Aceitar </button>
-        <button class="btnRosa"> Recusar </button>
         <div class="usuarioEvento">
           <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
           <p>Adamastor</p>
