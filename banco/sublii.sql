@@ -291,7 +291,28 @@ INSERT INTO autor (cd_autor, nm_autor) VALUES
 (10,'Patrick Rothfuss'),
 (11,'paulo coelho'),
 (12,'Steve Wonder'),
+<<<<<<< HEAD
 (13, 'Graciliano ramos');
+=======
+(13, 'Graciliano ramos'),
+(14, 'Graciliano ramos'),
+(15, 'Graciliano ramos'),
+(16, 'Graciliano ramos'),
+(17, 'Graciliano ramos'),
+(18, 'Graciliano ramos'),
+(19, 'Graciliano ramos'),
+(20, 'Graciliano ramos'),
+(21, 'Graciliano ramos'),
+(22, 'Graciliano ramos'),
+(23, 'Graciliano ramos'),
+(24, 'Graciliano ramos'),
+(25, 'Graciliano ramos'),
+(26, 'Graciliano ramos'),
+(27, 'Graciliano ramos'),
+(28, 'Graciliano ramos'),
+(29, 'Graciliano ramos'),
+(30, 'Graciliano ramos');
+>>>>>>> fe0984914039ecaae05f7223cbe9044894654a26
 
 
 -- ===== LIVROS =====

@@ -805,8 +805,8 @@ aside br {
 .resultadoPesquisa {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   gap: var(--gap);
   width: 80%;
   flex-wrap: wrap;
@@ -1247,6 +1247,7 @@ aside br {
 
 .formAvancado1 {
   background-color: var(--azul);
+  color: var(--branco);
   display: flex;
   justify-content: left;
   flex-direction: column;
@@ -1935,9 +1936,13 @@ header span{
   width: fit-content;
   height: 2000px;
   overflow-y: scroll;
+}
 <<<<<<< HEAD
-}
 
-=======
+/* ------------- Footer------------------------------------------------------------------------------------------------------------- */
+
+footer {
+  background-color: var(--vinho);
 }
->>>>>>> 05393b3c18ba068a56db62db14b2572631dd8e34
+=======
+>>>>>>> fe0984914039ecaae05f7223cbe9044894654a26
