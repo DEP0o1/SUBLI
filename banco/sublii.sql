@@ -349,6 +349,7 @@ INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
 (1, 2), -- O Príncipe - Maquiavel
 (2, 3), -- A Bruxa e o Calibã - Mary Renault
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
+(4,4),
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
 (6, 6),-- Eu, Robô - Isaac Asimov*/
 (7, 5), -- Dom Casmurro - Machado de Assis

@@ -100,8 +100,12 @@ if(empty($assunto2)) $assunto2 = null;
             //  $livro = new LivroView;
             //  $livro->ExibirLivros();
 
+            $livrocontroller = new LivroController;
+           $procurados = $livrocontroller->ContarLivrosProcurados();
+            foreach($procurados as $Livro){
             $livro = new LivroView;
-            $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero($genero2)],new Idioma(),new Colecao,[new Assunto($assunto2)], $biblioteca2));
+            $livro->ExibirLivros(new Livro($Livro['cd_livro'],null,[new Autor()],new Editora(),[new Genero($genero2)],new Idioma(),new Colecao,[new Assunto($assunto2)], $biblioteca2));            
+            }
             
             ?>
             
