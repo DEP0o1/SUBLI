@@ -5,11 +5,17 @@ DELIMITER $$
 ========================================= */
 
 DROP PROCEDURE IF EXISTS contar_livros_procurados$$
-CREATE PROCEDURE contar_livros_procurados()
+CREATE PROCEDURE contar_livros_procurados(p_data TINYINT)
 BEGIN 
-	IF EXISTS(SELECT cd_livro, COUNT(*)  AS qtd_emprestimos FROM emprestimo WHERE ic_ativa = false GROUP BY cd_livro ORDER BY qtd_emprestimos desc LIMIT 1)
+DECLARE v_data DATE;
+	IF(p_data = true)
+    THEN
+    SET v_data =  NOW() - INTERVAL 7 DAY;
+    END IF;
+    
+	IF EXISTS(SELECT cd_livro, COUNT(*)  AS qtd_emprestimos FROM emprestimo WHERE ic_ativa = false AND v_data IS NULL OR v_data <= dt_devolucao GROUP BY cd_livro ORDER BY qtd_emprestimos desc LIMIT 10)
    THEN
-   SELECT cd_livro, COUNT(*)  AS qtd_emprestimos FROM emprestimo WHERE ic_ativa = false GROUP BY cd_livro ORDER BY qtd_emprestimos desc LIMIT 1;
+SELECT cd_livro, COUNT(*)  AS qtd_emprestimos FROM emprestimo WHERE ic_ativa = false AND v_data IS NULL OR v_data <= dt_devolucao GROUP BY cd_livro ORDER BY qtd_emprestimos desc LIMIT 10;
       ELSE
       SELECT cd_livro FROM livro LIMIT 10;
    END IF;

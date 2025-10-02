@@ -101,7 +101,7 @@ if(empty($assunto2)) $assunto2 = null;
             //  $livro->ExibirLivros();
 
             $livrocontroller = new LivroController;
-           $procurados = $livrocontroller->ContarLivrosProcurados();
+           $procurados = $livrocontroller->ContarLivrosProcurados(true);
             foreach($procurados as $Livro){
             $livro = new LivroView;
             $livro->ExibirLivros(new Livro($Livro['cd_livro'],null,[new Autor()],new Editora(),[new Genero($genero2)],new Idioma(),new Colecao,[new Assunto($assunto2)], $biblioteca2));            
@@ -123,8 +123,13 @@ if(empty($assunto2)) $assunto2 = null;
         <button class="seta seta-esquerda" data-target="carrossel-procurados">&#10094;</button>
         <div class="carrossel" id="carrossel-procurados">
             <?php
-             $livro = new LivroView;
-            $livro->ExibirLivros();
+         $livrocontroller = new LivroController;
+         $procurados = $livrocontroller->ContarLivrosProcurados(0);
+          foreach($procurados as $Livro){
+          $livro = new LivroView;
+          $livro->ExibirLivros(new Livro($Livro['cd_livro'],null,[new Autor()],new Editora(),[new Genero($genero2)],new Idioma(),new Colecao,[new Assunto($assunto2)], $biblioteca2));            
+          }
+          
              ?>
         </div>
         <button class="seta seta-direita" data-target="carrossel-procurados">&#10095;</button>

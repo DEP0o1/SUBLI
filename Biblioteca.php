@@ -110,91 +110,11 @@ if (isset($_REQUEST['codigo'])) {
 
       <div class="lista">
 
-        <div class="item-lista">
-          <div class="imagem-item-lista">
-            <img src="img/doar.png" alt="">
-          </div>
-          <div class="conteudo-item-lista">
-            <h2>Divulgação do livro </h2>
-            <div class="conteudo-item-lista-doador">
-              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-              <p>Adamastor</p>
-              <h3>(Responsável)</h3>
-            </div>
-            <button class="btnRosa">
-              Ver Mais
-            </button>
-          </div>
-        </div>
-
-        <div class="item-lista">
-          <div class="imagem-item-lista">
-            <img src="img/doar.png" alt="">
-          </div>
-          <div class="conteudo-item-lista">
-            <h2>Divulgação do livro </h2>
-            <div class="conteudo-item-lista-doador">
-              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-              <p>Adamastor</p>
-              <h3>(Responsável)</h3>
-            </div>
-            <button class="btnRosa">
-              Ver Mais
-            </button>
-          </div>
-        </div>
-
-        <div class="item-lista">
-          <div class="imagem-item-lista">
-            <img src="img/doar.png" alt="">
-          </div>
-          <div class="conteudo-item-lista">
-            <h2>Divulgação do livro </h2>
-            <div class="conteudo-item-lista-doador">
-              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-              <p>Adamastor</p>
-              <h3>(Responsável)</h3>
-            </div>
-            <button class="btnRosa">
-              Ver Mais
-            </button>
-          </div>
-        </div>
-
-        <div class="item-lista">
-          <div class="imagem-item-lista">
-            <img src="img/doar.png" alt="">
-          </div>
-          <div class="conteudo-item-lista">
-            <h2>Divulgação do livro </h2>
-            <div class="conteudo-item-lista-doador">
-              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-              <p>Adamastor</p>
-              <h3>(Responsável)</h3>
-            </div>
-            <button class="btnRosa">
-              Ver Mais
-            </button>
-          </div>
-        </div>
-
-        <div class="item-lista">
-          <div class="imagem-item-lista">
-            <img src="img/doar.png" alt="">
-          </div>
-          <div class="conteudo-item-lista">
-            <h2>Divulgação do livro </h2>
-            <div class="conteudo-item-lista-doador">
-              <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-              <p>Adamastor</p>
-              <h3>(Responsável)</h3>
-            </div>
-            <button class="btnRosa">
-              Ver Mais
-            </button>
-          </div>
-        </div>
-
+      <?php
+            $evento = new EventoView;
+            $evento->ExibirEventos(new Evento(null,null,null,null,null,new Biblioteca($codigo))); 
+            // um antes do biblioteca tem que ser true
+      ?>
       </div>
     </section>
 

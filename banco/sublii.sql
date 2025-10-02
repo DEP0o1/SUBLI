@@ -123,7 +123,7 @@ CREATE TABLE emprestimo(
 	cd_emprestimo INT,
 	dt_emprestimo DATETIME,
     dt_devolucao_esperada VARCHAR(200),
-	dt_devolucao DATETIME,
+	dt_devolucao DATE,
     cd_email VARCHAR(200),
     cd_livro INT,
     cd_biblioteca INT,
@@ -251,10 +251,10 @@ INSERT INTO biblioteca VALUES (10, 'Arte e Cultura','Rua Lucas Alcoforado');
 
 
 /*Eventos*/
-INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', NULL);
 INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 1,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
-INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
-INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 4,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
+INSERT INTO evento VALUES ('Leitura de Livros de Romance', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
+INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', NULL);
+INSERT INTO evento VALUES ('Clube do Livro de Outubro', 4,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
 
 -- ===== EDITORAS =====
 INSERT INTO editora (cd_editora, nm_editora) VALUES
@@ -445,13 +445,15 @@ INSERT INTO emprestimo VALUES(2,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@
 INSERT INTO emprestimo VALUES(3,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',4,2, true);
 INSERT INTO emprestimo VALUES(4,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',5,4, true);
 INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',6,9, true);
-
+INSERT INTO emprestimo VALUES(6,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',6,4, false);
+/*
+INSERT INTO emprestimo VALUES(7,'2025-09-01','2025-10-05','2025-10-01','pedro.favoritos@gmail.com',1,1, false);
+INSERT INTO emprestimo VALUES(8,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',2,1, false);
+INSERT INTO emprestimo VALUES(9,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',2,1, false);
+*/
 
 /*Reservas*/
-
 INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true);
-
-
 /*
 select * from reserva;
 select * from livro;

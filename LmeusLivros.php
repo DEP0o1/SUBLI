@@ -49,40 +49,19 @@ $email = $_SESSION['leitor'];
         </div>
 
         <div class="exibirLivros">
-          <div class="livro">
-            <img src="img/11" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/12" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/13" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/2" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
-
-          <div class="livro">
-            <img src="img/1" alt="" />
-            <h2>Pequeno principe</h2>
-            <p>machado de assis</p>
-            <button>Ver Mais</button>
-          </div>
+        <?php
+        if(isset($email)){
+          $controller = new EmprestimoController;
+          $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email),new Livro(),new Biblioteca(),0));
+        
+          $livro = new LivroView;
+          foreach ($emprestimos as $Emprestimo){
+            $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
+          } 
+        }
+        
+        
+        ?>
         </div>
         <button>Visualizar</button>
       </section>

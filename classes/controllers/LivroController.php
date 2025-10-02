@@ -176,10 +176,13 @@ class LivroController extends Banco
         
     }
 
-    public function ContarLivrosProcurados()
+    public function ContarLivrosProcurados($data)
     {
         try{
-            $dados = $this->Consultar('contar_livros_procurados');
+            $parametros = [
+                'p_data' => $data
+            ];
+            $dados = $this->Consultar('contar_livros_procurados',$parametros);
             return $dados;
         }catch (\Throwable $th) {
             throw $th;
