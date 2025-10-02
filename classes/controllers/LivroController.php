@@ -166,10 +166,6 @@ class LivroController extends Banco
     }
     }
 
-
-
-    
-
     public function AlterarLivro($livro = new Livro())
     {
 
@@ -179,6 +175,19 @@ class LivroController extends Banco
     {
         
     }
+
+    public function ContarLivrosProcurados()
+    {
+        try{
+            $dados = $this->Consultar('contar_livros_procurados');
+            return $dados;
+        }catch (\Throwable $th) {
+            throw $th;
+        }
+}
+
+
+
 }
 
 

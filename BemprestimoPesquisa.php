@@ -62,7 +62,7 @@ require_once './complementos/menuBibliotecario.php'
         <div class="resultadoPesquisa">
 <?php
   $controller = new EmprestimoController;
-  $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email)));
+  $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email),new Livro(),new Biblioteca(),true));
 
   $livro = new LivroView;
   foreach ($emprestimos as $Emprestimo){

@@ -805,8 +805,8 @@ aside br {
 .resultadoPesquisa {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   gap: var(--gap);
   width: 80%;
   flex-wrap: wrap;
@@ -1936,9 +1936,12 @@ header span{
   height: 2000px;
   overflow-y: scroll;
 }
+<<<<<<< HEAD
 
 /* ------------- Footer------------------------------------------------------------------------------------------------------------- */
 
 footer {
   background-color: var(--vinho);
 }
+=======
+>>>>>>> fe0984914039ecaae05f7223cbe9044894654a26

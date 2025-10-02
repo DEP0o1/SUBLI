@@ -117,6 +117,4 @@ class EmprestimoController extends Banco
     }
 
 }
-
-
 ?>
