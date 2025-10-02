@@ -74,6 +74,7 @@ export function Mensagem(texto, tipo, nomeElementoPai) {
     elementoPai.appendChild(localMsg);
 
     setTimeout(() => {
-        localMsg.remove();
+        localMsg.classList.add("sumir");
+        localMsg.addEventListener("animationend", () => msg.remove());
     }, 3000);
 }

@@ -1,5 +1,17 @@
 <?php
 require('config.php');
+
+// $array = [5, 3, 65, 8, 12, 76, 343, 34, 75, 23];
+
+// asort($array);
+
+// foreach ($array as $key) {
+//     echo "
+//         <h1>{$key}</h1>
+//     ";
+// }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -14,12 +26,6 @@ require('config.php');
     <link rel="stylesheet" href="css/mobile.css">
     <script type="module" src="js/componentesJS/acesso.js"></script>
 </head>
-
-<body>
-
-
-<body>
-
 
 <body class="bodyLogin">
     <?php
