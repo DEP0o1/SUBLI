@@ -1247,6 +1247,7 @@ aside br {
 
 .formAvancado1 {
   background-color: var(--azul);
+  color: var(--branco);
   display: flex;
   justify-content: left;
   flex-direction: column;
