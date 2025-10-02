@@ -36,9 +36,11 @@ public function ExibirEventos($evento = new Evento){
               </span>
           </div>
         </div>
+        <a href='BsolicEvento.php'>
         <button class='btnRosa'>
           Ver Mais
         </button>
+        </a>
       </div>
     </div>
 

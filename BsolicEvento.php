@@ -24,6 +24,8 @@
     <div class="eventoTxt">
       <h1> Divulgação do livro "A vida de Terry Crews" </h1>
 
+      <hr>
+
       <div class="info">
         <p>
           <span class="material-symbols-outlined">

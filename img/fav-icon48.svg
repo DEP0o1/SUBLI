@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1440 1440" style="enable-background:new 0 0 1440 1440;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#FFFFFF;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#29235C;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:#A42951;stroke:#FFFFFF;stroke-width:29;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st5{fill:#A42951;stroke:#A42951;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st6{fill:#29235C;stroke:#29235C;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<path class="st0" d="M577.42,426.56v70.49h695.05c0,0,33.28,6.17,35.19,44.12c1.91,37.96-8.83,223.07-8.83,223.07
+	s44.02,16.59,42.1,57.73l-17.65,395.42l-1.91,30.3c0,0,11.7,44.02-48.91,42.1c-60.71-1.91-1086.43,0.11-1086.43,0.11l-25.41-7.87
+	c0,0-21.58-9.78-21.58-66.56c0-56.78,0-508.98,0-508.98s12.01-217.33,117.6-203.61V397.21L577.42,426.56z"/>
+<line class="st1" x1="559.45" y1="481.74" x2="563.7" y2="382.01"/>
+<line class="st1" x1="271.2" y1="500.99" x2="271.2" y2="401.15"/>
+<line class="st2" x1="1160.61" y1="631.13" x2="635.26" y2="631.13"/>
+<line class="st2" x1="1160.61" y1="735.86" x2="635.26" y2="735.86"/>
+<path class="st3" d="M421.33,221.74c0,0-360.87,1.59,0,473.57C782.09,223.33,421.33,221.74,421.33,221.74z"/>
+<ellipse class="st4" cx="411.66" cy="354.32" rx="58.05" ry="53.69"/>
+<path class="st5" d="M281.94,509.66c0,0,125.04,213.39,137.37,209.99c0,0,133.76-189.37,139.07-217.75l-2.98,303.45l-261.35-3.72
+	l-12.12-289.52V509.66z"/>
+<path class="st6" d="M247.7,541.18c0,0-138.97,131.21,0,302.18l873.99,5.74v241.36l-935.77-11.48
+	C185.93,1078.97,134.15,557.98,247.7,541.18z"/>
+<polyline class="st2" points="1272.47,575.2 1272.47,536.18 591.24,536.18 "/>
+<polygon class="st6" points="258.23,829.85 1298.94,821.98 1282.57,1247.71 174.13,1247.71 174.13,845.59 "/>
+</svg>
