@@ -291,6 +291,9 @@ INSERT INTO autor (cd_autor, nm_autor) VALUES
 (10,'Patrick Rothfuss'),
 (11,'paulo coelho'),
 (12,'Steve Wonder'),
+<<<<<<< HEAD
+(13, 'Graciliano ramos');
+=======
 (13, 'Graciliano ramos'),
 (14, 'Graciliano ramos'),
 (15, 'Graciliano ramos'),
@@ -309,6 +312,7 @@ INSERT INTO autor (cd_autor, nm_autor) VALUES
 (28, 'Graciliano ramos'),
 (29, 'Graciliano ramos'),
 (30, 'Graciliano ramos');
+>>>>>>> fe0984914039ecaae05f7223cbe9044894654a26
 
 
 -- ===== LIVROS =====
