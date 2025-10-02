@@ -98,7 +98,6 @@ h4 {
   cursor: default;
 }
 
-
 .conteudo-pesquisa {
   margin-top: 0;
   min-height: 82vh;
@@ -159,15 +158,15 @@ h4 {
   gap: var(--gap);
 }
 
-.dropdown-btn img{
- width: 35px;
- height: 35px;
- object-fit: cover;
- border-radius: 444444px;
- transition: ease-in 0.3s;
+.dropdown-btn img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 444444px;
+  transition: ease-in 0.3s;
 }
 
-.dropdown-btn img:hover{
+.dropdown-btn img:hover {
   filter: grayscale(1);
   cursor: pointer;
   transition: ease-in 0.3s;
@@ -188,7 +187,7 @@ h4 {
   display: flex;
   align-items: center;
   gap: var(--gap);
-  padding:5px 0px 5px 0px;
+  padding: 5px 0px 5px 0px;
   width: 20vw;
 }
 
@@ -307,9 +306,9 @@ a:hover {
 
 /* -------------------------------footer---------------------------------------------------------------------*/
 
-footer{
+footer {
   width: 100%;
-  background-color: var(--azul);  
+  background-color: var(--azul);
   color: var(--branco);
   height: 100px;
   display: flex;
@@ -556,7 +555,7 @@ span {
   border-radius: var(--radius);
   font-family: "Inter";
 }
-.containerEventos{
+.containerEventos {
   gap: 6.7%;
   width: 70%;
   padding-left: 7.5vw;
@@ -732,10 +731,9 @@ span {
   border-radius: var(--radius);
 }
 
-.imagem-item-lista-evento img{
+.imagem-item-lista-evento img {
   border-radius: var(--radius);
 }
-
 
 .conteudo-item-lista {
   display: flex;
@@ -744,7 +742,7 @@ span {
   gap: var(--gap);
 }
 
-.conteudo-item-lista-biblioteca{
+.conteudo-item-lista-biblioteca {
   display: flex;
 }
 
@@ -1027,7 +1025,6 @@ main {
   border-radius: var(--radius);
   margin: var(--gap) 0;
   overflow: hidden;
-  
 }
 
 .barra-progresso .progresso {
@@ -1048,7 +1045,7 @@ main {
 
 .step.ativo {
   opacity: 1;
-  max-height: 1000px; 
+  max-height: 1000px;
   gap: var(--gap);
   display: block;
 }
@@ -1095,7 +1092,7 @@ main {
 
 .categoria select {
   border: solid black 20px;
-    border-radius: var(--radius);
+  border-radius: var(--radius);
 }
 
 .categoria option:hover {
@@ -1249,6 +1246,8 @@ main {
   gap: var(--gap);
 }
 
+/*-------------------------------------------------mensagem-------------------------------------------------------------------------------------------------------------------*/
+
 .mensagem span {
   color: var(--branco);
 }
@@ -1261,7 +1260,7 @@ main {
   background-color: var(--azul);
   color: var(--branco);
   border-radius: var(--radius) 0px 0px var(--radius);
-  width: fit-content;
+  min-width: 30vw;
   position: absolute;
   padding: var(--gap);
   right: 0;
@@ -1300,8 +1299,19 @@ main {
   display: flex;
   justify-content: left;
   align-items: center;
+  text-align: left;
   gap: var(--gap);
 }
+
+.titulo-mensagem > h1 {
+  display: flex;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
 
 .favorito {
   background-color: var(--azul);
@@ -1394,7 +1404,7 @@ p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--vinho);
+  background: var(--branco);
   border: none;
   width: 40px;
   height: 40px;
@@ -1404,11 +1414,12 @@ p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
   transition: background 0.3s ease;
-  color: var(--branco);
+  color: black;
 }
 
 .seta:hover {
-  background: var(--vinho-hover);
+  background: var(--vinho);
+  color: var(--branco);
 }
 
 .seta-esquerda {
@@ -1679,7 +1690,7 @@ label {
   align-items: center;
 }
 
-.cadastre-se h2{
+.cadastre-se h2 {
   cursor: pointer;
 }
 
@@ -1709,7 +1720,7 @@ label {
 }
 
 .areaInput input,
-.formDeLado > div{
+.formDeLado > div {
   width: 100%;
 }
 
@@ -1756,7 +1767,7 @@ label {
   height: 100%;
 }
 
-.formAvancado1 h1{
+.formAvancado1 h1 {
   margin: 0;
 }
 
@@ -1769,11 +1780,11 @@ label {
 }
 
 .areaCadastro {
- display: flex;
+  display: flex;
   width: auto;
   align-items: center;
   justify-content: center;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
   margin: 2%;
   top: 50%;
   left: 50%;
