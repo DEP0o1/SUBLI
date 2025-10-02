@@ -4,6 +4,21 @@ DELIMITER $$
    LIVRO
 ========================================= */
 
+DROP PROCEDURE IF EXISTS contar_livros_procurados$$
+CREATE PROCEDURE contar_livros_procurados()
+BEGIN 
+	IF EXISTS(SELECT cd_livro, COUNT(*)  AS qtd_emprestimos FROM emprestimo WHERE ic_ativa = false GROUP BY cd_livro ORDER BY qtd_emprestimos desc LIMIT 1)
+   THEN
+   SELECT cd_livro, COUNT(*)  AS qtd_emprestimos FROM emprestimo WHERE ic_ativa = false GROUP BY cd_livro ORDER BY qtd_emprestimos desc LIMIT 1;
+      ELSE
+      SELECT cd_livro FROM livro LIMIT 10;
+   END IF;
+
+END$$
+
+/*CALL contar_livros_procurados ();*/
+
+
 DROP PROCEDURE IF EXISTS listar_livros$$
 CREATE PROCEDURE listar_livros (
     IN  p_cd_livro INT,
