@@ -1935,9 +1935,10 @@ header span{
   width: fit-content;
   height: 2000px;
   overflow-y: scroll;
-<<<<<<< HEAD
 }
 
-=======
+/* ------------- Footer------------------------------------------------------------------------------------------------------------- */
+
+footer {
+  background-color: var(--vinho);
 }
->>>>>>> 05393b3c18ba068a56db62db14b2572631dd8e34
