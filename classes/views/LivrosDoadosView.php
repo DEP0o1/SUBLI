@@ -1,58 +1,35 @@
 <?php
 
-class LivrosDoadosView {
-    
-    public function ExibirLivrosDoados($doacao = new Doacao()){
-        $controller = new DoacaoController;
-        $doacoes = $controller->ListarDoacoes($doacao);
+class LivrosDoadosView
+{
 
-        foreach($doacoes as $Doacao){
+  public function ExibirLivrosDoados($doacao = new Doacao())
+  {
+    $controller = new DoacaoController;
+    $doacoes = $controller->ListarDoacoes($doacao);
 
 
-            echo "
-                <div class='livroDoadoLista'>
-                  <div class='divRowItem'>
-                    <img src='img/$Doacao->cd_doacao' alt='' class='imgLivroLista'>
-                    <div class='divColunaLista'>
-                      <h1>{$Doacao->livro->nm_livro}</h1>
+    foreach ($doacoes as $Doacao) {
+
+      echo "
+                      <div class='livro'>
+                         <img src='img/$Doacao->cd_doacao' alt='$Doacao->cd_doacao'/>
+                        <h2>{$Doacao->livro->nm_livro}</h2>
+                        <p>
+              Doador: {$Doacao->leitor->nm_leitor}
+          </p>
+                        <button><a href='BcadastrarEmprestimo.php?codigo=''>Visualizar</a></button>
+                    </div>
             ";
-            
-            foreach($Doacao->livro->autores as $autor){
-                echo "
-                    <div class='divRowItem'>
-                        <p> 
-                          <span class='material-symbols-outlined'>man_4</span>
-                          Autor: {$autor->nm_autor} 
-                        </p>
-                    </div>
-                ";
-            }
-
-            echo "
-                      <div class='divRowItemBtn'>
-                        <button class='btnRosa'>
-                          <a href='BsolicDoacao.php?codigo=$Doacao->cd_doacao'>Ver Doação</a>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class='miniLeitor'>
-                    <div class='divRowItem'>
-                      <h2>{$Doacao->leitor->nm_leitor}</h2>
-                      <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt='' class='miniPerfil'>
-                    </div>
-                  </div>
-                </div>
-            ";
-        }
     }
+  }
 
-    public function ExibirLivroDoacao($doacao = new Doacao()){
-        $controller = new DoacaoController;
-        $doacoes = $controller->ListarDoacoes($doacao);
+  public function ExibirLivroDoacao($doacao = new Doacao())
+  {
+    $controller = new DoacaoController;
+    $doacoes = $controller->ListarDoacoes($doacao);
 
-        echo "
+    echo "
             <div class='fotoMenordoacao'>
               <img src='img/{$doacoes[0]->cd_doacao}' alt='' class='imgLivroLista' />
               <img src='img/{$doacoes[0]->cd_doacao}' alt='' class='imgLivroLista' />
@@ -67,17 +44,17 @@ class LivrosDoadosView {
             <div class='dadosLivroDoado'>
               <h1>{$doacoes[0]->livro->nm_livro}</h1>
         ";
-        
-        foreach($doacoes[0]->livro->autores as $autor){
-            echo "
+
+    foreach ($doacoes[0]->livro->autores as $autor) {
+      echo "
               <div class='divRowItem'>
                 <p><span class='material-symbols-outlined'>man_4</span>Autor: {$autor->nm_autor}</p>
               </div>
             ";
-        }
-        
-      
-        echo "
+    }
+
+
+    echo "
             <div class='divRowItem'>
               <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt='' class='miniPerfil'>
               <h2>{$doacoes[0]->leitor->nm_leitor}</h2>
@@ -93,14 +70,15 @@ class LivrosDoadosView {
             </div>
           </div>
         ";
-    }
+  }
 
-    public function Input_Livro_Doacao($doacao = new Doacao()){
-        $controller = new DoacaoController;
-        $doacoes = $controller->ListarDoacoes($doacao);
+  public function Input_Livro_Doacao($doacao = new Doacao())
+  {
+    $controller = new DoacaoController;
+    $doacoes = $controller->ListarDoacoes($doacao);
 
-        if($doacao != new Doacao){
-            echo "
+    if ($doacao != new Doacao) {
+      echo "
               <div class='areaTituloLivro'>
                 <label for='nm_livro' class='tituloForm'>Titulo:</label>
                 <input name='nm_livro' type='text' class='inputForm' 
@@ -108,23 +86,24 @@ class LivrosDoadosView {
                   value ='{$doacoes[0]->livro->nm_livro}' readonly>
               </div>
             ";
-        } else {
-            echo "
+    } else {
+      echo "
               <div class='areaTituloLivro'>
                 <label for='nm_livro' class='tituloForm'>Titulo:</label>
                 <input name='nm_livro' type='text' class='inputForm' 
                   placeholder='Ex. O Pequeno Principe'>
               </div>
             ";
-        }
     }
+  }
 
-    public function Input_Autor_Doacao($doacao = new Doacao()){
-        $controller = new DoacaoController;
-        $doacoes = $controller->ListarDoacoes($doacao);
+  public function Input_Autor_Doacao($doacao = new Doacao())
+  {
+    $controller = new DoacaoController;
+    $doacoes = $controller->ListarDoacoes($doacao);
 
-        if($doacao != new Doacao){
-            echo "
+    if ($doacao != new Doacao) {
+      echo "
               <div>
                 <label for='nm_autor' class='tituloForm'>Autor:</label>
                 <input name='nm_autor' type='text' class='inputFormDeLado' 
@@ -132,16 +111,14 @@ class LivrosDoadosView {
                   value ='{$doacoes[0]->livro->autores[0]->nm_autor}' readonly>
               </div>
             ";
-        } else {
-            echo "
+    } else {
+      echo "
               <div>
                 <label for='nm_autor' class='tituloForm'>Autor:</label>
                 <input name='nm_autor' type='text' class='inputFormDeLado' 
                   placeholder='Ex. Antoine de Saint-Exupéry'>
               </div>
             ";
-        }
     }
-} 
-
-?>
+  }
+}

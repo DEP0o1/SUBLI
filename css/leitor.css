@@ -544,6 +544,8 @@ span {
   height: 45vh;
 }
 
+
+
 /*--------------------calendario--------------------------------------------------------------------------*/
 
 .calendario {
@@ -1815,4 +1817,5 @@ label {
 
 footer {
   background-color: var(--vinho);
+  color: var(--branco);
 }
