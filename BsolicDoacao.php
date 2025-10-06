@@ -4,11 +4,15 @@ $cd_bibliotecario = 1;
 // O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
 $controller = new BibliotecarioController();
 $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
+$codigo = null;
 
+if(isset($_REQUEST['codigo'])){
+  $codigo = $_REQUEST['codigo'];
+}
 
 if (isset($_REQUEST['recusado'])) {
   $controller = new DoacaoController;
-  $controller->ExcluirDoacao(new Doacao($_REQUEST['codigo']));
+  $controller->ExcluirDoacao(new Doacao($codigo));
 }
 
 ?>
@@ -47,7 +51,7 @@ include_once './complementos/menuBibliotecario.php'
 
           <?php
           $doacao = new LivrosDoadosView;
-          $doacao->ExibirLivroDoacao(new Doacao($_REQUEST['codigo']));
+          $doacao->ExibirLivroDoacao(new Doacao($codigo, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
           ?>
           <div class="tituloCentroh1">
             <h1>Outras doações</h1>

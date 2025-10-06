@@ -18,8 +18,8 @@ class LivrosDoadosView
                         <p>
               Doador: {$Doacao->leitor->nm_leitor}
           </p>
-                        <button><a href='BcadastrarEmprestimo.php?codigo=''>Visualizar</a></button>
-                    </div>
+           <button><a href='BsolicDoacao.php?codigo=''>Visualizar</a></button>
+                </div>
             ";
     }
   }
