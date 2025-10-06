@@ -1103,6 +1103,7 @@ END$$
 DROP PROCEDURE IF EXISTS alterar_leitor$$
 CREATE PROCEDURE alterar_leitor(
   IN p_cd_email VARCHAR(200),
+  /*IN p_email_troca VARCHAR (200),*/
   IN p_nm_leitor VARCHAR(200),
   IN p_cd_cpf VARCHAR(11),
   IN p_cd_telefone VARCHAR(11),
@@ -1116,6 +1117,7 @@ BEGIN
           cd_cpf = COALESCE(p_cd_cpf, cd_cpf),
           cd_telefone = COALESCE(p_cd_telefone, cd_telefone),
           ic_comprovante_residencia = COALESCE(p_ic_comprovante_residencia, ic_comprovante_residencia),
+          /*cd_email = COALESCE(p_email_troca, cd_email),*/
           nm_senha = COALESCE(p_nm_senha, nm_senha)
     WHERE cd_email = p_cd_email;
   END IF;

@@ -77,6 +77,27 @@ class LeitorController extends Banco
     public function AlterarLeitor($leitor = new Leitor())
     {
 
+         try{
+        $parametros = [
+                        'p_cd_email' => $leitor->cd_email,
+                        //'p_email_troca'=> $leitor->email_troca,
+                        'p_nm_leitor' => $leitor->nm_leitor,
+                        'p_cd_cpf' => $leitor->cd_cpf,
+                        'p_cd_telefone' => $leitor->cd_telefone,
+                        'p_ic_comprovante_residencia' => $leitor->ic_comprovante_residencia,
+                        'p_nm_senha' => $leitor->nm_senha
+        ];
+
+
+        $this->Executar('alterar_leitor', $parametros);
+
+        return "Alterações salvas com sucesso!";
+
+    }   catch(\Throwable $th) {
+            throw $th;
+        }
+
+
     }
 
     public function ExcluirLeitor($leitor = new Leitor())
