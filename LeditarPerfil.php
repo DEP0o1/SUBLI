@@ -5,6 +5,7 @@ $cd_email = $_SESSION['leitor'];
 
 $nm_leitor = null;
 $nm_senha = null;
+$email_troca = null;
 $campos = 0;
 
     if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != "") {
@@ -18,11 +19,30 @@ $campos = 0;
           $campos = $campos + 1 ; 
     }
 
+    if (isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != "") {
+      $email_troca = $_REQUEST['email_troca'];
+    $campos = $campos + 1 ; 
+}
 
-    if($campos == 2 || $campos == 1){
 
+    if($campos == 3 || $campos == 2 || $campos == 1){
       $controller = new LeitorController;
-      $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,$nm_leitor,null,null,null,$nm_senha));
+        
+      if($campos == 1){
+          if(isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != ""){
+           $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,$nm_leitor));
+          }
+
+          if(isset($_REQUEST['nm_senha']) && $_REQUEST['nm_senha'] != ""){
+            $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,$nm_senha));
+           }
+
+           if(isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != ""){
+            $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,null,null,null,null,null,null,null,null,$email_troca));
+           }
+        }
+
+        
     }
 ?>
 
@@ -61,10 +81,10 @@ $campos = 0;
             <input name ="nm_leitor"type="text" placeholder="Pedro Miguel "/>
           </div>
   
-          <!-- <div class="label-input">
+          <div class="label-input">
             <label for="">Alterar E-Mail: </label>
-            <input type="text" placeholder="seuemail@gmail.com" />
-          </div> -->
+            <input name = "email_troca" type="text" placeholder="seuemail@gmail.com" />
+          </div>
   
           <div class="label-input">
             <label for="">Alterar senha: </label>

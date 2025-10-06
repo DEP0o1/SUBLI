@@ -80,7 +80,7 @@ class LeitorController extends Banco
          try{
         $parametros = [
                         'p_cd_email' => $leitor->cd_email,
-                        //'p_email_troca'=> $leitor->email_troca,
+                        'p_email_troca'=> $leitor->email_troca,
                         'p_nm_leitor' => $leitor->nm_leitor,
                         'p_cd_cpf' => $leitor->cd_cpf,
                         'p_cd_telefone' => $leitor->cd_telefone,

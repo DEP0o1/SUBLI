@@ -46,9 +46,9 @@ CREATE TABLE livro(
     cd_colecao INT,
     ds_sinopse TEXT,
 	CONSTRAINT pk_livro PRIMARY KEY (cd_livro), 
-	CONSTRAINT fk_editora FOREIGN KEY (cd_editora) REFERENCES editora(cd_editora),
-    CONSTRAINT fk_idioma FOREIGN KEY (cd_idioma) REFERENCES idioma(cd_idioma),
-    CONSTRAINT fk_colecao FOREIGN KEY (cd_colecao) REFERENCES colecao(cd_colecao)
+	CONSTRAINT fk_editora FOREIGN KEY (cd_editora) REFERENCES editora(cd_editora) ON UPDATE CASCADE,
+    CONSTRAINT fk_idioma FOREIGN KEY (cd_idioma) REFERENCES idioma(cd_idioma) ON UPDATE CASCADE,
+    CONSTRAINT fk_colecao FOREIGN KEY (cd_colecao) REFERENCES colecao(cd_colecao) ON UPDATE CASCADE
 );
 
 CREATE TABLE biblioteca(
@@ -90,8 +90,8 @@ CREATE TABLE evento(
     cd_email VARCHAR(200),
     ic_confirmado TINYINT,
 	CONSTRAINT pk_evento PRIMARY KEY (cd_evento),
-    CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email),
-    CONSTRAINT fk_biblioteca FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca)
+    CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email) ON UPDATE CASCADE,
+    CONSTRAINT fk_biblioteca FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca) ON UPDATE CASCADE
 );
 
 
@@ -103,8 +103,8 @@ CREATE TABLE exemplar(
     ic_reservado TINYTEXT,
     /*qtd_exemplar INT,*/
     CONSTRAINT pk_exemplar PRIMARY KEY (cd_exemplar),
-	CONSTRAINT fk_biblioteca_livro FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca),
-    CONSTRAINT fk_livro_biblioteca FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
+	CONSTRAINT fk_biblioteca_livro FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca) ON UPDATE CASCADE,
+    CONSTRAINT fk_livro_biblioteca FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE
 );
 
 CREATE TABLE doacao (
@@ -115,8 +115,8 @@ CREATE TABLE doacao (
     cd_email VARCHAR(200),
     ic_aprovado TINYINT,
     CONSTRAINT pk_doacao PRIMARY KEY (cd_doacao),
-    CONSTRAINT fk_biblioteca_doacao FOREIGN KEY (cd_biblioteca) REFERENCES  biblioteca(cd_biblioteca),
-    CONSTRAINT  fk_email_leitor_doacao FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
+    CONSTRAINT fk_biblioteca_doacao FOREIGN KEY (cd_biblioteca) REFERENCES  biblioteca(cd_biblioteca) ON UPDATE CASCADE,
+    CONSTRAINT  fk_email_leitor_doacao FOREIGN KEY (cd_email) REFERENCES leitor(cd_email) ON UPDATE CASCADE
 );
 
 CREATE TABLE emprestimo(
@@ -128,10 +128,10 @@ CREATE TABLE emprestimo(
     cd_livro INT,
     cd_biblioteca INT,
     ic_ativa TINYINT,
-    CONSTRAINT fk_leitor_emprestimo FOREIGN KEY (cd_email) REFERENCES leitor (cd_email),
-    CONSTRAINT fk_livro_emprestimo FOREIGN KEY (cd_livro) REFERENCES livro (cd_livro),
-	CONSTRAINT fk_biblioteca_emprestimo FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca (cd_biblioteca),
-	CONSTRAINT pk_emprestimo PRIMARY KEY (cd_emprestimo)
+    CONSTRAINT fk_leitor_emprestimo FOREIGN KEY (cd_email) REFERENCES leitor (cd_email) ON UPDATE CASCADE,
+    CONSTRAINT fk_livro_emprestimo FOREIGN KEY (cd_livro) REFERENCES livro (cd_livro) ON UPDATE CASCADE,
+	CONSTRAINT fk_biblioteca_emprestimo FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca (cd_biblioteca) ON UPDATE CASCADE,
+	CONSTRAINT pk_emprestimo PRIMARY KEY (cd_emprestimo) 
 );
 
 CREATE TABLE reserva(
@@ -141,9 +141,9 @@ CREATE TABLE reserva(
     cd_livro INT,
     cd_biblioteca INT,
     ic_ativa TINYINT,
-    CONSTRAINT fk_leitor_reserva FOREIGN KEY (cd_email) REFERENCES leitor(cd_email),
-    CONSTRAINT fk_livro_reserva FOREIGN KEY (cd_livro) REFERENCES livro (cd_livro),
-    CONSTRAINT fk_biblioteca_reserva FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca (cd_biblioteca),
+    CONSTRAINT fk_leitor_reserva FOREIGN KEY (cd_email) REFERENCES leitor(cd_email) ON UPDATE CASCADE,
+    CONSTRAINT fk_livro_reserva FOREIGN KEY (cd_livro) REFERENCES livro (cd_livro) ON UPDATE CASCADE,
+    CONSTRAINT fk_biblioteca_reserva FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca (cd_biblioteca) ON UPDATE CASCADE,
 	CONSTRAINT pk_reserva PRIMARY KEY (cd_reserva)
 );
 
@@ -152,8 +152,8 @@ CREATE TABLE bibliotecario_biblioteca(
 	cd_bibliotecario INT,
     cd_biblioteca INT,
     CONSTRAINT pk_bibliotecario_biblioteca PRIMARY KEY (cd_bibliotecario, cd_biblioteca),
-	CONSTRAINT fk_bibliotecario_biblioteca FOREIGN KEY (cd_bibliotecario) REFERENCES bibliotecario(cd_bibliotecario),
-    CONSTRAINT fk_biblioteca_bibliotecario FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca)
+	CONSTRAINT fk_bibliotecario_biblioteca FOREIGN KEY (cd_bibliotecario) REFERENCES bibliotecario(cd_bibliotecario) ON UPDATE CASCADE,
+    CONSTRAINT fk_biblioteca_bibliotecario FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca) ON UPDATE CASCADE
 );
 
 
@@ -161,24 +161,24 @@ CREATE TABLE assunto_livro(
 	cd_livro INT,
     cd_assunto INT,
     CONSTRAINT pk_assunto_livro PRIMARY KEY (cd_livro, cd_assunto),
-	CONSTRAINT fk_assunto_livro FOREIGN KEY (cd_assunto) REFERENCES assunto(cd_assunto),
-    CONSTRAINT fk_livro_assunto FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
+	CONSTRAINT fk_assunto_livro FOREIGN KEY (cd_assunto) REFERENCES assunto(cd_assunto) ON UPDATE CASCADE,
+    CONSTRAINT fk_livro_assunto FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE
 );
 
 CREATE TABLE autor_livro(
 	cd_livro INT,
     cd_autor INT,
     CONSTRAINT pk_livro_autor PRIMARY KEY (cd_livro, cd_autor),
-	CONSTRAINT fk_autor_livro FOREIGN KEY (cd_autor) REFERENCES autor(cd_autor),
-    CONSTRAINT fk_livro_autor FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
+	CONSTRAINT fk_autor_livro FOREIGN KEY (cd_autor) REFERENCES autor(cd_autor) ON UPDATE CASCADE,
+    CONSTRAINT fk_livro_autor FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE
 );
 
 CREATE TABLE genero_livro(
 	cd_livro INT,
     cd_genero INT,
 	CONSTRAINT pk_livro_genero PRIMARY KEY (cd_livro, cd_genero),
-    CONSTRAINT fk_livro_genero FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro),
-	CONSTRAINT fk_genero FOREIGN KEY (cd_genero) REFERENCES genero(cd_genero)
+    CONSTRAINT fk_livro_genero FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE,
+	CONSTRAINT fk_genero FOREIGN KEY (cd_genero) REFERENCES genero(cd_genero) ON UPDATE CASCADE
 );
 
 /*
@@ -472,6 +472,8 @@ INSERT INTO emprestimo VALUES(9,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@
 
 /*Reservas*/
 INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true);
+
+
 /*
 select * from reserva;
 select * from livro;
@@ -483,6 +485,7 @@ select * from autor;
 select * from assunto;
 select * from biblioteca;
 select * from evento;
+select * from leitor;
 */
 
 
