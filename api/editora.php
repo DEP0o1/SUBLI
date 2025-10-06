@@ -4,7 +4,7 @@ require_once('config.php');
 header('Content-Type: application/json');
 
 $metodo = $_SERVER['REQUEST_METHOD'];
-$controlador = new GeneroController();
+$controlador = new EditoraController();
 
 switch ($metodo) {
     case 'POST':
@@ -12,25 +12,25 @@ switch ($metodo) {
             $corpo = json_decode(file_get_contents('php://input'), true);
             if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_genero', 'nm_genero'];
+            $camposJSON = ['cd_editora', 'nm_editora'];
             if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_genero'])) {
+            if (!is_numeric($corpo['cd_editora'])) {
                 http_response_code(400);
                 echo json_encode(['mensagem'=>'Código deve ser numérico.']);
                 return;
             }
 
-            if (strlen($corpo['nm_genero']) < 3) {
+            if (strlen($corpo['nm_editora']) < 3) {
                 http_response_code(400);
                 echo json_encode(['mensagem'=>'Nome deve ter no mínimo 3 caracteres.']);
                 return;
             }
 
-            $genero = new Genero($corpo['cd_genero'], $corpo['nm_genero']);
-            $controlador->AdicionarGenero($genero);
+            $editora = new Editora($corpo['cd_editora'], $corpo['nm_editora']);
+            $controlador->Adicionareditora($editora);
             http_response_code(200);
-            echo json_encode(['mensagem'=>'Gênero adicionado com sucesso']);
+            echo json_encode(['mensagem'=>'Editora adicionado com sucesso']);
         } catch (Exception $erro) {
             http_response_code(500);
             echo json_encode(['mensagem'=>$erro->getMessage()]);

@@ -291,9 +291,6 @@ INSERT INTO autor (cd_autor, nm_autor) VALUES
 (10,'Patrick Rothfuss'),
 (11,'paulo coelho'),
 (12,'Steve Wonder'),
-<<<<<<< HEAD
-(13, 'Graciliano ramos');
-=======
 (13, 'Graciliano ramos'),
 (14, 'Graciliano ramos'),
 (15, 'Graciliano ramos'),
@@ -312,7 +309,7 @@ INSERT INTO autor (cd_autor, nm_autor) VALUES
 (28, 'Graciliano ramos'),
 (29, 'Graciliano ramos'),
 (30, 'Graciliano ramos');
->>>>>>> fe0984914039ecaae05f7223cbe9044894654a26
+
 
 
 -- ===== LIVROS =====
@@ -466,8 +463,8 @@ INSERT INTO emprestimo VALUES(2,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@
 INSERT INTO emprestimo VALUES(3,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',4,2, true);
 INSERT INTO emprestimo VALUES(4,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',5,4, true);
 INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',6,9, true);
-INSERT INTO emprestimo VALUES(6,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',6,4, false);
 /*
+INSERT INTO emprestimo VALUES(6,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',6,4, false);
 INSERT INTO emprestimo VALUES(7,'2025-09-01','2025-10-05','2025-10-01','pedro.favoritos@gmail.com',1,1, false);
 INSERT INTO emprestimo VALUES(8,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',2,1, false);
 INSERT INTO emprestimo VALUES(9,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',2,1, false);

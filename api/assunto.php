@@ -4,7 +4,7 @@ require_once('config.php');
 header('Content-Type: application/json');
 
 $metodo = $_SERVER['REQUEST_METHOD'];
-$controlador = new GeneroController();
+$controlador = new AssuntoController();
 
 switch ($metodo) {
     case 'POST':
@@ -12,25 +12,25 @@ switch ($metodo) {
             $corpo = json_decode(file_get_contents('php://input'), true);
             if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_genero', 'nm_genero'];
+            $camposJSON = ['cd_assunto', 'nm_assunto'];
             if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_genero'])) {
+            if (!is_numeric($corpo['cd_assunto'])) {
                 http_response_code(400);
                 echo json_encode(['mensagem'=>'Código deve ser numérico.']);
                 return;
             }
 
-            if (strlen($corpo['nm_genero']) < 3) {
+            if (strlen($corpo['nm_assunto']) < 3) {
                 http_response_code(400);
                 echo json_encode(['mensagem'=>'Nome deve ter no mínimo 3 caracteres.']);
                 return;
             }
 
-            $genero = new Genero($corpo['cd_genero'], $corpo['nm_genero']);
-            $controlador->AdicionarGenero($genero);
+            $assunto = new Assunto($corpo['cd_assunto'], $corpo['nm_assunto']);
+            $controlador->Adicionarassunto($assunto);
             http_response_code(200);
-            echo json_encode(['mensagem'=>'Gênero adicionado com sucesso']);
+            echo json_encode(['mensagem'=>'Assunto adicionado com sucesso']);
         } catch (Exception $erro) {
             http_response_code(500);
             echo json_encode(['mensagem'=>$erro->getMessage()]);
