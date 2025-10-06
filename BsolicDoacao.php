@@ -13,6 +13,14 @@ if(isset($_REQUEST['codigo'])){
 if (isset($_REQUEST['recusado'])) {
   $controller = new DoacaoController;
   $controller->ExcluirDoacao(new Doacao($codigo));
+ $prox_doacao = $controller->ListarDoacoes(new Doacao(null, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
+  if(isset($prox_doacao[0])){
+    $codigo = $prox_doacao[0]->cd_doacao;
+  }
+  else{
+    header("location:Bhome.php");
+  }
+ 
 }
 
 ?>
@@ -50,8 +58,16 @@ include_once './complementos/menuBibliotecario.php'
         <div class="divRowItem">
 
           <?php
-          $doacao = new LivrosDoadosView;
-          $doacao->ExibirLivroDoacao(new Doacao($codigo, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
+          $controller = new DoacaoController;
+          $doacao = $controller->ListarDoacoes(new Doacao($codigo, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
+          $view = new LivrosDoadosView;
+          if(isset($doacao[0])){
+            $doacao = $doacao[0];
+            $view->ExibirLivroDoacao($doacao);
+          }
+          else{
+            $doacao = new Doacao;
+          }
           ?>
           <div class="tituloCentroh1">
             <h1>Outras doações</h1>
@@ -63,8 +79,8 @@ include_once './complementos/menuBibliotecario.php'
             //  o 0 é bolleano falso na linha de cima 
             //taaaaaaaaaaarrrrrrrrrrrrrrrrr
 
-            $doacao = new LivrosDoadosView;
-            $doacao->ExibirLivrosDoados(new Doacao(null, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
+            $Doacao = new LivrosDoadosView;
+            $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0),$doacao->cd_doacao);
             ?>
 
             <!-- <div class="livroDoadoLista">

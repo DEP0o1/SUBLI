@@ -61,7 +61,7 @@ $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliot
         $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
         ?>
       </div>
-          <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php">Ver Mais Doações</a></div>
+          <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php?">Ver Mais Doações</a></div>
 
 
       

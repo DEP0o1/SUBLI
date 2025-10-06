@@ -3,14 +3,17 @@
 class LivrosDoadosView
 {
 
-  public function ExibirLivrosDoados($doacao = new Doacao())
+  public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
   {
+  
     $controller = new DoacaoController;
     $doacoes = $controller->ListarDoacoes($doacao);
 
 
     foreach ($doacoes as $Doacao) {
-
+      if($ignorar == $Doacao->cd_doacao ){
+        continue;
+      }
       echo "
                       <div class='livro'>
                          <img src='img/$Doacao->cd_doacao' alt='$Doacao->cd_doacao'/>
@@ -18,7 +21,7 @@ class LivrosDoadosView
                         <p>
               Doador: {$Doacao->leitor->nm_leitor}
           </p>
-           <button><a href='BsolicDoacao.php?codigo=''>Visualizar</a></button>
+           <button><a href='BsolicDoacao.php?codigo=$Doacao->cd_doacao'>Visualizar</a></button>
                 </div>
             ";
     }
