@@ -15,54 +15,118 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.remove("open");
   }
 
+function Mensagem(texto, tipo, nomeElementoPai) {
+    const elementoPai = document.querySelector(nomeElementoPai);
+
+    const localMsg = document.createElement('div');
+    localMsg.classList.add('mensagem', tipo);
+
+    localMsg.innerHTML = `
+        <div class='titulo-mensagem'>
+          <span class='material-symbols-outlined'>
+            ${tipo == 'erro' ? 'error' : 'book'}
+          </span>
+          <h1>${tipo == 'erro' ? 'Erro' : 'Sucesso'}</h1>
+        </div>
+        <p>${texto}</p>
+    `;
+
+    elementoPai.appendChild(localMsg);
+
+    setTimeout(() => {
+        localMsg.classList.add("sumir");
+        localMsg.addEventListener("animationend", () => msg.remove());
+    }, 3000);
+}
+
 
   /*-----------------------------livro------------------------------------------------------------------------*/
 
   /*-----------------------------autor------------------------------------------------------------------------*/
 
-  const botaoAbrirAutor = aside.querySelector("#abrir-autor");
-  botaoAbrirAutor.addEventListener("click", () => {
-    const overlayPopup = document.createElement("div");
-    overlayPopup.classList.add("overlayPopup");
-    document.body.appendChild(overlayPopup);
+const botaoAbrirAutor = aside.querySelector("#abrir-autor");
 
-    const popup = document.createElement("div");
-    popup.className = "areaCadastro";
-    popup.innerHTML = `
-      <form class="formAvancado1">
-        <div class="titulo-area-cadastro">
-          <h1>Cadastrar Autor</h1>
-          <button type="button" id="fechar-popup">
-            <span class="material-symbols-outlined">close</span>
-          </button>
+botaoAbrirAutor.addEventListener("click", () => {
+  const overlayPopup = document.createElement("div");
+  overlayPopup.classList.add("overlayPopup");
+  document.body.appendChild(overlayPopup);
+
+  const popup = document.createElement("div");
+  popup.className = "areaCadastro";
+  popup.innerHTML = `
+    <form class="formAvancado1">
+      <div class="titulo-area-cadastro">
+        <h1>Cadastrar Autor</h1>
+        <button type="button" id="fechar-popup">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <section class="areaInput">
+        <div class="areaTituloLivro">
+          <label>Código do autor:</label>
+          <input type="text" placeholder="Ex: 1" name="cd_autor" required>
         </div>
-        <section class="areaInput">
-          <div class="areaTituloLivro">
-            <label>Código do autor:</label>
-            <input type="text" placeholder="Ex: 1">
-          </div>
-          <div class="areaTituloLivro">
-            <label>Nome do autor:</label>
-            <input type="text" placeholder="Ex: Machado de Assis">
-          </div>
-          <div class="areaBtn">
-            <button class="btnRosa">Cadastrar</button>
-          </div>
-        </section>
-      </form>
-    `;
-    document.body.appendChild(popup);
+        <div class="areaTituloLivro">
+          <label>Nome do autor:</label>
+          <input type="text" placeholder="Ex: Machado de Assis" name="nm_autor" required>
+        </div>
+        <div class="areaBtn">
+          <button type="submit" class="btnRosa">Cadastrar</button>
+        </div>
+      </section>
+    </form>
+  `;
+  document.body.appendChild(popup);
 
-    popup.querySelector("#fechar-popup").addEventListener("click", () => {
-      document.body.removeChild(popup);
-      document.body.removeChild(overlayPopup);
-      overlayPopup.addEventListener("click", fechar);
-    });
-    overlayPopup.addEventListener("click", () => {
-      document.body.removeChild(popup);
-      document.body.removeChild(overlayPopup);
+  popup.querySelector("#fechar-popup").addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  overlayPopup.addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  const form = popup.querySelector('form.formAvancado1');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const cd_autor = form.elements['cd_autor'].value.trim();
+    const nm_autor = form.elements['nm_autor'].value.trim();
+
+    const dados = {
+      cd_autor,
+      nm_autor
+    };
+
+    fetch('http://localhost/subli/api/autor.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dados)
+    })
+    .then(response => response.json()
+      .then(json => {
+        if (response.ok) {
+          alert(json.mensagem);
+          document.body.removeChild(popup);
+          document.body.removeChild(overlayPopup);
+        } else {
+          alert(json.mensagem);
+        }
+      })
+    )
+    .catch(error => {
+      console.error('Erro na requisição', error);
+      alert('erro na conexão');
     });
   });
+});
+
+
 
   /*-----------------------------genero------------------------------------------------------------------------*/
 

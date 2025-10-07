@@ -63,11 +63,6 @@ $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliot
       </div>
           <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php?">Ver Mais Doações</a></div>
 
-
-      
-
-
-
       <section class="eventos">
         <div class="larguraEventosBiblio">
           <div class="calendario">
@@ -88,6 +83,15 @@ $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliot
         <button class="btnRosa">Gerenciar eventos</button>
       </div>
     </div>
+
+    <section class="listaProvisoria">
+      <div class="prov-lista">
+        <h1>Autores (ignorem isso é provisorio)</h1>
+
+        <!-- autores javascript -->
+
+      </div>
+    </section>
   </main>
   <script src="js/componentesJS/calendario.js"></script>
   <script>
@@ -98,11 +102,50 @@ $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliot
       toggleBtn.addEventListener("click", function() {
         formArea.classList.toggle("hidden");
       });
+      
+       function listarAutores() {
+    fetch('http://localhost/subli/api/autor.php')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao buscar autores');
+        }
+        return response.json();
+      })
+      .then(autores => {
+        const container = document.querySelector('.prov-lista');
+
+        const elementosAntigos = container.querySelectorAll('.item-lista');
+        elementosAntigos.forEach(el => el.remove());
+
+        autores.forEach(autor => {
+          
+          const item = document.createElement('div');
+          item.className = 'item-lista';
+
+          item.innerHTML = `
+            <div class='conteudo-item-lista'>
+              <h2>Nome: ${autor.nm_autor}</h2>
+              <h3>Código: ${autor.cd_autor}</h3>
+              <div class="areaBtnProv">
+                <button class='btnRosa'>Alterar</button>
+                <button class='btnRosa'>Excluir</button>
+              </div>
+            </div>
+          `;
+
+          container.appendChild(item);
+        });
+      })
+      .catch(error => {
+        const container = document.querySelector('.prov-lista');
+        container.innerHTML += `<p>Nenhum autor encontrado</p>`;
+      });
+  }
+
+  window.addEventListener('DOMContentLoaded', listarAutores);
     });
   </script>
-
 </body>
-
 </html>
 
 <!-- <div class="item-lista">

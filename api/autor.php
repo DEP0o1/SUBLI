@@ -7,6 +7,28 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 $controlador = new AutorController();
 
 switch ($metodo) {
+    case 'GET':
+        try {
+            $autores = $controlador->ListarAutores();
+            $resposta = [];
+
+            foreach ($autores as $autor) {
+                $resposta[] = [
+                    'cd_autor' => $autor->cd_autor,
+                    'nm_autor' => $autor->nm_autor
+                ];
+            }
+
+            echo json_encode($resposta);
+
+        } catch (Exception $erro) {
+            http_response_code(200);
+            echo json_encode(['mensagem' => $erro->getMessage()]);
+        }
+
+
+    break;
+
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);
