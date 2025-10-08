@@ -96,7 +96,7 @@
 
             <div class="informacao-aside">
                 <span class="material-symbols-outlined">library_add</span>
-                <a href="BcadastrarLivro.php">
+                <a href="Biblioteca.php">
                     <p>Perfil da biblioteca</p>
                 </a>
             </div>
@@ -104,7 +104,6 @@
 
             <div class="informacao-aside">
                 <span class="material-symbols-outlined">library_add</span>
-                <a href="BpesquisaLivro.php">
                     <p>Acervo</p>
                 </a>
             </div>

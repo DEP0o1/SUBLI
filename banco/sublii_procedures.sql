@@ -25,7 +25,7 @@ END$$
 /*CALL contar_livros_procurados ();*/
 
 
-DROP PROCEDURE IF EXISTS listar_livros$$
+DROP PROCEDURE IF EXISTS l_livros$$
 CREATE PROCEDURE listar_livros (
     IN  p_cd_livro INT,
     IN p_nm_livro VARCHAR(200),
@@ -1045,6 +1045,25 @@ END$$
 
 /*CALL logar_leitor('pedro.favoritos@gmail.com','123');*/
 
+DROP PROCEDURE IF EXISTS logar_bibliotecario$$   
+CREATE PROCEDURE logar_bibliotecario(
+    IN p_cd_bibliotecario INT,
+    IN p_nm_senha VARCHAR(64)
+)
+BEGIN
+    IF EXISTS (SELECT 1 FROM bibliotecario WHERE cd_bibliotecario = p_cd_bibliotecario AND nm_senha = p_nm_senha)
+    THEN
+        SELECT 
+            cd_bibliotecario,
+            nm_bibliotecario
+        FROM bibliotecario
+        WHERE cd_bibliotecario = p_cd_bibliotecario;
+    ELSE
+        SELECT 'Codigo ou senha incorretos' AS erro;
+    END IF;
+END$$
+    
+ CALL logar_bibliotecario('1','Jeferson José');
     
 DROP PROCEDURE IF EXISTS listar_leitores$$
 CREATE PROCEDURE listar_leitores(

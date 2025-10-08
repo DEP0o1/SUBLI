@@ -33,7 +33,7 @@ require('config.php');
 
       <div>
         <label for="cd_bibliotecario">Código:</label>
-        <input type="text" name="cd_bibliotecario" id="txtEmail" placeholder="Informe seu código" autofocus>
+        <input type="text" name="cd_bibliotecario" id="txtCodigo" placeholder="Informe seu código" autofocus>
       </div>
 
       <div>
