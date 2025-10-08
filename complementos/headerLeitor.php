@@ -14,7 +14,7 @@ if (isset($_SESSION['leitor'])) {
 
 ?>
 
-<!-- <link rel="icon" type="image/svg+xml" href="img/fav-icon48.svg"> -->
+<link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
 <script src="js/componentesJS/dropDown.js"></script>
 
 <header>
