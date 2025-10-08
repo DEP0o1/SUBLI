@@ -30,7 +30,9 @@ if (txtcodigo && txtSenha && btnEntrar) {
         btnEntrar.innerHTML = `
         <span class="material-symbols-outlined">hourglass</span> Aguarde...`;
 
-        fetch(`api/leitor.php?e=${codigo}&s=${senha}`)
+
+        // aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        fetch(`api/bibliotecario.php?c=${codigo}&s=${senha}`)
         .then(function(resposta) {
             return resposta.json()
         }).then(function(dadosJSON) {
@@ -40,7 +42,7 @@ if (txtcodigo && txtSenha && btnEntrar) {
             }
             else{
                 Mensagem('foi', 'book', 'form');
-                window.location.href='LindexLeitor.php';  
+                window.location.href='Bhome.php';  
             }
 
         }).catch(function(erro){

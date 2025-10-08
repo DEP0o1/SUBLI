@@ -81,6 +81,20 @@ class BibliotecarioController extends Banco
         throw $th;
     }
     }
+
+    public function LogarBibliotecario($bibliotecario = new Bibliotecario){
+        try {
+            $parametros = [
+                'p_cd_bibliotecario'=>$bibliotecario->cd_bibliotecario,
+                'p_nm_senha'=>$bibliotecario->nm_senha
+            ];
+            $dados = $this->Consultar('logar_bibliotecario', $parametros);
+            //var_dump($dados);
+            return $dados;
+        } catch (\Throwable $th) {
+            throw new Exception('Login e/ou Senha Inválida');
+        }
+    }
 }
 
 

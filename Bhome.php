@@ -1,9 +1,9 @@
 <?php
 require_once 'config.php';
-$cd_bibliotecario = 1;
-// O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
-$controller = new BibliotecarioController();
-$bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
+// $cd_bibliotecario = 1;
+//  O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
+// $controller = new BibliotecarioController();
+// $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
 ?>
 
 <!DOCTYPE html>

@@ -97,10 +97,9 @@
     <a href="BcadastrarLivro.php">
             <div class="informacao-aside">
                 <span class="material-symbols-outlined">library_add</span>
-<<<<<<< HEAD
+
                 <a href="Biblioteca.php">
-=======
->>>>>>> 858c1bfbd4db2f35a49aeb9c9722d6148487b9e6
+
                     <p>Perfil da biblioteca</p>
                 </div>
             </a>
@@ -115,12 +114,12 @@
 
             <div class="informacao-aside">
                 <span class="material-symbols-outlined">library_add</span>
-<<<<<<< HEAD
+
                     <p>Acervo</p>
-=======
+
                 <a href="BAlterarDadosBibliotecaq.php">
                     <p>Alterar Informações da Biblioteca</p>
->>>>>>> 858c1bfbd4db2f35a49aeb9c9722d6148487b9e6
+
                 </a>
             </div>
 
