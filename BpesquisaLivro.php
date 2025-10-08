@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
 require_once('config.php');
+require_once('verificadoBibliotecario.php');
 
 
 $buscar = false;

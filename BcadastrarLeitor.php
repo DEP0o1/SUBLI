@@ -1,5 +1,6 @@
 <?php
 require_once('config.php');
+require_once('verificadoBibliotecario.php');
 $cd_email = null;
 $nm_leitor = null;
 $cd_cpf = null;

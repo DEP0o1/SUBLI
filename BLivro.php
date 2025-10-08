@@ -1,5 +1,7 @@
 <?php
 require_once('config.php');
+require_once('verificadoBibliotecario.php');
+
 $codigo = null;
 if (isset($_REQUEST['codigo'])) {
   $buscar = true;

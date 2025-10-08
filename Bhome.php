@@ -1,5 +1,8 @@
 <?php
 require_once 'config.php';
+require_once('verificadoBibliotecario.php');
+
+$bibliotecario = $_SESSION['bibliotecario'];
 // $cd_bibliotecario = 1;
 //  O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
 // $controller = new BibliotecarioController();
@@ -58,7 +61,7 @@ require_once 'config.php';
         //  o 0 é bolleano falso na linha de cima 
         //taaaaaaaaaaarrrrrrrrrrrrrrrrr
         $Doacao = new LivrosDoadosView;
-        $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
+        $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro,  new Biblioteca($bibliotecario->cd_biblioteca), new Leitor, 0));
         ?>
       </div>
           <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php?">Ver Mais Doações</a></div>

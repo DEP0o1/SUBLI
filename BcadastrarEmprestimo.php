@@ -1,4 +1,8 @@
 <?php
+require_once('config.php');
+require_once('verificadoBibliotecario.php');
+
+
 if (isset($_REQUEST['codigo'])) {
     if ($_REQUEST['codigo'] != "" && is_numeric($_REQUEST['codigo'])) {
     $cd_reserva = $_REQUEST['codigo'];

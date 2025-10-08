@@ -1,3 +1,8 @@
+<?php
+require_once('config.php');
+require_once('verificadoBibliotecario.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
