@@ -48,9 +48,9 @@ if (isset($_SESSION['leitor'])) {
       <div class="dropdown">
         <button class="dropdown-btn">
           <?php if (isset($_SESSION['leitor'])): ?>
-            <a href="LmeusLivros.php">
+            
               <img src="img/doar.png" alt="Perfil">
-            </a>
+            
           <?php else: ?>
             <span class="material-symbols-outlined">person</span>
           <?php endif; ?>

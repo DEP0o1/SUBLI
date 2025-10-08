@@ -201,6 +201,11 @@ nav {
   overflow: hidden;
 }
 
+.btnRosa:hover{
+  background-color: var(--vinho-hover);
+  transition: 0.2s ease-in;
+}
+
 /*------------------------------scroll------------------------------------------------------------------------*/
 
 ::-webkit-scrollbar-track {
@@ -484,7 +489,7 @@ html {
 aside {
   background-color: var(--azul);
   color: var(--branco);
-  width: fit-content;
+  min-width: 15vw;
   padding: 30px 30px 30px 30px;
   height: calc(100vh - 84px);
   transition: transform 0.3s ease-in-out;

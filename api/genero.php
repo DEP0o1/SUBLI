@@ -7,6 +7,25 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 $controlador = new GeneroController();
 
 switch ($metodo) {
+    case 'GET':
+        try {
+            $generos = $controlador->ListarGeneros();
+            $resposta = [];
+
+            foreach ($generos as $genero) {
+                $resposta[] = [
+                    'cd_genero' => $genero->cd_genero,
+                    'nm_nome' => $genero->nm_genero
+                ];
+            }
+
+            echo json_encode($resposta);
+        } catch (Exception $erro) {
+            http_response_code(500);
+            echo json_encode(['mensagem' => $erro->getMessage()]);
+        }
+
+        break;
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);

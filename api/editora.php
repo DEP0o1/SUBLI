@@ -7,6 +7,24 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 $controlador = new EditoraController();
 
 switch ($metodo) {
+    case 'GET':
+        try {
+            $editoras = $controlador->ListarEditoras();
+            $resposta = [];
+
+            foreach ($editoras as $editora) {
+                $resposta[] = [
+                    'cd_editora' => $editora->cd_editora,
+                    'nm_editora' => $editora->nm_editora
+                ];
+            }
+
+            echo json_encode($resposta);
+        } catch (Exception $erro) {
+            http_response_code(200);
+            echo json_encode(['mensagem' => $erro->getMessage()]);
+        }
+        break;
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);
