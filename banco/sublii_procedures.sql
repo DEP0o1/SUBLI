@@ -25,7 +25,7 @@ END$$
 /*CALL contar_livros_procurados ();*/
 
 
-DROP PROCEDURE IF EXISTS l_livros$$
+DROP PROCEDURE IF EXISTS listar_livros$$
 CREATE PROCEDURE listar_livros (
     IN  p_cd_livro INT,
     IN p_nm_livro VARCHAR(200),
@@ -1063,7 +1063,7 @@ BEGIN
     END IF;
 END$$
     
- CALL logar_bibliotecario('1','Jeferson José');
+ CALL logar_bibliotecario('1','123');
     
 DROP PROCEDURE IF EXISTS listar_leitores$$
 CREATE PROCEDURE listar_leitores(
