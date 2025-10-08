@@ -25,10 +25,7 @@ if (isset($_REQUEST['recusado'])) {
 
 ?>
 
-<?php
-require_once './complementos/headerBibliotecario.php';
-include_once './complementos/menuBibliotecario.php'
-?>
+
 
 
 <!DOCTYPE html>
@@ -45,7 +42,9 @@ include_once './complementos/menuBibliotecario.php'
 </head>
 
 <body>
-  <?php require_once './complementos/headerBibliotecario.php'; ?>
+  <?php require_once './complementos/headerBibliotecario.php'; 
+  include_once './complementos/menuBibliotecario.php';
+  ?>
   <main>
     <div class="tituloCentro">
       <h1>Doações</h1>
