@@ -7,6 +7,9 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 $controlador = new ColecaoController();
 
 switch ($metodo) {
+    case 'GET':
+        // aqui no esquema
+        break;
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);

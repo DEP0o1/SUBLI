@@ -64,7 +64,7 @@ botaoAbrirAutor.addEventListener("click", () => {
       <section class="areaInput">
         <div class="areaTituloLivro">
           <label>Código do autor:</label>
-          <input type="text" placeholder="Ex: 1" name="cd_autor" required>
+          <input type="text" placeholder="Ex: 1" name="cd_autor" >
         </div>
         <div class="areaTituloLivro">
           <label>Nome do autor:</label>
@@ -172,7 +172,46 @@ botaoAbrirAutor.addEventListener("click", () => {
       document.body.removeChild(popup);
       document.body.removeChild(overlayPopup);
     });
+
+    const form = popup.querySelector('form.formAvancado1');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const cd_genero = form.elements['cd_genero'].value.trim();
+    const nm_genero = form.elements['nm_genero'].value.trim();
+
+    const dados = {
+      cd_genero,
+      nm_genero
+    };
+
+    fetch('http://localhost/subli/api/genero.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dados)
+    })
+    .then(response => response.json()
+      .then(json => {
+        if (response.ok) {
+          alert(json.mensagem);
+          document.body.removeChild(popup);
+          document.body.removeChild(overlayPopup);
+        } else {
+          alert(json.mensagem);
+        }
+      })
+    )
+    .catch(error => {
+      console.error('Erro na requisição', error);
+      alert('erro na conexão');
+    });
   });
+  });
+
+  
 
   /*-----------------------------idioma------------------------------------------------------------------------*/
 

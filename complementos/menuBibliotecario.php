@@ -94,17 +94,33 @@
         </form>
     </div>  
 
+    <a href="BcadastrarLivro.php">
             <div class="informacao-aside">
                 <span class="material-symbols-outlined">library_add</span>
+<<<<<<< HEAD
                 <a href="Biblioteca.php">
+=======
+>>>>>>> 858c1bfbd4db2f35a49aeb9c9722d6148487b9e6
                     <p>Perfil da biblioteca</p>
-                </a>
-            </div>
+                </div>
+            </a>
 
 
+            <a href="BpesquisaLivro.php">
             <div class="informacao-aside">
                 <span class="material-symbols-outlined">library_add</span>
                     <p>Acervo</p>
+                </div>
+            </a>
+
+            <div class="informacao-aside">
+                <span class="material-symbols-outlined">library_add</span>
+<<<<<<< HEAD
+                    <p>Acervo</p>
+=======
+                <a href="BAlterarDadosBibliotecaq.php">
+                    <p>Alterar Informações da Biblioteca</p>
+>>>>>>> 858c1bfbd4db2f35a49aeb9c9722d6148487b9e6
                 </a>
             </div>
 
@@ -116,7 +132,14 @@
             <a href="BpesquisaLeitor.php">
                 <div class="informacao-aside">
                     <span class="material-symbols-outlined">groups</span>
-                    <p>Todos os leitores</p>
+                    <p>Todos os Leitores</p>
+                </div>
+            </a>
+
+            <a href="BemprestimoPesquisa.php">
+                <div class="informacao-aside">
+                    <span class="material-symbols-outlined">groups</span>
+                    <p>Empréstimos Atuais</p>
                 </div>
             </a>
 
@@ -125,19 +148,19 @@
 
             <h1>Cadastros</h1>
 
+            <a href="BcadastrarLeitor.php">
             <div class="informacao-aside" id="abrir-livro">
                 <span class="material-symbols-outlined">library_add</span>
-                <a href="BcadastrarLeitor.php">
                     <p>Cadastrar Leitor</p>
-                </a>
-            </div>
+                </div>
+            </a>
 
+            <a href="BcadastrarLivro.php">
             <div class="informacao-aside" id="abrir-livro">
                 <span class="material-symbols-outlined">library_add</span>
-                <a href="BcadastrarLivro.php">
                     <p>Cadastrar Livro</p>
-                </a>
-            </div>
+                </div>
+            </a>
 
             <div class="informacao-aside" id="abrir-autor">
                 <span class="material-symbols-outlined">person_add</span>
@@ -164,10 +187,12 @@
                 <p>Cadastrar Coleções</p>
             </div>
 
-            <div class="informacao-aside">
-                <span class="material-symbols-outlined">event</span>
-                <p>Cadastrar Evento</p>
-            </div>
+            <a href="BcadastrarEvento.php">
+                <div class="informacao-aside">
+                    <span class="material-symbols-outlined">event</span>
+                    <p>Cadastrar Evento</p>
+                </div>
+            </a>
 
             <div class="informacao-aside" id="abrir-assunto">
                 <span class="material-symbols-outlined">topic</span>

@@ -34,13 +34,21 @@ switch ($metodo) {
             $corpo = json_decode(file_get_contents('php://input'), true);
             if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_autor', 'nm_autor'];
+            $camposJSON = ['nm_autor'];
             if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_autor'])) {
+            if (!is_numeric($corpo['cd_autor']) && $corpo['cd_autor'] != "" ) {
                 http_response_code(400);
                 echo json_encode(['mensagem'=>'Código deve ser numérico.']);
                 return;
+            }
+            else{
+                if(is_numeric($corpo['cd_autor'])){
+                }
+                else{
+                    $corpo['cd_autor'] = null;
+                }
+                
             }
 
             if (strlen($corpo['nm_autor']) < 3) {
@@ -50,9 +58,16 @@ switch ($metodo) {
             }
 
             $autor = new Autor($corpo['cd_autor'], $corpo['nm_autor']);
-            $controlador->AdicionarAutor($autor);
-            http_response_code(200);
-            echo json_encode(['mensagem'=>'Autor adicionado com sucesso']);
+          $resultado =  $controlador->AdicionarAutor($autor);
+
+            if($resultado == "Autor não cadastrado! Já existe outro autor com esse código"){
+                echo json_encode(['mensagem'=>'Autor não cadastrado! Já existe outro autor com esse código']);
+            }
+           
+            else{
+                http_response_code(200);
+                echo json_encode(['mensagem'=>'Autor adicionado com sucesso']);
+            }
         } catch (Exception $erro) {
             http_response_code(500);
             echo json_encode(['mensagem'=>$erro->getMessage()]);
