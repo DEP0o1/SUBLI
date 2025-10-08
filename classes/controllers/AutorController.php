@@ -37,6 +37,13 @@ class AutorController extends Banco
             'p_nm_autor' => $autor->nm_autor
 
         ];
+        if($autor->cd_autor != null){
+            $codigo = $this->ListarAutores(new Autor($autor->cd_autor));
+            if($codigo != []){
+                return "Autor não cadastrado! Já existe outro autor com esse código";
+            }
+        }
+      
 
         $this->Executar('adicionar_autor', $parametros);
     }catch (\Throwable $th) {

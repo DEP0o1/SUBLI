@@ -64,7 +64,7 @@ botaoAbrirAutor.addEventListener("click", () => {
       <section class="areaInput">
         <div class="areaTituloLivro">
           <label>Código do autor:</label>
-          <input type="text" placeholder="Ex: 1" name="cd_autor" required>
+          <input type="text" placeholder="Ex: 1" name="cd_autor" >
         </div>
         <div class="areaTituloLivro">
           <label>Nome do autor:</label>
