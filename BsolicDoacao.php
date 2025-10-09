@@ -2,7 +2,7 @@
 require_once('config.php');
 require_once('verificadoBibliotecario.php');
 
-$cd_bibliotecario = 1;
+$cd_bibliotecario = $_SESSION['bibliotecario'];
 // O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
 $controller = new BibliotecarioController();
 $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));

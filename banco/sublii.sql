@@ -250,9 +250,9 @@ INSERT INTO biblioteca VALUES (9, 'Mundo Animal','Rua Lucas Alcoforado');
 INSERT INTO biblioteca VALUES (10, 'Arte e Cultura','Rua Lucas Alcoforado');
 
 /*Eventos*/
-INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 1,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
-INSERT INTO evento VALUES ('Leitura de Livros de Romance', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
-INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', NULL);
+INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 1,NOW(), 'SHBJHSDAUOHAFSIL', 1,'lucas@gmail.com', true);
+INSERT INTO evento VALUES ('Leitura de Livros de Romance', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', false);
+INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', true);
 INSERT INTO evento VALUES ('Clube do Livro de Outubro', 4,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
 
 -- ===== EDITORAS =====
@@ -450,10 +450,10 @@ INSERT INTO bibliotecario VALUES (1,'Liam da Silva',123,'AAA');
 INSERT INTO bibliotecario_biblioteca VALUES (1,1);
 
 INSERT INTO bibliotecario VALUES(2,'Jeferson José',123,'BBB');
-INSERT INTO bibliotecario VALUES(2,2);
+INSERT INTO bibliotecario_biblioteca VALUES(2,2);
 
 INSERT INTO bibliotecario VALUES(3,'Caua do amanhã',123,'CCC');
-INSERT INTO bibliotecario VALUES(3,3);
+INSERT INTO bibliotecario_biblioteca VALUES(3,3);
 
 /*Doações*/
 INSERT INTO doacao VALUES (1,'Cronicas Malucas','Jeferson',2,'pedro.favoritos@gmail.com', true);

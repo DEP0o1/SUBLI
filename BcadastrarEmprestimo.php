@@ -1,7 +1,7 @@
 <?php
 require_once('config.php');
 require_once('verificadoBibliotecario.php');
-
+$bibliotecario = $_SESSION['bibliotecario'];
 
 if (isset($_REQUEST['codigo'])) {
     if ($_REQUEST['codigo'] != "" && is_numeric($_REQUEST['codigo'])) {
@@ -13,11 +13,10 @@ else{
        $cd_reserva = null;
 }
 require_once "config.php";
-$cd_bibliotecario = 1;
 // O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
 $controller = new BibliotecarioController();
-$bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
-$cd_biblioteca = $bibliotecario[0]->cd_biblioteca;
+$Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($bibliotecario));
+$cd_biblioteca = $Bibliotecario[0]->cd_biblioteca;
 $campos = 0;
 
 if (isset($_REQUEST['cd_email'])) {

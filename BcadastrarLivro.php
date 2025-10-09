@@ -14,8 +14,7 @@ if (isset($_REQUEST['doacao'])) {
 }
 
 else{
-    $cd_bibliotecario = 1;
-    // O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
+    $cd_bibliotecario = $_SESSION['bibliotecario'];
     $controller = new BibliotecarioController();
     $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
     $cd_biblioteca = $bibliotecario[0]->cd_biblioteca;

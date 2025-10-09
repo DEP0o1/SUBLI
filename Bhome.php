@@ -3,10 +3,8 @@ require_once 'config.php';
 require_once('verificadoBibliotecario.php');
 
 $bibliotecario = $_SESSION['bibliotecario'];
-// $cd_bibliotecario = 1;
-//  O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
-// $controller = new BibliotecarioController();
-// $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
+$controller = new BibliotecarioController();
+$Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($bibliotecario));
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +42,7 @@ $bibliotecario = $_SESSION['bibliotecario'];
         //  o 0 é bolleano falso na linha de cima 
         //taaaaaaaaaaarrrrrrrrrrrrrrrrr
         $Reserva = new ReservaView;
-        $Reserva->ExibirReservas(new Reserva(null, null, new Leitor, new Livro, new Biblioteca, 1));
+        $Reserva->ExibirReservas(new Reserva(null, null, new Leitor, new Livro, new Biblioteca($Bibliotecario[0]->cd_biblioteca), 1));
         ?>
 
         <div class="exibirLivros">
@@ -61,7 +59,7 @@ $bibliotecario = $_SESSION['bibliotecario'];
         //  o 0 é bolleano falso na linha de cima 
         //taaaaaaaaaaarrrrrrrrrrrrrrrrr
         $Doacao = new LivrosDoadosView;
-        $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro,  new Biblioteca($bibliotecario->cd_biblioteca), new Leitor, 0));
+        $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro,  new Biblioteca($Bibliotecario[0]->cd_biblioteca), new Leitor, 0));
         ?>
       </div>
           <div class="btndoacoes"><a class="btnRosa" href="BsolicDoacao.php?">Ver Mais Doações</a></div>
@@ -75,7 +73,7 @@ $bibliotecario = $_SESSION['bibliotecario'];
           <div class="lista-eventos">
             <?php
             $evento = new EventoView;
-            $evento->ExibirEventos();
+            $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($Bibliotecario[0]->cd_biblioteca), new Leitor,1));
             ?>
   
           </div>

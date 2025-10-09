@@ -9,7 +9,7 @@ if (isset($_REQUEST['codigo'])) {
   if ($_REQUEST['codigo'] != "") {
 
     $codigo = $_REQUEST['codigo'];
-    $cd_biblioteca = 1;
+    $cd_biblioteca = $_SESSION['bibliotecario'];
   }
 }
 
