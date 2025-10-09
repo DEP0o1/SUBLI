@@ -6,22 +6,23 @@
   <a href="./Bhome.php">
     <div><img src="img/subli.logoCorClara.png" alt="" class="logo" /></div>
   </a>
+  
 
   <form action="BpesquisaLivro.php" class="areaPesquisa">
     <div class="divInput">
       <input type="text" name="valor" placeholder="Faça sua Pesquisa" class="input" />
       <img src="img/pesquisa.webp" alt="" class="lupa" />
     </div>
-
+    
     <img src="img/filtro.svg" alt="" />
   </form>
-
-  </div>
+  
+</div>
 
   <div class="abas">
 
     <button id="abrirNotificacao">
-
+      
       <span class="material-symbols-outlined">
         notifications
       </span>
@@ -32,5 +33,6 @@
   <link rel="icon" type="image/svg+xml" href="img/favIcon-contornado-mini.svg">
 </header>
 
+<link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
 <script src="js/componentesJS/menuBibliotecario.js"></script>
 <script src="js/componentesJS/notificacaoBibliotecario.js"></script>
