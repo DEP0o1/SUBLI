@@ -20,9 +20,205 @@ public function ExibirLeitores($leitor = new Leitor){
             </a>    
             </div>
             </div>
+
+
+            <section class='resultadoPesquisaLeitor'>
+            <div class='resultadoEmPe'>
+                <div class='cardLeitor'>
+                    <img src='img/pequeno terry.webp' alt='>
+                    <div class='infoPerfil'>
+                        <h1>{$Leitor->nm_leitor} </h1>
+                        <div class='infoDeLado'>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    call_log
+                                </span> Telefone: (13)982259320
+                            </p>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> Código: 122345
+                            </p>
+                        </div>
+                        <p>
+                            <span class='material-symbols-outlined'>
+                                home
+                            </span> Endereço: Av Epitácio Pessoa, 466, Aparecida - Santos, SP
+                        </p>
+                        <p>
+                            <span class='material-symbols-outlined'>
+                                alternate_email
+                            </span> E-mail: Pedro@gmail.com
+                        </p>
+                        <div class='btnsPerfil'>
+                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Alterar Dados</button>
+                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Pesquisar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='textoEsquerda'>
+                    <h1>Empréstimos deste leitor</h1>
+                </div>
+
+                <div class='exibirLivros'>
+                    <div class='livro'>
+                        <img src='img/6' alt=' />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
+                    </div>
+
+                    <div class='livro'>
+                        <img src='img/7' alt=' />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
+                    </div>
+
+                    <div class='livro'>
+                        <img src='img/8' alt=' />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
+                    </div>
+
+                    <div class='livro'>
+                        <img src='img/9' alt=' />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
+                    </div>
+
+                    <div class='livro'>
+                        <img src='img/10' alt=' />
+                        <h2>Pequeno principe</h2>
+                        <p>machado de assis</p>
+                        <button>Ver Mais</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class='lista-leitores'>
+
+                <div class='lista'>
+
+                    <div class='item-lista'>
+                        <div class='imagem-item-lista'>
+                            <img src='img/doar.png' alt='>
+                        </div>
+                        <div class='conteudo-item-lista'>
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class='btnRosa'>
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class='item-lista'>
+                        <div class='imagem-item-lista'>
+                            <img src='img/doar.png' alt='>
+                        </div>
+                        <div class='conteudo-item-lista'>
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class='btnRosa'>
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class='item-lista'>
+                        <div class='imagem-item-lista'>
+                            <img src='img/doar.png' alt='>
+                        </div>
+                        <div class='conteudo-item-lista'>
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class='btnRosa'>
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class='item-lista'>
+                        <div class='imagem-item-lista'>
+                            <img src='img/doar.png' alt='>
+                        </div>
+                        <div class='conteudo-item-lista'>
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class='btnRosa'>
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class='item-lista'>
+                        <div class='imagem-item-lista'>
+                            <img src='img/doar.png' alt='>
+                        </div>
+                        <div class='conteudo-item-lista'>
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class='btnRosa'>
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class='item-lista'>
+                        <div class='imagem-item-lista'>
+                            <img src='img/doar.png' alt='>
+                        </div>
+                        <div class='conteudo-item-lista'>
+                            <h2>Nome do leitor</h2>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> CPF: 123.456.789.20
+                            </p>
+                            <button class='btnRosa'>
+                                Ver Mais
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
             ";
 
   }
  }
 }
 ?>
+
+

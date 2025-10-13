@@ -19,13 +19,13 @@ require_once('verificadoBibliotecario.php');
 </head>
 
 <body>
-<?php
-require_once './complementos/menuBibliotecario.php'
-?>
     <?php
     require_once './complementos/headerBibliotecario.php';
     ?>
     <main class="pgPesquisaLeitor">
+    <?php
+    require_once './complementos/menuBibliotecario.php'
+    ?>
         <section class="pesquisarLeitor">
             <form action="">
                 <div class="titulo-areaPerfil">
@@ -49,13 +49,17 @@ require_once './complementos/menuBibliotecario.php'
                 </div>
             </form>
         </section>
+        <?php
+        // $Leitor = new LeitorView();
+        // $Leitor->ExibirLeitores();
+        ?> 
 
-        <!-- <section class="resultadoPesquisaLeitor">
+<section class="resultadoPesquisaLeitor">
             <div class="resultadoEmPe">
                 <div class="cardLeitor">
-                    <img src="img/pequeno terry.webp" alt="">
+                    <img src="img/pequeno terry.webp" alt=>
                     <div class="infoPerfil">
-                        <h1> Nome do Leitor </h1>
+                        <h1>{$Leitor->nm_leitor} </h1>
                         <div class="infoDeLado">
                             <p>
                                 <span class="material-symbols-outlined">
@@ -96,35 +100,35 @@ require_once './complementos/menuBibliotecario.php'
 
                 <div class="exibirLivros">
                     <div class="livro">
-                        <img src="img/6" alt="" />
+                        <img src="img/6" alt= />
                         <h2>Pequeno principe</h2>
                         <p>machado de assis</p>
                         <button>Ver Mais</button>
                     </div>
 
                     <div class="livro">
-                        <img src="img/7" alt="" />
+                        <img src="img/7" alt= />
                         <h2>Pequeno principe</h2>
                         <p>machado de assis</p>
                         <button>Ver Mais</button>
                     </div>
 
                     <div class="livro">
-                        <img src="img/8" alt="" />
+                        <img src="img/8" alt= />
                         <h2>Pequeno principe</h2>
                         <p>machado de assis</p>
                         <button>Ver Mais</button>
                     </div>
 
                     <div class="livro">
-                        <img src="img/9" alt="" />
+                        <img src="img/9" alt= />
                         <h2>Pequeno principe</h2>
                         <p>machado de assis</p>
                         <button>Ver Mais</button>
                     </div>
 
                     <div class="livro">
-                        <img src="img/10" alt="" />
+                        <img src="img/10" alt= />
                         <h2>Pequeno principe</h2>
                         <p>machado de assis</p>
                         <button>Ver Mais</button>
@@ -138,7 +142,7 @@ require_once './complementos/menuBibliotecario.php'
 
                     <div class="item-lista">
                         <div class="imagem-item-lista">
-                            <img src="img/doar.png" alt="">
+                            <img src="img/doar.png" alt=>
                         </div>
                         <div class="conteudo-item-lista">
                             <h2>Nome do leitor</h2>
@@ -155,7 +159,7 @@ require_once './complementos/menuBibliotecario.php'
 
                     <div class="item-lista">
                         <div class="imagem-item-lista">
-                            <img src="img/doar.png" alt="">
+                            <img src="img/doar.png" alt=>
                         </div>
                         <div class="conteudo-item-lista">
                             <h2>Nome do leitor</h2>
@@ -172,7 +176,7 @@ require_once './complementos/menuBibliotecario.php'
 
                     <div class="item-lista">
                         <div class="imagem-item-lista">
-                            <img src="img/doar.png" alt="">
+                            <img src="img/doar.png" alt=>
                         </div>
                         <div class="conteudo-item-lista">
                             <h2>Nome do leitor</h2>
@@ -189,7 +193,7 @@ require_once './complementos/menuBibliotecario.php'
 
                     <div class="item-lista">
                         <div class="imagem-item-lista">
-                            <img src="img/doar.png" alt="">
+                            <img src="img/doar.png" alt=>
                         </div>
                         <div class="conteudo-item-lista">
                             <h2>Nome do leitor</h2>
@@ -206,7 +210,7 @@ require_once './complementos/menuBibliotecario.php'
 
                     <div class="item-lista">
                         <div class="imagem-item-lista">
-                            <img src="img/doar.png" alt="">
+                            <img src="img/doar.png" alt=>
                         </div>
                         <div class="conteudo-item-lista">
                             <h2>Nome do leitor</h2>
@@ -223,7 +227,7 @@ require_once './complementos/menuBibliotecario.php'
 
                     <div class="item-lista">
                         <div class="imagem-item-lista">
-                            <img src="img/doar.png" alt="">
+                            <img src="img/doar.png" alt=>
                         </div>
                         <div class="conteudo-item-lista">
                             <h2>Nome do leitor</h2>
@@ -241,7 +245,8 @@ require_once './complementos/menuBibliotecario.php'
             </div>
 
 
-        </section> -->
+        </section>
+
         <div class="leitoresEncontrados">
            <?php
            $campos = 0;
