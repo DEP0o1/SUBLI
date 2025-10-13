@@ -353,7 +353,29 @@ INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
 (6, 6),-- Eu, Robô - Isaac Asimov*/
 (7, 5), -- Dom Casmurro - Machado de Assis
-(8, 5);  -- 1984 - George Orwell
+(8, 5),-- 1984 - George Orwell
+(9, 13),
+(10, 13),
+(11, 13),
+(12, 13),
+(13, 13),
+(14, 13),
+(15, 13),
+(16, 13),
+(17, 13),
+(18, 13),
+(19, 13),
+(20, 13),
+(21, 13),
+(22, 13),
+(23, 13),
+(24, 13),
+(25, 13),
+(26, 13),
+(27, 13),
+(28, 13),
+(29, 13),
+(30, 13);  
 
 -- ===== RELACIONAMENTO LIVRO ↔ GENERO =====
 INSERT INTO genero_livro (cd_livro, cd_genero) VALUES
