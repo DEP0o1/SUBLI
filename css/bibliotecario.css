@@ -82,6 +82,7 @@ main {
   overflow-x: hidden;
   gap: var(--gap-grande);
   overflow-y: scroll;
+  overflow-x: visible;
   height: calc(100vh - 84px);
 }
 
@@ -106,7 +107,7 @@ body {
   background-size: 100%;
   margin-top: 84px;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: hidden; 
 }
 
 /* --------------------header---------------------------------------------------------------------------------- */
@@ -262,22 +263,21 @@ nav {
 } */
 
 .pgPesquisaLeitor{
-  margin-top: 5%;
-  margin-right: 5%; 
-  margin-left:-2% ;
+  padding-top: 5% ;
+  padding-right: 0%; 
   display: flex;
   flex-direction: column;
   gap: var(--gap-grande);
   overflow-x: hidden;
-  overflow-y: hidden;
+  width: 100%;
 }
 
 .pesquisarLeitor {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw; 
-  margin-top: 10vh;
+  width: 100%;
+  /* padding-right:5% ;  */
 }
 
 .pesquisarLeitor form {

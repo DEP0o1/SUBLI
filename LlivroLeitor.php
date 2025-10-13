@@ -44,10 +44,15 @@ if (isset($_REQUEST['enviado'])) {
           }
           
         else{
+              $emprestimocontroller = new EmprestimoController;         
               $vef_reserva = $controller->ListarReservas(new Reserva(null, null, new Leitor($_SESSION['leitor']), new Livro($codigo), new Biblioteca(), true));
-              if(count($vef_reserva) == 0){
+              $vef_emprestimo = $emprestimocontroller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($_SESSION['leitor']),new Livro($codigo),new Biblioteca(),true));
+
+              if(count($vef_reserva) == 0 && count($vef_emprestimo) == 0){
                 $reserva = $controller->ContarReservas(new Reserva(null, null, new Leitor(), new Livro($codigo), new Biblioteca($cd_biblioteca), true));
-                if ($exemplar[0]["COUNT(*)"] > $reserva[0]["COUNT(*)"]) {
+                $qtdemprestimo = $emprestimocontroller->ContarEmprestimos(new Emprestimo(null,null,null,null,new Leitor(),new Livro($codigo),new Biblioteca($cd_biblioteca),true));
+                $reserva_emprestimo = $reserva[0]["COUNT(*)"] + $qtdemprestimo[0]["COUNT(*)"];
+                if ($exemplar[0]["COUNT(*)"] > $reserva_emprestimo) {
                   $controller->AdicionarReserva(
                     new Reserva(null, null, new Leitor($_SESSION['leitor']), new Livro($codigo), new Biblioteca($cd_biblioteca))
                   );
@@ -68,7 +73,7 @@ if (isset($_REQUEST['enviado'])) {
                         <span class='material-symbols-outlined'>book</span>
                         <h1>Não Foi Possível Reservar Este Livro</h1>
                       </div>
-                      <p>Este livro já foi reservado por outro usuário!</p>
+                      <p>Este livro esta reservado ou emprestado pra outro usuário!</p>
                     </div>";
                 } 
             }
@@ -78,7 +83,7 @@ if (isset($_REQUEST['enviado'])) {
                       <span class='material-symbols-outlined'>book</span>
                       <h1>Não Foi Possível Reservar Este Livro</h1>
                     </div>
-                    <p>Você já esta com uma reserva desse livro ativa!</p>
+                    <p>Você já esta com uma reserva ou um emprestimo desse livro ativa!</p>
                   </div>";
                   
               } 
