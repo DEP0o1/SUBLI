@@ -7,6 +7,27 @@ $metodo = $_SERVER['REQUEST_METHOD'];
 $controlador = new IdiomaController();
 
 switch ($metodo) {
+    case 'GET':
+        try {
+            $idiomas = $controlador->ListarIdiomas();
+            $resposta = [];
+
+            foreach ($idiomas as $idioma) {
+               $resposta[] = [
+                'cd_idioma' => $idioma->cd_idioma,
+                'nm_idioma' => $idioma->nm_idioma
+               ];
+            }
+
+            echo json_encode($resposta);
+        } catch (Exception $erro)
+         {
+            http_response_code(200);
+            json_encode(['mensagem' => $erro->getMessage()]);
+        }
+
+        break;
+
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);
