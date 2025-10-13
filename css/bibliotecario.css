@@ -318,8 +318,11 @@ nav {
 }
 
 .resultadoPesquisaLeitor{
+  display: flex;
+  flex-direction: column;
   margin-left: 10vw;
   display: flex;
+  gap: var(--gap-grande);
 }
 
 .cardLeitor img{
@@ -1736,7 +1739,6 @@ height: 65vh;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   text-align: left;
   overflow-y: scroll;
 }
@@ -1744,7 +1746,6 @@ height: 65vh;
 
 
 .lista-leitores {
-  height: 70vh;
   width: 30vw;
 }
 
