@@ -30,13 +30,21 @@ switch ($metodo) {
             $corpo = json_decode(file_get_contents('php://input'), true);
             if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_editora', 'nm_editora'];
+            $camposJSON = ['nm_editora'];
             if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_editora'])) {
+            if (!is_numeric($corpo['cd_editora']) && $corpo['cd_editora'] != "" ) {
                 http_response_code(400);
                 echo json_encode(['mensagem'=>'Código deve ser numérico.']);
                 return;
+            }
+            else{
+                if(is_numeric($corpo['cd_editora'])){
+                }
+                else{
+                    $corpo['cd_editora'] = null;
+                }
+                
             }
 
             if (strlen($corpo['nm_editora']) < 3) {
@@ -46,9 +54,16 @@ switch ($metodo) {
             }
 
             $editora = new Editora($corpo['cd_editora'], $corpo['nm_editora']);
-            $controlador->Adicionareditora($editora);
-            http_response_code(200);
-            echo json_encode(['mensagem'=>'Editora adicionado com sucesso']);
+          $resultado =  $controlador->AdicionarEditora($editora);
+
+            if($resultado == "Editora não cadastrada! Já existe outra editora com esse código"){
+                echo json_encode(['mensagem'=>'Editora não cadastrada! Já existe outra editora com esse código']);
+            }
+           
+            else{
+                http_response_code(200);
+                echo json_encode(['mensagem'=>'Editora adicionada com sucesso']);
+            }
         } catch (Exception $erro) {
             http_response_code(500);
             echo json_encode(['mensagem'=>$erro->getMessage()]);

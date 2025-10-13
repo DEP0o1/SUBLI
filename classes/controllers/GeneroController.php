@@ -35,6 +35,13 @@ class GeneroController extends Banco
 
         ];
 
+        if($genero->cd_genero != null){
+            $codigo = $this->ListarGeneros(new Genero($genero->cd_genero));
+            if($codigo != []){
+                return "Genero não cadastrado! Já existe outro genero com esse código";
+            }
+        }
+
         $this->Executar('adicionar_genero', $parametros);
     }
 

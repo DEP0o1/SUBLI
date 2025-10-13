@@ -31,13 +31,21 @@ switch ($metodo) {
             $corpo = json_decode(file_get_contents('php://input'), true);
             if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_genero', 'nm_genero'];
+            $camposJSON = ['nm_genero'];
             if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_genero'])) {
+            if (!is_numeric($corpo['cd_genero']) && $corpo['cd_genero'] != "" ) {
                 http_response_code(400);
                 echo json_encode(['mensagem'=>'Código deve ser numérico.']);
                 return;
+            }
+            else{
+                if(is_numeric($corpo['cd_genero'])){
+                }
+                else{
+                    $corpo['cd_genero'] = null;
+                }
+                
             }
 
             if (strlen($corpo['nm_genero']) < 3) {
@@ -47,9 +55,16 @@ switch ($metodo) {
             }
 
             $genero = new Genero($corpo['cd_genero'], $corpo['nm_genero']);
-            $controlador->AdicionarGenero($genero);
-            http_response_code(200);
-            echo json_encode(['mensagem'=>'Gênero adicionado com sucesso']);
+          $resultado =  $controlador->AdicionarGenero($genero);
+
+            if($resultado == "Genero não cadastrado! Já existe outro genero com esse código"){
+                echo json_encode(['mensagem'=>'Genero não cadastrado! Já existe outro genero com esse código']);
+            }
+           
+            else{
+                http_response_code(200);
+                echo json_encode(['mensagem'=>'Genero adicionado com sucesso']);
+            }
         } catch (Exception $erro) {
             http_response_code(500);
             echo json_encode(['mensagem'=>$erro->getMessage()]);

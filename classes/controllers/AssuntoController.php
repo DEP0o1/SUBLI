@@ -41,6 +41,13 @@ class AssuntoController extends Banco
 
         ];
 
+        if($assunto->cd_assunto != null){
+            $codigo = $this->ListarAssuntos(new Assunto($assunto->cd_assunto));
+            if($codigo != []){
+                return "Assunto não cadastrado! Já existe outro assunto com esse código";
+            }
+        }
+
         $this->Executar('adicionar_assunto', $parametros);
     }catch (\Throwable $th) {
         throw $th;
