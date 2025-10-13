@@ -15,13 +15,21 @@ switch ($metodo) {
             $corpo = json_decode(file_get_contents('php://input'), true);
             if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_colecao', 'nm_colecao'];
+            $camposJSON = ['nm_colecao'];
             if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_colecao'])) {
+            if (!is_numeric($corpo['cd_colecao']) && $corpo['cd_colecao'] != "" ) {
                 http_response_code(400);
                 echo json_encode(['mensagem'=>'Código deve ser numérico.']);
                 return;
+            }
+            else{
+                if(is_numeric($corpo['cd_colecao'])){
+                }
+                else{
+                    $corpo['cd_colecao'] = null;
+                }
+                
             }
 
             if (strlen($corpo['nm_colecao']) < 3) {
@@ -31,9 +39,16 @@ switch ($metodo) {
             }
 
             $colecao = new Colecao($corpo['cd_colecao'], $corpo['nm_colecao']);
-            $controlador->Adicionarcolecao($colecao);
-            http_response_code(200);
-            echo json_encode(['mensagem'=>'Coleção adicionado com sucesso']);
+          $resultado =  $controlador->AdicionarColecao($colecao);
+
+            if($resultado == "Colecao não cadastrada! Já existe outra colecao com esse código"){
+                echo json_encode(['mensagem'=>'Colecao não cadastrada! Já existe outra colecao com esse código']);
+            }
+           
+            else{
+                http_response_code(200);
+                echo json_encode(['mensagem'=>'Colecao adicionado com sucesso']);
+            }
         } catch (Exception $erro) {
             http_response_code(500);
             echo json_encode(['mensagem'=>$erro->getMessage()]);

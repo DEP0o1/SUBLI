@@ -35,6 +35,13 @@ class IdiomaController extends Banco
 
         ];
 
+        if($idioma->cd_idioma != null){
+            $codigo = $this->ListarIdiomas(new Idioma($idioma->cd_idioma));
+            if($codigo != []){
+                return "Idioma não cadastrado! Já existe outro idioma com esse código";
+            }
+        }
+
         $this->Executar('adicionar_idioma', $parametros);
     }
 

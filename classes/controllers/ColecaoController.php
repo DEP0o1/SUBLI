@@ -36,6 +36,13 @@ class ColecaoController extends Banco
 
         ];
 
+        if($colecao->cd_colecao != null){
+            $codigo = $this->ListarColecoes(new Colecao($colecao->cd_colecao));
+            if($codigo != []){
+                return "Colecao não cadastrada! Já existe outra colecao com esse código";
+            }
+        }
+
         $this->Executar('adicionar_colecao', $parametros);
 
 
