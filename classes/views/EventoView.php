@@ -31,9 +31,6 @@ public function ExibirEventos($evento = new Evento){
           <p>Adamastor</p>
           <h3>(Responsável)</h3>
           <div class='data-evento'>
-            <span class='material-symbols-outlined'>
-                location_on
-              </span>
           </div>
         </div>
         <a href='BsolicEvento.php'>

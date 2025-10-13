@@ -107,6 +107,10 @@ if (isset($_SESSION['leitor'])) {
       </div>
     </div>
   </div>
+
+  <div class="menuMobile" id="menuMobile">
+    <span class="material-symbols-outlined">menu</span>
+  </div>
 </header>
 
 

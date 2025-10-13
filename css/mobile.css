@@ -1,9 +1,24 @@
+:root {
+    --vinho: #a32950;
+    --vinho-hover: #8f2748;
+    --azul: #102e4e;
+    --azul-hover: #193f68;
+    --amarelo: #fdc18d;
+    --branco: #fffbf7;
+    --bege: #b59e8b;
+    --fundo: #faf4ee;
+    --cinza: #857d72;
+    --gap: 10px;
+    --gap-grande: 50px;
+    --radius: 10px;
+    --border: solid 1px rgba(0, 0, 0, 0.192);
+  }
+
 /* --------header------------------------------------ */
 @media only screen and (max-width: 600px){
 
     header{
         width: 100vw;
-        padding-left: 1vw;
         justify-content: space-between;
     }
 
@@ -13,6 +28,7 @@
 
     .abas{
         gap: 10px;
+        display: none;
     }
 
     .areaPesquisa{
@@ -23,8 +39,7 @@
 
     .divInput{
         width: fit-content;
-        margin-left: 2px;
-        padding: 5px 7px 5px 5px;
+        padding: 5px 170px 5px 5px;
         align-items: center;
     }
 
@@ -34,6 +49,10 @@
 
     .dropbtn{
         padding: 0;
+    }
+
+    .menuMobile {
+        display: block;
     }
 }
 
@@ -97,6 +116,34 @@
         justify-content: center;
         margin-left: 0%;
     }
+
+
+    .eventos {
+        display: flex;
+        flex-direction: column ;
+        justify-content: center;
+        align-items: center;
+        gap: var(--gap);
+    }
+
+    .containerEventos {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+    }
+
+    #lista-eventos-index-leitor {
+        display: none;
+    }
+
+    .item-lista {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
 }
 
 /* ----------livro leitor ------------------------------------- */

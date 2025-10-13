@@ -263,15 +263,15 @@ botaoAbrirAutor.addEventListener("click", () => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
   
-      const cd_genero = form.elements['cd_genero'].value.trim();
-      const nm_genero = form.elements['nm_genero'].value.trim();
+      const cd_idioma = form.elements['cd_idioma'].value.trim();
+      const nm_idioma = form.elements['nm_idioma'].value.trim();
   
       const dados = {
-        cd_genero,
-        nm_genero
+        cd_idioma,
+        nm_idioma
       };
   
-      fetch('http://localhost/subli/api/genero.php', {
+      fetch('http://localhost/subli/api/idioma.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

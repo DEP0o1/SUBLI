@@ -34,7 +34,9 @@ if(empty($assunto2)) $assunto2 = null;
 </head>
 
 <body>
-    
+    <?php
+    include_once('./complementos/menuMobileLeitor.php')
+    ?>
     <main>
         <section class="banner">
             <div class="imgbanner">
@@ -81,11 +83,6 @@ if(empty($assunto2)) $assunto2 = null;
             </span>
             Aplicar 
         </button>
-
-        <a class="location" href="Bibliotecas.php">
-            <img src="img/location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Localização" />
-        </a>
-
         
     </form>
     
@@ -147,7 +144,7 @@ if(empty($assunto2)) $assunto2 = null;
           <!-- calendario -->
         </div>
       
-        <div class="lista">
+        <div class="lista" id="lista-eventos-index-leitor">
       
          <?php
                   $evento = new EventoView;

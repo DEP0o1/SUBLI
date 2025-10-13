@@ -221,6 +221,10 @@ header {
   margin: 0;
 }
 
+.menuMobile {
+  display: none;
+}
+
 header span {
   color: var(--branco);
   cursor: pointer;
@@ -302,6 +306,14 @@ a:hover {
 
 .abas a {
   width: fit-content;
+}
+
+/*------------------------------menuMobileLeitor------------------------------------------------------------------------------*/
+
+.menuMobileLeitor {
+  background-color: var(--azul);
+  height: 100vh;
+  width: 20px;
 }
 
 /* -------------------------------footer---------------------------------------------------------------------*/
@@ -558,7 +570,7 @@ span {
   font-family: "Inter";
 }
 .containerEventos {
-  gap: 6.7%;
+  gap: var(--gap);
   width: 70%;
   padding-left: 7.5vw;
   display: flex;
