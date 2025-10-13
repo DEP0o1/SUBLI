@@ -34,6 +34,12 @@ class EditoraController extends Banco
             'p_nm_editora' => $editora->nm_editora
 
         ];
+        if($editora->cd_editora != null){
+            $codigo = $this->ListarEditoras(new Editora($editora->cd_editora));
+            if($codigo != []){
+                return "Editora não cadastrada! Já existe outra editora com esse código";
+            }
+        }
 
         $this->Executar('adicionar_editora', $parametros);
     }

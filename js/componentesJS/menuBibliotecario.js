@@ -149,11 +149,11 @@ botaoAbrirAutor.addEventListener("click", () => {
         <section class="areaInput">
           <div class="areaTituloLivro">
             <label>Código do gênero:</label>
-            <input id="cd_genero" type="text" placeholder="Ex: 1">
+            <input name="cd_genero" id="cd_genero" type="text" placeholder="Ex: 1">
           </div>
           <div class="areaTituloLivro">
             <label>Gênero:</label>
-            <input id="nm_genero" type="text" placeholder="Ex: Ficção científica">
+            <input name="nm_genero" id="nm_genero" type="text" placeholder="Ex: Ficção científica">
           </div>
           <div class="areaBtn">
             <button class="btnRosa">Cadastrar</button>
@@ -413,11 +413,11 @@ botaoAbrirAutor.addEventListener("click", () => {
         <section class="areaInput">
           <div class="areaTituloLivro">
             <label>Código Assunto:</label>
-            <input id="cd_assunto" type="text" placeholder="Ex: 1">
+            <input name="cd_assunto" id="cd_assunto" type="text" placeholder="Ex: 1">
           </div>
           <div class="areaTituloLivro">
             <label>Assunto:</label>
-            <input id="nm_assunto" type="text" placeholder="Ex: Reflexão">
+            <input name="nm_assunto" id="nm_assunto" type="text" placeholder="Ex: Reflexão">
           </div>
           <div class="areaBtn">
             <button class="btnRosa">Cadastrar</button>

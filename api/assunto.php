@@ -28,31 +28,41 @@ switch ($metodo) {
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);
-            if (!validaCorpoRequisicao($corpo)) {
-                return;
-            }
+            if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_assunto', 'nm_assunto'];
-            if (!validaChaves($corpo, $camposJSON)) {
-                return;
-            }
+            $camposJSON = ['nm_assunto'];
+            if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_assunto'])) {
+            if (!is_numeric($corpo['cd_assunto']) && $corpo['cd_assunto'] != "" ) {
                 http_response_code(400);
-                echo json_encode(['mensagem' => 'Código deve ser numérico.']);
+                echo json_encode(['mensagem'=>'Código deve ser numérico.']);
                 return;
+            }
+            else{
+                if(is_numeric($corpo['cd_assunto'])){
+                }
+                else{
+                    $corpo['cd_assunto'] = null;
+                }
+                
             }
 
             if (strlen($corpo['nm_assunto']) < 3) {
                 http_response_code(400);
-                echo json_encode(['mensagem' => 'Nome deve ter no mínimo 3 caracteres.']);
+                echo json_encode(['mensagem'=>'Nome deve ter no mínimo 3 caracteres.']);
                 return;
             }
 
             $assunto = new Assunto($corpo['cd_assunto'], $corpo['nm_assunto']);
-            $controlador->Adicionarassunto($assunto);
-            http_response_code(200);
-            echo json_encode(['mensagem' => 'Assunto adicionado com sucesso']);
+            $resultado =  $controlador->AdicionarAssunto($assunto);
+
+            if($resultado == "Assunto não cadastrado! Já existe outro assunto com esse código"){
+                echo json_encode(['mensagem'=>'assunto não cadastrado! Já existe outro assunto com esse código']);
+            }
+            else{
+                http_response_code(200);
+                echo json_encode(['mensagem'=>'Assunto adicionado com sucesso']);
+            }
         } catch (Exception $erro) {
             http_response_code(500);
             echo json_encode(['mensagem' => $erro->getMessage()]);

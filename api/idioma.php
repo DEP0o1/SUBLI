@@ -33,13 +33,21 @@ switch ($metodo) {
             $corpo = json_decode(file_get_contents('php://input'), true);
             if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_idioma', 'nm_idioma'];
+            $camposJSON = ['nm_idioma'];
             if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_idioma'])) {
+            if (!is_numeric($corpo['cd_idioma']) && $corpo['cd_idioma'] != "" ) {
                 http_response_code(400);
                 echo json_encode(['mensagem'=>'Código deve ser numérico.']);
                 return;
+            }
+            else{
+                if(is_numeric($corpo['cd_idioma'])){
+                }
+                else{
+                    $corpo['cd_idioma'] = null;
+                }
+                
             }
 
             if (strlen($corpo['nm_idioma']) < 3) {
@@ -49,9 +57,18 @@ switch ($metodo) {
             }
 
             $idioma = new Idioma($corpo['cd_idioma'], $corpo['nm_idioma']);
-            $controlador->Adicionaridioma($idioma);
-            http_response_code(200);
-            echo json_encode(['mensagem'=>'Idioma adicionado com sucesso']);
+          $resultado =  $controlador->AdicionarIdioma($idioma);
+
+            if($resultado == "Idioma não cadastrado! Já existe outro idioma com esse código"){
+                echo json_encode(['mensagem'=>'Idioma não cadastrado! Já existe outro idioma com esse código']);
+            }
+           
+            else{
+                http_response_code(200);
+                echo json_encode(['mensagem'=>'idioma adicionado com sucesso']);
+            }
+            http_response_code(500);
+            echo json_encode(['mensagem'=>$erro->getMessage()]);
         } catch (Exception $erro) {
             http_response_code(500);
             echo json_encode(['mensagem'=>$erro->getMessage()]);
