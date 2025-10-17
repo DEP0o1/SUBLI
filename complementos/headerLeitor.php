@@ -16,6 +16,7 @@ if (isset($_SESSION['leitor'])) {
 
 <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
 <script src="js/componentesJS/dropDown.js"></script>
+<script src="js/componentesJS/menuMobileLeitor.js"></script>
 
 <header>
   <a href="LindexLeitor.php">
