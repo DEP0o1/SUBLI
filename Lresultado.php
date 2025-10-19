@@ -34,8 +34,6 @@ if (isset($_REQUEST['valor'])) {
 
   
   <div class="conteudo-pesquisa">
-
-  
   <section class="pesquisa">
     <select name="Categoria" id="" class="categoria">
       <option value="">Categorias</option>
@@ -51,7 +49,7 @@ if (isset($_REQUEST['valor'])) {
 
   </section>
 
-  <section class="exibirLivros">
+  <section class="exibirLivrosResultado">
 
     <?php
 

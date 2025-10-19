@@ -1675,10 +1675,11 @@ h1 {
 
 .fotoMenordoacao {
   display: flex;
-  flex-direction: column;
-  /* background-color: rgb(50, 109, 129); */
   gap: var(--gap);
   border-radius: var(--radius);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .fotoMenordoacao img{
@@ -1686,10 +1687,9 @@ h1 {
   cursor: pointer;
 }
 
-
 .imgLivroLista {
-height: 160px;
-width: 110px;
+height: 95px;
+width: calc(95px * (2/3));
 border-radius: var(--radius);
 }
 
@@ -1822,6 +1822,15 @@ height: 65vh;
 .divRowItem{
 display: flex;
 flex-direction: row;
+gap: var(--gap);
+align-items: flex-start;
+padding: 1%;
+width: fit-content;
+}
+
+.divColumnItem{
+display: flex;
+flex-direction: column-reverse;
 gap: var(--gap);
 align-items: flex-start;
 padding: 1%;

@@ -137,7 +137,7 @@
 
         </div>
         
-        <div class="conteudo-aside-leitores">
+        <div class="conteudo-aside-biblioteca">
             <h1>Cadastros</h1>
 
             <a href="BcadastrarLeitor.php">
@@ -190,6 +190,17 @@
                 <span class="material-symbols-outlined">subject</span>
                 <p>Cadastrar Assunto</p>
             </div>
+        </div>
+
+        <div class="conteudo-aside-leitores">
+            <h1>Sua Conta</h1>
+
+            <a href="sair.php">
+                <div class="informacao-aside" id="abrir-leitor">
+                    <span class="material-symbols-outlined">person_add</span>
+                    <p>Sair</p>
+                </div>
+            </a>
         </div>
 
 </aside>

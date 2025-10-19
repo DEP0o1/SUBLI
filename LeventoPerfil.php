@@ -95,7 +95,7 @@ $campos = 0;
 
 
 
-          <button type="submit" id="btnEvento">Realizar solicitação de evento</button>
+          <button type="submit" id="btnEvento">Solicitar de evento</button>
           <?php
           if($campos == 4){
             echo $evento;

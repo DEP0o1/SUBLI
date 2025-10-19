@@ -56,7 +56,7 @@ if (isset($_REQUEST['recusado'])) {
 
       <section class="pagDoacao">
 
-        <div class="divRowItem">
+        <div class="divColumnItem">
 
           <?php
           $controller = new DoacaoController;

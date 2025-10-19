@@ -190,13 +190,13 @@ function inicializarCarrossel(carrosselId) {
     const setaEsquerda = document.querySelector(`.seta-esquerda[data-target="${carrosselId}"]`);
     const setaDireita = document.querySelector(`.seta-direita[data-target="${carrosselId}"]`);
 
-    const livrosPorVez = 5;
+    const livrosPorVez = 2.70;
     let slideAtual = 0;
     const totalLivros = livros.length;
     const totalSlides = Math.ceil(totalLivros / livrosPorVez);
 
     function atualizarCarrossel() {
-        const larguraLivro = livros[0].offsetWidth + 20; 
+        const larguraLivro = livros[0].offsetWidth + 17; 
         const deslocamento = -slideAtual * larguraLivro * livrosPorVez;
         carrossel.style.transform = `translateX(${deslocamento}px)`;
 

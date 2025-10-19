@@ -158,6 +158,11 @@
           transform: translateX(100%);
         }
       }
+
+      .exibirLivrosResultado {
+        width: 100vw;
+        margin: 40px 0px 40px 0px;
+      }
 }
 
 /* ----------------Index leitor ------------------------*/

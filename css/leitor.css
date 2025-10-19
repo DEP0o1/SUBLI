@@ -1151,6 +1151,17 @@ main {
   gap: var(--gap);
 }
 
+.exibirLivrosResultado {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 70vw;
+  margin: 40px;
+  height: fit-content;
+  gap: var(--gap);
+}
+
 .doacaoLivros {
   display: flex;
   gap: 2.5%;
@@ -1824,7 +1835,6 @@ label {
   padding: 10px;
   cursor: pointer;
 }
-
 
 /* ------------- Footer------------------------------------------------------------------------------------------------------------- */
 
