@@ -45,6 +45,7 @@ $campos = 0;
     <link rel="stylesheet" href="css/leitor.css"/>
     <link rel="stylesheet" href="css/leitorPerfil.css" />
     <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
     <script src="js/componentesJS/popUps.js" defer></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="js/componentesJS/popupEditarPerfil.js" defer></script>

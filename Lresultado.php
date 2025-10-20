@@ -49,37 +49,39 @@ if (isset($_REQUEST['valor'])) {
 
   </section>
 
-  <section class="exibirLivrosResultado">
+  <div class="divQueEnglobaExibirLivrosResultado">
+    <section class="exibirLivrosResultado">
+      <?php
 
-    <?php
+if ($buscar) {
+  $livro = new LivroView;
+  
+  if ($valor == "") {
+    $livro->ExibirLivros();
+  } else {
+    $livro->ExibirLivros(new Livro(null, $valor));
+  }
+}
+?>
 
-    if ($buscar) {
-      $livro = new LivroView;
+<!-- <div class="livro">
+  <img src="img/capa1.jpg" alt="" />
+  <h2>Pequeno principe</h2>
+  <p>machado de assis</p>
+  <button>Ver Mais</button>
+</div>-->
 
-      if ($valor == "") {
-        $livro->ExibirLivros();
-      } else {
-        $livro->ExibirLivros(new Livro(null, $valor));
-      }
-    }
-    ?>
+<!-- <div class="nao-encontrado">
+  <span class='material-symbols-outlined'>
+    menu_book
+  </span>
+  <h1>Nenhum livro foi encontrado</h1>
+</div> -->
 
-    <!-- <div class="livro">
-        <img src="img/capa1.jpg" alt="" />
-        <h2>Pequeno principe</h2>
-        <p>machado de assis</p>
-        <button>Ver Mais</button>
-      </div>-->
+</button>
+</section>
+</div>
 
-    <!-- <div class="nao-encontrado">
-      <span class='material-symbols-outlined'>
-        menu_book
-      </span>
-      <h1>Nenhum livro foi encontrado</h1>
-    </div> -->
-
-    </button>
-  </section>
   </div>
   </main>
 </body>

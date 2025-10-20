@@ -1151,13 +1151,34 @@ main {
   gap: var(--gap);
 }
 
+.divQueEnglobaExibirLivrosResultado {
+  width: 100%;
+}
+
+.imagemPerfilMenu {
+  height: 150px;
+  width: 100%;
+  border-radius: 90000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagemPerfilMenu img{
+  height: 125px;
+  width: 125px;
+  border-radius: 90000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .exibirLivrosResultado {
   display: flex;
-  align-items: left;
   justify-content: center;
   flex-wrap: wrap;
   height: 70vw;
-  margin: 40px;
+  margin: 41px;
   height: fit-content;
   gap: var(--gap);
 }
