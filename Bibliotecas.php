@@ -1,5 +1,9 @@
 <?php
 require_once('config.php');
+<<<<<<< HEAD
+=======
+// require_once('verificadoBibliotecario.php');
+>>>>>>> d3892d14669aa024b626718c244a0f45e14e5811
 
 ?>
 

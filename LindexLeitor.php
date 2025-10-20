@@ -175,7 +175,7 @@ if(empty($assunto2)) $assunto2 = null;
     </main>
 
     <?php
-    include_once('./complementos/footer.php');
+    include_once('./complementos/footerLeitor.php');
     ?>
 
     <script src="js/componentesJS/calendario.js"></script>

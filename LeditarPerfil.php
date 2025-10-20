@@ -51,10 +51,11 @@ $campos = 0;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil</title>
+    <title>SUBLI - Perfil</title>
     <link rel="stylesheet" href="css/leitor.css"/>
     <link rel="stylesheet" href="css/leitorPerfil.css" />
     <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     <!-- <script src="js/componentesJS/popupEditarPerfil.js" defer></script> -->
     <script src="js/componentesJS/popupLogout.js" defer></script>
