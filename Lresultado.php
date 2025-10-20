@@ -52,15 +52,19 @@ if (isset($_REQUEST['valor'])) {
   <section class="exibirLivrosResultado">
 
     <?php
-
+     $livro = new LivroView;
     if ($buscar) {
-      $livro = new LivroView;
+     
 
       if ($valor == "") {
         $livro->ExibirLivros();
       } else {
         $livro->ExibirLivros(new Livro(null, $valor));
       }
+    }
+
+    else{
+      $livro->ExibirLivros();
     }
     ?>
 

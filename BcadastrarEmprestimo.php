@@ -63,7 +63,7 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
             }
 
             if(isset($emprestimo_reserva)){
-                if($exemplar > $emprestimo_reserva){
+                if($exemplar[0]['COUNT(*)'] > $emprestimo_reserva){
                     $emprestimo = $emprestimocontroller->AdicionarEmprestimo(new Emprestimo(null,null,$dt_devolucao_esperada,null,new Leitor($cd_email),new Livro($cd_livro),new Biblioteca($cd_biblioteca)));
                     
                     

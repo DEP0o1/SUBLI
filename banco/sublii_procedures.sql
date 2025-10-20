@@ -522,7 +522,7 @@ BEGIN
       AND (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro);
 END$$
 
-CALL listar_editoras(null, null, null);
+/*CALL listar_editoras(null, null, null);*/
 
 DROP PROCEDURE IF EXISTS adicionar_editora$$
 CREATE PROCEDURE adicionar_editora(
