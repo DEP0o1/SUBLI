@@ -51,9 +51,7 @@ if (isset($_REQUEST['valor'])) {
 
   <div class="divQueEnglobaExibirLivrosResultado">
     <section class="exibirLivrosResultado">
-      <?php
 
-<<<<<<< HEAD
     <?php
      $livro = new LivroView;
     if ($buscar) {
@@ -69,8 +67,7 @@ if (isset($_REQUEST['valor'])) {
     else{
       $livro->ExibirLivros();
     }
-    ?>
-=======
+
 if ($buscar) {
   $livro = new LivroView;
   
@@ -95,7 +92,7 @@ if ($buscar) {
   </span>
   <h1>Nenhum livro foi encontrado</h1>
 </div> -->
->>>>>>> d3892d14669aa024b626718c244a0f45e14e5811
+
 
 </button>
 </section>

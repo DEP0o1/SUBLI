@@ -90,6 +90,8 @@ if (isset($_REQUEST['enviado'])) {
         <img src='img/{$Livro->cd_livro}' alt=''>
       </div>
 
+      
+
       <div class='pagLivro'>
         <div class='dadosLivro'>
           <h1>{$Livro->nm_livro}</h1>
