@@ -34,7 +34,7 @@ $campos = 0;
   if($campos == 4){
 
     $controller = new EventoController;
-    $evento = $controller->AdicionarEvento(new Evento($nm_evento,null,$dt_evento,$ds_evento,null,new Biblioteca($cd_biblioteca),new Leitor($cd_email)));
+    $evento = $controller->AdicionarEvento(new Evento($nm_evento,null,$dt_evento,$ds_evento,new Biblioteca($cd_biblioteca),new Leitor($cd_email)));
   }
 ?>
 
@@ -61,7 +61,7 @@ $campos = 0;
     <?php require_once 'barraLateral.php'; ?>
 
       <section class="areaPerfil">
-        <form action="">
+        <form method="POST">
           <div class="titulo-areaPerfil">
             <h1>Solicitar Evento</h1>
             <hr />

@@ -4,7 +4,7 @@ require_once('config.php');
 require_once('verificado.php');
 
 $cd_email = $_SESSION['leitor'];
-// O CD_EMAIL VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
+
 $nm_livro = null;
 $cd_biblioteca = null;
 $nm_autor = null;
@@ -29,11 +29,14 @@ $campos = 0;
 
 
   if($campos == 3){
-    $mensagem = "Solicitação de Doação feita com Sucesso";
+ 
       $controller = new DoacaoController();
-      $doacao = $controller->AdicionarDoacao(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
-  }    
-      
+      $conferencia = $controller->ListarDoacoes(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
+      if($conferencia == []){
+        $doacao = $controller->AdicionarDoacao(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
+        $mensagem = "Solicitação de Doação feita com Sucesso";
+      }
+    }    
       ?>
 
 <!DOCTYPE html>
@@ -61,7 +64,7 @@ $campos = 0;
 <?php include 'barraLateral.php'; ?>
   
       <section class="areaPerfil">
-        <form action="">
+        <form method = "POST" action="">
           <div class="titulo-areaPerfil">
               <h1>Doação</h1>
               <hr/>
@@ -97,7 +100,7 @@ $campos = 0;
         </form>
         <?php
         
-        if($campos == 3){
+        if($campos == 3 && $conferencia == []){
           echo $mensagem;
         }
         ?>

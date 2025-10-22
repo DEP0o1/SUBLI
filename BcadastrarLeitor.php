@@ -55,17 +55,29 @@ if (isset($_REQUEST['cd_cep']) && $_REQUEST['cd_cep'] != "") {
 
 if ($campos == 8) {
     $controller = new LeitorController();
-    $leitor = $controller->AdicionarLeitor(new Leitor(
-        $cd_email,
-        $nm_leitor,
-        $cd_cpf,
-        $cd_telefone,
-        $ic_comprovante_residencia,
-        $nm_senha,
-        $dt_nascimento,
-        $nm_endereco,
-        $cd_cep
-    ));
+    $conferencia = $controller->ListarLeitores(new Leitor($cd_email,
+    $nm_leitor,
+    $cd_cpf,
+    $cd_telefone,
+    $ic_comprovante_residencia,
+    $nm_senha,
+    $dt_nascimento,
+    $nm_endereco,
+    $cd_cep));
+
+    if($conferencia == []){
+        $leitor = $controller->AdicionarLeitor(new Leitor(
+            $cd_email,
+            $nm_leitor,
+            $cd_cpf,
+            $cd_telefone,
+            $ic_comprovante_residencia,
+            $nm_senha,
+            $dt_nascimento,
+            $nm_endereco,
+            $cd_cep
+        ));
+    }
 }
 
 ?>
@@ -141,7 +153,7 @@ if ($campos == 8) {
                 <div class="areaBtn">
                     <button class="btnRosa">Cadastrar</button>
                     <?php
-                    if ($campos == 8) {
+                    if ($campos == 8 && $conferencia == []) {
                         echo $leitor;
                     }
                     ?>

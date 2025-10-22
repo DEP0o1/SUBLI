@@ -10,6 +10,7 @@ class DoacaoController extends Banco
         try{
             $parametros = [
                 'p_cd_doacao' => $doacao->cd_doacao,
+                'p_nm_autor' => $doacao->livro->autores[0]->nm_autor,
                 'p_nm_livro' => $doacao->livro->nm_livro,
                 'p_cd_biblioteca' => $doacao->biblioteca->cd_biblioteca,
                 'p_cd_email' => $doacao->leitor->cd_email,

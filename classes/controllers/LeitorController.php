@@ -7,7 +7,7 @@ class LeitorController extends Banco
         try{
 
             $parametros = [
-                'p_email_leitor' => $leitor->cd_email,
+                'p_cd_email' => $leitor->cd_email,
                 'p_nm_leitor' => $leitor->nm_leitor,
                 'p_cd_cpf' => $leitor->cd_cpf,
                 'p_cd_telefone' => $leitor->cd_telefone,
@@ -65,9 +65,26 @@ class LeitorController extends Banco
                         'p_cd_cep' => $leitor->cd_cep
         ];
 
-
-        $this->Executar('adicionar_leitor', $parametros);
-        return "Leitor cadastrado com sucesso!";
+        $conferencia = $this->ListarLeitores(new Leitor($leitor->cd_email));
+        if($conferencia != []){
+            return "Já existe um leitor com esse email cadastrado no sistema";
+        }
+        else{
+            $conferencia = $this->ListarLeitores(new Leitor(null,null,$leitor->cd_cpf));
+            if($conferencia != []){
+                return "Já existe um leitor com esse CPF cadastrado no sistema";
+            }
+            else{
+                $conferencia = $this->ListarLeitores(new Leitor(null,null,null,$leitor->cd_telefone));
+                if($conferencia != []){
+                    return "Já existe um leitor com esse telefone cadastrado no sistema";
+                }
+                else{ 
+                $this->Executar('adicionar_leitor', $parametros);
+                return "Leitor cadastrado com sucesso!";
+                }
+            }
+        }
 
     }   catch(\Throwable $th) {
             throw $th;
