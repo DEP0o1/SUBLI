@@ -231,6 +231,38 @@ function inicializarCarrossel(carrosselId) {
 
 inicializarCarrossel('carrossel-destaques');
 inicializarCarrossel('carrossel-procurados');
+
+const notificacao = document.getElementById('notificacao')
+
+function CriarMenuNotificacao() {
+    menuNotificacao = document.createElement('div')
+    menuNotificacao.classList.add('btnRosa')
+    menuNotificacao.innerHTML = `
+    <p>asdfjadsfh</p>
+    
+    <button id="fecharMenuNotificacao">
+            <span class="material-symbols-outlined">close</span>
+            </button>
+
+    `;
+
+    document.body.appendChild(menuNotificacao)
+}
+
+const fecharMenuNotificacao = document.getElementById('fecharMenuNotificacao')
+
+function FecharMenu() {
+
+}
+
+notificacao.addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log("sdfsaf")
+    CriarMenuNotificacao()
+})
+
+
+
 });
 
     </script>

@@ -39,10 +39,8 @@ if (isset($_SESSION['leitor'])) {
     <a href="Bibliotecas.php">Bibliotecas</a>
     <a href="../../SUBLI/LdoarPerfil.php">Doação</a>
 
-    <div class="span-header">
-      <a href="">
+    <div class="span-header" id="notificacao">
         <span class="material-symbols-outlined">notifications</span>
-      </a>
     </div>
 
     <div class="span-header">
