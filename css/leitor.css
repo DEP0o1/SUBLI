@@ -1455,7 +1455,8 @@ main {
 }
 
 .livro a {
-  color: var(--branco);
+  color: var(--vinho);
+  font-weight: bolder;
 }
 
 .livro:hover {
@@ -1482,12 +1483,13 @@ main {
 }
 
 .livro button {
-  background-color: var(--vinho);
-  color: var(--branco);
+  background-color: transparent;
+  color: var(--vinho);
   border: none;
   padding: 8px 14px;
   border-radius: var(--radius);
   cursor: pointer;
+  border: var(--vinho) solid 1px;
   margin-top: auto;
 }
 
