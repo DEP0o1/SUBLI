@@ -7,6 +7,8 @@ $nm_leitor = null;
 $nm_senha = null;
 $email_troca = null;
 $campos = 0;
+$conferido = null;
+$conferido2 = null;
 
     if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != "") {
             $nm_leitor = $_REQUEST['nm_leitor'];
@@ -21,27 +23,55 @@ $campos = 0;
 
     if (isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != "") {
       $email_troca = $_REQUEST['email_troca'];
-    $campos = $campos + 1 ; 
+      $campos = $campos + 1 ; 
 }
 
 
     if($campos == 3 || $campos == 2 || $campos == 1){
       $controller = new LeitorController;
-        
-      if($campos == 1){
+
+      if(isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != ""){
+        $conferencia_email_novo = $controller->ListarLeitores(new Leitor($email_troca,$nm_leitor,null,null,null,$nm_senha));
+      }
+      else{
+        $conferencia = $controller->ListarLeitores(new Leitor($cd_email,$nm_leitor,null,null,null,$nm_senha));
+      }
+        if(isset($conferencia_email_novo) && $conferencia_email_novo == []){
+          $conferido = true;
           if(isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != ""){
-           $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,$nm_leitor));
-          }
-
-          if(isset($_REQUEST['nm_senha']) && $_REQUEST['nm_senha'] != ""){
-            $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,$nm_senha));
+            $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,$nm_leitor));
            }
-
-           if(isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != ""){
-            $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,null,null,null,null,null,null,null,null,$email_troca));
-           }
+ 
+           if(isset($_REQUEST['nm_senha']) && $_REQUEST['nm_senha'] != ""){
+             $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,$nm_senha));
+            }
+ 
+            if(isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != ""){
+             $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,null,null,null,null,null,null,null,null,$email_troca));
+             $_SESSION['leitor'] = $_REQUEST['email_troca'];
+ 
+            }
         }
 
+        else{
+              if($conferencia == []){
+                $conferido2 = true;
+                if(isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != ""){
+                  $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,$nm_leitor));
+                 }
+       
+                 if(isset($_REQUEST['nm_senha']) && $_REQUEST['nm_senha'] != ""){
+                   $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,$nm_senha));
+                  }
+       
+                  if(isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != ""){
+                   $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,null,null,null,null,null,null,null,null,$email_troca));
+                   $_SESSION['leitor'] = $_REQUEST['email_troca'];
+       
+                  }
+              }
+        }
+          
         
     }
 ?>
@@ -66,7 +96,7 @@ $campos = 0;
     <main>
     <?php require_once 'barraLateral.php'; ?>
       <section class="areaPerfil">
-        <form metod = "GET" action="">
+        <form method = "POST" action="">
           <div class="titulo-areaPerfil">
               <h1>Editar Perfil</h1>
               <hr/>
@@ -95,7 +125,7 @@ $campos = 0;
           <button type="submit" id="btnEditarPerfil">Salvar alterações</button>
 
           <?php
-              if($campos == 2 || $campos == 1){
+              if($campos && $conferido == true || $conferido2 == true){
                 echo $Leitor;
               }
           ?>

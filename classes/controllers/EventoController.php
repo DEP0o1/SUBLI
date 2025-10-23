@@ -27,8 +27,8 @@ class EventoController extends Banco
             foreach($dados as $item){
                 $Evento = new Evento;
                 $Evento->Hydrate($item);
-                // $Evento->biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca(null,null,null,[new Livro()],[new Bibliotecario()],null,$Evento->cd_evento));
-                // $Evento->leitor = $leitorcontroller->ListarLeitores(new Leitor(null,null,null,null,null,null,null,$Evento->cd_evento));
+                $Evento->biblioteca = new Biblioteca($item['cd_biblioteca']);
+                $Evento->leitor = new Leitor($item['cd_email']);
                 array_push($lista, $Evento);
             }
           
