@@ -38,6 +38,7 @@ if (isset($_SESSION['leitor'])) {
     <a href="../../SUBLI/Lresultado.php">Livros</a>
     <a href="Bibliotecas.php">Bibliotecas</a>
     <a href="../../SUBLI/LdoarPerfil.php">Doação</a>
+    <a href="../../SUBLI/LeventoPerfil.php">Eventos</a>
 
     <div class="span-header" id="notificacao">
         <span class="material-symbols-outlined">notifications</span>
@@ -63,6 +64,13 @@ if (isset($_SESSION['leitor'])) {
               <div class="titulo-dropdown">
                 <span class="material-symbols-outlined">account_circle</span>
                 <h3>Meu Perfil</h3>
+              </div>
+            </a>
+
+            <a href="LmeusLivros.php">
+              <div class="titulo-dropdown">
+                <span class="material-symbols-outlined">account_circle</span>
+                <h3>Editar Perfil</h3>
               </div>
             </a>
 
