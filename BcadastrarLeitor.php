@@ -89,7 +89,7 @@ if ($campos == 8) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Novo Leitor </title>
+    <title>SUBLI - Novo Leitor </title>
     <link rel="stylesheet" href="css/bibliotecario.css">
     <link rel="stylesheet" href="css/mobile.css">
     <script src="js/componentesJS/header.js"></script>

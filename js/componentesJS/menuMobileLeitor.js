@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const fechar = document.getElementById("fechar-menu-leitor");
+
   function fecharMenu() {
     alert("hsdfhkjsdikh");
     const menuLeitor = document.querySelector("aside");
@@ -88,8 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
     abrirMenu();
   });
 
-  fechar.addEventListener("click", function (e) {
-    e.preventDefault;
-    fecharMenu();
-  });
+//   fechar.addEventListener("click", function (e) {
+//     e.preventDefault;
+//     // fecharMenu();
+//     alert('sxjfbnhkjds')
+//   });
 });

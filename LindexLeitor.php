@@ -249,10 +249,13 @@ function CriarMenuNotificacao() {
     document.body.appendChild(menuNotificacao)
 }
 
-const fecharMenuNotificacao = document.getElementById('fecharMenuNotificacao')
 
 function FecharMenu() {
+    const fecharMenuNotificacao = document.getElementById('fecharMenuNotificacao')
 
+    fecharMenuNotificacao.addEventListener('click', (e) => {
+        alert('hfkjhsdfkhs')
+    })
 }
 
 notificacao.addEventListener('click', (e) => {
@@ -260,6 +263,8 @@ notificacao.addEventListener('click', (e) => {
     console.log("sdfsaf")
     CriarMenuNotificacao()
 })
+
+
 
 
 

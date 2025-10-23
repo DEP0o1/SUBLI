@@ -163,6 +163,20 @@
         width: 100vw;
         margin: 40px 0px 40px 0px;
       }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .banner {
+        display: none;
+      }
+
+      .footerCima {
+        display: flex;
+        flex-direction: column;
+      }
 }
 
 /* ----------------Index leitor ------------------------*/
