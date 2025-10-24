@@ -32,9 +32,18 @@ $campos = 0;
   }
 
   if($campos == 4){
-
     $controller = new EventoController;
-    $evento = $controller->AdicionarEvento(new Evento($nm_evento,null,$dt_evento,$ds_evento,new Biblioteca($cd_biblioteca),new Leitor($cd_email)));
+    $conferencia = $controller->ListarEventos(new Evento($nm_evento,null,$dt_evento,$ds_evento,new Biblioteca($cd_biblioteca),new Leitor($cd_email)));
+    if($conferencia != []){
+        $nm_evento = null;
+        $ds_evento = null;
+        $dt_evento = null;
+        $cd_email = null;
+    }
+    else{
+      $evento = $controller->AdicionarEvento(new Evento($nm_evento,null,$dt_evento,$ds_evento,new Biblioteca($cd_biblioteca),new Leitor($cd_email)));
+    }
+
   }
 ?>
 
@@ -98,7 +107,7 @@ $campos = 0;
 
           <button type="submit" id="btnEvento">Solicitar de evento</button>
           <?php
-          if($campos == 4){
+          if($campos == 4 && $conferencia == []){
             echo $evento;
           }
           

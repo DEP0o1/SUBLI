@@ -32,10 +32,7 @@ $conferido2 = null;
 
       if(isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != ""){
         $conferencia_email_novo = $controller->ListarLeitores(new Leitor($email_troca,$nm_leitor,null,null,null,$nm_senha));
-      }
-      else{
-        $conferencia = $controller->ListarLeitores(new Leitor($cd_email,$nm_leitor,null,null,null,$nm_senha));
-      }
+
         if(isset($conferencia_email_novo) && $conferencia_email_novo == []){
           $conferido = true;
           if(isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != ""){
@@ -52,28 +49,31 @@ $conferido2 = null;
  
             }
         }
-
-        else{
-              if($conferencia == []){
-                $conferido2 = true;
-                if(isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != ""){
-                  $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,$nm_leitor));
-                 }
-       
-                 if(isset($_REQUEST['nm_senha']) && $_REQUEST['nm_senha'] != ""){
-                   $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,$nm_senha));
-                  }
-       
-                  if(isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != ""){
-                   $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,null,null,null,null,null,null,null,null,$email_troca));
-                   $_SESSION['leitor'] = $_REQUEST['email_troca'];
-       
-                  }
-              }
+      }
+      else{
+        $conferencia = $controller->ListarLeitores(new Leitor($cd_email,$nm_leitor,null,null,null,$nm_senha));
+        if($conferencia == []){
+          $conferido2 = true;
+          if(isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != ""){
+            $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,$nm_leitor));
+           }
+ 
+           if(isset($_REQUEST['nm_senha']) && $_REQUEST['nm_senha'] != ""){
+             $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,$nm_senha));
+            }
+ 
+            if(isset($_REQUEST['email_troca']) && $_REQUEST['email_troca'] != ""){
+             $Leitor = $controller->AlterarLeitor(new Leitor($cd_email,null,null,null,null,null,null,null,null,null,null,null,null,$email_troca));
+             $_SESSION['leitor'] = $_REQUEST['email_troca'];
+ 
+            }
+        }
+      }
+             
         }
           
         
-    }
+  
 ?>
 
 <!DOCTYPE html>
