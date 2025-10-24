@@ -31,8 +31,12 @@ if (isset($_REQUEST['codigo'])) {
 
 <body>
   <main>
-
-    <h1 class="textoMeio"> Mário fária</h1>
+             <?php
+               $biblioteca = new BibliotecaView;
+               $biblioteca->ExibirBiblioteca(new Biblioteca($codigo)); 
+            ?> 
+         
+    <!-- <h1 class="textoMeio"> Mário fária</h1>
     <section class="bibliotecas">
       <div class="bibliotecaPerfil">
         <div class="bibliotecaFotos">
@@ -89,15 +93,15 @@ if (isset($_REQUEST['codigo'])) {
                 </div>
               </div>
             </section>
-    </section>
+    </section> -->
     </div>
     </div>
 
     <?php
-    // if($buscar){
+    if($buscar){
     // $biblioteca = new BibliotecaView;
     // $biblioteca->ExibirBibliotecas(new Biblioteca($codigo));
-    // }
+    }
     ?>
     </section>
 
