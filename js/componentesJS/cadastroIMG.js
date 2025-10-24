@@ -19,8 +19,8 @@ if (fileInput) {
                     console.error('Erro:' ,data.error)
                     return;
                 }
-                const perfilPaciente = document.querySelector('.img_perfil'); 
-                perfilPaciente.style.backgroundImage = `url(${ URL.createObjectURL(file)})`;   
+                const perfilLeitor = document.querySelector('.img_perfil'); 
+                perfilLeitor.style.backgroundImage = `url(${ URL.createObjectURL(file)})`;   
             })
         }
     })
@@ -30,22 +30,17 @@ if (fileInput) {
 if (btnEnviar) {
         btnEnviar.addEventListener('click', (e)=>{      
             e.preventDefault(); 
-
-            // aqui, no meu caso eu insiro os outros valores do meu formulário de cadastro. Caso você queira inserir apenas a imagem ignore essas linhas
-            formData.append('nome', document.getElementById('nome').value);
-            formData.append('cpf', document.getElementById('cpf').value);
-            formData.append('profissional', document.getElementById('profissional').value);
         
 
-            fetch(`/Psicodesk/areaPacientes.php?image=1&btnCadastrar`, {  // envia o formulario para areaPacientes.php via api (onde será feito o cadastro do paciente)
+            fetch(`/SUBLI/LdoarPerfil.php?image=1&btnCadastrar`, {  
                 method: 'POST',
                 body: formData
             })
             .then(res => res.json())
-            .then(data => {     // retorna a resposta da areaPacientes.php
+            .then(data => {     
                 if(data.success){
                     alert(data.success);
-                    window.location.href = '/Psicodesk/areaPacientes.php';
+                    window.location.href = '/subli/LdoarPerfil.php';
                 }
             })
         });

@@ -8,6 +8,7 @@ $cd_email = $_SESSION['leitor'];
 $nm_livro = null;
 $cd_biblioteca = null;
 $nm_autor = null;
+$imgPerfil = null;
 $campos = 0;
 
     if (isset($_REQUEST['nm_livro']) && !is_null($_REQUEST['nm_livro'])) {
@@ -27,6 +28,9 @@ $campos = 0;
             $campos = $campos + 1 ; 
   }
 
+  if(isset($_REQUEST['image']) && isset($_FILES['image'])){    
+    $imgPerfil = $_FILES['image']; 
+}   
 
   if($campos == 3){
  
@@ -37,6 +41,7 @@ $campos = 0;
         $mensagem = "Solicitação de Doação feita com Sucesso";
       }
     }    
+
       ?>
 
 <!DOCTYPE html>
@@ -53,6 +58,7 @@ $campos = 0;
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="js/componentesJS/popupEditarPerfil.js" defer></script>
     <script src="js/componentesJS/popupLogout.js" defer></script>
+    
     <!-- <script src="js/componentesJS/popupDoacao.js" defer></script> -->
   </head>
   <body>

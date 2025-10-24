@@ -107,7 +107,7 @@ if(isset($_REQUEST['preview'])) {  // verfica se existe a requisição 'preview'
     }
 }
 
-
+a
 // NOTA: até aqui o arquivo não foi salvo, apenas validado para ser exibido no js
 // a partir de agora que será feito o cadastro da imagem em uma pasta do projeto
 

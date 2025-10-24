@@ -10,13 +10,15 @@ class LivrosDoadosView
     $doacoes = $controller->ListarDoacoes($doacao);
 
 
+
+
     foreach ($doacoes as $Doacao) {
       if($ignorar == $Doacao->cd_doacao ){
         continue;
       }
       echo "
                       <div class='livro'>
-                         <img src='img/$Doacao->cd_doacao' alt='$Doacao->cd_doacao'/>
+                         <img src='img/uploads/leitor_$Doacao->cd_doacao' alt='$Doacao->cd_doacao'/>
                         <h2>{$Doacao->livro->nm_livro}</h2>
                         <p>
               Doador: {$Doacao->leitor->nm_leitor}
