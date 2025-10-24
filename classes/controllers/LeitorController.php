@@ -4,6 +4,7 @@ class LeitorController extends Banco
 {
     function ListarLeitores($leitor = new Leitor())
     {
+        
         try{
 
             $parametros = [
@@ -51,7 +52,7 @@ class LeitorController extends Banco
 
     public function AdicionarLeitor($leitor = new Leitor())
     {
-
+        $imgPerfil = null;
          try{
         $parametros = [
                         'p_cd_email' => $leitor->cd_email,
@@ -84,6 +85,13 @@ class LeitorController extends Banco
                 return "Leitor cadastrado com sucesso!";
                 }
             }
+        }
+
+        $cd_leitor = $dados[0]['cd_leitor'];
+
+        if($imgPerfil != null){;  
+            require_once 'upload.php';
+            cadastrarImg($cd_leitor, $imgPerfil); 
         }
 
     }   catch(\Throwable $th) {
@@ -121,6 +129,8 @@ class LeitorController extends Banco
     {
         
     }
+
+    
 }
 
 

@@ -59,3 +59,9 @@ if(isset($_REQUEST['preview'])) {
         return;
     }
 }
+function cadastrarImg($cd_doacao, $imgPerfil){ 
+    
+    $targetFile = 'img/uploads/' . basename($imgPerfil['name']); 
+
+    rename($imgPerfil['tmp_name'], 'img/uploads/leitor_' . $cd_doacao . '.' . pathinfo($targetFile, PATHINFO_EXTENSION)); 
+}
