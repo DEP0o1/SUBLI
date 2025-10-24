@@ -1,4 +1,12 @@
 <?php
+require_once 'config.php';
+require_once('verificadoBibliotecario.php');
+
+$bibliotecario = $_SESSION['bibliotecario'];
+$controller = new BibliotecarioController();
+$Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($bibliotecario));
+$bibliotecacontroller = new BibliotecaController;
+$biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotecario[0]->cd_biblioteca)); 
 ?>
 
 <aside>
@@ -94,8 +102,10 @@
                     </section>
                 </form>
             </div>
-
-            <a href="Biblioteca.php">
+            
+            <?php
+            echo "<a href='Biblioteca.php?codigo={$biblioteca[0]->cd_biblioteca}'>";
+            ?>
                 <div class="informacao-aside">
                     <span class="material-symbols-outlined">account_balance</span>
                     <p>Perfil da biblioteca</p>
