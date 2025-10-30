@@ -72,7 +72,21 @@ switch ($metodo) {
         http_response_code(400);
         echo json_encode(['mensagem' => 'Método Inválido']);
         break;
+
+        case 'PUT':
+            try{
+
+
+
+            }   catch (Exception $erro) {
+                http_response_code(500);
+                echo json_encode(['mensagem' => $erro->getMessage()]);
+            }
+
+
+
 }
+
 
 function validaCorpoRequisicao($corpo)
 {
