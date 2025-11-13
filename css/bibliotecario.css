@@ -203,7 +203,7 @@ nav {
 }
 
 .btnRosa:hover{
-  background-color: var(--vinho-hover);
+  background-color: var(--branco);
   transition: 0.2s ease-in;
 }
 

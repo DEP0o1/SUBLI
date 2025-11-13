@@ -238,22 +238,16 @@ INSERT INTO assunto VALUES (10, 'Ecologia');
 
 
 /*Bibliotecas*/
-INSERT INTO biblioteca VALUES (1, 'Parangolé','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (2, 'Aurora','Cauã Nunes da Silva');
-INSERT INTO biblioteca VALUES (3, 'Luz do Saber','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (4, 'Infantojuvenil','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (5, 'Clássicos do Mundo','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (6, 'Científica Moderna','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (7, 'História Viva','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (8, 'Ficção Sem Limites','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (9, 'Mundo Animal','Rua Lucas Alcoforado');
-INSERT INTO biblioteca VALUES (10, 'Arte e Cultura','Rua Lucas Alcoforado');
+INSERT INTO biblioteca VALUES (1, 'Biblioteca Mario fária',' Avenida Bartolomeu de Gusmão, S/N Posto 6');
+INSERT INTO biblioteca VALUES (2, 'Gibiteca Municipal Marcel Rodrigues',' Av. Bartholomeu de Gusmão, S/N - Boqueirão');
+INSERT INTO biblioteca VALUES (3, 'Biblioteca Municipal Alberto Souza','Praça Patriarca José Bonifácio, 58 - Centro, Santos');
+INSERT INTO biblioteca VALUES (4, 'Biblioteca do Sesc',' Rua Conselheiro Ribas, 136');
 
 /*Eventos*/
 INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 1,NOW(), 'SHBJHSDAUOHAFSIL', 1,'lucas@gmail.com', true);
-INSERT INTO evento VALUES ('Leitura de Livros de Romance', 2,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', false);
+INSERT INTO evento VALUES ('Leitura de Livros de Romance', 2,NOW(), 'SHBJHSDAUOHAFSIL', 2,'lucas@gmail.com', false);
 INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', true);
-INSERT INTO evento VALUES ('Clube do Livro de Outubro', 4,NOW(), 'SHBJHSDAUOHAFSIL', 10,'lucas@gmail.com', NULL);
+INSERT INTO evento VALUES ('Clube do Livro de Outubro', 4,NOW(), 'SHBJHSDAUOHAFSIL', 3,'lucas@gmail.com', NULL);
 
 -- ===== EDITORAS =====
 INSERT INTO editora (cd_editora, nm_editora) VALUES
@@ -448,19 +442,19 @@ INSERT INTO assunto_livro (cd_livro, cd_assunto) VALUES
 
 /*Exemplares*/
 INSERT INTO exemplar VALUES (1, 1, 1, NOW(), false);
-INSERT INTO exemplar VALUES (4, 6, 2, NOW(), false);
-INSERT INTO exemplar VALUES (2, 10, 3, NOW(), false);
+INSERT INTO exemplar VALUES (4, 4, 2, NOW(), false);
+INSERT INTO exemplar VALUES (2, 3, 3, NOW(), false);
 INSERT INTO exemplar VALUES (6, 4, 4, NOW(), false);
-INSERT INTO exemplar VALUES (1, 9, 5, NOW(), false);
-INSERT INTO exemplar VALUES (5, 2, 6, NOW(), false);
-INSERT INTO exemplar VALUES (2, 8, 7, NOW(), false);
-INSERT INTO exemplar VALUES (4, 7, 8, NOW(), false);
-INSERT INTO exemplar VALUES (6, 3, 9, NOW(), false);
-INSERT INTO exemplar VALUES (3, 10, 10, NOW(), false);
-INSERT INTO exemplar VALUES (1, 5, 11, NOW(), false);
-INSERT INTO exemplar VALUES (5, 9, 12, NOW(), false);
-INSERT INTO exemplar VALUES (3, 7, 13, NOW(), false);
-INSERT INTO exemplar VALUES (6, 1, 14, NOW(), false);
+INSERT INTO exemplar VALUES (1, 3, 5, NOW(), false);
+INSERT INTO exemplar VALUES (5, 1, 6, NOW(), false);
+INSERT INTO exemplar VALUES (2, 3, 7, NOW(), false);
+INSERT INTO exemplar VALUES (4, 4, 8, NOW(), false);
+INSERT INTO exemplar VALUES (6, 4, 9, NOW(), false);
+INSERT INTO exemplar VALUES (3, 4, 10, NOW(), false);
+INSERT INTO exemplar VALUES (1, 2, 11, NOW(), false);
+INSERT INTO exemplar VALUES (5, 1, 12, NOW(), false);
+INSERT INTO exemplar VALUES (3, 2, 13, NOW(), false);
+INSERT INTO exemplar VALUES (6, 3, 14, NOW(), false);
 INSERT INTO exemplar VALUES (5, 1, 15, NOW(), false);
 INSERT INTO exemplar VALUES (4, 1, 16, NOW(), false);
 INSERT INTO exemplar VALUES (3, 1, 17, NOW(), false);
@@ -489,7 +483,7 @@ INSERT INTO emprestimo VALUES(1,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@
 INSERT INTO emprestimo VALUES(2,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@gmail.com',2,2, true);
 INSERT INTO emprestimo VALUES(3,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',4,2, true);
 INSERT INTO emprestimo VALUES(4,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',5,4, true);
-INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',6,9, true);
+INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',6,3, true);
 /*
 INSERT INTO emprestimo VALUES(6,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',6,4, false);
 INSERT INTO emprestimo VALUES(7,'2025-09-01','2025-10-05','2025-10-01','pedro.favoritos@gmail.com',1,1, false);

@@ -27,7 +27,8 @@ class LivroView{
                 </button>
             </div>";
         }
-    } else {
+    }else
+     {
         echo "
         <div class='nao-encontrado'>
             <h1>Nenhum livro foi encontrado</h1>

@@ -65,8 +65,9 @@ $email = $_SESSION['leitor'];
         ?>
         </div>
 
-        
-        <button>Visualizar</button>
+        <div class="textoMeio">
+          <button class="btnRosa">Visualizar</button>
+        </div>
       </section>
     </main>
   </body>

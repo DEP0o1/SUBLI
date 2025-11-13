@@ -14,7 +14,6 @@
       <img src="img/pesquisa.webp" alt="" class="lupa" />
     </div>
     
-    <img src="img/filtro.svg" alt="" />
   </form>
   
 </div>

@@ -30,8 +30,6 @@ if (isset($_SESSION['leitor'])) {
       <input type="text" name="valor" placeholder="Faça sua Pesquisa" class="input" />
       <img src="img/pesquisa.webp" alt="" class="lupa" />
     </div>
-
-    <span class="material-symbols-outlined">filter_alt</span>
   </form>
 
   <div class="abas">

@@ -14,6 +14,20 @@ if (isset($_REQUEST['valor'])) {
   }
 }
 
+
+$genero2 = null;
+$assunto2 = null;
+$biblioteca2 = null;
+if(isset($_GET["genero"]) && isset($_GET["assunto"]) && isset($_GET["biblioteca"])){
+    $genero2 = $_GET["genero"];
+    $assunto2 = $_GET["assunto"];
+    $biblioteca2 = $_GET["biblioteca"];
+}
+
+if(empty($biblioteca2)) $biblioteca2 = null;
+if(empty($genero2)) $genero2 = null;
+if(empty($assunto2)) $assunto2 = null;
+
 ?>
 
 <!DOCTYPE html>

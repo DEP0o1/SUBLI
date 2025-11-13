@@ -23,7 +23,7 @@ class BibliotecaView{
           echo "
           <div class='item-lista'>
           <div class='imagem-item-lista'>
-            <img src='img/biblioteca1_1.jpg' alt=''>
+            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1' alt=''>
           </div>
           <div class='conteudo-item-lista'>
             <h1>{$Biblioteca->nm_biblioteca}<span>
@@ -61,13 +61,12 @@ class BibliotecaView{
     <section class='bibliotecas'>
       <div class='bibliotecaPerfil'>
         <div class='bibliotecaFotos'>
-          <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1.jpg' alt=''>
+          <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1' alt=''>
 
           <div class='carrosselBiblioteca'>
-            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1.jpg' alt=''>
-            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1.jpg' alt=''>
-            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1.jpg' alt=''>
-            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1.jpg' alt=''>
+            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1' alt=''>
+            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_2' alt=''>
+            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_3' alt=''>
           </div>
         </div>
 
