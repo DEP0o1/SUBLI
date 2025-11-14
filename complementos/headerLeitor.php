@@ -67,7 +67,7 @@ if (isset($_SESSION['leitor'])) {
 
             <a href="LmeusLivros.php">
               <div class="titulo-dropdown">
-                <span class="material-symbols-outlined">account_circle</span>
+                <span class="material-symbols-outlined">edit</span>
                 <h3>Editar Perfil</h3>
               </div>
             </a>
