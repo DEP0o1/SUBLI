@@ -118,5 +118,7 @@ if (isset($_SESSION['leitor'])) {
   </div>
 </header>
 
+<script src="js/componentesJS/notificacaoLeitor.js"></script>
+
 
 

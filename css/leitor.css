@@ -385,6 +385,41 @@ footer {
   justify-content: flex-start;
 }
 
+/*---------------------notificação----------------------------------------------------------------------*/
+
+.menuNotificacao {
+  background-color: var(--azul);
+  color: var(--branco);
+  position: fixed;
+  top: 84px;
+  right: 114px;
+  width: 500px;
+  height: fit-content;
+  padding: var(--gap);
+  border-radius: var(--gap);
+  z-index: 11;
+}
+
+#fecharMenuNotificacao {
+  border: none;
+  background-color: var(--azul);
+  color: var(--branco);
+}
+
+#fecharMenuNotificacao span {
+  color: var(--branco);
+  cursor: pointer;
+}
+
+.topoMenuNotificacao {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: var(--branco);
+}
+
+.topoMenuNotificacao h1 {
+  margin: 0px;
+}
 
 /*-----------------------------------------------------------------------------------------------------*/
 
