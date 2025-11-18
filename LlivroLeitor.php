@@ -8,6 +8,7 @@ if (isset($_REQUEST['codigo'])) {
 
     $codigo = $_REQUEST['codigo'];
     $cd_biblioteca = 1;
+    // TEM QUE TER SELECT AQ PARA NÃO FICAR BIBLIOTECA ESTATICA NAS RESERVAS!!!!
   }
 }
 

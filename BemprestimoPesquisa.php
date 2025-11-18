@@ -1,6 +1,7 @@
 <?php
 require_once ('config.php');
 require_once('verificadoBibliotecario.php');
+$bibliotecario = $_SESSION['bibliotecario'];
 $email = null;
 if (isset($_REQUEST['codigo'])) {
     $buscar = true;
@@ -10,7 +11,9 @@ if (isset($_REQUEST['codigo'])) {
         $email = $_REQUEST['codigo'];
     }
 }
-
+$controller = new BibliotecarioController();
+$Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($bibliotecario));
+$cd_biblioteca = $Bibliotecario[0]->cd_biblioteca;
 ?>
 
 <!DOCTYPE html>
@@ -63,7 +66,7 @@ require_once './complementos/menuBibliotecario.php'
         <div class="resultadoPesquisa">
 <?php
   $controller = new EmprestimoController;
-  $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email),new Livro(),new Biblioteca(),true));
+  $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email),new Livro(),new Biblioteca($cd_biblioteca),true));
 
   $livro = new LivroView;
   foreach ($emprestimos as $Emprestimo){
