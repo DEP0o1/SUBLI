@@ -1966,9 +1966,13 @@ label {
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap);
-  padding-right: 4vh;
   color: var(--cinza);
-  width: 20vw;
+  margin: 0;
+  width: 25vw;
+}
+
+.comprovanteRes div hr {
+  padding-right: 2vw;
 }
 
 

@@ -161,9 +161,11 @@ $conferido2 = null;
       </section>
 
       <section class="comprovanteRes">
+        <div>
         <h1>Comprovante de Residência</h1>
         <hr/>
-        <p>O comprovante de residencia dve ser entregue à uma biblioteca para efetuar totalmente o seu cadastro</p>
+        <p>O comprovante de residencia deve ser entregue à uma biblioteca para efetuar totalmente o seu cadastro</p>
+        </div>
       </section>
 
     </main>
