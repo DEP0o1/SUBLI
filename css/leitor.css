@@ -1954,7 +1954,22 @@ label {
   cursor: pointer;
 }
 
+/* ----------------------------------------Comprovante-------------------------------------------------------------- */
 
+.comprovanteRes h1 {
+  color: var(--cinza);
+}
+
+.comprovanteRes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap);
+  padding-right: 4vh;
+  color: var(--cinza);
+  width: 20vw;
+}
 
 
 /* ------------- Footer------------------------------------------------------------------------------------------------------------- */

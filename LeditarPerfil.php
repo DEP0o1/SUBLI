@@ -98,32 +98,60 @@ $conferido2 = null;
       <section class="areaPerfil">
         <form method = "POST" action="">
           <div class="titulo-areaPerfil">
-              <h1>Editar Perfil</h1>
+              <h1>Suas informações</h1>
               <hr/>
           </div>
           
-          <div class="label-input">
+          <!-- <div class="label-input">
             <label for="">Foto de Perfil: </label>
             <input type="file" class="inputArquivo">
-          </div>
+          </div> -->
   
           <div class="label-input">
-            <label for="">Alterar nome: </label>
+            <label for="">Nome: </label>
             <input name ="nm_leitor"type="text" placeholder="Pedro Miguel "/>
           </div>
   
           <div class="label-input">
-            <label for="">Alterar E-Mail: </label>
+            <label for="">E-Mail: </label>
             <input name = "email_troca" type="text" placeholder="seuemail@gmail.com" />
           </div>
   
           <div class="label-input">
-            <label for="">Alterar senha: </label>
+            <label for="">Senha: </label>
             <input name="nm_senha" type="password" placeholder="***********"/>
           </div>
 
-          <button type="submit" id="btnEditarPerfil">Salvar alterações</button>
+          <div class="label-input">
+            <label for="">CEP: </label>
+            <input name="cd_CEP" type="text" placeholder="11070-490"/>
+          </div>
 
+          <div class="label-input">
+            <label for="">Endereço: </label>
+            <input name="ds_Endereco" type="text" placeholder="Av. Epitácio Pessoa, 466 - Aparecida, Santos SP"/>
+          </div>
+
+          <div class="label-input">
+            <label for="">CPF: </label>
+            <input name="ds_Endereco" type="text" placeholder=" 657.543.543-10"/>
+          </div>
+
+          
+          <div class="label-input">
+            <label for="">Código: </label>
+            <input name="ds_Endereco" type="text" placeholder="657.543"/>
+          </div>
+
+          
+          
+          <div class="label-input">
+            <label for="">Data de Nascimento: </label>
+            <input name="ds_Endereco" type="text" placeholder="19/11/2007"/>
+          </div>
+
+          <button type="submit" id="btnEditarPerfil">Salvar alterações</button>
+''
           <?php
               if($campos && $conferido == true || $conferido2 == true){
                 echo $Leitor;
@@ -131,6 +159,13 @@ $conferido2 = null;
           ?>
         </form>
       </section>
+
+      <section class="comprovanteRes">
+        <h1>Comprovante de Residência</h1>
+        <hr/>
+        <p>O comprovante de residencia dve ser entregue à uma biblioteca para efetuar totalmente o seu cadastro</p>
+      </section>
+
     </main>
   </body>
 </html>

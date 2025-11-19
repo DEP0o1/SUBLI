@@ -125,7 +125,6 @@ main {
 }
 
 .areaPerfil form {
-  border: 1px solid var(--cinza);
   color: var(--cinza);
   display: flex;
   justify-content: center;
@@ -216,6 +215,7 @@ main {
 
 .label-input input{
   padding: 	10px;
+  border: solid 1px var(--bege);
 }
 
 .botaoPerfil {
@@ -227,6 +227,10 @@ main {
   align-items: center;
   justify-content: center; 
   width: fit-content;
+}
+
+.titulo-areaPerfil h1 {
+  color: var(--cinza);
 }
 
 h1, p {
@@ -248,3 +252,4 @@ h1, p {
   justify-content: center;
   padding: 1vh 0vh 2vh  0vh ;
 }
+
