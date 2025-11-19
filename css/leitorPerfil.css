@@ -86,16 +86,18 @@ main {
 }
 
 .perfil {
-  background-color: var(--azul);
+  background-color: transparent;
   color: var(--branco);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 20vh;
+  padding-left: 5vh;
   flex-direction: column;
   align-items: center;
-  width: 18vw;
+  width: 22vw;
   height: calc(100vh - 84px);
   border-radius: 0;
-  gap: 30px;
+  gap: var(--gap);
   text-wrap: nowrap;
 }
 
@@ -116,9 +118,10 @@ main {
 }
 
 .perfil img {
-  height: 100px;
-  width: 100px;
+  height: 180px;
+  width: 180px;
   border-radius: 200px;
+  margin-bottom: 2vh;
 }
 
 .areaPerfil form {
@@ -158,9 +161,9 @@ main {
 }
 
 .areaPerfil img {
-  height: 100px;
-  width: 100px;
-  border-radius: 200px;
+  height: 200px;
+  width: 200px;
+  border-radius: 300px;
 }
 
 .areaPerfil h1 {
@@ -213,4 +216,35 @@ main {
 
 .label-input input{
   padding: 	10px;
+}
+
+.botaoPerfil {
+  background-color: var(--vinho);
+  font-style: none;
+  border-radius: 10px;
+  padding: 2vh 10vh 2vh 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  width: fit-content;
+}
+
+h1, p {
+  color: black;
+}
+
+.codigoIdPerfil {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1vh;
+  gap: 0.75vh;
+}
+
+.gapA {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: center;
+  padding: 1vh 0vh 2vh  0vh ;
 }

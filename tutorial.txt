@@ -1,4 +1,4 @@
-    git clone https://github.com/DEP0o1/SUBLI 
+ 
      git add arquivo 
      git add . 
      git commit -m 'mensagem' 

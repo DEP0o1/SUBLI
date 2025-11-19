@@ -9,10 +9,14 @@ $nomeCompleto = $leitor[0]->nm_leitor;
   <div class="imagemPerfil">
     <img src="img/pequeno terry.webp" alt="" />
     <h1>Olá, <?=$nomeCompleto?>!</h1>
+    <div class="codigoIdPerfil">
+    <span class="material-symbols-outlined">   assignment_ind </span>  <p> Código: 657.543 </p>
+    </div>
+
   </div>
-  <a href="LeditarPerfil.php"><h2>Editar perfil</h2></a>
-  <a href="LmeusLivros.php"><h2>Meus livros</h2></a>
-  <a href="LdoarPerfil.php"><h2>Doar</h2></a>
-  <a href="LeventoPerfil.php"><h2>Solicitar Evento</h2></a>
+  <div class="gapA">
+  <a href="LeditarPerfil.php" class="botaoPerfil"><h2>Editar perfil</h2></a>
+  <a href="LmeusLivros.php" class="botaoPerfil"><h2>Meus livros</h2></a>
+  </div>
 
 </aside>
