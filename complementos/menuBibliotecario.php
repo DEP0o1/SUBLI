@@ -104,7 +104,7 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
             </div>
             
             <?php
-            echo "<a href='Biblioteca.php?codigo={$biblioteca[0]->cd_biblioteca}'>";
+            echo "<a href='BBiblioteca.php?codigo={$biblioteca[0]->cd_biblioteca}'>";
             ?>
                 <div class="informacao-aside">
                     <span class="material-symbols-outlined">account_balance</span>

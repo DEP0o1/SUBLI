@@ -55,6 +55,14 @@ h4 {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
+
+#abrirNotificacao{
+  border: none;
+  background-color: transparent;
+  color: var(--branco);
+  cursor: pointer;
+}
+
 .btnRosa {
   text-wrap: nowrap;
   display: flex;
@@ -1945,6 +1953,9 @@ label {
   padding: 10px;
   cursor: pointer;
 }
+
+
+
 
 /* ------------- Footer------------------------------------------------------------------------------------------------------------- */
 

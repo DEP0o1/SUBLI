@@ -14,19 +14,18 @@ if (isset($_REQUEST['valor'])) {
   }
 }
 
-
 $genero2 = null;
 $assunto2 = null;
 $biblioteca2 = null;
-if(isset($_GET["genero"]) && isset($_GET["assunto"]) && isset($_GET["biblioteca"])){
+if (isset($_GET["genero"]) && isset($_GET["assunto"]) && isset($_GET["biblioteca"])) {
     $genero2 = $_GET["genero"];
     $assunto2 = $_GET["assunto"];
     $biblioteca2 = $_GET["biblioteca"];
 }
 
-if(empty($biblioteca2)) $biblioteca2 = null;
-if(empty($genero2)) $genero2 = null;
-if(empty($assunto2)) $assunto2 = null;
+if (empty($biblioteca2)) $biblioteca2 = null;
+if (empty($genero2)) $genero2 = null;
+if (empty($assunto2)) $assunto2 = null;
 
 ?>
 
@@ -48,20 +47,47 @@ if(empty($assunto2)) $assunto2 = null;
 
   
   <div class="conteudo-pesquisa">
-  <section class="pesquisa">
-    <select name="Categoria" id="" class="categoria">
-      <option value="">Categorias</option>
-    </select>
+  <form class="pesquisa">
 
-    <select name="Categoria" id="" class="categoria">
-      <option value="">Subcategorias</option>
-    </select>
 
-    <select name="Categoria" id="" class="categoria">
-      <option value="">Bibliotecas</option>
-    </select>
+<select class="categoria" id="genero" name="genero">
+    <option value="">Gêneros</option>
+    <?php
+    $genero = new GeneroView;
+    $genero->SelectGeneros();
+    ?>
+</select>
 
-  </section>
+
+<div>
+    <select class="categoria" id="assunto" name="assunto">
+        <option value="">
+            Assunto</option>
+        <?php
+        $Assunto = new AssuntoView;
+        $Assunto->SelectAssuntos();
+        ?>
+    </select>
+</div>
+
+<div>
+    <select class="categoria" id="bibliotecas" name="biblioteca">
+        <option value="">Bibliotecas</option>
+        <?php
+        $biblioteca = new BibliotecaView;
+        $biblioteca->ExibirBibliotecasSelect();
+        ?>
+    </select>
+</div>
+
+<button class="btnRosa">
+    <span class="material-symbols-outlined">
+        filter_alt
+    </span>
+    Aplicar
+</button>
+
+</form>
 
   <div class="divQueEnglobaExibirLivrosResultado">
     <section class="exibirLivrosResultado">
@@ -69,26 +95,25 @@ if(empty($assunto2)) $assunto2 = null;
     <?php
      $livro = new LivroView;
     if ($buscar) {
-     
-
+    
       if ($valor == "") {
-        $livro->ExibirLivros();
+        $livro->ExibirLivros(new Livro(null,$valor, [new Autor()], new Editora(), [new Genero($genero2)], new Idioma(), new Colecao, [new Assunto($assunto2)], $biblioteca2));
       } else {
-        $livro->ExibirLivros(new Livro(null, $valor));
+        $livro->ExibirLivros(new Livro(null,$valor, [new Autor()], new Editora(), [new Genero($genero2)], new Idioma(), new Colecao, [new Assunto($assunto2)], $biblioteca2));
       }
     }
 
     else{
-      $livro->ExibirLivros();
+      $livro->ExibirLivros(new Livro(null,$valor, [new Autor()], new Editora(), [new Genero($genero2)], new Idioma(), new Colecao, [new Assunto($assunto2)], $biblioteca2));    
     }
 
 if ($buscar) {
   $livro = new LivroView;
   
   if ($valor == "") {
-    $livro->ExibirLivros();
+    $livro->ExibirLivros(new Livro(null,$valor, [new Autor()], new Editora(), [new Genero($genero2)], new Idioma(), new Colecao, [new Assunto($assunto2)], $biblioteca2));
   } else {
-    $livro->ExibirLivros(new Livro(null, $valor));
+    $livro->ExibirLivros(new Livro(null,$valor, [new Autor()], new Editora(), [new Genero($genero2)], new Idioma(), new Colecao, [new Assunto($assunto2)], $biblioteca2));    
   }
 }
 ?>

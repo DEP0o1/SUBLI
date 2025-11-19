@@ -78,17 +78,17 @@ $campos = 0;
 
           <div class="label-input">
             <label for="">Tema do Evento: </label>
-            <input name = "nm_evento"type="text" />
+            <input name = "nm_evento"type="text" placeholder="Ler livros infantis" />
           </div>
 
           <div class="label-input">
             <label for="">Descrição Evento: </label>
-            <input name ="ds_evento" type="text" />
+            <input name ="ds_evento" type="text" placeholder="Meu evento será para..."/>
           </div>
 
           <div class="label-input">
             <label for="">Dia do Evento: </label>
-            <input name ="dt_evento" type="date" />
+            <input name ="dt_evento" type="date" placeholder="12/02/2027"/>
           </div>
 
           <div class="label-input">
