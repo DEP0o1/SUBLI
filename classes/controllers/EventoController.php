@@ -28,7 +28,7 @@ class EventoController extends Banco
                 $Evento = new Evento;
                 $Evento->Hydrate($item);
                 $Evento->biblioteca = new Biblioteca($item['cd_biblioteca']);
-                $Evento->leitor = new Leitor($item['cd_email']);
+                $Evento->leitor = new Leitor($item['cd_email'],$item['nm_leitor']);
                 array_push($lista, $Evento);
             }
           

@@ -788,13 +788,14 @@ BEGIN
     
 
     SELECT *
-    FROM evento
-    WHERE (p_cd_evento IS NULL OR cd_evento = p_cd_evento)
-		AND (p_nm_evento IS NULL OR nm_evento = p_nm_evento)
-      AND (p_dt_evento IS NULL OR dt_evento = p_dt_evento)
-      AND (p_ds_evento IS NULL OR ds_evento = p_ds_evento)
-      AND (p_cd_biblioteca IS NULL OR cd_biblioteca = p_cd_biblioteca)
-      AND (p_cd_email IS NULL OR p_cd_email = p_cd_email)
+    FROM evento e
+        LEFT JOIN leitor l ON e.cd_email = l.cd_email
+    WHERE (p_cd_evento IS NULL OR e.cd_evento = p_cd_evento)
+		AND (p_nm_evento IS NULL OR e.nm_evento = p_nm_evento)
+      AND (p_dt_evento IS NULL OR e.dt_evento = p_dt_evento)
+      AND (p_ds_evento IS NULL OR e.ds_evento = p_ds_evento)
+      AND (p_cd_biblioteca IS NULL OR e.cd_biblioteca = p_cd_biblioteca)
+      AND (p_cd_email IS NULL OR l.cd_email = p_cd_email)
 		AND (p_ic_confirmado IS NULL OR ic_confirmado = p_ic_confirmado);
 END$$
 
