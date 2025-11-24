@@ -902,6 +902,11 @@ aside br {
   flex-wrap: wrap;
 }
 
+.formPesquisaAvancada {
+  left: 500px;
+  background-color: #333;
+}
+
 .areaLivro {
   display: flex;
   flex-direction: column;
@@ -1225,6 +1230,7 @@ aside br {
   gap: 20px;
   border-radius: 15px;
   padding: 1%;
+  overflow-y: auto;
 }
 
 .formSinopse {
@@ -1391,6 +1397,14 @@ aside br {
   border-radius: var(--radius);
   z-index: 6000;
   position: fixed;
+}
+
+.areaCadastr {
+  margin-left: 20vw;
+  top: 84px;
+  z-index: 99999;
+  width: 40vw;
+  position: absolute;
 }
 
 .overlayPopup {

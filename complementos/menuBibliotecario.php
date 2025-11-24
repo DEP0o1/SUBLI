@@ -11,6 +11,7 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
 
 <aside>
 <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
+  <script src="js/componentesJS/pesquisaAvancada.js"></script>
     <div class="conteudo-aside">
         <div class="conteudo-aside-biblioteca">
 
@@ -22,51 +23,57 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
             </div>
 
             <div class="areaCadastr hidden" id="form-pesquisa">
-                <form method="POST" class="formAvancado">
+                <form method="GET" action="BpesquisaLivro.php" class="formAvancado">
+
 
                     <section class="areaInput">
+
                         <div class="areaTituloLivro">
                             <label for="nm_livro" class="tituloForm">Titulo:</label>
                             <input name="nm_livro" type="text" class="inputForm" placeholder="Ex. O Pequeno Principe">
                         </div>
-
+                        
+                    <div class="formDeLado">
+                        <div>
+                            <label for="cd_autor" class="tituloForm">Código Autor:</label>
+                            <input name="cd_autor" type="text" class="inputFormDeLado" placeholder="Ex.1234">
+                        </div>
+                        
                         <div class="areaAutorLivro">
                             <label for="nm_autor" class="tituloForm">Autor:</label>
                             <input name="nm_autor" type="text" class="inputForm" placeholder="Ex. Antonie de Saint-Euxpéry">
                         </div>
 
+                    </div>
+                    
+                    <div>
+                         <label for="cd_livro" class="tituloForm">Código Livro:</label>
+                         <input name="cd_livro" type="text" class="inputFormDeLado" placeholder="Ex. 1234">
+                     </div>
 
+                     <div class="formDeLado">
+                         <div>
+                             <label for="cd_assunto" class="tituloForm">Código Assunto:</label>
+                             <input name="cd_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                         </div>
+                         <div>
+                             <label for="nm_assunto" class="tituloForm">Assunto:</label>
+                             <input name="nm_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                         </div>
+                     </div>
 
-                        <div>
-                            <label for="cd_autor" class="tituloForm">Código Autor:</label>
-                            <input name="cd_autor" type="text" class="inputFormDeLado" placeholder="Ex.1234">
-                        </div>
-
-                        <div>
-                            <label for="cd_livro" class="tituloForm">Código Livro:</label>
-                            <input name="cd_livro" type="text" class="inputFormDeLado" placeholder="Ex. 1234">
-                        </div>
-
-                        <div>
-                            <label for="cd_assunto" class="tituloForm">Código Assunto:</label>
-                            <input name="cd_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
-                        </div>
-
-                        <div>
-                            <label for="nm_assunto" class="tituloForm">Assunto:</label>
-                            <input name="nm_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
-                        </div>
-
-
-
+                    <div class="formDeLado">
                         <div>
                             <label for="cd_editora" class="tituloForm">Código Editora:</label>
                             <input name="cd_editora" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                         </div>
-                        <div>
-                            <label for="nm_editora" class="tituloForm">Editora:</label>
-                            <input name="nm_editora" type="text" class="inputFormDeLado" placeholder="Ex. Português">
-                        </div>
+                         <div>
+                             <label for="nm_editora" class="tituloForm">Editora:</label>
+                             <input name="nm_editora" type="text" class="inputFormDeLado" placeholder="Ex. Português">
+                         </div>
+                    </div>
+
+                    <div class="formDeLado">
                         <div>
                             <label for="cd_colecao" class="tituloForm">Código Coleção:</label>
                             <input name="cd_colecao" type="text" class="inputFormDeLado" placeholder="Ex. Volume Único">
@@ -75,9 +82,9 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
                             <label for="nm_colecao" class="tituloForm">Coleção:</label>
                             <input name="nm_colecao" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                         </div>
+                    </div>
 
-
-
+                    <div class="formDeLado">
                         <div>
                             <label for="cd_idioma" class="tituloForm">Código Idioma:</label>
                             <input name="cd_idioma" type="text" class="inputFormDeLado" placeholder="Ex. 1999">
@@ -86,6 +93,9 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
                             <label for="nm_idioma" class="tituloForm">Idioma:</label>
                             <input name="nm_idioma" type="text" class="inputFormDeLado" placeholder="Ex.Reflexão">
                         </div>
+                    </div>
+
+                    <div class="formDeLado">
                         <div>
                             <label for="cd_genero" class="tituloForm">Código Gênero:</label>
                             <input name="cd_genero" type="text" class="inputFormDeLado" placeholder="Ex.Fantasia">
@@ -94,7 +104,7 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
                             <label for="nm_genero" class="tituloForm">Gênero:</label>
                             <input name="nm_genero" type="text" class="inputFormDeLado" placeholder="Ex. 1">
                         </div>
-
+                    </div>
 
                         <div class="areaBtn">
                             <button class="btnRosa"> Pesquisar </button>
@@ -102,6 +112,10 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
                     </section>
                 </form>
             </div>
+
+            
+
+<!-- ================================================================================================================== -->
             
             <?php
             echo "<a href='BBiblioteca.php?codigo={$biblioteca[0]->cd_biblioteca}'>";

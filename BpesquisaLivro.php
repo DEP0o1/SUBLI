@@ -15,7 +15,6 @@ if (isset($_POST['valor'])) {
 
 ?>
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -254,16 +253,5 @@ require_once './complementos/headerBibliotecario.php';
             ?>
         </div>
         </main>
-         <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const toggleBtn = document.getElementById("toggle-pesquisa");
-        const formArea = document.getElementById("form-pesquisa");
-
-        toggleBtn.addEventListener("click", function () {
-            formArea.classList.toggle("hidden");
-        });
-    });
-</script>
 </body>
-
 </html>
