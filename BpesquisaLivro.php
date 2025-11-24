@@ -23,7 +23,7 @@ if (isset($_POST['valor'])) {
     <link rel="stylesheet" href="css/bibliotecario.css">
     <link rel="stylesheet" href="css/mobile.css">
     <script src="js/componentesJS/header.js"></script>
-    <link rel="icon" type="image/svg+xml" href="img/favIcon-contornado-mini.svg">
+    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
 </head>
 
 <?php

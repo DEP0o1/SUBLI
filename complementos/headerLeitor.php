@@ -38,10 +38,6 @@ if (isset($_SESSION['leitor'])) {
     <a href="../../SUBLI/LdoarPerfil.php">Doação</a>
     <a href="../../SUBLI/LeventoPerfil.php">Eventos</a>
 
-    <div class="span-header" id="notificacao">
-        <span class="material-symbols-outlined">notifications</span>
-    </div>
-
     <div class="span-header">
       <div class="dropdown">
         <button class="dropdown-btn">

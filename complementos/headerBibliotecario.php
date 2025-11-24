@@ -29,7 +29,6 @@
     
   </div>
   </div>
-  <link rel="icon" type="image/svg+xml" href="img/favIcon-contornado-mini.svg">
 </header>
 
 <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">

@@ -16,6 +16,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
   <title>SUBLI - Início</title>
   <link rel="stylesheet" href="css/bibliotecario.css" />
   <link rel="stylesheet" href="css/mobile.css">
+  <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
   <script src="js/componentesJS/header.js"></script>
   
