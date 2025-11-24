@@ -1,6 +1,9 @@
 <?php
 require_once('config.php');
 require_once('verificadoBibliotecario.php');
+$bibliotecario = $_SESSION['bibliotecario'];
+$controller = new BibliotecarioController();
+$Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($bibliotecario));
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +79,7 @@ require_once('verificadoBibliotecario.php');
            </div>
         <?php
          $Leitor = new LeitorView();
-         $Leitor->ExibirLeitores();
+         $Leitor->ExibirLeitores(new Leitor(),$Bibliotecario[0]->cd_biblioteca);
         ?> 
         </section>
     </main>

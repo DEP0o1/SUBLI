@@ -146,7 +146,7 @@ if (empty($assunto2)) $assunto2 = null;
 
                     <?php
                     $evento = new EventoView;
-                    $evento->ExibirEventos();
+                    $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca(),new Leitor(),true));
                     ?>
                 </div>
             </div>

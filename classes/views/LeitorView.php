@@ -2,7 +2,7 @@
 
 class LeitorView{
 
-public function ExibirLeitores($leitor = new Leitor){
+public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
 
      $controller = new LeitorController;
      $leitores = $controller->ListarLeitores($leitor);
@@ -61,7 +61,7 @@ public function ExibirLeitores($leitor = new Leitor){
                 ";
     
                 $emprestimocontroller = new EmprestimoController;
-                $emprestimos = $emprestimocontroller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($Leitor->cd_email),new Livro(), new Biblioteca(),true));
+                $emprestimos = $emprestimocontroller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($Leitor->cd_email),new Livro(), new Biblioteca($cd_biblioteca),true));
                 foreach($emprestimos as $emprestimo){
                    echo"
                     <div class='livro'>
