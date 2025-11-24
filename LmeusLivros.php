@@ -26,7 +26,7 @@ $email = $_SESSION['leitor'];
 
       <section class="areaPerfilLivros">
 
-        <div class="textoEsquerda"> 
+        <div class="textoEsqua"> 
           <h1>Empréstimos</h1> 
         </div>
         <div class="exibirLivros">
@@ -45,7 +45,7 @@ $email = $_SESSION['leitor'];
         
         ?>
         </div>
-        <div class="textoEsquerda"> 
+        <div class="texto"> 
           <h1>Histórico </h1> 
         </div>
 
