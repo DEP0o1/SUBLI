@@ -95,7 +95,6 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
       </div>
     </section>
   </main>
-  <script src="js/componentesJS/calendario.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const toggleBtn = document.getElementById("toggle-pesquisa");
@@ -129,7 +128,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
               <h2>Nome: ${autor.nm_autor}</h2>
               <h3>Código: ${autor.cd_autor}</h3>
               <div class="areaBtnProv">
-                <button class='btnRosa'>Alterar</button>
+                <button class='btnRosa' onclick="popupAlterarAutor()">Alterar</button>
                 <button class='btnRosa'>Excluir</button>
               </div>
             </div>
@@ -147,6 +146,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
   window.addEventListener('DOMContentLoaded', listarAutores);
     });
   </script>
+  <script src="js/componentesJS/calendario.js"></script>
 </body>
 </html>
 
