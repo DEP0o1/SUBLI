@@ -72,7 +72,19 @@ require_once './complementos/menuBibliotecario.php'
   foreach ($emprestimos as $Emprestimo){
     $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
   } 
-?>                      
+?>      
+
+<div class='livro' title='{$Livro->nm_livro}'>
+                <img src='img/{$Livro->cd_livro}' alt='{$Livro->nm_livro}'/>
+                <h2>nidfshgkjhdfs</h2>
+                <div class='favorito'>
+                  <span class='material-symbols-outlined'>favorite</span>
+                </div>
+           <p>{$autor->nm_autor}</p>
+                <button class='btnRosa'>
+                    <a href='LlivroLeitor.php?codigo=$Livro->cd_livro'>Regristarar devoluçao</a>
+                </button>
+            </div>";
         
     </div>
         </div>
