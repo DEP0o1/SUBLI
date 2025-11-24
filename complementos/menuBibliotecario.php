@@ -10,7 +10,7 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
 ?>
 
 <aside>
-    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
+<link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
     <div class="conteudo-aside">
         <div class="conteudo-aside-biblioteca">
 

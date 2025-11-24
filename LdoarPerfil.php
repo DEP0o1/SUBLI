@@ -67,7 +67,6 @@ $campos = 0;
  ?>  
 
     <main>
-<?php include 'barraLateral.php'; ?>
   
       <section class="areaPerfil">
         <form method = "POST" action="">

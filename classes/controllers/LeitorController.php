@@ -116,7 +116,14 @@ class LeitorController extends Banco
 
         $this->Executar('alterar_leitor', $parametros);
 
-        return "Alterações salvas com sucesso!";
+        return "
+        <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Sucesso!</h1>
+            </div>
+            <p>Alterações salvas com sucesso!</p>
+          </div>";
 
     }   catch(\Throwable $th) {
             throw $th;

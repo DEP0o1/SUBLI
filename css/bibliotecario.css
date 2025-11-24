@@ -203,7 +203,7 @@ nav {
 }
 
 .btnRosa:hover{
-  background-color: var(--branco);
+  background-color: var(--vinho-hover);
   transition: 0.2s ease-in;
 }
 
@@ -320,7 +320,6 @@ nav {
 .resultadoPesquisaLeitor{
   display: flex;
   flex-direction: column;
-  margin-left: 10vw;
   display: flex;
   gap: var(--gap-grande);
 }
