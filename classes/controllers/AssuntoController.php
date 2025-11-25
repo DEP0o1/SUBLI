@@ -63,7 +63,12 @@ class AssuntoController extends Banco
             'p_nm_assunto' => $assunto->nm_assunto
 
         ];
-
+           if($assunto->cd_assunto != null){
+            $codigo = $this->ListarAssuntos(new Assunto($assunto->cd_assunto));
+            if(empty($codigo)){
+                return false;
+            }
+        }
         $this->Executar('alterar_assunto', $parametros);
     }catch (\Throwable $th) {
         throw $th;
