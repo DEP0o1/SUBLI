@@ -3,9 +3,8 @@ require_once('config.php');
 require_once('verificadoBibliotecario.php');
 
 $cd_bibliotecario = $_SESSION['bibliotecario'];
-// O CD_BIBLIOTECARIO VAI SER PEGO COM O LOGIN, ENQUANTO NÃO TA FEITO EU TÔ FAZENDO ESTATICO
 $controller = new BibliotecarioController();
-$bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
+$bibliotecarios = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
 $codigo = null;
 
 if(isset($_REQUEST['codigo'])){
@@ -15,7 +14,7 @@ if(isset($_REQUEST['codigo'])){
 if (isset($_REQUEST['recusado'])) {
   $controller = new DoacaoController;
   $controller->ExcluirDoacao(new Doacao($codigo));
- $prox_doacao = $controller->ListarDoacoes(new Doacao(null, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
+ $prox_doacao = $controller->ListarDoacoes(new Doacao(null, new Livro, new Biblioteca($bibliotecarios[0]->cd_biblioteca), new Leitor, 0));
   if(isset($prox_doacao[0])){
     $codigo = $prox_doacao[0]->cd_doacao;
   }
@@ -56,11 +55,11 @@ if (isset($_REQUEST['recusado'])) {
 
       <section class="pagDoacao">
 
-        <div class="divRowItem">
+        <div class="divColumnItem">
 
           <?php
           $controller = new DoacaoController;
-          $doacao = $controller->ListarDoacoes(new Doacao($codigo, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0));
+          $doacao = $controller->ListarDoacoes(new Doacao($codigo, new Livro, new Biblioteca($bibliotecarios[0]->cd_biblioteca), new Leitor, 0));
           $view = new LivrosDoadosView;
           if(isset($doacao[0])){
             $doacao = $doacao[0];
@@ -81,7 +80,7 @@ if (isset($_REQUEST['recusado'])) {
             //taaaaaaaaaaarrrrrrrrrrrrrrrrr
 
             $Doacao = new LivrosDoadosView;
-            $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro, new Biblioteca($bibliotecario[0]->cd_biblioteca), new Leitor, 0),$doacao->cd_doacao);
+            $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro, new Biblioteca($bibliotecarios[0]->cd_biblioteca), new Leitor, 0),$doacao->cd_doacao);
             ?>
 
             <!-- <div class="livroDoadoLista">

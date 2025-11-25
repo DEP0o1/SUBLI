@@ -20,6 +20,7 @@ class BibliotecarioController extends Banco
             foreach($dados as $item){
                 $bibliotecario = new Bibliotecario;
                 $bibliotecario->Hydrate($item);
+                $bibliotecario->cd_biblioteca = $item["cd_biblioteca"];
                 array_push($lista, $bibliotecario);
             }
             return $lista;

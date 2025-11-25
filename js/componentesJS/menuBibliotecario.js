@@ -126,8 +126,9 @@ botaoAbrirAutor.addEventListener("click", () => {
   });
 });
 
-
-
+function popupAlterarAutor(){
+  console.log("hajksdhjkasd");
+}
   /*-----------------------------genero------------------------------------------------------------------------*/
 
   const botaoAbrirGenero = aside.querySelector("#abrir-genero");

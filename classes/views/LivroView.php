@@ -27,7 +27,8 @@ class LivroView{
                 </button>
             </div>";
         }
-    } else {
+    }else
+     {
         echo "
         <div class='nao-encontrado'>
             <h1>Nenhum livro foi encontrado</h1>
@@ -106,7 +107,7 @@ class LivroView{
               <p>• Disponível em: ";
         
         foreach($bibliotecas as $Biblioteca){
-            echo "{$Biblioteca->nm_biblioteca} ";
+            echo "<a href='Biblioteca.php' class='testeStrong' title='{$Biblioteca->nm_biblioteca}'><strong>{$Biblioteca->nm_biblioteca}</strong></a>";
         }
 
         echo "</p>

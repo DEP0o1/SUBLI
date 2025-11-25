@@ -61,6 +61,13 @@ class AutorController extends Banco
 
         ];
 
+        if($autor->cd_autor != null){
+            $codigo = $this->ListarAutores(new Autor($autor->cd_autor));
+            if(empty($codigo)){
+                return false;
+            }
+        }
+
         $this->Executar('alterar_autor', $parametros);
     }catch (\Throwable $th) {
         throw $th;

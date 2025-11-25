@@ -16,6 +16,7 @@ if (isset($_SESSION['leitor'])) {
 
 <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
 <script src="js/componentesJS/dropDown.js"></script>
+<script src="js/componentesJS/menuMobileLeitor.js"></script>
 
 <header>
   <a href="LindexLeitor.php">
@@ -29,20 +30,13 @@ if (isset($_SESSION['leitor'])) {
       <input type="text" name="valor" placeholder="Faça sua Pesquisa" class="input" />
       <img src="img/pesquisa.webp" alt="" class="lupa" />
     </div>
-
-    <span class="material-symbols-outlined">filter_alt</span>
   </form>
 
   <div class="abas">
     <a href="../../SUBLI/Lresultado.php">Livros</a>
     <a href="Bibliotecas.php">Bibliotecas</a>
     <a href="../../SUBLI/LdoarPerfil.php">Doação</a>
-
-    <div class="span-header">
-      <a href="">
-        <span class="material-symbols-outlined">notifications</span>
-      </a>
-    </div>
+    <a href="../../SUBLI/LeventoPerfil.php">Eventos</a>
 
     <div class="span-header">
       <div class="dropdown">
@@ -64,6 +58,13 @@ if (isset($_SESSION['leitor'])) {
               <div class="titulo-dropdown">
                 <span class="material-symbols-outlined">account_circle</span>
                 <h3>Meu Perfil</h3>
+              </div>
+            </a>
+
+            <a href="LmeusLivros.php">
+              <div class="titulo-dropdown">
+                <span class="material-symbols-outlined">edit</span>
+                <h3>Editar Perfil</h3>
               </div>
             </a>
 
@@ -112,6 +113,8 @@ if (isset($_SESSION['leitor'])) {
     <span class="material-symbols-outlined">menu</span>
   </div>
 </header>
+
+<script src="js/componentesJS/notificacaoLeitor.js"></script>
 
 
 

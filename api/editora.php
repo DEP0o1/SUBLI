@@ -25,6 +25,8 @@ switch ($metodo) {
             echo json_encode(['mensagem' => $erro->getMessage()]);
         }
         break;
+    case 'PUT':
+        break;
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);

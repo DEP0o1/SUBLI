@@ -522,7 +522,7 @@ BEGIN
       AND (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro);
 END$$
 
-CALL listar_editoras(null, null, null);
+/*CALL listar_editoras(null, null, null);*/
 
 DROP PROCEDURE IF EXISTS adicionar_editora$$
 CREATE PROCEDURE adicionar_editora(
@@ -788,13 +788,14 @@ BEGIN
     
 
     SELECT *
-    FROM evento
-    WHERE (p_cd_evento IS NULL OR cd_evento = p_cd_evento)
-		AND (p_nm_evento IS NULL OR nm_evento = p_nm_evento)
-      AND (p_dt_evento IS NULL OR dt_evento = p_dt_evento)
-      AND (p_ds_evento IS NULL OR ds_evento = p_ds_evento)
-      AND (p_cd_biblioteca IS NULL OR cd_biblioteca = p_cd_biblioteca)
-      AND (p_cd_email IS NULL OR p_cd_email = p_cd_email)
+    FROM evento e
+        LEFT JOIN leitor l ON e.cd_email = l.cd_email
+    WHERE (p_cd_evento IS NULL OR e.cd_evento = p_cd_evento)
+		AND (p_nm_evento IS NULL OR e.nm_evento = p_nm_evento)
+      AND (p_dt_evento IS NULL OR e.dt_evento = p_dt_evento)
+      AND (p_ds_evento IS NULL OR e.ds_evento = p_ds_evento)
+      AND (p_cd_biblioteca IS NULL OR e.cd_biblioteca = p_cd_biblioteca)
+      AND (p_cd_email IS NULL OR l.cd_email = p_cd_email)
 		AND (p_ic_confirmado IS NULL OR ic_confirmado = p_ic_confirmado);
 END$$
 
@@ -842,6 +843,47 @@ BEGIN
     END$$
     
     /*CALL adicionar_evento('EVENTO TOP',NULL, NOW() , 'DESCRIÇÃO TOP' , NULL ,'Parangolé', 'Jeferson', '50479150850' );*/
+    
+    DROP PROCEDURE IF EXISTS adicionar_evento_bibliotecario$$
+CREATE PROCEDURE adicionar_evento_bibliotecario(
+	IN p_nm_evento VARCHAR(200),
+    IN p_cd_evento INT,
+    IN p_dt_evento VARCHAR(200),
+    IN p_ds_evento TEXT,
+    
+    IN p_cd_biblioteca INT,
+    IN p_nm_biblioteca VARCHAR(200),
+    
+    IN p_cd_email VARCHAR(200)
+)
+BEGIN
+	DECLARE v_cd_biblioteca INT;
+	DECLARE v_cd_evento INT;
+    
+    IF p_cd_evento IS NULL THEN
+        SELECT COALESCE(MAX(cd_evento), 0) + 1 INTO v_cd_evento FROM evento;
+        ELSE
+        SET v_cd_evento = p_cd_evento;
+    END IF;
+    
+ 	IF p_cd_biblioteca IS NULL AND p_nm_biblioteca IS NOT NULL THEN
+    SELECT cd_biblioteca  INTO v_cd_biblioteca FROM biblioteca WHERE nm_biblioteca = p_nm_biblioteca
+    LIMIT 1;
+    ELSE
+    SET v_cd_biblioteca = p_cd_biblioteca;
+    END IF;
+    
+     IF v_cd_evento IS NOT NULL AND 
+		p_nm_evento IS NOT NULL AND
+       p_dt_evento IS NOT NULL AND 
+       p_ds_evento IS NOT NULL AND 
+       v_cd_biblioteca IS NOT NULL AND 
+       p_cd_email IS NOT NULL THEN
+
+        INSERT INTO evento 
+        VALUES (p_nm_evento,v_cd_evento, p_dt_evento, p_ds_evento, v_cd_biblioteca, p_cd_email, true);
+    END IF;
+    END$$
     
     /*FAZER O PUT PELO AMOR DE DEUS*/
     
@@ -1256,6 +1298,7 @@ END$$
     DROP PROCEDURE IF EXISTS listar_doacoes$$
 CREATE PROCEDURE listar_doacoes(
   IN p_cd_doacao INT,
+  IN p_nm_autor VARCHAR(200),
   IN p_nm_livro VARCHAR(200),
   IN p_cd_biblioteca INT,
   IN p_cd_email VARCHAR(200),
@@ -1267,6 +1310,7 @@ BEGIN
     JOIN biblioteca b ON d.cd_biblioteca = b.cd_biblioteca
     JOIN leitor l ON d.cd_email = l.cd_email
    WHERE (p_cd_doacao IS NULL OR d.cd_doacao = p_cd_doacao)
+	AND (p_nm_autor IS NULL OR d.nm_autor = p_nm_autor)
      AND (p_nm_livro IS NULL OR d.nm_livro = p_nm_livro)
      AND (p_cd_biblioteca IS NULL OR d.cd_biblioteca = p_cd_biblioteca)
      AND (p_cd_email IS NULL OR d.cd_email = p_cd_email)

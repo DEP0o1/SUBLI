@@ -1,6 +1,461 @@
-    git clone https://github.com/DEP0o1/SUBLI 
+ 
      git add arquivo 
      git add . 
      git commit -m 'mensagem' 
      git pull 
      git push
+
+
+
+
+****/Cadastro.js/****
+
+const formData = new FormData();   // cria um formulario
+const fileInput = cadastrarUsuario.querySelector('#fileInput') // pega o input type file
+const btnEnviar = document.querySelector('.btn1'); // pega o botão de envio do form
+
+if (fileInput) {
+    fileInput.addEventListener('change', function(event){ // ao o usuario selecionar um arquivo essa função é chamada
+        const file = event.target.files[0]; // pega o arquivo selecionado
+        if (file) {   // se o arquivo existir
+
+            formData.append('image', file); // adiciona o arquivo ao formulario
+
+            fetch('/Psicodesk/upload.php?preview', {  // envia o formulario para upload.php via api (apenas para fazer a validação do arquivo)
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json()) // pega a resposta de upload.php
+            .then(data => {
+                if(data.error){
+                    console.error('Erro:' ,data.error)
+                    return;
+                }
+                const perfilPaciente = document.querySelector('.img_perfil'); // captura a div que eu quero mudar o background
+                perfilPaciente.style.backgroundImage = `url(${ URL.createObjectURL(file)})`;   // mudo o background-image para o arquivo selecionado
+            })
+        }
+    })
+}
+
+
+****/upload.php/****
+
+<?php
+// Habilitar exibição de erros para depuração (opcional)
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+// Diretório(pasta) onde os arquivos serão armazenados
+$targetDir = "img/uploads/";
+
+// Verifica se o diretório de upload existe, senão cria um
+if (!file_exists($targetDir)) {
+    mkdir($targetDir, 0777, true);
+}
+
+if(isset($_REQUEST['preview'])) {  // verfica se existe a requisição 'preview' vinda do js
+    
+    // Verifique se o arquivo foi enviado corretamente
+    if (isset($_FILES["image"])) {
+        $file = $_FILES["image"];
+        $targetFile = $targetDir . basename($file["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+        // Verifique se o arquivo é uma imagem
+        $check = getimagesize($file["tmp_name"]);
+        if ($check !== false) {
+            // O arquivo é uma imagem
+            $uploadOk = 1;
+        } else {
+            echo json_encode(["error" => "O arquivo não é uma imagem."]);
+            $uploadOk = 0;
+            return;
+        }
+
+        // Verifica o tamanho do arquivo (exemplo: max 5MB)
+        if ($file["size"] > 5000000) {
+            echo json_encode(["error" => "Desculpe, o arquivo é muito grande."]);
+            $uploadOk = 0;
+            return;
+        }
+        // Verifica o tipo de arquivo (exemplo: apenas JPG, JPEG e PNG)
+        if ($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
+            echo json_encode(["error" => "Desculpe, somente arquivos JPG, JPEG e PNG são permitidos."]);
+            $uploadOk = 0;
+            return;
+        }
+
+        // Verifica se o upload foi bem-sucedido
+        if ($uploadOk == 0) {
+            // Se houver algum erro, uma mensagem será retornada
+            echo json_encode(["error" => "Desculpe, seu arquivo não foi selecionado."]);
+            return;
+        }
+        else {
+            // Se o upload foi bem-sucedido, retorna a mensagem de sucesso
+            echo json_encode([
+                "success" => true,
+                "response" => "Arquivo selecionado com sucesso",
+            ]);
+        }
+    } else {
+        // Caso o arquivo não tenha sido enviado corretamente
+        echo json_encode(["error" => "Nenhum arquivo foi selecionado."]);
+        return;
+    }
+}
+
+a
+// NOTA: até aqui o arquivo não foi salvo, apenas validado para ser exibido no js
+// a partir de agora que será feito o cadastro da imagem em uma pasta do projeto
+
+
+****/Cadastro.js/**** (continuação)
+
+if (btnEnviar) {
+        btnEnviar.addEventListener('click', (e)=>{    // adiciona evento de click no botão de envio do formulario            
+            e.preventDefault(); // impede o carregamento da pagina ao enviar o formulário
+
+            // aqui, no meu caso eu insiro os outros valores do meu formulário de cadastro. Caso você queira inserir apenas a imagem ignore essas linhas
+            formData.append('nome', document.getElementById('nome').value);
+            formData.append('cpf', document.getElementById('cpf').value);
+            formData.append('profissional', document.getElementById('profissional').value);
+        
+
+            fetch(`/Psicodesk/areaPacientes.php?image=1&btnCadastrar`, {  // envia o formulario para areaPacientes.php via api (onde será feito o cadastro do paciente)
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {     // retorna a resposta da areaPacientes.php
+                if(data.success){
+                    alert(data.success);
+                    window.location.href = '/Psicodesk/areaPacientes.php';
+                }
+            })
+        });
+    }
+
+
+****/areaPacientes.php/**** 
+
+if(isset($_REQUEST['btnCadastrar'])){ // verifica se o envio do formulario foi enviado via js
+    $imgPerfil = null; // define uma variavel para a imagem
+    
+    if(isset($_REQUEST['image']) && isset($_FILES['image'])){    
+        $imgPerfil = $_FILES['image'];  // caso a requisição da imagem exista e o arquivo tambem, a variavel recebe a imagem selecionada
+    }       
+            
+    $nome = $_REQUEST["nome"];
+    $cpf = $_REQUEST["cpf"];
+    $profissional = $_REQUEST["profissional"];
+    $genero = $_REQUEST["genero"];
+    $nascimento = $_REQUEST["nascimento"];
+    $email = $_REQUEST["email-contato"];
+    // ....
+
+    // insere os restantes dos campos do form
+
+
+    $PacienteController = new PacienteController(); // instancia a classe PacienteController
+    $PacienteController->cadastrar( // executa a função cadastrar da classe PacienteController
+        // passa os parametros da função cadastrar 
+        nm_email_paciente: $email,
+        nm_paciente: $nome,
+        cd_senha: null,
+        cd_rg: $_REQUEST['rg'],
+        cd_cpf: $cpf,
+        dt_nascimento: $nascimento,
+        nm_naturalidade: $_REQUEST['naturalidade'],
+        nm_genero: $genero,
+        cd_telefone: $_REQUEST['telefone'],
+        cd_celular: $_REQUEST['celular'],
+        nm_endereco: $_REQUEST['endereco'],
+        ds_observacao: $_REQUEST['observacao'],
+        nm_escolaridade: $_REQUEST['escolaridade'],
+        nm_raca: $_REQUEST['raca'],
+        nm_profissao: $_REQUEST['profissao'],
+        cd_usuario: $profissional,
+        imgPerfil: $imgPerfil,
+
+        responsaveis: $responsaveis,
+        parentes: $parentes
+    );
+
+echo json_encode(['success' => 'Cadastro do paciente enviado com sucesso']); // retorna uma mensagem de sucesso para o js, caso de tudo certo
+return;
+}
+
+
+****/PacienteController.php/**** 
+
+public function cadastrar( // função de cadastro de paciente que foi chamada em areaPacientes.php
+    $nm_email_paciente = null,
+    $nm_paciente,
+    $cd_senha = null,
+    $cd_rg = null,
+    $cd_cpf,
+    $dt_nascimento,
+    $nm_naturalidade = null,
+    $nm_genero,
+    $cd_telefone = null,
+    $cd_celular = null,
+    $nm_endereco = null,
+    $ds_observacao = null,
+    $nm_escolaridade = null,
+    $nm_raca = null,
+    $nm_profissao = null,
+    $cd_usuario,
+    $imgPerfil = null,
+
+    $responsaveis = null,
+    $parentes = null
+)
+{   
+    $dados = $this->Executar(nomeProcedure: "cadastrar_paciente", // executa a procedure cadastrar_paciente do banco de dados
+    parametros: [
+        'nm_email_paciente' => $nm_email_paciente,
+        'nm_paciente' => $nm_paciente,
+        'cd_senha' => $cd_senha,
+        'cd_rg' => $cd_rg,
+        'cd_cpf' => $cd_cpf,
+        'dt_nascimento' => $dt_nascimento,
+        'nm_naturalidade' => $nm_naturalidade,
+        'nm_genero' => $nm_genero,
+        'cd_telefone' => $cd_telefone,
+        'cd_celular' => $cd_celular,
+        'nm_endereco' => $nm_endereco,
+        'ds_observacao' => $ds_observacao,
+        'nm_escolaridade' => $nm_escolaridade,
+        'nm_raca' => $nm_raca,
+        'nm_profissao' => $nm_profissao,
+        'cd_usuario' => $cd_usuario
+    ]);
+
+    $cd_paciente = $dados[0]['cd_paciente']; // pega o codigo do paciente cadastrado, que foi gerado pela procedure
+
+    if($imgPerfil != null){;  // verfica se alguma imagem foi selecionada pelo usuario e se foi passada pela validação do js
+        require_once 'upload.php'; // importa o arquivo upload.php para que possamos usar suas funções
+        cadastrarImg($cd_paciente, $imgPerfil); // chama função do upload.php
+    }
+}
+
+
+****/upload.php/**** (continuação)
+
+function cadastrarImg($cd_paciente, $imgPerfil){ // cria uma função para cadastrar a imagem do paciente na pasta img/uploads
+    
+    $targetFile = 'img/uploads/' . basename($imgPerfil['name']); // resgata o nome do arquivo
+
+    rename($imgPerfil['tmp_name'], 'img/uploads/paciente_' . $cd_paciente . '.' . pathinfo($targetFile, PATHINFO_EXTENSION)); // renomeia o arquivo para "paciente_(codigo)" e move ele para o diretorio img/uploads
+}
+
+
+// NOTA: aqui se todas as estrelas se alinharem o cadastro da imagem é para estar funcionando
+// Caso você precise se preocupar em atualizar a imagem, continue lendo a explicação desse codigo desorganizado
+
+
+****/visualizacaoPaciente.js/**** 
+
+viewUsuario.addEventListener('change', (event) => { // mesma coisa do anterior, evento para mudar a imagem sem salvar. Aqui esta com algumas alterações pq como disse meu codigo é desorganizado, mas você não deve se preocupar (muito provavelmente vc nem precisara de uma nova preview de imagem)
+    if (event.target.id === 'fileInput') {
+        const file = event.target.files[0];
+
+        if (file) {
+            formData.append('image', file);
+            
+            fetch('/Psicodesk/upload.php?preview', { // manda a requisição de preview para validar a img no upload.php
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.error){
+                    console.error('Erro:', data.error);
+                    return;
+                }
+                
+                const perfilPaciente = document.querySelector('.img_perfil');
+                perfilPaciente.style.backgroundImage = `url(${ URL.createObjectURL(event.target.files[0])})` // muda a imagem da div
+                
+                formData.append('newImage', true)
+            });
+        }
+    }
+});
+
+
+****/visualizacaoPaciente.js/**** (continuação)
+
+//.... mesma montagem do formulario usando o formData.append() (exatamente como antes)
+
+fetch(`/Psicodesk/areaPacientes.php?btnAlterar`, {  // então manda uma requisição para areaPacientes.php, exatamente como antes porem agora para alterar os dados de um paciente
+    method: 'POST',
+    body: formData
+})
+.then(res => res.json())
+.then(data => {
+    if(data.success){
+        alert(data.success)
+        window.location.href = '/Psicodesk/areaPacientes.php';
+    }
+    else{
+        console.log('deu m')
+        console.error('Erro: ' + data.erro)
+        alert(data.error)
+    }
+})
+
+
+****/areaPacientes.php/**** (função de alterar)
+
+if(isset($_REQUEST['btnAlterar'])){ // verifica se o envio do formulario foi enviado via js
+    $imgPerfil = null;
+    if(isset($_REQUEST['newImage']) && isset($_FILES['image'])){    // a mesma validação para saber se a imagem foi selecionada 
+        $imgPerfil = $_FILES['image'];
+    }
+
+    // .... selecina e valida os campos do formulario (igual antes)
+    
+    $PacienteController = new PacienteController();
+    $PacienteController->alterar( // executa a função alterar da classe PacienteController
+        cd_paciente: $cd_paciente,
+        nm_email_paciente: $email,
+        nm_paciente: $nome,
+        cd_senha: null,
+        cd_rg: $_REQUEST['rg'],
+        cd_cpf: $cpf,
+        dt_nascimento: $nascimento,
+        nm_naturalidade: $_REQUEST['naturalidade'],
+        nm_genero: $genero,
+        cd_telefone: $_REQUEST['telefone'],
+        cd_celular: $_REQUEST['celular'],
+        nm_endereco: $_REQUEST['endereco'],
+        ds_observacao: $_REQUEST['observacao'],
+        nm_escolaridade: $_REQUEST['escolaridade'],
+        nm_raca: $_REQUEST['raca'],
+        nm_profissao: $_REQUEST['profissao'],
+        cd_usuario: $profissional,
+        nm_status_paciente: $nm_status_paciente,
+        imgPerfil: $imgPerfil,
+
+        responsaveis: $responsaveis,
+        parentes: $parentes
+    );
+
+    echo json_encode(['success' => 'dados alterados com sucesso']); // mensagem de sucesso para o js, caso de tudo certo
+    return;
+}
+
+
+****/PacienteController.php/**** (função de alterar)
+
+ public function alterar(
+    // parametros
+
+    $cd_paciente,
+    $nm_email_paciente = null,
+    $nm_paciente = null,
+    $cd_senha = null,
+    $cd_rg = null,
+    $cd_cpf = null,
+    $dt_nascimento = null,
+    $nm_naturalidade = null,
+    $nm_genero = null,
+    $cd_telefone = null,
+    $cd_celular = null,
+    $nm_endereco = null,
+    $ds_observacao = null,
+    $nm_escolaridade = null,
+    $nm_raca = null,
+    $nm_profissao = null,
+    $cd_usuario = null,
+    $nm_status_paciente = null,
+    $imgPerfil = null,
+
+    $responsaveis = null,
+    $parentes = null
+)
+{
+    $this->Executar(nomeProcedure: "alterar_paciente", // executa a procedure alterar_paciente do banco de dados
+    parametros: [
+        'cd_paciente' => $cd_paciente,
+        'nm_email_paciente' => $nm_email_paciente,
+        'nm_paciente' => $nm_paciente,
+        'cd_senha' => $cd_senha,
+        'cd_rg' => $cd_rg,
+        'cd_cpf' => $cd_cpf,
+        'dt_nascimento' => $dt_nascimento,
+        'nm_naturalidade' => $nm_naturalidade,
+        'nm_genero' => $nm_genero,
+        'cd_telefone' => $cd_telefone,
+        'cd_celular' => $cd_celular,
+        'nm_endereco' => $nm_endereco,
+        'ds_observacao' => $ds_observacao,
+        'nm_escolaridade' => $nm_escolaridade,
+        'nm_raca' => $nm_raca,
+        'nm_profissao' => $nm_profissao,
+        'cd_usuario' => $cd_usuario,
+        'nm_status_paciente' => $nm_status_paciente
+    ]);
+
+    if($imgPerfil != null){;
+        require_once 'upload.php';
+        alterarImg($cd_paciente, $imgPerfil); // e agora chama a função alterarImg ao inves da cadastrarImg
+    }
+}
+
+
+
+****/upload.php/**** (função de alterar)
+
+function alterarImg($cd_paciente, $imgPerfil){
+    $targetFile = 'img/uploads/' . basename($imgPerfil['name']); // resgata o nome do arquivo
+
+    //verifica para se o arquivo existe na pasta img/uploads para cada tipo de extensão de imagem
+
+    // jpeg
+    if(file_exists('img/uploads/paciente_' . $cd_paciente . '.jpeg')){  // verifica se a imagem existe na pasta      
+        if (unlink('img/uploads/paciente_' . $cd_paciente . '.jpeg')) { // caso a imagem exista ele é deletado para que se possa adicionar a nova imagem
+            rename($imgPerfil['tmp_name'], 'img/uploads/paciente_' . $cd_paciente . '.' . pathinfo($targetFile, PATHINFO_EXTENSION)); // move o arquivo e o renomeia
+            return;
+        }
+        else{
+            json_encode(['error' => 'não foi possivel alterar a imagem']); // caso de erro
+            exit;
+        }
+    }
+    // jpg
+    elseif(file_exists('img/uploads/paciente_' . $cd_paciente . '.jpg')){  // verifica se a imagem existe na pasta  
+        if (unlink('img/uploads/paciente_' . $cd_paciente . '.jpg')) {  // caso a imagem exista ele é deletado para que se possa adicionar a nova imagem
+            rename($imgPerfil['tmp_name'], 'img/uploads/paciente_' . $cd_paciente . '.' . pathinfo($targetFile, PATHINFO_EXTENSION)); // move o arquivo e o renomeia
+            return;
+        }
+        else{
+            json_encode(['error' => 'não foi possivel alterar a imagem']); // caso de erro
+            exit;
+        }
+    }
+    // png
+    elseif(file_exists('img/uploads/paciente_' . $cd_paciente . '.png')){  // verifica se a imagem existe na pasta   
+        if (unlink('img/uploads/paciente_' . $cd_paciente . '.png')) {  // caso a imagem exista ele é deletado para que se possa adicionar a nova imagem
+            rename($imgPerfil['tmp_name'], 'img/uploads/paciente_' . $cd_paciente . '.' . pathinfo($targetFile, PATHINFO_EXTENSION));  // move o arquivo e o renomeia
+            return;
+        }
+        else{
+            json_encode(['error' => 'não foi possivel alterar a imagem']); // caso de erro
+            exit;
+        }
+    }
+    
+    else{ // caso o arquivo não exista na pasta img/uploads em nenhuma das extensões, ele é adicionado assim como na função cadastrarImg
+        rename($imgPerfil['tmp_name'], 'img/uploads/paciente_' . $cd_paciente . '.' . pathinfo($targetFile, PATHINFO_EXTENSION));
+        return;
+    }
+}   
+?>
+
+// Você chegou ao fim desse manual, se tudo der certo show! (mas provavelmente n vai acontecer)
+// Em caso de duvidas ou qualquer questão pendente, entre em contato com nossa equipe de suporte no horario comercial (aulas de TCC após a review dos professores, aulas do Luis alexandre ou da Monica, e muitas vezes nas segundas aulas da maristela )

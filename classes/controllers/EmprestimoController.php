@@ -27,8 +27,8 @@ class EmprestimoController extends Banco
             foreach($dados as $item){
                 $Emprestimo = new Emprestimo;
                 $Emprestimo->Hydrate($item);
-                // // $Emprestimo->livro = new Livro;
-                // // $Emprestimo->livro->autores = $autorController->ListarAutores(new Autor(null, null, $item['cd_livro'])); 
+                $Emprestimo->livro = new Livro($item["cd_livro"],$item["nm_livro"],[new Autor], new Editora($item["cd_editora"], $item["nm_editora"]), [new Genero], new Idioma($item["cd_idioma"]), new Colecao($item["cd_colecao"]),[new Assunto],null,null,null,null,$item["ds_sinopse"]);
+                // $Emprestimo->livro->autores = $autorController->ListarAutores(new Autor(null, null, $item['cd_livro'])); 
 
                 array_push($lista, $Emprestimo);
             }

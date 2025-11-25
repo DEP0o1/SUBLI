@@ -16,11 +16,11 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
   <title>SUBLI - Início</title>
   <link rel="stylesheet" href="css/bibliotecario.css" />
   <link rel="stylesheet" href="css/mobile.css">
+  <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-  <script src="js/componentesJS/header.js"></script>
+  <script src="js/componentesJS/header.js"></script> 
   
 </head>
-
 
 <body>
   <?php
@@ -74,7 +74,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
           <div class="lista-eventos">
             <?php
             $evento = new EventoView;
-            $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($Bibliotecario[0]->cd_biblioteca), new Leitor,1));
+            $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($Bibliotecario[0]->cd_biblioteca), new Leitor,0));
             ?>
   
           </div>
@@ -95,15 +95,8 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
       </div>
     </section>
   </main>
-  <script src="js/componentesJS/calendario.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const toggleBtn = document.getElementById("toggle-pesquisa");
-      const formArea = document.getElementById("form-pesquisa");
-
-      toggleBtn.addEventListener("click", function() {
-        formArea.classList.toggle("hidden");
-      });
       
        function listarAutores() {
     fetch('http://localhost/subli/api/autor.php')
@@ -129,7 +122,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
               <h2>Nome: ${autor.nm_autor}</h2>
               <h3>Código: ${autor.cd_autor}</h3>
               <div class="areaBtnProv">
-                <button class='btnRosa'>Alterar</button>
+                <button class='btnRosa' onclick="popupAlterarAutor()">Alterar</button>
                 <button class='btnRosa'>Excluir</button>
               </div>
             </div>
@@ -147,6 +140,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
   window.addEventListener('DOMContentLoaded', listarAutores);
     });
   </script>
+  <script src="js/componentesJS/calendario.js"></script>
 </body>
 </html>
 

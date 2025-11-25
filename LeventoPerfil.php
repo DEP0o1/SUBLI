@@ -32,9 +32,18 @@ $campos = 0;
   }
 
   if($campos == 4){
-
     $controller = new EventoController;
-    $evento = $controller->AdicionarEvento(new Evento($nm_evento,null,$dt_evento,$ds_evento,null,new Biblioteca($cd_biblioteca),new Leitor($cd_email)));
+    $conferencia = $controller->ListarEventos(new Evento($nm_evento,null,$dt_evento,$ds_evento,new Biblioteca($cd_biblioteca),new Leitor($cd_email)));
+    if($conferencia != []){
+        $nm_evento = null;
+        $ds_evento = null;
+        $dt_evento = null;
+        $cd_email = null;
+    }
+    else{
+      $evento = $controller->AdicionarEvento(new Evento($nm_evento,null,$dt_evento,$ds_evento,new Biblioteca($cd_biblioteca),new Leitor($cd_email)));
+    }
+
   }
 ?>
 
@@ -43,10 +52,11 @@ $campos = 0;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Perfil</title>
+    <title>SUBLI - Perfil</title>
     <link rel="stylesheet" href="css/leitor.css" />
     <link rel="stylesheet" href="css/leitorPerfil.css" />
     <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="js/componentesJS/popupEditarPerfil.js" defer></script>
     <script src="js/componentesJS/popupLogout.js" defer></script>
@@ -60,7 +70,7 @@ $campos = 0;
     <?php require_once 'barraLateral.php'; ?>
 
       <section class="areaPerfil">
-        <form action="">
+        <form method="POST">
           <div class="titulo-areaPerfil">
             <h1>Solicitar Evento</h1>
             <hr />
@@ -68,17 +78,17 @@ $campos = 0;
 
           <div class="label-input">
             <label for="">Tema do Evento: </label>
-            <input name = "nm_evento"type="text" />
+            <input name = "nm_evento"type="text" placeholder="Ler livros infantis" />
           </div>
 
           <div class="label-input">
             <label for="">Descrição Evento: </label>
-            <input name ="ds_evento" type="text" />
+            <input name ="ds_evento" type="text" placeholder="Meu evento será para..."/>
           </div>
 
           <div class="label-input">
             <label for="">Dia do Evento: </label>
-            <input name ="dt_evento" type="date" />
+            <input name ="dt_evento" type="date" placeholder="12/02/2027"/>
           </div>
 
           <div class="label-input">
@@ -95,9 +105,9 @@ $campos = 0;
 
 
 
-          <button type="submit" id="btnEvento">Realizar solicitação de evento</button>
+          <button type="submit" id="btnEvento">Solicitar de evento</button>
           <?php
-          if($campos == 4){
+          if($campos == 4 && $conferencia == []){
             echo $evento;
           }
           

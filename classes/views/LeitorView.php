@@ -2,7 +2,7 @@
 
 class LeitorView{
 
-public function ExibirLeitores($leitor = new Leitor){
+public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
 
      $controller = new LeitorController;
      $leitores = $controller->ListarLeitores($leitor);
@@ -57,43 +57,27 @@ public function ExibirLeitores($leitor = new Leitor){
                 <div class='textoEsquerda'>
                     <h1>Empréstimos deste leitor</h1>
                 </div>
-    
                 <div class='exibirLivros'>
-                    <div class='livro'>
-                        <img src='img/6' alt= />
-                        <h2>{$Leitor->livro->nm_livro}</h2>
-                        <p>machado de assis</p>
-                        <button>Ver Mais</button>
-                    </div>
+                ";
     
+                $emprestimocontroller = new EmprestimoController;
+                $emprestimos = $emprestimocontroller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($Leitor->cd_email),new Livro(), new Biblioteca($cd_biblioteca),true));
+                foreach($emprestimos as $emprestimo){
+                   echo"
                     <div class='livro'>
-                        <img src='img/7' alt= />
-                        <h2>Pequeno principe</h2>
-                        <p>machado de assis</p>
+                        <img src='img/{$emprestimo->livro->cd_livro}' alt= />
+                        <h2>{$emprestimo->livro->nm_livro}</h2>
+                     ";
+                    $autorcontroller = new AutorController;
+                    $autores = $autorcontroller->ListarAutores(new Autor(null,null,$emprestimo->livro->cd_livro));
+                     foreach($autores as $autor){
+                        echo "<p>$autor->nm_autor</p>";
+                     }
+                     echo"
                         <button>Ver Mais</button>
-                    </div>
-    
-                    <div class='livro'>
-                        <img src='img/8' alt= />
-                        <h2>Pequeno principe</h2>
-                        <p>machado de assis</p>
-                        <button>Ver Mais</button>
-                    </div>
-    
-                    <div class='livro'>
-                        <img src='img/9' alt= />
-                        <h2>Pequeno principe</h2>
-                        <p>machado de assis</p>
-                        <button>Ver Mais</button>
-                    </div>
-    
-                    <div class='livro'>
-                        <img src='img/10' alt= />
-                        <h2>Pequeno principe</h2>
-                        <p>machado de assis</p>
-                        <button>Ver Mais</button>
-                    </div>
-                </div>
+                    </div>";
+                }
+                echo"
             </div>";           
         }
         

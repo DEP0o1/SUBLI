@@ -320,7 +320,6 @@ nav {
 .resultadoPesquisaLeitor{
   display: flex;
   flex-direction: column;
-  margin-left: 10vw;
   display: flex;
   gap: var(--gap-grande);
 }
@@ -903,6 +902,11 @@ aside br {
   flex-wrap: wrap;
 }
 
+.formPesquisaAvancada {
+  left: 500px;
+  background-color: #333;
+}
+
 .areaLivro {
   display: flex;
   flex-direction: column;
@@ -1226,6 +1230,7 @@ aside br {
   gap: 20px;
   border-radius: 15px;
   padding: 1%;
+  overflow-y: auto;
 }
 
 .formSinopse {
@@ -1392,6 +1397,14 @@ aside br {
   border-radius: var(--radius);
   z-index: 6000;
   position: fixed;
+}
+
+.areaCadastr {
+  margin-left: 20vw;
+  top: 84px;
+  z-index: 99999;
+  width: 40vw;
+  position: absolute;
 }
 
 .overlayPopup {
@@ -1675,10 +1688,11 @@ h1 {
 
 .fotoMenordoacao {
   display: flex;
-  flex-direction: column;
-  /* background-color: rgb(50, 109, 129); */
   gap: var(--gap);
   border-radius: var(--radius);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .fotoMenordoacao img{
@@ -1686,10 +1700,9 @@ h1 {
   cursor: pointer;
 }
 
-
 .imgLivroLista {
-height: 160px;
-width: 110px;
+height: 95px;
+width: calc(95px * (2/3));
 border-radius: var(--radius);
 }
 
@@ -1822,6 +1835,15 @@ height: 65vh;
 .divRowItem{
 display: flex;
 flex-direction: row;
+gap: var(--gap);
+align-items: flex-start;
+padding: 1%;
+width: fit-content;
+}
+
+.divColumnItem{
+display: flex;
+flex-direction: column-reverse;
 gap: var(--gap);
 align-items: flex-start;
 padding: 1%;

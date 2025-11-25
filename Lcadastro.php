@@ -128,41 +128,146 @@
     </form>
 </div>
 
-  <script>
-    const steps = document.querySelectorAll(".step")
-    const btnProximo = document.querySelectorAll(".proximo")
-    const btnVoltar = document.querySelectorAll(".voltar")
-    const progresso = document.querySelector(".progresso")
+<script>
 
-    let stepAtual = 0
+function Mensagem(texto, tipo, nomeElementoPai) {
+    const elementoPai = document.querySelector(nomeElementoPai);
 
-    function mostrarStep(n) {
-      steps.forEach((s, i) => {
-        s.classList.toggle("ativo", i === n)
-      })
-      progresso.style.width = `${((n + 1) / steps.length) * 100}%`
+    const localMsg = document.createElement('div');
+    localMsg.classList.add('mensagem', tipo);
+
+    localMsg.innerHTML = `
+        <div class='titulo-mensagem'>
+          <span class='material-symbols-outlined'>
+            ${tipo === 'erro' ? 'error' : 'book'}
+          </span>
+          <h1>${tipo === 'erro' ? 'Erro' : 'Sucesso'}</h1>
+        </div>
+        <p>${texto}</p>
+    `;
+
+    elementoPai.appendChild(localMsg);
+
+    setTimeout(() => {
+        localMsg.classList.add("sumir");
+        localMsg.addEventListener("animationend", () => localMsg.remove());
+    }, 3000);
+}
+
+
+// ---------------------- VALIDACÃO DOS STEPS ----------------------
+
+const steps = document.querySelectorAll(".step")
+const btnProximo = document.querySelectorAll(".proximo")
+const btnVoltar = document.querySelectorAll(".voltar")
+const progresso = document.querySelector(".progresso")
+
+let stepAtual = 0
+
+function mostrarStep(n) {
+  steps.forEach((s, i) => {
+    s.classList.toggle("ativo", i === n)
+  })
+  progresso.style.width = `${((n + 1) / steps.length) * 100}%`
+}
+
+// ---- VALIDAÇÃO DO STEP 1 ----
+function validarStep1() {
+  const nome = steps[0].querySelector("input[type='text']")
+  const data = steps[0].querySelector("input[type='date']")
+
+  if (nome.value.trim() === "") {
+      Mensagem("Preencha seu nome.", "erro", ".FormLogin")
+      return false
+  }
+
+  if (data.value === "") {
+      Mensagem("Informe sua data de nascimento.", "erro", ".FormLogin")
+      return false
+  }
+
+  return true
+}
+
+// ---- VALIDAÇÃO DO STEP 2 ----
+function validarStep2() {
+  const telefone = steps[1].querySelectorAll("input")[0]
+  const email = steps[1].querySelectorAll("input")[1]
+  const senha = steps[1].querySelector("input[type='password']")
+
+  if (telefone.value.trim() === "") {
+      Mensagem("Informe seu telefone.", "erro", ".FormLogin")
+      return false
+  }
+
+  if (email.value.trim() === "") {
+      Mensagem("Informe seu email.", "erro", ".FormLogin")
+      return false
+  }
+
+  if (senha.value.trim() === "") {
+      Mensagem("Digite uma senha.", "erro", ".FormLogin")
+      return false
+  }
+
+  return true
+}
+
+// ---- VALIDAÇÃO DO STEP 3 ----
+function validarStep3() {
+  const cpf = steps[2].querySelectorAll("input")[0]
+  const endereco = steps[2].querySelectorAll("input")[1]
+  const cep = steps[2].querySelectorAll("input")[2]
+
+  if (cpf.value.trim() === "") {
+      Mensagem("Informe seu CPF.", "erro", ".FormLogin")
+      return false
+  }
+
+  if (endereco.value.trim() === "") {
+      Mensagem("Informe seu endereço.", "erro", ".FormLogin")
+      return false
+  }
+
+  if (cep.value.trim() === "") {
+      Mensagem("Informe o CEP.", "erro", ".FormLogin")
+      return false
+  }
+
+  return true
+}
+
+
+// ---------------------- BOTÕES ----------------------
+
+btnProximo.forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+
+    if (i === 0 && !validarStep1()) return
+    if (i === 1 && !validarStep2()) return
+    if (i === 2 && !validarStep3()) return
+
+    if (stepAtual < steps.length - 1) {
+      stepAtual++
+      mostrarStep(stepAtual)
     }
+  })
+})
 
-    btnProximo.forEach(btn => {
-      btn.addEventListener("click", () => {
-        if (stepAtual < steps.length - 1) {
-          stepAtual++
-          mostrarStep(stepAtual)
-        }
-      })
-    })
+btnVoltar.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (stepAtual > 0) {
+      stepAtual--
+      mostrarStep(stepAtual)
+    }
+  })
+})
 
-    btnVoltar.forEach(btn => {
-      btn.addEventListener("click", () => {
-        if (stepAtual > 0) {
-          stepAtual--
-          mostrarStep(stepAtual)
-        }
-      })
-    })
+mostrarStep(stepAtual)
 
-    mostrarStep(stepAtual)
-  </script>
+</script>
+
+
 </body>
 </html>
 
