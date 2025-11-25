@@ -18,7 +18,7 @@ class LivrosDoadosView
       }
       echo "
                       <div class='livro'>
-                         <img src='img/uploads/leitor_$Doacao->cd_doacao' alt='$Doacao->cd_doacao'/>
+                         <img src='img/doacoes/doacao_{$Doacao->livro->nm_livro}' alt='$Doacao->cd_doacao'/>
                         <h2>{$Doacao->livro->nm_livro}</h2>
                         <p>
               Doador: {$Doacao->leitor->nm_leitor}
@@ -35,14 +35,8 @@ class LivrosDoadosView
     $doacoes = $controller->ListarDoacoes($doacao);
 
     echo "
-            <div class='fotoMenordoacao'>
-              <img src='img/{$doacoes[0]->cd_doacao}' alt='' class='imgLivroLista' />
-              <img src='img/{$doacoes[0]->cd_doacao}' alt='' class='imgLivroLista' />
-              <img src='img/{$doacoes[0]->cd_doacao}' alt='' class='imgLivroLista' />
-              <img src='img/{$doacoes[0]->cd_doacao}' alt='' class='imgLivroLista' />
-            </div>
 
-            <img src='img/{$doacoes[0]->cd_doacao}' alt='' class='capaLivroGrande' />
+            <img src='img/doacoes/doacao_{$doacoes[0]->livro->nm_livro}' alt='' class='capaLivroGrande' />
           </div>
 
           <section class='divColuna'>

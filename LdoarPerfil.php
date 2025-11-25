@@ -8,12 +8,25 @@ $cd_email = $_SESSION['leitor'];
 $nm_livro = null;
 $cd_biblioteca = null;
 $nm_autor = null;
-$imgPerfil = null;
 $campos = 0;
 
     if (isset($_REQUEST['nm_livro']) && !is_null($_REQUEST['nm_livro'])) {
             $nm_livro = $_REQUEST['nm_livro'];
           $campos = $campos + 1 ; 
+
+        if(isset($_FILES['image']) && !empty($_FILES['image']))
+      {
+        $nomeOrigial = $_FILES['image']['name'];
+    
+        $novoNome ='doacao_' . $nm_livro;
+    
+        $caminho = 'img/doacoes/' . $novoNome;
+    
+        if(move_uploaded_file($_FILES['image']['tmp_name'], $caminho))
+        {
+          // echo "Arquivo enviado com sucesso.";
+        }
+      }
     }
 
 
@@ -28,18 +41,16 @@ $campos = 0;
             $campos = $campos + 1 ; 
   }
 
-  if(isset($_REQUEST['image']) && isset($_FILES['image'])){    
-    $imgPerfil = $_FILES['image']; 
-}   
-
+  
   if($campos == 3){
- 
-      $controller = new DoacaoController();
-      $conferencia = $controller->ListarDoacoes(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
-      if($conferencia == []){
+    
+    $controller = new DoacaoController();
+    $conferencia = $controller->ListarDoacoes(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
+    if($conferencia == []){
         $doacao = $controller->AdicionarDoacao(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
         $mensagem = "Solicitação de Doação feita com Sucesso";
       }
+
     }    
 
       ?>
@@ -69,7 +80,7 @@ $campos = 0;
     <main>
   
       <section class="areaPerfil">
-        <form method = "POST" action="">
+        <form method = "POST" action="" enctype="multipart/form-data" >
           <div class="titulo-areaPerfil">
               <h1>Doação</h1>
               <hr/>
@@ -98,7 +109,7 @@ $campos = 0;
 
           <div class="label-input">
             <label >Foto do livro: </label>
-            <input type="file" class="inputArquivo">
+            <input type="file" class="inputArquivo" name="image" accept="image/*"/>
           </div>
   
           <button type="submit" id="btnDoar">Enviar doação</button>
