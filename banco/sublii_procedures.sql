@@ -885,8 +885,67 @@ BEGIN
     END IF;
     END$$
     
-    /*FAZER O PUT PELO AMOR DE DEUS*/
     
+DROP PROCEDURE IF EXISTS alterar_evento$$
+CREATE PROCEDURE alterar_evento(
+	IN p_cd_evento INT,
+	IN p_nm_evento VARCHAR(200),
+    IN p_dt_evento VARCHAR(200),
+    IN p_ds_evento TEXT,
+    IN p_cd_biblioteca INT,
+    IN p_cd_email VARCHAR(200),
+    IN p_ic_confirmado TINYINT
+)
+BEGIN
+
+ 
+  IF p_cd_evento IS NOT NULL THEN
+    UPDATE evento
+       SET nm_evento = COALESCE(p_nm_evento, nm_evento),
+		   dt_evento = COALESCE(p_dt_evento, dt_evento),
+           ds_evento = COALESCE(p_ds_evento, ds_evento),
+           cd_biblioteca = COALESCE(p_cd_biblioteca, cd_biblioteca),
+           cd_email = COALESCE(p_cd_email, cd_email),
+             ic_confirmado = COALESCE(p_ic_confirmado, ic_confirmado)
+     WHERE cd_evento = p_cd_evento;
+  END IF;
+END$$
+
+/*CALL alterar_evento(5,"TESTE2",NULL,NULL,NULL,NULL,true);*/
+   
+DROP PROCEDURE IF EXISTS alterar_evento$$
+CREATE PROCEDURE alterar_evento(
+	IN p_cd_evento INT,
+	IN p_nm_evento VARCHAR(200),
+    IN p_dt_evento VARCHAR(200),
+    IN p_ds_evento TEXT,
+    IN p_cd_biblioteca INT,
+    IN p_cd_email VARCHAR(200),
+    IN p_ic_confirmado TINYINT
+)
+BEGIN
+
+ 
+  IF p_cd_evento IS NOT NULL THEN
+    UPDATE evento
+       SET nm_evento = COALESCE(p_nm_evento, nm_evento),
+		   dt_evento = COALESCE(p_dt_evento, dt_evento),
+           ds_evento = COALESCE(p_ds_evento, ds_evento),
+           cd_biblioteca = COALESCE(p_cd_biblioteca, cd_biblioteca),
+           cd_email = COALESCE(p_cd_email, cd_email),
+             ic_confirmado = COALESCE(p_ic_confirmado, ic_confirmado)
+     WHERE cd_evento = p_cd_evento;
+  END IF;
+END$$
+
+DROP PROCEDURE IF EXISTS excluir_evento$$
+CREATE PROCEDURE excluir_evento(
+	IN p_cd_evento INT
+)
+BEGIN
+UPDATE evento SET ic_confirmado = NULL WHERE p_cd_evento = cd_evento;
+END$$
+
     /* =========================================
    EXEMPLARES
 ========================================= */

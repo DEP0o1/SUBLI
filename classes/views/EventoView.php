@@ -74,11 +74,13 @@ class EventoView{
 
       <div class='areaBtnEvento'>
         <form method='GET'>
+                <input type='hidden' name='c' value={$Evento[0]->cd_evento}>
                 <input type='hidden' name='recusado' value='true'>
                 <button class='btnRosa' type='submit'>Recusar</button>
         </form>
 
           <form method='GET'>
+                <input type='hidden' name='c' value={$Evento[0]->cd_evento}>
                 <input type='hidden' name='aceito' value='true'>
                 <button class='btnRosa' type='submit'>Aceitar</button>
         </form>

@@ -88,12 +88,36 @@ class EventoController extends Banco
 
     public function AlterarEvento($evento = new Evento())
     {
+        try{
 
+            $parametros = [
+                'p_cd_evento' => $evento->cd_evento,
+                'p_nm_evento' => $evento->nm_evento,
+                'p_dt_evento' => $evento->dt_evento,
+                'p_ds_evento' => $evento->ds_evento,
+                'p_cd_biblioteca' => $evento->biblioteca->cd_biblioteca,
+                'p_cd_email' => $evento->leitor->cd_email,
+                'p_ic_confirmado' => $evento->ic_confirmado
+    
+            ];
+            $this->Executar('alterar_evento', $parametros);
+            return "Evento Cadastrado com Sucesso";
+        }catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     public function ExcluirEvento($evento = new Evento())
     {
-        
+        try{
+            $parametros = [
+                'p_cd_evento' => $evento->cd_evento
+            ];
+            $this->Executar('excluir_evento', $parametros);
+            return "Evento Recusado com Sucesso";
+        }catch (\Throwable $th){
+            throw $th;
+        }
     }
 }
 
