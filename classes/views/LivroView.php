@@ -117,7 +117,7 @@ class LivroView{
               <p>• Disponível em: ";
         
         foreach($bibliotecas as $Biblioteca){
-            echo "<a href='Biblioteca.php' class='testeStrong' title='{$Biblioteca->nm_biblioteca}'><strong>{$Biblioteca->nm_biblioteca}</strong></a>";
+            echo "<a href='Biblioteca.php?codigo={$Biblioteca->cd_biblioteca}' class='testeStrong' title='{$Biblioteca->nm_biblioteca}'><strong>{$Biblioteca->nm_biblioteca}</strong></a>";
         }
 
         echo "</p>
