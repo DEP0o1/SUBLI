@@ -23,7 +23,7 @@ as notificações serão realmetnte necessarias? o caua nao quer muito fazer nao
 =============================================================================================================================================
 
 ARRUMAR AS NOTIFICAÇÕES -CAUÃ
-ARRUMAR PESQUISA AVANÇADA -CAUÃ
+//ARRUMAR PESQUISA AVANÇADA -CAUÃ
 NOTIFICAÇÕES EMAIL -LUCAS/CAUÃ
 ARRUMAR CALENDARIO -CAUÃ
 VER SE É DATA NOS CAMPOS DOS BAGULHOS -CAUÃ/PEDRO

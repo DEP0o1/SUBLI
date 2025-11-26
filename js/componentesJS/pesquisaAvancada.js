@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.getElementById("toggle-pesquisa");
     const formArea = document.getElementById("form-pesquisa");
+    const btnFecharPesquisaAvancada = document.getElementById("fechar-pesquisa-avancada");
 
+    // Criar overlay
     const overlay = document.createElement("div");
     overlay.id = "overlay-pesquisa";
     overlay.style.position = "fixed";
@@ -15,11 +17,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(overlay);
 
     toggleBtn.addEventListener("click", function () {
-        const isHidden = formArea.classList.toggle("hidden");
-
-        overlay.style.display = isHidden ? "none" : "block";
+        formArea.classList.remove("hidden");
+        overlay.style.display = "block";
     });
-    
+
+    btnFecharPesquisaAvancada.addEventListener("click", function () {
+        formArea.classList.add("hidden");
+        overlay.style.display = "none";
+    });
+
     overlay.addEventListener("click", function () {
         formArea.classList.add("hidden");
         overlay.style.display = "none";

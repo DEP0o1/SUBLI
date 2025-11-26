@@ -228,6 +228,29 @@ if (empty($assunto2)) $assunto2 = null;
             inicializarCarrossel('carrossel-destaques');
             inicializarCarrossel('carrossel-procurados');
 
+            document.addEventListener("click", function(e){
+    let fav = e.target.closest(".favorito");
+    if(!fav) return;
+
+    let livro = fav.dataset.id;
+    let email = fav.dataset.email;
+
+    fetch("api/favorito.php", {
+        method: "POST",
+        headers: {"Content-Type": "application/x-www-form-urlencoded"},
+        body: `cd_livro=${livro}&cd_email=${email}`
+    })
+    .then(r => r.text())
+    .then(resp => {
+        if(resp === "adicionado"){
+            fav.classList.add("ativo");
+        } else {
+            fav.classList.remove("ativo");
+        }
+    });
+});
+
+
         });
     </script>
     <script src="js/componentesJS/filtros.js"></script>
