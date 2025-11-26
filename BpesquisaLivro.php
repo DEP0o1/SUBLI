@@ -3,14 +3,16 @@
 <?php
 require_once('config.php');
 require_once('verificadoBibliotecario.php');
-
+$bibliotecario = $_SESSION['bibliotecario'];
+$controller = new BibliotecarioController();
+$Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($bibliotecario));
 
 $buscar = false;
 $valor = "";
 
-if (isset($_POST['valor'])) {
+if (isset($_REQUEST['valor'])) {
     $buscar = true;
-    $valor = $_POST['valor'];
+    $valor = $_REQUEST['valor'];
 }
 
 ?>
@@ -125,7 +127,7 @@ require_once './complementos/headerBibliotecario.php';
 
             <?php
 
-            if ($buscar) {
+          
                 $livro = new LivroView;
 
                 if ($valor == "") {
@@ -133,7 +135,7 @@ require_once './complementos/headerBibliotecario.php';
                 } else {
                     $livro->ExibirLivros(new Livro(null, $valor));
                 }
-            }
+            
 
             #region verificação do conteúdo dos inputs
             $pesquisa_avancada = false;
@@ -247,7 +249,8 @@ require_once './complementos/headerBibliotecario.php';
                     [new Genero($cd_genero, $nm_genero)],
                     new Idioma($cd_idioma, $nm_idioma),
                     new Colecao($cd_colecao, $nm_colecao),
-                    [new Assunto($cd_assunto, $nm_assunto)]
+                    [new Assunto($cd_assunto, $nm_assunto)],
+                    $Bibliotecario[0]->cd_biblioteca
                 ));
             }
             ?>
