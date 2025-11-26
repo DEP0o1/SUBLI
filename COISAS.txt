@@ -7,7 +7,6 @@ ARRUMAR FILTRO -PEDRO (OK)
 ARRUMAR A PÁGINA DE VER LEITORES -LIAM/CLARA OU ALGM QUE MEXA NOS HTML E CSS AI
 
 MOSTRAR QUEM ESTÁ COM O EMPRESTIMO NA PÁGINA DE VER EMPRESTIMOS -LUCAS
-ARRUMAR PÁGINA DE ACERVO -LUCAS
 AJUSTAR A PÁGINA DE ACEITAR/RECUSAR OS EVENTOS -LUCAS
 
 =============================================================================================================================================

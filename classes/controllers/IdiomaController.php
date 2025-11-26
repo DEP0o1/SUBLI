@@ -54,6 +54,13 @@ class IdiomaController extends Banco
 
         ];
 
+         if($idioma->cd_idioma != null){
+            $codigo = $this->ListarIdiomas(new idioma($idioma->cd_idioma));
+            if(empty($codigo)){
+                return false;
+            }
+        }
+
         $this->Executar('alterar_idioma', $parametros);
     }
 

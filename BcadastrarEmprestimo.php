@@ -55,6 +55,7 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
                     $qtdemprestimo = $emprestimocontroller->ContarEmprestimos(new Emprestimo(null,null,null,null,new Leitor(),new Livro($cd_livro),new Biblioteca($cd_biblioteca),true));
                     $qtdreserva = $reservacontroller->ContarReservas(new Reserva(null,null,new Leitor(), new Livro($cd_livro), new Biblioteca($cd_biblioteca),true));
                     $emprestimo_reserva =  $qtdreserva[0]["COUNT(*)"] + $qtdemprestimo[0]["COUNT(*)"];
+                   
                 }
            
                 else{
@@ -63,19 +64,35 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
             }
 
             if(isset($emprestimo_reserva)){
-                if($exemplar[0]['COUNT(*)'] > $emprestimo_reserva){
+               if($cd_reserva == null){
+                    if($exemplar[0]['COUNT(*)'] > $emprestimo_reserva){
                     $emprestimo = $emprestimocontroller->AdicionarEmprestimo(new Emprestimo(null,null,$dt_devolucao_esperada,null,new Leitor($cd_email),new Livro($cd_livro),new Biblioteca($cd_biblioteca)));
                     
                     
                     $reservacontroller = new ReservaController;
                     $reserva = $reservacontroller->AlterarReserva(new Reserva($cd_reserva,null,new Leitor(),new Livro(),new Biblioteca, 0));
 
-            }
+                    }
 
-            else{
-                $emprestimo = "O Livro está emprestado com outra pessoa ";
-            }
-            
+                    else{
+                        $emprestimo = "O Livro está reservado por outra pessoa ";
+                    }
+               }
+                
+               else{
+                        if($exemplar[0]['COUNT(*)'] > $emprestimo_reserva || $exemplar[0]['COUNT(*)'] == $emprestimo_reserva ){
+                        $emprestimo = $emprestimocontroller->AdicionarEmprestimo(new Emprestimo(null,null,$dt_devolucao_esperada,null,new Leitor($cd_email),new Livro($cd_livro),new Biblioteca($cd_biblioteca)));
+                        
+                        
+                        $reservacontroller = new ReservaController;
+                        $reserva = $reservacontroller->AlterarReserva(new Reserva($cd_reserva,null,new Leitor(),new Livro(),new Biblioteca, 0));
+
+                        }
+
+                        else{
+                            $emprestimo = "O Livro está emprestado com outra pessoa ";
+                        }
+               }
             }
        
     }

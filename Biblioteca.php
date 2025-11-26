@@ -36,64 +36,7 @@ if (isset($_REQUEST['codigo'])) {
                $biblioteca->ExibirBiblioteca(new Biblioteca($codigo)); 
             ?> 
          
-    <!-- <h1 class="textoMeio"> Mário fária</h1>
-    <section class="bibliotecas">
-      <div class="bibliotecaPerfil">
-        <div class="bibliotecaFotos">
-          <img src="img/biblioteca1_1.jpg" alt="">
-
-          <div class="carrosselBiblioteca">
-            <img src="img/biblioteca1_1.jpg" alt="">
-            <img src="img/biblioteca1_1.jpg" alt="">
-            <img src="img/biblioteca1_1.jpg" alt="">
-            <img src="img/biblioteca1_1.jpg" alt="">
-          </div>
-        </div>
-
-        <div class="informacoesBiblioteca">
-
-          <div class="informacaoBiblioteca">
-            <div class="informacaoBibliotecaTitulo">
-              <span class="material-symbols-outlined">
-                nest_clock_farsight_analog
-              </span>
-              <h1>Horario de funcionamento</h1>
-            </div>
-
-            <p>Segunda a Sexta 11:00-15:00 18:00-00:00 <br>
-              Sábado a Domingo 11:00-15:30 18:00-00:00
-            </p>
-          </div>
-
-          <div class="informacaoBiblioteca">
-            <div class="informacaoBibliotecaTitulo">
-              <span class="material-symbols-outlined">
-                call
-              </span>
-              <h1>Telefone</h1>
-            </div>
-
-            <p>+55 13 9913-4754</p>
-          </div>
-
-          <div class="informacaoBiblioteca">
-            <div class="informacaoBibliotecaTitulo">
-              <span class="material-symbols-outlined">
-                location_on
-              </span>
-              <h1>Endereço</h1>
-            </div>
-
-            <p>Av. Bartolomeu de Gusmão, 168 - Santos</p>
-            <section class="areaMapaBiblioteca">
-              <div class="mapa" id="map">
-                <div id="carregando">
-                  <div class="spinner"></div>
-                  <p>Carregando mapa...</p>
-                </div>
-              </div>
-            </section>
-    </section> -->
+   
     </div>
     </div>
 
@@ -135,7 +78,22 @@ if (isset($_REQUEST['codigo'])) {
   </main>
 
   <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const mainImage = document.getElementById('main-image');
+    const thumbnails = document.querySelectorAll('#thumbnails .thumbnail');
 
+    if (!mainImage || thumbnails.length === 0) return;
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            
+            const newSrc = this.src;
+            mainImage.src = newSrc;
+            thumbnails.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
   </script>
 </body>
 

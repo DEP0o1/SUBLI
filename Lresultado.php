@@ -106,16 +106,6 @@ if (empty($assunto2)) $assunto2 = null;
     else{
       $livro->ExibirLivros(new Livro(null,$valor, [new Autor()], new Editora(), [new Genero($genero2)], new Idioma(), new Colecao, [new Assunto($assunto2)], $biblioteca2));    
     }
-
-if ($buscar) {
-  $livro = new LivroView;
-  
-  if ($valor == "") {
-    $livro->ExibirLivros(new Livro(null,$valor, [new Autor()], new Editora(), [new Genero($genero2)], new Idioma(), new Colecao, [new Assunto($assunto2)], $biblioteca2));
-  } else {
-    $livro->ExibirLivros(new Livro(null,$valor, [new Autor()], new Editora(), [new Genero($genero2)], new Idioma(), new Colecao, [new Assunto($assunto2)], $biblioteca2));    
-  }
-}
 ?>
 
 <!-- <div class="livro">

@@ -54,6 +54,13 @@ class GeneroController extends Banco
 
         ];
 
+         if($genero->cd_genero != null){
+            $codigo = $this->ListarGeneros(new Genero($genero->cd_genero));
+            if(empty($codigo)){
+                return false;
+            }
+        }
+
         $this->Executar('alterar_genero', $parametros);
     }
 

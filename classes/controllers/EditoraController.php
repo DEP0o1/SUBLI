@@ -53,6 +53,14 @@ class EditoraController extends Banco
 
         ];
 
+
+         if($editora->cd_editora != null){
+            $codigo = $this->Listareditoras(new Editora($editora->cd_editora));
+            if(empty($codigo)){
+                return false;
+            }
+        }
+
         $this->Executar('alterar_editora', $parametros);
     }
 

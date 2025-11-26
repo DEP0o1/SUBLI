@@ -25,6 +25,52 @@ switch ($metodo) {
             echo json_encode(['mensagem' => $erro->getMessage()]);
         }
         break;
+
+        case 'PUT':
+        try {
+            $corpo = json_decode(file_get_contents('php://input'), true);
+            if (!validaCorpoRequisicao($corpo)) { return; }
+
+            $camposJSON = ['cd_assunto','nm_assunto'];
+            if (!validaChaves($corpo, $camposJSON)) { return; }
+
+            if (!is_numeric($corpo['cd_assunto']) && $corpo['cd_assunto'] != "" ) {
+                http_response_code(400);
+                echo json_encode(['mensagem'=>'Código deve ser numérico.']);
+                return;
+            }
+            else{
+                if(is_numeric($corpo['cd_assunto'])){
+                }
+                else{
+                    $corpo['cd_assunto'] = null;
+                }
+                
+            }
+
+            if (strlen($corpo['nm_assunto']) < 3) {
+                http_response_code(400);
+                echo json_encode(['mensagem'=>'Nome deve ter no mínimo 3 caracteres.']);
+                return;
+            }
+
+            $assunto = new Assunto($corpo['cd_assunto'], $corpo['nm_assunto']);
+            $resultado =  $controlador->AlterarAssunto($assunto);
+
+            if(!$resultado){
+                echo json_encode(['mensagem'=>'Assunto não existe! Insira outro código de um assunto existente']);
+            }
+           
+            else{
+                http_response_code(200);
+                echo json_encode(['mensagem'=>'Assunto alterado com sucesso']);
+            }
+        } catch (Exception $erro) {
+            http_response_code(500);
+            echo json_encode(['mensagem'=>$erro->getMessage()]);
+        }
+        break; 
+
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);

@@ -58,6 +58,14 @@ class ColecaoController extends Banco
 
         ];
 
+
+         if($colecao->cd_colecao != null){
+            $codigo = $this->ListarColecoes(new Colecao($colecao->cd_colecao));
+            if(empty($codigo)){
+                return false;
+            }
+        }
+
         $this->Executar('alterar_colecao', $parametros);
     }
 
