@@ -51,18 +51,25 @@ if (isset($_REQUEST['codigo'])) {
     <h1 class="textoMeio">Eventos</h1>
 
     <section class="eventos">
+
+    <div class="containerEventos">
+
       <div class="calendario">
         <!-- calendario -->
       </div>
-
+  
       <div class="lista">
-
+  
       <?php
             $evento = new EventoView;
             $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($codigo), new Leitor, 1)); 
             // um antes do biblioteca tem que ser true
       ?>
       </div>
+
+
+    </div>
+
     </section>
 
     <h1 class="textoMeio">Desta biblioteca</h1>
@@ -77,7 +84,7 @@ if (isset($_REQUEST['codigo'])) {
     </section>
   </main>
 
-  <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
     const mainImage = document.getElementById('main-image');
     const thumbnails = document.querySelectorAll('#thumbnails .thumbnail');
@@ -86,15 +93,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', function() {
-            
             const newSrc = this.src;
-            mainImage.src = newSrc;
-            thumbnails.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
+
+            mainImage.classList.add('fading');
+            setTimeout(() => {
+
+                mainImage.src = newSrc;
+
+                thumbnails.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                mainImage.classList.remove('fading');
+
+            }, 100); 
         });
     });
 });
-  </script>
+</script>
 </body>
 
 </html>

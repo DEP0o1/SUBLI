@@ -609,15 +609,30 @@ body {
 }
 
 .biblioteca img {
+  border-radius: var(--radius);
   height: 150px;
   width: 200px;
-  border-radius: var(--radius);
+}
+
+
+#main-image {
+  transition: opacity 0.2s ease-out;
+  height: 50vh;
+  width: 35vw;
+  display: block;
+  border-radius: var(--radius); 
+  background-color: var(--branco);
+}
+
+#main-image.fading {
+    opacity: 0;
 }
 
 .carrosselBiblioteca {
   display: flex;
   flex-direction: row;
   gap: var(--gap);
+  transition: transform 2s ease-in-out;
 }
 
 .carrosselBiblioteca img {
@@ -626,6 +641,17 @@ body {
   border-radius: var(--radius);
   border: var(--border);
   cursor: pointer;
+  transition: border 0.3s ease, box-shadow 0.3s ease; 
+  
+}
+
+.carrosselBiblioteca img.active {
+    border: var(--vinho) 3px solid; 
+}
+
+.carrosselBiblioteca img:hover {
+  border: var(--vinho) 2px solid;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .informacoesBiblioteca {
@@ -651,7 +677,7 @@ span {
 .eventos {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 20px 20px 20px 0px;
   gap: var(--gap-grande);
   flex-direction: row;
   height: 45vh;
@@ -671,7 +697,7 @@ span {
 .containerEventos {
   gap: var(--gap);
   width: 50vw;
-   margin-left: 23%;
+   margin-left: 20%;
   margin-right: 23%; 
   height: 100%;
   display: flex;
