@@ -280,7 +280,7 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
 
             <a href="sair.php">
                 <div class="informacao-aside" id="abrir-leitor">
-                    <span class="material-symbols-outlined">person_add</span>
+                    <span class="material-symbols-outlined">logout</span>
                     <p>Sair</p>
                 </div>
             </a>
