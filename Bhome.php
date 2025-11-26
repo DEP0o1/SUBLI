@@ -74,7 +74,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
           <div class="lista-eventos">
             <?php
             $evento = new EventoView;
-            $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($Bibliotecario[0]->cd_biblioteca), new Leitor,0));
+            $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($Bibliotecario[0]->cd_biblioteca), new Leitor, 0));
             ?>
   
           </div>

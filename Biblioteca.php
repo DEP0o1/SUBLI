@@ -116,7 +116,7 @@ if (isset($_REQUEST['codigo'])) {
 
       <?php
             $evento = new EventoView;
-            $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($codigo), new Leitor, 1)); 
+            $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($codigo), new Leitor, true)); 
             // um antes do biblioteca tem que ser true
       ?>
       </div>
