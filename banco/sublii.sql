@@ -205,6 +205,14 @@ CREATE TABLE favorito_leitor(
 	CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
 );*/
 
+CREATE TABLE favorito (
+    cd_livro INT,
+    cd_email VARCHAR(200),
+    dt_favorito DATETIME DEFAULT NOW(),
+    CONSTRAINT pk_favorito PRIMARY KEY (cd_livro, cd_email),
+    CONSTRAINT fk_livro_favorito FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE,
+    CONSTRAINT fk_leitor_favorito FOREIGN KEY (cd_email) REFERENCES leitor(cd_email) ON UPDATE CASCADE
+);
 
 /*Leitores*/
 INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');

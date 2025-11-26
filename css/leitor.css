@@ -147,6 +147,7 @@ h4 {
 
 .dropdown-content h1 {
   margin: 0;
+  color: white;
 }
 
 .dropdown-content hr {
@@ -235,7 +236,7 @@ header {
   height: fit-content;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 9999;
   margin: 0;
 }
 
@@ -352,6 +353,10 @@ footer {
   flex-direction: row;
   padding-top: 2%;
   justify-content: space-around;
+}
+
+.footerCima p{
+  padding-bottom: 16px;
 }
 
 .footerBaixo {
@@ -604,15 +609,30 @@ body {
 }
 
 .biblioteca img {
+  border-radius: var(--radius);
   height: 150px;
   width: 200px;
-  border-radius: var(--radius);
+}
+
+
+#main-image {
+  transition: opacity 0.2s ease-out;
+  height: 50vh;
+  width: 35vw;
+  display: block;
+  border-radius: var(--radius); 
+  background-color: var(--branco);
+}
+
+#main-image.fading {
+    opacity: 0;
 }
 
 .carrosselBiblioteca {
   display: flex;
   flex-direction: row;
   gap: var(--gap);
+  transition: transform 2s ease-in-out;
 }
 
 .carrosselBiblioteca img {
@@ -621,6 +641,17 @@ body {
   border-radius: var(--radius);
   border: var(--border);
   cursor: pointer;
+  transition: border 0.3s ease, box-shadow 0.3s ease; 
+  
+}
+
+.carrosselBiblioteca img.active {
+    border: var(--vinho) 3px solid; 
+}
+
+.carrosselBiblioteca img:hover {
+  border: var(--vinho) 2px solid;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .informacoesBiblioteca {
@@ -646,18 +677,16 @@ span {
 .eventos {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  margin: 20px 20px 20px 0px;
   gap: var(--gap-grande);
   flex-direction: row;
   height: 45vh;
 }
 
-
-
 /*--------------------calendario--------------------------------------------------------------------------*/
 
 .calendario {
-  width: 25vw;
+  width: 70%;
   height: 100%;
   background-color: var(--azul);
   color: var(--branco);
@@ -667,8 +696,10 @@ span {
 }
 .containerEventos {
   gap: var(--gap);
-  width: 70%;
-  padding-left: 7.5vw;
+  width: 50vw;
+   margin-left: 20%;
+  margin-right: 23%; 
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -863,11 +894,15 @@ span {
   gap: var(--gap);
 }
 
+#lista-eventos-index-leitor {
+  width: 50vw;
+}
+
 .conteudo-item-lista-doador img {
   object-fit: cover;
   border-radius: 999999px;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   padding: 0;
 }
 
@@ -1165,6 +1200,7 @@ main {
 /*------------------------------------------------------------------------------------------------------*/
 
 .pesquisa {
+  padding-top: 64px;
   width: fit-content;
   margin-right: auto;
   margin-left: auto;
@@ -1241,7 +1277,7 @@ main {
 .exibirLivros {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   margin: 40px;
   gap: var(--gap);
 }
@@ -1453,6 +1489,7 @@ main {
 
 .titulo-mensagem > h1 {
   display: flex;
+  color: var(--branco);
   text-align: left;
   justify-content: flex-start;
   align-items: flex-start;

@@ -28,7 +28,8 @@ if (isset($_SESSION['leitor'])) {
   <form action="Lresultado.php" class="areaPesquisa">
     <div class="divInput">
       <input type="text" name="valor" placeholder="Faça sua Pesquisa" class="input" />
-      <img src="img/pesquisa.webp" alt="" class="lupa" />
+      <!-- <img src="img/pesquisa.webp" alt="" class="lupa" /> -->
+      <span class="material-symbols-outlined" style="color:black">search</span>
     </div>
   </form>
 

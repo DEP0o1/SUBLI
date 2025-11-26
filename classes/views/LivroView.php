@@ -37,6 +37,8 @@ class LivroView{
     }
 }
 
+  
+
    public function ExibirLivro($livro = new Livro()){
 
     $controller = new LivroController;
@@ -88,6 +90,14 @@ class LivroView{
                 Favoritar
               </button>
 
+              <select name='Escolha a biblioteca' id='' class='btnRosa'>Escolha a biblioteca
+              ";
+              foreach($bibliotecas as $Biblioteca){
+                echo "<option value='{$Biblioteca->cd_biblioteca}'>{$Biblioteca->nm_biblioteca}</option>";
+              }
+              echo "
+              </select>
+
               <form class='btnEmprestimo' method='GET' action=''>
                 <input type='hidden' name='codigo' value='{$Livro->cd_livro}'>
                 <input type='hidden' name='enviado' value='true'>
@@ -107,7 +117,7 @@ class LivroView{
               <p>• Disponível em: ";
         
         foreach($bibliotecas as $Biblioteca){
-            echo "<a href='Biblioteca.php' class='testeStrong' title='{$Biblioteca->nm_biblioteca}'><strong>{$Biblioteca->nm_biblioteca}</strong></a>";
+            echo "<a href='Biblioteca.php?codigo={$Biblioteca->cd_biblioteca}' class='testeStrong' title='{$Biblioteca->nm_biblioteca}'><strong>{$Biblioteca->nm_biblioteca}</strong></a>";
         }
 
         echo "</p>

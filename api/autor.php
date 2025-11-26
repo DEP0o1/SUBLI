@@ -29,49 +29,49 @@ switch ($metodo) {
 
     break;
     case 'PUT':
-        try {
-            $corpo = json_decode(file_get_contents('php://input'), true);
-            if (!validaCorpoRequisicao($corpo)) { return; }
+    try {
+        $corpo = json_decode(file_get_contents('php://input'), true);
+        if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_autor','nm_autor'];
-            if (!validaChaves($corpo, $camposJSON)) { return; }
+        $camposJSON = ['cd_autor','nm_autor'];
+        if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_autor']) && $corpo['cd_autor'] != "" ) {
-                http_response_code(400);
-                echo json_encode(['mensagem'=>'Código deve ser numérico.']);
-                return;
-            }
-            else{
-                if(is_numeric($corpo['cd_autor'])){
-                }
-                else{
-                    $corpo['cd_autor'] = null;
-                }
-                
-            }
-
-            if (strlen($corpo['nm_autor']) < 3) {
-                http_response_code(400);
-                echo json_encode(['mensagem'=>'Nome deve ter no mínimo 3 caracteres.']);
-                return;
-            }
-
-            $autor = new Autor($corpo['cd_autor'], $corpo['nm_autor']);
-            $resultado =  $controlador->AlterarAutor($autor);
-
-            if(!$resultado){
-                echo json_encode(['mensagem'=>'Autor não existe! Insira outro código de um autor existente']);
-            }
-           
-            else{
-                http_response_code(200);
-                echo json_encode(['mensagem'=>'Autor alterado com sucesso']);
-            }
-        } catch (Exception $erro) {
-            http_response_code(500);
-            echo json_encode(['mensagem'=>$erro->getMessage()]);
+        if ($corpo['cd_autor'] !== "" && !is_numeric($corpo['cd_autor'])) {
+            http_response_code(400);
+            echo json_encode(['mensagem'=>'Código deve ser numérico.']);
+            return;
         }
-        break; 
+
+        if ($corpo['cd_autor'] === "") {
+            $corpo['cd_autor'] = null;
+        } else {
+            $corpo['cd_autor'] = intval($corpo['cd_autor']);
+        }
+
+        if (strlen($corpo['nm_autor']) < 3) {
+            http_response_code(400);
+            echo json_encode(['mensagem'=>'Nome deve ter no mínimo 3 caracteres.']);
+            return;
+        }
+
+        $autor = new Autor($corpo['cd_autor'], $corpo['nm_autor']);
+        $resultado = $controlador->AlterarAutor($autor);
+
+        if ($resultado === false || $resultado === 0 || $resultado === "Autor não existe") {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Autor não existe! Insira outro código de um autor existente']);
+            return;
+        }
+
+        http_response_code(200);
+        echo json_encode(['mensagem' => 'Autor alterado com sucesso']);
+
+    } catch (Exception $erro) {
+        http_response_code(500);
+        echo json_encode(['mensagem'=>$erro->getMessage()]);
+    }
+    break;
+    
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);
@@ -90,8 +90,7 @@ switch ($metodo) {
                 }
                 else{
                     $corpo['cd_autor'] = null;
-                }
-                
+                } 
             }
 
             if (strlen($corpo['nm_autor']) < 3) {

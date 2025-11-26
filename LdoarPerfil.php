@@ -48,10 +48,23 @@ $campos = 0;
     $conferencia = $controller->ListarDoacoes(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
     if($conferencia == []){
         $doacao = $controller->AdicionarDoacao(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
-        $mensagem = "Solicitação de Doação feita com Sucesso";
-      }
-
-    }    
+        $mensagem = " <div class='mensagem'>
+                      <div class='titulo-mensagem'>
+                        <span class='material-symbols-outlined'>book</span>
+                        <h1>Doação realizada com sucesso</h1>
+                      </div>
+                    </div>";
+                    
+                  }    
+                }else {
+                  $mensagem = " <div class='mensagem'>
+                                <div class='titulo-mensagem'>
+                                  <span class='material-symbols-outlined'>book</span>
+                                  <h1>Doação não realizada</h1>
+                                </div>
+                                <p>Preencha todos os campos </p>
+                              </div>";
+                }
 
       ?>
 
@@ -122,6 +135,19 @@ $campos = 0;
         ?>
       </section>
     </main>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const msg = document.querySelector(".mensagem");
+    if (msg) {
+      setTimeout(() => {
+        msg.classList.add("sumir");
+        msg.addEventListener("animationend", () => msg.remove());
+      }, 3000); 
+    }
+  });
+</script>
+
 
   </body>
 </html>

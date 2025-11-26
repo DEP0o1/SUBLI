@@ -77,8 +77,24 @@ if (isset($_REQUEST['codigo'])) {
     </section>
   </main>
 
-  <script>
 
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const mainImage = document.getElementById('main-image');
+    const thumbnails = document.querySelectorAll('#thumbnails .thumbnail');
+
+    if (!mainImage || thumbnails.length === 0) return;
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            
+            const newSrc = this.src;
+            mainImage.src = newSrc;
+            thumbnails.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
   </script>
 </body>
 

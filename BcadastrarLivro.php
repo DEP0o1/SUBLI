@@ -1,7 +1,6 @@
 <?php
 require_once('config.php');
 require_once('verificadoBibliotecario.php');
-include_once('complementos/footerLeitor.php');
 
 if (isset($_REQUEST['doacao'])) {
     if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {

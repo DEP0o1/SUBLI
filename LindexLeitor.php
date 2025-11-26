@@ -42,8 +42,7 @@ if (empty($assunto2)) $assunto2 = null;
             </div>
         </section>
 
-        <form class="pesquisa">
-
+        <!-- <form class="pesquisa">
 
             <select class="categoria" id="genero" name="genero">
                 <option value="">Gêneros</option>
@@ -82,7 +81,7 @@ if (empty($assunto2)) $assunto2 = null;
                 Aplicar
             </button>
 
-        </form>
+        </form> -->
 
         <div class="textoEsquerda">
             <h1>Destaques da semana</h1>
@@ -132,7 +131,9 @@ if (empty($assunto2)) $assunto2 = null;
             </div>
         </div>
 
-        <h1 class="textoEsquerda">Eventos</h1>
+        <div class="textoEsquerda">
+            <h1>Eventos</h1>
+        </div>
 
         <section class="eventos">
 
@@ -146,7 +147,7 @@ if (empty($assunto2)) $assunto2 = null;
 
                     <?php
                     $evento = new EventoView;
-                    $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca(),new Leitor(),true));
+                    $evento->ExibirEventos(new Evento(null, null, null, null, new Biblioteca(), new Leitor(), true));
                     ?>
                 </div>
             </div>
@@ -164,7 +165,9 @@ if (empty($assunto2)) $assunto2 = null;
                     para quem recebe quanto para quem doa, promovendo o acesso à cultura,
                     a sustentabilidade e o desenvolvimento pessoal.
                 </p>
-                <div class="textoDoar"> <a>Doe agora!</a></div>
+                <a href='LdoarPerfil.php'>
+                    <button class='btnRosa'>Ver Mais</button>
+                </a>
             </div>
             <img src="img/doar.png" alt="" />
         </section>
@@ -228,11 +231,36 @@ if (empty($assunto2)) $assunto2 = null;
             inicializarCarrossel('carrossel-destaques');
             inicializarCarrossel('carrossel-procurados');
 
+            document.addEventListener("click", function(e) {
+                let fav = e.target.closest(".favorito");
+                if (!fav) return;
+
+                let livro = fav.dataset.id;
+                let email = fav.dataset.email;
+
+                fetch("api/favorito.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: `cd_livro=${livro}&cd_email=${email}`
+                    })
+                    .then(r => r.text())
+                    .then(resp => {
+                        if (resp === "adicionado") {
+                            fav.classList.add("ativo");
+                        } else {
+                            fav.classList.remove("ativo");
+                        }
+                    });
+            });
+
+
         });
     </script>
     <script src="js/componentesJS/filtros.js"></script>
     <script src="js/componentesJS/popupCadastro.js"></script>
-    
+
 </body>
 
 </html>
