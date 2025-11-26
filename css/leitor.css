@@ -147,6 +147,7 @@ h4 {
 
 .dropdown-content h1 {
   margin: 0;
+  color: white;
 }
 
 .dropdown-content hr {
@@ -352,6 +353,10 @@ footer {
   flex-direction: row;
   padding-top: 2%;
   justify-content: space-around;
+}
+
+.footerCima p{
+  padding-bottom: 16px;
 }
 
 .footerBaixo {
@@ -1165,6 +1170,7 @@ main {
 /*------------------------------------------------------------------------------------------------------*/
 
 .pesquisa {
+  padding-top: 64px;
   width: fit-content;
   margin-right: auto;
   margin-left: auto;
@@ -1241,7 +1247,7 @@ main {
 .exibirLivros {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   margin: 40px;
   gap: var(--gap);
 }

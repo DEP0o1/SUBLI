@@ -140,9 +140,10 @@ main {
 
 .areaPerfil select {
   width: 50vw;
-  border: none;
+  border: 1px solid var(--bege);
   border-radius: var(--radius);
-  height: 30px;
+  /* height: 30px; */
+  padding: 10px;
 }
 
 .areaPerfil input {
