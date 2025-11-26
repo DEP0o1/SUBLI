@@ -56,23 +56,23 @@ class BibliotecaView{
 
       foreach ($bibliotecas as $Biblioteca){
 
-        echo "
+echo "
         <h1 class='textoMeio'>{$Biblioteca->nm_biblioteca}</h1>
-    <section class='bibliotecas'>
-      <div class='bibliotecaPerfil'>
-        <div class='bibliotecaFotos'>
-          <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1' alt=''>
+        <section class='bibliotecas'>
+          <div class='bibliotecaPerfil'>
+            <div class='bibliotecaFotos'>
+              <img id='main-image' src='img/biblioteca{$Biblioteca->cd_biblioteca}_1' alt='Foto Principal da Biblioteca'>
 
-          <div class='carrosselBiblioteca'>
-            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1' alt=''>
-            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_2' alt=''>
-            <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_3' alt=''>
-          </div>
-        </div>
+              <div id='thumbnails' class='carrosselBiblioteca'>
+                <img class='thumbnail active' src='img/biblioteca{$Biblioteca->cd_biblioteca}_1' alt='Miniatura 1'>
+                <img class='thumbnail' src='img/biblioteca{$Biblioteca->cd_biblioteca}_2' alt='Miniatura 2'>
+                <img class='thumbnail' src='img/biblioteca{$Biblioteca->cd_biblioteca}_3' alt='Miniatura 3'>
+              </div>
+            </div>
 
-        <div class='informacoesBiblioteca'>
+            <div class='informacoesBiblioteca'>
 
-          <div class='informacaoBiblioteca'>
+              <div class='informacaoBiblioteca'>
             <div class='informacaoBibliotecaTitulo'>
               <span class='material-symbols-outlined'>
                 nest_clock_farsight_analog
