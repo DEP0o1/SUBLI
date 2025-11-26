@@ -42,6 +42,12 @@ $campos = 0;
     }
     else{
       $evento = $controller->AdicionarEvento(new Evento($nm_evento,null,$dt_evento,$ds_evento,new Biblioteca($cd_biblioteca),new Leitor($cd_email)));
+              $mensagem = " <div class='mensagem'>
+                      <div class='titulo-mensagem'>
+                        <span class='material-symbols-outlined'>book</span>
+                        <h1>solicitação de evento realizada com sucesso</h1>
+                      </div>
+                    </div>";
     }
 
   }
@@ -108,13 +114,25 @@ $campos = 0;
           <button type="submit" id="btnEvento">Solicitar de evento</button>
           <?php
           if($campos == 4 && $conferencia == []){
-            echo $evento;
+            echo $mensagem;
           }
-          
           ?>
 
         </form>
       </section>
     </main>
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const msg = document.querySelector(".mensagem");
+    if (msg) {
+      setTimeout(() => {
+        msg.classList.add("sumir");
+        msg.addEventListener("animationend", () => msg.remove());
+      }, 3000); 
+    }
+  });
+</script>
   </body>
 </html>

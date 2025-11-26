@@ -236,7 +236,7 @@ header {
   height: fit-content;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 9999;
   margin: 0;
 }
 
@@ -654,13 +654,13 @@ span {
   margin: 20px;
   gap: var(--gap-grande);
   flex-direction: row;
-  height: 65vh;
+  height: 45vh;
 }
 
 /*--------------------calendario--------------------------------------------------------------------------*/
 
 .calendario {
-  width: 60%;
+  width: 70%;
   height: 100%;
   background-color: var(--azul);
   color: var(--branco);
@@ -670,8 +670,10 @@ span {
 }
 .containerEventos {
   gap: var(--gap);
-  width: 70%;
-  height: 65vh;
+  width: 50vw;
+   margin-left: 23%;
+  margin-right: 23%; 
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -1461,6 +1463,7 @@ main {
 
 .titulo-mensagem > h1 {
   display: flex;
+  color: var(--branco);
   text-align: left;
   justify-content: flex-start;
   align-items: flex-start;

@@ -57,7 +57,7 @@ class EventoController extends Banco
     
             ];
             $this->Executar('adicionar_evento', $parametros);
-            return "Evento Solicitado com Sucesso";
+            // return "Evento Solicitado com Sucesso";
         }catch (\Throwable $th) {
             throw $th;
         }

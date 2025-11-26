@@ -91,9 +91,11 @@ class LivroView{
               </button>
 
               <select name='Escolha a biblioteca' id='' class='btnRosa'>Escolha a biblioteca
-              <option value='biblioteca1'>biblioteca1</option>
-              <option value='biblioteca2'>biblioteca2</option>
-              <option value='biblioteca3'>biblioteca3</option>
+              ";
+              foreach($bibliotecas as $Biblioteca){
+                echo "<option value='{$Biblioteca->cd_biblioteca}'>{$Biblioteca->nm_biblioteca}</option>";
+              }
+              echo "
               </select>
 
               <form class='btnEmprestimo' method='GET' action=''>
