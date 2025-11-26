@@ -42,8 +42,7 @@ if (empty($assunto2)) $assunto2 = null;
             </div>
         </section>
 
-        <form class="pesquisa">
-
+        <!-- <form class="pesquisa">
 
             <select class="categoria" id="genero" name="genero">
                 <option value="">Gêneros</option>
@@ -82,7 +81,7 @@ if (empty($assunto2)) $assunto2 = null;
                 Aplicar
             </button>
 
-        </form>
+        </form> -->
 
         <div class="textoEsquerda">
             <h1>Destaques da semana</h1>
@@ -132,7 +131,9 @@ if (empty($assunto2)) $assunto2 = null;
             </div>
         </div>
 
-        <h1 class="textoEsquerda">Eventos</h1>
+        <div class="textoEsquerda">
+            <h1>Eventos</h1>
+        </div>
 
         <section class="eventos">
 

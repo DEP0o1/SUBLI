@@ -90,6 +90,12 @@ class LivroView{
                 Favoritar
               </button>
 
+              <select name='Escolha a biblioteca' id='' class='btnRosa'>Escolha a biblioteca
+              <option value='biblioteca1'>biblioteca1</option>
+              <option value='biblioteca2'>biblioteca2</option>
+              <option value='biblioteca3'>biblioteca3</option>
+              </select>
+
               <form class='btnEmprestimo' method='GET' action=''>
                 <input type='hidden' name='codigo' value='{$Livro->cd_livro}'>
                 <input type='hidden' name='enviado' value='true'>

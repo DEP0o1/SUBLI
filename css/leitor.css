@@ -646,18 +646,16 @@ span {
 .eventos {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  margin: 20px;
   gap: var(--gap-grande);
   flex-direction: row;
-  height: 45vh;
+  height: 65vh;
 }
-
-
 
 /*--------------------calendario--------------------------------------------------------------------------*/
 
 .calendario {
-  width: 25vw;
+  width: 60%;
   height: 100%;
   background-color: var(--azul);
   color: var(--branco);
@@ -668,7 +666,7 @@ span {
 .containerEventos {
   gap: var(--gap);
   width: 70%;
-  padding-left: 7.5vw;
+  height: 65vh;
   display: flex;
   flex-direction: row;
 }
@@ -863,11 +861,15 @@ span {
   gap: var(--gap);
 }
 
+#lista-eventos-index-leitor {
+  width: 50vw;
+}
+
 .conteudo-item-lista-doador img {
   object-fit: cover;
   border-radius: 999999px;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   padding: 0;
 }
 

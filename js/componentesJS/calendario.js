@@ -1,21 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-      const calendario = document.querySelector('.calendario');
+    const calendario = document.querySelector('.calendario');
 
-      const nomesMeses = [
-        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-      ];
-      const nomesSemanas = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+    const nomesMeses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+                        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
-      // Abrir direto em setembro/2024
-      let dataAtual = new Date(2024, 8, 1);
+    const nomesSemanas = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
-      // Array fixo com os eventos
-      const eventos = [
-        { dia: 24, mes: 8, ano: 2024, titulo: "Evento Especial", cor: "--vinho" }, // 24/setembro
-        { dia: 1, mes: 9, ano: 2024, titulo: "Início do Mês", cor: "--vinho" },    // 1/outubro
-        { dia: 15, mes: 9, ano: 2024, titulo: "Data Importante", cor: "--vinho" } // 15/outubro
-      ];
+    let dataAtual = new Date();
+
+    const eventos = listaEventos;
 
       function construirCalendario(mes, ano) {
         calendario.innerHTML = "";
