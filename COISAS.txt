@@ -9,6 +9,20 @@ ARRUMAR A PÁGINA DE VER LEITORES -LIAM/CLARA OU ALGM QUE MEXA NOS HTML E CSS AI
 MOSTRAR QUEM ESTÁ COM O EMPRESTIMO NA PÁGINA DE VER EMPRESTIMOS -LUCAS
 AJUSTAR A PÁGINA DE ACEITAR/RECUSAR OS EVENTOS -LUCAS
 
+
+alinhar sessão 
+upload evento 
+doacao com barra lateral 
+upload perfil 
+imagem renomeada com codigo do livro 
+
+verficação formulário
+imagem padrão
+
+refazer pagina bPesquisaLeitor
+padronização btns
+forms iguais os de doar e de cadastrar evento
+
 =============================================================================================================================================
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
@@ -50,18 +64,7 @@ PELO AMOR DE DEUS TEM MUITA COISA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 FAVORITOS (PREGUIÇA DO KRL) - LUCAS (ele está com preguiça)
 
 
-<<<<<<< HEAD
-alinhar sessão 
-upload evento 
-doacao com barra lateral 
-upload perfil 
-imagem renomeada com codigo do livro 
 
-verficação formulário
-imagem padrão
-
-refazer pagina bPesquisaLeitor
-=======
 
 **************************************PAGINA DE DEVOLUÇÃO DE EMPRESTIMO***************************************
->>>>>>> dabbeab56585316752d143739346ed69d9e0067f
+
