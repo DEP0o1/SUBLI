@@ -28,50 +28,52 @@ switch ($metodo) {
 
         break;
 
-        case 'PUT':
-        try {
-            $corpo = json_decode(file_get_contents('php://input'), true);
-            if (!validaCorpoRequisicao($corpo)) { return; }
+       case 'PUT':
+    try {
+        $corpo = json_decode(file_get_contents('php://input'), true);
+        if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_idioma','nm_idioma'];
-            if (!validaChaves($corpo, $camposJSON)) { return; }
+        $camposJSON = ['cd_idioma','nm_idioma'];
+        if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_idioma']) && $corpo['cd_idioma'] != "" ) {
-                http_response_code(400);
-                echo json_encode(['mensagem'=>'Código deve ser numérico.']);
-                return;
-            }
-            else{
-                if(is_numeric($corpo['cd_idioma'])){
-                }
-                else{
-                    $corpo['cd_idioma'] = null;
-                }
-                
-            }
-
-            if (strlen($corpo['nm_idioma']) < 3) {
-                http_response_code(400);
-                echo json_encode(['mensagem'=>'Nome deve ter no mínimo 3 caracteres.']);
-                return;
-            }
-
-            $idioma = new Idioma($corpo['cd_idioma'], $corpo['nm_idioma']);
-            $resultado =  $controlador->AlterarIdioma($idioma);
-
-            if(!$resultado){
-                echo json_encode(['mensagem'=>'Idioma não existe! Insira outro código de um idioma existente']);
-            }
-           
-            else{
-                http_response_code(200);
-                echo json_encode(['mensagem'=>'idioma alterado com sucesso']);
-            }
-        } catch (Exception $erro) {
-            http_response_code(500);
-            echo json_encode(['mensagem'=>$erro->getMessage()]);
+        // Validação do código
+        if ($corpo['cd_idioma'] !== "" && !is_numeric($corpo['cd_idioma'])) {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Código deve ser numérico.']);
+            return;
         }
-        break; 
+
+        if ($corpo['cd_idioma'] === "") {
+            $corpo['cd_idioma'] = null;
+        } else {
+            $corpo['cd_idioma'] = intval($corpo['cd_idioma']);
+        }
+
+        // Validação do nome
+        if (strlen($corpo['nm_idioma']) < 3) {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Nome deve ter no mínimo 3 caracteres.']);
+            return;
+        }
+
+        $idioma = new Idioma($corpo['cd_idioma'], $corpo['nm_idioma']);
+        $resultado = $controlador->AlterarIdioma($idioma);
+
+        if ($resultado === false || $resultado === 0 || $resultado === "Idioma não existe") {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Idioma não existe! Insira outro código de um idioma existente']);
+            return;
+        }
+
+        http_response_code(200);
+        echo json_encode(['mensagem' => 'Idioma alterado com sucesso']);
+
+    } catch (Exception $erro) {
+        http_response_code(500);
+        echo json_encode(['mensagem'=>$erro->getMessage()]);
+    }
+    break;
+
 
 
     case 'POST':

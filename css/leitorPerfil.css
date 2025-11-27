@@ -103,6 +103,10 @@ main {
   margin: 0;
 }
 
+.perfil h1, p {
+  color: black;
+}
+
 .perfil a {
   border-bottom: var(--branco) solid 2px;
   width: 80%;
@@ -230,10 +234,6 @@ main {
 
 .titulo-areaPerfil h1 {
   color: var(--cinza);
-}
-
-h1, p {
-  color: black;
 }
 
 .codigoIdPerfil {

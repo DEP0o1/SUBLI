@@ -439,7 +439,7 @@ function popupAlterarAutor(){
     });
   });
 
-  /*-----------------------------alterar autor------------------------------------------------------------------------*/
+/*-----------------------------alterar autor------------------------------------------------------------------------*/
 
 const botaoAlterarAutor = aside.querySelector("#abrir-alterar-autor");
 
@@ -505,6 +505,446 @@ botaoAlterarAutor.addEventListener("click", () => {
 };
 
     fetch('http://localhost/subli/api/autor.php', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+    .then(async response => {
+      const json = await response.json();
+
+      if (response.ok) {
+        Mensagem(json.mensagem, "sucesso", "body");
+        document.body.removeChild(popup);
+        document.body.removeChild(overlayPopup);
+      } else {
+        Mensagem(json.mensagem, "erro", "body");
+      }
+    })
+    .catch(err => {
+      Mensagem("Erro ao conectar com o servidor.", "erro", "body");
+    });
+  });
+});
+
+/*-------------------------------alterar assunto------------------------------------------------------*/
+
+const botaoAlterarAssunto = aside.querySelector("#abrir-alterar-assunto");
+
+botaoAlterarAssunto.addEventListener("click", () => {
+  const overlayPopup = document.createElement("div");
+  overlayPopup.classList.add("overlayPopup");
+  document.body.appendChild(overlayPopup);
+
+  const popup = document.createElement("div");
+  popup.className = "areaCadastro";
+  popup.innerHTML = `
+    <form class="formAvancado2">
+      <div class="titulo-area-cadastro">
+        <h1>Alterar Assunto</h1>
+        <button type="button" id="fechar-popup-alterar-assunto">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <section class="areaInput">
+
+        <div class="">
+          <label>Código do assunto que deseja alterar:</label>
+          <input type="text" placeholder="Ex: 1" name="cd_assunto" required>
+        </div>
+
+        <div class="">
+          <label>Novo nome do assunto:</label>
+          <input type="text" placeholder="Ex: Novo Assunto" name="nm_assunto" required>
+        </div>
+
+        <div class="areaBtn">
+          <button type="submit" class="btnRosa">Salvar Alterações</button>
+        </div>
+
+      </section>
+    </form>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector("#fechar-popup-alterar-assunto").addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  overlayPopup.addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  const form = popup.querySelector('form.formAvancado2');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const cd_assunto = form.elements['cd_assunto'].value.trim();
+    const nm_assunto = form.elements['nm_assunto'].value.trim();
+
+    const dados = {
+      cd_assunto: cd_assunto === "" ? null : Number(cd_assunto),
+      nm_assunto
+    };
+
+    fetch('http://localhost/subli/api/assunto.php', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+    .then(async response => {
+      const json = await response.json();
+
+      if (response.ok) {
+        Mensagem(json.mensagem, "sucesso", "body");
+        document.body.removeChild(popup);
+        document.body.removeChild(overlayPopup);
+      } else {
+        Mensagem(json.mensagem, "erro", "body");
+      }
+    })
+    .catch(err => {
+      Mensagem("Erro ao conectar com o servidor.", "erro", "body");
+    });
+  });
+});
+
+/*-------------------------------alterar coleção------------------------------------------------------*/
+
+
+const botaoAlterarColecao = aside.querySelector("#abrir-alterar-colecoes");
+
+botaoAlterarColecao.addEventListener("click", () => {
+  const overlayPopup = document.createElement("div");
+  overlayPopup.classList.add("overlayPopup");
+  document.body.appendChild(overlayPopup);
+
+  const popup = document.createElement("div");
+  popup.className = "areaCadastro";
+  popup.innerHTML = `
+    <form class="formAvancado2">
+      <div class="titulo-area-cadastro">
+        <h1>Alterar Coleção</h1>
+        <button type="button" id="fechar-popup-alterar-colecao">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <section class="areaInput">
+
+        <div class="">
+          <label>Código da coleção que deseja alterar:</label>
+          <input type="text" placeholder="Ex: 1" name="cd_colecao" required>
+        </div>
+
+        <div class="">
+          <label>Novo nome da coleção:</label>
+          <input type="text" placeholder="Ex: Nova Coleção" name="nm_colecao" required>
+        </div>
+
+        <div class="areaBtn">
+          <button type="submit" class="btnRosa">Salvar Alterações</button>
+        </div>
+
+      </section>
+    </form>
+  `;
+
+  document.body.appendChild(popup);
+
+  // Fechar popup
+  popup.querySelector("#fechar-popup-alterar-colecao").addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  overlayPopup.addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  const form = popup.querySelector('form.formAvancado2');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const cd_colecao = form.elements['cd_colecao'].value.trim();
+    const nm_colecao = form.elements['nm_colecao'].value.trim();
+
+    const dados = {
+      cd_colecao: cd_colecao === "" ? null : Number(cd_colecao),
+      nm_colecao
+    };
+
+    fetch('http://localhost/subli/api/colecao.php', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+    .then(async response => {
+      const json = await response.json();
+
+      if (response.ok) {
+        Mensagem(json.mensagem, "sucesso", "body");
+        document.body.removeChild(popup);
+        document.body.removeChild(overlayPopup);
+      } else {
+        Mensagem(json.mensagem, "erro", "body");
+      }
+    })
+    .catch(err => {
+      Mensagem("Erro ao conectar com o servidor.", "erro", "body");
+    });
+  });
+});
+
+/*-------------------------------alterar editora------------------------------------------------------*/
+
+const botaoAlterarEditora = aside.querySelector("#abrir-alterar-editora");
+
+botaoAlterarEditora.addEventListener("click", () => {
+  const overlayPopup = document.createElement("div");
+  overlayPopup.classList.add("overlayPopup");
+  document.body.appendChild(overlayPopup);
+
+  const popup = document.createElement("div");
+  popup.className = "areaCadastro";
+  popup.innerHTML = `
+    <form class="formAvancado2">
+      <div class="titulo-area-cadastro">
+        <h1>Alterar Editora</h1>
+        <button type="button" id="fechar-popup-alterar-editora">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <section class="areaInput">
+
+        <div class="">
+          <label>Código da editora que deseja alterar:</label>
+          <input type="text" placeholder="Ex: 1" name="cd_editora" required>
+        </div>
+
+        <div class="">
+          <label>Novo nome da editora:</label>
+          <input type="text" placeholder="Ex: Nova Editora" name="nm_editora" required>
+        </div>
+
+        <div class="areaBtn">
+          <button type="submit" class="btnRosa">Salvar Alterações</button>
+        </div>
+
+      </section>
+    </form>
+  `;
+
+  document.body.appendChild(popup);
+
+  // Fechar popup
+  popup.querySelector("#fechar-popup-alterar-editora").addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  overlayPopup.addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  const form = popup.querySelector('form.formAvancado2');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const cd_editora = form.elements['cd_editora'].value.trim();
+    const nm_editora = form.elements['nm_editora'].value.trim();
+
+    const dados = {
+      cd_editora: cd_editora === "" ? null : Number(cd_editora),
+      nm_editora
+    };
+
+    fetch('http://localhost/subli/api/editora.php', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+    .then(async response => {
+      const json = await response.json();
+
+      if (response.ok) {
+        Mensagem(json.mensagem, "sucesso", "body");
+        document.body.removeChild(popup);
+        document.body.removeChild(overlayPopup);
+      } else {
+        Mensagem(json.mensagem, "erro", "body");
+      }
+    })
+    .catch(err => {
+      Mensagem("Erro ao conectar com o servidor.", "erro", "body");
+    });
+  });
+});
+
+/*-------------------------------alterar genero------------------------------------------------------*/
+
+const botaoAlterarGenero = aside.querySelector("#abrir-alterar-genero");
+
+botaoAlterarGenero.addEventListener("click", () => {
+  const overlayPopup = document.createElement("div");
+  overlayPopup.classList.add("overlayPopup");
+  document.body.appendChild(overlayPopup);
+
+  const popup = document.createElement("div");
+  popup.className = "areaCadastro";
+  popup.innerHTML = `
+    <form class="formAvancado2">
+      <div class="titulo-area-cadastro">
+        <h1>Alterar Gênero</h1>
+        <button type="button" id="fechar-popup-alterar-genero">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <section class="areaInput">
+
+        <div class="">
+          <label>Código do gênero que deseja alterar:</label>
+          <input type="text" placeholder="Ex: 1" name="cd_genero" required>
+        </div>
+
+        <div class="">
+          <label>Novo nome do gênero:</label>
+          <input type="text" placeholder="Ex: Novo Gênero" name="nm_genero" required>
+        </div>
+
+        <div class="areaBtn">
+          <button type="submit" class="btnRosa">Salvar Alterações</button>
+        </div>
+
+      </section>
+    </form>
+  `;
+
+  document.body.appendChild(popup);
+
+  // Fechar popup
+  popup.querySelector("#fechar-popup-alterar-genero").addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  overlayPopup.addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  const form = popup.querySelector('form.formAvancado2');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const cd_genero = form.elements['cd_genero'].value.trim();
+    const nm_genero = form.elements['nm_genero'].value.trim();
+
+    const dados = {
+      cd_genero: cd_genero === "" ? null : Number(cd_genero),
+      nm_genero
+    };
+
+    fetch('http://localhost/subli/api/genero.php', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
+    .then(async response => {
+      const json = await response.json();
+
+      if (response.ok) {
+        Mensagem(json.mensagem, "sucesso", "body");
+        document.body.removeChild(popup);
+        document.body.removeChild(overlayPopup);
+      } else {
+        Mensagem(json.mensagem, "erro", "body");
+      }
+    })
+    .catch(err => {
+      Mensagem("Erro ao conectar com o servidor.", "erro", "body");
+    });
+  });
+});
+
+/*-------------------------------alterar idioma------------------------------------------------------*/
+
+const botaoAlterarIdioma = aside.querySelector("#abrir-alterar-idioma");
+
+botaoAlterarIdioma.addEventListener("click", () => {
+  const overlayPopup = document.createElement("div");
+  overlayPopup.classList.add("overlayPopup");
+  document.body.appendChild(overlayPopup);
+
+  const popup = document.createElement("div");
+  popup.className = "areaCadastro";
+  popup.innerHTML = `
+    <form class="formAvancado2">
+      <div class="titulo-area-cadastro">
+        <h1>Alterar Idioma</h1>
+        <button type="button" id="fechar-popup-alterar-idioma">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <section class="areaInput">
+
+        <div class="">
+          <label>Código do idioma que deseja alterar:</label>
+          <input type="text" placeholder="Ex: 1" name="cd_idioma" required>
+        </div>
+
+        <div class="">
+          <label>Novo nome do idioma:</label>
+          <input type="text" placeholder="Ex: Novo Idioma" name="nm_idioma" required>
+        </div>
+
+        <div class="areaBtn">
+          <button type="submit" class="btnRosa">Salvar Alterações</button>
+        </div>
+
+      </section>
+    </form>
+  `;
+
+  document.body.appendChild(popup);
+
+  // Fechar popup
+  popup.querySelector("#fechar-popup-alterar-idioma").addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  overlayPopup.addEventListener("click", () => {
+    document.body.removeChild(popup);
+    document.body.removeChild(overlayPopup);
+  });
+
+  const form = popup.querySelector('form.formAvancado2');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const cd_idioma = form.elements['cd_idioma'].value.trim();
+    const nm_idioma = form.elements['nm_idioma'].value.trim();
+
+    const dados = {
+      cd_idioma: cd_idioma === "" ? null : Number(cd_idioma),
+      nm_idioma
+    };
+
+    fetch('http://localhost/subli/api/idioma.php', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dados)

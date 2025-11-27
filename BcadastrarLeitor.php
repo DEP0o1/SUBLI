@@ -132,7 +132,7 @@ if ($campos == 8) {
                             <label for="cd_cep" class="labelForm">CEP:</label>
                             <input name="cd_cep" type="text" class="inputCadastro" placeholder="Ex.12345678">
                         </div>
-                        <div ">
+                        <div>
                             <label for="cd_cpf" class="labelForm">CPF:</label>
                             <input name="cd_cpf" type="text" class="inputCadastro" placeholder="Ex. 123456789">
                         </div>
