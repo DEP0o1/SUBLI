@@ -159,17 +159,22 @@ if (empty($assunto2)) $assunto2 = null;
         </div>
 
         <section class="doacaoLivros">
-            <div class="doacaotexto">
-                <p>
-                    A doação de livros é uma prática valiosa com impactos positivos tanto
-                    para quem recebe quanto para quem doa, promovendo o acesso à cultura,
-                    a sustentabilidade e o desenvolvimento pessoal.
-                </p>
-                <a href='LdoarPerfil.php'>
-                    <button class='btnRosa'>Ver Mais</button>
-                </a>
+            <div class="container-doacao-livros">
+                
+                
+                <div class="doacaotexto">
+                    <p>
+                        A doação de livros é uma prática valiosa com impactos positivos tanto
+                        para quem recebe quanto para quem doa, promovendo o acesso à cultura,
+                        a sustentabilidade e o desenvolvimento pessoal.
+                    </p>
+                    <a href='LdoarPerfil.php'>
+                        <button class='btnRosa'>Ver Mais</button>
+                    </a>
+                </div>
+                <img src="img/doar.png" alt="" />
+
             </div>
-            <img src="img/doar.png" alt="" />
         </section>
     </main>
 

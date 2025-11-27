@@ -1583,6 +1583,24 @@ aside br {
   padding: 20px;
 }
 
+.btnDoacao{
+  background-color: transparent;
+  color: var(--vinho);
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: var(--vinho) solid 1px;
+  margin-top: auto;
+  height: 100%;
+}
+
+.btnDoacao:hover {
+  background-color: var(--vinho);
+  color: var(--branco);
+  transition: 0.3s;
+}
+
 .infoLivroDoado {
   width: 440px;
   display: flex;
@@ -1976,7 +1994,7 @@ font-size: 0.75rem;
   align-items: flex-start;
   justify-content: flex-start;
   /* background-color: yellow; */
-  width: 100%;
+  width: fit-content;
   padding: 0%;
   height: fix;
 }
@@ -1989,6 +2007,7 @@ font-size: 0.75rem;
   width: 100%;
   padding-left: auto;
   padding-top: 2%;
+  text-wrap: nowrap;
 }
 
 .livroDoadoLista {

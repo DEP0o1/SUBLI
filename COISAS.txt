@@ -1,21 +1,16 @@
 **TEM QUE FAZER PORRA**
 
-MUDAR HOVER
-COLOCAR SELECT DE BIBLIOTECAS NA HORA DE RESERVAR LIVROS -QUALQUER UM (DEPOIS O LUCAS BACKENDA) 
 ARRUMAR FILTRO -PEDRO (OK)
-
-ARRUMAR A PÁGINA DE VER LEITORES -LIAM/CLARA OU ALGM QUE MEXA NOS HTML E CSS AI
 
 MOSTRAR QUEM ESTÁ COM O EMPRESTIMO NA PÁGINA DE VER EMPRESTIMOS -LUCAS
 AJUSTAR A PÁGINA DE ACEITAR/RECUSAR OS EVENTOS -LUCAS
 
 
-alinhar sessão 
-upload evento 
 upload perfil 
 imagem renomeada com codigo do livro 
 
-verficação formulário para ser necessario ou não as imagens 
+exibirEventos corretamente para o leitor
+
 imagem padrão
 span caso tenho nada de conteudo 
 
