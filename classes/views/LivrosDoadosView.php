@@ -60,11 +60,11 @@ class LivrosDoadosView
             </div>
 
             <div class='divRowItemBtn'>
-              <a href='BcadastrarLivro.php?doacao={$doacoes[0]->cd_doacao}' class='btnRosa'>Cadastrar</a>
-              <form method='GET'>
+              <a href='BcadastrarLivro.php?doacao={$doacoes[0]->cd_doacao}' class='btnDoacao'><span class='material-symbols-outlined'>library_add</span></a>
+              <form method='GET' >
                 <input type='hidden' name='codigo' value='{$doacoes[0]->cd_doacao}'>
                 <input type='hidden' name='recusado' value='true'>
-                <button class='btnRosa' type='submit'>Recusar</button>
+                <button class='btnDoacao' type='submit'><span class='material-symbols-outlined'>close_small</span></button>
               </form>
             </div>
           </div>
