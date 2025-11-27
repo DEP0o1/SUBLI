@@ -119,11 +119,6 @@ if (empty($assunto2)) $assunto2 = null;
             <h1>Mais Procurados</h1>
         </div>
 
-        <?php
-        $controller = new LivroController();
-        $cd_livro = $controller->ListarProximoLivro(); 
-        echo "<h1>O próximo código de livro é: " . $cd_livro . "</h1>";
-        ?>
 
         <div class="container">
             <div class="carrossel-container">

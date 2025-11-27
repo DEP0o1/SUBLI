@@ -26,49 +26,52 @@ switch ($metodo) {
         }
         break;
    case 'PUT':
-        try {
-            $corpo = json_decode(file_get_contents('php://input'), true);
-            if (!validaCorpoRequisicao($corpo)) { return; }
+       case 'PUT':
+    try {
+        $corpo = json_decode(file_get_contents('php://input'), true);
+        if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_editora','nm_editora'];
-            if (!validaChaves($corpo, $camposJSON)) { return; }
+        $camposJSON = ['cd_editora','nm_editora'];
+        if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_editora']) && $corpo['cd_editora'] != "" ) {
-                http_response_code(400);
-                echo json_encode(['mensagem'=>'Código deve ser numérico.']);
-                return;
-            }
-            else{
-                if(is_numeric($corpo['cd_editora'])){
-                }
-                else{
-                    $corpo['cd_editora'] = null;
-                }
-                
-            }
-
-            if (strlen($corpo['nm_editora']) < 3) {
-                http_response_code(400);
-                echo json_encode(['mensagem'=>'Nome deve ter no mínimo 3 caracteres.']);
-                return;
-            }
-
-            $editora = new Editora($corpo['cd_editora'], $corpo['nm_editora']);
-            $resultado =  $controlador->AlterarEditora($editora);
-
-            if(!$resultado){
-                echo json_encode(['mensagem'=>'Editora não existe! Insira outro código de uma editora existente']);
-            }
-           
-            else{
-                http_response_code(200);
-                echo json_encode(['mensagem'=>'Editora alterada com sucesso']);
-            }
-        } catch (Exception $erro) {
-            http_response_code(500);
-            echo json_encode(['mensagem'=>$erro->getMessage()]);
+        // Validação do código
+        if ($corpo['cd_editora'] !== "" && !is_numeric($corpo['cd_editora'])) {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Código deve ser numérico.']);
+            return;
         }
-        break; 
+
+        if ($corpo['cd_editora'] === "") {
+            $corpo['cd_editora'] = null;
+        } else {
+            $corpo['cd_editora'] = intval($corpo['cd_editora']);
+        }
+
+        // Validação do nome
+        if (strlen($corpo['nm_editora']) < 3) {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Nome deve ter no mínimo 3 caracteres.']);
+            return;
+        }
+
+        $editora = new Editora($corpo['cd_editora'], $corpo['nm_editora']);
+        $resultado = $controlador->AlterarEditora($editora);
+
+        if ($resultado === false || $resultado === 0 || $resultado === "Editora não existe") {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Editora não existe! Insira outro código de uma editora existente']);
+            return;
+        }
+
+        http_response_code(200);
+        echo json_encode(['mensagem' => 'Editora alterada com sucesso']);
+
+    } catch (Exception $erro) {
+        http_response_code(500);
+        echo json_encode(['mensagem'=>$erro->getMessage()]);
+    }
+    break;
+
     case 'POST':
         try {
             $corpo = json_decode(file_get_contents('php://input'), true);

@@ -8,54 +8,71 @@ $controlador = new ColecaoController();
 
 switch ($metodo) {
     case 'GET':
-        // aqui no esquema
+        try {
+            $colecoes = $controlador->ListarColecoes();
+            $resposta = [];
+
+            foreach ($colecoes as $colecao) {
+                $resposta[] = [
+                    'cd_colecao' => $colecao->cd_colecao,
+                    'nm_colecao' => $colecao->nm_colecao
+                ];
+            }
+
+            echo json_encode($resposta);
+
+        } catch (Exception $erro) {
+            http_response_code(200);
+            echo json_encode(['mensagem' => $erro->getMessage()]);
+        }
         break;
 
         case 'PUT':
-        try {
-            $corpo = json_decode(file_get_contents('php://input'), true);
-            if (!validaCorpoRequisicao($corpo)) { return; }
+        case 'PUT':
+    try {
+        $corpo = json_decode(file_get_contents('php://input'), true);
+        if (!validaCorpoRequisicao($corpo)) { return; }
 
-            $camposJSON = ['cd_colecao','nm_colecao'];
-            if (!validaChaves($corpo, $camposJSON)) { return; }
+        $camposJSON = ['cd_colecao','nm_colecao'];
+        if (!validaChaves($corpo, $camposJSON)) { return; }
 
-            if (!is_numeric($corpo['cd_colecao']) && $corpo['cd_colecao'] != "" ) {
-                http_response_code(400);
-                echo json_encode(['mensagem'=>'Código deve ser numérico.']);
-                return;
-            }
-            else{
-                if(is_numeric($corpo['cd_colecao'])){
-                }
-                else{
-                    $corpo['cd_colecao'] = null;
-                }
-                
-            }
-
-            if (strlen($corpo['nm_colecao']) < 3) {
-                http_response_code(400);
-                echo json_encode(['mensagem'=>'Nome deve ter no mínimo 3 caracteres.']);
-                return;
-            }
-
-            $colecao = new Colecao($corpo['cd_colecao'], $corpo['nm_colecao']);
-            $resultado =  $controlador->AlterarColecao($colecao);
-
-            if(!$resultado){
-                echo json_encode(['mensagem'=>'Coleção não existe! Insira outro código de uma coleção existente']);
-            }
-           
-            else{
-                http_response_code(200);
-                echo json_encode(['mensagem'=>'Coleção alterada com sucesso']);
-            }
-        } catch (Exception $erro) {
-            http_response_code(500);
-            echo json_encode(['mensagem'=>$erro->getMessage()]);
+        // Validação do código
+        if ($corpo['cd_colecao'] !== "" && !is_numeric($corpo['cd_colecao'])) {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Código deve ser numérico.']);
+            return;
         }
-        break; 
 
+        if ($corpo['cd_colecao'] === "") {
+            $corpo['cd_colecao'] = null;
+        } else {
+            $corpo['cd_colecao'] = intval($corpo['cd_colecao']);
+        }
+
+        // Validação do nome
+        if (strlen($corpo['nm_colecao']) < 3) {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Nome deve ter no mínimo 3 caracteres.']);
+            return;
+        }
+
+        $colecao = new Colecao($corpo['cd_colecao'], $corpo['nm_colecao']);
+        $resultado = $controlador->AlterarColecao($colecao);
+
+        if ($resultado === false || $resultado === 0 || $resultado === "Coleção não existe") {
+            http_response_code(400);
+            echo json_encode(['mensagem' => 'Coleção não existe! Insira outro código de uma coleção existente']);
+            return;
+        }
+
+        http_response_code(200);
+        echo json_encode(['mensagem' => 'Coleção alterada com sucesso']);
+
+    } catch (Exception $erro) {
+        http_response_code(500);
+        echo json_encode(['mensagem'=>$erro->getMessage()]);
+    }
+    break;
 
 
     case 'POST':
