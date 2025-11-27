@@ -9,7 +9,7 @@ if (isset($_REQUEST['doacao'])) {
     $doacaocontroller = new DoacaoController;
     $doacao = $doacaocontroller->ListarDoacoes(new Doacao($cd_doacao));
     $cd_biblioteca = $doacao[0]->biblioteca->cd_biblioteca;
-
+    $nm_livro = $doacao[0]->livro->nm_livro;
     }
 }
 
@@ -45,9 +45,6 @@ if (isset($_REQUEST['nm_livro'])) {
         $erro = false;
         $nm_livro = $_REQUEST['nm_livro'];
     }
-    // $partes=explode('e',$_FILES['image']['name']);
-    // $novoNome=$nm_livro.'.'.$partes[(count($partes)-1)];
-    // move_uploaded_file($_FILES['image']['tmp_name'],'img/doacoes/'.$nm_livro);
 }
 
 if (isset($_REQUEST['cd_autor']) && isset($_REQUEST['nm_autor'])) {
@@ -179,9 +176,11 @@ if ($cadastro) {
         $ds_sinopse
     ));
 
+    // rename("img/doacao_" . $nm_doacao, "img/" . $cd_livro);
+    // echo"$cd_livro";
     if($livro == "Livro cadastrado com sucesso!"){
 
-    
+
         if (isset($_REQUEST['doacao'])) {
             if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
             $doacaocontroller = new DoacaoController;
