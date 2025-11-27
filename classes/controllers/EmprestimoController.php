@@ -79,7 +79,15 @@ class EmprestimoController extends Banco
             }
 
             $this->Executar('adicionar_emprestimo', $parametros);
-            return "Emprestimo cadastrado com sucesso!";
+            return "
+            <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Sucesso</h1>
+            </div>
+            <p>Emprestimo cadastrado com sucesso!</p>
+          </div>
+            ";
         }catch (\Throwable $th) {
             throw $th;
     

@@ -44,7 +44,15 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
         $exemplar = $exemplarcontroller->ContarExemplares(new Exemplar($cd_livro,$cd_biblioteca));
         // fazer outro IF contando quantos exemplares voltam FAZER ISSO EM RESERVA TBM
             if($exemplar[0]['COUNT(*)'] == 0){
-                $emprestimo = "Esse Exemplar não Existe";
+                $emprestimo = "
+                <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p>Esse Exemplar não Existe</p>
+          </div>
+                ";
             }
 
             else{
@@ -59,7 +67,15 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
                 }
            
                 else{
-                    $emprestimo = "O usuário já tem um emprestimo desse livro ativo!";
+                    $emprestimo = "
+                    <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p>O usuário já tem um emprestimo desse livro ativo!</p>
+          </div>
+                    ";
                 }
             }
 
@@ -75,7 +91,15 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
                     }
 
                     else{
-                        $emprestimo = "O Livro está reservado por outra pessoa ";
+                        $emprestimo = "
+                        <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p>O Livro está reservado por outra pessoa!</p>
+          </div>
+                         ";
                     }
                }
                 
@@ -90,7 +114,14 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
                         }
 
                         else{
-                            $emprestimo = "O Livro está emprestado com outra pessoa ";
+                            $emprestimo = "
+                            <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p> O Livro está emprestado com outra pessoa!</p>
+          </div>";
                         }
                }
             }
@@ -115,42 +146,55 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
     <?php
     require_once './complementos/headerBibliotecario.php';
     ?>
-
 </head>
 
 <body>
+
+    <!-- CONTAINER DA MENSAGEM FORA DO FORM -->
+    <?php if ($campos == 3 && isset($emprestimo)) : ?>
+        <div id="container-mensagem">
+            <?php echo $emprestimo; ?>
+        </div>
+    <?php endif; ?>
+
     <div class="areaCadastro">
         <form method="POST" action="" class="formAvancado">
 
             <div class="pesquisaAvancada">
-                <h1>Registrar Empréstimo -  </h1>
+                <h1>Registrar Empréstimo -</h1>
             </div>
 
             <section class="areaInput">
-                
-            <?php
-            $input_reserva = new ReservaView;
-            $input_reserva->Input_Livro_Reserva(new Reserva($cd_reserva));
 
-            ?>
+                <?php
+                $input_reserva = new ReservaView;
+                $input_reserva->Input_Livro_Reserva(new Reserva($cd_reserva));
+                ?>
 
                 <div class="areaAutorLivro">
                     <label for="dt_devolucao_esperada" class="tituloForm">Data de Devolução:</label>
-                    <input name="dt_devolucao_esperada" type="text" class="inputForm" placeholder="25/12/2025">
+                    <input name="dt_devolucao_esperada" type="date" class="inputForm" placeholder="25/12/2025">
                 </div>
 
                 <div class="areaBtn">
                     <button class="btnRosa">Registrar</button>
                 </div>
-                <?php
-                if($campos == 3){
-                     echo $emprestimo;
-                }
-                ?>
+
             </section>
         </form>
-
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const msg = document.querySelector(".mensagem");
+            if (msg) {
+                setTimeout(() => {
+                    msg.classList.add("sumir");
+                    msg.addEventListener("animationend", () => msg.remove());
+                }, 4500);
+            }
+        });
+    </script>
 </body>
 
 </html>

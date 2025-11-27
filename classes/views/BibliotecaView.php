@@ -26,9 +26,9 @@ class BibliotecaView{
             <img src='img/biblioteca{$Biblioteca->cd_biblioteca}_1' alt=''>
           </div>
           <div class='conteudo-item-lista'>
-            <h1>{$Biblioteca->nm_biblioteca}<span>
-            • Fechado
-            </span></h1>
+            <h1>{$Biblioteca->nm_biblioteca}
+            
+            </h1>
             <div class='conteudo-item-lista-biblioteca'>
               <span class='material-symbols-outlined'>
                 location_on
@@ -44,6 +44,9 @@ class BibliotecaView{
         </div>
           ";
           // if (++$i > 3) break; NÃO FAZ ISSO ABOBADO
+          // <span>
+          //   • Fechado
+          //   </span>
             
         }
     }

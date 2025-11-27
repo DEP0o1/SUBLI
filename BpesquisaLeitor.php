@@ -18,7 +18,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
     <link rel="stylesheet" href="css/mobile.css">
     <script src="js/componentesJS/header.js"></script>
 
-    <link rel="shortcut icon" href="img/pequeno terry.webp" type="image/x-icon">
+    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
 </head>
 
 <body>

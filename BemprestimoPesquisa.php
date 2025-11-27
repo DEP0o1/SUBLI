@@ -27,7 +27,7 @@ $cd_biblioteca = $Bibliotecario[0]->cd_biblioteca;
     <script src="js/componentesJS/header.js"></script>
     <script src="js/componentesJS/dropFiltro.js" > </script>
     
-    <link rel="shortcut icon" href="img/pequeno terry.webp" type="image/x-icon">
+    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
 </head>
   <?php
     require_once './complementos/headerBibliotecario.php';

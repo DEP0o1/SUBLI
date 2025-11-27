@@ -22,26 +22,10 @@ span caso tenho nada de conteudo
 refazer pagina bPesquisaLeitor
 forms iguais os de doar e de cadastrar evento ou os de login
 
-=============================================================================================================================================
-
----------------------------------------------------------------------------------------------------------------------------------------------
-
-nota do caua:
-
-as notificações serão realmetnte necessarias? o caua nao quer muito fazer nao
-
----------------------------------------------------------------------------------------------------------------------------------------------
-
-=============================================================================================================================================
-
-//ARRUMAR AS NOTIFICAÇÕES -CAUÃ
-//ARRUMAR PESQUISA AVANÇADA -CAUÃ
 NOTIFICAÇÕES EMAIL -LUCAS/CAUÃ
-ARRUMAR CALENDARIO -CAUÃ
 VER SE É DATA NOS CAMPOS DOS BAGULHOS -CAUÃ/PEDRO
 
 FILTROS DO EMPRESTIMO -PEDRO
-
 
 COLOCAR QUE NÃO TEM NADA NO HISTORICO -QUALQUER UM (MENOS O LUCAS) 
 TAMBEM COLOCAR BARRA DE PESQUISA NA PARTE DOS LIVROS -QUALQUE UM
