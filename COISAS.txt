@@ -15,8 +15,6 @@ span caso tenho nada de conteudo
 refazer pagina bPesquisaLeitor
 
 
-forms iguais os de doar e de cadastrar evento ou os de login
-
 NOTIFICAÇÕES EMAIL -LUCAS/CAUÃ
 VER SE É DATA NOS CAMPOS DOS BAGULHOS -CAUÃ/PEDRO
 

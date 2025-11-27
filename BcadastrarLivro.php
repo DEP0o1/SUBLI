@@ -45,12 +45,16 @@ if (isset($_REQUEST['nm_livro'])) {
         $erro = false;
         $nm_livro = $_REQUEST['nm_livro'];
     }
+    // $partes=explode('e',$_FILES['image']['name']);
+    // $novoNome=$nm_livro.'.'.$partes[(count($partes)-1)];
+    // move_uploaded_file($_FILES['image']['tmp_name'],'img/doacoes/'.$nm_livro);
 }
 
 if (isset($_REQUEST['cd_autor']) && isset($_REQUEST['nm_autor'])) {
     if (!is_null($_REQUEST['cd_autor']) || !is_null($_REQUEST['nm_autor'])) {
         $erro = false;
     }
+
 }
 
 if (isset($_REQUEST['cd_assunto']) && isset($_REQUEST['nm_assunto'])) {

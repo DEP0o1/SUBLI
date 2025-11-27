@@ -18,7 +18,7 @@ class LivrosDoadosView
       }
       echo "
                       <div class='livro'>
-                         <img src='img/doacoes/doacao_{$Doacao->livro->nm_livro}' alt='$Doacao->cd_doacao'/>
+                         <img src='img/doacao_{$Doacao->livro->nm_livro}' alt='$Doacao->cd_doacao'/>
                         <h2>{$Doacao->livro->nm_livro}</h2>
                         <p>
               Doador: {$Doacao->leitor->nm_leitor}
@@ -36,7 +36,7 @@ class LivrosDoadosView
 
     echo "
 
-            <img src='img/doacoes/doacao_{$doacoes[0]->livro->nm_livro}' alt='' class='capaLivroGrande' />
+            <img src='img/doacao_{$doacoes[0]->livro->nm_livro}' alt='' class='capaLivroGrande' />
           </div>
 
           <section class='divColuna'>
