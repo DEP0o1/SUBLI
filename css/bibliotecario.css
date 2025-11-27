@@ -270,6 +270,7 @@ nav {
 }
 
 .pgPesquisaLeitor{
+  gap: 0;
   padding-right: 0%; 
   display: flex;
   flex-direction: column;
@@ -278,8 +279,51 @@ nav {
 
 .dadosResultados {
   display: flex;
+  padding: 1%;
   width: 100%;
   border-bottom: #b59e8b solid 1px;
+}
+
+.leitorLinha{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1%;
+  border-bottom: #b59e8b solid 1px;
+}
+
+.leitorLinha button {
+  background-color: transparent;
+  color: var(--vinho);
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: var(--vinho) solid 1px;
+}
+
+.infoPequena{
+  display: flex;
+  gap: var(--gap);
+}
+
+.infoPequena img{
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.infoJunta{
+  display: flex;
+  margin-left: 17vw;
+  gap: 7vw;
+}
+
+.infoJunta1{
+  display: flex;
+  margin-left: 11vw;
+  gap: 13vw;
 }
 
 .pesquisarLeitor {
@@ -1606,11 +1650,6 @@ aside br {
   display: flex;
   flex-direction: column;
   gap: 40px;
-}
-
-.linha {
-  height: 1.5px;
-  background-color: black;
 }
 
 .areaCardsDoacao {

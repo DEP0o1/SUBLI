@@ -93,10 +93,53 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
 
         <section class="dadosResultados">
             <p>Nome</p>
-            <p>Código</p>
-            <p>Telefone</p>
-            <p>CPF</p>
-            <p>Status</p>
+
+            <div class="infoJunta">
+                <p>Código</p>
+                <p>Telefone</p>
+            </div>
+            
+            <div class="infoJunta1">
+                <p>CPF</p>
+                <p>Status</p>
+            </div>
+            
+        </section>
+
+        <section class="outrosLeitores">
+            <div class="leitorLinha">
+                <div class="infoPequena">
+                    <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+                    <p>Liam Nascimento</p>
+                </div>
+
+                <p>123456</p>
+
+                <p>(13) 987843247</p>
+
+                <p>123.456.789-10</p>
+
+                <p>Sem atrasos</p>
+
+                <button class="btnRosa">Ver Mais</button>
+            </div>
+
+            <div class="leitorLinha">
+                <div class="infoPequena">
+                    <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
+                    <p>Liam Nascimento</p>
+                </div>
+
+                <p>123456</p>
+
+                <p>(13) 987843247</p>
+
+                <p>123.456.789-10</p>
+
+                <p>Sem atrasos</p>
+
+                <button class="btnRosa">Ver Mais</button>
+            </div>
         </section>
     </main>
 </body>
