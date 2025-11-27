@@ -300,7 +300,6 @@ BEGIN
 END$$
 
 
-
 DROP PROCEDURE IF EXISTS alterar_livros$$
 CREATE PROCEDURE alterar_livros (
     IN p_cd_livro INT,

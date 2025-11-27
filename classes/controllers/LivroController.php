@@ -56,14 +56,19 @@ class LivroController extends Banco
         }
     }
 
-    // function ListarProximoLivro($livro = new Livro){
-    //     try {
-    //         $dados = $this->Consultar('ListarProximoLivro');
-    //         return $dados;
-    //     } catch (\Throwable $th) {
-    //         throw $th;
-    //     }
-    // }
+    /*====================*/
+
+    function ListarProximoLivro($livro = new Livro){
+    try {
+        $dados = $this->Consultar('ListarProximoLivro');
+        return $dados[0]['Proximo_Cd_Livro']; 
+    } catch (\Throwable $th) {
+        throw $th;
+    }
+}
+
+
+    /*===========o codigo livro ser o coalesce=========*/
 
      function ListarLivrosEmprestimo($livro = new Livro())
     {
