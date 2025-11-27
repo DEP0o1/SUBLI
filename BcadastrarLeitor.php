@@ -106,48 +106,46 @@ if ($campos == 8) {
                 <h1>Cadastrar Leitor</h1>
                 <hr>
                 <section class="areaInput">
-                    <div class="areaTituloLivro">
-                        <label for="nm_leitor" class="tituloForm">Nome:</label>
-                        <input name="nm_leitor" type="text" class="inputForm" placeholder="Ex. Pedro Mingel">
+                    <div class="areaAutorLivro">
+                        <label for="nm_leitor" class="labelForm">Nome:</label>
+                        <input name="nm_leitor" type="text" class="inputCadastro" placeholder="Ex. Pedro Mingel">
                     </div>
     
                     <div class="areaAutorLivro">
-                        <label for="cd_telefone" class="tituloForm">Telefone:</label>
-                        <input name="cd_telefone" type="text" class="inputForm" placeholder="Ex. 13-99999999">
+                        <label for="cd_telefone" class="labelForm">Telefone:</label>
+                        <input name="cd_telefone" type="text" class="inputCadastro" placeholder="Ex. 13-99999999">
+                    </div>
+    
+                    <div class="formDeLado">
+                        <div >
+                            <label for="nm_endereco" class="labelForm">Endereço:</label>
+                            <input name="nm_endereco" type="text" class="inputCadastro" placeholder="Ex. Rua xxx.xxx">
+                        </div>
+                        <div >
+                            <label for="cd_cep" class="labelForm">CEP:</label>
+                            <input name="cd_cep" type="text" class="inputCadastro" placeholder="Ex.12345678">
+                        </div>
+                        <div ">
+                            <label for="cd_cpf" class="labelForm">CPF:</label>
+                            <input name="cd_cpf" type="text" class="inputCadastro" placeholder="Ex. 123456789">
+                        </div>
                     </div>
     
                     <div class="formDeLado">
                         <div>
-                            <label for="nm_endereco" class="tituloForm">Endereço:</label>
-                            <input name="nm_endereco" type="text" class="inputFormDeLado" placeholder="Ex. Rua xxx.xxx">
+                            <label for="cd_email" class="labelForm">Email:</label>
+                            <input name="cd_email" type="text" class="inputCadastro" placeholder="Ex. pedro@gmail.com">
+                        </div >
+                        <div >
+                            <label for="nm_senha" class="labelForm">Senha:</label>
+                            <input name="nm_senha" type="text" class="inputCadastro" placeholder="************">
                         </div>
-                        <div>
-                            <label for="cd_cep" class="tituloForm">CEP:</label>
-                            <input name="cd_cep" type="text" class="inputFormDeLado" placeholder="Ex.12345678">
-                        </div>
-                        <div>
-                            <label for="cd_cpf" class="tituloForm">CPF:</label>
-                            <input name="cd_cpf" type="text" class="inputFormDeLado" placeholder="Ex. 123456789">
-                        </div>
-                    </div>
-    
-                    <div class="formDeLado">
-                        <div>
-                            <label for="cd_email" class="tituloForm">Email:</label>
-                            <input name="cd_email" type="text" class="inputFormDeLado" placeholder="Ex. pedro@gmail.com">
-                        </div>
-                        <div>
-                            <label for="nm_senha" class="tituloForm">Senha:</label>
-                            <input name="nm_senha" type="text" class="inputFormDeLado" placeholder="************">
-                        </div>
-                        <div>
-                            <label for="dt_nascimento" class="tituloForm">Data de nascimento:</label>
-                            <input name="dt_nascimento" type="text" class="inputFormDeLado" placeholder="************">
+                        <div >
+                            <label for="dt_nascimento" class="labelForm">Data de nascimento:</label>
+                            <input name="dt_nascimento" type="text" class="inputCadastro" placeholder="************">
                         </div>
                     </div>
     
-                    <div class="formDeLado1">
-                    </div>
     
                     <div class="areaBtn">
                         <button class="btnRosa">Cadastrar</button>

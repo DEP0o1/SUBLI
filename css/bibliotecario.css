@@ -1285,8 +1285,8 @@ aside br {
 }
 
 .areaTituloLivro input {
-  padding: 5px;
-  border: none;
+  /* padding: 5px;
+  border: none; */
   border-radius: var(--radius);
 }
 
@@ -1298,28 +1298,48 @@ aside br {
   width: 100%;
 }
 
+.areaAutorLivro input {
+border: solid 1px var(--bege);
+}
+
+
 .autorLivro {
   width: 100%;
 }
 
 .tituloForm {
-  color: var(--cinza);
+  color: var(--fundo);
   text-wrap: nowrap;
   font-family: "Inter";
   font-size: 1rem;
 }
 
+.labelForm{
+  color: var(--bege);
+  text-wrap: nowrap;
+  font-family: "Inter";
+  font-size: 1rem;
+}
+
+
 .tituloFormCadastro{
   width: 50vw;
 }
 
-.areaInput input{
-  padding: 10px;
-  border: solid 1px var(--bege);
-}
+.areaInput input,
 .formDeLado > div{
   width: 100%;
+  padding: 10px;
+  border-radius: var(--radius);
 }
+
+
+.inputCadastro{
+  padding: 10px;
+  border: solid 1px var(--bege);
+  border-radius: var(--radius);
+}
+
 
 .formDeLado {
   display: flex;
@@ -1337,12 +1357,15 @@ aside br {
   gap: var(--gap);
   overflow-y: scroll;
 }
+
 .areaInput {
   display: flex;
   flex-direction: column;
   justify-content: left;
   gap: 20px;
 }
+
+
 
 .inputForm {
   padding: 5px;
@@ -1468,6 +1491,20 @@ aside br {
     padding: 30px;
     border-radius: var(--radius);
 }
+
+.formAvancado2{
+  background-color: var(--azul);
+  color: var(--branco);
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: var(--radius);
+  padding: 20px;
+  width: 100%;
+  height: 100%; 
+}
+
 
 .titulo-area-cadastro {
   display: flex;

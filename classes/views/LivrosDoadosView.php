@@ -79,8 +79,8 @@ class LivrosDoadosView
     if ($doacao != new Doacao) {
       echo "
               <div class='areaTituloLivro'>
-                <label for='nm_livro' class='tituloForm'>Titulo:</label>
-                <input name='nm_livro' type='text' class='inputForm' 
+                <label for='nm_livro' class='labelForm'>Titulo:</label>
+                <input name='nm_livro' type='text' class='inputCadastro' 
                   placeholder='Ex. O Pequeno Principe' 
                   value ='{$doacoes[0]->livro->nm_livro}' readonly>
               </div>
@@ -88,8 +88,8 @@ class LivrosDoadosView
     } else {
       echo "
               <div class='areaTituloLivro'>
-                <label for='nm_livro' class='tituloForm'>Titulo:</label>
-                <input name='nm_livro' type='text' class='inputForm' 
+                <label for='nm_livro' class='labelForm'>Titulo:</label>
+                <input name='nm_livro' type='text' class='inputCadastro' 
                   placeholder='Ex. O Pequeno Principe'>
               </div>
             ";
@@ -104,8 +104,8 @@ class LivrosDoadosView
     if ($doacao != new Doacao) {
       echo "
               <div>
-                <label for='nm_autor' class='tituloForm'>Autor:</label>
-                <input name='nm_autor' type='text' class='inputFormDeLado' 
+                <label for='nm_autor' class='labelForm'>Autor:</label>
+                <input name='nm_autor' type='text' class='inputCadastro'  
                   placeholder='Ex. Antoine de Saint-Exupéry' 
                   value ='{$doacoes[0]->livro->autores[0]->nm_autor}' readonly>
               </div>
@@ -113,8 +113,8 @@ class LivrosDoadosView
     } else {
       echo "
               <div>
-                <label for='nm_autor' class='tituloForm'>Autor:</label>
-                <input name='nm_autor' type='text' class='inputFormDeLado' 
+                <label for='nm_autor' class='labelForm'>Autor:</label>
+                <input name='nm_autor' type='text' class='inputCadastro'  
                   placeholder='Ex. Antoine de Saint-Exupéry'>
               </div>
             ";
