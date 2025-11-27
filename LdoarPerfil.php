@@ -24,7 +24,7 @@ $campos = 0;
     
         if(move_uploaded_file($_FILES['image']['tmp_name'], $caminho))
         {
-          // echo "Arquivo enviado com sucesso.";
+          $campos = $campos + 1 ; 
         }
       }
     }
@@ -42,7 +42,7 @@ $campos = 0;
   }
 
   
-  if($campos == 3){
+  if($campos == 4){
     
     $controller = new DoacaoController();
     $conferencia = $controller->ListarDoacoes(new Doacao(null ,new Livro(null, $nm_livro, [new Autor(null,$nm_autor)]), new Biblioteca($cd_biblioteca), new Leitor($cd_email)));
@@ -129,7 +129,7 @@ $campos = 0;
         </form>
         <?php
         
-        if($campos == 3 && $conferencia == []){
+        if($campos == 4 && $conferencia == []){
           echo $mensagem;
         }
         ?>

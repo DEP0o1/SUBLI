@@ -9,8 +9,7 @@ AJUSTAR A PÁGINA DE ACEITAR/RECUSAR OS EVENTOS -LUCAS
 upload perfil 
 imagem renomeada com codigo do livro 
 
-verficação formulário para ser necessario ou não as imagens 
-
+exibirEventos corretamente para o leitor
 
 imagem padrão
 span caso tenho nada de conteudo 
