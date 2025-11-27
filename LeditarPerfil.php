@@ -26,6 +26,7 @@ $conferido2 = null;
       $campos = $campos + 1 ; 
 }
 
+    if(isset($_REQUEST['']))
 
     if($campos == 3 || $campos == 2 || $campos == 1){
       $controller = new LeitorController;
@@ -98,7 +99,7 @@ $conferido2 = null;
       <section class="areaPerfil">
         <form method = "POST" action="">
           <div class="titulo-areaPerfil">
-              <h1>Suas informações</h1>
+              <h1>Alterar informações</h1>
               <hr/>
           </div>
           
@@ -122,17 +123,17 @@ $conferido2 = null;
             <input name="nm_senha" type="password" placeholder="***********"/>
           </div>
 
-          <div class="label-input">
+           <!-- <div class="label-input">
             <label for="">CEP: </label>
-            <input name="cd_CEP" type="text" placeholder="11070-490"/>
+            <input name="cd_cep" type="text" placeholder="11070-490"/>
           </div>
 
           <div class="label-input">
             <label for="">Endereço: </label>
-            <input name="ds_Endereco" type="text" placeholder="Av. Epitácio Pessoa, 466 - Aparecida, Santos SP"/>
-          </div>
+            <input name="ds_endereco" type="text" placeholder="Av. Epitácio Pessoa, 466 - Aparecida, Santos SP"/>
+          </div> -->
 
-          <div class="label-input">
+          <!-- <div class="label-input">
             <label for="">CPF: </label>
             <input name="ds_Endereco" type="text" placeholder=" 657.543.543-10"/>
           </div>
@@ -148,10 +149,9 @@ $conferido2 = null;
           <div class="label-input">
             <label for="">Data de Nascimento: </label>
             <input name="ds_Endereco" type="text" placeholder="19/11/2007"/>
-          </div>
+          </div> -->
 
           <button type="submit" id="btnEditarPerfil">Salvar alterações</button>
-''
           <?php
               if($campos && $conferido == true || $conferido2 == true){
                 echo $Leitor;
@@ -160,13 +160,13 @@ $conferido2 = null;
         </form>
       </section>
 
-      <section class="comprovanteRes">
+      <!-- <section class="comprovanteRes">
         <div>
         <h1>Comprovante de Residência</h1>
         <hr/>
         <p>O comprovante de residencia deve ser entregue à uma biblioteca para efetuar totalmente o seu cadastro</p>
         </div>
-      </section>
+      </section> -->
 
     </main>
   </body>

@@ -60,7 +60,8 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
                         </p>
                         <div class='btnsPerfil'>
                             <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Alterar Dados</button>
-                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Pesquisar</button>
+                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Enviar Notificação</button>
+                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Registrar Devolução</button>
                         </div>
                     </div>
                 </div>

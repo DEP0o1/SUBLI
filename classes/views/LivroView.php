@@ -84,21 +84,23 @@ class LivroView{
               Ano de publicação: 2018
             </p>
 
-            <section class='areaBtn'>
-              <button class='btnRosa'>
-                <span class='material-symbols-outlined'>favorite</span>
-                Favoritar
-              </button>
-
-              <select name='Escolha a biblioteca' id='' class='btnRosa'>Escolha a biblioteca
+            <section class='areaBtn' style='flex-direction: column;'>
+              <form class='btnEmprestimo' method='GET' action=''>
+              <select style='width: 100%' name='B' id='' class='btnRosa'>Escolha a biblioteca
               ";
               foreach($bibliotecas as $Biblioteca){
                 echo "<option value='{$Biblioteca->cd_biblioteca}'>{$Biblioteca->nm_biblioteca}</option>";
               }
               echo "
               </select>
+              <div style='display: flex; gap: 10px;'>
+              <button class='btnRosa'>
+                <span class='material-symbols-outlined'>favorite</span>
+                Favoritar
+              </button>
 
-              <form class='btnEmprestimo' method='GET' action=''>
+
+              
                 <input type='hidden' name='codigo' value='{$Livro->cd_livro}'>
                 <input type='hidden' name='enviado' value='true'>
                 <button class='btnRosa' id='s' type='submit'>
@@ -112,6 +114,7 @@ class LivroView{
 
         echo "
               </form>
+            </div>
             </section>
             <span>
               <p>• Disponível em: ";
