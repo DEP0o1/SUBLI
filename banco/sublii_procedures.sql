@@ -293,6 +293,14 @@ END$$
 /*CALL adicionar_livro (NULL, 'Aventuras no Código' , 1 , NULL ,1, NULL, 1 , NULL ,1 , NULL , 1 , NULL , 1 , NULL,'blebleble', 1);*/
     
 
+CREATE PROCEDURE ListarProximoLivro()
+BEGIN
+    SELECT COALESCE(MAX(cd_livro), 0) + 1 AS Proximo_Cd_Livro
+    FROM livro;
+END$$
+
+
+
 DROP PROCEDURE IF EXISTS alterar_livros$$
 CREATE PROCEDURE alterar_livros (
     IN p_cd_livro INT,
@@ -387,6 +395,10 @@ BEGIN
         INSERT INTO assunto_livro VALUES (p_cd_livro, v_cd_assunto);
     END IF;
 END$$
+
+
+
+
 
 /*CALL alterar_livros(202,'Novo Título do Livro', NULL, NULL, NULL, 'Inglês',NULL, 'Coleção Nova', NULL, 'Drama',NULL, 'Machado de Assis',NULL, NULL);*/
 
@@ -1452,6 +1464,8 @@ BEGIN
       VALUES (v_cd_doacao, p_nm_livro, p_nm_autor ,p_cd_biblioteca, p_cd_email, false);
   END IF;
 END$$
+
+
 
 /*CALL adicionar_doacao(NULL,'Lucas e suas Aventuras', 'Arthur', 1 , 'pedro@gmail.com';*/
 

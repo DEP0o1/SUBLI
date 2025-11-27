@@ -9,7 +9,6 @@ if (isset($_REQUEST['doacao'])) {
     $doacaocontroller = new DoacaoController;
     $doacao = $doacaocontroller->ListarDoacoes(new Doacao($cd_doacao));
     $cd_biblioteca = $doacao[0]->biblioteca->cd_biblioteca;
-    $nm_livro = $doacao[0]->livro->nm_livro;
     }
 }
 
@@ -176,8 +175,11 @@ if ($cadastro) {
         $ds_sinopse
     ));
 
+    // $controller = new LivroController();
+    // $cd_livro = $controller->ListarProximoLivro();
+
     // rename("img/doacao_" . $nm_doacao, "img/" . $cd_livro);
-    // echo"$cd_livro";
+    //  echo"$cd_livro[0]";
     if($livro == "Livro cadastrado com sucesso!"){
 
 

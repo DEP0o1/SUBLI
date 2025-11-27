@@ -56,6 +56,15 @@ class LivroController extends Banco
         }
     }
 
+    // function ListarProximoLivro($livro = new Livro){
+    //     try {
+    //         $dados = $this->Consultar('ListarProximoLivro');
+    //         return $dados;
+    //     } catch (\Throwable $th) {
+    //         throw $th;
+    //     }
+    // }
+
      function ListarLivrosEmprestimo($livro = new Livro())
     {
          try{
