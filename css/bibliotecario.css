@@ -236,7 +236,7 @@ nav {
 
 /*-----------------Leitor bibliotecario -------------------------------------------------------------------------------------*/
 
-.leitoresEncontrados {
+/* .leitoresEncontrados {
   display: flex;
   flex-direction: row;
   gap: 0px;
@@ -269,17 +269,72 @@ nav {
   gap: 30px;
 }
 
+.btnAzul {
+  border-radius: 10px;
+  background-color: #102e4e;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+} */
+
 .pgPesquisaLeitor{
+  gap: 0;
+  padding-top: 5% ;
   padding-right: 0%; 
   display: flex;
   flex-direction: column;
+  gap: var(--gap-grande);
+  overflow-x: hidden;
   width: 100%;
 }
 
 .dadosResultados {
   display: flex;
+  padding: 1%;
   width: 100%;
   border-bottom: #b59e8b solid 1px;
+}
+
+.leitorLinha{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1%;
+  border-bottom: #b59e8b solid 1px;
+}
+
+.leitorLinha button {
+  background-color: transparent;
+  color: var(--vinho);
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: var(--vinho) solid 1px;
+}
+
+.infoPequena{
+  display: flex;
+  gap: var(--gap);
+}
+
+.infoPequena img{
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
+
+.infoJunta{
+  display: flex;
+  margin-left: 17vw;
+  gap: 7vw;
+}
+
+.infoJunta1{
+  display: flex;
+  margin-left: 11vw;
+  gap: 13vw;
 }
 
 .pesquisarLeitor {
@@ -287,22 +342,24 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1%;
-  border-top: #b59e8b solid 1px;
-  border-bottom: #b59e8b solid 1px;
-  gap: var(--gap);
+  /* padding-right:5% ;  */
 }
 
-.pesquisarInput {
-  background-color: white;
+.pesquisarLeitor form {
+  border: var(--border);
+  color: var(--cinza);
   display: flex;
+  justify-content: center;
   align-items: center;
-  border-radius: 20px;
-  padding: 1%;
+  flex-direction: column;
+  height: fit-content;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 15px;
 }
 
 .pesquisarLeitor input {
-  width: 35vw;
+  width: 50vw;
   border: none;
   border-radius: 10px;
   padding: var(--gap);
@@ -328,10 +385,12 @@ nav {
 .resultadoPesquisaLeitor{
   display: flex;
   flex-direction: column;
+  display: flex;
+  gap: var(--gap-grande);
 }
 
 .cardLeitor img{
-  height: 20vh;
+  height: 20vh  ;
   border-radius: 100%;
 }
 
@@ -342,17 +401,18 @@ nav {
 .cardLeitor{
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 1%;
   gap: var(--gap);
-  width: 100%;
+  border-top: 1px var(--bege) solid;
+  border-bottom: 1px var(--bege) solid;
+  margin-bottom: 2vh;
+ 
 }
 
 .infoPerfil{
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin-top: 30px;
+  gap: var(--gap);
 }
 
 .infoDeLado{
@@ -1167,6 +1227,11 @@ aside br {
   gap: 40px;
 }
 
+.resultadoEmPe {
+  width: 50vw;
+  margin-right: 20px;
+}
+
 .btnNovoEvento {
   display: flex;
   align-items: center;
@@ -1265,13 +1330,13 @@ aside br {
 
 .areaTituloLivro {
   width: 100%;
-  color: var(--branco);
+  color: var(--cinza);
   gap: var(--gap);
 }
 
 .areaTituloLivro input {
-  padding: 5px;
-  border: none;
+  /* padding: 5px;
+  border: none; */
   border-radius: var(--radius);
 }
 
@@ -1282,6 +1347,11 @@ aside br {
 .areaAutorLivro {
   width: 100%;
 }
+
+.areaAutorLivro input {
+border: solid 1px var(--bege);
+}
+
 
 .autorLivro {
   width: 100%;
@@ -1294,10 +1364,32 @@ aside br {
   font-size: 1rem;
 }
 
+.labelForm{
+  color: var(--bege);
+  text-wrap: nowrap;
+  font-family: "Inter";
+  font-size: 1rem;
+}
+
+
+.tituloFormCadastro{
+  width: 50vw;
+}
+
 .areaInput input,
 .formDeLado > div{
   width: 100%;
+  padding: 10px;
+  border-radius: var(--radius);
 }
+
+
+.inputCadastro{
+  padding: 10px;
+  border: solid 1px var(--bege);
+  border-radius: var(--radius);
+}
+
 
 .formDeLado {
   display: flex;
@@ -1315,12 +1407,15 @@ aside br {
   gap: var(--gap);
   overflow-y: scroll;
 }
+
 .areaInput {
   display: flex;
   flex-direction: column;
   justify-content: left;
   gap: 20px;
 }
+
+
 
 .inputForm {
   padding: 5px;
@@ -1425,6 +1520,29 @@ aside br {
 /*-----------------cadastros--------------------------------------------------------------------------*/
 
 .formAvancado1 {
+  /* background-color: var(--azul);
+  color: var(--branco);
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: var(--radius);
+  padding: 20px;
+  width: 100%;
+  height: 100%; */
+
+  color: var(--cinza);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+    gap: 15px;
+    padding: 30px;
+    border-radius: var(--radius);
+}
+
+.formAvancado2{
   background-color: var(--azul);
   color: var(--branco);
   display: flex;
@@ -1434,8 +1552,9 @@ aside br {
   border-radius: var(--radius);
   padding: 20px;
   width: 100%;
-  height: 100%;
+  height: 100%; 
 }
+
 
 .titulo-area-cadastro {
   display: flex;
@@ -1606,11 +1725,6 @@ aside br {
   display: flex;
   flex-direction: column;
   gap: 40px;
-}
-
-.linha {
-  height: 1.5px;
-  background-color: black;
 }
 
 .areaCardsDoacao {

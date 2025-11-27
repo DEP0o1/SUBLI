@@ -1,7 +1,5 @@
 **TEM QUE FAZER PORRA**
 
-ARRUMAR FILTRO -PEDRO (OK)
-
 MOSTRAR QUEM ESTÁ COM O EMPRESTIMO NA PÁGINA DE VER EMPRESTIMOS -LUCAS
 AJUSTAR A PÁGINA DE ACEITAR/RECUSAR OS EVENTOS -LUCAS
 
@@ -15,7 +13,7 @@ imagem padrão
 span caso tenho nada de conteudo 
 
 refazer pagina bPesquisaLeitor
-forms iguais os de doar e de cadastrar evento ou os de login
+
 
 =========================CAUA==============================
 
