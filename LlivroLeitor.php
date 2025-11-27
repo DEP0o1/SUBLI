@@ -7,7 +7,10 @@ if (isset($_REQUEST['codigo'])) {
   if ($_REQUEST['codigo'] != "") {
 
     $codigo = $_REQUEST['codigo'];
-    $cd_biblioteca = 1;
+    if(isset($_REQUEST['B'])){
+      $cd_biblioteca = $_REQUEST['B'];
+    }
+    
     // TEM QUE TER SELECT AQ PARA NÃO FICAR BIBLIOTECA ESTATICA NAS RESERVAS!!!!
   }
 }

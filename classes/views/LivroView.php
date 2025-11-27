@@ -85,10 +85,11 @@ class LivroView{
             </p>
 
             <section class='areaBtn' style='flex-direction: column;'>
-              <select style='width: 100%' name='Escolha a biblioteca' id='' class='btnRosa'>Escolha a biblioteca
+              <form class='btnEmprestimo' method='GET' action=''>
+              <select style='width: 100%' name='B' id='' class='btnRosa'>Escolha a biblioteca
               ";
               foreach($bibliotecas as $Biblioteca){
-                echo "<option name = 'B' value='{$Biblioteca->cd_biblioteca}'>{$Biblioteca->nm_biblioteca}</option>";
+                echo "<option value='{$Biblioteca->cd_biblioteca}'>{$Biblioteca->nm_biblioteca}</option>";
               }
               echo "
               </select>
@@ -99,7 +100,7 @@ class LivroView{
               </button>
 
 
-              <form class='btnEmprestimo' method='GET' action=''>
+              
                 <input type='hidden' name='codigo' value='{$Livro->cd_livro}'>
                 <input type='hidden' name='enviado' value='true'>
                 <button class='btnRosa' id='s' type='submit'>
