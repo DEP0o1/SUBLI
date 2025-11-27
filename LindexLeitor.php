@@ -136,15 +136,11 @@ if (empty($assunto2)) $assunto2 = null;
         </div>
 
         <section class="eventos">
-
             <div class="containerEventos">
-
                 <div class="calendario">
                     <!-- calendario -->
                 </div>
-
                 <div class="lista" id="lista-eventos-index-leitor">
-
                     <?php
                     $evento = new EventoView;
                     $evento->ExibirEventos(new Evento(null, null, null, null, new Biblioteca(), new Leitor(), true));
@@ -160,8 +156,8 @@ if (empty($assunto2)) $assunto2 = null;
 
         <section class="doacaoLivros">
             <div class="container-doacao-livros">
-                
-                
+
+
                 <div class="doacaotexto">
                     <p>
                         A doação de livros é uma prática valiosa com impactos positivos tanto
