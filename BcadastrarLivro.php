@@ -210,8 +210,9 @@ if ($cadastro) {
 <body>
     <div class="areaCadastro">
         <form method="POST" class="formAvancado1">
-            <div>
-                <h1 class="pesquisaAvancada">Cadastrar Livro </h1>
+            <div class="tituloFormCadastro">
+                <h1>Cadastrar Livro </h1>
+                <hr>
             </div>
 
             <section class="areaInput">
@@ -223,8 +224,8 @@ if ($cadastro) {
 
                 <div class="formDeLado">
                     <div>
-                        <label for="cd_autor" class="tituloForm">Código Autor:</label>
-                        <input name="cd_autor" type="text" class="inputFormDeLado" placeholder="Ex.1234">
+                        <label for="cd_autor" class="labelForm">Código Autor:</label>
+                        <input name="cd_autor" type="text" class="inputCadastro" placeholder="Ex.1234">
                     </div>
 
                     <?php
@@ -234,57 +235,57 @@ if ($cadastro) {
             ?>
 
                     <div>
-                        <label for="cd_assunto" class="tituloForm">Código Assunto</label>
-                        <input name="cd_assunto" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <label for="cd_assunto" class="labelForm">Código Assunto</label>
+                        <input name="cd_assunto" type="text" class="inputCadastro" placeholder="Ex. 1">
                     </div>
 
                     <div>
-                        <label for="nm_assunto" class="tituloForm">Assunto:</label>
-                        <input name="nm_assunto" type="text" class="inputFormDeLado" placeholder="Ex. Reflexão">
+                        <label for="nm_assunto" class="labelForm">Assunto:</label>
+                        <input name="nm_assunto" type="text" class="inputCadastro" placeholder="Ex. Reflexão">
                     </div>
                 </div>
 
                 <div class="formDeLado">
                     <div>
-                        <label for="cd_editora" class="tituloForm">Código Editora:</label>
-                        <input name="cd_editora" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <label for="cd_editora" class="labelForm">Código Editora:</label>
+                        <input name="cd_editora" type="text" class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
-                        <label for="nm_editora" class="tituloForm">Editora:</label>
-                        <input name="nm_editora" type="text" class="inputFormDeLado" placeholder="Ex. Camelot Editora">
+                        <label for="nm_editora" class="labelForm">Editora:</label>
+                        <input name="nm_editora" type="text" class="inputCadastro" placeholder="Ex. Camelot Editora">
                     </div>
                     <div>
-                        <label for="cd_colecao" class="tituloForm">Código Coleção:</label>
-                        <input name="cd_colecao" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <label for="cd_colecao" class="labelForm">Código Coleção:</label>
+                        <input name="cd_colecao" type="text" class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
-                        <label for="nm_colecao" class="tituloForm">Coleção:</label>
-                        <input name="nm_colecao" type="text" class="inputFormDeLado" placeholder="Ex. Volume Único">
+                        <label for="nm_colecao" class="labelForm">Coleção:</label>
+                        <input name="nm_colecao" type="text" class="inputCadastro" placeholder="Ex. Volume Único">
                     </div>
                 </div>
 
                 <div class="formDeLado">
                     <div>
-                        <label for="cd_idioma" class="tituloForm">Código Idioma:</label>
-                        <input name="cd_idioma" type="text" class="inputFormDeLado" placeholder="Ex. 1234">
+                        <label for="cd_idioma" class="labelForm">Código Idioma:</label>
+                        <input name="cd_idioma" type="text" class="inputCadastro" placeholder="Ex. 1234">
                     </div>
                     <div>
-                        <label for="nm_idioma" class="tituloForm">Idioma:</label>
-                        <input name="nm_idioma" type="text" class="inputFormDeLado" placeholder="Ex. Português">
+                        <label for="nm_idioma" class="labelForm">Idioma:</label>
+                        <input name="nm_idioma" type="text" class="inputCadastro" placeholder="Ex. Português">
                     </div>
                     <div>
-                        <label for="cd_genero" class="tituloForm">Código Gênero:</label>
-                        <input name="cd_genero" type="text" class="inputFormDeLado" placeholder="Ex. 1">
+                        <label for="cd_genero" class="labelForm">Código Gênero:</label>
+                        <input name="cd_genero" type="text" class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
-                        <label for="nm_genero" class="tituloForm">Gênero:</label>
-                        <input name="nm_genero" type="text" class="inputFormDeLado" placeholder="Ex. Fantasia">
+                        <label for="nm_genero" class="labelForm">Gênero:</label>
+                        <input name="nm_genero" type="text" class="inputCadastro" placeholder="Ex. Fantasia">
                     </div>
                 </div>
 
                 <div class="formSinopse">
-                    <label class="tituloForm">Sinopse:</label>
-                    <textarea name="ds_sinopse" type="text" class="inputFormDeLado" placeholder="Coloque a Sinopse aqui!"></textarea>
+                    <label class="labelForm">Sinopse:</label>
+                    <textarea name="ds_sinopse" type="text" class="inputCadastro" placeholder="Coloque a Sinopse aqui!"></textarea>
                 </div>
 
                 <div class="areaBtn">

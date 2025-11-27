@@ -54,7 +54,7 @@ botaoAbrirAutor.addEventListener("click", () => {
   const popup = document.createElement("div");
   popup.className = "areaCadastro";
   popup.innerHTML = `
-    <form class="formAvancado1">
+    <form class="formAvancado2">
       <div class="titulo-area-cadastro">
         <h1>Cadastrar Autor</h1>
         <button type="button" id="fechar-popup">
@@ -62,11 +62,11 @@ botaoAbrirAutor.addEventListener("click", () => {
         </button>
       </div>
       <section class="areaInput">
-        <div class="areaTituloLivro">
+        <div class="">
           <label>Código do autor:</label>
           <input type="text" placeholder="Ex: 1" name="cd_autor" >
         </div>
-        <div class="areaTituloLivro">
+        <div class="">
           <label>Nome do autor:</label>
           <input type="text" placeholder="Ex: Machado de Assis" name="nm_autor" required>
         </div>
@@ -88,7 +88,7 @@ botaoAbrirAutor.addEventListener("click", () => {
     document.body.removeChild(overlayPopup);
   });
 
-  const form = popup.querySelector('form.formAvancado1');
+  const form = popup.querySelector('form.formAvancado2');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -140,7 +140,7 @@ function popupAlterarAutor(){
     const popup = document.createElement("div");
     popup.className = "areaCadastro";
     popup.innerHTML = `
-      <form class="formAvancado1">
+      <form class="formAvancado2">
         <div class="titulo-area-cadastro">
           <h1>Cadastrar Gênero</h1>
           <button type="button" id="fechar-popup">
@@ -148,11 +148,11 @@ function popupAlterarAutor(){
           </button>
         </div>
         <section class="areaInput">
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Código do gênero:</label>
             <input name="cd_genero" id="cd_genero" type="text" placeholder="Ex: 1">
           </div>
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Gênero:</label>
             <input name="nm_genero" id="nm_genero" type="text" placeholder="Ex: Ficção científica">
           </div>
@@ -174,7 +174,7 @@ function popupAlterarAutor(){
       document.body.removeChild(overlayPopup);
     });
 
-    const form = popup.querySelector('form.formAvancado1');
+    const form = popup.querySelector('form.formAvancado2');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -225,7 +225,7 @@ function popupAlterarAutor(){
     const popup = document.createElement("div");
     popup.className = "areaCadastro";
     popup.innerHTML = `
-      <form class="formAvancado1">
+      <form class="formAvancado2">
         <div class="titulo-area-cadastro">
           <h1>Cadastrar Idioma</h1>
           <button type="button" id="fechar-popup">
@@ -233,11 +233,11 @@ function popupAlterarAutor(){
           </button>
         </div>
         <section class="areaInput">
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Código do idioma:</label>
             <input id="cd_idioma" type="text" placeholder="Ex: 1">
           </div>
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Idioma:</label>
             <input id="nm_idioma" type="text" placeholder="Ex: Português">
           </div>
@@ -259,7 +259,7 @@ function popupAlterarAutor(){
       document.body.removeChild(overlayPopup);
     });
 
-    const form = popup.querySelector('form.formAvancado1');
+    const form = popup.querySelector('form.formAvancado2');
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -309,7 +309,7 @@ function popupAlterarAutor(){
     const popup = document.createElement("div");
     popup.className = "areaCadastro";
     popup.innerHTML = `
-      <form class="formAvancado1">
+      <form class="formAvancado2">
         <div class="titulo-area-cadastro">
           <h1>Cadastrar Editora</h1>
           <button type="button" id="fechar-popup">
@@ -317,11 +317,11 @@ function popupAlterarAutor(){
           </button>
         </div>
         <section class="areaInput">
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Código da editora:</label>
             <input id="cd_editora" type="text" placeholder="Ex: 1">
           </div>
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Nome da editora</label>
             <input id="nm_editora" type="text" placeholder="Ex: Jambo Editora">
           </div>
@@ -356,7 +356,7 @@ function popupAlterarAutor(){
     const popup = document.createElement("div");
     popup.className = "areaCadastro";
     popup.innerHTML = `
-      <form class="formAvancado1">
+      <form class="formAvancado2">
         <div class="titulo-area-cadastro">
           <h1>Cadastrar Coleções</h1>
           <button type="button" id="fechar-popup">
@@ -364,11 +364,11 @@ function popupAlterarAutor(){
           </button>
         </div>
         <section class="areaInput">
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Código da coleção:</label>
             <input id="cd_colecao" type="text" placeholder="Ex: 1">
           </div>
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Nome da coleção</label>
             <input id="nm_colecao" type="text" placeholder="Ex: Volume Único">
           </div>
@@ -404,7 +404,7 @@ function popupAlterarAutor(){
     const popup = document.createElement("div");
     popup.className = "areaCadastro";
     popup.innerHTML = `
-      <form class="formAvancado1">
+      <form class="formAvancado2">
         <div class="titulo-area-cadastro">
           <h1>Cadastrar Assunto</h1>
           <button type="button" id="fechar-popup">
@@ -412,11 +412,11 @@ function popupAlterarAutor(){
           </button>
         </div>
         <section class="areaInput">
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Código Assunto:</label>
             <input name="cd_assunto" id="cd_assunto" type="text" placeholder="Ex: 1">
           </div>
-          <div class="areaTituloLivro">
+          <div class="">
             <label>Assunto:</label>
             <input name="nm_assunto" id="nm_assunto" type="text" placeholder="Ex: Reflexão">
           </div>
@@ -451,7 +451,7 @@ botaoAlterarAutor.addEventListener("click", () => {
   const popup = document.createElement("div");
   popup.className = "areaCadastro";
   popup.innerHTML = `
-    <form class="formAvancado1">
+    <form class="formAvancado2">
       <div class="titulo-area-cadastro">
         <h1>Alterar Autor</h1>
         <button type="button" id="fechar-popup-alterar-autor">
@@ -461,12 +461,12 @@ botaoAlterarAutor.addEventListener("click", () => {
 
       <section class="areaInput">
 
-        <div class="areaTituloLivro">
+        <div class="">
           <label>Código do autor que deseja alterar:</label>
           <input type="text" placeholder="Ex: 1" name="cd_autor" required>
         </div>
 
-        <div class="areaTituloLivro">
+        <div class="">
           <label>Novo nome do autor:</label>
           <input type="text" placeholder="Ex: Novo Nome" name="nm_autor" required>
         </div>
@@ -491,7 +491,7 @@ botaoAlterarAutor.addEventListener("click", () => {
     document.body.removeChild(overlayPopup);
   });
 
-  const form = popup.querySelector('form.formAvancado1');
+  const form = popup.querySelector('form.formAvancado2');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
