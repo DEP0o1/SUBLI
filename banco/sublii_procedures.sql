@@ -95,9 +95,79 @@ BEGIN
 END$$
 
 
-/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL, 1,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
+/*CALL listar_livros(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL,NULL ,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
+
+DROP PROCEDURE IF EXISTS listar_livros_emprestimo$$
+CREATE PROCEDURE listar_livros_emprestimo (
+    IN  p_cd_livro INT,
+    IN p_nm_livro VARCHAR(200),
+
+    IN p_cd_editora INT,
+    IN p_nm_editora VARCHAR(200),
+
+    IN p_cd_idioma INT,
+    IN p_nm_idioma VARCHAR(100),
+
+    IN p_cd_colecao INT,
+    IN p_nm_colecao VARCHAR(200),
+    
+    IN p_cd_genero INT,
+    IN p_nm_genero VARCHAR(200),
+    
+    IN p_cd_autor INT,
+    IN p_nm_autor VARCHAR(200),
+    
+    IN p_cd_assunto INT,
+    IN p_nm_assunto VARCHAR(200),
+    
+    IN p_cd_biblioteca INT,
+    
+    IN p_cd_emprestimo INT
+)
+BEGIN
+    SELECT  DISTINCT l.cd_livro, l.nm_livro, l.ds_sinopse, e.cd_editora, e.nm_editora, i.cd_idioma, i.nm_idioma,  c.cd_colecao, c.nm_colecao, em.cd_emprestimo /*g.cd_genero, g.nm_genero, a.cd_autor, a.nm_autor, s.cd_assunto, s.nm_assunto*/
+    FROM livro l
+    LEFT JOIN editora e ON l.cd_editora = e.cd_editora
+    LEFT JOIN idioma i ON l.cd_idioma = i.cd_idioma
+    LEFT JOIN colecao c ON l.cd_colecao = c.cd_colecao
+    LEFT JOIN genero_livro gl ON l.cd_livro = gl.cd_livro
+    LEFT JOIN genero g ON gl.cd_genero = g.cd_genero
+    LEFT JOIN autor_livro al ON l.cd_livro = al.cd_livro
+    LEFT JOIN autor a ON al.cd_autor = a.cd_autor
+    LEFT JOIN assunto_livro asl ON l.cd_livro = asl.cd_livro
+    LEFT JOIN assunto s ON asl.cd_assunto = s.cd_assunto
+    LEFT JOIN exemplar ex ON l.cd_livro = ex.cd_livro
+    LEFT JOIN biblioteca b ON ex.cd_biblioteca = b.cd_biblioteca
+	LEFT JOIN emprestimo em ON l.cd_livro = em.cd_livro
+
+    WHERE 
+        (p_cd_livro IS NULL OR l.cd_livro = p_cd_livro) AND
+        (p_nm_livro IS NULL OR l.nm_livro LIKE CONCAT('%', p_nm_livro, '%')) AND
+
+        (p_cd_editora IS NULL OR l.cd_editora = p_cd_editora) AND
+        (p_nm_editora IS NULL OR e.nm_editora LIKE CONCAT('%', p_nm_editora, '%')) AND
+
+        (p_cd_idioma IS NULL OR l.cd_idioma = p_cd_idioma) AND
+        (p_nm_idioma IS NULL OR i.nm_idioma LIKE CONCAT('%', p_nm_idioma, '%')) AND
+
+        (p_cd_colecao IS NULL OR l.cd_colecao = p_cd_colecao) AND
+        (p_nm_colecao IS NULL OR c.nm_colecao LIKE CONCAT('%', p_nm_colecao, '%')) AND
+
+        (p_cd_genero IS NULL OR gl.cd_genero = p_cd_genero) AND
+        (p_nm_genero IS NULL OR g.nm_genero LIKE CONCAT('%', p_nm_genero, '%')) AND
+
+        (p_cd_autor IS NULL OR al.cd_autor = p_cd_autor) AND
+        (p_nm_autor IS NULL OR a.nm_autor LIKE CONCAT('%', p_nm_autor, '%')) AND
+
+        (p_cd_assunto IS NULL OR asl.cd_assunto = p_cd_assunto) AND
+        (p_nm_assunto IS NULL OR s.nm_assunto LIKE CONCAT('%', p_nm_assunto, '%')) AND
+
+       (p_cd_biblioteca IS NULL OR ex.cd_biblioteca = p_cd_biblioteca) AND
+       (p_cd_emprestimo IS NULL OR em.cd_emprestimo = p_cd_emprestimo);
+END$$
 
 
+/*CALL listar_livros_emprestimo(NULL, NULL, NULL, NULL, NULL,  NULL, NULL,  NULL,NULL ,NULL, NULL, NULL, NULL, NULL, NULL, NULL);*/
 
 
 DROP PROCEDURE IF EXISTS adicionar_livro$$
@@ -913,30 +983,6 @@ END$$
 
 /*CALL alterar_evento(5,"TESTE2",NULL,NULL,NULL,NULL,true);*/
    
-DROP PROCEDURE IF EXISTS alterar_evento$$
-CREATE PROCEDURE alterar_evento(
-	IN p_cd_evento INT,
-	IN p_nm_evento VARCHAR(200),
-    IN p_dt_evento VARCHAR(200),
-    IN p_ds_evento TEXT,
-    IN p_cd_biblioteca INT,
-    IN p_cd_email VARCHAR(200),
-    IN p_ic_confirmado TINYINT
-)
-BEGIN
-
- 
-  IF p_cd_evento IS NOT NULL THEN
-    UPDATE evento
-       SET nm_evento = COALESCE(p_nm_evento, nm_evento),
-		   dt_evento = COALESCE(p_dt_evento, dt_evento),
-           ds_evento = COALESCE(p_ds_evento, ds_evento),
-           cd_biblioteca = COALESCE(p_cd_biblioteca, cd_biblioteca),
-           cd_email = COALESCE(p_cd_email, cd_email),
-             ic_confirmado = COALESCE(p_ic_confirmado, ic_confirmado)
-     WHERE cd_evento = p_cd_evento;
-  END IF;
-END$$
 
 DROP PROCEDURE IF EXISTS excluir_evento$$
 CREATE PROCEDURE excluir_evento(
@@ -1565,7 +1611,14 @@ BEGIN
   END IF;
 END$$
 
-    
+
+DROP PROCEDURE IF EXISTS registrar_devolucao$$
+CREATE PROCEDURE registrar_devolucao(
+  IN p_cd_emprestimo INT
+)
+BEGIN
+UPDATE emprestimo SET ic_ativa = false WHERE p_cd_emprestimo = cd_emprestimo;
+END$$
     /* =========================================
    BIBLIOTECARIOS
 ========================================= */

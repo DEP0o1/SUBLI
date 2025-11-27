@@ -131,5 +131,45 @@ class LivroView{
         ";
     }
 }
+
+
+      public function ExibirLivrosEmprestimo($livro = new Livro()){
+    $controller = new LivroController;
+    $livros = $controller->ListarLivrosEmprestimo($livro);
+
+    if (!empty($livros)) {
+        foreach($livros as $Livro){
+            echo "
+            <div class='livro' title='{$Livro->nm_livro}'>
+                <img src='img/{$Livro->cd_livro}' alt='{$Livro->nm_livro}'/>
+                <h2>{$Livro->nm_livro}</h2>
+                <div class='favorito'>
+                  <span class='material-symbols-outlined'>favorite</span>
+                </div>
+            ";
+            
+              $emprestimo_controller = new EmprestimoController();
+              $emprestimo = $emprestimo_controller->ListarEmprestimos(new Emprestimo($Livro->cd_emprestimo));
+                echo "<p>{$emprestimo[0]->leitor->nm_leitor}</p>";
+            
+
+            echo "
+            <form>
+             <input type='hidden' name='registrado' value=$Livro->cd_emprestimo>
+                <button type='submit' class='btnRosa'>
+                   Registrar Devolução
+                </button>
+                </form>
+            </div>";
+        }
+    }else
+     {
+        echo "
+        <div class='nao-encontrado'>
+            <h1>Nenhum livro foi encontrado</h1>
+            <span class='material-symbols-outlined'>menu_book</span>
+        </div>";
+    }
+}
     }
 ?>

@@ -479,6 +479,9 @@ INSERT INTO bibliotecario_biblioteca VALUES(2,2);
 INSERT INTO bibliotecario VALUES(3,'Caua do amanhã',123,'CCC');
 INSERT INTO bibliotecario_biblioteca VALUES(3,3);
 
+INSERT INTO bibliotecario VALUES(4,'Lucas do Hoje',123,'DDD');
+INSERT INTO bibliotecario_biblioteca VALUES(4,4);
+
 /*Doações*/
 INSERT INTO doacao VALUES (1,'Cronicas Malucas','Jeferson',2,'pedro.favoritos@gmail.com', true);
 INSERT INTO doacao VALUES (2,'Como Dominar a Arte da Sabedoria','Mary Renault',1,'pedro.favoritos@gmail.com', false);
