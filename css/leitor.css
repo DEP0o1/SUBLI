@@ -50,6 +50,27 @@ h4 {
   --radius: 10px;
   --border: solid 1px rgba(0, 0, 0, 0.192);
   --largura-padrao: 60%;
+
+}
+
+.textoEsquerda {
+  margin-left: 20%;
+  margin-top: 2%;
+}
+
+.textoMeio {
+  display: flex;
+  justify-content: center;
+}
+
+
+.textoEsquerda h1 {
+  margin: 0;
+}
+
+.textoEsquerda h1 {
+  width: fit-content;
+
 }
 
 .material-symbols-outlined {
@@ -486,24 +507,6 @@ body {
   height: 25%;
 }
 
-.textoMeio {
-  display: flex;
-  justify-content: center;
-}
-
-.textoEsquerda {
-  margin-left: 12%;
-  margin-top: 2%;
-}
-
-.textoEsquerda h1 {
-  margin: 0;
-}
-
-.textoEsquerda h1 {
-  width: fit-content;
-}
-
 .areaBanner {
   width: 100%;
   margin: 0;
@@ -584,6 +587,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   gap: var(--gap-grande);
+  padding: var(--gap) 0;
 }
 
 .bibliotecaFotos {
@@ -680,8 +684,8 @@ span {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  height: 454px;
-  padding: 20px 0;
+  height: 424px;
+  padding: var(--gap) 0;
 }
 
 /*--------------------calendario--------------------------------------------------------------------------*/
@@ -987,7 +991,7 @@ span {
 
 .areaMapaBiblioteca {
   width: 100%;
-  height: 28vh;
+  height: 100%;
 }
 
 #carregando {
@@ -1282,6 +1286,7 @@ main {
   gap: var(--gap);
   width: var(--largura-padrao);
   flex-wrap: wrap;
+  padding: var(--gap) 0;
 }
 
 .divQueEnglobaExibirLivrosResultado {
@@ -1323,7 +1328,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px 0;
+  padding: var(--gap) 0;
 }
 
 .container-doacao-livros {
@@ -1433,7 +1438,7 @@ main {
   overflow: hidden;
   max-width: var(--largura-padrao);
   margin: 0 auto;
-  padding: 20px 0;
+  padding: var(--gap) 0;
 }
 
 .carrossel {
