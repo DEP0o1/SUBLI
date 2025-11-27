@@ -48,7 +48,9 @@ if (isset($_REQUEST['codigo'])) {
     ?>
     </section>
 
-    <h1 class="textoEsquerda">Eventos</h1>
+    <div class="textoEsquerda">
+            <h1>Eventos</h1>
+        </div>
 
     <section class="eventos">
 
@@ -72,14 +74,18 @@ if (isset($_REQUEST['codigo'])) {
 
     </section>
 
-    <h1 class="textoEsquerda">Desta biblioteca</h1>
+    <<div class="textoEsquerda">
+            <h1>Desta Biblioteca</h1>
+        </div>
 
-    <section class="exibirLivros">
+    <section class="divQueEnglobaExibirLivrosResultado">
 
+    <div class="exibirLivros">
       <?php
       $livro = new LivroView;
       $livro->ExibirLivros(new Livro(null, null, [new Autor()], new Editora(), [new Genero()], new Idioma(), new Colecao, [new Assunto()], $codigo));
       ?>
+    </div>
 
     </section>
   </main>
