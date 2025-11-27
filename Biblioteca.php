@@ -48,7 +48,7 @@ if (isset($_REQUEST['codigo'])) {
     ?>
     </section>
 
-    <h1 class="textoMeio">Eventos</h1>
+    <h1 class="textoEsquerda">Eventos</h1>
 
     <section class="eventos">
 
@@ -72,7 +72,7 @@ if (isset($_REQUEST['codigo'])) {
 
     </section>
 
-    <h1 class="textoMeio">Desta biblioteca</h1>
+    <h1 class="textoEsquerda">Desta biblioteca</h1>
 
     <section class="exibirLivros">
 

@@ -91,7 +91,7 @@ $campos = 0;
  ?>  
 
     <main>
-  
+  <?php require_once 'barraLateral.php'; ?>
       <section class="areaPerfil">
         <form method = "POST" action="" enctype="multipart/form-data" >
           <div class="titulo-areaPerfil">

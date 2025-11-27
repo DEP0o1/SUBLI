@@ -19,7 +19,7 @@ public function ExibirReservas($reserva= new Reserva){
                         <p>
             Reservante: {$Reserva->leitor->nm_leitor}
           </p>
-                        <button><a href='BcadastrarEmprestimo.php?codigo=$Reserva->cd_reserva'>Visualizar</a></button>
+                        <button class='btnRosa'><a href='BcadastrarEmprestimo.php?codigo=$Reserva->cd_reserva'>Visualizar</a></button>
                     </div>
             ";
   }

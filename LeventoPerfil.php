@@ -13,6 +13,20 @@ $campos = 0;
     if (isset($_REQUEST['nm_evento']) && !is_null($_REQUEST['nm_evento'])) {
             $nm_evento = $_REQUEST['nm_evento'];
           $campos = $campos + 1 ; 
+
+        if(isset($_FILES['image']) && !empty($_FILES['image']))
+      {
+        $nomeOrigial = $_FILES['image']['name'];
+    
+        $novoNome ='evento_' . $nm_evento;
+    
+        $caminho = 'img/eventos/' . $novoNome;
+    
+        if(move_uploaded_file($_FILES['image']['tmp_name'], $caminho))
+        {
+          // echo "Arquivo enviado com sucesso.";
+        }
+      }
     }
 
 
@@ -76,7 +90,7 @@ $campos = 0;
     <?php require_once 'barraLateral.php'; ?>
 
       <section class="areaPerfil">
-        <form method="POST">
+        <form method="POST" action="" enctype="multipart/form-data">
           <div class="titulo-areaPerfil">
             <h1>Solicitar Evento</h1>
             <hr />
@@ -108,7 +122,10 @@ $campos = 0;
            
             </select>
           </div>
-
+          <div class="label-input">
+            <label >Foto do evento: </label>
+            <input type="file" class="inputArquivo" name="image" accept="image/*"/>
+          </div>
 
 
           <button type="submit" id="btnEvento">Solicitar de evento</button>

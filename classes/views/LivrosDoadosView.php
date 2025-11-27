@@ -23,7 +23,7 @@ class LivrosDoadosView
                         <p>
               Doador: {$Doacao->leitor->nm_leitor}
           </p>
-           <button><a href='BsolicDoacao.php?codigo=$Doacao->cd_doacao'>Visualizar</a></button>
+           <button class='btnRosa'><a href='BsolicDoacao.php?codigo=$Doacao->cd_doacao'>Visualizar</a></button>
                 </div>
             ";
     }

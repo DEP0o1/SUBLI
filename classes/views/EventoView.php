@@ -14,7 +14,7 @@ class EventoView{
             echo " 
                 <div class='item-lista' title='{$Evento->nm_evento}'>
                     <div class='imagem-item-lista-evento'>
-                        <img src='img/doar.png' alt=''>
+                        <img src='img/eventos/evento_{$Evento->nm_evento}' alt=''>
                     </div>
                     <div class='conteudo-item-lista'>
                         <h2>{$Evento->nm_evento}</h2>

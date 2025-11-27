@@ -51,17 +51,19 @@ if (isset($_REQUEST['codigo'])) {
     <h1 class="textoMeio">Eventos</h1>
 
     <section class="eventos">
-      <div class="calendario">
-        <!-- calendario -->
-      </div>
+      <div class="containerEventos">
+        <div class="calendario">
+          <!-- calendario -->
+        </div>
 
-      <div class="lista">
+        <div class="lista">
 
-      <?php
-            $evento = new EventoView;
-            $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($codigo), new Leitor, 1)); 
-            // um antes do biblioteca tem que ser true
-      ?>
+        <?php
+              $evento = new EventoView;
+              $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($codigo), new Leitor, 1)); 
+              // um antes do biblioteca tem que ser true
+        ?>
+        </div>
       </div>
     </section>
 

@@ -30,6 +30,8 @@ h1 {
   cursor: default;
 }
 
+
+
 p,
 h2,
 h3,
@@ -196,15 +198,28 @@ nav {
   background-color: var(--vinho);
   color: var(--branco);
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius);
   cursor: pointer;
   width: fit-content;
   overflow: hidden;
+  gap: var(--gap);
 }
 
-.btnRosa:hover{
+.btnRosa:hover {
   background-color: var(--vinho-hover);
-  transition: 0.2s ease-in;
+  transition: 0.2s;
+}
+.btnRosa:hover a {
+  color: var(--branco);
+  transition: 0.2s;
+}
+
+.btnRosa span {
+  color: var(--branco);
+}
+
+.location:hover {
+  background-color: var(--vinho-hover);
 }
 
 /*------------------------------scroll------------------------------------------------------------------------*/
@@ -382,6 +397,18 @@ nav {
 /* ------------------livros-------------------------------------------------------------------- */
 
 
+.livro button {
+  background-color: transparent;
+  color: var(--vinho);
+  border: none;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: var(--vinho) solid 1px;
+  margin-top: auto;
+}
+
+
 .livro {
   display: flex;
   align-items: center;
@@ -401,7 +428,8 @@ nav {
 }
 
 .livro a {
-  color: var(--branco);
+    color: var(--vinho);
+    font-weight: bolder;
 }
 
 .livro:hover {
@@ -427,15 +455,6 @@ nav {
   font-size: 14px;
 }
 
-.livro button {
-  background-color: var(--vinho);
-  color: var(--branco);
-  border: none;
-  padding: 8px 14px;
-  border-radius: var(--radius);
-  cursor: pointer;
-  margin-top: auto;
-}
 
 .favorito {
   display: none;
@@ -2043,10 +2062,6 @@ font-size: 0.75rem;
   margin: 0;
 }
 
-.btnRosa span{
-  color: var(--branco);
-  margin-right: 5px;
-}
 
 header span{
   color: var(--branco);
