@@ -3,73 +3,87 @@
 class LivrosDoadosView
 {
 
-  public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
-  {
-  
+public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
+{
+
     $controller = new DoacaoController;
     $doacoes = $controller->ListarDoacoes($doacao);
 
-
-
+    $caminho_imagem_padrao = "img/doacao_padrao"; 
 
     foreach ($doacoes as $Doacao) {
-      if($ignorar == $Doacao->cd_doacao ){
-        continue;
-      }
-      echo "
-                      <div class='livro'>
-                         <img src='img/doacao_{$Doacao->livro->nm_livro}' alt='$Doacao->cd_doacao'/>
-                        <h2>{$Doacao->livro->nm_livro}</h2>
-                        <p>
-              Doador: {$Doacao->leitor->nm_leitor}
-          </p>
-           <button class='btnRosa'><a href='BsolicDoacao.php?codigo=$Doacao->cd_doacao'>Visualizar</a></button>
+        if($ignorar == $Doacao->cd_doacao ){
+            continue;
+        }
+
+        $caminho_imagem_doacao = "img/doacao_{$Doacao->livro->nm_livro}"; 
+
+        $src_imagem = file_exists($caminho_imagem_doacao) ? $caminho_imagem_doacao : $caminho_imagem_padrao;
+
+        echo "
+            <div class='livro'>
+                <img src='{$src_imagem}' alt='Livro doado: {$Doacao->livro->nm_livro}'/>
+                <h2>{$Doacao->livro->nm_livro}</h2>
+                <p>
+                    Doador: {$Doacao->leitor->nm_leitor}
+                </p>
+                <button class='btnRosa'><a href='BsolicDoacao.php?codigo=$Doacao->cd_doacao'>Visualizar</a></button>
+            </div>
+        ";
+    }
+}
+
+  public function ExibirLivroDoacao($doacao = new Doacao())
+{
+    $controller = new DoacaoController;
+    $doacoes = $controller->ListarDoacoes($doacao);
+
+    if (empty($doacoes)) {
+        echo "<p>Nenhuma doação encontrada.</p>";
+    }
+
+    $Doacao = $doacoes[0];
+
+    $caminho_imagem_padrao = "img/doacao_padrao"; 
+
+    $caminho_imagem_doacao = "img/doacao_{$Doacao->livro->nm_livro}"; 
+    
+    $src_imagem = file_exists($caminho_imagem_doacao) ? $caminho_imagem_doacao : $caminho_imagem_padrao;
+
+    echo "
+        <img src='{$src_imagem}' alt='Capa do Livro: {$Doacao->livro->nm_livro}' class='capaLivroGrande' />
+        </div>
+
+        <section class='divColuna'>
+            <div class='dadosLivroDoado'>
+                <h1>{$Doacao->livro->nm_livro}</h1>
+    ";
+
+    foreach ($Doacao->livro->autores as $autor) {
+        echo "
+                <div class='divRowItem'>
+                    <p><span class='material-symbols-outlined'>man_4</span>Autor: {$autor->nm_autor}</p>
                 </div>
             ";
     }
-  }
-
-  public function ExibirLivroDoacao($doacao = new Doacao())
-  {
-    $controller = new DoacaoController;
-    $doacoes = $controller->ListarDoacoes($doacao);
-
-    echo "
-
-            <img src='img/doacao_{$doacoes[0]->livro->nm_livro}' alt='' class='capaLivroGrande' />
-          </div>
-
-          <section class='divColuna'>
-            <div class='dadosLivroDoado'>
-              <h1>{$doacoes[0]->livro->nm_livro}</h1>
-        ";
-
-    foreach ($doacoes[0]->livro->autores as $autor) {
-      echo "
-              <div class='divRowItem'>
-                <p><span class='material-symbols-outlined'>man_4</span>Autor: {$autor->nm_autor}</p>
-              </div>
-            ";
-    }
-
 
     echo "
             <div class='divRowItem'>
-              <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt='' class='miniPerfil'>
-              <h2>{$doacoes[0]->leitor->nm_leitor}</h2>
+                <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt='Foto do Doador' class='miniPerfil'>
+                <h2>{$Doacao->leitor->nm_leitor}</h2>
             </div>
 
             <div class='divRowItemBtn'>
-              <a href='BcadastrarLivro.php?doacao={$doacoes[0]->cd_doacao}' class='btnDoacao'><span class='material-symbols-outlined'>library_add</span></a>
-              <form method='GET' >
-                <input type='hidden' name='codigo' value='{$doacoes[0]->cd_doacao}'>
-                <input type='hidden' name='recusado' value='true'>
-                <button class='btnDoacao' type='submit'><span class='material-symbols-outlined'>close_small</span></button>
-              </form>
+                <a href='BcadastrarLivro.php?doacao={$Doacao->cd_doacao}' class='btnDoacao'><span class='material-symbols-outlined'>library_add</span></a>
+                <form method='GET' >
+                    <input type='hidden' name='codigo' value='{$Doacao->cd_doacao}'>
+                    <input type='hidden' name='recusado' value='true'>
+                    <button class='btnDoacao' type='submit'><span class='material-symbols-outlined'>close_small</span></button>
+                </form>
             </div>
-          </div>
-        ";
-  }
+        </div>
+    </section>";
+}
 
   public function Input_Livro_Doacao($doacao = new Doacao())
   {

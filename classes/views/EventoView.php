@@ -2,101 +2,113 @@
 
 class EventoView{
 
-    public function ExibirEventos($evento = new Evento){
+public function ExibirEventos($evento = new Evento){
 
-        $controller = new EventoController;
-        $eventos = $controller->ListarEventos($evento);
+    $controller = new EventoController;
+    $eventos = $controller->ListarEventos($evento);
 
-        $listaEventos = [];
+    $listaEventos = [];
 
-        foreach ($eventos as $Evento){
+    foreach ($eventos as $Evento){
+        $caminho_imagem_evento = "img/eventos/evento_{$Evento->nm_evento}";
+        
+        $caminho_imagem_padrao = "img/eventos/evento_padrao"; 
+        
+        $src_imagem = file_exists($caminho_imagem_evento) ? $caminho_imagem_evento : $caminho_imagem_padrao;
 
-            echo " 
-                <div class='item-lista' title='{$Evento->nm_evento}'>
-                    <div class='imagem-item-lista-evento'>
-                        <img src='img/eventos/evento_{$Evento->nm_evento}' alt=''>
-                    </div>
-                    <div class='conteudo-item-lista'>
-                        <h2>{$Evento->nm_evento}</h2>
-                        <h3>{$Evento->dt_evento}</h3>
-                        <div class='conteudo-item-lista-doador'>
-                            <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
-                            <p>{$Evento->leitor->nm_leitor}</p>
-                            <h3>(Responsável)</h3>
-                        </div>
-                        <a href='BsolicEvento.php?c=$Evento->cd_evento'>
-                            <button class='btnRosa'>Ver Mais</button>
-                        </a>
-                    </div>
+        echo " 
+            <div class='item-lista' title='{$Evento->nm_evento}'>
+                <div class='imagem-item-lista-evento'>
+                    <img src='{$src_imagem}' alt='Imagem do evento {$Evento->nm_evento}'>
                 </div>
-            ";
+                <div class='conteudo-item-lista'>
+                    <h2>{$Evento->nm_evento}</h2>
+                    <h3>{$Evento->dt_evento}</h3>
+                    <div class='conteudo-item-lista-doador'>
+                        <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
+                        <p>{$Evento->leitor->nm_leitor}</p>
+                        <h3>(Responsável)</h3>
+                    </div>
+                    <a href='BsolicEvento.php?c=$Evento->cd_evento'>
+                        <button class='btnRosa'>Ver Mais</button>
+                    </a>
+                </div>
+            </div>
+        ";
 
-            $listaEventos[] = [
-                'dia' => (int)date('d', strtotime($Evento->dt_evento)),
-                'mes' => (int)date('m', strtotime($Evento->dt_evento)) - 1,
-                'ano' => (int)date('Y', strtotime($Evento->dt_evento)),
-                'titulo' => $Evento->nm_evento,
-                'cor' => '--vinho'
-            ];
-        }
-
-        echo "<script> const listaEventos = " . json_encode($listaEventos) . "; </script>";
+        $listaEventos[] = [
+            'dia' => (int)date('d', strtotime($Evento->dt_evento)),
+            'mes' => (int)date('m', strtotime($Evento->dt_evento)) - 1,
+            'ano' => (int)date('Y', strtotime($Evento->dt_evento)),
+            'titulo' => $Evento->nm_evento,
+            'cor' => '--vinho'
+        ];
     }
 
- public function ExibirEvento($evento = new Evento){
+    echo "<script> const listaEventos = " . json_encode($listaEventos) . "; </script>";
+}
 
-  $controller = new EventoController;
-  $Evento = $controller->ListarEventos($evento);
+public function ExibirEvento($evento = new Evento){
 
-    echo " <section class='evento'>
+    $controller = new EventoController;
+    $eventos = $controller->ListarEventos($evento);
 
-    <img src='img/doar.png' alt='' class='imgEvento'>
+    if (!empty($eventos)) {
+        $Evento = $eventos[0]; 
 
-    <div class='eventoTxt'>
-      <h1>{$Evento[0]->nm_evento} </h1>
+        $caminho_imagem_evento = "img/eventos/evento_{$Evento->nm_evento}";
+        $caminho_imagem_padrao = "img/eventos/evento_padrao"; 
+        
+        $src_imagem = file_exists($caminho_imagem_evento) ? $caminho_imagem_evento : $caminho_imagem_padrao;
 
-      <hr>
+        echo " <section class='evento'>
+            <img src='{$src_imagem}' alt='Imagem do evento {$Evento->nm_evento}' class='imgEvento'>
 
-      <div class='info'>
-        <p>
-          <span class='material-symbols-outlined'>
-            calendar_month
-          </span> Data: {$Evento[0]->dt_evento}
-        </p>
-        <p>
-          <span class='material-symbols-outlined'>
-            nest_clock_farsight_analog
-          </span> Horário: 14:20 - 18:40
-        </p>
-      </div>
+            <div class='eventoTxt'>
+                <h1>{$Evento->nm_evento} </h1>
 
-      <p> {$Evento[0]->ds_evento} </p>
+                <hr>
 
-      <div class='areaBtnEvento'>
-        <form method='GET'>
-                <input type='hidden' name='c' value={$Evento[0]->cd_evento}>
-                <input type='hidden' name='recusado' value='true'>
-                <button class='btnRosa' type='submit'>Recusar</button>
-        </form>
+                <div class='info'>
+                    <p>
+                        <span class='material-symbols-outlined'>
+                            calendar_month
+                        </span> Data: {$Evento->dt_evento}
+                    </p>
+                    <p>
+                        <span class='material-symbols-outlined'>
+                            nest_clock_farsight_analog
+                        </span> Horário: 14:20 - 18:40
+                    </p>
+                </div>
 
-          <form method='GET'>
-                <input type='hidden' name='c' value={$Evento[0]->cd_evento}>
-                <input type='hidden' name='aceito' value='true'>
-                <button class='btnRosa' type='submit'>Aceitar</button>
-        </form>
+                <p> {$Evento->ds_evento} </p>
 
-        <div class='usuarioEvento'>
-          <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
-          <p>{$Evento[0]->leitor->nm_leitor}</p>
-          <h3>(Responsável)</h3>
-        </div>
-      </div>
-    </div>
-  </section>";
+                <div class='areaBtnEvento'>
+                    <form method='GET'>
+                        <input type='hidden' name='c' value={$Evento->cd_evento}>
+                        <input type='hidden' name='recusado' value='true'>
+                        <button class='btnRosa' type='submit'>Recusar</button>
+                    </form>
 
+                    <form method='GET'>
+                        <input type='hidden' name='c' value={$Evento->cd_evento}>
+                        <input type='hidden' name='aceito' value='true'>
+                        <button class='btnRosa' type='submit'>Aceitar</button>
+                    </form>
 
-
- }
+                    <div class='usuarioEvento'>
+                        <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
+                        <p>{$Evento->leitor->nm_leitor}</p>
+                        <h3>(Responsável)</h3>
+                    </div>
+                </div>
+            </div>
+        </section>";
+    } else {
+        echo "<p>Evento não encontrado.</p>";
+    }
+}
 }
 
 

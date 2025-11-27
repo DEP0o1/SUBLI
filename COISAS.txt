@@ -7,8 +7,8 @@ AJUSTAR A PÁGINA DE ACEITAR/RECUSAR OS EVENTOS -LUCAS
 imagem renomeada com codigo do livro ////////////////////////////////////////////
 
 
+
 upload perfil 
-imagem padrão
 span caso tenho nada de conteudo 
 exibirEventos corretamente para o leitor
 
@@ -19,7 +19,6 @@ copiar e colar o cadastro
 
 ============================================================
 
-FILTROS DO EMPRESTIMO -PEDRO
 
 COLOCAR QUE NÃO TEM NADA NO HISTORICO -QUALQUER UM (MENOS O LUCAS) 
 TAMBEM COLOCAR BARRA DE PESQUISA NA PARTE DOS LIVROS -QUALQUE UM
