@@ -60,7 +60,10 @@ class BibliotecaView{
       foreach ($bibliotecas as $Biblioteca){
 
 echo "
-        <h1 class='textoEsquerda'>{$Biblioteca->nm_biblioteca}</h1>
+        
+        <div class='textoEsquerda'>
+            <h1>{$Biblioteca->nm_biblioteca}</h1>
+        </div>
         <section class='bibliotecas'>
           <div class='bibliotecaPerfil'>
             <div class='bibliotecaFotos'>

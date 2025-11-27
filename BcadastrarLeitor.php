@@ -100,6 +100,13 @@ if ($campos == 8) {
 </head>
 
 <body>
+    <?php
+    require_once './complementos/menuBibliotecario.php';   
+    ?>
+    <main>
+
+   
+    
     <div class="areaCadastro">
         <form method="post" action="" class="formAvancado1">
             <div class="tituloFormCadastro">
@@ -162,6 +169,7 @@ if ($campos == 8) {
         </form>
 
     </div>
+     </main>
 </body>
 
 </html>

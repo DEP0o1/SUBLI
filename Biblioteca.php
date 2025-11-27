@@ -31,85 +31,85 @@ if (isset($_REQUEST['codigo'])) {
 
 <body>
   <main>
-             <?php
-               $biblioteca = new BibliotecaView;
-               $biblioteca->ExibirBiblioteca(new Biblioteca($codigo)); 
-            ?> 
-         
-   
+    <?php
+    $biblioteca = new BibliotecaView;
+    $biblioteca->ExibirBiblioteca(new Biblioteca($codigo));
+    ?>
+
+
     </div>
     </div>
 
     <?php
-    if($buscar){
-    // $biblioteca = new BibliotecaView;
-    // $biblioteca->ExibirBibliotecas(new Biblioteca($codigo));
+    if ($buscar) {
+      // $biblioteca = new BibliotecaView;
+      // $biblioteca->ExibirBibliotecas(new Biblioteca($codigo));
     }
     ?>
     </section>
 
-    <h1 class="textoEsquerda">Eventos</h1>
-
-    <section class="eventos">
-
-    <div class="containerEventos">
-
-      <div class="calendario">
-        <!-- calendario -->
-      </div>
-  
-      <div class="lista">
-  
-      <?php
-            $evento = new EventoView;
-            $evento->ExibirEventos(new Evento(null,null,null,null,new Biblioteca($codigo), new Leitor, true)); 
-            // um antes do biblioteca tem que ser true
-      ?>
-      </div>
-
-
+    <div class="textoEsquerda">
+      <h1>Eventos</h1>
     </div>
 
+    <section class="eventos">
+      <div class="containerEventos">
+        <div class="calendario">
+          <!-- calendario -->
+        </div>
+        <div class="lista" id="lista-eventos-index-leitor">
+          <?php
+          $evento = new EventoView;
+          $evento->ExibirEventos(new Evento(null, null, null, null, new Biblioteca($codigo), new Leitor, true));
+          // um antes do biblioteca tem que ser true
+          ?>
+        </div>
+      </div>
+
     </section>
 
-    <h1 class="textoEsquerda">Desta biblioteca</h1>
+    <<div class="textoEsquerda">
+      <h1>Desta Biblioteca</h1>
+      </div>
 
-    <section class="exibirLivros">
+      <section class="divQueEnglobaExibirLivrosResultado">
 
-      <?php
-      $livro = new LivroView;
-      $livro->ExibirLivros(new Livro(null, null, [new Autor()], new Editora(), [new Genero()], new Idioma(), new Colecao, [new Assunto()], $codigo));
-      ?>
+        <div class="exibirLivros">
+          <?php
+          $livro = new LivroView;
+          $livro->ExibirLivros(new Livro(null, null, [new Autor()], new Editora(), [new Genero()], new Idioma(), new Colecao, [new Assunto()], $codigo));
+          ?>
+        </div>
 
-    </section>
+      </section>
   </main>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const mainImage = document.getElementById('main-image');
-    const thumbnails = document.querySelectorAll('#thumbnails .thumbnail');
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainImage = document.getElementById('main-image');
+      const thumbnails = document.querySelectorAll('#thumbnails .thumbnail');
 
-    if (!mainImage || thumbnails.length === 0) return;
+      if (!mainImage || thumbnails.length === 0) return;
 
-    thumbnails.forEach(thumbnail => {
+      thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', function() {
-            const newSrc = this.src;
+          const newSrc = this.src;
 
-            mainImage.classList.add('fading');
-            setTimeout(() => {
+          mainImage.classList.add('fading');
+          setTimeout(() => {
 
-                mainImage.src = newSrc;
+            mainImage.src = newSrc;
 
-                thumbnails.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-                
-                mainImage.classList.remove('fading');
+            thumbnails.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
 
-            }, 100); 
+            mainImage.classList.remove('fading');
+
+          }, 100);
         });
+      });
     });
-});
-</script>
+  </script>
 </body>
 
 </html>

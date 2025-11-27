@@ -49,7 +49,7 @@ h4 {
   --gap-grande: 50px;
   --radius: 10px;
   --border: solid 1px rgba(0, 0, 0, 0.192);
-  --largura-padrao: 70%;
+  --largura-padrao: 77%;
 }
 
 .material-symbols-outlined {
@@ -492,7 +492,7 @@ body {
 }
 
 .textoEsquerda {
-  margin-left: 15%;
+  margin-left: 12%;
   margin-top: 2%;
 }
 
@@ -578,11 +578,11 @@ body {
 /* ---------------------------------------------------- biblioteca ------------------------------------------------------------------------------------- */
 
 .bibliotecaPerfil {
-  width: 100%;
+  width: var(--largura-padrao);
   height: fit-content;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   gap: var(--gap-grande);
 }
 
@@ -590,6 +590,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  width: 50vw;
   flex-direction: column;
   gap: var(--gap);
 }
@@ -618,8 +619,8 @@ body {
 
 #main-image {
   transition: opacity 0.2s ease-out;
-  height: 50vh;
-  width: 35vw;
+  height: 100%;
+  width: 100%;
   display: block;
   border-radius: var(--radius); 
   background-color: var(--branco);
@@ -906,6 +907,12 @@ span {
   justify-content: center;
   height: 60vh;
   gap: var(--gap-grande);
+}
+
+.bibliotecas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .indicator {
@@ -1272,9 +1279,9 @@ main {
 .exibirLivros {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 40px;
   gap: var(--gap);
+  width: var(--largura-padrao);
+  flex-wrap: wrap;
 }
 
 .divQueEnglobaExibirLivrosResultado {
