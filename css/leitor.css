@@ -50,6 +50,7 @@ h4 {
   --radius: 10px;
   --border: solid 1px rgba(0, 0, 0, 0.192);
   --largura-padrao: 60%;
+
 }
 
 .textoEsquerda {
@@ -69,6 +70,7 @@ h4 {
 
 .textoEsquerda h1 {
   width: fit-content;
+
 }
 
 .material-symbols-outlined {
