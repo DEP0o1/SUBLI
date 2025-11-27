@@ -236,7 +236,7 @@ nav {
 
 /*-----------------Leitor bibliotecario -------------------------------------------------------------------------------------*/
 
-/* .leitoresEncontrados {
+.leitoresEncontrados {
   display: flex;
   flex-direction: row;
   gap: 0px;
@@ -269,22 +269,17 @@ nav {
   gap: 30px;
 }
 
-.btnAzul {
-  border-radius: 10px;
-  background-color: #102e4e;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-} */
-
 .pgPesquisaLeitor{
-  padding-top: 5% ;
   padding-right: 0%; 
   display: flex;
   flex-direction: column;
-  gap: var(--gap-grande);
-  overflow-x: hidden;
   width: 100%;
+}
+
+.dadosResultados {
+  display: flex;
+  width: 100%;
+  border-bottom: #b59e8b solid 1px;
 }
 
 .pesquisarLeitor {
@@ -292,24 +287,22 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
-  /* padding-right:5% ;  */
+  padding: 1%;
+  border-top: #b59e8b solid 1px;
+  border-bottom: #b59e8b solid 1px;
+  gap: var(--gap);
 }
 
-.pesquisarLeitor form {
-  border: var(--border);
-  color: var(--cinza);
+.pesquisarInput {
+  background-color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  height: fit-content;
-  gap: 30px;
-  padding: 30px;
-  border-radius: 15px;
+  border-radius: 20px;
+  padding: 1%;
 }
 
 .pesquisarLeitor input {
-  width: 50vw;
+  width: 35vw;
   border: none;
   border-radius: 10px;
   padding: var(--gap);
@@ -335,12 +328,10 @@ nav {
 .resultadoPesquisaLeitor{
   display: flex;
   flex-direction: column;
-  display: flex;
-  gap: var(--gap-grande);
 }
 
 .cardLeitor img{
-  height: 20vh  ;
+  height: 20vh;
   border-radius: 100%;
 }
 
@@ -351,18 +342,17 @@ nav {
 .cardLeitor{
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 1%;
   gap: var(--gap);
-  border-top: 1px var(--bege) solid;
-  border-bottom: 1px var(--bege) solid;
-  margin-bottom: 2vh;
- 
+  width: 100%;
 }
 
 .infoPerfil{
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: 5px;
+  margin-top: 30px;
 }
 
 .infoDeLado{
@@ -1175,11 +1165,6 @@ aside br {
   align-items: center;
   justify-content: center;
   gap: 40px;
-}
-
-.resultadoEmPe {
-  width: 50vw;
-  margin-right: 20px;
 }
 
 .btnNovoEvento {

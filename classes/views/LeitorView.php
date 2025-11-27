@@ -20,7 +20,6 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
             //      </div>
             //      </div>;
             echo "
-            <div class='resultadoEmPe'>
                 <div class='cardLeitor'>
                     <img src='img/pequeno terry.webp' alt=>
                     <div class='infoPerfil'>
@@ -78,7 +77,7 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
                     </div>";
                 }
                 echo"
-            </div>";           
+                ";           
         }
         
  }

@@ -26,63 +26,108 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
     require_once './complementos/headerBibliotecario.php';
     ?>
     <main class="pgPesquisaLeitor">
-    <?php
-    require_once './complementos/menuBibliotecario.php'
-    ?>
-        <section class="pesquisarLeitor">
-            <form action="">
-                <div class="titulo-areaPerfil">
-                    <h1>Pesquisar Leitor</h1>
-                    <hr />
-                </div>
-
-                <div class="label-input">
-                    <label for="">Nome: </label>
-                    <input name="nm_leitor" type="text" placeholder="Ex. Pedro Miguel" />
-                </div>
-
-                <div class="label-input">
-                    <label for="">CPF: </label>
-                    <input name="cd_cpf" type="text" placeholder="Ex. 123.456.789-10" />
-                </div>
-
-                <div class="btnForm">
-                    <button type="submit" id="btnPesuisarLeitor" class="btnRosa">Pesquisar</button>
-                    <a href="./BcadastrarLeitor.php" class="btnRosa">Novo Leitor</a>
-                </div>
-            </form>
-        </section>
+        <?php
+        require_once './complementos/menuBibliotecario.php'
+        ?>
 
         <section class='resultadoPesquisaLeitor'>
             <div class="leitoresEncontrados">
-               <?php
-               $campos = 0;
-               if (isset($_REQUEST['cd_cpf']) && $_REQUEST['cd_cpf'] != '' && strlen($_REQUEST['cd_cpf']) == 11) {
-                   $cd_cpf = $_REQUEST['cd_cpf'];
-                   $campos = $campos + 1;
-               } else {
-                   $cd_cpf = null;
-               }
-        
-               if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != '') {
-                   $nm_leitor = $_REQUEST['nm_leitor'];
-                   $campos = $campos + 1;
-               } else {
-                   $nm_leitor = null;
-               }
-        
-               if ($campos > 0) {
-                   $leitor = new LeitorView;
-                   $leitor->ExibirLeitores(new Leitor(null, $nm_leitor, $cd_cpf));
-               }
-               ?>
-           </div>
-        <?php
-         $Leitor = new LeitorView();
-         $Leitor->ExibirLeitores(new Leitor(),$Bibliotecario[0]->cd_biblioteca);
-        ?> 
+                <div class='cardLeitor'>
+                    <img src='img/pequeno terry.webp' alt=>
+                    <div class='infoPerfil'>
+                        <h1>{$Leitor->nm_leitor} </h1>
+                        <div class='infoDeLado'>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> CPF: {$Leitor->nm_leitor}
+                            </p>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    call_log
+                                </span> Telefone: {$Leitor->cd_telefone}
+                            </p>
+                        </div>
+                        <p>
+                            <span class='material-symbols-outlined'>
+                                home
+                            </span> Endereço: {$Leitor->nm_endereco}
+                        </p>
+                        <p>
+                            <span class='material-symbols-outlined'>
+                                alternate_email
+                            </span> E-mail: {$Leitor->cd_email}
+                        </p>
+                        <div class='btnsPerfil'>
+                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Alterar Dados</button>
+                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Pesquisar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tituloCentro">
+                <h1>Empréstimos Atuais Deste Leitor</h1>
+            </div>
+
+            <div class='exibirLivros'>
+
+            </div>
+        </section>
+
+        <section class="pesquisarLeitor">
+            <h2>Buscar Leitores:</h2>
+
+            <form action="" class="">
+                <div class="pesquisarInput">
+                    <input type="text" name="valor" placeholder="Buscar por nome ou código..." />
+                    <span class="material-symbols-outlined" style="color:black">search</span>
+                </div>
+            </form>
+
+            <button class="btnRosa">
+                <span class="material-symbols-outlined">filter_alt</span>
+                Filtros
+            </button>
+        </section>
+
+        <section class="dadosResultados">
+            <p>Nome</p>
+            <p>Código</p>
+            <p>Telefone</p>
+            <p>CPF</p>
+            <p>Status</p>
         </section>
     </main>
 </body>
 
 </html>
+
+<!--          tirei do meio pra nao atrapalhar      -->
+
+<!--  <?php
+        $campos = 0;
+        if (isset($_REQUEST['cd_cpf']) && $_REQUEST['cd_cpf'] != '' && strlen($_REQUEST['cd_cpf']) == 11) {
+            $cd_cpf = $_REQUEST['cd_cpf'];
+            $campos = $campos + 1;
+        } else {
+            $cd_cpf = null;
+        }
+
+        if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != '') {
+            $nm_leitor = $_REQUEST['nm_leitor'];
+            $campos = $campos + 1;
+        } else {
+            $nm_leitor = null;
+        }
+
+        if ($campos > 0) {
+            $leitor = new LeitorView;
+            $leitor->ExibirLeitores(new Leitor(null, $nm_leitor, $cd_cpf));
+        }
+        ?> -->
+
+<!-- <?php
+        $Leitor = new LeitorView();
+        $Leitor->ExibirLeitores(new Leitor(), $Bibliotecario[0]->cd_biblioteca);
+        ?>  -->
