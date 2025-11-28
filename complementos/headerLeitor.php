@@ -2,6 +2,8 @@
 require_once('./config.php');
 
 $nomeCompleto = "Leitor";
+$cd_email = $_SESSION['leitor'];
+
 
 if (isset($_SESSION['leitor'])) {
     $controller = new LeitorController();
@@ -10,6 +12,14 @@ if (isset($_SESSION['leitor'])) {
     if (!empty($leitores) && isset($leitores[0]->nm_leitor)) {
         $nomeCompleto = $leitores[0]->nm_leitor;
     }
+
+    $caminho_imagem_padrao = "img/perfil_padrao";
+    
+    $caminho_imagem_leitor = "img/perfil_$cd_email"; 
+    
+    $src_imagem = file_exists($caminho_imagem_leitor) ? $caminho_imagem_leitor : $caminho_imagem_padrao;
+
+
 }
 
 ?>
@@ -44,7 +54,7 @@ if (isset($_SESSION['leitor'])) {
         <button class="dropdown-btn">
           <?php if (isset($_SESSION['leitor'])): ?>
             
-              <img src="img/doar.png" alt="Perfil">
+              <img src="<?=$src_imagem?>" alt="Perfil">
             
           <?php else: ?>
             <span class="material-symbols-outlined">person</span>
