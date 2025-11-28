@@ -24,6 +24,9 @@ if (isset($_REQUEST['nm_livro']) && !is_null($_REQUEST['nm_livro'])) {
     if (move_uploaded_file($_FILES['image']['tmp_name'], $caminho)) {
       // echo"deus é bom";
     }
+  }else{
+    $novoNome = 'doacao_padrao'; 
+    $caminho = 'img/' . $novoNome;
   }
 }
 

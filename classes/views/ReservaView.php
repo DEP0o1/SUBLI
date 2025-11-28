@@ -4,26 +4,44 @@ class ReservaView{
 
 public function ExibirReservas($reserva= new Reserva){
 
-    
      $controller = new ReservaController;
      $reservas = $controller->ListarReservas($reserva);
 
-         foreach ($reservas as $Reserva){
-            $livrocontroller = new LivroController;
-            $livro = $livrocontroller->ListarLivros($Reserva->livro);
-            echo " 
+     if (empty($reservas)) {
+         echo " 
+        <div class='nao-encontrado'>
 
-        <div class='livro'>
-                         <img src='img/{$livro[0]->cd_livro}' alt='{$livro[0]->nm_livro}'/>
-                        <h2>{$livro[0]->nm_livro}</h2>
-                        <p>
-            Reservante: {$Reserva->leitor->nm_leitor}
-          </p>
-                        <button class='btnRosa'><a href='BcadastrarEmprestimo.php?codigo=$Reserva->cd_reserva'>Visualizar</a></button>
-                    </div>
-            ";
-  }
- }
+        <span class='material-symbols-outlined'>
+        disabled_by_default
+        </span>
+        <h2>
+        Nenhuma reserva encontrada
+        </h2>
+
+        </div>    
+         ";
+
+         return; 
+     }
+     // -----------------------------
+
+     foreach ($reservas as $Reserva){
+         $livrocontroller = new LivroController;
+
+         $livro = $livrocontroller->ListarLivros($Reserva->livro);
+         echo " 
+
+         <div class='livro'>
+             <img src='img/{$livro[0]->cd_livro}' alt='{$livro[0]->nm_livro}'/>
+             <h2>{$livro[0]->nm_livro}</h2>
+             <p>
+                 Reservante: {$Reserva->leitor->nm_leitor}
+             </p>
+             <button class='btnRosa'><a href='BcadastrarEmprestimo.php?codigo=$Reserva->cd_reserva'>Visualizar</a></button>
+         </div>
+           ";
+     }
+}
 
      public function Input_Livro_Reserva($reserva = new Reserva){
         $controller = new ReservaController;
