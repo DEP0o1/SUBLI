@@ -4,6 +4,11 @@ require_once('verificadoBibliotecario.php');
 $bibliotecario = $_SESSION['bibliotecario'];
 $controller = new BibliotecarioController();
 $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($bibliotecario));
+
+if(isset($_REQUEST['c'])){
+
+    $email = $_REQUEST['c'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -30,49 +35,16 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
         require_once './complementos/menuBibliotecario.php'
         ?>
 
-        <section class='resultadoPesquisaLeitor'>
-            <div class="leitoresEncontrados">
-                <div class='cardLeitor'>
-                    <img src='img/pequeno terry.webp' alt=>
-                    <div class='infoPerfil'>
-                        <h1>{$Leitor->nm_leitor} </h1>
-                        <div class='infoDeLado'>
-                            <p>
-                                <span class='material-symbols-outlined'>
-                                    assignment_ind
-                                </span> CPF: {$Leitor->nm_leitor}
-                            </p>
-                            <p>
-                                <span class='material-symbols-outlined'>
-                                    call_log
-                                </span> Telefone: {$Leitor->cd_telefone}
-                            </p>
-                        </div>
-                        <p>
-                            <span class='material-symbols-outlined'>
-                                home
-                            </span> Endereço: {$Leitor->nm_endereco}
-                        </p>
-                        <p>
-                            <span class='material-symbols-outlined'>
-                                alternate_email
-                            </span> E-mail: {$Leitor->cd_email}
-                        </p>
-                        <div class='btnsPerfil'>
-                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Alterar Dados</button>
-                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Enviar Notificação</button>
-                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Registrar Devolução</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tituloCentro">
-                <h1>Empréstimos Atuais Deste Leitor</h1>
-            </div>
-
-            <div class='exibirLivros'>
-
+        <?php
+           if(isset($email)){
+             $Leitor = new LeitorView();
+             $Leitor->ExibirLeitorFatal(new Leitor($email),$Bibliotecario[0]->cd_biblioteca);
+           }     
+           else{
+              $Leitor = new LeitorView();
+             $Leitor->ExibirLeitorFatal(new Leitor(),$Bibliotecario[0]->cd_biblioteca);
+           }
+            ?>
             </div>
         </section>
 
@@ -96,7 +68,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
             <p>Nome</p>
 
             <div class="infoJunta">
-                <p>Código</p>
+                <p>Email</p>
                 <p>Telefone</p>
             </div>
             
@@ -107,40 +79,10 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
             
         </section>
 
-        <section class="outrosLeitores">
-            <div class="leitorLinha">
-                <div class="infoPequena">
-                    <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-                    <p>Liam Nascimento</p>
-                </div>
-
-                <p>123456</p>
-
-                <p>(13) 987843247</p>
-
-                <p>123.456.789-10</p>
-
-                <p>Sem atrasos</p>
-
-                <button class="btnRosa">Ver Mais</button>
-            </div>
-
-            <div class="leitorLinha">
-                <div class="infoPequena">
-                    <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="">
-                    <p>Liam Nascimento</p>
-                </div>
-
-                <p>123456</p>
-
-                <p>(13) 987843247</p>
-
-                <p>123.456.789-10</p>
-
-                <p>Sem atrasos</p>
-
-                <button class="btnRosa">Ver Mais</button>
-            </div>
+                    <?php
+                    $Leitor = new LeitorView();
+                    $Leitor->ExibirLeitoresColuna(new Leitor());
+                    ?> 
         </section>
     </main>
 </body>
@@ -171,7 +113,4 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
         }
         ?> -->
 
-<!-- <?php
-        $Leitor = new LeitorView();
-        $Leitor->ExibirLeitores(new Leitor(), $Bibliotecario[0]->cd_biblioteca);
-        ?>  -->
+      

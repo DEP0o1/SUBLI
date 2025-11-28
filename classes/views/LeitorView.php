@@ -81,7 +81,7 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
         }
         
  }
- public function ListarLeitoresColuna($leitor = new Leitor){
+ public function ExibirLeitoresColuna($leitor = new Leitor){
     $controller = new LeitorController;
     $leitores = $controller->ListarLeitores($leitor);
 
@@ -89,32 +89,82 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
         echo "
 
 
-        <div class='lista-leitores'>
+        <section class='outrosLeitores'>
+            <div class='leitorLinha'>
+                <div class='infoPequena'>
+                    <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
+                    <p>$Leitor->nm_leitor</p>
+                </div>
 
-            <div class='lista'>
+                <p>$Leitor->cd_email</p>
 
-                <div class='item-lista'>
-                    <div class='imagem-item-lista'>
-                        <img src='img/doar.png' alt=>
-                    </div>
-                    <div class='conteudo-item-lista'>
-                        <h2>Nome do leitor</h2>
+                <p>$Leitor->cd_telefone</p>
+
+                <p>$Leitor->cd_cpf</p>
+
+                <p>Sem atrasos</p>
+                <a href='BpesquisaLeitor.php?c=$Leitor->cd_email'> <button class='btnRosa'>Ver Mais</button> </a>
+            </div>
+
+        ";
+    }
+ }
+     public function ExibirLeitorFatal($leitor = new Leitor, $cd_biblioteca){
+
+           $controller = new LeitorController;
+           $leitores = $controller->ListarLeitores($leitor);
+
+        echo"
+            <section class='resultadoPesquisaLeitor'>
+            <div class='leitoresEncontrados'>
+                <div class='cardLeitor'>
+                    <img src='img/pequeno terry.webp' alt=>
+                    <div class='infoPerfil'>
+                        <h1>{$leitores[0]->nm_leitor} </h1>
+                        <div class='infoDeLado'>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    assignment_ind
+                                </span> CPF: {$leitores[0]->nm_leitor}
+                            </p>
+                            <p>
+                                <span class='material-symbols-outlined'>
+                                    call_log
+                                </span> Telefone: {$leitores[0]->cd_telefone}
+                            </p>
+                        </div>
                         <p>
                             <span class='material-symbols-outlined'>
-                                assignment_ind
-                            </span> CPF: 123.456.789.20
+                                home
+                            </span> Endereço: {$leitores[0]->nm_endereco}
                         </p>
-                        <button class='btnRosa'>
-                            Ver Mais
-                        </button>
+                        <p>
+                            <span class='material-symbols-outlined'>
+                                alternate_email
+                            </span> E-mail: {$leitores[0]->cd_email}
+                        </p>
+                        <div class='btnsPerfil'>
+                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Alterar Dados</button>
+                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Enviar Notificação</button>
+                            <button type='submit' id='btnPesuisarLeitor' class='btnRosa'>Registrar Devolução</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        ";
-    }
+                        <div class='tituloCentro'>
+                        <h1>Empréstimos Atuais Deste Leitor</h1>
+                    </div>
 
- }
+                    <div class='exibirLivros'>";
+                    $emprestimo = new EmprestimoController;
+                    $resultado = $emprestimo->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($leitores[0]->cd_email),new Livro,new Biblioteca($cd_biblioteca), true));
+                    
+                    foreach ($resultado as $Emprestimo) {
+                         $Emprestimos = new LivroView;
+                         $Emprestimos->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
+                    }
+                   
+    }
 }
 ?>
 
