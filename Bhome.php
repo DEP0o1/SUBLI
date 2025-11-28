@@ -87,16 +87,16 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
       </div>
     </div>
 
-    <section class="listaProvisoria">
+    <!-- <section class="listaProvisoria">
       <div class="prov-lista">
         <h1>Autores (ignorem isso é provisorio)</h1>
 
-        <!-- autores javascript -->
+         autores javascript
 
       </div>
     </section>
-  </main>
-  <script>
+  </main> -->
+  <!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
       
        function listarAutores() {
@@ -140,7 +140,7 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
 
   window.addEventListener('DOMContentLoaded', listarAutores);
     });
-  </script>
+  </script> -->
   <script src="js/componentesJS/calendario.js"></script>
 </body>
 </html>
