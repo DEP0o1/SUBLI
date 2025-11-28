@@ -67,9 +67,10 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
 
       <section class="eventos">
         <div class="larguraEventosBiblio">
-          <div class="calendario">
-            <!-- calendario -->
-          </div>
+
+                <div class="calendario">
+                    <!-- calendario -->
+                </div>
   
           <div class="lista-eventos">
             <?php

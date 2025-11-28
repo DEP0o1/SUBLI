@@ -9,11 +9,29 @@ public function ExibirEventos($evento = new Evento){
 
     $listaEventos = [];
 
+    if (empty($eventos)) {
+
+        echo " 
+        <div class='nao-encontrado'>
+            <h2>
+            Nenhum evento encontrado
+            </h2>
+            <span class='material-symbols-outlined'>
+            event_busy
+            </span>
+        </div>    
+        ";
+
+        return; 
+    }
+    // -----------------------------
+
     foreach ($eventos as $Evento){
         $caminho_imagem_evento = "img/eventos/evento_{$Evento->nm_evento}";
         
         $caminho_imagem_padrao = "img/eventos/evento_padrao"; 
         
+
         $src_imagem = file_exists($caminho_imagem_evento) ? $caminho_imagem_evento : $caminho_imagem_padrao;
 
         echo " 

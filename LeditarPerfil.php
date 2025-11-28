@@ -10,7 +10,8 @@ $campos = 0;
 $conferido = null;
 $conferido2 = null;
 
-  if (isset($_FILES['image'])) {
+
+    if (isset($_FILES['image'])) {
     $nomeOrigial = $_FILES['image']['name'];
 
     $novoNome = 'perfil_' . $cd_email;
@@ -18,7 +19,7 @@ $conferido2 = null;
     $caminho = 'img/' . $novoNome;
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $caminho)) {
-      // echo"deus é bom";
+      $campos = $campos + 1 ; 
     }
   }
 
@@ -26,6 +27,7 @@ $conferido2 = null;
     if (isset($_REQUEST['nm_leitor']) && $_REQUEST['nm_leitor'] != "") {
             $nm_leitor = $_REQUEST['nm_leitor'];
           $campos = $campos + 1 ; 
+
     }
 
 
@@ -135,7 +137,6 @@ $conferido2 = null;
             <input name="nm_senha" type="password" placeholder="***********"/>
           </div>
 
-          
         <div class="label-input">
           <label>Foto do livro: </label>
           <input type="file" class="inputArquivo" name="image" accept="image/*" />

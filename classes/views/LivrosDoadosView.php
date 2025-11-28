@@ -5,11 +5,26 @@ class LivrosDoadosView
 
 public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
 {
-
     $controller = new DoacaoController;
     $doacoes = $controller->ListarDoacoes($doacao);
 
     $caminho_imagem_padrao = "img/doacao_padrao"; 
+
+    if (empty($doacoes)) {
+        echo " 
+        <div class='nao-encontrado'>
+
+        <span class='material-symbols-outlined'>
+        auto_stories_off
+        </span>
+      <h2>
+      Nenhuma Doação encontrada
+      </h2>
+
+        </div>    
+        ";
+        return; 
+    }
 
     foreach ($doacoes as $Doacao) {
         if($ignorar == $Doacao->cd_doacao ){
