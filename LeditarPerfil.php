@@ -111,7 +111,7 @@ $conferido2 = null;
     <main>
     <?php require_once 'barraLateral.php'; ?>
       <section class="areaPerfil">
-        <form method = "POST" action="" enctype="multipart/form-data>
+        <form method = "POST" action="" enctype="multipart/form-data">
           <div class="titulo-areaPerfil">
               <h1>Suas informações</h1>
               <hr/>
