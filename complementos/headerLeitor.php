@@ -2,12 +2,11 @@
 require_once('./config.php');
 
 $nomeCompleto = "Leitor";
-$cd_email = $_SESSION['leitor'];
-
 
 if (isset($_SESSION['leitor'])) {
-    $controller = new LeitorController();
-    $leitores = $controller->ListarLeitores(new Leitor($_SESSION['leitor']));
+  $controller = new LeitorController();
+  $leitores = $controller->ListarLeitores(new Leitor($_SESSION['leitor']));
+  $cd_email = $_SESSION['leitor'];
 
     if (!empty($leitores) && isset($leitores[0]->nm_leitor)) {
         $nomeCompleto = $leitores[0]->nm_leitor;

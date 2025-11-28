@@ -47,7 +47,7 @@ require_once './complementos/menuBibliotecario.php'
 
 <main>
     <div class="areaResultadoPesquisa">
-        <div class="resultadoPesquisa">
+        <div class="resultadoPesquisa" style=" margin-top: 10vh">
 <?php
   $controller = new EmprestimoController;
   $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email),new Livro(),new Biblioteca($cd_biblioteca),true));

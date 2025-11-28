@@ -143,7 +143,6 @@ $conferido2 = null;
         </div>
 
           <button type="submit" id="btnEditarPerfil">Salvar alterações</button>
-''
           <?php
               // if($campos && $conferido == true || $conferido2 == true){
               //   echo $Leitor;
