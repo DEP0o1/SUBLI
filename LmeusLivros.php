@@ -31,38 +31,61 @@ $email = $_SESSION['leitor'];
         </div>
         <div class="exibirLivros">
         
-        <?php
-        if(isset($email)){
-          $controller = new EmprestimoController;
-          $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email),new Livro(),new Biblioteca(),true));
-        
-          $livro = new LivroView;
-          foreach ($emprestimos as $Emprestimo){
-            $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
-          } 
+<?php
+if (isset($email)) {
+    $controller = new EmprestimoController;
+    $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null, null, null, null, new Leitor($email), new Livro(), new Biblioteca(), true));
+
+    if (empty($emprestimos)) { 
+        echo " 
+        <div class='nao-encontrado'>
+            <span class='material-symbols-outlined'>
+                menu_book
+            </span> 
+            <h2> 
+                Você não possui nenhum livro emprestado no momento.
+            </h2>
+        </div> 
+        ";
+    } else {
+        $livro = new LivroView;
+        foreach ($emprestimos as $Emprestimo) {
+            $livro->ExibirLivros(new Livro(null, null, [new Autor()], new Editora(), [new Genero()], new Idioma(), new Colecao, [new Assunto()], null, $Emprestimo->cd_emprestimo));
         }
-        
-        
-        ?>
+    }
+}
+?>
         </div>
         <div class="texto"> 
           <h1>Histórico </h1> 
         </div>
 
         <div class="exibirLivros">
-        <?php
-        if(isset($email)){
-          $controller = new EmprestimoController;
-          $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($email),new Livro(),new Biblioteca(),0));
-        
-          $livro = new LivroView;
-          foreach ($emprestimos as $Emprestimo){
-            $livro->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
-          } 
+<?php
+if (isset($email)) {
+    $controller = new EmprestimoController;
+    $emprestimos = $controller->ListarEmprestimos(new Emprestimo(null, null, null, null, new Leitor($email), new Livro(), new Biblioteca(), 0));
+
+    if (empty($emprestimos)) {
+        echo " 
+        <div class='nao-encontrado'>
+            <span class='material-symbols-outlined'>
+                menu_book
+            </span> 
+            <h2> 
+                Você não possui nenhum livro no Histórico.
+            </h2>
+        </div> 
+        ";
+    } else {
+        $livro = new LivroView;
+        foreach ($emprestimos as $Emprestimo) {
+            // Se houver emprestimos, exibe os livros
+            $livro->ExibirLivros(new Livro(null, null, [new Autor()], new Editora(), [new Genero()], new Idioma(), new Colecao, [new Assunto()], null, $Emprestimo->cd_emprestimo));
         }
-        
-        
-        ?>
+    }
+}
+?>
         </div>
 
 

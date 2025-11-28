@@ -157,10 +157,11 @@ class LivroView{
             
 
             echo "
-            <form>
+            <form style=' margin-top: auto'; width: 100% ;>
              <input type='hidden' name='registrado' value=$Livro->cd_emprestimo>
-                <button type='submit' class='btnRosa'>
+                <button type='submit' class='btnRosa' style'='font-size: medium; font-family: 'Inter''>
                    Registrar Devolução
+
                 </button>
                 </form>
             </div>";
