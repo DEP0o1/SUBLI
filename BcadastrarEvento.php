@@ -65,33 +65,35 @@ $campos = 0;
 <div class="areaCadastro">
 
         <form method="POST" class="formAvancado1">
-            <div>
-                <h1 class="pesquisaAvancada">Cadastrar Evento </h1>
+            <div class="tituloFormCadastroEvento">
+                <h1>Cadastrar Evento </h1>
+                <hr>
             </div>
+            
             <section class="areaInput">
                 <div class="areaTituloLivro">
-                    <label class="tituloForm">Nome do Evento:</label>
+                    <label class="labelForm">Nome do Evento:</label>
                     <input name= "nm_evento" type="text" class="inputForm" placeholder="Inauguração do meu livro pog">
                 </div>
 
                 <div class="areaAutorLivro">
-                    <label class="tituloForm">Email do criador do evento:</label>
+                    <label class="labelForm">Email do criador do evento:</label>
                     <input name= "cd_email" type="text" class="inputForm" placeholder="Pedro Mingel">
                 </div>
 
 
                 <div class="areaAutorLivro">
-                    <label class="tituloForm">Descrição:</label>
+                    <label class="labelForm">Descrição:</label>
                     <input name= "ds_evento" type="text" class="inputForm" placeholder="21/02/2025">
                 </div>
 
                 <div class="areaAutorLivro">
-                    <label class="tituloForm">Horário:</label>
+                    <label class="labelForm">Horário:</label>
                     <input type="time" class="inputForm" placeholder="21/02/2025">
                 </div>
 
                 <div class="areaAutorLivro">
-                    <label class="tituloForm">Data:</label>
+                    <label class="labelForm">Data:</label>
                     <input name = "dt_evento" type="date" class="inputForm" placeholder="21/02/2025">
                 </div>
 

@@ -177,14 +177,11 @@ if ($cadastro) {
 
     /*============*/
 
-    $controller = new LivroController();
+$controller = new LivroController();
 $cd_livro_result = $controller->ListarProximoLivro();
 
 $cd_livro = $cd_livro_result[0]['Proximo_Cd_Livro'];
 
-rename("img/doacao_" . $nm_doacao, "img/" . $cd_livro);
-
-echo $cd_livro;
 
 
      /*=============*/
