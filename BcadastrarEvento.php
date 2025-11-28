@@ -62,7 +62,7 @@ $campos = 0;
 </head>
 
 <body>
-    <div class="areaCadastro">
+<div class="areaCadastro">
 
         <form method="POST" class="formAvancado1">
             <div>

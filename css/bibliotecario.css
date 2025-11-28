@@ -1279,8 +1279,8 @@ aside br {
 }
 
 .pesquisaAvancada {
-  color: var(--fundo);
-  border-bottom: 2px solid var(--fundo);
+  color: var(--bege);
+  border-bottom: 2px solid var(--bege);
   width: 100%;
 }
 
@@ -1314,7 +1314,7 @@ border: solid 1px var(--bege);
 }
 
 .tituloForm {
-  color: var(--fundo);
+  color: var(--bege);
   text-wrap: nowrap;
   font-family: "Inter";
   font-size: 1rem;
