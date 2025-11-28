@@ -148,9 +148,11 @@ if (empty($assunto2)) $assunto2 = null;
                     <!-- calendario -->
                 </div>
                 <div class="lista" id="lista-eventos-index-leitor">
+
+                aquiiiiiiiiiiiiii
                     <?php
                     $evento = new EventoView;
-                    $evento->ExibirEventos(new Evento(null, null, null, null, new Biblioteca(), new Leitor(), true));
+                    $evento->ExibirEventosLeitor(new Evento(null, null, null, null, new Biblioteca(), new Leitor(), true));
                     ?>
                 </div>
             </div>

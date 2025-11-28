@@ -46,28 +46,6 @@ require_once './complementos/menuBibliotecario.php'
 <body>
 
 <main>
-
-
-  <div class="filtrosEmprestimos">
-    <div class="dropFiltros">
-        <button onclick="desceAtraso()" class="dropFiltro">Em Atraso:</button>
-        <div id="dropFiltros" class="dropdown-filtros">
-          <a href="./BcadastrarLivro.php">Atrasado a 5 dias ou menos</a>
-          <a href="./BcadastrarLeitor.php">Atrasado a 10 dias ou menos</a>
-          <a href="./BcadastrarEvento.php">Atrasado a 20 dias ou menos</a>
-          <a href="./BcadastrarGenero.php">atrasados a mais de 30 dias </a>
-        </div>
-    </div>
-    <div class="dropFiltros">
-        <button onclick="descePraso()" class="dropPraso">Em praso:</button>
-        <div id="dropPrasos" class="dropdown-praso">
-          <a href="">Em atraso em 5 dias</a>
-          <a href="">Em atraso em 10 dias</a>
-          <a href="">em atraso em 20 dias</a>
-        </div>
-    </div>
-    </div>
-
     <div class="areaResultadoPesquisa">
         <div class="resultadoPesquisa">
 <?php

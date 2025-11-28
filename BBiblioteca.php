@@ -68,14 +68,15 @@ if (isset($_REQUEST['codigo'])) {
     </section>
 
     <h1 class="textoMeio">Desta biblioteca</h1>
+    <section class="divQueEnglobaExibirLivrosResultado">
+      <div class="exibirLivros">
 
-    <section class="exibirLivros">
+        <?php
+        $livro = new LivroView;
+        $livro->ExibirLivros(new Livro(null, null, [new Autor()], new Editora(), [new Genero()], new Idioma(), new Colecao, [new Assunto()], $codigo));
+        ?>
 
-      <?php
-      $livro = new LivroView;
-      $livro->ExibirLivros(new Livro(null, null, [new Autor()], new Editora(), [new Genero()], new Idioma(), new Colecao, [new Assunto()], $codigo));
-      ?>
-
+      </div>
     </section>
   </main>
 

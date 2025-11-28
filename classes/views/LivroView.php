@@ -86,7 +86,7 @@ class LivroView{
 
             <section class='areaBtn' style='flex-direction: column;'>
               <form class='btnEmprestimo' method='GET' action=''>
-              <select style='width: 100%' name='B' id='' class='btnRosa'>Escolha a biblioteca
+              <select style='width: 100%;margin-bottom: var(--gap);' name='B' id='' class='btnRosa'>Escolha a biblioteca
               ";
               foreach($bibliotecas as $Biblioteca){
                 echo "<option value='{$Biblioteca->cd_biblioteca}'>{$Biblioteca->nm_biblioteca}</option>";

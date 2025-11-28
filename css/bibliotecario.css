@@ -1557,7 +1557,7 @@ border: solid 1px var(--bege);
   height: fit-content;
   width: fit-content;
   border-radius: var(--radius);
-  z-index: 6000;
+  z-index: 9999;
   position: fixed;
 }
 
@@ -1576,7 +1576,7 @@ border: solid 1px var(--bege);
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.699); 
-  z-index: 5000; 
+  z-index: 9999; 
 }
 
 /* --------------evento------------------------- */
