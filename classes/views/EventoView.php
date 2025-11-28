@@ -144,7 +144,9 @@ public function ExibirEventoLeitor($evento = new Evento){
         echo"
         <section class='evento'>
 
-            <img src='{$src_imagem}' alt='Imagem do evento {$Evento->nm_evento}' class='imgEvento'>
+        <div class='imagemEventoPagina'>
+        <img src='{$src_imagem}' alt='Imagem do evento {$Evento->nm_evento}' class='imgEvento'>
+        </div>
 
             <div class='eventoTxt'>
             <h1> Divulgação do livro '{$Evento->nm_evento}' </h1>

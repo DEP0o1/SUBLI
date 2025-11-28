@@ -905,6 +905,33 @@ span {
   padding: 0;
 }
 
+/*===========fodase=============*/
+
+.imagemEventoPagina {
+  width: 40vw;
+  height: auto;
+}
+
+.imagemEventoPagina img{
+  width: 100%;
+  height: 100%;
+}
+
+.evento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-grande);
+}
+
+.eventoTxt {
+  gap: var(--gap);
+}
+
+.eventoTxt h1 {
+  margin: var(--gap) 0;
+}
+
 .conteudo-pagina-bibliotecas {
   display: flex;
   flex-direction: row;
