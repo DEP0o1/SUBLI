@@ -1332,6 +1332,10 @@ border: solid 1px var(--bege);
   width: 50vw;
 }
 
+.tituloFormCadastroEvento{
+  width: 20vw;
+}
+
 .areaInput input,
 .formDeLado > div{
   width: 100%;
