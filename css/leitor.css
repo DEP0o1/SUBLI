@@ -910,11 +910,13 @@ span {
 .imagemEventoPagina {
   width: 40vw;
   height: auto;
+  border-radius: var(--radius);
 }
 
 .imagemEventoPagina img{
   width: 100%;
   height: 100%;
+  border-radius: var(--radius);
 }
 
 .evento {
