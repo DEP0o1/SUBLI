@@ -12,9 +12,6 @@ class LivroView{
             <div class='livro' title='{$Livro->nm_livro}'>
                 <img src='img/{$Livro->cd_livro}' alt='{$Livro->nm_livro}'/>
                 <h2>{$Livro->nm_livro}</h2>
-                <div class='favorito'>
-                  <span class='material-symbols-outlined'>favorite</span>
-                </div>
             ";
 
             foreach($Livro->autores as $autor){
@@ -146,9 +143,6 @@ class LivroView{
             <div class='livro' title='{$Livro->nm_livro}'>
                 <img src='img/{$Livro->cd_livro}' alt='{$Livro->nm_livro}'/>
                 <h2>{$Livro->nm_livro}</h2>
-                <div class='favorito'>
-                  <span class='material-symbols-outlined'>favorite</span>
-                </div>
             ";
             
               $emprestimo_controller = new EmprestimoController();
