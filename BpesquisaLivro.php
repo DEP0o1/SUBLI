@@ -129,14 +129,15 @@ require_once './complementos/headerBibliotecario.php';
 
           
                 $livro = new LivroView;
-
+            if(!isset($_REQUEST['cd_livro'])){
                 if ($valor == "") {
                     $livro->ExibirLivros();
                 } else {
                     $livro->ExibirLivros(new Livro(null, $valor));
                 }
-            
-
+            }
+                
+        
             #region verificação do conteúdo dos inputs
             $pesquisa_avancada = false;
             if (isset($_REQUEST['cd_livro']) && $_REQUEST['cd_livro'] != '' && is_numeric($_REQUEST['cd_livro'])) {

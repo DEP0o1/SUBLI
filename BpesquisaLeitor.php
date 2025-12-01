@@ -9,6 +9,12 @@ if(isset($_REQUEST['c'])){
 
     $email = $_REQUEST['c'];
 }
+
+if(isset($_REQUEST['registrado'])){
+    $codigo_emprestimo = $_REQUEST['registrado'];
+    $emprestimo_controller = new EmprestimoController;
+    $emprestimo_controller->RegistrarDevolucao(new Emprestimo($codigo_emprestimo));
+}
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +60,12 @@ if(isset($_REQUEST['c'])){
             <form action="" class="">
                 <div class="pesquisarInput">
                     <input type="text" name="valor" placeholder="Buscar por nome ou código..." />
+                    <?php
+                    if(isset($email)){
+                echo"<input type='hidden' name='c' value='$email'>";
+                    }
+                    
+                    ?>
                     <span class="material-symbols-outlined" style="color:black">search</span>
                 </div>
             </form>
@@ -81,7 +93,22 @@ if(isset($_REQUEST['c'])){
 
                     <?php
                     $Leitor = new LeitorView();
-                    $Leitor->ExibirLeitoresColuna(new Leitor());
+                    $LeitorController = new LeitorController;
+
+                    if(isset($_REQUEST['valor'])){
+                        $nm_leitor = $_REQUEST['valor'];
+                        $Leitor->ExibirLeitoresColuna(new Leitor(null,$nm_leitor));
+                    }
+                    else{
+                         if(isset($email)){
+                        $Leitor->ExibirLeitoresColuna(new Leitor(),$email);
+                    }
+                    else{
+                        $primeiro_leitor = $LeitorController->ListarLeitores();
+                        $Leitor->ExibirLeitoresColuna(new Leitor(),$primeiro_leitor[0]->cd_email);
+                    }
+                    }
+                   
                     ?> 
         </section>
     </main>

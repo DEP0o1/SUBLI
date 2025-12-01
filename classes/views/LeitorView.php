@@ -81,12 +81,19 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
         }
         
  }
- public function ExibirLeitoresColuna($leitor = new Leitor){
+ public function ExibirLeitoresColuna($leitor = new Leitor, $ignorar = null){
     $controller = new LeitorController;
     $leitores = $controller->ListarLeitores($leitor);
 
+   
+
     foreach($leitores as $Leitor){
-        echo "
+         
+        if($ignorar == $Leitor->cd_email){
+        continue;
+    }
+        
+    echo "
 
 
         <section class='outrosLeitores'>
@@ -161,7 +168,7 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
                     
                     foreach ($resultado as $Emprestimo) {
                          $Emprestimos = new LivroView;
-                         $Emprestimos->ExibirLivros(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
+                         $Emprestimos->ExibirLivrosEmprestimo(new Livro(null,null,[new Autor()],new Editora(),[new Genero()],new Idioma(),new Colecao,[new Assunto()],null,$Emprestimo->cd_emprestimo));
                     }
                    
     }
