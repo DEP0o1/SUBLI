@@ -138,7 +138,7 @@ $conferido2 = null;
           </div>
 
         <div class="label-input">
-          <label>Foto do livro: </label>
+          <label>Foto de Perfil: </label>
           <input type="file" class="inputArquivo" name="image" accept="image/*" />
         </div>
 

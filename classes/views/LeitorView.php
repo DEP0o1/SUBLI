@@ -176,10 +176,6 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
             <h1>Empréstimos Atuais Deste Leitor</h1>
         </div>
 
-        <div class='tituloCentro'>
-            <h1>Empréstimos Atuais Deste Leitor</h1>
-        </div>
-
         <div class='exibirLivros'>";
         $emprestimo = new EmprestimoController;
         $resultado = $emprestimo->ListarEmprestimos(new Emprestimo(null,null,null,null,new Leitor($leitor_encontrado->cd_email),new Livro,new Biblioteca($cd_biblioteca), true));

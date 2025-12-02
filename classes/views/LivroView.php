@@ -170,5 +170,93 @@ class LivroView{
         </div>";
     }
 }
+
+
+
+      public function ExibirLivroBi($livro = new Livro(),$cd_biblioteca){
+           $controller = new LivroController;
+    $livros = $controller->ListarLivrosBi($livro);
+
+    $Bcontroller = new BibliotecaController;
+    $bibliotecas = $Bcontroller->ListarBibliotecas(new Biblioteca(null,null,null,[new Livro($livros[0]->cd_livro)]));
+      $exemplarcontroller = new ExemplarController();
+      $exemplar = $exemplarcontroller->ContarExemplares(new Exemplar($livros[0]->cd_livro, $cd_biblioteca));
+
+    foreach($livros as $Livro){
+echo"
+          <div class='capaLivroGrande'>
+        <img src='img/{$Livro->cd_livro}' alt=''>
+      </div>
+        <div class='pagLivro'>
+        <div class='dadosLivro'>
+          <h1>{$Livro->nm_livro}</h1>
+          ";
+            foreach($Livro->autores as $autor){
+          echo"
+          <p>
+            <span class='material-symbols-outlined'>man_4</span>
+            Autor: {$autor->nm_autor}
+          </p>";
+            }
+
+            echo "
+            <p>
+            <span class='material-symbols-outlined'>category</span>
+            Gênero: {$Livro->generos[0]->nm_genero}
+          </p>
+          <p>
+            <span class='material-symbols-outlined'>article</span>
+            Assunto: {$Livro->assuntos[0]->nm_assunto}
+          </p>
+          <p>
+            <span class='material-symbols-outlined'>book_5</span>
+            Coleção: {$Livro->colecao->nm_colecao}
+          </p>
+          <p>
+            <span class='material-symbols-outlined'>corporate_fare</span>
+            Editora: {$Livro->editora->nm_editora}
+          </p>
+          <p>
+            <span class='material-symbols-outlined'>language</span>
+            Idioma: {$Livro->idioma->nm_idioma}
+          </p>
+
+          <section class='areaBtnLivro'>
+     ";
+            if (isset($_REQUEST['enviado'])) {
+            $exemplarcontroller = new ExemplarController();
+            $Exemplar = $exemplarcontroller->AdicionarExemplar(new Exemplar($Livro->cd_livro, $cd_biblioteca));
+            
+            $exemplarcontroller = new ExemplarController();
+            $exemplar = $exemplarcontroller->ContarExemplares(new Exemplar($Livro->cd_livro, $cd_biblioteca));
+          }
+          echo"
+              Quantidade de Exemplares: {$exemplar[0]['COUNT(*)']}
+        
+
+            <form class='btnEmprestimo' method='GET' action=''>
+              <input type='hidden' name='codigo' value='{$Livro->cd_livro}'>
+              <input type='hidden' name='enviado' value='true'>
+              <button class='btnRosa' id='s' type='submit'>
+                <span class='material-symbols-outlined'>check</span>
+                Adicionar Exemplar
+              </button>
+            </form>
+
+          
+          </section>
+        </div>
+
+        <div class='sinopse'>
+          <p>{$Livro->ds_sinopse}</p>
+        </div>
+      </div>
+";
+
+
+
+
+      }
     }
+  }
 ?>

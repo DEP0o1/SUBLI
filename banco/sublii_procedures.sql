@@ -293,11 +293,11 @@ END$$
 /*CALL adicionar_livro (NULL, 'Aventuras no Código' , 1 , NULL ,1, NULL, 1 , NULL ,1 , NULL , 1 , NULL , 1 , NULL,'blebleble', 1);*/
     
 
-CREATE PROCEDURE ListarProximoLivro()
+/*CREATE PROCEDURE ListarProximoLivro()
 BEGIN
     SELECT COALESCE(MAX(cd_livro), 0) + 1 AS Proximo_Cd_Livro
     FROM livro;
-END$$
+END$$*/
 
 
 DROP PROCEDURE IF EXISTS alterar_livros$$
@@ -1015,7 +1015,7 @@ END$$
     BEGIN
     SELECT COUNT(*) FROM exemplar WHERE cd_livro = p_cd_livro AND cd_biblioteca = p_cd_biblioteca;
     END$$
-    /*CALL contar_exemplares(3,1);*/
+    /*CALL contar_exemplares(1,1);*/
     
 DROP PROCEDURE IF EXISTS listar_exemplares$$
 CREATE PROCEDURE listar_exemplares(
@@ -1066,17 +1066,10 @@ DROP PROCEDURE IF EXISTS adicionar_exemplar$$
 CREATE PROCEDURE adicionar_exemplar(
   IN p_cd_exemplar INT,
   IN p_cd_livro INT,
-  IN p_nm_livro VARCHAR(100),
-  IN p_cd_biblioteca INT,
-  IN p_nm_biblioteca VARCHAR(100),
-  IN p_dt_insercao DATETIME,
-  IN p_ic_reservado TINYINT
+  IN p_cd_biblioteca INT
 )
 BEGIN
   DECLARE v_cd_exemplar INT;
-  DECLARE v_cd_livro INT;
-  DECLARE v_cd_biblioteca INT;
-
 
   IF p_cd_exemplar IS NULL THEN
     SELECT COALESCE(MAX(cd_exemplar), 0) + 1 INTO v_cd_exemplar FROM exemplar;
@@ -1085,34 +1078,13 @@ BEGIN
   END IF;
 
 
-  IF p_cd_livro IS NULL AND p_nm_livro IS NOT NULL THEN
-    SELECT cd_livro INTO v_cd_livro
-    FROM livro
-    WHERE nm_livro = p_nm_livro
-    LIMIT 1;
-  ELSE
-    SET v_cd_livro = p_cd_livro;
-  END IF;
-
-
-  IF p_cd_biblioteca IS NULL AND p_nm_biblioteca IS NOT NULL THEN
-    SELECT cd_biblioteca INTO v_cd_biblioteca
-    FROM biblioteca
-    WHERE nm_biblioteca = p_nm_biblioteca
-    LIMIT 1;
-  ELSE
-    SET v_cd_biblioteca = p_cd_biblioteca;
-  END IF;
-
-
-  IF v_cd_exemplar IS NOT NULL AND v_cd_livro IS NOT NULL
-     AND v_cd_biblioteca IS NOT NULL AND p_dt_insercao IS NOT NULL
-     AND p_ic_reservado IS NOT NULL THEN
+  IF v_cd_exemplar IS NOT NULL AND p_cd_livro IS NOT NULL
+     AND p_cd_biblioteca IS NOT NULL THEN
     INSERT INTO exemplar
-      VALUES (v_cd_livro, v_cd_biblioteca, v_cd_exemplar, p_dt_insercao, p_ic_reservado);
+      VALUES (p_cd_livro, p_cd_biblioteca, v_cd_exemplar,NOW(),false);
   END IF;
 END$$
-
+CALL adicionar_exemplar(null,1,1);
 
 
 DROP PROCEDURE IF EXISTS alterar_exemplar$$
