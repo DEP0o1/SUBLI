@@ -53,10 +53,7 @@ if (isset($_REQUEST['recusado'])) {
 
     <section class="areaSolicDoacao">
 
-      <section class="pagDoacao">
-
-        <div class="divColumnItem">
-
+          
           <?php
           $controller = new DoacaoController;
           $doacao = $controller->ListarDoacoes(new Doacao($codigo, new Livro, new Biblioteca($bibliotecarios[0]->cd_biblioteca), new Leitor, 0));
@@ -69,53 +66,20 @@ if (isset($_REQUEST['recusado'])) {
             $doacao = new Doacao;
           }
           ?>
-          <div class="tituloCentroh1">
+          <div class="divColuna">
             <h1>Outras doações</h1>
-          </div>
 
-          <div class="listaSolicDoacoes">
-
-            <?php
-            //  o 0 é bolleano falso na linha de cima 
-            //taaaaaaaaaaarrrrrrrrrrrrrrrrr
-
-            $Doacao = new LivrosDoadosView;
-            $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro, new Biblioteca($bibliotecarios[0]->cd_biblioteca), new Leitor, 0),$doacao->cd_doacao);
-            ?>
-
-            <!-- <div class="livroDoadoLista">
-
-              <div class="divRowItem">
-                <img src="img/vidas.jpg" alt="" class="imgLivroLista">
-
-                <div class="divColunaLista">
-                  <h1> Laços de família</h1>
-                  <div class="divRowItem">
-                    <p> <span class="material-symbols-outlined">
-                        man_4
-                      </span>Autor: Neil Gaiman </p>
-                  </div>
-
-                  <div class="divRowItemBtn">
-                    <button class="btnRosa"> Visualizar </button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="miniLeitor">
-                <div class="divRowItem">
-                  <h2> leitor fulano</h2>
-                  <img src="https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg" alt="" class="miniPerfil">
-                </div>
-
-              </div>
-            </div> -->
-
-            <!-- aqui pra cima -->
-
-          </div>
+            <div class="listaSolicDoacoes">
+              <?php
+              $Doacao = new LivrosDoadosView;
+              $Doacao->ExibirLivrosDoados(new Doacao(null, new Livro, new Biblioteca($bibliotecarios[0]->cd_biblioteca), new Leitor, 0),$doacao->cd_doacao);
+              ?>
+  
+            </div>
         </div>
-      </section>
+
+        </div>
+
     </section>
   </main>
 </body>

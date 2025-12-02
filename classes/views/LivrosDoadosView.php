@@ -20,7 +20,6 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
       <h2>
       Nenhuma Doação encontrada
       </h2>
-
         </div>    
         ";
         return; 
@@ -67,9 +66,8 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
 
     echo "
         <img src='{$src_imagem}' alt='Capa do Livro: {$Doacao->livro->nm_livro}' class='capaLivroGrande' />
-        </div>
 
-        <section class='divColuna'>
+          <div class= 'divColuna'>
             <div class='dadosLivroDoado'>
                 <h1>{$Doacao->livro->nm_livro}</h1>
     ";
@@ -97,7 +95,7 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
                 </form>
             </div>
         </div>
-    </section>";
+";
 }
 
   public function Input_Livro_Doacao($doacao = new Doacao())
