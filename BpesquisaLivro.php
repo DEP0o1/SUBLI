@@ -131,9 +131,25 @@ require_once './complementos/headerBibliotecario.php';
                 $livro = new LivroView;
             if(!isset($_REQUEST['cd_livro'])){
                 if ($valor == "") {
-                    $livro->ExibirLivros();
+                    $livro->ExibirLivrosBi(new Livro(null,
+                    null,
+                    [new Autor(null,null)],
+                    new Editora(null, null),
+                    [new Genero(null, null)],
+                    new Idioma(null, null),
+                    new Colecao(null, null),
+                    [new Assunto(null, null)],
+                    $Bibliotecario[0]->cd_biblioteca));
                 } else {
-                    $livro->ExibirLivros(new Livro(null, $valor));
+                    $livro->ExibirLivrosBi(new Livro(null,
+                    $valor,
+                    [new Autor(null,null)],
+                    new Editora(null, null),
+                    [new Genero(null, null)],
+                    new Idioma(null, null),
+                    new Colecao(null, null),
+                    [new Assunto(null, null)],
+                    $Bibliotecario[0]->cd_biblioteca));
                 }
             }
                 
@@ -242,7 +258,7 @@ require_once './complementos/headerBibliotecario.php';
 
             if ($pesquisa_avancada) {
                 $livro = new LivroView;
-                $livro->ExibirLivros(new Livro(
+                $livro->ExibirLivrosBi(new Livro(
                     $cd_livro,
                     $nm_livro,
                     [new Autor($cd_autor, $nm_autor)],
