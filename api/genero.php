@@ -15,7 +15,7 @@ switch ($metodo) {
             foreach ($generos as $genero) {
                 $resposta[] = [
                     'cd_genero' => $genero->cd_genero,
-                    'nm_nome' => $genero->nm_genero
+                    'nm_genero' => $genero->nm_genero
                 ];
             }
 

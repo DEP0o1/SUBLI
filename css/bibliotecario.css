@@ -30,7 +30,12 @@ h1 {
   cursor: default;
 }
 
+li {
 
+  font-family: "Inter";
+  font-size: 1rem;
+  cursor: default;
+}
 
 p,
 h2,
@@ -927,6 +932,7 @@ aside br {
   gap: var(--gap);
   width: 80%;
   flex-wrap: wrap;
+  padding-bottom: 150px;
 }
 
 .formPesquisaAvancada {
@@ -1350,20 +1356,11 @@ border: solid 1px var(--bege);
   width: 20vw;
 }
 
-.areaInput input,
-.formDeLado > div{
-  width: 100%;
-  padding: 10px;
-  border-radius: var(--radius);
-}
-
-
 .inputCadastro{
   padding: 10px;
   border: solid 1px var(--bege);
   border-radius: var(--radius);
 }
-
 
 .formDeLado {
   display: flex;
@@ -1387,6 +1384,27 @@ border: solid 1px var(--bege);
   flex-direction: column;
   justify-content: left;
   gap: 20px;
+}
+
+.areaInput input,
+.formDeLado > div{
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.areaInput2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 20px;
+  width: 70%;
+}
+
+.areaInput2 input,
+.formDeLado > div{
+  width: 100%;
+  
+  border-radius: var(--radius);
 }
 
 
@@ -1422,6 +1440,52 @@ border: solid 1px var(--bege);
   border-radius: 8px;
   width: 38px;
   height: 38px;
+}
+
+/*==================fodase===============================================*/
+
+.menu-lista {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 280px;
+  background: var(--azul);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 99999;
+  color: var(--branco);
+}
+
+.menu-lista.hidden {
+  display: none;
+}
+
+.menu-topo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin-bottom: 10px;
+}
+
+.menu-topo select,
+.menu-topo input {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#listaItens {
+  list-style: none;
+  padding-left: 10px;
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+#listaItens li {
+  padding: 4px 0;
+  font-size: 14px;
 }
 
 /*-------------------------------------------------mensagem-------------------------------------------------------------------------------------------------------------------*/
@@ -1514,6 +1578,22 @@ border: solid 1px var(--bege);
     gap: 15px;
     padding: 30px;
     border-radius: var(--radius);
+}
+
+.formAvancado3 {
+    color: var(--cinza);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+    gap: 15px;
+    padding: 30px;
+    border-radius: var(--radius);
+}
+
+.formAvancado3 input{
+  color: black;
 }
 
 .formAvancado2{

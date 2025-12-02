@@ -4,15 +4,13 @@ require_once('verificadoBibliotecario.php');
 
 if (isset($_REQUEST['doacao'])) {
     if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
-  
-    $cd_doacao = $_REQUEST['doacao'];
-    $doacaocontroller = new DoacaoController;
-    $doacao = $doacaocontroller->ListarDoacoes(new Doacao($cd_doacao));
-    $cd_biblioteca = $doacao[0]->biblioteca->cd_biblioteca;
-    }
-}
 
-else{
+        $cd_doacao = $_REQUEST['doacao'];
+        $doacaocontroller = new DoacaoController;
+        $doacao = $doacaocontroller->ListarDoacoes(new Doacao($cd_doacao));
+        $cd_biblioteca = $doacao[0]->biblioteca->cd_biblioteca;
+    }
+} else {
     $cd_bibliotecario = $_SESSION['bibliotecario'];
     $controller = new BibliotecarioController();
     $bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($cd_bibliotecario));
@@ -50,7 +48,6 @@ if (isset($_REQUEST['cd_autor']) && isset($_REQUEST['nm_autor'])) {
     if (!is_null($_REQUEST['cd_autor']) || !is_null($_REQUEST['nm_autor'])) {
         $erro = false;
     }
-
 }
 
 if (isset($_REQUEST['cd_assunto']) && isset($_REQUEST['nm_assunto'])) {
@@ -175,23 +172,22 @@ if ($cadastro) {
         $ds_sinopse
     ));
 
-// $controller = new LivroController();
-// $cd_livro_result = $controller->ListarProximoLivro();
+    // $controller = new LivroController();
+    // $cd_livro_result = $controller->ListarProximoLivro();
 
-// $cd_livro = $cd_livro_result[0]['Proximo_Cd_Livro'];
+    // $cd_livro = $cd_livro_result[0]['Proximo_Cd_Livro'];
 
-// rename($imgPerfil['tmpname'], 'img/doacao_' . $nm_doacao($targetFile));
+    // rename($imgPerfil['tmpname'], 'img/doacao_' . $nm_doacao($targetFile));
 
-if($livro == "Livro cadastrado com sucesso!"){
+    if ($livro == "Livro cadastrado com sucesso!") {
 
         if (isset($_REQUEST['doacao'])) {
             if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
-            $doacaocontroller = new DoacaoController;
-            $doacao = $doacaocontroller->AlterarDoacao(new Doacao($cd_doacao,new Livro(),new Biblioteca(),new Leitor(),true));
+                $doacaocontroller = new DoacaoController;
+                $doacao = $doacaocontroller->AlterarDoacao(new Doacao($cd_doacao, new Livro(), new Biblioteca(), new Leitor(), true));
             }
         }
     }
-
 }
 
 ?>
@@ -214,19 +210,33 @@ if($livro == "Livro cadastrado com sucesso!"){
 </head>
 
 <body>
-    <div class="areaCadastro">
-        <form method="POST" class="formAvancado1">
+    <?php
+    require_once './complementos/menuBibliotecario.php'
+    ?>
+    <main>
+
+
+
+        <form method="POST" class="formAvancado3">
             <div class="tituloFormCadastro">
                 <h1>Cadastrar Livro </h1>
                 <hr>
             </div>
 
-            <section class="areaInput">
-            <?php
-            $input_titulo = new LivrosDoadosView;
-            $input_titulo->Input_Livro_Doacao(new Doacao($cd_doacao));
+            <section class="areaInput2">
+                <div class="formDeLado">
+                    <div>
+                        <label for="isbn" class="labelForm">ISBN:</label>
+                        <input id="isbn" name="isbn" type="text" class="inputCadastro" placeholder="Ex. 9788535914849">
+                    </div>
+                    <button type="button" id="buscarISBN" class="btnRosa">Buscar ISBN</button>
+                </div>
 
-            ?>
+                <?php
+                $input_titulo = new LivrosDoadosView;
+                $input_titulo->Input_Livro_Doacao(new Doacao($cd_doacao));
+
+                ?>
 
                 <div class="formDeLado">
                     <div>
@@ -235,10 +245,10 @@ if($livro == "Livro cadastrado com sucesso!"){
                     </div>
 
                     <?php
-                $input_autor = new LivrosDoadosView;
-                $input_autor->Input_Autor_Doacao(new Doacao($cd_doacao));
+                    $input_autor = new LivrosDoadosView;
+                    $input_autor->Input_Autor_Doacao(new Doacao($cd_doacao));
 
-            ?>
+                    ?>
 
                     <div>
                         <label for="cd_assunto" class="labelForm">Código Assunto</label>
@@ -301,6 +311,112 @@ if($livro == "Livro cadastrado com sucesso!"){
                     ?>
                 </div>
         </form>
-    </div>
+
+    </main>
 </body>
+<script>
+    document.getElementById('buscarISBN').addEventListener('click', async () => {
+        const rawIsbn = document.getElementById('isbn').value.trim();
+        if (!rawIsbn) return alert('Digite um ISBN primeiro.');
+        const isbnDigits = rawIsbn.replace(/[^0-9Xx]/g, '');
+
+        const botao = document.getElementById('buscarISBN');
+        const textoOrig = botao.innerText;
+        botao.disabled = true;
+        botao.innerText = 'Buscando...';
+
+        try {
+            const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${encodeURIComponent(isbnDigits)}`;
+            const resposta = await fetch(url);
+            if (!resposta.ok) throw new Error('Erro na requisição Google Books');
+            const dados = await resposta.json();
+
+            if (!dados.items || dados.items.length === 0) {
+                alert('ISBN não encontrado.');
+                return;
+            }
+
+            const item = escolherItemCorreto(dados.items, isbnDigits);
+            if (!item) {
+                alert('ISBN não encontrado em resultados.');
+                return;
+            }
+
+            const info = item.volumeInfo || {};
+
+            const titulo = info.title ? info.title + (info.subtitle ? ': ' + info.subtitle : '') : '';
+            const autores = Array.isArray(info.authors) ? info.authors.join(', ') : (info.authors || '');
+            const categorias = Array.isArray(info.categories) ? info.categories.join(', ') : (info.categories || '');
+            const editora = info.publisher || '';
+            const idioma = codigoParaNomeIdioma(info.language || '');
+            const descricao = info.description || '';
+
+            const input = (selector) => document.querySelector(selector);
+
+            if (titulo) input('input[name="nm_livro"]').value = titulo;
+            if (autores) input('input[name="nm_autor"]').value = autores;
+            if (categorias) input('input[name="nm_assunto"]').value = categorias;
+            if (editora) input('input[name="nm_editora"]').value = editora;
+            if (idioma) input('input[name="nm_idioma"]').value = idioma;
+            if (descricao) input('textarea[name="ds_sinopse"]').value = descricao;
+
+        } catch (err) {
+            console.error(err);
+            alert('Ocorreu um erro ao buscar o ISBN.');
+        } finally {
+            botao.disabled = false;
+            botao.innerText = textoOrig;
+        }
+    });
+
+    function escolherItemCorreto(items, isbnDigits) {
+        const normalized = (s) => (s || '').replace(/[^0-9Xx]/g, '');
+        for (const it of items) {
+            const ids = (it.volumeInfo && it.volumeInfo.industryIdentifiers) || [];
+            for (const id of ids) {
+                if (id.identifier && normalized(id.identifier) === normalized(isbnDigits)) return it;
+            }
+        }
+        return items[0] || null;
+    }
+
+    function codigoParaNomeIdioma(code) {
+        if (!code) return '';
+        const c = code.toLowerCase();
+        const map = {
+            'pt': 'Português',
+            'pt-br': 'Português (Brasil)',
+            'en': 'Inglês',
+            'es': 'Espanhol',
+            'fr': 'Francês',
+            'de': 'Alemão',
+            'it': 'Italiano',
+            'ja': 'Japonês',
+            'zh': 'Chinês', 
+            'ru': 'Russo'
+        };
+        return map[c] || code;
+    }
+</script>
+
+<!-- Dom Casmurro — Machado de Assis
+
+ISBN: 9788535914849
+
+O Senhor dos Anéis – A Sociedade do Anel
+
+ISBN: 9788533613379
+
+Harry Potter e a Pedra Filosofal
+
+ISBN: 9788532530783
+
+1984 — George Orwell
+
+ISBN: 9780451524935
+
+O Pequeno Príncipe
+
+ISBN: 9788522031455  -->
+
 </html>

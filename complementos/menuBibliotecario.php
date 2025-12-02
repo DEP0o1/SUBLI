@@ -171,109 +171,109 @@ $biblioteca = $bibliotecacontroller->ListarBibliotecas(new Biblioteca($Bibliotec
             <a href="BcadastrarLeitor.php">
                 <div class="informacao-aside" id="abrir-leitor">
                     <span class="material-symbols-outlined">person_add</span>
-                    <p>Cadastrar Leitor</p>
+                    <p>Leitor</p>
                 </div>
             </a>
 
             <a href="BcadastrarLivro.php">
                 <div class="informacao-aside" id="abrir-livro">
                     <span class="material-symbols-outlined">menu_book</span>
-                    <p>Cadastrar Livro</p>
+                    <p>Livro</p>
                 </div>
             </a>
 
             <div class="informacao-aside" id="abrir-autor">
                 <span class="material-symbols-outlined">person</span>
-                <p>Cadastrar Autor</p>
+                <p>Autor</p>
             </div>
 
             <div class="informacao-aside" id="abrir-genero">
                 <span class="material-symbols-outlined">category</span>
-                <p>Cadastrar Gênero</p>
+                <p>Gênero</p>
             </div>
 
             <div class="informacao-aside" id="abrir-idioma">
                 <span class="material-symbols-outlined">language</span>
-                <p>Cadastrar Idioma</p>
+                <p>Idioma</p>
             </div>
 
             <div class="informacao-aside" id="abrir-editora">
                 <span class="material-symbols-outlined">apartment</span>
-                <p>Cadastrar Editora</p>
+                <p>Editora</p>
             </div>
 
             <div class="informacao-aside" id="abrir-colecoes">
                 <span class="material-symbols-outlined">library_books</span>
-                <p>Cadastrar Coleções</p>
+                <p>Coleções</p>
             </div>
 
             <a href="BcadastrarEvento.php">
                 <div class="informacao-aside">
                     <span class="material-symbols-outlined">event_available</span>
-                    <p>Cadastrar Evento</p>
+                    <p>Evento</p>
                 </div>
             </a>
 
             <div class="informacao-aside" id="abrir-assunto">
                 <span class="material-symbols-outlined">subject</span>
-                <p>Cadastrar Assunto</p>
+                <p>Assunto</p>
             </div>
         </div>
 
 <!--======================= Alterar ================================================================= -->
 
         <div class="conteudo-aside-biblioteca">
-            <h1>Alterar Dados</h1>
+            <h1>Alteração de Dados</h1>
 
             <a href="BcadastrarLeitor.php">
                 <div class="informacao-aside" id="abrir-alterar-leitor">
                     <span class="material-symbols-outlined">person_add</span>
-                    <p>Alterar Leitor</p>
+                    <p>Leitor</p>
                 </div>
             </a>
 
             <a href="BcadastrarLivro.php">
                 <div class="informacao-aside" id="abrir-alterar-livro">
                     <span class="material-symbols-outlined">menu_book</span>
-                    <p>Alterar Livro</p>
+                    <p>Livro</p>
                 </div>
             </a>
 
             <div class="informacao-aside" id="abrir-alterar-autor">
                 <span class="material-symbols-outlined">person</span>
-                <p>Alterar Autor</p>
+                <p>Autor</p>
             </div>
 
             <div class="informacao-aside" id="abrir-alterar-genero">
                 <span class="material-symbols-outlined">category</span>
-                <p>Alterar Gênero</p>
+                <p>Gênero</p>
             </div>
 
             <div class="informacao-aside" id="abrir-alterar-idioma">
                 <span class="material-symbols-outlined">language</span>
-                <p>Alterar Idioma</p>
+                <p>Idioma</p>
             </div>
 
             <div class="informacao-aside" id="abrir-alterar-editora">
                 <span class="material-symbols-outlined">apartment</span>
-                <p>Alterar Editora</p>
+                <p>Editora</p>
             </div>
 
             <div class="informacao-aside" id="abrir-alterar-colecoes">
                 <span class="material-symbols-outlined">library_books</span>
-                <p>Alterar Coleções</p>
+                <p>Coleções</p>
             </div>
 
             <a href="BcadastrarEvento.php">
                 <div class="informacao-aside">
                     <span class="material-symbols-outlined">event_available</span>
-                    <p>Alterar Evento</p>
+                    <p>Evento</p>
                 </div>
             </a>
 
             <div class="informacao-aside" id="abrir-alterar-assunto">
                 <span class="material-symbols-outlined">subject</span>
-                <p>Alterar Assunto</p>
+                <p>Assunto</p>
             </div>
         </div>
 
