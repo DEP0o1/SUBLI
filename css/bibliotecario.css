@@ -1428,6 +1428,7 @@ border: solid 1px var(--bege);
   flex-direction: column;
   justify-content: left;
   gap: 20px;
+  padding: 10px 0;
 }
 
 .areaInput input,
