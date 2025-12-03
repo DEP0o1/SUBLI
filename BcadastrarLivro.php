@@ -239,8 +239,8 @@ if ($cadastro) {
 
                 <div class="formDeLado">
                     <div>
-                        <label for="cd_autor" class="labelForm">Código Autor:</label>
-                        <input name="cd_autor" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex.1234">
+                        <label for='cd_autor' class='labelForm'>Código Autor:</label>
+                        <input name='cd_autor' type='text' id='cd_autor' class='inputCadastro' placeholder='Ex. 1' />
                     </div>
 
                     <?php
@@ -251,12 +251,12 @@ if ($cadastro) {
 
                     <div>
                         <label for="cd_assunto" class="labelForm">Código Assunto:</label>
-                        <input name="cd_assunto" type="text" class="inputCadastro" autocomplete="off" placeholder="Ex. 1">
+                        <input id="cd_assunto" name="cd_assunto" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_assunto" class="labelForm">Assunto:</label>
                         <div class="autocomplete-container">
-                            <input name="nm_assunto" type="text" id="assuntoInput" autocomplete="off" class="autocomplete" placeholder="Ex. História">
+                            <input id="assuntoInput" name="nm_assunto" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. História">
                             <div class="autocomplete-list" id="assuntoSugestoes"></div>
                         </div>
                     </div>
@@ -266,24 +266,24 @@ if ($cadastro) {
                 <div class="formDeLado">
                     <div>
                         <label for="cd_editora" class="labelForm">Código Editora:</label>
-                        <input name="cd_editora" autocomplete='off' type="text" class="inputCadastro" placeholder="Ex. 1">
+                        <input id="cd_editora" name="cd_editora" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_editora" class="labelForm">Editora:</label>
                         <div class="autocomplete-container">
-                            <input name="nm_editora" autocomplete='off' type="text" id="editoraInput" class="autocomplete" placeholder="Ex. Record">
+                            <input id="editoraInput" name="nm_editora" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Record">
                             <div class="autocomplete-list" id="editoraSugestoes"></div>
                         </div>
                     </div>
 
                     <div>
                         <label for="cd_colecao" class="labelForm">Código Coleção:</label>
-                        <input name="cd_colecao" autocomplete='off' type="text" class="inputCadastro" placeholder="Ex. 1">
+                        <input id="cd_colecao" name="cd_colecao" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_colecao" class="labelForm">Coleção:</label>
                         <div class="autocomplete-container">
-                            <input name="nm_colecao" autocomplete='off' type="text" id="colecaoInput" class="autocomplete" placeholder="Ex. Coleção Clássicos">
+                            <input id="colecaoInput" name="nm_colecao" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Coleção Clássicos">
                             <div class="autocomplete-list" id="colecaoSugestoes"></div>
                         </div>
                     </div>
@@ -293,24 +293,24 @@ if ($cadastro) {
                 <div class="formDeLado">
                     <div>
                         <label for="cd_idioma" class="labelForm">Código Idioma:</label>
-                        <input name="cd_idioma" autocomplete='off' type="text" class="inputCadastro" placeholder="Ex. 1">
+                        <input id="cd_idioma" name="cd_idioma" autocomplete='off' type="text" class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_idioma" class="labelForm">Idioma:</label>
                         <div class="autocomplete-container">
-                            <input name="nm_idioma" autocomplete='off' type="text" id="idiomaInput" class="autocomplete" placeholder="Ex. Português">
+                            <input id="idiomaInput" name="nm_idioma" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Português">
                             <div class="autocomplete-list" id="idiomaSugestoes"></div>
                         </div>
                     </div>
 
                     <div>
                         <label for="cd_genero" class="labelForm">Código Gênero:</label>
-                        <input name="cd_genero" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
+                        <input id="cd_genero" name="cd_genero" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_genero" class="labelForm">Gênero:</label>
                         <div class="autocomplete-container">
-                            <input name="nm_genero" type="text" autocomplete='off' id="generoInput" class="autocomplete" placeholder="Ex. Ficção Científica">
+                            <input id="generoInput" name="nm_genero" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Ficção Científica">
                             <div class="autocomplete-list" id="generoSugestoes"></div>
                         </div>
                     </div>
@@ -319,8 +319,10 @@ if ($cadastro) {
 
                 <div class="formSinopse">
                     <label class="labelForm">Sinopse:</label>
-                    <textarea name="ds_sinopse" type="text" class="inputCadastro" placeholder="Coloque a Sinopse aqui!"></textarea>
+                    <textarea id="sinopse" name="ds_sinopse" class="inputCadastro" placeholder="Coloque a Sinopse aqui!"></textarea>
+                    <button type="button" id="translateButton">Traduzir</button>
                 </div>
+
 
                 <div class="areaBtn">
                     <button class="btnRosa">Cadastrar</button>
@@ -334,6 +336,7 @@ if ($cadastro) {
 </body>
 
 <script src="js/componentesJS/autoComplete.js"></script>
+<script src="js/componentesJS/traduzir.js"></script>
 <script>
     document.getElementById('buscarISBN').addEventListener('click', async () => {
         const rawIsbn = document.getElementById('isbn').value.trim();

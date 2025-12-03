@@ -109,7 +109,7 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
                 <label for='nm_livro' class='labelForm'>Titulo:</label>
                 <input name='nm_livro' type='text' autocomplete='off' class='inputCadastro' 
                   placeholder='Ex. O Pequeno Principe' 
-                  value ='{$doacoes[0]->livro->nm_livro}' readonly>
+                  value ='{$doacoes[0]->livro->nm_livro}'>
               </div>
             ";
     } else {
@@ -123,22 +123,27 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
     }
   }
 
- public function Input_Autor_Doacao($doacao = new Doacao())
+public function Input_Autor_Doacao($doacao = new Doacao())
 {
     $controller = new DoacaoController;
     $doacoes = $controller->ListarDoacoes($doacao);
 
     if ($doacao != new Doacao) {
+       
         echo "
-            <div>
+             <div>
                 <label for='nm_autor' class='labelForm'>Autor:</label>
-                <input name='nm_autor' type='text' autocomplete='off' class='inputCadastro'  
-                  placeholder='Ex. Antoine de Saint-Exupéry' 
-                  value ='{$doacoes[0]->livro->autores[0]->nm_autor}' readonly>
+                <div class='autocomplete-container'>
+                    <input name='nm_autor' type='text' autocomplete='off' id='autorInput' class='inputCadastro' placeholder='Ex. Antoine de Saint-Exupéry'  value ='{$doacoes[0]->livro->autores[0]->nm_autor}'>
+                    <div class='autocomplete-list' id='autorSugestoes'></div>
+                </div>
             </div>
-        ";
+            <input type='hidden' name='cd_autor' value='{$doacoes[0]->livro->autores[0]->cd_autor}' />
+           ";
     } else {
+        
         echo "
+        
             <div>
                 <label for='nm_autor' class='labelForm'>Autor:</label>
                 <div class='autocomplete-container'>
@@ -149,5 +154,4 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
         ";
     }
 }
-
 }
