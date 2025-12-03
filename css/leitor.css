@@ -691,7 +691,7 @@ span {
 /*--------------------calendario--------------------------------------------------------------------------*/
 
 .calendario {
-  width: 50%;
+  width: 35%;
   height: fit-content;
   background-color: var(--azul);
   color: var(--branco);
@@ -827,7 +827,7 @@ span {
 .lista {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 65%;
   height: 100%;
   text-align: left;
   overflow-y: scroll;

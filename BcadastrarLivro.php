@@ -214,7 +214,6 @@ if ($cadastro) {
     require_once './complementos/menuBibliotecario.php'
     ?>
     <main>
-        
 
             <form method="POST" class="formAvancado1">
                 <div class="tituloFormCadastro">
@@ -225,7 +224,10 @@ if ($cadastro) {
                             <div class="areaAutorLivro">
                                 <label for="isbn" class="labelForm">ISBN:</label>
                                 <input id="isbn" name="isbn" type="text" class="inputCadastro" autocomplete="off" placeholder="Ex. 9788535914849">
-                                <button type="button" id="buscarISBN" class="btnRosa" style="margin-top: 20px;">Buscar ISBN</button>
+                                <div class="areaBtn">
+
+                                    <button type="button" id="buscarISBN" class="btnRosa" style="margin-top: 20px;">Preencher informações com ISBN</button>
+                                </div>
                             </div>
                         </div>
         

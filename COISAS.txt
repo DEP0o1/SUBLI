@@ -10,13 +10,13 @@ AJUSTAR A PÁGINA DE ACEITAR/RECUSAR OS EVENTOS -LUCAS
 
 =========================SE LIGA GUYS==============================
 
--mudar textos do aside do bibliotecario 
--busca por ISBN com API
+//mudar textos do aside do bibliotecario 
+//busca por ISBN com API
+//exibir a disponibilidade dos livros
+//adicionar sistema de sugestao nos forms do bibliotecario
+//centralizar os forms
 -mostrar de fato as bibliotecas da região 
--exibir a disponibilidade dos livros
 -tornar a interface mais intuitiva no geral
--adicionar sistema de sugestao nos forms do bibliotecario
--centralizar os forms
 -arrumar a altura das mensagens
 -corrigir o texto das mensagens
 
