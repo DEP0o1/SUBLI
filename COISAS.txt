@@ -11,8 +11,8 @@ imagem renomeada com codigo do livro ///////////////////////////////////////////
 
 =========================SE LIGA GUYS==============================
 
-//-mudar textos do aside do bibliotecario 
-//-busca por ISBN com API
+-mudar textos do aside do bibliotecario 
+-busca por ISBN com API
 -mostrar de fato as bibliotecas da região 
 -exibir a disponibilidade dos livros
 -tornar a interface mais intuitiva no geral
@@ -29,6 +29,23 @@ imagem renomeada com codigo do livro ///////////////////////////////////////////
 -incluir horarios nos eventos
 -gerenciamneto de estoque/unidade de exemplares 
 
+=========================SE LIGA GUYS 2 ==============================
+
+barra lateral em tudoB
+upload de foto no cadastro
+padronizar todos os cadastros
+padronizar todos os textos
+placeholder nos input
+substituir o terry.webp
+massa de teste boa ( com imagens)
+mais leitores
+efetuar reserva com diversos leitores
+e efetuar devolução de empréstimos
+
+   /|\
+    |
+    |
+    o Pedro pretende fazer esses mas ele aceita ajuda
 
 ============================================================
 
