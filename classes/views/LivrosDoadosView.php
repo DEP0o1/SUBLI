@@ -107,7 +107,7 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
       echo "
               <div class='areaTituloLivro'>
                 <label for='nm_livro' class='labelForm'>Titulo:</label>
-                <input name='nm_livro' type='text' class='inputCadastro' 
+                <input name='nm_livro' type='text' autocomplete='off' class='inputCadastro' 
                   placeholder='Ex. O Pequeno Principe' 
                   value ='{$doacoes[0]->livro->nm_livro}' readonly>
               </div>
@@ -116,35 +116,38 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
       echo "
               <div class='areaTituloLivro'>
                 <label for='nm_livro' class='labelForm'>Titulo:</label>
-                <input name='nm_livro' type='text' class='inputCadastro' 
+                <input name='nm_livro' type='text' autocomplete='off' class='inputCadastro' 
                   placeholder='Ex. O Pequeno Principe'>
               </div>
             ";
     }
   }
 
-  public function Input_Autor_Doacao($doacao = new Doacao())
-  {
+ public function Input_Autor_Doacao($doacao = new Doacao())
+{
     $controller = new DoacaoController;
     $doacoes = $controller->ListarDoacoes($doacao);
 
     if ($doacao != new Doacao) {
-      echo "
-              <div>
+        echo "
+            <div>
                 <label for='nm_autor' class='labelForm'>Autor:</label>
-                <input name='nm_autor' type='text' class='inputCadastro'  
+                <input name='nm_autor' type='text' autocomplete='off' class='inputCadastro'  
                   placeholder='Ex. Antoine de Saint-Exupéry' 
                   value ='{$doacoes[0]->livro->autores[0]->nm_autor}' readonly>
-              </div>
-            ";
+            </div>
+        ";
     } else {
-      echo "
-              <div>
+        echo "
+            <div>
                 <label for='nm_autor' class='labelForm'>Autor:</label>
-                <input name='nm_autor' type='text' class='inputCadastro'  
-                  placeholder='Ex. Antoine de Saint-Exupéry'>
-              </div>
-            ";
+                <div class='autocomplete-container'>
+                    <input name='nm_autor' type='text' autocomplete='off' id='autorInput' class='inputCadastro' placeholder='Ex. Antoine de Saint-Exupéry'>
+                    <div class='autocomplete-list' id='autorSugestoes'></div>
+                </div>
+            </div>
+        ";
     }
-  }
+}
+
 }

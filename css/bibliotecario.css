@@ -31,7 +31,6 @@ h1 {
 }
 
 li {
-
   font-family: "Inter";
   font-size: 1rem;
   cursor: default;
@@ -922,6 +921,47 @@ aside br {
   align-items: flex-start;
   gap: var(--gap);
 }
+
+/*---------------------------autocomplete--------------------------------------------*/
+
+.autocomplete-container {
+    position: relative;
+}
+
+.autocomplete-container input{
+    width: 100%;
+    border-radius: var(--radius);
+    padding: var(--gap);
+    border: solid 1px var(--bege);
+}
+
+.autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--azul);
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    color: var(--branco);
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 999;
+    display: none;
+}
+
+.autocomplete-item {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-family: "Inter";
+}
+
+.autocomplete-item:hover {
+    background: var(--azul-hover);
+    transition: ease-in;
+}
+
 
 /*------------------------------------------------------------------------------------*/
 .resultadoPesquisa {

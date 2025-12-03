@@ -227,7 +227,7 @@ if ($cadastro) {
                 <div class="formDeLado">
                     <div>
                         <label for="isbn" class="labelForm">ISBN:</label>
-                        <input id="isbn" name="isbn" type="text" class="inputCadastro" placeholder="Ex. 9788535914849">
+                        <input id="isbn" name="isbn" type="text" class="inputCadastro" autocomplete="off" placeholder="Ex. 9788535914849">
                     </div>
                     <button type="button" id="buscarISBN" class="btnRosa">Buscar ISBN</button>
                 </div>
@@ -235,13 +235,12 @@ if ($cadastro) {
                 <?php
                 $input_titulo = new LivrosDoadosView;
                 $input_titulo->Input_Livro_Doacao(new Doacao($cd_doacao));
-
                 ?>
 
                 <div class="formDeLado">
                     <div>
                         <label for="cd_autor" class="labelForm">Código Autor:</label>
-                        <input name="cd_autor" type="text" class="inputCadastro" placeholder="Ex.1234">
+                        <input name="cd_autor" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex.1234">
                     </div>
 
                     <?php
@@ -251,52 +250,71 @@ if ($cadastro) {
                     ?>
 
                     <div>
-                        <label for="cd_assunto" class="labelForm">Código Assunto</label>
-                        <input name="cd_assunto" type="text" class="inputCadastro" placeholder="Ex. 1">
+                        <label for="cd_assunto" class="labelForm">Código Assunto:</label>
+                        <input name="cd_assunto" type="text" class="inputCadastro" autocomplete="off" placeholder="Ex. 1">
                     </div>
-
                     <div>
                         <label for="nm_assunto" class="labelForm">Assunto:</label>
-                        <input name="nm_assunto" type="text" class="inputCadastro" placeholder="Ex. Reflexão">
+                        <div class="autocomplete-container">
+                            <input name="nm_assunto" type="text" id="assuntoInput" autocomplete="off" class="autocomplete" placeholder="Ex. História">
+                            <div class="autocomplete-list" id="assuntoSugestoes"></div>
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="formDeLado">
                     <div>
                         <label for="cd_editora" class="labelForm">Código Editora:</label>
-                        <input name="cd_editora" type="text" class="inputCadastro" placeholder="Ex. 1">
+                        <input name="cd_editora" autocomplete='off' type="text" class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_editora" class="labelForm">Editora:</label>
-                        <input name="nm_editora" type="text" class="inputCadastro" placeholder="Ex. Camelot Editora">
+                        <div class="autocomplete-container">
+                            <input name="nm_editora" autocomplete='off' type="text" id="editoraInput" class="autocomplete" placeholder="Ex. Record">
+                            <div class="autocomplete-list" id="editoraSugestoes"></div>
+                        </div>
                     </div>
+
                     <div>
                         <label for="cd_colecao" class="labelForm">Código Coleção:</label>
-                        <input name="cd_colecao" type="text" class="inputCadastro" placeholder="Ex. 1">
+                        <input name="cd_colecao" autocomplete='off' type="text" class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_colecao" class="labelForm">Coleção:</label>
-                        <input name="nm_colecao" type="text" class="inputCadastro" placeholder="Ex. Volume Único">
+                        <div class="autocomplete-container">
+                            <input name="nm_colecao" autocomplete='off' type="text" id="colecaoInput" class="autocomplete" placeholder="Ex. Coleção Clássicos">
+                            <div class="autocomplete-list" id="colecaoSugestoes"></div>
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="formDeLado">
                     <div>
                         <label for="cd_idioma" class="labelForm">Código Idioma:</label>
-                        <input name="cd_idioma" type="text" class="inputCadastro" placeholder="Ex. 1234">
+                        <input name="cd_idioma" autocomplete='off' type="text" class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_idioma" class="labelForm">Idioma:</label>
-                        <input name="nm_idioma" type="text" class="inputCadastro" placeholder="Ex. Português">
+                        <div class="autocomplete-container">
+                            <input name="nm_idioma" autocomplete='off' type="text" id="idiomaInput" class="autocomplete" placeholder="Ex. Português">
+                            <div class="autocomplete-list" id="idiomaSugestoes"></div>
+                        </div>
                     </div>
+
                     <div>
                         <label for="cd_genero" class="labelForm">Código Gênero:</label>
-                        <input name="cd_genero" type="text" class="inputCadastro" placeholder="Ex. 1">
+                        <input name="cd_genero" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
                     </div>
                     <div>
                         <label for="nm_genero" class="labelForm">Gênero:</label>
-                        <input name="nm_genero" type="text" class="inputCadastro" placeholder="Ex. Fantasia">
+                        <div class="autocomplete-container">
+                            <input name="nm_genero" type="text" autocomplete='off' id="generoInput" class="autocomplete" placeholder="Ex. Ficção Científica">
+                            <div class="autocomplete-list" id="generoSugestoes"></div>
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="formSinopse">
@@ -314,6 +332,8 @@ if ($cadastro) {
 
     </main>
 </body>
+
+<script src="js/componentesJS/autoComplete.js"></script>
 <script>
     document.getElementById('buscarISBN').addEventListener('click', async () => {
         const rawIsbn = document.getElementById('isbn').value.trim();
@@ -392,7 +412,7 @@ if ($cadastro) {
             'de': 'Alemão',
             'it': 'Italiano',
             'ja': 'Japonês',
-            'zh': 'Chinês', 
+            'zh': 'Chinês',
             'ru': 'Russo'
         };
         return map[c] || code;
