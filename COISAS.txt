@@ -1,20 +1,8 @@
 **TEM QUE FAZER PORRA**
 
-MOSTRAR QUEM ESTÁ COM O EMPRESTIMO NA PÁGINA DE VER EMPRESTIMOS -LUCAS
-AJUSTAR A PÁGINA DE ACEITAR/RECUSAR OS EVENTOS -LUCAS
-
-
-
-
-
 
 =========================SE LIGA GUYS==============================
 
-//mudar textos do aside do bibliotecario 
-//busca por ISBN com API
-//exibir a disponibilidade dos livros
-//adicionar sistema de sugestao nos forms do bibliotecario
-//centralizar os forms
 -mostrar de fato as bibliotecas da região 
 -tornar a interface mais intuitiva no geral
 -arrumar a altura das mensagens
@@ -31,30 +19,25 @@ AJUSTAR A PÁGINA DE ACEITAR/RECUSAR OS EVENTOS -LUCAS
 =========================SE LIGA GUYS 2 ==============================
 
 imagem renomeada com codigo do livro ////////////////////////////////////////////
-padronizar todos os textos
    /|\
     |
     |
     o Pedro pretende fazer esses mas ele aceita ajuda
 
+=========================SE LIGA GUYS 3 ==============================
+
 massa de teste boa ( com imagens)
 mais leitores
 efetuar reserva com diversos leitores
 e efetuar devolução de empréstimos
-============================================================
+   /|\
+    |
+    |
+    o Liam pretende fazer esses mas ele aceita ajuda
 
-
-COLOCAR QUE NÃO TEM NADA NO HISTORICO -QUALQUER UM (MENOS O LUCAS) 
-TAMBEM COLOCAR BARRA DE PESQUISA NA PARTE DOS LIVROS -QUALQUE UM
 
 
 ARRUMAR O LOGO PRA APARECER O I MELHOR -CLARA
-FAZER OS PUTS -LUCAS E CAUÃ
-
-ARRUMAR A PÁGINA TODOS OS LEITORES
-
-
-PELO AMOR DE DEUS TEM MUITA COISA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
 **SE PÁ FAZER**
 
