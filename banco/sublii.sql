@@ -101,7 +101,7 @@ CREATE TABLE exemplar(
     cd_exemplar INT,
     dt_insercao DATETIME,
     ic_reservado TINYTEXT,
-    /*qtd_exemplar INT,*/
+    qtd_exemplar INT,
     CONSTRAINT pk_exemplar PRIMARY KEY (cd_exemplar),
 	CONSTRAINT fk_biblioteca_livro FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca) ON UPDATE CASCADE,
     CONSTRAINT fk_livro_biblioteca FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE
@@ -181,7 +181,7 @@ CREATE TABLE genero_livro(
 	CONSTRAINT fk_genero FOREIGN KEY (cd_genero) REFERENCES genero(cd_genero) ON UPDATE CASCADE
 );
 
-/*
+
 CREATE TABLE favorito(
     cd_livro INT,
     cd_email_leitor INT,
@@ -197,13 +197,13 @@ CREATE TABLE favorito_leitor(
     CONSTRAINT fk_cd_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
 );
 
-/*CREATE TABLE favorito(
+CREATE TABLE favorito(
     cd_livro INT,
     cd_email VARCHAR(200),
 	CONSTRAINT pk_favorito PRIMARY KEY (cd_livro, cd_email),
     CONSTRAINT fk_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro),
 	CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
-);*/
+);
 
 CREATE TABLE favorito (
     cd_livro INT,
