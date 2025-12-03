@@ -354,7 +354,9 @@ nav {
 }
 
 .cardLeitor img{
-  height: 20vh  ;
+  object-fit: cover;
+  width: 10vw;
+  height: 20vh;
   border-radius: 100%;
 }
 
@@ -1679,8 +1681,7 @@ border: solid 1px var(--bege);
 }
 
 .areaCadastro {
- display: flex;
-  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
   transform: translate(-50%, -50%); 
