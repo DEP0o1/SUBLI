@@ -183,7 +183,7 @@ CREATE TABLE genero_livro(
 
 
 /*CREATE TABLE favorito(
-/*
+
 CREATE TABLE favorito(
     cd_livro INT,
     cd_email_leitor INT,
@@ -214,8 +214,8 @@ CREATE TABLE favorito (
     CONSTRAINT pk_favorito PRIMARY KEY (cd_livro, cd_email),
     CONSTRAINT fk_livro_favorito FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE,
     CONSTRAINT fk_leitor_favorito FOREIGN KEY (cd_email) REFERENCES leitor(cd_email) ON UPDATE CASCADE
-);*/
-*/
+);*/ 
+
 
 /*Leitores*/
 INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
@@ -261,10 +261,11 @@ INSERT INTO biblioteca VALUES (3, 'Biblioteca Municipal Alberto Souza','Praça P
 INSERT INTO biblioteca VALUES (4, 'Biblioteca do Sesc',' Rua Conselheiro Ribas, 136');
 
 /*Eventos*/
-INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 1,NOW(), 'SHBJHSDAUOHAFSIL', 1,'lucas@gmail.com', true);
-INSERT INTO evento VALUES ('Leitura de Livros de Romance', 2,NOW(), 'SHBJHSDAUOHAFSIL', 2,'lucas@gmail.com', false);
-INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'SHBJHSDAUOHAFSIL', 1,'pedro.favoritos@gmail.com', true);
-INSERT INTO evento VALUES ('Clube do Livro de Outubro', 4,NOW(), 'SHBJHSDAUOHAFSIL', 3,'lucas@gmail.com', NULL);
+INSERT INTO evento VALUES ('Leitura de Livros de Suspense', 1,NOW(), 'Um encontro dedicado aos amantes de mistério e tensão. Venha explorar histórias envolventes, discutir teorias, compartilhar interpretações e sentir a emoção dos melhores enredos de suspense. Uma experiência perfeita para quem gosta de boas tramas e reviravoltas inesperadas.', 1,'lucas@gmail.com', true);
+INSERT INTO evento VALUES ('Leitura de Livros de Romance', 2,NOW(), 'Um momento especial para quem aprecia histórias emocionantes e cheias de sentimentos. Participe para explorar narrativas apaixonantes, compartilhar interpretações, conversar sobre personagens marcantes e se envolver com tramas que aquecem o coração. Perfeito para quem gosta de amor em todas as suas formas.', 2,'mariana@gmail.com', false);
+INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'Um evento dedicado a apresentar meu trabalho literário, compartilhar o processo de criação e aproximar leitores da história por trás da obra. Uma oportunidade para conhecer o livro, esclarecer dúvidas, trocar ideias e celebrar a jornada da escrita.', 1,'pedro.favoritos@gmail.com', true);
+INSERT INTO evento VALUES ('Clube do Livro de Outubro', 4,NOW(), 'Um encontro especial para discutir a leitura escolhida do mês, compartilhar impressões, trocar ideias e mergulhar juntos nos temas, personagens e mensagens da obra. Um momento de conversa leve, descoberta e conexão entre leitores.', 3,'anny@gmail.com', NULL);
+INSERT INTO evento VALUES ('Escrita criativa de poesia', 5,NOW(), 'Um espaço para liberar a imaginação e explorar novas formas de expressão poética. Neste encontro, participantes experimentam técnicas de escrita, brincam com linguagem, ritmos e imagens, e desenvolvem sua própria voz literária. Ideal para quem deseja criar, sentir e transformar palavras em arte.', 1,'anny@gmail.com', false);
 
 -- ===== EDITORAS =====
 INSERT INTO editora (cd_editora, nm_editora) VALUES
@@ -553,6 +554,21 @@ INSERT INTO emprestimo VALUES(16,'2025-09-01','2025-10-05',NULL,'anny@gmail.com'
 INSERT INTO emprestimo VALUES(17,'2025-09-01','2025-10-05',NULL,'liam@gmail.com',3,2, true);
 INSERT INTO emprestimo VALUES(18,'2025-09-01','2025-10-05',NULL,'ana@gmail.com',2,3, true);
 INSERT INTO emprestimo VALUES(19,'2025-09-01','2025-10-05',NULL,'mariana@gmail.com',8,3, true);
+
+INSERT INTO emprestimo VALUES(20,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',2,1, false);
+INSERT INTO emprestimo VALUES(21,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',1,1, false);
+INSERT INTO emprestimo VALUES(22,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',7,1, false);
+INSERT INTO emprestimo VALUES(23,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',5,1, false);
+INSERT INTO emprestimo VALUES(24,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',11,1, false);
+INSERT INTO emprestimo VALUES(25,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',28,1, false);
+INSERT INTO emprestimo VALUES(26,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',25,1, false);
+INSERT INTO emprestimo VALUES(27,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',26,1, false);
+INSERT INTO emprestimo VALUES(28,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',13,1, false);
+INSERT INTO emprestimo VALUES(29,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',19,1, false);
+INSERT INTO emprestimo VALUES(30,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',2,1, false);
+INSERT INTO emprestimo VALUES(31,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',30,1, false);
+INSERT INTO emprestimo VALUES(32,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',17,1, false);
+
 /*
 INSERT INTO emprestimo VALUES(6,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',6,4, false);
 INSERT INTO emprestimo VALUES(7,'2025-09-01','2025-10-05','2025-10-01','pedro.favoritos@gmail.com',1,1, false);
