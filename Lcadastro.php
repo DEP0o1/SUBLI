@@ -138,7 +138,7 @@ if (
 
     <div>
         <label for="nm_senha">Senha:</label>
-        <input type="password" name="nm_senha" palceholder="*******" required>
+         <input type="password" name="nm_senha" placeholder="******" required>
     </div>
 
     <div class="areaBtn">
@@ -153,7 +153,7 @@ if (
 
     <div>
         <label for="cd_cpf">CPF:</label>
-        <input type="text" name="cd_cpf" placeholde="455.462.898-13" required>
+        <input type="text" name="cd_cpf" placeholder="455.462.898-13" required>
     </div>
 
     <div>
