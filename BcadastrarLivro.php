@@ -214,7 +214,7 @@ if ($cadastro) {
     require_once './complementos/menuBibliotecario.php'
     ?>
     <main>
-        <div class="areaCadastro"> 
+        
 
             <form method="POST" class="formAvancado1">
                 <div class="tituloFormCadastro">
@@ -335,7 +335,7 @@ if ($cadastro) {
     
                     </div>
                  </form>
-        </div>
+        
 
     </main>
 </body>
