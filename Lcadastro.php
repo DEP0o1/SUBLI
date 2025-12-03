@@ -52,6 +52,7 @@ if (
         );
 
         $cadastroRealizado = true;
+        
     }
 }
 
@@ -128,7 +129,7 @@ if (
 
     <div>
         <label for="cd_telefone">Telefone:</label>
-        <input type="text" name="cd_telefone" placeholder="Ex. 13-99999999" required>
+        <input type="text" name="cd_telefone" placeholder="Ex. 13-99999999" max="11" required>
     </div>
 
     <div>
@@ -157,14 +158,15 @@ if (
     </div>
 
     <div>
+        <label for="cd_cep">CEP:</label>
+        <input type="text" name="cd_cep" placeholder="13035-680" required>
+    </div>
+
+    <div>
         <label for="nm_endereco">Endereço:</label>
         <input type="text" name="nm_endereco" placeholder="Rua Hélio Ferreira 1014" required>
     </div>
 
-    <div>
-        <label for="cd_cep">CEP:</label>
-        <input type="text" name="cd_cep" placeholder="13035-680" required>
-    </div>
 
     <div class="areaBtn">
         <button type="button" class="btnRosa voltar">Voltar</button>
@@ -228,6 +230,15 @@ function Mensagem(texto, tipo, nomeElementoPai) {
     }, 3000);
 }
 
+function limitarDigitos(input, maxDigitos) {
+    input.addEventListener("input", () => {
+        let valor = input.value.replace(/\D/g, "");
+        if (valor.length > maxDigitos) {
+            valor = valor.slice(0, maxDigitos);
+        }
+        input.value = valor;
+    });
+}
 
 const steps = document.querySelectorAll(".step");
 const btnProximo = document.querySelectorAll(".proximo");
@@ -237,65 +248,157 @@ const progresso = document.querySelector(".progresso");
 let stepAtual = 0;
 
 function mostrarStep(n) {
-  steps.forEach((s, i) => {
-    s.classList.toggle("ativo", i === n);
-  });
+    steps.forEach((s, i) => {
+        s.classList.toggle("ativo", i === n);
+    });
 
-  progresso.style.width = `${((n + 1) / steps.length) * 100}%`;
+    progresso.style.width = `${((n + 1) / steps.length) * 100}%`;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const telefone = document.querySelector("input[name='cd_telefone']");
+    const cpf = document.querySelector("input[name='cd_cpf']");
+    const cep = document.querySelector("input[name='cd_cep']");
+    const endereco = document.querySelector("input[name='nm_endereco']");
+
+    if (telefone) limitarDigitos(telefone, 11);
+    if (cpf) limitarDigitos(cpf, 11);
+    if (cep) limitarDigitos(cep, 8);
+
+    if (cep) {
+        cep.addEventListener("input", async () => {
+            let valor = cep.value.replace(/\D/g, "");
+
+            if (valor.length === 8) {
+
+                try {
+                    const resposta = await fetch(`https://viacep.com.br/ws/${valor}/json/`);
+                    const dados = await resposta.json();
+
+                    if (dados.erro) {
+                        Mensagem("CEP inválido. Tente novamente.", "erro", ".FormLogin");
+                        endereco.value = "";
+                        return;
+                    }
+
+                    endereco.value = `${dados.logradouro}, ${dados.bairro}, ${dados.localidade} - ${dados.uf}`;
+
+                } catch (erro) {
+                    Mensagem("Erro ao consultar o CEP. Tente novamente.", "erro", ".FormLogin");
+                }
+            }
+        });
+    }
+});
+
 
 
 function validarStep1() {
-  const nome = steps[0].querySelector("input[name='nm_leitor']");
-  const data = steps[0].querySelector("input[name='dt_nascimento']");
-  if (!nome.value.trim()) { Mensagem("Preencha seu nome.", "erro", ".FormLogin"); return false; }
-  if (!data.value) { Mensagem("Informe sua data de nascimento.", "erro", ".FormLogin"); return false; }
-  return true;
+    const nome = steps[0].querySelector("input[name='nm_leitor']");
+    const data = steps[0].querySelector("input[name='dt_nascimento']");
+
+    if (!nome.value.trim()) { 
+        Mensagem("Preencha seu nome.", "erro", ".FormLogin"); 
+        return false; 
+    }
+
+    if (!data.value) { 
+        Mensagem("Informe sua data de nascimento.", "erro", ".FormLogin"); 
+        return false; 
+    }
+
+    return true;
 }
 
 function validarStep2() {
-  const telefone = steps[1].querySelector("input[name='cd_telefone']");
-  const email = steps[1].querySelector("input[name='cd_email']");
-  const senha = steps[1].querySelector("input[name='nm_senha']");
-  if (!telefone.value.trim()) { Mensagem("Informe seu telefone.", "erro", ".FormLogin"); return false; }
-  if (!email.value.trim()) { Mensagem("Informe seu email.", "erro", ".FormLogin"); return false; }
-  if (!senha.value.trim()) { Mensagem("Digite uma senha.", "erro", ".FormLogin"); return false; }
-  return true;
+    const telefone = steps[1].querySelector("input[name='cd_telefone']");
+    const email = steps[1].querySelector("input[name='cd_email']");
+    const senha = steps[1].querySelector("input[name='nm_senha']");
+
+    if (!telefone.value.trim()) { 
+        Mensagem("Informe seu telefone.", "erro", ".FormLogin"); 
+        return false; 
+    }
+
+    if (telefone.value.length !== 11) {
+        Mensagem("O telefone deve conter 11 dígitos.", "erro", ".FormLogin");
+        return false;
+    }
+
+    if (!email.value.trim()) { 
+        Mensagem("Informe seu email.", "erro", ".FormLogin"); 
+        return false; 
+    }
+
+    if (!senha.value.trim()) { 
+        Mensagem("Digite uma senha.", "erro", ".FormLogin"); 
+        return false; 
+    }
+
+    return true;
 }
 
 function validarStep3() {
-  const cpf = steps[2].querySelector("input[name='cd_cpf']");
-  const endereco = steps[2].querySelector("input[name='nm_endereco']");
-  const cep = steps[2].querySelector("input[name='cd_cep']");
-  if (!cpf.value.trim()) { Mensagem("Informe seu CPF.", "erro", ".FormLogin"); return false; }
-  if (!endereco.value.trim()) { Mensagem("Informe seu endereço.", "erro", ".FormLogin"); return false; }
-  if (!cep.value.trim()) { Mensagem("Informe o CEP.", "erro", ".FormLogin"); return false; }
-  return true;
+    const cpf = steps[2].querySelector("input[name='cd_cpf']");
+    const endereco = steps[2].querySelector("input[name='nm_endereco']");
+    const cep = steps[2].querySelector("input[name='cd_cep']");
+
+    if (!cpf.value.trim()) { 
+        Mensagem("Informe seu CPF.", "erro", ".FormLogin"); 
+        return false; 
+    }
+
+    if (cpf.value.length !== 11) {
+        Mensagem("O CPF deve conter 11 dígitos.", "erro", ".FormLogin");
+        return false;
+    }
+
+    if (!endereco.value.trim()) { 
+        Mensagem("Informe seu endereço.", "erro", ".FormLogin"); 
+        return false; 
+    }
+
+    if (!cep.value.trim()) { 
+        Mensagem("Informe o CEP.", "erro", ".FormLogin"); 
+        return false; 
+    }
+
+    if (cep.value.length !== 8) {
+        Mensagem("O CEP deve conter 8 dígitos.", "erro", ".FormLogin");
+        return false;
+    }
+
+    return true;
 }
 
 btnProximo.forEach((btn, i) => {
-  btn.addEventListener("click", () => {
-    if (i === 0 && !validarStep1()) return;
-    if (i === 1 && !validarStep2()) return;
-    if (i === 2 && !validarStep3()) return;
+    btn.addEventListener("click", () => {
 
-    if (stepAtual < steps.length - 1) {
-      stepAtual++;
-      mostrarStep(stepAtual);
-    }
-  });
+        if (i === 0 && !validarStep1()) return;
+        if (i === 1 && !validarStep2()) return;
+        if (i === 2 && !validarStep3()) return;
+
+        if (stepAtual < steps.length - 1) {
+            stepAtual++;
+            mostrarStep(stepAtual);
+        }
+    });
 });
 
 btnVoltar.forEach(btn => {
-  btn.addEventListener("click", () => {
-    if (stepAtual > 0) {
-      stepAtual--;
-      mostrarStep(stepAtual);
-    }
-  });
+    btn.addEventListener("click", () => {
+        if (stepAtual > 0) {
+            stepAtual--;
+            mostrarStep(stepAtual);
+        }
+    });
 });
 
 mostrarStep(stepAtual);
+
+
+
 
 </script>
 
