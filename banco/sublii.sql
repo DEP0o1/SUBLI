@@ -183,6 +183,8 @@ CREATE TABLE genero_livro(
 
 
 /*CREATE TABLE favorito(
+/*
+CREATE TABLE favorito(
     cd_livro INT,
     cd_email_leitor INT,
     CONSTRAINT pk_livro PRIMARY KEY (cd_livro),
@@ -213,6 +215,7 @@ CREATE TABLE favorito (
     CONSTRAINT fk_livro_favorito FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE,
     CONSTRAINT fk_leitor_favorito FOREIGN KEY (cd_email) REFERENCES leitor(cd_email) ON UPDATE CASCADE
 );*/
+*/
 
 /*Leitores*/
 INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
@@ -394,7 +397,7 @@ INSERT INTO genero_livro (cd_livro, cd_genero) VALUES
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
 (4, 4), -- Vidas Secas - Graciliano Ramos
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
-(6, 6), -- Eu, Robô - Isaac Asimov*/
+(6, 6), -- Eu, Robô - Isaac Asimov
 (7, 1),  -- Dom Casmurro - Ficção
 (8, 1),  -- 1984 - Ficção (Distopia)
 (9, 6),  -- A Arte da Guerra - História
@@ -428,7 +431,7 @@ INSERT INTO assunto_livro (cd_livro, cd_assunto) VALUES
 (3, 3), -- O Pequeno Príncipe - Saint-Exupéry
 (4, 4), -- Vidas Secas - Graciliano Ramos
 (5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
-(6, 6), -- Eu, Robô - Isaac Asimov*/
+(6, 6), -- Eu, Robô - Isaac Asimov
 (7, 1),  -- Dom Casmurro - Literatura Brasileira
 (8, 8),  -- 1984 - Política
 (9, 3),  -- A Arte da Guerra - Filosofia
@@ -585,6 +588,3 @@ select * from biblioteca;
 select * from evento;
 select * from leitor;
 */
-
-
-

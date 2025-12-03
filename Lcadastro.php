@@ -397,9 +397,6 @@ btnVoltar.forEach(btn => {
 
 mostrarStep(stepAtual);
 
-
-
-
 </script>
 
 </body>

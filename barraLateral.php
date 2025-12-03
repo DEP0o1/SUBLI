@@ -20,7 +20,6 @@ $cd_email = $_SESSION['leitor'];
     <img src="<?=$src_imagem?>" alt="Imagem de Perfil de <?=$nomeCompleto?>" />
     <h1>Olá, <?=$nomeCompleto?>!</h1>
     <div class="codigoIdPerfil">
-      <span class="material-symbols-outlined"> assignment_ind </span> 
     </div>
 
   </div>
