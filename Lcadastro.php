@@ -181,11 +181,6 @@ if (
         <input type="file" name="comprovante">
     </div>
 
-    <div>
-        <label for="foto">Foto de perfil:</label>
-        <input type="file" name="foto">
-    </div>
-
     <div class="areaBtn">
         <button type="button" class="btnRosa voltar">Voltar</button>
         <button type="submit" class="btnRosa">Cadastrar</button>

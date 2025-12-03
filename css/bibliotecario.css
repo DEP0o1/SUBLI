@@ -1680,7 +1680,7 @@ border: solid 1px var(--bege);
 
 .areaCadastro {
  display: flex;
-  width: auto;
+  width: 100%;
   align-items: center;
   justify-content: center;
   transform: translate(-50%, -50%); 
@@ -1688,7 +1688,6 @@ border: solid 1px var(--bege);
   top: 50%;
   left: 50%;
   height: fit-content;
-  width: fit-content;
   border-radius: var(--radius);
   z-index: 9999;
   position: fixed;

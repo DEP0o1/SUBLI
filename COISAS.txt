@@ -32,21 +32,20 @@ imagem renomeada com codigo do livro ///////////////////////////////////////////
 =========================SE LIGA GUYS 2 ==============================
 
 barra lateral em tudoB
-upload de foto no cadastro
 padronizar todos os cadastros
 padronizar todos os textos
 placeholder nos input
 substituir o terry.webp
-massa de teste boa ( com imagens)
-mais leitores
-efetuar reserva com diversos leitores
-e efetuar devolução de empréstimos
 
    /|\
     |
     |
     o Pedro pretende fazer esses mas ele aceita ajuda
 
+massa de teste boa ( com imagens)
+mais leitores
+efetuar reserva com diversos leitores
+e efetuar devolução de empréstimos
 ============================================================
 
 

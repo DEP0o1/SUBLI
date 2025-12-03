@@ -85,10 +85,19 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
     $controller = new LeitorController;
     $leitores = $controller->ListarLeitores($leitor);
 
-   
-
+    
     foreach($leitores as $Leitor){
-         
+        $caminho_imagem_padrao = "img/perfil_padrao"; 
+    
+        if (empty($leitores)) {
+            return;
+        }
+    
+        $caminho_imagem_leitor = "img/perfil_$Leitor->cd_email"; 
+    
+        $src_imagem = file_exists($caminho_imagem_leitor) 
+            ? $caminho_imagem_leitor 
+            : $caminho_imagem_padrao;
         if($ignorar == $Leitor->cd_email){
         continue;
     }
@@ -99,7 +108,7 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
         <section class='outrosLeitores'>
             <div class='leitorLinha'>
                 <div class='infoPequena'>
-                    <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
+                    <img src='$src_imagem' alt=''>
                     <p>$Leitor->nm_leitor</p>
                 </div>
 

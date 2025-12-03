@@ -53,13 +53,13 @@ public function ExibirReservas($reserva= new Reserva){
 
 
         <div class='areaTituloLivro'>
-                    <label for='cd_email' class='tituloForm'>Email do Leitor:</label>
-                    <input name='cd_email' type='text' class='inputForm' value ='{$reservas[0]->leitor->cd_email}' readonly>
+                    <label for='cd_email' class='labelForm'>Email do Leitor:</label>
+                    <input name='cd_email' type='text' class='inputCadastro' value ='{$reservas[0]->leitor->cd_email}' readonly>
                 </div>
 
                 <div class='areaAutorLivro'>
-                    <label for='cd_livro'class='tituloForm'>Código do Livro:</label>
-                    <input name='cd_livro' type='text' class='inputForm' value ='{$reservas[0]->livro->cd_livro}' readonly>
+                    <label for='cd_livro'class='labelForm'>Código do Livro:</label>
+                    <input name='cd_livro' type='text' class='inputCadastro' value ='{$reservas[0]->livro->cd_livro}' readonly>
                 </div>
         ";
         }
@@ -68,13 +68,13 @@ public function ExibirReservas($reserva= new Reserva){
             echo
         "
         <div class='areaTituloLivro'>
-                    <label for='cd_email' class='tituloForm'>Email do Leitor:</label>
-                    <input name='cd_email' type='text' class='inputForm' placeholder='pedro@gmail.com'>
+                    <label for='cd_email' class='labelForm'>Email do Leitor:</label>
+                    <input name='cd_email' type='text' class='inputCadastro' placeholder='pedro@gmail.com'>
                 </div>
 
                 <div class='areaAutorLivro'>
-                    <label for='cd_livro'class='tituloForm'>Código do Livro:</label>
-                    <input name='cd_livro' type='text' class='inputForm' placeholder='1'>
+                    <label for='cd_livro'class='labelForm'>Código do Livro:</label>
+                    <input name='cd_livro' type='text' class='inputCadastro' placeholder='1'>
                 </div>
         ";
         }

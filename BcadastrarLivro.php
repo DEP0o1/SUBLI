@@ -214,123 +214,128 @@ if ($cadastro) {
     require_once './complementos/menuBibliotecario.php'
     ?>
     <main>
+        <div class="areaCadastro"> 
 
-
-
-        <form method="POST" class="formAvancado3">
-            <div class="tituloFormCadastro">
-                <h1>Cadastrar Livro </h1>
-                <hr>
-            </div>
-
-            <section class="areaInput2">
-                <div class="formDeLado">
-                    <div>
-                        <label for="isbn" class="labelForm">ISBN:</label>
-                        <input id="isbn" name="isbn" type="text" class="inputCadastro" autocomplete="off" placeholder="Ex. 9788535914849">
-                    </div>
-                    <button type="button" id="buscarISBN" class="btnRosa">Buscar ISBN</button>
-                </div>
-
-                <?php
-                $input_titulo = new LivrosDoadosView;
-                $input_titulo->Input_Livro_Doacao(new Doacao($cd_doacao));
-                ?>
-
-                <div class="formDeLado">
-                    <div>
-                        <label for='cd_autor' class='labelForm'>Código Autor:</label>
-                        <input name='cd_autor' type='text' id='cd_autor' class='inputCadastro' placeholder='Ex. 1' />
-                    </div>
-
-                    <?php
-                    $input_autor = new LivrosDoadosView;
-                    $input_autor->Input_Autor_Doacao(new Doacao($cd_doacao));
-
-                    ?>
-
-                    <div>
-                        <label for="cd_assunto" class="labelForm">Código Assunto:</label>
-                        <input id="cd_assunto" name="cd_assunto" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
-                    </div>
-                    <div>
-                        <label for="nm_assunto" class="labelForm">Assunto:</label>
-                        <div class="autocomplete-container">
-                            <input id="assuntoInput" name="nm_assunto" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. História">
-                            <div class="autocomplete-list" id="assuntoSugestoes"></div>
+            <form method="POST" class="formAvancado1">
+                <div class="tituloFormCadastro">
+                    <h1>Cadastrar Livro </h1>
+                    <hr>
+                    <section class="areaInput">
+                        <div class="areaAutorLivro">
+                            <div class="areaAutorLivro">
+                                <label for="isbn" class="labelForm">ISBN:</label>
+                                <input id="isbn" name="isbn" type="text" class="inputCadastro" autocomplete="off" placeholder="Ex. 9788535914849">
+                                <button type="button" id="buscarISBN" class="btnRosa" style="margin-top: 20px;">Buscar ISBN</button>
+                            </div>
                         </div>
-                    </div>
-
-                </div>
-
-                <div class="formDeLado">
-                    <div>
-                        <label for="cd_editora" class="labelForm">Código Editora:</label>
-                        <input id="cd_editora" name="cd_editora" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
-                    </div>
-                    <div>
-                        <label for="nm_editora" class="labelForm">Editora:</label>
-                        <div class="autocomplete-container">
-                            <input id="editoraInput" name="nm_editora" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Record">
-                            <div class="autocomplete-list" id="editoraSugestoes"></div>
+        
+                        <?php
+                        $input_titulo = new LivrosDoadosView;
+                        $input_titulo->Input_Livro_Doacao(new Doacao($cd_doacao));
+                        ?>
+        
+                        <div class="formDeLado">
+                            <div>
+                                <label for='cd_autor' class='labelForm'>Código Autor:</label>
+                                <input name='cd_autor' type='text' id='cd_autor' class='inputCadastro' placeholder='Ex. 1' />
+                            </div>
+        
+                            <?php
+                            $input_autor = new LivrosDoadosView;
+                            $input_autor->Input_Autor_Doacao(new Doacao($cd_doacao));
+        
+                            ?>
+        
+                            <div>
+                                <label for="cd_assunto" class="labelForm">Código Assunto:</label>
+                                <input id="cd_assunto" name="cd_assunto" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
+                            </div>
+                            <div>
+                                <label for="nm_assunto" class="labelForm">Assunto:</label>
+                                <div class="autocomplete-container">
+                                    <input id="assuntoInput" name="nm_assunto" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. História">
+                                    <div class="autocomplete-list" id="assuntoSugestoes"></div>
+                                </div>
+                            </div>
+        
                         </div>
-                    </div>
-
-                    <div>
-                        <label for="cd_colecao" class="labelForm">Código Coleção:</label>
-                        <input id="cd_colecao" name="cd_colecao" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
-                    </div>
-                    <div>
-                        <label for="nm_colecao" class="labelForm">Coleção:</label>
-                        <div class="autocomplete-container">
-                            <input id="colecaoInput" name="nm_colecao" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Coleção Clássicos">
-                            <div class="autocomplete-list" id="colecaoSugestoes"></div>
+        
+                        <div class="formDeLado">
+                            <div>
+                                <label for="cd_editora" class="labelForm">Código Editora:</label>
+                                <input id="cd_editora" name="cd_editora" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
+                            </div>
+                            <div>
+                                <label for="nm_editora" class="labelForm">Editora:</label>
+                                <div class="autocomplete-container">
+                                    <input id="editoraInput" name="nm_editora" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Record">
+                                    <div class="autocomplete-list" id="editoraSugestoes"></div>
+                                </div>
+                            </div>
+        
+                            <div>
+                                <label for="cd_colecao" class="labelForm">Código Coleção:</label>
+                                <input id="cd_colecao" name="cd_colecao" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
+                            </div>
+                            <div>
+                                <label for="nm_colecao" class="labelForm">Coleção:</label>
+                                <div class="autocomplete-container">
+                                    <input id="colecaoInput" name="nm_colecao" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Coleção Clássicos">
+                                    <div class="autocomplete-list" id="colecaoSugestoes"></div>
+                                </div>
+                            </div>
+        
                         </div>
-                    </div>
-
-                </div>
-
-                <div class="formDeLado">
-                    <div>
-                        <label for="cd_idioma" class="labelForm">Código Idioma:</label>
-                        <input id="cd_idioma" name="cd_idioma" autocomplete='off' type="text" class="inputCadastro" placeholder="Ex. 1">
-                    </div>
-                    <div>
-                        <label for="nm_idioma" class="labelForm">Idioma:</label>
-                        <div class="autocomplete-container">
-                            <input id="idiomaInput" name="nm_idioma" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Português">
-                            <div class="autocomplete-list" id="idiomaSugestoes"></div>
+        
+                        <div class="formDeLado">
+                            <div>
+                                <label for="cd_idioma" class="labelForm">Código Idioma:</label>
+                                <input id="cd_idioma" name="cd_idioma" autocomplete='off' type="text" class="inputCadastro" placeholder="Ex. 1">
+                            </div>
+                            <div>
+                                <label for="nm_idioma" class="labelForm">Idioma:</label>
+                                <div class="autocomplete-container">
+                                    <input id="idiomaInput" name="nm_idioma" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Português">
+                                    <div class="autocomplete-list" id="idiomaSugestoes"></div>
+                                </div>
+                            </div>
+        
+                            <div>
+                                <label for="cd_genero" class="labelForm">Código Gênero:</label>
+                                <input id="cd_genero" name="cd_genero" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
+                            </div>
+                            <div>
+                                <label for="nm_genero" class="labelForm">Gênero:</label>
+                                <div class="autocomplete-container">
+                                    <input id="generoInput" name="nm_genero" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Ficção Científica">
+                                    <div class="autocomplete-list" id="generoSugestoes"></div>
+                                </div>
+                            </div>
+        
                         </div>
-                    </div>
+        
+                        <div class="formSinopse">
+                            <label class="labelForm">Sinopse:</label>
+                            <textarea id="sinopse" name="ds_sinopse" class="inputCadastro" placeholder="Coloque a Sinopse aqui!"></textarea>
 
-                    <div>
-                        <label for="cd_genero" class="labelForm">Código Gênero:</label>
-                        <input id="cd_genero" name="cd_genero" type="text" autocomplete='off' class="inputCadastro" placeholder="Ex. 1">
-                    </div>
-                    <div>
-                        <label for="nm_genero" class="labelForm">Gênero:</label>
-                        <div class="autocomplete-container">
-                            <input id="generoInput" name="nm_genero" autocomplete='off' type="text" class="autocomplete" placeholder="Ex. Ficção Científica">
-                            <div class="autocomplete-list" id="generoSugestoes"></div>
+                            <!-- NÃO SEI PQ TA AQUI NEM SE VAI FUNCIONAR ENT DEIXEI COMENTADO -->
+                            <!-- <button type="button" id="translateButton">Traduzir</button> -->
                         </div>
+        
+        
+                        <div class="areaBtn">
+                            <button class="btnRosa">Cadastrar</button>
+                            <?php
+                            echo $livro;
+                            ?>
+                        </div>
+        
+                            </section>
                     </div>
-
-                </div>
-
-                <div class="formSinopse">
-                    <label class="labelForm">Sinopse:</label>
-                    <textarea id="sinopse" name="ds_sinopse" class="inputCadastro" placeholder="Coloque a Sinopse aqui!"></textarea>
-                    <button type="button" id="translateButton">Traduzir</button>
-                </div>
-
-
-                <div class="areaBtn">
-                    <button class="btnRosa">Cadastrar</button>
-                    <?php
-                    echo $livro;
-                    ?>
-                </div>
-        </form>
+    
+                    </div>
+                 </form>
+        </div>
 
     </main>
 </body>

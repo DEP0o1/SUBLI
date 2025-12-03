@@ -62,54 +62,60 @@ $campos = 0;
 </head>
 
 <body>
-<div class="areaCadastro">
+    <?php
+    require_once './complementos/menuBibliotecario.php';   
+    ?>
+<main>
+    <div class="areaCadastro">
 
-        <form method="POST" class="formAvancado1">
-            <div class="tituloFormCadastroEvento">
-                <h1>Cadastrar Evento </h1>
-                <hr>
-            </div>
-            
-            <section class="areaInput">
-                <div class="areaTituloLivro">
-                    <label class="labelForm">Nome do Evento:</label>
-                    <input name= "nm_evento" type="text" class="inputForm" placeholder="Inauguração do meu livro pog">
+            <form method="POST" class="formAvancado1">
+                <div class="tituloFormCadastro">
+                    <h1>Cadastrar Evento </h1>
+                    <hr>
+                    <section class="areaInput">
+                        <div class="areaTituloLivro">
+                            <label class="labelForm">Nome do Evento:</label>
+                            <input name= "nm_evento" type="text" class="inputCadastro"placeholder="Inauguração do meu livro pog">
+                        </div>
+        
+                        <div class="areaAutorLivro">
+                            <label class="labelForm">Email do criador do evento:</label>
+                            <input name= "cd_email" type="text" class="inputCadastro"placeholder="Pedro Mingel">
+                        </div>
+        
+        
+                        <div class="areaAutorLivro">
+                            <label class="labelForm">Descrição:</label>
+                            <input name= "ds_evento" type="text" class="inputCadastro"placeholder="21/02/2025">
+                        </div>
+        
+                        <div class="areaAutorLivro">
+                            <label class="labelForm">Horário:</label>
+                            <input type="time" class="inputCadastro"placeholder="21/02/2025">
+                        </div>
+        
+                        <div class="areaAutorLivro">
+                            <label class="labelForm">Data:</label>
+                            <input name = "dt_evento" type="date" class="inputCadastro"placeholder="21/02/2025">
+                        </div>
+        
+                        <div class="areaBtn">
+                            <button class="btnRosa">Registrar</button>
+                        </div>
+                    <?php    
+                        if($campos == 4 && $conferencia == []){
+                        echo $evento;
+                        }
+                
+                ?>
+                    </section>
                 </div>
-
-                <div class="areaAutorLivro">
-                    <label class="labelForm">Email do criador do evento:</label>
-                    <input name= "cd_email" type="text" class="inputForm" placeholder="Pedro Mingel">
-                </div>
-
-
-                <div class="areaAutorLivro">
-                    <label class="labelForm">Descrição:</label>
-                    <input name= "ds_evento" type="text" class="inputForm" placeholder="21/02/2025">
-                </div>
-
-                <div class="areaAutorLivro">
-                    <label class="labelForm">Horário:</label>
-                    <input type="time" class="inputForm" placeholder="21/02/2025">
-                </div>
-
-                <div class="areaAutorLivro">
-                    <label class="labelForm">Data:</label>
-                    <input name = "dt_evento" type="date" class="inputForm" placeholder="21/02/2025">
-                </div>
-
-                <div class="areaBtn">
-                    <button class="btnRosa">Registrar</button>
-                </div>
-            <?php    
-                if($campos == 4 && $conferencia == []){
-                echo $evento;
-                }
-          
-          ?>
-            </section>
-        </form>
+                
+            </form>
 
     </div>
+
+</main>
 </body>
 
 </html>

@@ -149,40 +149,53 @@ if (isset($_REQUEST['dt_devolucao_esperada'])) {
 </head>
 
 <body>
+    <?php
+    require_once './complementos/menuBibliotecario.php';   
+    ?>
+    <main>
 
-    <!-- CONTAINER DA MENSAGEM FORA DO FORM -->
-    <?php if ($campos == 3 && isset($emprestimo)) : ?>
-        <div id="container-mensagem">
-            <?php echo $emprestimo; ?>
-        </div>
-    <?php endif; ?>
 
-    <div class="areaCadastro">
-        <form method="POST" action="" class="formAvancado">
-
-            <div class="pesquisaAvancada">
-                <h1>Registrar Empréstimo -</h1>
+        <!-- CONTAINER DA MENSAGEM FORA DO FORM -->
+        <?php if ($campos == 3 && isset($emprestimo)) : ?>
+            <div id="container-mensagem">
+                <?php echo $emprestimo; ?>
             </div>
+        <?php endif; ?>
 
+<div class="areaCadastro">
+    <form method="POST" action="" class="formAvancado1">
+
+        <div class="tituloFormCadastro">
+            <h1>Registrar Empréstimo </h1>
+            <hr>
             <section class="areaInput">
-
+    
                 <?php
                 $input_reserva = new ReservaView;
                 $input_reserva->Input_Livro_Reserva(new Reserva($cd_reserva));
                 ?>
-
+    
                 <div class="areaAutorLivro">
-                    <label for="dt_devolucao_esperada" class="tituloForm">Data de Devolução:</label>
-                    <input name="dt_devolucao_esperada" type="date" class="inputForm" placeholder="25/12/2025">
+                    <label for="dt_devolucao_esperada" class="labelForm">Data de Devolução:</label>
+                    <input name="dt_devolucao_esperada" type="date" class="inputCadastro" placeholder="25/12/2025">
                 </div>
-
+    
                 <div class="areaBtn">
                     <button class="btnRosa">Registrar</button>
                 </div>
-
+    
             </section>
-        </form>
-    </div>
+
+
+        </div>
+
+    </form>
+</div>
+
+    </main>
+
+
+
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
