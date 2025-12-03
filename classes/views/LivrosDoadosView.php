@@ -83,7 +83,7 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
     echo "
             <div class='divRowItem'>
                 <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt='Foto do Doador' class='miniPerfil'>
-                <h2>{$Doacao->leitor->nm_leitor}</h2>
+                <p>{$Doacao->leitor->nm_leitor} <span>(Doador)</span></p>
             </div>
 
             <div class='divRowItemBtn'>

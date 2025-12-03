@@ -24,6 +24,7 @@ require('config.php');
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/leitor.css">
     <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
     <script type="module" src="js/componentesJS/acesso.js"></script>
 </head>
 

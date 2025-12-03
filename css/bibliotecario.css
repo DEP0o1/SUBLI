@@ -940,6 +940,8 @@ aside br {
     border: solid 1px var(--bege);
 }
 
+
+
 .autocomplete-list {
     position: absolute;
     top: 100%;
@@ -2042,10 +2044,7 @@ height: 65vh;
 .dadosLivroDoado{
   display: flex;
   flex-direction: column;
-  gap: 2%;
-  /* background-color: aqua; */
-  padding: 3%;
- padding-bottom: 3%;
+  gap: var(--gap);
 }
 
 .dadosLivroDoado h1 {
@@ -2131,24 +2130,19 @@ height: 65vh;
   padding: 0 ;
 }
 
-.dadosLivroDoado h2 {
-  font-style: none;
-  font-weight: lighter;
-}
-
 .miniPerfil{
-  height: 4vh;
-  width: 4vh;
+  height: 5vh;
+  width: 5vh;
   border-radius: 100%;
-
+  object-fit: cover;
 }
+
 
 .divRowItem{
 display: flex;
 flex-direction: row;
 gap: var(--gap);
-align-items: flex-start;
-padding: 1%;
+align-items: center;
 width: fit-content;
 }
 
@@ -2161,26 +2155,15 @@ padding: 1%;
 width: fit-content;
 }
 
-
 .divRowItemBtn{
 display: flex;
 flex-direction: row;
 gap: var(--gap);
 align-items: center;
-padding-top: 5%;
-}
-
-.divRowItem h2 {
-  font-family: kurale;
-  font-weight: normal;
 }
 
 .divRowItem span {
   color: var(--vinho)
-}
-
-.divRowItem p {
-font-size: 0.75rem;
 }
 
 .btnBranco {

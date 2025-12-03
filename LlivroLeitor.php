@@ -66,7 +66,7 @@ if (isset($_REQUEST['enviado'])) {
                         <span class='material-symbols-outlined'>book</span>
                         <h1>Reserva Efetuada</h1>
                       </div>
-                      <p>Sua reserva foi feita com sucesso! Retire este livro na biblioteca em até 3 dias!</p>
+                      <p>Sua reserva foi feita com sucesso! Sua aprovação será enviada por e-mail!</p>
                       
                     </div>";
                 } 

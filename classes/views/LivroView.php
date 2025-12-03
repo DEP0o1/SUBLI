@@ -231,7 +231,7 @@ echo"
             $exemplar = $exemplarcontroller->ContarExemplares(new Exemplar($Livro->cd_livro, $cd_biblioteca));
           }
           echo"
-              Quantidade de Exemplares: {$exemplar[0]['COUNT(*)']}
+              <p>Quantidade de Exemplares: {$exemplar[0]['COUNT(*)']}</p>
         
 
             <form class='btnEmprestimo' method='GET' action=''>

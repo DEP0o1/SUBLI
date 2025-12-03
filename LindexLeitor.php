@@ -34,9 +34,6 @@ if (empty($assunto2)) $assunto2 = null;
 <body>
     <?php
     include_once('./complementos/menuMobileLeitor.php');
-
-
-
     ?>
     <main>
         <section class="banner">

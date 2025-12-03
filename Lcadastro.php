@@ -67,10 +67,10 @@ if (
   <title>SUBLI - Cadastro</title>
   <link rel="stylesheet" href="css/leitor.css">
   <link rel="stylesheet" href="css/mobile.css">
+  <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
   <script src="js/componentesJS/header.js"></script>
 
   <style>
-    
     .step {
       visibility: hidden;
       height: 0;
