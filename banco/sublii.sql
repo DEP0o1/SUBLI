@@ -101,7 +101,7 @@ CREATE TABLE exemplar(
     cd_exemplar INT,
     dt_insercao DATETIME,
     ic_reservado TINYTEXT,
-    /*qtd_exemplar INT,*/
+    qtd_exemplar INT,
     CONSTRAINT pk_exemplar PRIMARY KEY (cd_exemplar),
 	CONSTRAINT fk_biblioteca_livro FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca) ON UPDATE CASCADE,
     CONSTRAINT fk_livro_biblioteca FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE
@@ -181,7 +181,7 @@ CREATE TABLE genero_livro(
 	CONSTRAINT fk_genero FOREIGN KEY (cd_genero) REFERENCES genero(cd_genero) ON UPDATE CASCADE
 );
 
-/*
+
 CREATE TABLE favorito(
     cd_livro INT,
     cd_email_leitor INT,
@@ -197,13 +197,13 @@ CREATE TABLE favorito_leitor(
     CONSTRAINT fk_cd_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro)
 );
 
-/*CREATE TABLE favorito(
+CREATE TABLE favorito(
     cd_livro INT,
     cd_email VARCHAR(200),
 	CONSTRAINT pk_favorito PRIMARY KEY (cd_livro, cd_email),
     CONSTRAINT fk_livro FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro),
 	CONSTRAINT fk_leitor FOREIGN KEY (cd_email) REFERENCES leitor(cd_email)
-);*/
+);
 
 CREATE TABLE favorito (
     cd_livro INT,
@@ -216,9 +216,15 @@ CREATE TABLE favorito (
 
 /*Leitores*/
 INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
-INSERT INTO leitor VALUES ('pedro@gmail.com', 'Pedro Miguel', '59433067852', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
-INSERT INTO leitor VALUES ('lucas@gmail.com', 'Lucas', '59433067855', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
-INSERT INTO leitor VALUES ('caua@gmail.com', 'Cauã', '59433097850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
+INSERT INTO leitor VALUES ('pedro@gmail.com', 'Pedro Miguel', '57652987341', '13903890782', true, '123','20/3/2008','Rua Osvaldo Cochrane, nº155', '00000000');
+INSERT INTO leitor VALUES ('lucas@gmail.com', 'Lucas', '89265301925', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado, nº68', '00000000');
+INSERT INTO leitor VALUES ('caua@gmail.com', 'Cauã', '19287602634', '13903890782', true, '123','20/3/2008','Rua Oito, s/n', '00000000');
+INSERT INTO leitor VALUES ('arthur@gmail.com', 'Arhtur', '82736540912', '13903890782', true, '123','20/3/2008','Rua Alfaia Rodrigues. nº30', '00000000');
+INSERT INTO leitor VALUES ('anny@gmail.com', 'Anny', '92736452039', '13903890782', true, '123','20/3/2008','Rua Iara Nascimento Santni, nº 923', '00000000');
+INSERT INTO leitor VALUES ('luanna@gmail.com', 'Luanna', '01827364926', '13903890782', true, '123','20/3/2008','Rua Elisa Gonçalves, nº632', '00000000');
+INSERT INTO leitor VALUES ('ana@gmail.com', 'Ana', '67392835402', '13903890782', true, '123','20/3/2008','Rua Conselheiro Nébias, nº131', '00000000');
+INSERT INTO leitor VALUES ('mariana@gmail.com', 'Mariana', '84762098312', '13903890782', true, '123','20/3/2008','Rua São Paulo, nº1039', '00000000');
+INSERT INTO leitor VALUES ('liam@gmail.com', 'Liam', '54166842838', '13903890782', true, '123','20/3/2008','Rua Alagoas, nº111', '00000000');
 
 /*Generos*/
 INSERT INTO genero VALUES (1, 'Ficção');
@@ -282,32 +288,32 @@ INSERT INTO colecao (cd_colecao, nm_colecao) VALUES
 INSERT INTO autor (cd_autor, nm_autor) VALUES
 (1, 'Mary Renault'),
 (2, 'Harper Lee'),
-(3, 'Collen Hoover'),
+(3, 'Colleen Hoover'),
 (4, 'Jorge Amado'),
 (5, 'Jojo Moyes'),
-(6, 'Fernando Vilela'),
-(7,'sun tzu'),
+(6, 'Stela Barbieri'),
+(7,'Sun Tzu'),
 (8,'Antoine de Saint-Exupéry'),
 (9,'Dan Brown'),
 (10,'Patrick Rothfuss'),
-(11,'paulo coelho'),
-(12,'Steve Wonder'),
+(11,'Paulo Coelho'),
+(12,'Hal Elrod'),
 (13, 'Graciliano ramos'),
-(14, 'Graciliano ramos'),
-(15, 'Graciliano ramos'),
-(16, 'Graciliano ramos'),
-(17, 'Graciliano ramos'),
-(18, 'Graciliano ramos'),
-(19, 'Graciliano ramos'),
-(20, 'Graciliano ramos'),
-(21, 'Graciliano ramos'),
-(22, 'Graciliano ramos'),
-(23, 'Graciliano ramos'),
-(24, 'Graciliano ramos'),
-(25, 'Graciliano ramos'),
-(26, 'Graciliano ramos'),
-(27, 'Graciliano ramos'),
-(28, 'Graciliano ramos'),
+(14, 'Machado de Assis'),
+(15, 'Silvia Federici'),
+(16, 'George Orwell'),
+(17, 'R. J. Palacio'),
+(18, 'J. K. Rowling'),
+(19, 'John Green'),
+(20, 'J. R. R. Tolkien'),
+(21, 'Árthur Conan Doyle'),
+(22, 'Bram Stoker'),
+(23, 'Gabriel García Márquez'),
+(24, 'Carol Dweck'),
+(25, 'Douglas Adams'),
+(26, 'Albert Camus'),
+(27, 'Stephenie Meyer'),
+(28, 'Stephen King'),
 (29, 'Graciliano ramos'),
 (30, 'Graciliano ramos');
 
@@ -344,40 +350,41 @@ INSERT INTO livro (cd_livro, nm_livro, cd_editora, cd_idioma, cd_colecao, ds_sin
 (27, 'O Estrangeiro', 1, 1, 1, 'Um marco do **existencialismo e do romance filosófico** de Albert Camus. O livro narra a vida de Meursault, um personagem que demonstra uma profunda apatia e indiferença diante das normas sociais e das emoções humanas, culminando em um ato de violência. A obra explora o tema do **Absurdo**, a falta de sentido da vida e a solidão do indivíduo no universo.'),
 (28, 'A Hospedeira', 2, 3, 6, 'Um **romance de ficção científica** com forte apelo romântico de Stephenie Meyer. A trama se passa em um futuro onde a Terra foi invadida por alienígenas parasitas chamados "Almas", que habitam corpos humanos. A história se concentra no conflito interno de uma Alma, Melanie, que não consegue sufocar a personalidade de sua hospedeira humana, criando um triângulo amoroso e uma luta pela liberdade.'),
 (29, 'O Alienista', 1, 1, 4, 'Um famoso **conto satírico e psicológico** de Machado de Assis. A narrativa gira em torno do Dr. Simão Bacamarte, um médico que funda um hospício na cidade de Itaguaí e inicia um estudo ambicioso para classificar a loucura, mas sua definição de normalidade se torna tão restritiva que ele passa a internar uma parcela cada vez maior da população, questionando os limites entre a ciência, o poder e a insanidade.'),
-(30, 'IT - A Coisa', 3, 3, 1, 'Um clássico monumental do **terror psicológico e sobrenatural** de Stephen King. A história se desenrola em duas linhas temporais, seguindo um grupo de crianças, o "Clube dos Perdedores", que enfrenta uma criatura maligna metamorfa que se manifesta como o palhaço Pennywise e se alimenta do medo. O livro é uma exploração profunda do trauma de infância, da amizade e da memória.');
+(30, 'IT - A Coisa', 3, 3, 1, 'Um clássico monumental do **terror psicológico e sobrenatural** de Stephen King. A história se desenrola em duas linhas temporais, seguindo um grupo de crianças, o "Clube dos Perdedores", que enfrenta uma criatura maligna metamorfa que se manifesta como o palhaço Pennywise e se alimenta do medo. O livro é uma exploração profunda do trauma de infância, da amizade e da memória.'),
+(31, 'Coraline', 1, 1, 3, 'Certas portas não devem ser abertas. E Coraline descobre isso pouco tempo depois de chegar com os pais à sua nova casa, um apartamento em um casarão antigo ocupado por vizinhos excêntricos e envolto por uma névoa insistente, um mundo de estranhezas e magia, o tipo de universo que apenas Neil Gaiman pode criar.');
 
 -- ===== RELACIONAMENTO LIVRO ↔ AUTOR =====
 INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
-(1, 2), -- O Príncipe - Maquiavel
-(2, 3), -- A Bruxa e o Calibã - Mary Renault
-(3, 3), -- O Pequeno Príncipe - Saint-Exupéry
-(4,4),
-(5, 5), -- As Vantagens de Ser Invisível - Stephen Chbosky
-(6, 6),-- Eu, Robô - Isaac Asimov*/
-(7, 5), -- Dom Casmurro - Machado de Assis
-(8, 5),-- 1984 - George Orwell
-(9, 13),
-(10, 13),
-(11, 13),
-(12, 13),
-(13, 13),
-(14, 13),
-(15, 13),
-(16, 13),
-(17, 13),
-(18, 13),
-(19, 13),
-(20, 13),
-(21, 13),
-(22, 13),
-(23, 13),
-(24, 13),
-(25, 13),
-(26, 13),
-(27, 13),
-(28, 13),
-(29, 13),
-(30, 13);  
+(1, 15), -- A bruxa e o calibã - Silvia Federici
+(2, 2), -- O Sol é para todos - Harper Lee
+(3, 3), -- É assim que acaba - Coleen Hoover
+(4, 4), -- Capitães de Areia - Jorge Amado
+(5, 5), -- Como eu era antes de você - Jojo Moyes
+(6, 6), -- Como mudar o Mundo - Stela Barbieri
+(7, 14), -- Dom Casmurro - Machado de Assis
+(8, 16), -- 1984 - George Orwell
+(9, 7), -- A Arte da Guerra - Sun Tzu
+(10, 8), -- O Pequeno Principe - Antoine de Saint-Exupéry
+(11, 9), -- O codigo da vinci - Dan Brown
+(12, 10), -- O nome do vento - Patrick Rothfuss
+(13, 11), -- O alquimista - Paulo Coelho 
+(14, 17), -- O Extraordinario - R. J. Palacio
+(15, 13), -- Vidas Secas - Graciliano ramos
+(16, 18), -- Harry Potter - J. K. Rowling
+(17, 19), -- A culpa é das estrelas - John Green
+(18, 20), -- O senhor dos anéis - J. R. R. Tolkien
+(19, 21), -- Sherlock Holmes - Árthur Conan Doyle
+(20, 22), -- Dracula - Bram Stoker
+(21, 23), -- Cem anos de solidao - García Márquez
+(22, 12), -- o milagre da manhã - Hal Elrod
+(23, 24), -- mindset - Carol Dweck
+(24, 16), -- a revolução dos bichos - George Orwell
+(25, 25), -- o mochileiro das galaxias - Douglas Adams
+(26, 17), -- o extraordinario TA REPETIDO !!!!!!!
+(27, 26), -- O estrangeiro - Albert Camus
+(28, 27), -- a hospedeira - Stephenie Meyer
+(29, 14), -- O Alienista - Machado de Assis
+(30, 28);  -- IT a coisa - Stephen King
 
 -- ===== RELACIONAMENTO LIVRO ↔ GENERO =====
 INSERT INTO genero_livro (cd_livro, cd_genero) VALUES
@@ -483,10 +490,17 @@ INSERT INTO bibliotecario VALUES(4,'Lucas do Hoje',123,'DDD');
 INSERT INTO bibliotecario_biblioteca VALUES(4,4);
 
 /*Doações*/
-INSERT INTO doacao VALUES (1,'Cronicas Malucas','Jeferson',2,'pedro.favoritos@gmail.com', true);
-INSERT INTO doacao VALUES (2,'Como Dominar a Arte da Sabedoria','Mary Renault',1,'pedro.favoritos@gmail.com', false);
-INSERT INTO doacao VALUES (3,'Genocidas','Caua Nunes da Silva',3,'pedro.favoritos@gmail.com',false);
-INSERT INTO doacao VALUES (4,'Como Dominar a Arte da Sabedoria 2' ,'Mary Renault',1,'pedro.favoritos@gmail.com', null);
+INSERT INTO doacao VALUES (1,'Cronicas Malucas','Jeferson',1,'luanna@gmail.com', true);
+INSERT INTO doacao VALUES (2,'Como Dominar a Arte da Sabedoria','Mary Renault',1,'pedro@gmail.com', false);
+INSERT INTO doacao VALUES (3,'Genocidas','Caua Nunes da Silva',1,'caua@gmail.com',false);
+INSERT INTO doacao VALUES (4,'Romeu e Julieta' ,'William Shakespeare',2,'liam@gmail.com', false);
+INSERT INTO doacao VALUES (5,'Relatos de um gato viajante' ,'Hiro Arikawa',2,'anny@gmail.com', false);
+INSERT INTO doacao VALUES (6,'O Inferno de Dante' ,'Dante Alighieri',2,'lucas@gmail.com', false);
+INSERT INTO doacao VALUES (7,'A biblioteca da meia noite' ,'Matt Haig',3,'ana@gmail.com', false);
+INSERT INTO doacao VALUES (8,'A garota do lago' ,'Charlie Donlea',3,'luanna@gmail.com', false);
+INSERT INTO doacao VALUES (9,'Em agosto nos vemos' ,'Gabriel García Marquez',3,'pedro@gmail.com', false);
+INSERT INTO doacao VALUES (10,'A menina que roubava livros' ,'Markus Zusak',4,'caua@gmail.com', false);
+INSERT INTO doacao VALUES (11,'Orgulho e Preconceito' ,'Jane Austen',4,'anny@gmail.com', false);
 
 
 /*Emprestimo*/
@@ -495,6 +509,20 @@ INSERT INTO emprestimo VALUES(2,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@
 INSERT INTO emprestimo VALUES(3,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',4,2, true);
 INSERT INTO emprestimo VALUES(4,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',5,4, true);
 INSERT INTO emprestimo VALUES(5,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',6,3, true);
+INSERT INTO emprestimo VALUES(6,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',29,3, true);
+INSERT INTO emprestimo VALUES(7,'2025-09-01','2025-10-05',NULL,'liam@gmail.com',13,1, true);
+INSERT INTO emprestimo VALUES(8,'2025-09-01','2025-10-05',NULL,'luanna@gmail.com',11,1, true);
+INSERT INTO emprestimo VALUES(9,'2025-09-01','2025-10-05',NULL,'ana@gmail.com',8,1, true);
+INSERT INTO emprestimo VALUES(10,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',29,1, true);
+INSERT INTO emprestimo VALUES(11,'2025-09-01','2025-10-05',NULL,'caua@gmail.com',15,1, true);
+INSERT INTO emprestimo VALUES(12,'2025-09-01','2025-10-05',NULL,'pedro@gmail.com',25,1, true);
+INSERT INTO emprestimo VALUES(13,'2025-09-01','2025-10-05',NULL,'mariana@gmail.com',26,1, true);
+INSERT INTO emprestimo VALUES(14,'2025-09-01','2025-10-05',NULL,'anny@gmail.com',20,1, true);
+INSERT INTO emprestimo VALUES(15,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',9,2, true);
+INSERT INTO emprestimo VALUES(16,'2025-09-01','2025-10-05',NULL,'anny@gmail.com',10,2, true);
+INSERT INTO emprestimo VALUES(17,'2025-09-01','2025-10-05',NULL,'liam@gmail.com',3,2, true);
+INSERT INTO emprestimo VALUES(18,'2025-09-01','2025-10-05',NULL,'ana@gmail.com',2,3, true);
+INSERT INTO emprestimo VALUES(19,'2025-09-01','2025-10-05',NULL,'mariana@gmail.com',8,3, true);
 /*
 INSERT INTO emprestimo VALUES(6,'2025-09-01','2025-10-05',NULL,'lucas@gmail.com',6,4, false);
 INSERT INTO emprestimo VALUES(7,'2025-09-01','2025-10-05','2025-10-01','pedro.favoritos@gmail.com',1,1, false);
@@ -503,7 +531,18 @@ INSERT INTO emprestimo VALUES(9,'2025-09-01','2025-10-05',NULL,'pedro.favoritos@
 */
 
 /*Reservas*/
-INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true);
+INSERT INTO reserva VALUES (1,NOW(),'lucas@gmail.com',1,1,true),
+(2,NOW(),'lucas@gmail.com',8,1,true),
+(3,NOW(),'arthur@gmail.com',15,1,true),
+(4,NOW(),'caua@gmail.com',18,2,true),
+(5,NOW(),'caua@gmail.com',30,2,true),
+(6,NOW(),'pedro@gmail.com',24,3,true),
+(7,NOW(),'pedro@gmail.com',19,3,true),
+(8,NOW(),'anny@gmail.com',22,3,true),
+(9,NOW(),'mariana@gmail.com',5,3,true),
+(10,NOW(),'anny@gmail.com',16,4,true),
+(11,NOW(),'luanna@gmail.com',10,4,true),
+(12,NOW(),'ana@gmail.com',9,2,true);
 
 
 /*
