@@ -105,12 +105,12 @@ if ($campos == 3) {
 
         <div class="label-input">
           <label>Nome do livro: </label>
-          <input type="text" name="nm_livro" />
+          <input type="text" name="nm_livro" placeholder="O Pequeno Príncipe"/>
         </div>
 
         <div class="label-input">
           <label>Nome do autor: </label>
-          <input type="text" name="nm_autor" />
+          <input type="text" name="nm_autor" placeholder="Exúperry"/>
         </div>
 
         <div class="label-input">

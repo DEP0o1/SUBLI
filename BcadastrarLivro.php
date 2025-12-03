@@ -172,12 +172,12 @@ if ($cadastro) {
         $ds_sinopse
     ));
 
-    // $controller = new LivroController();
-    // $cd_livro_result = $controller->ListarProximoLivro();
+    $controller = new LivroController();
+    $cd_livro_result = $controller->ListarProximoLivro();
 
-    // $cd_livro = $cd_livro_result[0]['Proximo_Cd_Livro'];
+    $cd_livro = $cd_livro_result[0]['Proximo_Cd_Livro'];
 
-    // rename($imgPerfil['tmpname'], 'img/doacao_' . $nm_doacao($targetFile));
+    rename($imgPerfil['tmpname'], 'img/doacao_' . $nm_doacao($targetFile));
 
     if ($livro == "Livro cadastrado com sucesso!") {
 

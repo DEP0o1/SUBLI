@@ -6,13 +6,11 @@ public function ExibirEventos($evento = new Evento){
 
     $controller = new EventoController;
     $eventos = $controller->ListarEventos($evento);
-
     
-
+    
     $listaEventos = [];
 
     if (empty($eventos)) {
-
         echo " 
         <div class='nao-encontrado'>
             <h2>
@@ -21,35 +19,45 @@ public function ExibirEventos($evento = new Evento){
             <span class='material-symbols-outlined'>
             event_busy
             </span>
-        </div>    
+        </div>    
         ";
-
         return; 
     }
 
     foreach ($eventos as $Evento){
+        
         $caminho_imagem_evento = "img/eventos/evento_{$Evento->nm_evento}";
+        $caminho_imagem_padrao_evento = "img/eventos/evento_padrao"; 
+        $src_imagem_evento = file_exists($caminho_imagem_evento) 
+            ? $caminho_imagem_evento 
+            : $caminho_imagem_padrao_evento;
         
-        $caminho_imagem_padrao = "img/eventos/evento_padrao"; 
+        $caminho_imagem_padrao_leitor = "img/perfil_padrao"; 
+        $email_leitor = $Evento->leitor->cd_email ?? null; 
+
+        if ($email_leitor) {
+            $caminho_imagem_leitor = "img/perfil_{$email_leitor}";
+            $src_imagem_leitor = file_exists($caminho_imagem_leitor) 
+                ? $caminho_imagem_leitor 
+                : $caminho_imagem_padrao_leitor;
+        } else {
+            $src_imagem_leitor = $caminho_imagem_padrao_leitor;
+        }
         
-
-        $src_imagem = file_exists($caminho_imagem_evento) ? $caminho_imagem_evento : $caminho_imagem_padrao;
-
         echo " 
             <div class='item-lista' title='{$Evento->nm_evento}'>
                 <div class='imagem-item-lista-evento'>
-                    <img src='{$src_imagem}' alt='Imagem do evento {$Evento->nm_evento}'>
+                    <img src='{$src_imagem_evento}' alt='Imagem do evento {$Evento->nm_evento}'>
                 </div>
                 <div class='conteudo-item-lista'>
                     <h2>{$Evento->nm_evento}</h2>
                     <h3>{$Evento->dt_evento}</h3>
                     <div class='conteudo-item-lista-doador'>
-                    aquiiiiiiiiiiiiiiiiiiii
-                        <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
+                        <img src='{$src_imagem_leitor}' alt='Imagem do Leitor {$Evento->leitor->nm_leitor}'>
                         <p>{$Evento->leitor->nm_leitor}</p>
                         <h3>(Responsável)</h3>
                     </div>
-                    <a href='BsolicEvento.php?c=$Evento->cd_evento'>
+                    <a href='BsolicEvento.php?c={$Evento->cd_evento}'>
                         <button class='btnRosa'>Ver Mais</button>
                     </a>
                 </div>
@@ -72,6 +80,19 @@ public function ExibirEvento($evento = new Evento){
 
     $controller = new EventoController;
     $eventos = $controller->ListarEventos($evento);
+
+    
+     $caminho_imagem_padrao_leitor = "img/perfil_padrao"; 
+    $email_leitor = $Evento->leitor->cd_email ?? null; 
+
+        if ($email_leitor) {
+            $caminho_imagem_leitor = "img/perfil_{$email_leitor}";
+            $src_imagem_leitor = file_exists($caminho_imagem_leitor) 
+                ? $caminho_imagem_leitor 
+                : $caminho_imagem_padrao_leitor;
+        } else {
+            $src_imagem_leitor = $caminho_imagem_padrao_leitor;
+        }
 
     if (!empty($eventos)) {
         $Evento = $eventos[0]; 
@@ -118,7 +139,7 @@ public function ExibirEvento($evento = new Evento){
                     </form>
 
                     <div class='usuarioEvento'>
-                        <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
+                        <img src='{$src_imagem_leitor}' alt=''>
                         <p>{$Evento->leitor->nm_leitor}</p>
                         <h3>(Responsável)</h3>
                     </div>
@@ -171,48 +192,44 @@ public function ExibirEventoLeitor($evento = new Evento){
 }
 
 
-public function ExibirEventosLeitor($evento = new Evento){
+public function ExibirEventosLeitor($evento = new Evento, $leitor = new Leitor){
 
     $controller = new EventoController;
     $eventos = $controller->ListarEventos($evento);
     $Evento = $eventos[0]; 
 
-    $listaEventos = [];
-
-    if (empty($eventos)) {
-
-        echo " 
-        <div class='nao-encontrado'>
-            <h2>
-            Nenhum evento encontrado
-            </h2>
-            <span class='material-symbols-outlined'>
-            event_busy
-            </span>
-        </div>    
-        ";
-
-        return; 
-    }
+    $controllerLeitor = new LeitorController;
+    $leitores = $controllerLeitor->ListarLeitores($leitor);
 
     foreach ($eventos as $Evento){
         $caminho_imagem_evento = "img/eventos/evento_{$Evento->nm_evento}";
+        $caminho_imagem_padrao_evento = "img/eventos/evento_padrao"; 
         
-        $caminho_imagem_padrao = "img/eventos/evento_padrao"; 
+        $src_imagem_evento = file_exists($caminho_imagem_evento) ? $caminho_imagem_evento : $caminho_imagem_padrao_evento;
         
+        $caminho_imagem_padrao_leitor = "img/perfil_padrao"; 
 
-        $src_imagem = file_exists($caminho_imagem_evento) ? $caminho_imagem_evento : $caminho_imagem_padrao;
+        $email_leitor = $Evento->leitor->cd_email ?? null; 
+
+        if ($email_leitor) {
+            $caminho_imagem_leitor = "img/perfil_{$email_leitor}";
+            $src_imagem_leitor = file_exists($caminho_imagem_leitor) 
+                ? $caminho_imagem_leitor 
+                : $caminho_imagem_padrao_leitor;
+        } else {
+            $src_imagem_leitor = $caminho_imagem_padrao_leitor;
+        }
 
         echo " 
             <div class='item-lista' title='{$Evento->nm_evento}'>
                 <div class='imagem-item-lista-evento'>
-                    <img src='{$src_imagem}' alt='Imagem do evento {$Evento->nm_evento}'>
+                    <img src='{$src_imagem_evento}' alt='Imagem do evento {$Evento->nm_evento}'>
                 </div>
                 <div class='conteudo-item-lista'>
                     <h2>{$Evento->nm_evento}</h2>
                     <h3>{$Evento->dt_evento}</h3>
                     <div class='conteudo-item-lista-doador'>
-                        <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
+                        <img src='{$src_imagem_leitor}' alt=''>
                         <p>{$Evento->leitor->nm_leitor}</p>
                         <h3>(Responsável)</h3>
                     </div>
@@ -222,6 +239,7 @@ public function ExibirEventosLeitor($evento = new Evento){
                 </div>
             </div>
         ";
+
 
         $listaEventos[] = [
             'dia' => (int)date('d', strtotime($Evento->dt_evento)),
