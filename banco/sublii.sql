@@ -101,7 +101,7 @@ CREATE TABLE exemplar(
     cd_exemplar INT,
     dt_insercao DATETIME,
     ic_reservado TINYTEXT,
-    qtd_exemplar INT,
+    /*qtd_exemplar INT,*/
     CONSTRAINT pk_exemplar PRIMARY KEY (cd_exemplar),
 	CONSTRAINT fk_biblioteca_livro FOREIGN KEY (cd_biblioteca) REFERENCES biblioteca(cd_biblioteca) ON UPDATE CASCADE,
     CONSTRAINT fk_livro_biblioteca FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE
@@ -182,7 +182,7 @@ CREATE TABLE genero_livro(
 );
 
 
-CREATE TABLE favorito(
+/*CREATE TABLE favorito(
     cd_livro INT,
     cd_email_leitor INT,
     CONSTRAINT pk_livro PRIMARY KEY (cd_livro),
@@ -212,7 +212,7 @@ CREATE TABLE favorito (
     CONSTRAINT pk_favorito PRIMARY KEY (cd_livro, cd_email),
     CONSTRAINT fk_livro_favorito FOREIGN KEY (cd_livro) REFERENCES livro(cd_livro) ON UPDATE CASCADE,
     CONSTRAINT fk_leitor_favorito FOREIGN KEY (cd_email) REFERENCES leitor(cd_email) ON UPDATE CASCADE
-);
+);*/
 
 /*Leitores*/
 INSERT INTO leitor VALUES ('pedro.favoritos@gmail.com', 'Pedro', '59433067850', '13903890782', true, '123','20/3/2008','Rua Lucas Alcoforado', '00000000');
@@ -314,7 +314,7 @@ INSERT INTO autor (cd_autor, nm_autor) VALUES
 (26, 'Albert Camus'),
 (27, 'Stephenie Meyer'),
 (28, 'Stephen King'),
-(29, 'Graciliano ramos'),
+(29, 'Neil Gaiman'),
 (30, 'Graciliano ramos');
 
 
@@ -384,7 +384,8 @@ INSERT INTO autor_livro (cd_livro, cd_autor) VALUES
 (27, 26), -- O estrangeiro - Albert Camus
 (28, 27), -- a hospedeira - Stephenie Meyer
 (29, 14), -- O Alienista - Machado de Assis
-(30, 28);  -- IT a coisa - Stephen King
+(30, 28),  -- IT a coisa - Stephen King
+(31, 29); -- Coraline - Neil Gaiman
 
 -- ===== RELACIONAMENTO LIVRO ↔ GENERO =====
 INSERT INTO genero_livro (cd_livro, cd_genero) VALUES
@@ -417,7 +418,8 @@ INSERT INTO genero_livro (cd_livro, cd_genero) VALUES
 (27, 3), -- O Estrangeiro - Romance (Existencialista)
 (28, 1), -- A Hospedeira - Ficção (Ficção Científica)
 (29, 1), -- O Alienista - Ficção
-(30, 5); -- IT - A Coisa - Terror
+(30, 5), -- IT - A Coisa - Terror
+(31, 5); -- Coraline - terror
 
 -- ===== RELACIONAMENTO LIVRO ↔ ASSUNTO =====
 INSERT INTO assunto_livro (cd_livro, cd_assunto) VALUES
@@ -475,6 +477,31 @@ INSERT INTO exemplar VALUES (4, 1, 16, NOW(), false);
 INSERT INTO exemplar VALUES (3, 1, 17, NOW(), false);
 INSERT INTO exemplar VALUES (2, 1, 18, NOW(), false);
 INSERT INTO exemplar VALUES (1, 1, 19, NOW(), false);
+INSERT INTO exemplar VALUES (6, 1, 20, NOW(), false);
+INSERT INTO exemplar VALUES (7, 1, 21, NOW(), false);
+INSERT INTO exemplar VALUES (8, 1, 22, NOW(), false);
+INSERT INTO exemplar VALUES (9, 1, 23, NOW(), false);
+INSERT INTO exemplar VALUES (10, 1, 24, NOW(), false);
+INSERT INTO exemplar VALUES (11, 1, 25, NOW(), false);
+INSERT INTO exemplar VALUES (12, 1, 26, NOW(), false);
+INSERT INTO exemplar VALUES (13, 1, 27, NOW(), false);
+INSERT INTO exemplar VALUES (14, 1, 28, NOW(), false);
+INSERT INTO exemplar VALUES (15, 1, 29, NOW(), false);
+INSERT INTO exemplar VALUES (16, 1, 30, NOW(), false);
+INSERT INTO exemplar VALUES (17, 1, 31, NOW(), false);
+INSERT INTO exemplar VALUES (18, 1, 32, NOW(), false);
+INSERT INTO exemplar VALUES (19, 1, 33, NOW(), false);
+INSERT INTO exemplar VALUES (20, 1, 34, NOW(), false);
+INSERT INTO exemplar VALUES (21, 1, 35, NOW(), false);
+INSERT INTO exemplar VALUES (22, 1, 36, NOW(), false);
+INSERT INTO exemplar VALUES (23, 1, 37, NOW(), false);
+INSERT INTO exemplar VALUES (24, 1, 38, NOW(), false);
+INSERT INTO exemplar VALUES (25, 1, 39, NOW(), false);
+INSERT INTO exemplar VALUES (26, 1, 40, NOW(), false);
+INSERT INTO exemplar VALUES (27, 1, 41, NOW(), false);
+INSERT INTO exemplar VALUES (28, 1, 42, NOW(), false);
+INSERT INTO exemplar VALUES (29, 1, 43, NOW(), false);
+INSERT INTO exemplar VALUES (30, 1, 44, NOW(), false);
 
 /*Bibliotecarios*/
 INSERT INTO bibliotecario VALUES (1,'Liam da Silva',123,'AAA');
