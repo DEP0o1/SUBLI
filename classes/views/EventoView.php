@@ -7,6 +7,8 @@ public function ExibirEventos($evento = new Evento){
     $controller = new EventoController;
     $eventos = $controller->ListarEventos($evento);
 
+    
+
     $listaEventos = [];
 
     if (empty($eventos)) {
@@ -42,6 +44,7 @@ public function ExibirEventos($evento = new Evento){
                     <h2>{$Evento->nm_evento}</h2>
                     <h3>{$Evento->dt_evento}</h3>
                     <div class='conteudo-item-lista-doador'>
+                    aquiiiiiiiiiiiiiiiiiiii
                         <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt=''>
                         <p>{$Evento->leitor->nm_leitor}</p>
                         <h3>(Responsável)</h3>

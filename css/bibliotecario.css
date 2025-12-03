@@ -55,6 +55,9 @@ a {
   text-decoration: none;
   color: var(--branco);
 }
+textarea{
+  resize: none;
+}
 
 .input {
   width: 100%;
@@ -1616,7 +1619,7 @@ border: solid 1px var(--bege);
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: fit-content;
+    height: 100%;
     gap: 15px;
     padding: 30px;
     border-radius: var(--radius);

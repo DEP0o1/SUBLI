@@ -31,11 +31,8 @@ imagem renomeada com codigo do livro ///////////////////////////////////////////
 
 =========================SE LIGA GUYS 2 ==============================
 
-barra lateral em tudoB
-padronizar todos os cadastros
 padronizar todos os textos
 placeholder nos input
-substituir o terry.webp
 
    /|\
     |
