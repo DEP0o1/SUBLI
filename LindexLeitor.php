@@ -41,7 +41,7 @@ if (empty($assunto2)) $assunto2 = null;
     <main>
         <section class="banner">
             <div class="imgbanner">
-                <!-- <img src="../SUBLI/img/banner.png" alt=""> -->
+                <!-- <img src="../SUBLI/img/banner.jpg" alt=""> -->
                  <?php
                  $arthur = "souza bob";
                  ?>

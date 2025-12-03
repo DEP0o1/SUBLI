@@ -138,7 +138,7 @@ if (
 
     <div>
         <label for="nm_senha">Senha:</label>
-        <input type="password" name="nm_senha" required>
+        <input type="password" name="nm_senha" palceholder="*******" required>
     </div>
 
     <div class="areaBtn">
@@ -153,17 +153,17 @@ if (
 
     <div>
         <label for="cd_cpf">CPF:</label>
-        <input type="text" name="cd_cpf" required>
+        <input type="text" name="cd_cpf" placeholde="455.462.898-13" required>
     </div>
 
     <div>
         <label for="nm_endereco">Endereço:</label>
-        <input type="text" name="nm_endereco" required>
+        <input type="text" name="nm_endereco" placeholder="Rua Hélio Ferreira 1014" required>
     </div>
 
     <div>
         <label for="cd_cep">CEP:</label>
-        <input type="text" name="cd_cep" required>
+        <input type="text" name="cd_cep" placeholder="13035-680" required>
     </div>
 
     <div class="areaBtn">

@@ -977,7 +977,6 @@ aside br {
   gap: var(--gap);
   width: 80%;
   flex-wrap: wrap;
-  padding-bottom: 150px;
 }
 
 .formPesquisaAvancada {
