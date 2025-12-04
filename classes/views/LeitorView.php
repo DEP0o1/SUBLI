@@ -28,7 +28,7 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
                             <p>
                                 <span class='material-symbols-outlined'>
                                     assignment_ind
-                                </span> CPF: {$Leitor->nm_leitor}
+                                </span> CPF: {$Leitor->cd_cpf}
                             </p>
                             <p>
                                 <span class='material-symbols-outlined'>
@@ -109,14 +109,12 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
             <div class='leitorLinha'>
                 <div class='infoPequena'>
                     <img src='$src_imagem' alt=''>
-                    <p>$Leitor->nm_leitor</p>
+                    <p class='pNomeLeitor'>$Leitor->nm_leitor</p>
                 </div>
 
-                <p>$Leitor->cd_email</p>
+                <p class='pEmailLeitor'>$Leitor->cd_email</p>
 
-                <p>$Leitor->cd_telefone</p>
-
-                <p>$Leitor->cd_cpf</p>
+                <p class='pCpfLeitor'>$Leitor->cd_cpf</p>
 
                 <p>Sem atrasos</p>
                 <a href='BpesquisaLeitor.php?c=$Leitor->cd_email'> <button class='btnRosa'>Ver Mais</button> </a>

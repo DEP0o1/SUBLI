@@ -54,6 +54,7 @@ if ($campos == 3) {
                         <span class='material-symbols-outlined'>book</span>
                         <h1>Doação realizada com sucesso</h1>
                       </div>
+                      <p>Sua solicitação de doação foi enviada com sucesso!</p>
                     </div>";
 
   }
@@ -63,7 +64,7 @@ if ($campos == 3) {
                                   <span class='material-symbols-outlined'>book</span>
                                   <h1>Doação não realizada</h1>
                                 </div>
-                                <p>Preencha todos os campos </p>
+                                <p>Preencha todos os campos.</p>
                               </div>";
 }
 

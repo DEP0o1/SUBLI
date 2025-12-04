@@ -264,6 +264,7 @@ nav {
   display: flex;
   padding: 1%;
   width: 100%;
+  justify-content: space-between;
   border-bottom: #b59e8b solid 1px;
 }
 
@@ -2044,11 +2045,46 @@ height: 65vh;
 .dadosLivroDoado{
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  gap: 2%;
+
+ padding-bottom: 3%;
 }
 
 .dadosLivroDoado h1 {
     border-bottom: solid var(--cinza) 1px;
+}
+
+.pEmailLeitor {
+  width: 250px;
+}
+
+.pNomeLeitor {
+  width: 150px;
+}
+
+.pCpfLeitor {
+  width: 130px;
+}
+
+.pStatusLeitor {
+
+}
+
+.pEmailLeitorAAA {
+  width: 200px;
+  left: 5%;
+}
+
+.pNomeLeitorAAA {
+  width: 150px;
+}
+
+.pCpfLeitorAAA {
+  width: fit-content;
+}
+
+.pStatusLeitorAAA {
+  padding-right: 20%;
 }
 
 .tituloEsquerda {
@@ -2131,8 +2167,8 @@ height: 65vh;
 }
 
 .miniPerfil{
-  height: 5vh;
-  width: 5vh;
+  height: 6vh;
+  width: 6vh;
   border-radius: 100%;
   object-fit: cover;
 }

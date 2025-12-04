@@ -127,6 +127,79 @@ main {
   margin-bottom: 2vh;
 }
 
+/*------------------------------------------------------------*/
+
+
+.mensagem span {
+  color: var(--branco);
+}
+
+.mensagem {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  text-align: left;
+  background-color: var(--azul);
+  color: var(--branco);
+  border-radius: var(--radius) 0px 0px var(--radius);
+  min-width: 30vw;
+  position: absolute;
+  padding: var(--gap);
+  right: 0;
+  transform: translateX(100%);
+  animation: aparecer 0.5s forwards;
+  z-index: 10000000;
+}
+
+.mensagem.sumir {
+  animation: sumir 0.5s forwards;
+}
+
+@keyframes aparecer {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sumir {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.mensagem h1 {
+  margin: 0;
+  color: var(--branco);
+}
+
+.mensagem p {
+  color: var(--branco);
+}
+
+.titulo-mensagem {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+  gap: var(--gap);
+}
+
+.titulo-mensagem > h1 {
+  display: flex;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+/*-----------------------------------*/
+
 .areaPerfil form {
   color: var(--cinza);
   display: flex;

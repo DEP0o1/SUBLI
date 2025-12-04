@@ -5,12 +5,12 @@ $bibliotecario = $_SESSION['bibliotecario'];
 $controller = new BibliotecarioController();
 $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($bibliotecario));
 
-if(isset($_REQUEST['c'])){
+if (isset($_REQUEST['c'])) {
 
     $email = $_REQUEST['c'];
 }
 
-if(isset($_REQUEST['registrado'])){
+if (isset($_REQUEST['registrado'])) {
     $codigo_emprestimo = $_REQUEST['registrado'];
     $emprestimo_controller = new EmprestimoController;
     $emprestimo_controller->RegistrarDevolucao(new Emprestimo($codigo_emprestimo));
@@ -42,16 +42,15 @@ if(isset($_REQUEST['registrado'])){
         ?>
 
         <?php
-           if(isset($email)){
-             $Leitor = new LeitorView();
-             $Leitor->ExibirLeitorFatal(new Leitor($email),$Bibliotecario[0]->cd_biblioteca);
-           }     
-           else{
-              $Leitor = new LeitorView();
-             $Leitor->ExibirLeitorFatal(new Leitor(),$Bibliotecario[0]->cd_biblioteca);
-           }
-            ?>
-            </div>
+        if (isset($email)) {
+            $Leitor = new LeitorView();
+            $Leitor->ExibirLeitorFatal(new Leitor($email), $Bibliotecario[0]->cd_biblioteca);
+        } else {
+            $Leitor = new LeitorView();
+            $Leitor->ExibirLeitorFatal(new Leitor(), $Bibliotecario[0]->cd_biblioteca);
+        }
+        ?>
+        </div>
         </section>
 
         <section class="pesquisarLeitor">
@@ -61,10 +60,10 @@ if(isset($_REQUEST['registrado'])){
                 <div class="pesquisarInput">
                     <input type="text" name="valor" placeholder="Buscar por nome ou código..." />
                     <?php
-                    if(isset($email)){
-                echo"<input type='hidden' name='c' value='$email'>";
+                    if (isset($email)) {
+                        echo "<input type='hidden' name='c' value='$email'>";
                     }
-                    
+
                     ?>
                     <span class="material-symbols-outlined" style="color:black">search</span>
                 </div>
@@ -77,39 +76,31 @@ if(isset($_REQUEST['registrado'])){
         </section>
 
         <section class="dadosResultados">
-            <p>Nome</p>
+            <p class="pNomeLeitorAAA">Nome</p>
+            <p class="pEmailLeitorAAA">Email</p>
+            <p class="pCpfLeitorAAA">CPF</p>
+            <p class="pStatusLeitorAAA">Status</p>
 
-            <div class="infoJunta">
-                <p>Email</p>
-                <p>Telefone</p>
-            </div>
-            
-            <div class="infoJunta1">
-                <p>CPF</p>
-                <p>Status</p>
-            </div>
-            
+
         </section>
 
-                    <?php
-                    $Leitor = new LeitorView();
-                    $LeitorController = new LeitorController;
+        <?php
+        $Leitor = new LeitorView();
+        $LeitorController = new LeitorController;
 
-                    if(isset($_REQUEST['valor'])){
-                        $nm_leitor = $_REQUEST['valor'];
-                        $Leitor->ExibirLeitoresColuna(new Leitor(null,$nm_leitor));
-                    }
-                    else{
-                         if(isset($email)){
-                        $Leitor->ExibirLeitoresColuna(new Leitor(),$email);
-                    }
-                    else{
-                        $primeiro_leitor = $LeitorController->ListarLeitores();
-                        $Leitor->ExibirLeitoresColuna(new Leitor(),$primeiro_leitor[0]->cd_email);
-                    }
-                    }
-                   
-                    ?> 
+        if (isset($_REQUEST['valor'])) {
+            $nm_leitor = $_REQUEST['valor'];
+            $Leitor->ExibirLeitoresColuna(new Leitor(null, $nm_leitor));
+        } else {
+            if (isset($email)) {
+                $Leitor->ExibirLeitoresColuna(new Leitor(), $email);
+            } else {
+                $primeiro_leitor = $LeitorController->ListarLeitores();
+                $Leitor->ExibirLeitoresColuna(new Leitor(), $primeiro_leitor[0]->cd_email);
+            }
+        }
+
+        ?>
         </section>
     </main>
 </body>
@@ -139,5 +130,3 @@ if(isset($_REQUEST['registrado'])){
             $leitor->ExibirLeitores(new Leitor(null, $nm_leitor, $cd_cpf));
         }
         ?> -->
-
-      
