@@ -41,6 +41,20 @@ if (isset($_REQUEST['nm_livro'])) {
     if (!is_null($_REQUEST['nm_livro'])) {
         $erro = false;
         $nm_livro = $_REQUEST['nm_livro'];
+
+        $controller = new LivroController();
+        $cd_livro_result = $controller->ListarProximoLivro();
+   
+        $novo_nome_livro = $cd_livro_result[0]["Proximo_Cd_Livro"];
+        
+        $caminho_origem = "img/doacao_" . $nm_livro;
+        $caminho_destino = "img/" . $novo_nome_livro;
+
+        if (file_exists($caminho_origem)) {
+            rename($caminho_origem, $caminho_destino);    
+        } else {
+            copy("img/Lpadrao", $caminho_destino);
+        }
     }
 }
 
@@ -153,10 +167,10 @@ if (!$erro) {
 }
 
 
-if ($cadastro) {
+    if ($cadastro) {
 
-    $controller = new LivroController();
-    $livro = $controller->AdicionarLivro(new Livro(
+        $controller = new LivroController();
+        $livro = $controller->AdicionarLivro(new Livro(
         null,
         $nm_livro,
         [new Autor($cd_autor, $nm_autor)],
@@ -172,19 +186,13 @@ if ($cadastro) {
         $ds_sinopse
     ));
 
-    // $controller = new LivroController();
-    // $cd_livro_result = $controller->ListarProximoLivro();
-
-    // $cd_livro = $cd_livro_result[0]['Proximo_Cd_Livro'];
-
-    // rename($imgPerfil['tmpname'], 'img/doacao_' . $nm_doacao($targetFile));
-
+    
     if ($livro == "Livro cadastrado com sucesso!") {
 
         if (isset($_REQUEST['doacao'])) {
             if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
-                $doacaocontroller = new DoacaoController;
-                $doacao = $doacaocontroller->AlterarDoacao(new Doacao($cd_doacao, new Livro(), new Biblioteca(), new Leitor(), true));
+            $doacaocontroller = new DoacaoController;
+            $doacao = $doacaocontroller->AlterarDoacao(new Doacao($cd_doacao, new Livro(), new Biblioteca(), new Leitor(), true));
             }
         }
     }
