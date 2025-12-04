@@ -227,7 +227,14 @@ function ListarProximoLivro($livro = new Livro){
             if(!is_null($livro->assuntos[0]->cd_assunto) || !is_null($livro->assuntos[0]->nm_assunto)){
                 $assuntos = $assuntocontroller->ListarAssuntos(new Assunto($livro->assuntos[0]->cd_assunto,$livro->assuntos[0]->nm_assunto));
                 if($assuntos == []){
-                    return "Livro não cadastrado: assunto não existe";
+                    return "
+                    <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p>Livro não cadastrado: assunto não existe!</p>
+          </div>";
                 }
             }
             else{
@@ -238,7 +245,13 @@ function ListarProximoLivro($livro = new Livro){
             if(!is_null($livro->colecao->cd_colecao) || !is_null($livro->colecao->nm_colecao)){
                 $colecao = $colecaocontroller->ListarColecoes(new Colecao($livro->colecao->cd_colecao, $livro->colecao->nm_colecao));
                  if($colecao == []){
-                    return "Livro não cadastrado: coleção não existe";
+                    return "<div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p>Livro não cadastrado: coleção não existe!</p>
+          </div>";
                 }
             }
             else{
@@ -248,7 +261,14 @@ function ListarProximoLivro($livro = new Livro){
             if(!is_null($livro->idioma->cd_idioma) || !is_null($livro->idioma->nm_idioma)){
                 $idioma = $idiomacontroller->ListarIdiomas(new Idioma($livro->idioma->cd_idioma,$livro->idioma->nm_idioma));
                  if($idioma == []){
-                    return "Livro não cadastrado: idioma não existe";
+                    return "
+                    <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p>Livro não cadastrado: idioma não existe!</p>
+          </div>";
                 }
             }    
             else{
@@ -258,7 +278,14 @@ function ListarProximoLivro($livro = new Livro){
             if(!is_null($livro->generos[0]->cd_genero) || !is_null($livro->generos[0]->nm_genero)){
                 $generos = $generocontroller->ListarGeneros(new Genero($livro->generos[0]->cd_genero,$livro->generos[0]->nm_genero));
                  if($generos == []){
-                    return "Livro não cadastrado: genero não existe";
+                    return "
+                    <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p>Livro não cadastrado: genero não existe!</p>
+          </div>";
                 }
             }
             else{
@@ -268,7 +295,14 @@ function ListarProximoLivro($livro = new Livro){
             if(!is_null($livro->autores[0]->cd_autor) || !is_null($livro->autores[0]->nm_autor)){
                 $autores = $autorcontroller->ListarAutores(new Autor($livro->autores[0]->cd_autor,$livro->autores[0]->nm_autor));
                  if($autores == []){
-                    return "Livro não cadastrado: autor não existe";
+                    return "
+                    <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p>Livro não cadastrado: autor não existe!</p>
+          </div>";
                 }
             }
             else{
@@ -278,7 +312,14 @@ function ListarProximoLivro($livro = new Livro){
             if(!is_null($livro->editora->cd_editora) || !is_null($livro->editora->nm_editora)){
                 $editora = $editoracontroller->ListarEditoras(new Editora($livro->editora->cd_editora, $livro->editora->nm_editora));
                  if($editora == []){
-                    return "Livro não cadastrado: editora não existe";
+                    return "
+                    <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Erro</h1>
+            </div>
+            <p>Livro não cadastrado: editora não existe!</p>
+          </div>";
                 }
             }
             else{
@@ -287,7 +328,14 @@ function ListarProximoLivro($livro = new Livro){
         $this->Executar('adicionar_livro', $parametros);
 
 
-        return "Livro cadastrado com sucesso!";
+        return "
+        <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Sucesso</h1>
+            </div>
+            <p>Livro cadastrado com sucesso!</p>
+          </div>";
     }catch (\Throwable $th) {
         throw $th;
     }

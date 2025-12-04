@@ -41,20 +41,6 @@ if (isset($_REQUEST['nm_livro'])) {
     if (!is_null($_REQUEST['nm_livro'])) {
         $erro = false;
         $nm_livro = $_REQUEST['nm_livro'];
-
-        $controller = new LivroController();
-        $cd_livro_result = $controller->ListarProximoLivro();
-   
-        $novo_nome_livro = $cd_livro_result[0]["Proximo_Cd_Livro"];
-        
-        $caminho_origem = "img/doacao_" . $nm_livro;
-        $caminho_destino = "img/" . $novo_nome_livro;
-
-        if (file_exists($caminho_origem)) {
-            rename($caminho_origem, $caminho_destino);    
-        } else {
-            copy("img/Lpadrao", $caminho_destino);
-        }
     }
 }
 
@@ -167,10 +153,10 @@ if (!$erro) {
 }
 
 
-    if ($cadastro) {
+if ($cadastro) {
 
-        $controller = new LivroController();
-        $livro = $controller->AdicionarLivro(new Livro(
+    $controller = new LivroController();
+    $livro = $controller->AdicionarLivro(new Livro(
         null,
         $nm_livro,
         [new Autor($cd_autor, $nm_autor)],
@@ -186,13 +172,27 @@ if (!$erro) {
         $ds_sinopse
     ));
 
+    // $controller = new LivroController();
+    // $cd_livro_result = $controller->ListarProximoLivro();
+
+    // $cd_livro = $cd_livro_result[0]['Proximo_Cd_Livro'];
+
+    // rename($imgPerfil['tmpname'], 'img/doacao_' . $nm_doacao($targetFile));
+
+    if ($livro == "
     
-    if ($livro == "Livro cadastrado com sucesso!") {
+    <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Sucesso</h1>
+            </div>
+            <p>Livro cadastrado com sucesso!</p>
+          </div>") {
 
         if (isset($_REQUEST['doacao'])) {
             if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
-            $doacaocontroller = new DoacaoController;
-            $doacao = $doacaocontroller->AlterarDoacao(new Doacao($cd_doacao, new Livro(), new Biblioteca(), new Leitor(), true));
+                $doacaocontroller = new DoacaoController;
+                $doacao = $doacaocontroller->AlterarDoacao(new Doacao($cd_doacao, new Livro(), new Biblioteca(), new Leitor(), true));
             }
         }
     }
@@ -209,6 +209,7 @@ if (!$erro) {
     <title>SUBLI - Novo Livro </title>
     <link rel="stylesheet" href="css/bibliotecario.css">
     <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
     <script src="js/componentesJS/header.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 
@@ -350,8 +351,40 @@ if (!$erro) {
     </main>
 </body>
 
+<script src="js/componentesJS/mensagem.js"></script>
 <script src="js/componentesJS/autoComplete.js"></script>
 <script src="js/componentesJS/traduzir.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  function Mensagem(texto, tipo) {
+    const elementoPai = document.body;
+    const localMsg = document.createElement('div');
+    localMsg.classList.add('mensagem', tipo);
+
+    localMsg.innerHTML = `
+      <div class='titulo-mensagem'>
+        <span class='material-symbols-outlined'>
+          ${tipo === 'erro' ? 'error' : 'book'}
+        </span>
+        <h1>${tipo === 'erro' ? 'Erro' : 'Sucesso'}</h1>
+      </div>
+      <p>${texto}</p>
+    `;
+    elementoPai.appendChild(localMsg);
+
+    setTimeout(() => {
+      localMsg.classList.add("sumir");
+    }, 3000); 
+
+    localMsg.addEventListener("animationend", () => {
+      localMsg.remove();
+    });
+  }
+});
+
+</script>
+
 <script>
     document.getElementById('buscarISBN').addEventListener('click', async () => {
         const rawIsbn = document.getElementById('isbn').value.trim();

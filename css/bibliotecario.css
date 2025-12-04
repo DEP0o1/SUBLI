@@ -1560,7 +1560,9 @@ border: solid 1px var(--bege);
   position: absolute;
   padding: var(--gap);
   right: 0;
+  top: 100px;
   transform: translateX(100%);
+  opacity: 0;
   animation: aparecer 0.5s forwards;
   z-index: 10000000;
 }
@@ -1572,18 +1574,22 @@ border: solid 1px var(--bege);
 @keyframes aparecer {
   from {
     transform: translateX(100%);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes sumir {
   from {
     transform: translateX(0);
+    opacity: 1;
   }
   to {
     transform: translateX(100%);
+    opacity: 0;
   }
 }
 
@@ -1606,6 +1612,7 @@ border: solid 1px var(--bege);
   align-items: flex-start;
   flex-direction: column;
 }
+
 
 
 

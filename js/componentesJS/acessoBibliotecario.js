@@ -57,7 +57,7 @@ if (txtcodigo && txtSenha && btnEntrar) {
     })
 }
 
-export function Mensagem(texto, tipo, nomeElementoPai) {
+function Mensagem(texto, tipo, nomeElementoPai) {
     const elementoPai = document.querySelector(nomeElementoPai);
 
     const localMsg = document.createElement('div');
