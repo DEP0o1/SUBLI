@@ -179,7 +179,15 @@ if ($cadastro) {
 
     // rename($imgPerfil['tmpname'], 'img/doacao_' . $nm_doacao($targetFile));
 
-    if ($livro == "Livro cadastrado com sucesso!") {
+    if ($livro == "
+    
+    <div class='mensagem'>
+            <div class='titulo-mensagem'>
+              <span class='material-symbols-outlined'>book</span>
+              <h1>Sucesso</h1>
+            </div>
+            <p>Livro cadastrado com sucesso!</p>
+          </div>") {
 
         if (isset($_REQUEST['doacao'])) {
             if ($_REQUEST['doacao'] != "" && is_numeric($_REQUEST['doacao'])) {
@@ -201,6 +209,7 @@ if ($cadastro) {
     <title>SUBLI - Novo Livro </title>
     <link rel="stylesheet" href="css/bibliotecario.css">
     <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="image/svg+xml" href="img/FavIconBonitinho.svg">
     <script src="js/componentesJS/header.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 
@@ -342,8 +351,40 @@ if ($cadastro) {
     </main>
 </body>
 
+<script src="js/componentesJS/mensagem.js"></script>
 <script src="js/componentesJS/autoComplete.js"></script>
 <script src="js/componentesJS/traduzir.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  function Mensagem(texto, tipo) {
+    const elementoPai = document.body;
+    const localMsg = document.createElement('div');
+    localMsg.classList.add('mensagem', tipo);
+
+    localMsg.innerHTML = `
+      <div class='titulo-mensagem'>
+        <span class='material-symbols-outlined'>
+          ${tipo === 'erro' ? 'error' : 'book'}
+        </span>
+        <h1>${tipo === 'erro' ? 'Erro' : 'Sucesso'}</h1>
+      </div>
+      <p>${texto}</p>
+    `;
+    elementoPai.appendChild(localMsg);
+
+    setTimeout(() => {
+      localMsg.classList.add("sumir");
+    }, 3000); 
+
+    localMsg.addEventListener("animationend", () => {
+      localMsg.remove();
+    });
+  }
+});
+
+</script>
+
 <script>
     document.getElementById('buscarISBN').addEventListener('click', async () => {
         const rawIsbn = document.getElementById('isbn').value.trim();
