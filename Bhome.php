@@ -82,9 +82,6 @@ $Bibliotecario = $controller->ListarBibliotecarios(new Bibliotecario($biblioteca
         </div>
       </section>
 
-      <div class="btnNovoEvento">
-        <button class="btnRosa">Gerenciar eventos</button>
-      </div>
     </div>
 
     <!-- <section class="listaProvisoria">

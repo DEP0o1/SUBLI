@@ -266,6 +266,7 @@ INSERT INTO evento VALUES ('Leitura de Livros de Romance', 2,NOW(), 'Um momento 
 INSERT INTO evento VALUES ('Divulgação do meu Livro', 3,NOW(), 'Um evento dedicado a apresentar meu trabalho literário, compartilhar o processo de criação e aproximar leitores da história por trás da obra. Uma oportunidade para conhecer o livro, esclarecer dúvidas, trocar ideias e celebrar a jornada da escrita.', 1,'pedro.favoritos@gmail.com', true);
 INSERT INTO evento VALUES ('Clube do Livro de Outubro', 4,NOW(), 'Um encontro especial para discutir a leitura escolhida do mês, compartilhar impressões, trocar ideias e mergulhar juntos nos temas, personagens e mensagens da obra. Um momento de conversa leve, descoberta e conexão entre leitores.', 3,'anny@gmail.com', NULL);
 INSERT INTO evento VALUES ('Escrita criativa de poesia', 5,NOW(), 'Um espaço para liberar a imaginação e explorar novas formas de expressão poética. Neste encontro, participantes experimentam técnicas de escrita, brincam com linguagem, ritmos e imagens, e desenvolvem sua própria voz literária. Ideal para quem deseja criar, sentir e transformar palavras em arte.', 1,'anny@gmail.com', false);
+INSERT INTO evento VALUES ('Escrita criativa de poesia', 5,NOW(), '', 1,'pedro@gmail.com', false);
 
 -- ===== EDITORAS =====
 INSERT INTO editora (cd_editora, nm_editora) VALUES
@@ -522,7 +523,7 @@ INSERT INTO bibliotecario_biblioteca VALUES(4,4);
 
 /*Doações*/
 INSERT INTO doacao VALUES (1,'Cronicas Malucas','Jeferson',1,'luanna@gmail.com', true);
-INSERT INTO doacao VALUES (2,'Como Dominar a Arte da Sabedoria','Mary Renault',1,'pedro@gmail.com', false);
+INSERT INTO doacao VALUES (2,'A Metamorfose','Franz Kafka',1,'pedro@gmail.com', false);
 INSERT INTO doacao VALUES (3,'Genocidas','Caua Nunes da Silva',1,'caua@gmail.com',false);
 INSERT INTO doacao VALUES (4,'Romeu e Julieta' ,'William Shakespeare',2,'liam@gmail.com', false);
 INSERT INTO doacao VALUES (5,'Relatos de um gato viajante' ,'Hiro Arikawa',2,'anny@gmail.com', false);
