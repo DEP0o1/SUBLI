@@ -47,55 +47,78 @@ public function ExibirLivrosDoados($doacao = new Doacao(), $ignorar = null)
     }
 }
 
-  public function ExibirLivroDoacao($doacao = new Doacao())
+
+public function ExibirLivroDoacao($doacao = new Doacao())
 {
     $controller = new DoacaoController;
     $doacoes = $controller->ListarDoacoes($doacao);
-
-    if (empty($doacoes)) {
-        echo "<p>Nenhuma doação encontrada.</p>";
-    }
+    
 
     $Doacao = $doacoes[0];
 
     $caminho_imagem_padrao = "img/doacao_padrao"; 
 
-    $caminho_imagem_doacao = "img/doacao_{$Doacao->livro->nm_livro}"; 
+    $nome_livro = $Doacao->livro->nm_livro ?? 'Livro Desconhecido';
+    $caminho_imagem_doacao = "img/doacao_{$nome_livro}"; 
     
     $src_imagem = file_exists($caminho_imagem_doacao) ? $caminho_imagem_doacao : $caminho_imagem_padrao;
 
-    echo "
-        <img src='{$src_imagem}' alt='Capa do Livro: {$Doacao->livro->nm_livro}' class='capaLivroGrande' />
+    $caminho_imagem_padrao_leitor = "img/perfil_padrao"; 
+    $email_leitor = $Doacao->leitor->cd_email ?? null; 
 
-          <div class= 'divColuna'>
+    $src_imagem_leitor = $caminho_imagem_padrao_leitor;
+    
+    if ($email_leitor) {
+        $caminho_imagem_leitor = "img/perfil_{$email_leitor}";
+        
+        if (file_exists($caminho_imagem_leitor)) {
+            $src_imagem_leitor = $caminho_imagem_leitor;
+        }
+    }
+
+    $nome_doador = $Doacao->leitor->nm_leitor ?? 'Doador Desconhecido';
+    
+    echo "
+        <img src='{$src_imagem}' alt='Capa do Livro: {$nome_livro}' class='capaLivroGrande' />
+
+        <div class='divColuna'>
             <div class='dadosLivroDoado'>
-                <h1>{$Doacao->livro->nm_livro}</h1>
+                <h1>{$nome_livro}</h1>
     ";
 
-    foreach ($Doacao->livro->autores as $autor) {
-        echo "
+    if (!empty($Doacao->livro->autores) && is_array($Doacao->livro->autores)) {
+        foreach ($Doacao->livro->autores as $autor) {
+            $nome_autor = $autor->nm_autor ?? 'Autor Desconhecido';
+            echo "
                 <div class='divRowItem'>
-                    <p><span class='material-symbols-outlined'>man_4</span>Autor: {$autor->nm_autor}</p>
+                    <p><span class='material-symbols-outlined'>man_4</span>Autor: {$nome_autor}</p>
                 </div>
             ";
+        }
+    } else {
+         echo "
+            <div class='divRowItem'>
+                <p><span class='material-symbols-outlined'>man_4</span>Autor: Não informado</p>
+            </div>
+        ";
     }
 
     echo "
             <div class='divRowItem'>
-                <img src='https://cdn.sfstation.com/assets/images/events/08/24802081856853977_orig.jpg' alt='Foto do Doador' class='miniPerfil'>
-                <p>{$Doacao->leitor->nm_leitor} <span>(Doador)</span></p>
+                <img src='{$src_imagem_leitor}' alt='Foto do Doador' class='miniPerfil'>
+                <p>{$nome_doador} <span>(Doador)</span></p>
             </div>
 
             <div class='divRowItemBtn'>
-                <a href='BcadastrarLivro.php?doacao={$Doacao->cd_doacao}' class='btnDoacao'><span class='material-symbols-outlined'>library_add</span></a>
+                <a href='BcadastrarLivro.php?doacao={$Doacao->cd_doacao}' class='btnDoacao' style='align-items: center; display: flex;'><span class='material-symbols-outlined'>library_add</span>Cadastrar</a>
                 <form method='GET' >
                     <input type='hidden' name='codigo' value='{$Doacao->cd_doacao}'>
                     <input type='hidden' name='recusado' value='true'>
-                    <button class='btnDoacao' type='submit'><span class='material-symbols-outlined'>close_small</span></button>
+                    <button class='btnDoacao' type='submit' style='align-items: center; display: flex;'><span class='material-symbols-outlined'>close_small</span>Recusar</button>
                 </form>
-            </div>
         </div>
-";
+    </div>
+    ";
 }
 
   public function Input_Livro_Doacao($doacao = new Doacao())

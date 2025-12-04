@@ -25,7 +25,6 @@ require_once('verificadoBibliotecario.php');
     ?>
 <main>
  
-    <div class="areaCadastro">
         <form method="post" action="" class="formAvancado1">
             <div class="tituloFormCadastro">
                 <h1>Alterar dados da biblioteca</h1>
@@ -71,11 +70,6 @@ require_once('verificadoBibliotecario.php');
                     </div>
                 </section>
             </form>
-
-            </div>
-
-
-    </div>
 </main>
 </body>
 

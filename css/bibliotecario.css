@@ -970,7 +970,13 @@ aside br {
     transition: ease-in;
 }
 
+.outrosLeitores.alternado {
+    background-color: rgba(166, 36, 77, 0.12);
+}
 
+.outrosLeitores {
+    background-color: transparent; 
+}
 /*------------------------------------------------------------------------------------*/
 .resultadoPesquisa {
   display: flex;

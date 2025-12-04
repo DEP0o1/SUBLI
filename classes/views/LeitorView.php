@@ -81,31 +81,35 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
         }
         
  }
- public function ExibirLeitoresColuna($leitor = new Leitor, $ignorar = null){
+public function ExibirLeitoresColuna($leitor = new Leitor, $ignorar = null){
     $controller = new LeitorController;
     $leitores = $controller->ListarLeitores($leitor);
 
-    
+    $i = 0;
+
+    if (empty($leitores)) {
+        return;
+    }
+
     foreach($leitores as $Leitor){
+        $i++;
+
+        $classe_alternada = ($i % 2 == 0) ? ' alternado' : '';
+        
         $caminho_imagem_padrao = "img/perfil_padrao"; 
-    
-        if (empty($leitores)) {
-            return;
-        }
-    
+
         $caminho_imagem_leitor = "img/perfil_$Leitor->cd_email"; 
     
         $src_imagem = file_exists($caminho_imagem_leitor) 
             ? $caminho_imagem_leitor 
             : $caminho_imagem_padrao;
+
         if($ignorar == $Leitor->cd_email){
-        continue;
-    }
-        
-    echo "
+            continue;
+        }
 
-
-        <section class='outrosLeitores'>
+        echo "
+        <section class='outrosLeitores$classe_alternada'>
             <div class='leitorLinha'>
                 <div class='infoPequena'>
                     <img src='$src_imagem' alt=''>
@@ -119,10 +123,10 @@ public function ExibirLeitores($leitor = new Leitor, $cd_biblioteca = null){
                 <p>Sem atrasos</p>
                 <a href='BpesquisaLeitor.php?c=$Leitor->cd_email'> <button class='btnRosa'>Ver Mais</button> </a>
             </div>
-
+        </section>
         ";
     }
- }
+}
      public function ExibirLeitorFatal($leitor = new Leitor, $cd_biblioteca){
 
     $controller = new LeitorController;
