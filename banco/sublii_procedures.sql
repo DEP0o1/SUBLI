@@ -293,11 +293,11 @@ END$$
 /*CALL adicionar_livro (NULL, 'Aventuras no Código' , 1 , NULL ,1, NULL, 1 , NULL ,1 , NULL , 1 , NULL , 1 , NULL,'blebleble', 1);*/
     
 
-/*CREATE PROCEDURE ListarProximoLivro()
+CREATE PROCEDURE ListarProximoLivro()
 BEGIN
     SELECT COALESCE(MAX(cd_livro), 0) + 1 AS Proximo_Cd_Livro
     FROM livro;
-END$$*/
+END$$
 
 
 DROP PROCEDURE IF EXISTS alterar_livros$$

@@ -3,11 +3,9 @@
 
 =========================SE LIGA GUYS==============================
 
--mostrar de fato as bibliotecas da região 
--tornar a interface mais intuitiva no geral
 -arrumar a altura das mensagens
 -corrigir o texto das mensagens
-
+-calendario aparecer quando n tiver eventos
    /|\
     |
     |
@@ -15,33 +13,4 @@
 
 -incluir horarios nos eventos
 -gerenciamneto de estoque/unidade de exemplares 
-
-=========================SE LIGA GUYS 2 ==============================
-
-imagem renomeada com codigo do livro ////////////////////////////////////////////
-   /|\
-    |
-    |
-    o Pedro pretende fazer esses mas ele aceita ajuda
-
-=========================SE LIGA GUYS 3 ==============================
-
-massa de teste boa ( com imagens)
-mais leitores
-efetuar reserva com diversos leitores
-e efetuar devolução de empréstimos
-   /|\
-    |
-    |
-    o Liam pretende fazer esses mas ele aceita ajuda
-
-
-
-ARRUMAR O LOGO PRA APARECER O I MELHOR -CLARA
-
-**SE PÁ FAZER**
-
-FAVORITOS (PREGUIÇA DO KRL) - LUCAS (ele está com preguiça)
-
-**************************************PAGINA DE DEVOLUÇÃO DE EMPRESTIMO***************************************
 
